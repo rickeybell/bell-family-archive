@@ -1,6 +1,26 @@
 
 document.addEventListener("DOMContentLoaded",()=>{
   const cards=[...document.querySelectorAll(".photo-card")];
+
+  // Known family-date corrections applied consistently across archive pages.
+  const knownDateCorrections={
+    "1980s_0031_a.jpg":{
+      date:"December 25, 1984",
+      tagFrom:"1980",
+      tagTo:"1984"
+    }
+  };
+  cards.forEach(card=>{
+    const fix=knownDateCorrections[card.dataset.file];
+    if(!fix)return;
+    card.dataset.date=fix.date;
+    const dateStrong=card.querySelector(".photo-date strong");
+    if(dateStrong)dateStrong.textContent=fix.date;
+    if(card.dataset.tags){
+      card.dataset.tags=card.dataset.tags.split("|").map(t=>t===fix.tagFrom?fix.tagTo:t).join("|");
+    }
+  });
+
   const detail=document.getElementById("photo-detail");
   const detailClose=document.getElementById("detail-close");
   const imgEl=document.getElementById("detail-image");
