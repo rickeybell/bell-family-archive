@@ -2,6 +2,45 @@
 document.addEventListener("DOMContentLoaded",()=>{
   const cards=[...document.querySelectorAll(".photo-card")];
 
+  // Restored display copies can live in organized subfolders while the archive card keeps its identity.
+  const restoredPhotoCorrections={
+    "1960s_0002(1).jpg":{
+      src:"images/1960/1960s_0002_a_Restored.png",
+      file:"1960s_0002_a_Restored.png",
+      date:"August 1960",
+      description:"August 1960 — Dickey on the far right; Spooky in the center rear. Restored display copy; faces were not generatively altered."
+    }
+  };
+  cards.forEach(card=>{
+    const fix=restoredPhotoCorrections[card.dataset.file];
+    if(!fix)return;
+    const oldFile=card.dataset.file;
+    const image=card.querySelector("img");
+    if(image){
+      image.src=fix.src;
+      image.alt=fix.description;
+    }
+    card.dataset.file=fix.file;
+    card.dataset.date=fix.date;
+    card.dataset.description=fix.description;
+    if(card.dataset.tags){
+      const tags=card.dataset.tags.split("|");
+      if(!tags.includes("1960"))tags.push("1960");
+      card.dataset.tags=tags.join("|");
+    }
+    const dateStrong=card.querySelector(".photo-date strong");
+    if(dateStrong)dateStrong.textContent=fix.date;
+    const ident=card.querySelector(".photo-identification");
+    if(ident)ident.textContent=fix.description;
+    const filename=card.querySelector(".photo-filename");
+    if(filename)filename.textContent=fix.file;
+    cards.forEach(other=>{
+      if(other.dataset.related){
+        other.dataset.related=other.dataset.related.split("|").map(f=>f===oldFile?fix.file:f).join("|");
+      }
+    });
+  });
+
   // Known family-date corrections applied consistently across archive pages.
   const knownDateCorrections={
     "1980s_0031_a.jpg":{
