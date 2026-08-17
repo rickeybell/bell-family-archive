@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded",()=>{
  const detail=document.getElementById("photo-detail"), close=document.getElementById("detail-close");
  document.querySelectorAll(".photo-card img").forEach(img=>img.addEventListener("click",()=>{

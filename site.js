@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded",()=>{
   const cards=[...document.querySelectorAll(".photo-card")];
   const detail=document.getElementById("photo-detail");
@@ -82,6 +83,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   document.querySelectorAll(".filter-link").forEach(btn=>btn.addEventListener("click",()=>applyFilter(btn.dataset.filterType,btn.dataset.filterValue)));
   clearFilter?.addEventListener("click",clear);
 
+  // Portrait still opens in the simple lightbox.
   const box=document.getElementById("lightbox"), boxImg=box?.querySelector("img"), close=document.getElementById("close");
   document.querySelectorAll(".portrait-wrap img").forEach(img=>img.addEventListener("click",()=>{if(box&&boxImg){boxImg.src=img.src;box.classList.add("open");}}));
   close?.addEventListener("click",()=>box?.classList.remove("open"));

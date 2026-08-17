@@ -1,0 +1,82 @@
+1961 ZIP metadata import
+
+Display rule: any embedded date whose day is 01 is shown as Month Year, not as an exact first-of-month date.
+
+1961_0001_a.jpg
+Date: July 1961
+People: Spooky Bell, Margaret Alice, Dickey Bell
+Place: Daytona Beach, Florida
+Caption: Margaret Alice, Dickey, and Spooky are swinging in Daytona Beach.
+
+1961_0002_a.jpg
+Date: September 1961
+People: Spooky Bell, Dickey Bell
+Place: Little Dodge City, Charlotte, North Carolina
+Caption: Little Dodge City, an Old West-themed attraction in Charlotte, North Carolina.
+Dickey 5yrs 1 month
+Spooky 7yrs 10-1/2 months
+
+1961_0003_a.jpg
+Date: September 1961
+People: Spooky Bell, Buster Bell, Dickey Bell
+Place: Little Dodge City, Charlotte, North Carolina
+Caption: Little Dodge City, an Old West-themed attraction in Charlotte, North Carolina.
+Dickey 5yrs 1 month
+Spooky 7yrs 10-1/2 months
+
+1961_0004_a.jpg
+Date: August 15, 1961
+People: Spooky Bell
+Place: None
+Caption: Dickey Birthday Party 5y/o
+
+1961_0005_a.jpg
+Date: July 1961
+People: Spooky Bell, Dickey Bell
+Place: Marine Studios, Florida
+Caption: Dickey 4ys 11-1/2 months
+Spooky 7yr 9months
+
+1961_0006_a.jpg
+Date: July 1961
+People: Spooky Bell, Dickey Bell
+Place: Daytona Beach, Florida
+Caption: Sporting their new bows.
+Dickey 4ys 11-1/2 months
+Spooky 7yr 9months
+
+1961_0007_a.jpg
+Date: August 15, 1961
+People: Dickey Bell
+Place: None
+Caption: Dickey Birthday Party 5y/o
+
+1961_0008_a.jpg
+Date: July 1961
+People: Buster Bell
+Place: Daytona Beach, Florida
+Caption: Buster watching the pool.
+
+1961_0009_a.jpg
+Date: September 1961
+People: Spooky Bell, Buster Bell, Dickey Bell
+Place: Little Dodge City, Charlotte, North Carolina
+Caption: Little Dodge City, an Old West-themed attraction in Charlotte, North Carolina.
+Dickey 5yrs 1 month
+Spooky 7yrs 10-1/2 months
+
+1961_0010_a.jpg
+Date: July 1961
+People: Spooky Bell, Dickey Bell
+Place: Daytona Beach, Florida
+Caption: Sometimes its time for a nap/
+Dickey 4ys 11-1/2 months
+Spooky 7yr 9months
+
+1961_0011_a.jpg
+Date: July 1961
+People: Spooky Bell, Alma Bell, Dickey Bell
+Place: Daytona Beach, Florida
+Caption: Alma sporting the bathing suit.
+Dickey 4ys 11-1/2 months
+Spooky 7yr 9months
