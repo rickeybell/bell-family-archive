@@ -7,6 +7,7 @@ on:
       - 'tools/build_photo_metadata.py'
       - 'tools/build_dynamic_gallery.py'
       - 'tools/fix_html_image_paths.py'
+      - 'tools/refresh_person_page_links.py'
       - '.github/workflows/photo-metadata.yml'
   workflow_dispatch:
 
@@ -32,6 +33,8 @@ jobs:
         run: python3 tools/build_dynamic_gallery.py
       - name: Repair moved image links in existing pages
         run: python3 tools/fix_html_image_paths.py
+      - name: Link biography pages to current galleries and remove deleted legacy cards
+        run: python3 tools/refresh_person_page_links.py
       - name: Commit refreshed site
         run: |
           git config user.name "github-actions[bot]"
@@ -41,6 +44,6 @@ jobs:
             echo "No generated changes to commit."
             exit 0
           fi
-          git commit -m "Refresh photo metadata, galleries, and image links"
+          git commit -m "Refresh current photo galleries and biography links"
           git pull --rebase origin main
           git push origin HEAD:main
