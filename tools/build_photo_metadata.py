@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Generates the authoritative site metadata catalog from embedded photo metadata.
 import json, subprocess, pathlib, re
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 IMG=ROOT/'images'
@@ -36,16 +37,10 @@ for m in raw:
             people.append(s.split('/')[-1])
         elif low.startswith('people|'):
             people.append(s.split('|')[-1])
-    # common Bell-family names are also accepted when stored as plain keywords
     known=('Dickey','Spooky','Buster','Alma','Rickey','Sonja','Heather','Stephanie','Jarred','Dickey Bell','Spooky Bell','Buster Bell','Alma Bell','Rickey Bell','Sonja Bell','Heather Bell','Stephanie Bell','Jarred Bell')
     for s in tags:
         if s in known and s not in people: people.append(s)
-    out.append({
-      'path':rel,'file':p.name,'folder':folder,'date':date,
-      'people':sorted(set(people)),'tags':sorted(set(tags)),
-      'title':first('Title'),'description':first('Description','Caption-Abstract'),
-      'gps': {'lat':m.get('GPSLatitude'),'lon':m.get('GPSLongitude')} if m.get('GPSLatitude') is not None and m.get('GPSLongitude') is not None else None
-    })
+    out.append({'path':rel,'file':p.name,'folder':folder,'date':date,'people':sorted(set(people)),'tags':sorted(set(tags)),'title':first('Title'),'description':first('Description','Caption-Abstract'),'gps':{'lat':m.get('GPSLatitude'),'lon':m.get('GPSLongitude')} if m.get('GPSLatitude') is not None and m.get('GPSLongitude') is not None else None})
 out.sort(key=lambda x:(x['date'] or '9999',x['path'].lower()))
 (ROOT/'photo_metadata.json').write_text(json.dumps(out,indent=2,ensure_ascii=False),encoding='utf-8')
 print(f'Wrote {len(out)} records')
