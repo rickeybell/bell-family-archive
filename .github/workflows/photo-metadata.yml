@@ -8,13 +8,21 @@ on:
       - 'tools/build_dynamic_gallery.py'
       - '.github/workflows/photo-metadata.yml'
   workflow_dispatch:
+
+concurrency:
+  group: photo-metadata-main
+  cancel-in-progress: true
+
 permissions:
   contents: write
+
 jobs:
   catalog:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Install ExifTool
         run: sudo apt-get update && sudo apt-get install -y libimage-exiftool-perl
       - name: Build metadata catalog
@@ -26,5 +34,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add photo_metadata.json gallery.html *-photos.html
-          git diff --cached --quiet || git commit -m "Refresh photo metadata and galleries"
-          git push
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+            exit 0
+          fi
+          git commit -m "Refresh photo metadata and galleries"
+          git pull --rebase origin main
+          git push origin HEAD:main
