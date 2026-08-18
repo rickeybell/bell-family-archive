@@ -1,0 +1,64 @@
+name: Refresh photo metadata and galleries
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'images/**'
+      - 'tools/build_photo_metadata.py'
+      - 'tools/build_dynamic_gallery.py'
+      - 'tools/fix_html_image_paths.py'
+      - 'tools/refresh_person_page_links.py'
+      - '.github/workflows/photo-metadata.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: photo-metadata-main
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  catalog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install ExifTool
+        timeout-minutes: 3
+        shell: bash
+        run: |
+          set -e
+          if command -v exiftool >/dev/null 2>&1; then
+            exiftool -ver
+            exit 0
+          fi
+          export DEBIAN_FRONTEND=noninteractive
+          APT_OPTS='-o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20 -o Acquire::Retries=2'
+          if ! timeout 120s sudo apt-get $APT_OPTS install -y libimage-exiftool-perl; then
+            timeout 60s sudo apt-get $APT_OPTS update
+            timeout 120s sudo apt-get $APT_OPTS install -y libimage-exiftool-perl
+          fi
+          exiftool -ver
+      - name: Build metadata catalog
+        run: python3 tools/build_photo_metadata.py
+      - name: Build galleries and person photo pages
+        run: python3 tools/build_dynamic_gallery.py
+      - name: Repair moved image links in existing pages
+        run: python3 tools/fix_html_image_paths.py
+      - name: Link biography pages to current galleries and remove deleted legacy cards
+        run: python3 tools/refresh_person_page_links.py
+      - name: Commit refreshed site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add photo_metadata.json *.html
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+            exit 0
+          fi
+          git commit -m "Refresh current photo galleries and biography links"
+          git pull --rebase origin main
+          git push origin HEAD:main

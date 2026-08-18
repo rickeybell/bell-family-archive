@@ -1,5 +1,14 @@
 
 document.addEventListener("DOMContentLoaded",()=>{
+ // Biography pages no longer have the legacy archive sidebar. Expand the remaining
+ // content across the full site width instead of leaving it in the old 270px grid column.
+ const shell=document.querySelector(".site-shell");
+ if(shell && !shell.querySelector(".archive-sidebar")){
+   shell.style.gridTemplateColumns="minmax(0,1fr)";
+   const main=shell.querySelector(".archive-content");
+   if(main){main.style.width="100%";main.style.maxWidth="1500px";main.style.margin="0 auto";}
+ }
+
  const cards=[...document.querySelectorAll(".photo-card")];
 
  // Use the restored display copy from the organized 1960 image folder.
@@ -34,6 +43,6 @@ document.addEventListener("DOMContentLoaded",()=>{
    (c.dataset.tags||"").split("|").filter(Boolean).forEach(t=>{const s=document.createElement("span");s.className="tag-chip";s.textContent=t;tags.appendChild(s);});
    detail.classList.add("open");detail.setAttribute("aria-hidden","false");
  }));
- const hide=()=>{detail.classList.remove("open");detail.setAttribute("aria-hidden","true");};
+ const hide=()=>{detail?.classList.remove("open");detail?.setAttribute("aria-hidden","true");};
  close?.addEventListener("click",hide);document.addEventListener("keydown",e=>{if(e.key==="Escape")hide();});
 });
