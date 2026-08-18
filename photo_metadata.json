@@ -1,21 +1,5 @@
 [
   {
-    "path": "images/1953/1953_0001_a.jpg",
-    "file": "1953_0001_a.jpg",
-    "folder": "1953",
-    "date": "1953-12-01",
-    "people": [
-      "Spooky Bell"
-    ],
-    "tags": [
-      "People|Spooky Bell",
-      "Spooky Bell"
-    ],
-    "title": "",
-    "description": "",
-    "gps": null
-  },
-  {
     "path": "images/1954/1954_0002_a.jpg",
     "file": "1954_0002_a.jpg",
     "folder": "1954",
@@ -2232,6 +2216,115 @@
     ],
     "title": "",
     "description": "Dickey caught the shark and later put it in the hotel pool.",
+    "gps": null
+  },
+  {
+    "path": "images/1968/1968_James_Bell_0001.jpg",
+    "file": "1968_James_Bell_0001.jpg",
+    "folder": "1968",
+    "date": "1968-03-14",
+    "people": [
+      "Spooky Bell"
+    ],
+    "tags": [
+      "Newspaper",
+      "People|Spooky Bell",
+      "Spooky Bell"
+    ],
+    "title": "",
+    "description": "Spooky makes Honor Role",
+    "gps": null
+  },
+  {
+    "path": "images/1968/Document_20260717_0002.jpg",
+    "file": "Document_20260717_0002.jpg",
+    "folder": "1968",
+    "date": "1968-03-21",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Document",
+      "People|Dickey Bell"
+    ],
+    "title": "Essay Contest 2nd Place",
+    "description": "Lancaster Soil & Water Conservation District",
+    "gps": null
+  },
+  {
+    "path": "images/1968/1968_0001.jpg",
+    "file": "1968_0001.jpg",
+    "folder": "1968",
+    "date": "1968-04-01",
+    "people": [
+      "Spooky Bell"
+    ],
+    "tags": [
+      "Document",
+      "People|Spooky Bell",
+      "Spooky Bell"
+    ],
+    "title": "",
+    "description": "Spooky 9th Grade Honor Roll",
+    "gps": null
+  },
+  {
+    "path": "images/1968/Document_20260717_0001.jpg",
+    "file": "Document_20260717_0001.jpg",
+    "folder": "1968",
+    "date": "1968-05-27",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Document",
+      "People|Dickey Bell"
+    ],
+    "title": "Essay Contest Honorable Mention State",
+    "description": "Lancaster Soil & Water Conservation District\n",
+    "gps": null
+  },
+  {
+    "path": "images/1969/1969_0001.jpg",
+    "file": "1969_0001.jpg",
+    "folder": "1969",
+    "date": "1969-05-31",
+    "people": [
+      "Spooky Bell"
+    ],
+    "tags": [
+      "Document",
+      "Lancaster",
+      "People|Spooky Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Spooky Bell"
+    ],
+    "title": "",
+    "description": "Spooky Perfect Attendance",
+    "gps": null
+  },
+  {
+    "path": "images/1969/1960s_0027.jpg",
+    "file": "1960s_0027.jpg",
+    "folder": "1969",
+    "date": "1969-09-01",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Lancaster",
+      "People|Dickey Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina"
+    ],
+    "title": "Circa Fall 1969 Dickey",
+    "description": "",
     "gps": null
   },
   {
