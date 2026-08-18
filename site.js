@@ -1,5 +1,14 @@
 
 document.addEventListener("DOMContentLoaded",()=>{
+  // Biography pages no longer have the legacy archive sidebar. Expand the remaining
+  // content across the full site width instead of leaving it in the old 270px grid column.
+  const shell=document.querySelector(".site-shell");
+  if(shell && !shell.querySelector(".archive-sidebar")){
+    shell.style.gridTemplateColumns="minmax(0,1fr)";
+    const main=shell.querySelector(".archive-content");
+    if(main){main.style.width="100%";main.style.maxWidth="1500px";main.style.margin="0 auto";}
+  }
+
   const cards=[...document.querySelectorAll(".photo-card")];
 
   // Restored display copies can live in organized subfolders while the archive card keeps its identity.
