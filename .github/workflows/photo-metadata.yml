@@ -1,14 +1,5 @@
 name: Refresh photo metadata and galleries
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'images/**'
-      - 'tools/build_photo_metadata.py'
-      - 'tools/build_dynamic_gallery.py'
-      - 'tools/fix_html_image_paths.py'
-      - 'tools/refresh_person_page_links.py'
-      - '.github/workflows/photo-metadata.yml'
   workflow_dispatch:
 
 concurrency:
