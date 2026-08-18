@@ -1336,6 +1336,27 @@
     "gps": null
   },
   {
+    "path": "images/1960s/1960s_0003.jpg",
+    "file": "1960s_0003.jpg",
+    "folder": "1960s",
+    "date": "1960-07-01",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Myrtle Beach",
+      "People|Dickey Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Myrtle Beach",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "Dickey Asleep on the Beach",
+    "description": "Myrtle Beach\nDickey 3 years 11.5 months",
+    "gps": null
+  },
+  {
     "path": "images/1960/1960s_0002_a_Restored.png",
     "file": "1960s_0002_a_Restored.png",
     "folder": "1960",
@@ -1371,6 +1392,43 @@
     "gps": null
   },
   {
+    "path": "images/1960s/1960s_0002_a_Restored.png",
+    "file": "1960s_0002_a_Restored.png",
+    "folder": "1960s",
+    "date": "1960-08-15",
+    "people": [
+      "Dickey Bell",
+      "Spooky Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "People|Dickey Bell",
+      "People|Spooky Bell",
+      "Spooky Bell",
+      "Website"
+    ],
+    "title": "Dickey's 4th Birthday Party",
+    "description": "Spooky is in the middle of the back row, holding some food in his hand. \nDickey is on the far right and is four years old.\nIt is believed that this is a birthday party.",
+    "gps": null
+  },
+  {
+    "path": "images/1960s/1960s_0005_a_Restored.jpg",
+    "file": "1960s_0005_a_Restored.jpg",
+    "folder": "1960s",
+    "date": "1960-08-15",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "Dickey's 4th Birthday Party",
+    "description": "Dickey is in the front left",
+    "gps": null
+  },
+  {
     "path": "images/1960/1960s_0011.jpg",
     "file": "1960s_0011.jpg",
     "folder": "1960",
@@ -1385,6 +1443,27 @@
       "Places|South Carolina|Lancaster",
       "South Carolina",
       "Spooky Bell"
+    ],
+    "title": "Fall 1960 (estimated) — School portrait of Spooky Bell.",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1960s/1960s_0011.jpg",
+    "file": "1960s_0011.jpg",
+    "folder": "1960s",
+    "date": "1960-09-01",
+    "people": [
+      "Spooky Bell"
+    ],
+    "tags": [
+      "Lancaster",
+      "People|Spooky Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Fall 1960 (estimated) — School portrait of Spooky Bell.",
     "description": "",
@@ -1426,6 +1505,43 @@
     "gps": null
   },
   {
+    "path": "images/1960s/1960s_0001.jpg",
+    "file": "1960s_0001.jpg",
+    "folder": "1960s",
+    "date": "1960-12-09",
+    "people": [
+      "Spooky Bell"
+    ],
+    "tags": [
+      "People|Spooky Bell",
+      "Spooky Bell",
+      "Website"
+    ],
+    "title": "Spooky Christmas Play",
+    "description": "Christmas play at Erwin School\nSpooky 7 years 1.5 months",
+    "gps": null
+  },
+  {
+    "path": "images/1960s/1960s_0004_a_Restored.jpg",
+    "file": "1960s_0004_a_Restored.jpg",
+    "folder": "1960s",
+    "date": "1960-12-09",
+    "people": [
+      "Dickey Bell",
+      "Spooky Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "People|Dickey Bell",
+      "People|Spooky Bell",
+      "Spooky Bell",
+      "Website"
+    ],
+    "title": "Christmas Play at Erwin School",
+    "description": "Spooky is second from the back left\nDickey is on the front \nSpooky 7 years 1.5 months\nDickey 4 years 4 months",
+    "gps": null
+  },
+  {
     "path": "images/1960/1960s_0014_a_Restored.jpg",
     "file": "1960s_0014_a_Restored.jpg",
     "folder": "1960",
@@ -1445,6 +1561,32 @@
       "Places|South Carolina|Lancaster|Mason St",
       "South Carolina",
       "Spooky Bell"
+    ],
+    "title": "Spooky and Dickey Bell at Christmas",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1960s/1960s_0014_a_Restored.jpg",
+    "file": "1960s_0014_a_Restored.jpg",
+    "folder": "1960s",
+    "date": "1960-12-25",
+    "people": [
+      "Dickey Bell",
+      "Spooky Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Lancaster",
+      "Mason St",
+      "People|Dickey Bell",
+      "People|Spooky Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Mason St",
+      "South Carolina",
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Spooky and Dickey Bell at Christmas",
     "description": "",
@@ -1471,7 +1613,8 @@
       "Places",
       "Places|Florida",
       "Places|Florida|Daytona Beach",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "",
     "description": "Margaret Alice, Dickey, and Spooky are swinging in Daytona Beach.",
@@ -1497,7 +1640,8 @@
       "People|Spooky Bell",
       "Places|Florida",
       "Places|Florida|Marine Studios",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "",
     "description": "Dickey 4ys 11-1/2 months\nSpooky 7yr 9months",
@@ -1524,7 +1668,8 @@
       "Places",
       "Places|Florida",
       "Places|Florida|Daytona Beach",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "",
     "description": "Sporting their new bows.\nDickey 4ys 11-1/2 months\nSpooky 7yr 9months",
@@ -1548,7 +1693,8 @@
       "People|Buster Bell",
       "Places",
       "Places|Florida",
-      "Places|Florida|Daytona Beach"
+      "Places|Florida|Daytona Beach",
+      "Website"
     ],
     "title": "",
     "description": "Buster watching the pool.",
@@ -1575,7 +1721,8 @@
       "Places",
       "Places|Florida",
       "Places|Florida|Daytona Beach",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "",
     "description": "Sometimes its time for a nap/\nDickey 4ys 11-1/2 months\nSpooky 7yr 9months",
@@ -1605,7 +1752,8 @@
       "Places",
       "Places|Florida",
       "Places|Florida|Daytona Beach",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "",
     "description": "Alma sporting the bathing suit.\nDickey 4ys 11-1/2 months\nSpooky 7yr 9months",
@@ -1624,7 +1772,8 @@
     ],
     "tags": [
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "",
     "description": "Dickey Birthday Party 5y/o",
@@ -1640,7 +1789,8 @@
     ],
     "tags": [
       "Dickey Bell",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Website"
     ],
     "title": "",
     "description": "Dickey Birthday Party 5y/o",
@@ -1665,7 +1815,8 @@
       "Places|North Carolina",
       "Places|North Carolina|Charlotte",
       "Places|North Carolina|Charlotte|Little Dodge City",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "",
     "description": "Little Dodge City, an Old West-themed attraction in Charlotte, North Carolina.\nDickey 5yrs 1 month\nSpooky 7yrs 10-1/2 months",
@@ -1693,7 +1844,8 @@
       "Places|North Carolina",
       "Places|North Carolina|Charlotte",
       "Places|North Carolina|Charlotte|Little Dodge City",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "",
     "description": "Little Dodge City, an Old West-themed attraction in Charlotte, North Carolina.\nDickey 5yrs 1 month\nSpooky 7yrs 10-1/2 months",
@@ -1721,7 +1873,8 @@
       "Places|North Carolina",
       "Places|North Carolina|Charlotte",
       "Places|North Carolina|Charlotte|Little Dodge City",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "",
     "description": "Little Dodge City, an Old West-themed attraction in Charlotte, North Carolina.\nDickey 5yrs 1 month\nSpooky 7yrs 10-1/2 months",
@@ -1741,7 +1894,8 @@
       "Places|South Carolina",
       "Places|South Carolina|Lancaster",
       "South Carolina",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "",
     "description": "Spooky Price.\n8 years 3-1/2 months",
@@ -1761,7 +1915,8 @@
       "Places|South Carolina",
       "Places|South Carolina|Lancaster",
       "South Carolina",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "",
     "description": "Spooky Price.\n8 years 3-1/2 months",
@@ -1781,7 +1936,8 @@
       "Places|South Carolina",
       "Places|South Carolina|Lancaster",
       "South Carolina",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "",
     "description": "Spooky Crowned Price.\n8 years 3-1/2 months",
@@ -1806,7 +1962,8 @@
       "Places|South Carolina|Lancaster",
       "Places|South Carolina|Lancaster|Mason St",
       "South Carolina",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Easter Sunday1962",
     "description": "",
@@ -1825,7 +1982,8 @@
       "Dickey Bell",
       "People|Dickey Bell",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Easter Sunday1962",
     "description": "",
@@ -1842,7 +2000,8 @@
     "tags": [
       "Document",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "",
     "description": "Spooky's 3rd Grade Report Card.",
@@ -1859,7 +2018,8 @@
     "tags": [
       "Document",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "",
     "description": "Spooky's 3rd Grade Report Card.",
@@ -1876,7 +2036,8 @@
     "tags": [
       "Document",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "",
     "description": "Spooky's 3rd Grade Perfect Attendance.",
@@ -1898,7 +2059,8 @@
       "People|Alma Bell",
       "People|Buster Bell",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "September 1962 (estimated)",
     "description": "",
@@ -1918,7 +2080,8 @@
       "Places|South Carolina",
       "Places|South Carolina|Lancaster",
       "South Carolina",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "September 1962 (estimated) — School portrait of Spooky Bell.",
     "description": "",
@@ -1934,7 +2097,8 @@
     ],
     "tags": [
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Spooky's 9th Birthday Party.",
     "description": "",
@@ -1946,7 +2110,9 @@
     "folder": "1962",
     "date": "1962-10-31",
     "people": [],
-    "tags": [],
+    "tags": [
+      "Website"
+    ],
     "title": "Spooky's 9th Birthday Party.",
     "description": "",
     "gps": null
@@ -1987,7 +2153,8 @@
       "People|Dickey Bell",
       "Places|South Carolina",
       "Places|South Carolina|Lancaster",
-      "South Carolina"
+      "South Carolina",
+      "Website"
     ],
     "title": "",
     "description": "Dickey Valentine Prince at Erwin School.\n6 years old.",
@@ -2007,7 +2174,8 @@
       "People|Dickey Bell",
       "Places|South Carolina",
       "Places|South Carolina|Lancaster",
-      "South Carolina"
+      "South Carolina",
+      "Website"
     ],
     "title": "",
     "description": "Dickey Valentine Prince at Erwin School.\n6 years old.",
@@ -2024,7 +2192,8 @@
     "tags": [
       "Document",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "",
     "description": "Spooky Perfect Attendance.",
@@ -2041,7 +2210,8 @@
     "tags": [
       "Dickey Bell",
       "Newspaper",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Website"
     ],
     "title": "",
     "description": "",
@@ -2058,7 +2228,8 @@
     "tags": [
       "Dickey Bell",
       "Newspaper",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Website"
     ],
     "title": "",
     "description": "",
@@ -2074,7 +2245,8 @@
     ],
     "tags": [
       "Dickey Bell",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Website"
     ],
     "title": "Dickey Baseball Summer 63 estimated",
     "description": "",
@@ -2090,7 +2262,8 @@
     ],
     "tags": [
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "April 1964 (estimated)",
     "description": "",
@@ -2107,7 +2280,8 @@
     "tags": [
       "Dickey Bell",
       "Document",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Website"
     ],
     "title": "",
     "description": "Diceky Perfect Attendance 2nd Grade",
@@ -2127,7 +2301,8 @@
       "Places|South Carolina",
       "Places|South Carolina|Lancaster",
       "South Carolina",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "September 1964 (estimated) - Spooky",
     "description": "",
@@ -2147,7 +2322,8 @@
       "People|Dickey Bell",
       "Places|South Carolina",
       "Places|South Carolina|Lancaster",
-      "South Carolina"
+      "South Carolina",
+      "Website"
     ],
     "title": "October 1964 (estimated) Dickey",
     "description": "",
@@ -2202,7 +2378,8 @@
       "People|Buster Bell",
       "People|Dickey Bell",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "April–May 1965 (estimated) - Buster, Spooky, and Dickey",
     "description": "",
@@ -2224,7 +2401,8 @@
       "Dickey Bell",
       "People|Alma Bell",
       "People|Buster Bell",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Website"
     ],
     "title": "April–May 1965 (estimated) — Buster, Alma, and Dickey Bell.",
     "description": "",
@@ -2241,7 +2419,8 @@
     "tags": [
       "Dickey Bell",
       "Document",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Website"
     ],
     "title": "",
     "description": "Dickey Perfect Attendance 3rd Grade",
@@ -2290,7 +2469,8 @@
     ],
     "tags": [
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Spooky estimated Summer 1966",
     "description": "",
@@ -2310,7 +2490,8 @@
       "People|Dickey Bell",
       "Places|South Carolina",
       "Places|South Carolina|Lancaster",
-      "South Carolina"
+      "South Carolina",
+      "Website"
     ],
     "title": "Estimated Fall 1966 - Dickey",
     "description": "",
@@ -2372,7 +2553,8 @@
       "Dickey Bell",
       "Florida",
       "People|Dickey Bell",
-      "Places|Florida"
+      "Places|Florida",
+      "Website"
     ],
     "title": "",
     "description": "Dickey caught the shark and later put it in the hotel pool.",
@@ -2389,7 +2571,8 @@
     "tags": [
       "Newspaper",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "",
     "description": "Spooky makes Honor Role",
@@ -2406,7 +2589,8 @@
     "tags": [
       "Dickey Bell",
       "Document",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Website"
     ],
     "title": "Essay Contest 2nd Place",
     "description": "Lancaster Soil & Water Conservation District",
@@ -2423,7 +2607,8 @@
     "tags": [
       "Document",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "",
     "description": "Spooky 9th Grade Honor Roll",
@@ -2440,10 +2625,11 @@
     "tags": [
       "Dickey Bell",
       "Document",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Website"
     ],
     "title": "Essay Contest Honorable Mention State",
-    "description": "Lancaster Soil & Water Conservation District\n",
+    "description": "Dickey Bell — Lancaster Soil & Water Conservation District essay contest award. A $5.00 check from The Bank of Lancaster records “Essay Contest — One of Fifteen Honorable Mention — Statewide.” Signed by James M. Kirk, Treasurer.",
     "gps": null
   },
   {
@@ -2461,7 +2647,8 @@
       "Places|South Carolina",
       "Places|South Carolina|Lancaster",
       "South Carolina",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "",
     "description": "Spooky Perfect Attendance",
@@ -2481,10 +2668,857 @@
       "People|Dickey Bell",
       "Places|South Carolina",
       "Places|South Carolina|Lancaster",
-      "South Carolina"
+      "South Carolina",
+      "Website"
     ],
     "title": "Circa Fall 1969 Dickey",
     "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1970s/1112_0015.jpg",
+    "file": "1112_0015.jpg",
+    "folder": "1970s",
+    "date": "1970-01-01",
+    "people": [
+      "Spooky Bell"
+    ],
+    "tags": [
+      "People|Spooky Bell",
+      "Spooky Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1970s/1112_0015_a.jpg",
+    "file": "1112_0015_a.jpg",
+    "folder": "1970s",
+    "date": "1970-01-01",
+    "people": [
+      "Spooky Bell"
+    ],
+    "tags": [
+      "People|Spooky Bell",
+      "Spooky Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1970s/1112_0023.jpg",
+    "file": "1112_0023.jpg",
+    "folder": "1970s",
+    "date": "1970-01-01",
+    "people": [
+      "Spooky Bell"
+    ],
+    "tags": [
+      "Lancaster",
+      "People|Spooky Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Spooky Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1970s/1112_0023_a.jpg",
+    "file": "1112_0023_a.jpg",
+    "folder": "1970s",
+    "date": "1970-01-01",
+    "people": [
+      "Spooky Bell"
+    ],
+    "tags": [
+      "Lancaster",
+      "People|Spooky Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Spooky Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1970s/1960s_0017_a.jpg",
+    "file": "1960s_0017_a.jpg",
+    "folder": "1970s",
+    "date": "1970-01-01",
+    "people": [
+      "Spooky Bell"
+    ],
+    "tags": [
+      "Lancaster",
+      "People|Spooky Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Spooky Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1970s/1960s_0024_a.jpg",
+    "file": "1960s_0024_a.jpg",
+    "folder": "1970s",
+    "date": "1970-01-01",
+    "people": [
+      "Spooky Bell"
+    ],
+    "tags": [
+      "Lancaster",
+      "People|Spooky Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Spooky Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1970s/1960s_0028.jpg",
+    "file": "1960s_0028.jpg",
+    "folder": "1970s",
+    "date": "1970-01-01",
+    "people": [],
+    "tags": [
+      "Lancaster",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1971/1960s_0023_a.jpg",
+    "file": "1960s_0023_a.jpg",
+    "folder": "1971",
+    "date": "1971-01-01",
+    "people": [
+      "Spooky Bell"
+    ],
+    "tags": [
+      "Lancaster",
+      "People|Spooky Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Spooky Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1971/1960s_0029.jpg",
+    "file": "1960s_0029.jpg",
+    "folder": "1971",
+    "date": "1971-05-01",
+    "people": [
+      "Spooky Bell"
+    ],
+    "tags": [
+      "Lancaster",
+      "People|Spooky Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Spooky Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1971/1970_0001_a.jpg",
+    "file": "1970_0001_a.jpg",
+    "folder": "1971",
+    "date": "1971-05-01",
+    "people": [
+      "Spooky Bell"
+    ],
+    "tags": [
+      "Newspaper",
+      "People|Spooky Bell",
+      "Spooky Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1971/1971 Drill Team.jpg",
+    "file": "1971 Drill Team.jpg",
+    "folder": "1971",
+    "date": "1971-05-27",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Document",
+      "Lancaster",
+      "People|Dickey Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "Cadet Staff Sergeant Dickey Bell ROTC Drill Team.",
+    "gps": null
+  },
+  {
+    "path": "images/1971/1971 Perfect Attendance.jpg",
+    "file": "1971 Perfect Attendance.jpg",
+    "folder": "1971",
+    "date": "1971-05-27",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Document",
+      "Lancaster",
+      "People|Dickey Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "Dickey Perfect Attendance",
+    "gps": null
+  },
+  {
+    "path": "images/1972/1972_Dickey_Bell_0002_b.jpg",
+    "file": "1972_Dickey_Bell_0002_b.jpg",
+    "folder": "1972",
+    "date": "1972-01-01",
+    "people": [],
+    "tags": [
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1972/1972_Dickey_Bell_0003_a.jpg",
+    "file": "1972_Dickey_Bell_0003_a.jpg",
+    "folder": "1972",
+    "date": "1972-01-01",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Lancaster",
+      "People|Dickey Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "Dickey is front and center.",
+    "gps": null
+  },
+  {
+    "path": "images/1972/1972 Perfect Attendance.jpg",
+    "file": "1972 Perfect Attendance.jpg",
+    "folder": "1972",
+    "date": "1972-05-26",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Document",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "Dickey Perfect Attendance 72.",
+    "gps": null
+  },
+  {
+    "path": "images/1972/1972 Scholastic Achievement.jpg",
+    "file": "1972 Scholastic Achievement.jpg",
+    "folder": "1972",
+    "date": "1972-05-26",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Document",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "Dickey Scholastic Achievement 72",
+    "gps": null
+  },
+  {
+    "path": "images/1973/1972_Dickey_Bell_0002_a.jpg",
+    "file": "1972_Dickey_Bell_0002_a.jpg",
+    "folder": "1973",
+    "date": "1973-01-01",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Lancaster",
+      "People|Dickey Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "Dickey was on the back row on the right.",
+    "gps": null
+  },
+  {
+    "path": "images/1973/1973_0001.jpg",
+    "file": "1973_0001.jpg",
+    "folder": "1973",
+    "date": "1973-01-01",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Document",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "June 22, 1973 — Dickey received a Lancaster, South Carolina summons for excessive noise while driving his 1970 Chevrolet. The case was scheduled for July 3, 1973.",
+    "gps": null
+  },
+  {
+    "path": "images/1973/1973_0002.jpg",
+    "file": "1973_0002.jpg",
+    "folder": "1973",
+    "date": "1973-01-01",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Lancaster",
+      "People|Dickey Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1973/1973_0004_a.jpg",
+    "file": "1973_0004_a.jpg",
+    "folder": "1973",
+    "date": "1973-01-01",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Lancaster",
+      "People|Dickey Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "Dickey awarded his first Superior Cadet Award",
+    "gps": null
+  },
+  {
+    "path": "images/1973/1973_0005_a.jpg",
+    "file": "1973_0005_a.jpg",
+    "folder": "1973",
+    "date": "1973-01-01",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Lancaster",
+      "People|Dickey Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "Dickey awarded his first Superior Cadet Award",
+    "gps": null
+  },
+  {
+    "path": "images/1973/1973_0006.jpg",
+    "file": "1973_0006.jpg",
+    "folder": "1973",
+    "date": "1973-01-01",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Document",
+      "Lancaster",
+      "People|Dickey Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "His first Superior Cadet Award",
+    "gps": null
+  },
+  {
+    "path": "images/1973/1973_0007_a.jpg",
+    "file": "1973_0007_a.jpg",
+    "folder": "1973",
+    "date": "1973-01-01",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Lancaster",
+      "People|Dickey Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "Dickey was on the back row on the right.",
+    "gps": null
+  },
+  {
+    "path": "images/1973/1973_0008_a.jpg",
+    "file": "1973_0008_a.jpg",
+    "folder": "1973",
+    "date": "1973-01-01",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Lancaster",
+      "People|Dickey Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "Dickey was on the back row on the right.",
+    "gps": null
+  },
+  {
+    "path": "images/1973/1973_January_0001_a.jpg",
+    "file": "1973_January_0001_a.jpg",
+    "folder": "1973",
+    "date": "1973-01-01",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Lancaster",
+      "People|Dickey Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "Dickey Drill Team",
+    "gps": null
+  },
+  {
+    "path": "images/1973/1973_0003_a.jpg",
+    "file": "1973_0003_a.jpg",
+    "folder": "1973",
+    "date": "1973-01-24",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Lancaster",
+      "People|Dickey Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "Dickey Drill Team",
+    "gps": null
+  },
+  {
+    "path": "images/1973/Document_20260717_0001.jpg",
+    "file": "Document_20260717_0001.jpg",
+    "folder": "1973",
+    "date": "1973-02-17",
+    "people": [],
+    "tags": [
+      "Document",
+      "Website"
+    ],
+    "title": "",
+    "description": "Yes another ticket",
+    "gps": null
+  },
+  {
+    "path": "images/1973/Dickey Second Place.png",
+    "file": "Dickey Second Place.png",
+    "folder": "1973",
+    "date": "1973-03-28",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Newspaper",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "image.png",
+    "description": "Dickey takes 6th place in the individual drill. The team took second place in the state.",
+    "gps": null
+  },
+  {
+    "path": "images/1973/Document_20260719_0002.jpg",
+    "file": "Document_20260719_0002.jpg",
+    "folder": "1973",
+    "date": "1973-05-09",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Newspaper",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1974/1964_0003_a.jpg",
+    "file": "1964_0003_a.jpg",
+    "folder": "1974",
+    "date": "1974-01-01",
+    "people": [],
+    "tags": [
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1974/1974 Cadet LTC.jpg",
+    "file": "1974 Cadet LTC.jpg",
+    "folder": "1974",
+    "date": "1974-01-01",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Lancaster",
+      "People|Dickey Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1974/1974_0006.jpg",
+    "file": "1974_0006.jpg",
+    "folder": "1974",
+    "date": "1974-01-01",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1974/1974_0007.jpg",
+    "file": "1974_0007.jpg",
+    "folder": "1974",
+    "date": "1974-01-01",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Document",
+      "Lancaster",
+      "People|Dickey Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "Dickey's second Superior Cadet Award.",
+    "gps": null
+  },
+  {
+    "path": "images/1974/1974_0005_a.jpg",
+    "file": "1974_0005_a.jpg",
+    "folder": "1974",
+    "date": "1974-03-09",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1974/1974_0008_a.jpg",
+    "file": "1974_0008_a.jpg",
+    "folder": "1974",
+    "date": "1974-03-09",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1974/1974_0009.jpg",
+    "file": "1974_0009.jpg",
+    "folder": "1974",
+    "date": "1974-03-09",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Document",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "JROTC Drill Meet",
+    "gps": null
+  },
+  {
+    "path": "images/1974/Document_20260731_0001.jpg",
+    "file": "Document_20260731_0001.jpg",
+    "folder": "1974",
+    "date": "1974-03-09",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Document",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "Caption from the Tenth Annual Southeastern Drill Meet held March 23, 1974 at Grady Stadium in Atlanta, Georgia. Thirty teams from the Southeast competed. Dickey is identified as “Cadet LTC Dickey Bell, Lancaster HS, Lancaster, SC” and as the 4th-place winner. Photo credited to Frank Stokan, DAC Photo Branch, Ft. McPherson, Georgia.",
+    "gps": null
+  },
+  {
+    "path": "images/1974/1974_0003.jpg",
+    "file": "1974_0003.jpg",
+    "folder": "1974",
+    "date": "1974-04-22",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Newspaper",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1974/Dickey Bell, The LA News 4-22-74.png",
+    "file": "Dickey Bell, The LA News 4-22-74.png",
+    "folder": "1974",
+    "date": "1974-04-22",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "image.png",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1974/12 years of perfect attendance.jpg",
+    "file": "12 years of perfect attendance.jpg",
+    "folder": "1974",
+    "date": "1974-05-31",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Document",
+      "Lancaster",
+      "People|Dickey Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "Dickey received a Lancaster High School Certificate of Award recognizing 12 years of perfect attendance.",
+    "gps": null
+  },
+  {
+    "path": "images/1974/1974 Drill Team.jpg",
+    "file": "1974 Drill Team.jpg",
+    "folder": "1974",
+    "date": "1974-05-31",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Document",
+      "Lancaster",
+      "People|Dickey Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "1974 — Drill Team certificate/record from Dickey’s JROTC school years.",
+    "gps": null
+  },
+  {
+    "path": "images/1974/Dickey Graduation 1974.png",
+    "file": "Dickey Graduation 1974.png",
+    "folder": "1974",
+    "date": "1974-06-01",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Lancaster",
+      "People|Dickey Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "image.png",
+    "description": "HS Graduation",
+    "gps": null
+  },
+  {
+    "path": "images/1974/Dickey Bell, The Lancaster News.png",
+    "file": "Dickey Bell, The Lancaster News.png",
+    "folder": "1974",
+    "date": "1974-06-25",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Newspaper",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "image.png",
+    "description": "Bell was nominated for three service academies. West Point, the Naval Academy, and the Air Force Academy.",
+    "gps": null
+  },
+  {
+    "path": "images/1974/The Citadel Admission.jpg",
+    "file": "The Citadel Admission.jpg",
+    "folder": "1974",
+    "date": "1974-07-01",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Document",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "1974 — The Citadel admission record for Dickey, Class of 1978. Dickey was admitted but did not attend.",
     "gps": null
   },
   {
@@ -2505,6 +3539,27 @@
     "gps": null
   },
   {
+    "path": "images/1974/Bell.Faulkenberry Marriage Certificate.png",
+    "file": "Bell.Faulkenberry Marriage Certificate.png",
+    "folder": "1974",
+    "date": "1974-08-15",
+    "people": [
+      "Debbie Phillips",
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Debbie Phillips",
+      "Dickey Bell",
+      "Document",
+      "People|Debbie Phillips",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "Dickey and Deborah Lynne Faulkenberry — marriage certificate, Lancaster County, South Carolina.",
+    "gps": null
+  },
+  {
     "path": "images/Bell.Faulkenberry Marriage Certificate.png",
     "file": "Bell.Faulkenberry Marriage Certificate.png",
     "folder": "",
@@ -2522,6 +3577,380 @@
     ],
     "title": "",
     "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1974/1974_0004_a.jpg",
+    "file": "1974_0004_a.jpg",
+    "folder": "1974",
+    "date": "1974-12-02",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Newspaper",
+      "People|Alma Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1976/Heather 5days.jpg",
+    "file": "Heather 5days.jpg",
+    "folder": "1976",
+    "date": "1976-09-25",
+    "people": [
+      "Heather Bell"
+    ],
+    "tags": [
+      "Heather Bell",
+      "People|Heather Bell",
+      "Website"
+    ],
+    "title": "Heather 5 days old.",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1976/76 H Baby Christmas.jpg",
+    "file": "76 H Baby Christmas.jpg",
+    "folder": "1976",
+    "date": "1976-12-25",
+    "people": [
+      "Heather Bell"
+    ],
+    "tags": [
+      "Heather Bell",
+      "Kaywood Dr",
+      "Lancaster",
+      "People|Heather Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Kaywood Dr",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1977/77 H & Rick in Wagon.jpg",
+    "file": "77 H & Rick in Wagon.jpg",
+    "folder": "1977",
+    "date": "1977-01-01",
+    "people": [
+      "Heather Bell",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Fairview Dr",
+      "Heather Bell",
+      "Lancaster",
+      "People|Heather Bell",
+      "People|Rickey Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Fairview Dr",
+      "Rickey Bell",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "Rickey and Heather.",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1977/77 H & Rick.jpg",
+    "file": "77 H & Rick.jpg",
+    "folder": "1977",
+    "date": "1977-01-01",
+    "people": [
+      "Heather Bell",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Fairview Dr",
+      "Heather Bell",
+      "Lancaster",
+      "People|Heather Bell",
+      "People|Rickey Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Fairview Dr",
+      "Rickey Bell",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "Rickey and Heather.",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1977/77 H_Dickey.jpg",
+    "file": "77 H_Dickey.jpg",
+    "folder": "1977",
+    "date": "1977-01-01",
+    "people": [
+      "Heather Bell"
+    ],
+    "tags": [
+      "Fairview Dr",
+      "Heather Bell",
+      "Lancaster",
+      "People|Heather Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Fairview Dr",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "Dickey and Heather.",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1977/77 Heather_Dickey_Rickey.jpg",
+    "file": "77 Heather_Dickey_Rickey.jpg",
+    "folder": "1977",
+    "date": "1977-01-01",
+    "people": [
+      "Dickey Bell",
+      "Heather Bell",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Fairview Dr",
+      "Heather Bell",
+      "Lancaster",
+      "People|Dickey Bell",
+      "People|Heather Bell",
+      "People|Rickey Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Fairview Dr",
+      "Rickey Bell",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "Dickey in the back, Rickey in the middle, and Dickey’s niece Heather Nicole Bell in front.",
+    "gps": null
+  },
+  {
+    "path": "images/1977/77 H & Buster (5 months).jpg",
+    "file": "77 H & Buster (5 months).jpg",
+    "folder": "1977",
+    "date": "1977-03-01",
+    "people": [
+      "Buster Bell",
+      "Heather Bell",
+      "Helen Bell"
+    ],
+    "tags": [
+      "Buster Bell",
+      "Heather Bell",
+      "Helen Bell",
+      "People|Buster Bell",
+      "People|Heather Bell",
+      "People|Helen Bell",
+      "Website"
+    ],
+    "title": "Heather 5 Months",
+    "description": "Buster on the left, Heather in the Middle, and Helen on the Right.",
+    "gps": null
+  },
+  {
+    "path": "images/1977/77 H Wallet (6 months).jpg",
+    "file": "77 H Wallet (6 months).jpg",
+    "folder": "1977",
+    "date": "1977-03-01",
+    "people": [
+      "Heather Bell"
+    ],
+    "tags": [
+      "Heather Bell",
+      "People|Heather Bell",
+      "Website"
+    ],
+    "title": "Heather 6 Months",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1977/77_April Heather 7 months 2.jpg",
+    "file": "77_April Heather 7 months 2.jpg",
+    "folder": "1977",
+    "date": "1977-04-01",
+    "people": [
+      "Heather Bell"
+    ],
+    "tags": [
+      "Heather Bell",
+      "People|Heather Bell",
+      "Website"
+    ],
+    "title": "Heather 7 Months",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1977/77_April Heather 7 months.jpg",
+    "file": "77_April Heather 7 months.jpg",
+    "folder": "1977",
+    "date": "1977-04-01",
+    "people": [
+      "Heather Bell"
+    ],
+    "tags": [
+      "Heather Bell",
+      "People|Heather Bell",
+      "Website"
+    ],
+    "title": "Heather 7 Months",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1977/77 H & Helen Christmas.jpg",
+    "file": "77 H & Helen Christmas.jpg",
+    "folder": "1977",
+    "date": "1977-12-25",
+    "people": [
+      "Heather Bell",
+      "Helen Bell"
+    ],
+    "tags": [
+      "Heather Bell",
+      "Helen Bell",
+      "Kaywood Dr",
+      "Lancaster",
+      "People|Heather Bell",
+      "People|Helen Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Kaywood Dr",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1977/77 H & Spooky Christmas.jpg",
+    "file": "77 H & Spooky Christmas.jpg",
+    "folder": "1977",
+    "date": "1977-12-25",
+    "people": [
+      "Heather Bell",
+      "Spooky Bell"
+    ],
+    "tags": [
+      "Fairview Dr",
+      "Heather Bell",
+      "Lancaster",
+      "People|Heather Bell",
+      "People|Spooky Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Fairview Dr",
+      "South Carolina",
+      "Spooky Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1977/77 H on Bike Christmas.jpg",
+    "file": "77 H on Bike Christmas.jpg",
+    "folder": "1977",
+    "date": "1977-12-25",
+    "people": [
+      "Heather Bell"
+    ],
+    "tags": [
+      "Fairview Dr",
+      "Heather Bell",
+      "Lancaster",
+      "People|Heather Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Fairview Dr",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1978/Dickey Seperation_Page1.jpg",
+    "file": "Dickey Seperation_Page1.jpg",
+    "folder": "1978",
+    "date": "1978-07-26",
+    "people": [
+      "Debbie Phillips",
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Debbie Phillips",
+      "Dickey Bell",
+      "Document",
+      "People|Debbie Phillips",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "Dickey Seperation from Debbie.",
+    "description": "The county messed up the scanns and it is not recoverable.",
+    "gps": null
+  },
+  {
+    "path": "images/1978/Dickey Seperation_Page2.jpg",
+    "file": "Dickey Seperation_Page2.jpg",
+    "folder": "1978",
+    "date": "1978-07-26",
+    "people": [
+      "Debbie Phillips",
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Debbie Phillips",
+      "Dickey Bell",
+      "Document",
+      "People|Debbie Phillips",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "Dickey Seperation from Debbie.",
+    "description": "The county messed up the scanns and it is not recoverable.",
+    "gps": null
+  },
+  {
+    "path": "images/1978/Dickey Seperation_Page3.jpg",
+    "file": "Dickey Seperation_Page3.jpg",
+    "folder": "1978",
+    "date": "1978-07-26",
+    "people": [
+      "Debbie Phillips",
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Debbie Phillips",
+      "Dickey Bell",
+      "Document",
+      "People|Debbie Phillips",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "Dickey Seperation from Debbie.",
+    "description": "The county messed up the scanns and it is not recoverable.",
     "gps": null
   },
   {
@@ -2585,6 +4014,112 @@
     "gps": null
   },
   {
+    "path": "images/1979/1979 Rickey and Dickey.png",
+    "file": "1979 Rickey and Dickey.png",
+    "folder": "1979",
+    "date": "1979-01-01",
+    "people": [
+      "Dickey Bell",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "People|Dickey Bell",
+      "People|Rickey Bell",
+      "Rickey Bell",
+      "Website"
+    ],
+    "title": "image.png",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1979/1979_0001_a.jpg",
+    "file": "1979_0001_a.jpg",
+    "folder": "1979",
+    "date": "1979-01-01",
+    "people": [
+      "Buster Bell"
+    ],
+    "tags": [
+      "Buster Bell",
+      "Fairview Dr",
+      "Lancaster",
+      "People|Buster Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Fairview Dr",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1979/Divorce Summons_Page1.jpg",
+    "file": "Divorce Summons_Page1.jpg",
+    "folder": "1979",
+    "date": "1979-08-17",
+    "people": [
+      "Debbie Phillips",
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Debbie Phillips",
+      "Dickey Bell",
+      "Document",
+      "People|Debbie Phillips",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1979/Divorce Summons_Page2.jpg",
+    "file": "Divorce Summons_Page2.jpg",
+    "folder": "1979",
+    "date": "1979-08-17",
+    "people": [
+      "Debbie Phillips",
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Debbie Phillips",
+      "Dickey Bell",
+      "Document",
+      "People|Debbie Phillips",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1979/Divorce Summons_Page3.jpg",
+    "file": "Divorce Summons_Page3.jpg",
+    "folder": "1979",
+    "date": "1979-08-17",
+    "people": [
+      "Debbie Phillips",
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Debbie Phillips",
+      "Dickey Bell",
+      "Document",
+      "People|Debbie Phillips",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
     "path": "images/Divorce Summons_Page1.jpg",
     "file": "Divorce Summons_Page1.jpg",
     "folder": "",
@@ -2639,6 +4174,48 @@
       "Document",
       "People|Debbie Phillips",
       "People|Dickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1979/Dickey Divorce_Page1.jpg",
+    "file": "Dickey Divorce_Page1.jpg",
+    "folder": "1979",
+    "date": "1979-09-24",
+    "people": [
+      "Debbie Phillips",
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Debbie Phillips",
+      "Dickey Bell",
+      "Document",
+      "People|Debbie Phillips",
+      "People|Dickey Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1979/Dickey Divorce_Page2.jpg",
+    "file": "Dickey Divorce_Page2.jpg",
+    "folder": "1979",
+    "date": "1979-09-24",
+    "people": [
+      "Debbie Phillips",
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Debbie Phillips",
+      "Dickey Bell",
+      "Document",
+      "People|Debbie Phillips",
+      "People|Dickey Bell",
+      "Website"
     ],
     "title": "",
     "description": "",
@@ -2848,6 +4425,19 @@
       "People|Dickey Bell"
     ],
     "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1963/Bell Baseball Newspaper.png",
+    "file": "Bell Baseball Newspaper.png",
+    "folder": "1963",
+    "date": "2026-08-02",
+    "people": [],
+    "tags": [
+      "Website"
+    ],
+    "title": "image.png",
     "description": "",
     "gps": null
   },
