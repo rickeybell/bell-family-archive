@@ -9,7 +9,11 @@ def nice_date(v):
     if re.fullmatch(r'\d{4}',v): return v
     try:
         from datetime import datetime
-        return datetime.strptime(v,'%Y-%m-%d').strftime('%B %d, %Y').replace(' 0',' ')
+        dt=datetime.strptime(v,'%Y-%m-%d')
+        # In this archive, day 01 is often a placeholder for a known month/year.
+        if dt.day == 1:
+            return dt.strftime('%B %Y')
+        return dt.strftime('%B %d, %Y').replace(' 0',' ')
     except Exception: return v
 
 def cards(items):
