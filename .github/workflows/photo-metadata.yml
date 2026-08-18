@@ -6,6 +6,7 @@ on:
       - 'images/**'
       - 'tools/build_photo_metadata.py'
       - 'tools/build_dynamic_gallery.py'
+      - '.github/workflows/photo-metadata.yml'
   workflow_dispatch:
 permissions:
   contents: write
@@ -18,12 +19,12 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y libimage-exiftool-perl
       - name: Build metadata catalog
         run: python3 tools/build_photo_metadata.py
-      - name: Build galleries and person pages
+      - name: Build galleries and person photo pages
         run: python3 tools/build_dynamic_gallery.py
       - name: Commit refreshed site
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add photo_metadata.json gallery.html dickey.html spooky.html buster.html alma.html rickey.html sonja.html heather.html stephanie.html jarred.html
+          git add photo_metadata.json gallery.html *-photos.html
           git diff --cached --quiet || git commit -m "Refresh photo metadata and galleries"
           git push
