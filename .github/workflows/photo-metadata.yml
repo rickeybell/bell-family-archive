@@ -21,12 +21,27 @@ permissions:
 jobs:
   catalog:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Install ExifTool
-        run: sudo apt-get update && sudo apt-get install -y libimage-exiftool-perl
+        timeout-minutes: 3
+        shell: bash
+        run: |
+          set -e
+          if command -v exiftool >/dev/null 2>&1; then
+            exiftool -ver
+            exit 0
+          fi
+          export DEBIAN_FRONTEND=noninteractive
+          APT_OPTS='-o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20 -o Acquire::Retries=2'
+          if ! timeout 120s sudo apt-get $APT_OPTS install -y libimage-exiftool-perl; then
+            timeout 60s sudo apt-get $APT_OPTS update
+            timeout 120s sudo apt-get $APT_OPTS install -y libimage-exiftool-perl
+          fi
+          exiftool -ver
       - name: Build metadata catalog
         run: python3 tools/build_photo_metadata.py
       - name: Build galleries and person photo pages
