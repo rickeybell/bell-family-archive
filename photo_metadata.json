@@ -10816,6 +10816,432 @@
     "gps": null
   },
   {
+    "path": "images/1995/1995_0001_a.jpg",
+    "file": "1995_0001_a.jpg",
+    "folder": "1995",
+    "date": "1995-01-01",
+    "people": [],
+    "tags": [
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_0002_a.jpg",
+    "file": "1995_0002_a.jpg",
+    "folder": "1995",
+    "date": "1995-01-01",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People|Samatha Bell",
+      "Samatha Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_0003_a.jpg",
+    "file": "1995_0003_a.jpg",
+    "folder": "1995",
+    "date": "1995-01-01",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People|Samatha Bell",
+      "Samatha Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1996_0004_a.jpg",
+    "file": "1996_0004_a.jpg",
+    "folder": "1995",
+    "date": "1995-01-01",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People|Samatha Bell",
+      "Samatha Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_October_0001_a.jpg",
+    "file": "1995_October_0001_a.jpg",
+    "folder": "1995",
+    "date": "1995-10-01",
+    "people": [],
+    "tags": [
+      "Confederate Ave",
+      "Lancaster",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Confederate Ave",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_October_0002_a.jpg",
+    "file": "1995_October_0002_a.jpg",
+    "folder": "1995",
+    "date": "1995-10-01",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Confederate Ave",
+      "Lancaster",
+      "People|Samatha Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Confederate Ave",
+      "Samatha Bell",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_October_0003_a.jpg",
+    "file": "1995_October_0003_a.jpg",
+    "folder": "1995",
+    "date": "1995-10-01",
+    "people": [],
+    "tags": [
+      "Confederate Ave",
+      "Lancaster",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Confederate Ave",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_October_0004_a.jpg",
+    "file": "1995_October_0004_a.jpg",
+    "folder": "1995",
+    "date": "1995-10-01",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Confederate Ave",
+      "Lancaster",
+      "People|Samatha Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Confederate Ave",
+      "Samatha Bell",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_October_0005_a.jpg",
+    "file": "1995_October_0005_a.jpg",
+    "folder": "1995",
+    "date": "1995-10-01",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People|Samatha Bell",
+      "Samatha Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_December_0001_a.jpg",
+    "file": "1995_December_0001_a.jpg",
+    "folder": "1995",
+    "date": "1995-12-01",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People|Samatha Bell",
+      "Samatha Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_December_0002_a.jpg",
+    "file": "1995_December_0002_a.jpg",
+    "folder": "1995",
+    "date": "1995-12-01",
+    "people": [
+      "Samatha Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Confederate Ave",
+      "Lancaster",
+      "People|Samatha Bell",
+      "People|Stephanie Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Confederate Ave",
+      "Samatha Bell",
+      "South Carolina",
+      "Stephanie Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_December_0003_a.jpg",
+    "file": "1995_December_0003_a.jpg",
+    "folder": "1995",
+    "date": "1995-12-01",
+    "people": [
+      "Charlie Brown",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Charlie Brown",
+      "Confederate Ave",
+      "Lancaster",
+      "People|Charlie Brown",
+      "People|Samatha Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Confederate Ave",
+      "Samatha Bell",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_December_0004_a.jpg",
+    "file": "1995_December_0004_a.jpg",
+    "folder": "1995",
+    "date": "1995-12-01",
+    "people": [
+      "Donna Brown",
+      "Samatha Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Confederate Ave",
+      "Donna Brown",
+      "Lancaster",
+      "People|Donna Brown",
+      "People|Samatha Bell",
+      "People|Stephanie Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Confederate Ave",
+      "Samatha Bell",
+      "South Carolina",
+      "Stephanie Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_December_0005_a.jpg",
+    "file": "1995_December_0005_a.jpg",
+    "folder": "1995",
+    "date": "1995-12-01",
+    "people": [
+      "Samatha Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Confederate Ave",
+      "Lancaster",
+      "People|Samatha Bell",
+      "People|Stephanie Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Confederate Ave",
+      "Samatha Bell",
+      "South Carolina",
+      "Stephanie Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_December_0006_a.jpg",
+    "file": "1995_December_0006_a.jpg",
+    "folder": "1995",
+    "date": "1995-12-01",
+    "people": [
+      "Samatha Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Confederate Ave",
+      "Lancaster",
+      "People|Samatha Bell",
+      "People|Stephanie Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Confederate Ave",
+      "Samatha Bell",
+      "South Carolina",
+      "Stephanie Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_December_0007_a.jpg",
+    "file": "1995_December_0007_a.jpg",
+    "folder": "1995",
+    "date": "1995-12-01",
+    "people": [
+      "Samatha Bell",
+      "Tony Neely"
+    ],
+    "tags": [
+      "Douglas Heights",
+      "Lancaster",
+      "People|Samatha Bell",
+      "People|Tony Neely",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Douglas Heights",
+      "Samatha Bell",
+      "South Carolina",
+      "Tony Neely",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_December_0008_a.jpg",
+    "file": "1995_December_0008_a.jpg",
+    "folder": "1995",
+    "date": "1995-12-01",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People|Samatha Bell",
+      "Samatha Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_December_0010_a.jpg",
+    "file": "1995_December_0010_a.jpg",
+    "folder": "1995",
+    "date": "1995-12-01",
+    "people": [
+      "Tim Neely"
+    ],
+    "tags": [
+      "Douglas Heights",
+      "Lancaster",
+      "People|Tim Neely",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Douglas Heights",
+      "South Carolina",
+      "Tim Neely",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_December_0011_a.jpg",
+    "file": "1995_December_0011_a.jpg",
+    "folder": "1995",
+    "date": "1995-12-01",
+    "people": [],
+    "tags": [
+      "Douglas Heights",
+      "Lancaster",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Douglas Heights",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_December_0012_a.jpg",
+    "file": "1995_December_0012_a.jpg",
+    "folder": "1995",
+    "date": "1995-12-01",
+    "people": [
+      "Charlie Brown",
+      "Donna Brown"
+    ],
+    "tags": [
+      "Charlie Brown",
+      "Confederate Ave",
+      "Donna Brown",
+      "Lancaster",
+      "People|Charlie Brown",
+      "People|Donna Brown",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Confederate Ave",
+      "South Carolina",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
     "path": "images/TSI.jpg",
     "file": "TSI.jpg",
     "folder": "",
