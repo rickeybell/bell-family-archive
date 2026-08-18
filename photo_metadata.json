@@ -1,5 +1,64 @@
 [
   {
+    "path": "images/1951/1951_0001.jpg",
+    "file": "1951_0001.jpg",
+    "folder": "1951",
+    "date": "1951-04-22",
+    "people": [
+      "Alma Bell",
+      "Buster Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Buster Bell",
+      "Document",
+      "People|Alma Bell",
+      "People|Buster Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1951/1951_0001_b.jpg",
+    "file": "1951_0001_b.jpg",
+    "folder": "1951",
+    "date": "1951-04-22",
+    "people": [
+      "Alma Bell",
+      "Buster Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Buster Bell",
+      "Document",
+      "People|Alma Bell",
+      "People|Buster Bell",
+      "Website"
+    ],
+    "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1953/1953_0001_a.jpg",
+    "file": "1953_0001_a.jpg",
+    "folder": "1953",
+    "date": "1953-12-01",
+    "people": [
+      "Spooky Bell"
+    ],
+    "tags": [
+      "People|Spooky Bell",
+      "Spooky Bell",
+      "Website"
+    ],
+    "title": "Christmas Card",
+    "description": "asd",
+    "gps": null
+  },
+  {
     "path": "images/1954/1954_0002_a.jpg",
     "file": "1954_0002_a.jpg",
     "folder": "1954",
@@ -10,9 +69,33 @@
     "tags": [
       "Buster Bell",
       "Document",
-      "People|Buster Bell"
+      "People|Buster Bell",
+      "Website"
     ],
     "title": "Buster's Pilot License",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1954/1950s_0006.jpg",
+    "file": "1950s_0006.jpg",
+    "folder": "1954",
+    "date": "1954-12-01",
+    "people": [
+      "Spooky Bell"
+    ],
+    "tags": [
+      "Lancaster",
+      "Mason St",
+      "People|Spooky Bell",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster",
+      "Places|South Carolina|Lancaster|Mason St",
+      "South Carolina",
+      "Spooky Bell",
+      "Website"
+    ],
+    "title": "",
     "description": "",
     "gps": null
   },
@@ -26,9 +109,10 @@
     ],
     "tags": [
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
-    "title": "",
+    "title": "2nd Oldest Known Picture",
     "description": "",
     "gps": null
   },
@@ -42,7 +126,8 @@
     ],
     "tags": [
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Christmas 54",
     "description": "Spooky 14 months",
@@ -58,7 +143,8 @@
     ],
     "tags": [
       "Dickey Bell",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Website"
     ],
     "title": "November 1956",
     "description": "Dickey 3 months",
@@ -74,7 +160,8 @@
     ],
     "tags": [
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Santa 1956",
     "description": "Spooky 3 years ",
@@ -90,7 +177,8 @@
     ],
     "tags": [
       "Dickey Bell",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Website"
     ],
     "title": "",
     "description": "Dickey 5.5 months",
@@ -109,9 +197,10 @@
       "Dickey Bell",
       "People|Dickey Bell",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
-    "title": "",
+    "title": "Spooky (left) with Dickey (right) as a baby.",
     "description": "Spooky 3 years 3 months\nDickey 5.5 months",
     "gps": null
   },
@@ -125,7 +214,8 @@
     ],
     "tags": [
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Church Christmas Party 57",
     "description": "Spooky 2nd from the left\nSpooky 4 years 1.5 months",
@@ -141,7 +231,8 @@
     ],
     "tags": [
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Christmas party at Church",
     "description": "Spooky 4 years 1.5 months",
@@ -157,7 +248,8 @@
     ],
     "tags": [
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Spooky's Dancing Class",
     "description": "",
@@ -179,7 +271,8 @@
       "People|Buster Bell",
       "People|Dickey Bell",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Buster, Spooky, & Dickey Late Jan 57",
     "description": "Spooky 3 years 3 months\nDickey 5.5 months",
@@ -195,7 +288,8 @@
     ],
     "tags": [
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Spooky's Dancing Class",
     "description": "",
@@ -211,7 +305,8 @@
     ],
     "tags": [
       "Dickey Bell",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Website"
     ],
     "title": "Feb 1956",
     "description": "Dickey 6 Months",
@@ -230,7 +325,8 @@
       "Dickey Bell",
       "People|Dickey Bell",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "March 1957 (Estimated)",
     "description": "",
@@ -246,7 +342,8 @@
     ],
     "tags": [
       "Dickey Bell",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Website"
     ],
     "title": "March 57",
     "description": "Dickey 7.5 months",
@@ -265,7 +362,8 @@
       "Dickey Bell",
       "People|Dickey Bell",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "April 1957",
     "description": "Spooky 3 years 5.5 months\nDickey 8 months",
@@ -281,7 +379,8 @@
     ],
     "tags": [
       "Dickey Bell",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Website"
     ],
     "title": "Naked Dickey 1957",
     "description": "Dickey 8 months",
@@ -293,7 +392,9 @@
     "folder": "1957",
     "date": "1957-05-01",
     "people": [],
-    "tags": [],
+    "tags": [
+      "Website"
+    ],
     "title": "May 57",
     "description": "Dickey 9 months",
     "gps": null
@@ -308,7 +409,8 @@
     ],
     "tags": [
       "Dickey Bell",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Website"
     ],
     "title": "April 1957",
     "description": "Dickey 8 months ",
@@ -327,7 +429,8 @@
       "Dickey Bell",
       "People|Dickey Bell",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "May 1957",
     "description": "Spooky 3 years 6.5 months\nDickey 9 months",
@@ -346,7 +449,8 @@
       "Dickey Bell",
       "People|Dickey Bell",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Swim Time June 57",
     "description": "Spooky 3.5 years\nDickey 10 months",
@@ -366,7 +470,8 @@
       "Places|South Carolina",
       "Places|South Carolina|Myrtle Beach",
       "South Carolina",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Myrtle Beach SC July 57",
     "description": "Spooky 3 years 9 months",
@@ -385,7 +490,8 @@
       "Dickey Bell",
       "People|Dickey Bell",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Late July 57",
     "description": "Spooky 3 years 9 months\nDickey 11.5 months",
@@ -397,7 +503,9 @@
     "folder": "1957",
     "date": "1957-07-31",
     "people": [],
-    "tags": [],
+    "tags": [
+      "Website"
+    ],
     "title": "Late July 57",
     "description": "Spooky 3 years 9 months\nDickey 11.5 months",
     "gps": null
@@ -412,10 +520,11 @@
     ],
     "tags": [
       "Dickey Bell",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Website"
     ],
     "title": "August 1957",
-    "description": "Dickey 1 year old",
+    "description": "Dickey at about one year old, sitting in the bathtub. The original photographic print is dated August 1957.",
     "gps": null
   },
   {
@@ -428,7 +537,8 @@
     ],
     "tags": [
       "Dickey Bell",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Website"
     ],
     "title": "Aug 57",
     "description": "Dickey 1 year",
@@ -444,7 +554,8 @@
     ],
     "tags": [
       "Dickey Bell",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Website"
     ],
     "title": "Early Sep 57",
     "description": "Dickey 12.5 months",
@@ -463,7 +574,8 @@
       "Dickey Bell",
       "People|Dickey Bell",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Late September 1957",
     "description": "Spooky 3 years 11 months\nDickey 13.5 months",
@@ -479,7 +591,8 @@
     ],
     "tags": [
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Halloween Party",
     "description": "Spooky 4 years old",
@@ -498,7 +611,8 @@
       "Dickey Bell",
       "People|Dickey Bell",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Christmas Card",
     "description": "",
@@ -517,7 +631,8 @@
       "Dickey Bell",
       "People|Dickey Bell",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Christmas 57",
     "description": "Spooky 4 years 2 months\nDickey 1 year 4.5 months",
@@ -533,7 +648,8 @@
     ],
     "tags": [
       "Dickey Bell",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Website"
     ],
     "title": "",
     "description": "Dickey 1 year 4.5 months",
@@ -552,7 +668,8 @@
       "Dickey Bell",
       "People|Dickey Bell",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Haircut? Dec 57",
     "description": "Spooky 4 years 1.5 months\nDickey 1 year 4 months",
@@ -564,7 +681,9 @@
     "folder": "1957",
     "date": "1957-12-25",
     "people": [],
-    "tags": [],
+    "tags": [
+      "Website"
+    ],
     "title": "Christmas 57",
     "description": "",
     "gps": null
@@ -582,7 +701,8 @@
       "Dickey Bell",
       "People|Dickey Bell",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Christmas 57",
     "description": "Spooky 4 years 1.5 months\nDickey 1 year 4 months",
@@ -601,7 +721,8 @@
       "Dickey Bell",
       "People|Dickey Bell",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "",
     "description": "",
@@ -617,7 +738,8 @@
     ],
     "tags": [
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Spooky's Sunday School",
     "description": "Spooky Back Right w/Hat - 4 years 5 months\nDickey Close Right - 1 year 7.5 months",
@@ -642,7 +764,8 @@
       "Places|South Carolina|Lancaster",
       "Places|South Carolina|Lancaster|Mason St",
       "South Carolina",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Easter Sunday 58",
     "description": "Spooky 4 years 5 months\nDickey 1 year 7.5 months",
@@ -667,7 +790,8 @@
       "Places|South Carolina|Lancaster|Springs Park",
       "South Carolina",
       "Spooky Bell",
-      "Springs Park"
+      "Springs Park",
+      "Website"
     ],
     "title": "Springs Park",
     "description": "Spooky 4 years 7.5 months\nDickey 1 year 10 months",
@@ -687,7 +811,8 @@
       "Places|South Carolina",
       "Places|South Carolina|Myrtle Beach",
       "South Carolina",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Mrytle Beach",
     "description": "Spooky 4 years 7.5 months",
@@ -709,7 +834,8 @@
       "Places|South Carolina|Lancaster",
       "Places|South Carolina|Lancaster|Springs Park",
       "South Carolina",
-      "Springs Park"
+      "Springs Park",
+      "Website"
     ],
     "title": "Springs Park",
     "description": "Dickey 1 year 10 months",
@@ -732,7 +858,8 @@
       "People|Spooky Bell",
       "Places|North Carolina",
       "Places|North Carolina|Chimney Rock",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Chimney Rock (Boone NC)",
     "description": "Spooky 4 years 8 months",
@@ -752,7 +879,8 @@
       "Places|South Carolina",
       "Places|South Carolina|Charleston",
       "South Carolina",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Charleston",
     "description": "Spooky 4 years 9 months",
@@ -772,7 +900,8 @@
       "Places|South Carolina",
       "Places|South Carolina|Charleston",
       "South Carolina",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Charleston",
     "description": "Spooky 4 years 9 months",
@@ -795,7 +924,8 @@
       "Places|South Carolina",
       "Places|South Carolina|Charleston",
       "South Carolina",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Charleston SC",
     "description": "Spooky 4 years 9 months",
@@ -814,7 +944,8 @@
       "Dickey Bell",
       "People|Dickey Bell",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Spooky & Dickey Christmas Card",
     "description": "",
@@ -836,7 +967,8 @@
       "Places|South Carolina",
       "Places|South Carolina|Lancaster",
       "Places|South Carolina|Lancaster|Mason St",
-      "South Carolina"
+      "South Carolina",
+      "Website"
     ],
     "title": "Christmas 58",
     "description": "Dickey 2 years 4.5 months",
@@ -852,7 +984,8 @@
     ],
     "tags": [
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Christmas 58",
     "description": "Spooky 5 years 2 months",
@@ -873,7 +1006,8 @@
       "Places|South Carolina",
       "Places|South Carolina|Lancaster",
       "South Carolina",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Spooky Valentine King",
     "description": "Spooky center right",
@@ -894,7 +1028,8 @@
       "Places|South Carolina",
       "Places|South Carolina|Lancaster",
       "South Carolina",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Spooky Valentine King",
     "description": "Spooky 2nd from the right\n",
@@ -920,7 +1055,8 @@
       "Places|Florida",
       "Places|Florida|Silver Springs",
       "Silver Springs",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Tommy Bartlett’s International Deer Ranch at Silver Springs, Florida",
     "description": "Buster on the left\nSpooky on the right. 5 years 8.5 months\nDickey Center, 2 years 11 months",
@@ -942,7 +1078,8 @@
       "Dickey Bell",
       "People|Dickey Bell",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Silver Springs FL",
     "description": "Ross Allen's Reptile Institute / Seminole Indian Village, Silver Springs, Marion County, Florida\nSpooky on left: 5 years 8.5 months\nDickey in front: 2 years 11 months\nUnknown boy on right",
@@ -969,7 +1106,8 @@
       "People|Dickey Bell",
       "People|Spooky Bell",
       "Places|Florida",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Silver Springs, Florida, Spring Basin",
     "description": "Buster in the back, Spooky in the middle, Dickey in the front, unknown boy on the right.\nSpooky 5 years 8.5 months\nDickey 2 years 11 months\n",
@@ -991,7 +1129,8 @@
       "Dickey Bell",
       "People|Dickey Bell",
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Dickey Birthday Party",
     "description": "Dickey is blowing out the candles. 3 years old.",
@@ -1007,7 +1146,8 @@
     ],
     "tags": [
       "Dickey Bell",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Website"
     ],
     "title": "Dickey Birthday Party",
     "description": "Dickey on Tricycle: 3 years old",
@@ -1023,7 +1163,8 @@
       "Lancaster",
       "Places|South Carolina",
       "Places|South Carolina|Lancaster",
-      "South Carolina"
+      "South Carolina",
+      "Website"
     ],
     "title": "Spooky and Dickey",
     "description": "Spooky Left: 5 years 9.5 months\nDickey Right: 3 years",
@@ -1043,7 +1184,8 @@
       "People|Dickey Bell",
       "Places|North Carolina",
       "Places|North Carolina|Tweetsie Railroad, Boone NC",
-      "Tweetsie Railroad, Boone NC"
+      "Tweetsie Railroad, Boone NC",
+      "Website"
     ],
     "title": "Dickey at Tweetsie Railroad",
     "description": "Dickey on a horse",
@@ -1066,7 +1208,8 @@
       "Places|North Carolina",
       "Places|North Carolina|Tweetsie Railroad, Boone NC",
       "Spooky Bell",
-      "Tweetsie Railroad, Boone NC"
+      "Tweetsie Railroad, Boone NC",
+      "Website"
     ],
     "title": "Spooky at Tweetsie Railroad",
     "description": "Spooky 5 years 10 months",
@@ -1085,7 +1228,8 @@
     ],
     "tags": [
       "Dickey Bell",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Website"
     ],
     "title": "October 1959 (estimated) — Dickey Bell, age 3",
     "description": "",
@@ -1101,7 +1245,8 @@
     ],
     "tags": [
       "People|Spooky Bell",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Spooky 6 y/o Halloween King",
     "description": "Spooky back row on the left.\nThis was taken on Halloween night at the \"Armay, Avmay, Anmay\" (unable to read the handwriting) in Lancaster. Spooky was the Halloween King of Erwin Farm School. The girl next to him was his queen.",
@@ -1124,10 +1269,24 @@
       "Places|South Carolina",
       "Places|South Carolina|Lancaster",
       "South Carolina",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Spooky's 6th Birthday Party",
     "description": "Spooky is in the center left with the captain's hat.  Dickey is in the front center with what looks like Spooky's jacket or jumpsuit.",
+    "gps": null
+  },
+  {
+    "path": "images/1959/1111_0001_a.jpg",
+    "file": "1111_0001_a.jpg",
+    "folder": "1959",
+    "date": "1959-12-01",
+    "people": [],
+    "tags": [
+      "Website"
+    ],
+    "title": "",
+    "description": "",
     "gps": null
   },
   {
@@ -1149,7 +1308,8 @@
       "Places|South Carolina|Lancaster",
       "Places|South Carolina|Lancaster|Mason St",
       "South Carolina",
-      "Spooky Bell"
+      "Spooky Bell",
+      "Website"
     ],
     "title": "Christmas 1959",
     "description": "Spooky Left: 6 years 2 months\nDickey Right: 3 years 4-1/2 months",
@@ -2688,6 +2848,20 @@
       "People|Dickey Bell"
     ],
     "title": "",
+    "description": "",
+    "gps": null
+  },
+  {
+    "path": "images/1800s/Sara Elizabeth Howze Bell.png",
+    "file": "Sara Elizabeth Howze Bell.png",
+    "folder": "1800s",
+    "date": "2026-08-12",
+    "people": [],
+    "tags": [
+      "Sarah Elizabeth Howze Bell",
+      "Website"
+    ],
+    "title": "image.png",
     "description": "",
     "gps": null
   },
