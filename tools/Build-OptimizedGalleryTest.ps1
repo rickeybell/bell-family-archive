@@ -31,6 +31,14 @@ function Format-ArchiveDate([string]$value) {
     if ($v -match '^\d{4}$') { return $v }
     return $v
 }
+function Format-PeopleDisplay($people) {
+    if (!$people) { return '' }
+    $out = foreach ($person in @($people)) {
+        $p = [string]$person
+        if ($p -match '(?i)\s+Bell$') { $p -replace '(?i)\s+Bell$',' B' } else { $p }
+    }
+    return ($out -join ', ')
+}
 $StateAbbreviations=@{
 'Alabama'='AL';'Alaska'='AK';'Arizona'='AZ';'Arkansas'='AR';'California'='CA';'Colorado'='CO';'Connecticut'='CT';'Delaware'='DE';'Florida'='FL';'Georgia'='GA';'Hawaii'='HI';'Idaho'='ID';'Illinois'='IL';'Indiana'='IN';'Iowa'='IA';'Kansas'='KS';'Kentucky'='KY';'Louisiana'='LA';'Maine'='ME';'Maryland'='MD';'Massachusetts'='MA';'Michigan'='MI';'Minnesota'='MN';'Mississippi'='MS';'Missouri'='MO';'Montana'='MT';'Nebraska'='NE';'Nevada'='NV';'New Hampshire'='NH';'New Jersey'='NJ';'New Mexico'='NM';'New York'='NY';'North Carolina'='NC';'North Dakota'='ND';'Ohio'='OH';'Oklahoma'='OK';'Oregon'='OR';'Pennsylvania'='PA';'Rhode Island'='RI';'South Carolina'='SC';'South Dakota'='SD';'Tennessee'='TN';'Texas'='TX';'Utah'='UT';'Vermont'='VT';'Virginia'='VA';'Washington'='WA';'West Virginia'='WV';'Wisconsin'='WI';'Wyoming'='WY';'District of Columbia'='DC'
 }
@@ -69,7 +77,7 @@ foreach ($thumb in $thumbs) {
     $metaKey=('images/'+(UrlPath $relative)).ToLowerInvariant();$m=$metaByPath[$metaKey];if ($null -eq $m) {$missingMetadata++}
     $title=if ($m -and ![string]::IsNullOrWhiteSpace([string]$m.title)){[string]$m.title}else{''}
     $comments=if ($m -and ![string]::IsNullOrWhiteSpace([string]$m.description)){[string]$m.description}else{''}
-    $date=if ($m){Format-ArchiveDate ([string]$m.date)}else{''};$people=if ($m -and $m.people){(@($m.people)-join ', ')}else{''};$location=Get-LocationDisplay $m
+    $date=if ($m){Format-ArchiveDate ([string]$m.date)}else{''};$people=if ($m){Format-PeopleDisplay $m.people}else{''};$location=Get-LocationDisplay $m
     $displayTitle=if ($title){$title}else{$name};$metaLine=(@($date,$location,$people)|Where-Object{![string]::IsNullOrWhiteSpace($_)})-join $sep
     $cards.Add(@"
 <article class="card"><button class="photo-link" type="button" data-index="$index"><img src="$(Html $thumbUrl)" alt="$(Html $displayTitle)" loading="lazy" decoding="async"></button><div class="copy"><div class="title">$(Html $displayTitle)</div>$(if($metaLine){"<div class=`"meta`">$(Html $metaLine)</div>"})$(if($comments){"<div class=`"comments`">$(Html $comments)</div>"})<div class="file">$(Html $name)</div><div class="actions"><button type="button" data-index="$index">View</button><button type="button" data-download-index="$index">Download full resolution</button></div></div></article>
@@ -97,6 +105,7 @@ Write-Host "Cards:             $($cards.Count)"
 Write-Host "Missing views:     $missingView"
 Write-Host "Missing originals: $missingOriginal"
 Write-Host "Missing metadata:  $missingMetadata"
+Write-Host "People display:    Bell abbreviated to B (source tags unchanged)"
 Write-Host "Location:          displayed with US state abbreviations"
 Write-Host "Separator:         middle dot generated safely (no encoding artifact)"
 Write-Host "Important:         use Start-GalleryTestServer.ps1 for reliable Save downloads"
