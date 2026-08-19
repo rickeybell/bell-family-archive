@@ -39,6 +39,7 @@ function Format-PeopleDisplay($people) {
     }
     return ($out -join ', ')
 }
+
 $StateAbbreviations=@{
 'Alabama'='AL';'Alaska'='AK';'Arizona'='AZ';'Arkansas'='AR';'California'='CA';'Colorado'='CO';'Connecticut'='CT';'Delaware'='DE';'Florida'='FL';'Georgia'='GA';'Hawaii'='HI';'Idaho'='ID';'Illinois'='IL';'Indiana'='IN';'Iowa'='IA';'Kansas'='KS';'Kentucky'='KY';'Louisiana'='LA';'Maine'='ME';'Maryland'='MD';'Massachusetts'='MA';'Michigan'='MI';'Minnesota'='MN';'Mississippi'='MS';'Missouri'='MO';'Montana'='MT';'Nebraska'='NE';'Nevada'='NV';'New Hampshire'='NH';'New Jersey'='NJ';'New Mexico'='NM';'New York'='NY';'North Carolina'='NC';'North Dakota'='ND';'Ohio'='OH';'Oklahoma'='OK';'Oregon'='OR';'Pennsylvania'='PA';'Rhode Island'='RI';'South Carolina'='SC';'South Dakota'='SD';'Tennessee'='TN';'Texas'='TX';'Utah'='UT';'Vermont'='VT';'Virginia'='VA';'Washington'='WA';'West Virginia'='WV';'Wisconsin'='WI';'Wyoming'='WY';'District of Columbia'='DC'
 }
@@ -59,15 +60,56 @@ function Get-LocationDisplay($m) {
     if (![string]::IsNullOrWhiteSpace($country)) { $c=$country.Trim(); if ($c -notmatch '^(USA|US|U\.S\.|U\.S\.A\.|United States|United States of America)$' -and !$parts.Contains($c)) {$parts.Add($c)} }
     return ($parts -join ', ')
 }
+function Get-ExifToolPath {
+    $cmd=Get-Command exiftool.exe -ErrorAction SilentlyContinue
+    if ($cmd) { return $cmd.Source }
+    foreach ($candidate in @(
+        'C:\ExifTool\exiftool.exe',
+        'C:\Program Files\ExifTool\exiftool.exe',
+        'C:\Program Files (x86)\ExifTool\exiftool.exe',
+        "$env:USERPROFILE\exiftool.exe"
+    )) { if (Test-Path -LiteralPath $candidate) { return $candidate } }
+    return $null
+}
+function Get-PlacesLocationFromFile([string]$ExifTool,[string]$FilePath) {
+    if (!$ExifTool -or !(Test-Path -LiteralPath $FilePath)) { return '' }
+    try {
+        $json = & $ExifTool -json -HierarchicalSubject -Subject -Keywords -TagsList -LastKeywordXMP $FilePath 2>$null
+        if (!$json) { return '' }
+        $rec = ($json | Out-String | ConvertFrom-Json)[0]
+        $all = New-Object System.Collections.Generic.List[string]
+        foreach ($prop in @('HierarchicalSubject','Subject','Keywords','TagsList','LastKeywordXMP')) {
+            if ($rec.PSObject.Properties.Name -contains $prop) {
+                foreach ($v in @($rec.$prop)) { if ($null -ne $v -and ![string]::IsNullOrWhiteSpace([string]$v)) { $all.Add([string]$v) } }
+            }
+        }
+        $best = $null
+        foreach ($raw in $all) {
+            $s = $raw.Trim() -replace '\\','/' -replace '\|','/'
+            if ($s -notmatch '^(?i)Places/') { continue }
+            $parts = @($s -split '/' | Where-Object { ![string]::IsNullOrWhiteSpace($_) })
+            if ($parts.Count -lt 2) { continue }
+            if ($null -eq $best -or $parts.Count -gt $best.Count) { $best = $parts }
+        }
+        if ($null -eq $best) { return '' }
+        $stateRaw = if ($best.Count -ge 2) { $best[1] } else { '' }
+        $city = if ($best.Count -ge 3) { $best[2] } else { '' }
+        $detail = if ($best.Count -ge 4) { ($best[3..($best.Count-1)] -join ', ') } else { '' }
+        $state = Get-StateAbbreviation $stateRaw
+        return (@($detail,$city,$state) | Where-Object { ![string]::IsNullOrWhiteSpace($_) }) -join ', '
+    } catch { return '' }
+}
 
 $metadata=Get-Content -LiteralPath $MetadataPath -Raw | ConvertFrom-Json
 $metaByPath=@{}
 foreach ($m in $metadata) { if ($m.path) {$key=([string]$m.path -replace '\\','/').ToLowerInvariant(); $metaByPath[$key]=$m} }
+$ExifTool = Get-ExifToolPath
+if ($ExifTool) { Write-Host "ExifTool:           $ExifTool" } else { Write-Warning 'ExifTool not found; embedded Places fallback unavailable.' }
 $exts=@('.jpg','.jpeg','.png','.tif','.tiff','.webp')
 $thumbs=Get-ChildItem -LiteralPath $ThumbRoot -File -Recurse | Where-Object {$exts -contains $_.Extension.ToLowerInvariant()} | Sort-Object FullName
 $cards=New-Object System.Collections.Generic.List[string]
 $items=New-Object System.Collections.Generic.List[string]
-$missingView=0;$missingOriginal=0;$missingMetadata=0;$index=0
+$missingView=0;$missingOriginal=0;$missingMetadata=0;$embeddedLocations=0;$index=0
 $sep = ' ' + [char]183 + ' '
 foreach ($thumb in $thumbs) {
     $relative=$thumb.FullName.Substring($ThumbRoot.Length).TrimStart('\','/')
@@ -77,14 +119,19 @@ foreach ($thumb in $thumbs) {
     $metaKey=('images/'+(UrlPath $relative)).ToLowerInvariant();$m=$metaByPath[$metaKey];if ($null -eq $m) {$missingMetadata++}
     $title=if ($m -and ![string]::IsNullOrWhiteSpace([string]$m.title)){[string]$m.title}else{''}
     $comments=if ($m -and ![string]::IsNullOrWhiteSpace([string]$m.description)){[string]$m.description}else{''}
-    $date=if ($m){Format-ArchiveDate ([string]$m.date)}else{''};$people=if ($m){Format-PeopleDisplay $m.people}else{''};$location=Get-LocationDisplay $m
+    $date=if ($m){Format-ArchiveDate ([string]$m.date)}else{''}
+    $people=if ($m){Format-PeopleDisplay $m.people}else{''}
+    $location=Get-LocationDisplay $m
+    if ([string]::IsNullOrWhiteSpace($location)) {
+        $location=Get-PlacesLocationFromFile -ExifTool $ExifTool -FilePath $original
+        if (![string]::IsNullOrWhiteSpace($location)) { $embeddedLocations++ }
+    }
     $displayTitle=if ($title){$title}else{$name};$metaLine=(@($date,$location,$people)|Where-Object{![string]::IsNullOrWhiteSpace($_)})-join $sep
     $cards.Add(@"
 <article class="card"><button class="photo-link" type="button" data-index="$index"><img src="$(Html $thumbUrl)" alt="$(Html $displayTitle)" loading="lazy" decoding="async"></button><div class="copy"><div class="title">$(Html $displayTitle)</div>$(if($metaLine){"<div class=`"meta`">$(Html $metaLine)</div>"})$(if($comments){"<div class=`"comments`">$(Html $comments)</div>"})<div class="file">$(Html $name)</div><div class="actions"><button type="button" data-index="$index">View</button><button type="button" data-download-index="$index">Download full resolution</button></div></div></article>
 "@)
     $itemObj=[ordered]@{view=$viewUrl;original=$origUrl;name=$name;title=$displayTitle;date=$date;location=$location;people=$people;comments=$comments}
-    $items.Add(($itemObj | ConvertTo-Json -Compress))
-    $index++
+    $items.Add(($itemObj | ConvertTo-Json -Compress));$index++
 }
 $body=@"
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Optimized Gallery Test - Bell Family Archive</title><style>
@@ -101,12 +148,11 @@ document.querySelectorAll('[data-index]').forEach(el=>el.addEventListener('click
 "@
 [IO.File]::WriteAllText($Output,$body,[Text.UTF8Encoding]::new($false))
 Write-Host "`nOptimized gallery test created."
-Write-Host "Cards:             $($cards.Count)"
-Write-Host "Missing views:     $missingView"
-Write-Host "Missing originals: $missingOriginal"
-Write-Host "Missing metadata:  $missingMetadata"
-Write-Host "People display:    Bell abbreviated to B (source tags unchanged)"
-Write-Host "Location:          displayed with US state abbreviations"
-Write-Host "Separator:         middle dot generated safely (no encoding artifact)"
-Write-Host "Important:         use Start-GalleryTestServer.ps1 for reliable Save downloads"
-Write-Host "Output:            $Output"
+Write-Host "Cards:                 $($cards.Count)"
+Write-Host "Missing views:         $missingView"
+Write-Host "Missing originals:     $missingOriginal"
+Write-Host "Missing metadata:      $missingMetadata"
+Write-Host "Embedded Places used:  $embeddedLocations"
+Write-Host "People display:        Bell abbreviated to B (source tags unchanged)"
+Write-Host "Location:              photo metadata first, then DigiKam Places fallback"
+Write-Host "Output:                $Output"
