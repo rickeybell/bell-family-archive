@@ -1,4 +1,4 @@
-param(
+﻿param(
     [switch]$DryRun,
     [switch]$ForceFullScan
 )
@@ -145,8 +145,8 @@ function Get-SiteReferences {
     param([string]$RelativePath, [string]$FileName)
     $refs = New-Object System.Collections.Generic.List[string]
     $needles = @(
-        (($RelativePath -replace '\','/')),
-        ("images/" + ($RelativePath -replace '\','/')),
+        (($RelativePath -replace '\\','/')),
+        ("images/" + ($RelativePath -replace '\\','/')),
         $FileName
     ) | Select-Object -Unique
     $textFiles = Get-ChildItem -LiteralPath $RepoRoot -File -Recurse -ErrorAction SilentlyContinue | Where-Object {
@@ -228,3 +228,4 @@ Write-Host "====================================="
 Write-Host "`nWebsite manifest report: $WebsiteManifestCsv"
 Write-Host "Orphan review report:    $OrphanReportCsv"
 if($DryRun){Write-Host "`nDry run complete. No photographs were copied or deleted."}else{Write-Host "`nWebsite image sync complete. No orphan photographs were deleted."}
+
