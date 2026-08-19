@@ -9,7 +9,7 @@ if not files:
     raise SystemExit('No images found')
 cmd=['exiftool','-json','-n',
      '-DateTimeOriginal','-CreateDate','-DateCreated',
-     '-Subject','-Keywords','-HierarchicalSubject',
+     '-Subject','-Keywords','-HierarchicalSubject','-TagsList','-CatalogSets','-LastKeywordXMP',
      '-Description','-Caption-Abstract','-Title',
      '-GPSLatitude','-GPSLongitude',
      '-Location','-Sublocation','-Sub-location',
@@ -17,6 +17,26 @@ cmd=['exiftool','-json','-n',
      '-Country','-Country-PrimaryLocationName']+[str(p) for p in files]
 raw=json.loads(subprocess.check_output(cmd))
 out=[]
+STATE_ABBR={
+    'Alabama':'AL','Alaska':'AK','Arizona':'AZ','Arkansas':'AR','California':'CA','Colorado':'CO','Connecticut':'CT','Delaware':'DE','Florida':'FL','Georgia':'GA','Hawaii':'HI','Idaho':'ID','Illinois':'IL','Indiana':'IN','Iowa':'IA','Kansas':'KS','Kentucky':'KY','Louisiana':'LA','Maine':'ME','Maryland':'MD','Massachusetts':'MA','Michigan':'MI','Minnesota':'MN','Mississippi':'MS','Missouri':'MO','Montana':'MT','Nebraska':'NE','Nevada':'NV','New Hampshire':'NH','New Jersey':'NJ','New Mexico':'NM','New York':'NY','North Carolina':'NC','North Dakota':'ND','Ohio':'OH','Oklahoma':'OK','Oregon':'OR','Pennsylvania':'PA','Rhode Island':'RI','South Carolina':'SC','South Dakota':'SD','Tennessee':'TN','Texas':'TX','Utah':'UT','Vermont':'VT','Virginia':'VA','Washington':'WA','West Virginia':'WV','Wisconsin':'WI','Wyoming':'WY','District of Columbia':'DC'
+}
+def place_from_tags(tags):
+    paths=[]
+    for rawtag in tags:
+        s=str(rawtag).strip().replace('\\','/').replace('|','/')
+        if not s.lower().startswith('places/'):
+            continue
+        parts=[x.strip() for x in s.split('/') if x.strip()]
+        if len(parts)>1:
+            paths.append(parts[1:])
+    if not paths:
+        return '', '', '', ''
+    # Prefer the deepest Places hierarchy (e.g. SC/Lancaster/Mason St over SC/Lancaster).
+    parts=max(paths,key=len)
+    state=parts[0] if len(parts)>=1 else ''
+    city=parts[1] if len(parts)>=2 else ''
+    location=', '.join(parts[2:]) if len(parts)>=3 else ''
+    return location, city, state, 'United States' if state in STATE_ABBR or state in STATE_ABBR.values() else ''
 for m in raw:
     p=pathlib.Path(m['SourceFile'])
     rel=p.relative_to(ROOT).as_posix()
@@ -32,18 +52,16 @@ for m in raw:
     elif re.fullmatch(r'\d{4}',folder):
         date=folder
     vals=[]
-    for k in ('HierarchicalSubject','Subject','Keywords'):
+    for k in ('HierarchicalSubject','Subject','Keywords','TagsList','LastKeywordXMP'):
         v=m.get(k,[])
         if isinstance(v,str): v=[v]
         vals.extend(v or [])
     people=[]; tags=[]
     for v in vals:
         s=str(v).strip(); tags.append(s)
-        low=s.lower().replace('\\','/')
+        low=s.lower().replace('\\','/').replace('|','/')
         if low.startswith('people/'):
-            people.append(s.split('/')[-1])
-        elif low.startswith('people|'):
-            people.append(s.split('|')[-1])
+            people.append(s.replace('\\','/').replace('|','/').split('/')[-1])
     known=('Dickey','Spooky','Buster','Alma','Rickey','Sonja','Heather','Stephanie','Jarred','Dickey Bell','Spooky Bell','Buster Bell','Alma Bell','Rickey Bell','Sonja Bell','Heather Bell','Stephanie Bell','Jarred Bell')
     for s in tags:
         if s in known and s not in people: people.append(s)
@@ -51,6 +69,11 @@ for m in raw:
     city=first('City')
     state=first('State','Province-State')
     country=first('Country','Country-PrimaryLocationName')
+    tag_location,tag_city,tag_state,tag_country=place_from_tags(tags)
+    if not location: location=tag_location
+    if not city: city=tag_city
+    if not state: state=tag_state
+    if not country: country=tag_country
     out.append({
         'path':rel,'file':p.name,'folder':folder,'date':date,
         'people':sorted(set(people)),'tags':sorted(set(tags)),
