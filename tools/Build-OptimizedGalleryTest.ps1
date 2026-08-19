@@ -50,7 +50,7 @@ foreach ($thumb in $thumbs) {
   <div class="copy">
     <div class="name">$(Html $name)</div>
     <div class="folder">$(Html $folder)</div>
-    <div class="actions"><button type="button" class="view-btn" data-index="$index">View</button><a href="$(Html $origUrl)" download>Download full resolution</a></div>
+    <div class="actions"><button type="button" class="view-btn" data-index="$index">View</button><button type="button" class="download-btn" data-download-index="$index">Download full resolution</button></div>
   </div>
 </article>
 "@)
@@ -63,8 +63,8 @@ $body = @"
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Optimized Gallery Test — Bell Family Archive</title>
 <style>
-body{font-family:Segoe UI,Arial,sans-serif;margin:0;background:#f4f2ed;color:#242424}.main{max-width:1500px;margin:auto;padding:28px}h1{margin-bottom:6px}.note{margin:0 0 24px;color:#555}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}.card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px #0002}.photo-link{display:block;width:100%;border:0;padding:0;background:#e7e7e7;cursor:pointer}.card img{display:block;width:100%;height:220px;object-fit:contain}.copy{padding:11px}.name{font-weight:600;overflow-wrap:anywhere}.folder{font-size:.82rem;color:#777;margin-top:4px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}.actions a,.actions button{font-size:.88rem}.actions button{border:0;background:none;color:#06c;text-decoration:underline;padding:0;cursor:pointer}.stats{background:#fff;padding:12px 16px;border-radius:10px;margin:18px 0}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:9999}.modal.open{display:flex}.modal-inner{position:relative;width:min(96vw,1500px);height:min(94vh,1000px);display:grid;grid-template-rows:1fr auto;gap:10px}.modal-stage{position:relative;display:flex;align-items:center;justify-content:center;min-height:0}.modal-img{max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 0 25px #000}.navbtn,.closebtn{position:absolute;border:0;background:rgba(0,0,0,.45);color:white;cursor:pointer;border-radius:999px}.navbtn{top:50%;transform:translateY(-50%);font-size:42px;width:58px;height:58px}.prev{left:12px}.next{right:12px}.closebtn{top:12px;right:12px;font-size:30px;width:48px;height:48px}.modal-info{color:white;text-align:center}.modal-name{font-weight:600}.modal-folder{font-size:.9rem;opacity:.75;margin-top:3px}.modal-actions{margin-top:8px}.modal-actions a{color:white}.counter{margin-left:14px;opacity:.75}.modal-backdrop{position:absolute;inset:0}
+body{font-family:Segoe UI,Arial,sans-serif;margin:0;background:#f4f2ed;color:#242424}.main{max-width:1500px;margin:auto;padding:28px}h1{margin-bottom:6px}.note{margin:0 0 24px;color:#555}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}.card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px #0002}.photo-link{display:block;width:100%;border:0;padding:0;background:#e7e7e7;cursor:pointer}.card img{display:block;width:100%;height:220px;object-fit:contain}.copy{padding:11px}.name{font-weight:600;overflow-wrap:anywhere}.folder{font-size:.82rem;color:#777;margin-top:4px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}.actions button{font-size:.88rem;border:0;background:none;color:#06c;text-decoration:underline;padding:0;cursor:pointer}.stats{background:#fff;padding:12px 16px;border-radius:10px;margin:18px 0}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:9999}.modal.open{display:flex}.modal-inner{position:relative;width:min(96vw,1500px);height:min(94vh,1000px);display:grid;grid-template-rows:1fr auto;gap:10px}.modal-stage{position:relative;display:flex;align-items:center;justify-content:center;min-height:0}.modal-img{max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 0 25px #000}.navbtn,.closebtn{position:absolute;border:0;background:rgba(0,0,0,.45);color:white;cursor:pointer;border-radius:999px}.navbtn{top:50%;transform:translateY(-50%);font-size:42px;width:58px;height:58px}.prev{left:12px}.next{right:12px}.closebtn{top:12px;right:12px;font-size:30px;width:48px;height:48px}.modal-info{color:white;text-align:center}.modal-name{font-weight:600}.modal-folder{font-size:.9rem;opacity:.75;margin-top:3px}.modal-actions{margin-top:8px}.modal-actions button{border:0;background:none;color:white;text-decoration:underline;cursor:pointer;font:inherit}.counter{margin-left:14px;opacity:.75}.modal-backdrop{position:absolute;inset:0}
 @media(max-width:700px){.navbtn{width:46px;height:46px;font-size:34px}.prev{left:4px}.next{right:4px}.closebtn{top:4px;right:4px}}
 </style></head><body><main class="main">
 <h1>Bell Family Archive — Optimized Gallery Test</h1>
@@ -85,7 +85,7 @@ body{font-family:Segoe UI,Arial,sans-serif;margin:0;background:#f4f2ed;color:#24
     <div class="modal-info">
       <div><span id="modalName" class="modal-name"></span><span id="counter" class="counter"></span></div>
       <div id="modalFolder" class="modal-folder"></div>
-      <div class="modal-actions"><a id="downloadLink" href="" download>Download full resolution</a></div>
+      <div class="modal-actions"><button id="downloadButton" type="button">Download full resolution</button></div>
     </div>
   </div>
 </div>
@@ -97,7 +97,6 @@ const viewer=document.getElementById('viewer');
 const img=document.getElementById('modalImage');
 const nameEl=document.getElementById('modalName');
 const folderEl=document.getElementById('modalFolder');
-const download=document.getElementById('downloadLink');
 const counter=document.getElementById('counter');
 function show(i){
   if(!items.length)return;
@@ -105,7 +104,6 @@ function show(i){
   const x=items[current];
   img.src=x.view; img.alt=x.name;
   nameEl.textContent=x.name; folderEl.textContent=x.folder;
-  download.href=x.original;
   counter.textContent=(current+1)+' / '+items.length;
   viewer.classList.add('open'); viewer.setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
@@ -113,7 +111,28 @@ function show(i){
 function closeViewer(){viewer.classList.remove('open');viewer.setAttribute('aria-hidden','true');img.src='';document.body.style.overflow='';}
 function prev(){show(current-1)}
 function next(){show(current+1)}
+async function forceDownload(url,filename){
+  try{
+    if(location.protocol==='http:' || location.protocol==='https:'){
+      const response=await fetch(url,{cache:'no-store'});
+      if(!response.ok) throw new Error('Download failed');
+      const blob=await response.blob();
+      const blobUrl=URL.createObjectURL(blob);
+      const a=document.createElement('a');
+      a.href=blobUrl; a.download=filename || 'photo';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(()=>URL.revokeObjectURL(blobUrl),2000);
+      return;
+    }
+  }catch(err){console.warn('Blob download failed, using browser download attribute.',err);}
+  const a=document.createElement('a');
+  a.href=url; a.download=filename || 'photo';
+  a.style.display='none';
+  document.body.appendChild(a); a.click(); a.remove();
+}
 document.querySelectorAll('[data-index]').forEach(el=>el.addEventListener('click',()=>show(Number(el.dataset.index))));
+document.querySelectorAll('[data-download-index]').forEach(el=>el.addEventListener('click',e=>{e.stopPropagation();const x=items[Number(el.dataset.downloadIndex)];forceDownload(x.original,x.name);}));
+document.getElementById('downloadButton').addEventListener('click',()=>{const x=items[current];forceDownload(x.original,x.name);});
 document.getElementById('prevBtn').addEventListener('click',prev);
 document.getElementById('nextBtn').addEventListener('click',next);
 document.getElementById('closeBtn').addEventListener('click',closeViewer);
@@ -132,4 +151,5 @@ Write-Host "Cards:             $($cards.Count)"
 Write-Host "Missing views:     $missingView"
 Write-Host "Missing originals: $missingOriginal"
 Write-Host "Viewer:            in-page modal with prev/next arrows + keyboard/swipe"
+Write-Host "Downloads:         forced save on web; browser download attribute in local file test"
 Write-Host "Output:            $Output"
