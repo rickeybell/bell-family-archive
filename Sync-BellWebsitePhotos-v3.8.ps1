@@ -10,6 +10,7 @@ $ScriptVersion = "3.8"
 $RepoRoot = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive"
 $V36 = Join-Path $RepoRoot "Sync-BellWebsitePhotos-v3.6.ps1"
 $ManifestCsv = Join-Path $RepoRoot "website-photo-manifest.csv"
+$OldTestRoot = Join-Path $RepoRoot "website-test-v36"
 $OutputRoot = if ($Live) { $RepoRoot } else { Join-Path $RepoRoot "website-test-v38" }
 $ViewRoot = Join-Path $OutputRoot "images"
 $ThumbRoot = Join-Path $OutputRoot "thumbs"
@@ -52,41 +53,21 @@ function Get-CleanTags {
 }
 
 function Copy-GenealogyMetadata {
-    param(
-        [string]$ExifTool,
-        [string]$Source,
-        [string]$Destination,
-        [string[]]$CleanTags
-    )
-
+    param([string]$ExifTool,[string]$Source,[string]$Destination,[string[]]$CleanTags)
     if (!(Test-Path -LiteralPath $Destination)) { return $false }
     $ext = [System.IO.Path]::GetExtension($Destination).ToLowerInvariant()
 
     if ($ext -eq '.png') {
-        # PNG: use XMP/PNG-friendly fields only. Avoid non-standard IPTC-in-PNG warnings.
         $args = @(
-            '-overwrite_original',
-            '-TagsFromFile', $Source,
-            '-XMP:DateTimeOriginal',
-            '-XMP:CreateDate',
-            '-XMP:GPSLatitude',
-            '-XMP:GPSLongitude',
-            '-XMP:Title',
-            '-XMP:Description',
-            '-XMP:PersonInImage',
-            '-XMP:RegionPersonDisplayName',
-            '-XMP:Copyright',
-            '-XMP:Creator',
-            '-XMP:Artist',
-            '-XMP:Orientation',
-            $Destination
+            '-overwrite_original','-TagsFromFile',$Source,
+            '-XMP:DateTimeOriginal','-XMP:CreateDate','-XMP:GPSLatitude','-XMP:GPSLongitude',
+            '-XMP:Title','-XMP:Description','-XMP:PersonInImage','-XMP:RegionPersonDisplayName',
+            '-XMP:Copyright','-XMP:Creator','-XMP:Artist','-XMP:Orientation',$Destination
         )
         & $ExifTool @args | Out-Null
         if ($LASTEXITCODE -ne 0) { return $false }
-
         & $ExifTool -overwrite_original '-XMP:Subject=' '-XMP:HierarchicalSubject=' $Destination | Out-Null
         if ($LASTEXITCODE -ne 0) { return $false }
-
         if ($CleanTags.Count -gt 0) {
             $tagArgs = @('-overwrite_original')
             foreach ($tag in $CleanTags) {
@@ -99,33 +80,16 @@ function Copy-GenealogyMetadata {
         }
     }
     else {
-        # JPEG/TIFF: preserve common EXIF/IPTC/XMP genealogy fields.
         $args = @(
-            '-overwrite_original',
-            '-TagsFromFile', $Source,
-            '-DateTimeOriginal',
-            '-CreateDate',
-            '-GPSLatitude',
-            '-GPSLongitude',
-            '-GPSLatitudeRef',
-            '-GPSLongitudeRef',
-            '-Title',
-            '-Description',
-            '-Caption-Abstract',
-            '-PersonInImage',
-            '-RegionPersonDisplayName',
-            '-Copyright',
-            '-Creator',
-            '-Artist',
-            '-Orientation',
-            $Destination
+            '-overwrite_original','-TagsFromFile',$Source,
+            '-DateTimeOriginal','-CreateDate','-GPSLatitude','-GPSLongitude','-GPSLatitudeRef','-GPSLongitudeRef',
+            '-Title','-Description','-Caption-Abstract','-PersonInImage','-RegionPersonDisplayName',
+            '-Copyright','-Creator','-Artist','-Orientation',$Destination
         )
         & $ExifTool @args | Out-Null
         if ($LASTEXITCODE -ne 0) { return $false }
-
         & $ExifTool -overwrite_original '-Subject=' '-Keywords=' '-HierarchicalSubject=' $Destination | Out-Null
         if ($LASTEXITCODE -ne 0) { return $false }
-
         if ($CleanTags.Count -gt 0) {
             $tagArgs = @('-overwrite_original')
             foreach ($tag in $CleanTags) {
@@ -138,7 +102,6 @@ function Copy-GenealogyMetadata {
             if ($LASTEXITCODE -ne 0) { return $false }
         }
     }
-
     return $true
 }
 
@@ -153,7 +116,6 @@ Write-Host "JPEG/TIFF metadata: genealogy fields preserved"
 Write-Host "Internal Website tag: removed from public copies"
 Write-Host ""
 
-# v3.6 always writes test output to website-test-v36, so generate there first when not live.
 $baseArgs = @('-ExecutionPolicy','Bypass','-File',$V36,'-FromYear',$FromYear,'-ToYear',$ToYear)
 if ($DryRun) { $baseArgs += '-DryRun' }
 if ($RefreshManifest) { $baseArgs += '-RefreshManifest' }
@@ -167,21 +129,7 @@ if ($DryRun) {
     exit 0
 }
 
-if (!$Live) {
-    $OldRoot = Join-Path $RepoRoot 'website-test-v36'
-    foreach ($sub in @('images','thumbs','originals')) {
-        $src = Join-Path $OldRoot $sub
-        $dst = Join-Path $OutputRoot $sub
-        if (Test-Path -LiteralPath $src) {
-            if (Test-Path -LiteralPath $dst) { Remove-Item -LiteralPath $dst -Recurse -Force }
-            New-Item -ItemType Directory -Path $dst -Force | Out-Null
-            Copy-Item -LiteralPath (Join-Path $src '*') -Destination $dst -Recurse -Force
-        }
-    }
-}
-
 if (!(Test-Path -LiteralPath $ManifestCsv)) { throw "Manifest not found: $ManifestCsv" }
-$ExifTool = Get-ExifToolPath
 $rows = Import-Csv -LiteralPath $ManifestCsv
 $selected = @()
 foreach ($row in $rows) {
@@ -191,10 +139,30 @@ foreach ($row in $rows) {
     $selected += $row
 }
 
+# v3.6 writes test files under website-test-v36. Copy only this selected batch into website-test-v38.
+if (!$Live) {
+    $copied = 0
+    foreach ($row in $selected) {
+        $relative = $row.RelativePath -replace '/', '\'
+        foreach ($sub in @('images','thumbs','originals')) {
+            $src = Join-Path (Join-Path $OldTestRoot $sub) $relative
+            $dst = Join-Path (Join-Path $OutputRoot $sub) $relative
+            if (Test-Path -LiteralPath $src) {
+                $dstFolder = Split-Path -Parent $dst
+                if (!(Test-Path -LiteralPath $dstFolder)) { New-Item -ItemType Directory -Path $dstFolder -Force | Out-Null }
+                Copy-Item -LiteralPath $src -Destination $dst -Force
+                $copied++
+            }
+        }
+    }
+    Write-Host "Copied $copied generated files into website-test-v38."
+}
+
+$ExifTool = Get-ExifToolPath
 $stats = [ordered]@{Processed=0;ViewsTagged=0;ThumbsTagged=0;Errors=0}
 foreach ($row in $selected) {
     $stats.Processed++
-    $relative = $row.RelativePath -replace '/','\\'
+    $relative = $row.RelativePath -replace '/', '\'
     $source = $row.SourcePath
     $view = Join-Path $ViewRoot $relative
     $thumb = Join-Path $ThumbRoot $relative
