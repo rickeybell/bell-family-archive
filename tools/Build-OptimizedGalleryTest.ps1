@@ -41,6 +41,41 @@ function Format-ArchiveDate([string]$value) {
     return $v
 }
 
+$StateAbbreviations = @{
+    'Alabama'='AL'; 'Alaska'='AK'; 'Arizona'='AZ'; 'Arkansas'='AR'; 'California'='CA'; 'Colorado'='CO'; 'Connecticut'='CT'; 'Delaware'='DE';
+    'Florida'='FL'; 'Georgia'='GA'; 'Hawaii'='HI'; 'Idaho'='ID'; 'Illinois'='IL'; 'Indiana'='IN'; 'Iowa'='IA'; 'Kansas'='KS';
+    'Kentucky'='KY'; 'Louisiana'='LA'; 'Maine'='ME'; 'Maryland'='MD'; 'Massachusetts'='MA'; 'Michigan'='MI'; 'Minnesota'='MN'; 'Mississippi'='MS';
+    'Missouri'='MO'; 'Montana'='MT'; 'Nebraska'='NE'; 'Nevada'='NV'; 'New Hampshire'='NH'; 'New Jersey'='NJ'; 'New Mexico'='NM'; 'New York'='NY';
+    'North Carolina'='NC'; 'North Dakota'='ND'; 'Ohio'='OH'; 'Oklahoma'='OK'; 'Oregon'='OR'; 'Pennsylvania'='PA'; 'Rhode Island'='RI';
+    'South Carolina'='SC'; 'South Dakota'='SD'; 'Tennessee'='TN'; 'Texas'='TX'; 'Utah'='UT'; 'Vermont'='VT'; 'Virginia'='VA';
+    'Washington'='WA'; 'West Virginia'='WV'; 'Wisconsin'='WI'; 'Wyoming'='WY'; 'District of Columbia'='DC'
+}
+function Get-StateAbbreviation([string]$state) {
+    if ([string]::IsNullOrWhiteSpace($state)) { return '' }
+    $s = $state.Trim()
+    if ($StateAbbreviations.ContainsKey($s)) { return $StateAbbreviations[$s] }
+    if ($s -match '^[A-Za-z]{2}$') { return $s.ToUpperInvariant() }
+    return $s
+}
+function Get-LocationDisplay($m) {
+    if ($null -eq $m) { return '' }
+    $parts = New-Object System.Collections.Generic.List[string]
+    $sub = if ($m.PSObject.Properties.Name -contains 'location') { [string]$m.location } elseif ($m.PSObject.Properties.Name -contains 'sublocation') { [string]$m.sublocation } else { '' }
+    $city = if ($m.PSObject.Properties.Name -contains 'city') { [string]$m.city } else { '' }
+    $stateRaw = if ($m.PSObject.Properties.Name -contains 'state') { [string]$m.state } elseif ($m.PSObject.Properties.Name -contains 'province') { [string]$m.province } else { '' }
+    $state = Get-StateAbbreviation $stateRaw
+    $country = if ($m.PSObject.Properties.Name -contains 'country') { [string]$m.country } else { '' }
+
+    foreach ($p in @($sub,$city,$state)) {
+        if (![string]::IsNullOrWhiteSpace($p) -and !$parts.Contains($p.Trim())) { $parts.Add($p.Trim()) }
+    }
+    if (![string]::IsNullOrWhiteSpace($country)) {
+        $c = $country.Trim()
+        if ($c -notmatch '^(USA|US|U\.S\.|U\.S\.A\.|United States|United States of America)$' -and !$parts.Contains($c)) { $parts.Add($c) }
+    }
+    return ($parts -join ', ')
+}
+
 $metadata = Get-Content -LiteralPath $MetadataPath -Raw | ConvertFrom-Json
 $metaByPath = @{}
 foreach ($m in $metadata) {
@@ -67,7 +102,6 @@ foreach ($thumb in $thumbs) {
     $viewUrl = 'images/' + (UrlPath $relative)
     $origUrl = 'originals/' + (UrlPath $relative)
     $name = [IO.Path]::GetFileName($relative)
-    $folder = Split-Path -Parent $relative
 
     $metaKey = ('images/' + (UrlPath $relative)).ToLowerInvariant()
     $m = $metaByPath[$metaKey]
@@ -77,9 +111,10 @@ foreach ($thumb in $thumbs) {
     $comments = if ($m -and ![string]::IsNullOrWhiteSpace([string]$m.description)) { [string]$m.description } else { '' }
     $date = if ($m) { Format-ArchiveDate ([string]$m.date) } else { '' }
     $people = if ($m -and $m.people) { (@($m.people) -join ', ') } else { '' }
+    $location = Get-LocationDisplay $m
 
     $displayTitle = if ($title) { $title } else { $name }
-    $metaLine = (@($date,$people) | Where-Object { ![string]::IsNullOrWhiteSpace($_) }) -join ' · '
+    $metaLine = (@($date,$location,$people) | Where-Object { ![string]::IsNullOrWhiteSpace($_) }) -join ' · '
 
     $cards.Add(@"
 <article class="card">
@@ -95,7 +130,7 @@ foreach ($thumb in $thumbs) {
   </div>
 </article>
 "@)
-    $items.Add("{view:\"$(Js $viewUrl)\",original:\"$(Js $origUrl)\",name:\"$(Js $name)\",title:\"$(Js $displayTitle)\",date:\"$(Js $date)\",people:\"$(Js $people)\",comments:\"$(Js $comments)\"}")
+    $items.Add("{view:\"$(Js $viewUrl)\",original:\"$(Js $origUrl)\",name:\"$(Js $name)\",title:\"$(Js $displayTitle)\",date:\"$(Js $date)\",location:\"$(Js $location)\",people:\"$(Js $people)\",comments:\"$(Js $comments)\"}")
     $index++
 }
 
@@ -147,7 +182,7 @@ function show(i){
   const x=items[current];
   img.src=x.view; img.alt=x.title || x.name;
   nameEl.textContent=x.title || x.name;
-  metaEl.textContent=[x.date,x.people].filter(Boolean).join(' · ');
+  metaEl.textContent=[x.date,x.location,x.people].filter(Boolean).join(' · ');
   commentsEl.textContent=x.comments || '';
   counter.textContent=(current+1)+' / '+items.length;
   viewer.classList.add('open'); viewer.setAttribute('aria-hidden','false');
@@ -197,6 +232,7 @@ Write-Host "Missing views:     $missingView"
 Write-Host "Missing originals: $missingOriginal"
 Write-Host "Missing metadata:  $missingMetadata"
 Write-Host "Dates:             full date unless day=1; month/year unless Jan 1; year only for Jan 1"
+Write-Host "Locations:         city/state shown; US state names abbreviated"
 Write-Host "Viewer:            in-page modal with prev/next arrows + keyboard/swipe"
 Write-Host "Downloads:         forced save on web; browser download attribute in local file test"
 Write-Host "Output:            $Output"
