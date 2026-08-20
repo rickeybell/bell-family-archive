@@ -294,6 +294,258 @@
     "gps": null
   },
   {
+    "path": "images/1943/Document_20260719_0003.jpg",
+    "file": "Document_20260719_0003.jpg",
+    "folder": "1943",
+    "date": "1943-03-09",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "Newspaper",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1943/Document_20260719_0004.jpg",
+    "file": "Document_20260719_0004.jpg",
+    "folder": "1943",
+    "date": "1943-05-01",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "Newspaper",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1944/1944_0001.jpg",
+    "file": "1944_0001.jpg",
+    "folder": "1944",
+    "date": "1944-01-01",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "Document",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1944/1944_0002.jpg",
+    "file": "1944_0002.jpg",
+    "folder": "1944",
+    "date": "1944-01-01",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "Document",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1944/Document_20260719_0001.jpg",
+    "file": "Document_20260719_0001.jpg",
+    "folder": "1944",
+    "date": "1944-01-01",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1944/1944_0006_a.jpg",
+    "file": "1944_0006_a.jpg",
+    "folder": "1944",
+    "date": "1944-03-09",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "Document",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "High School Readmission Card",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1944/1944_0005_a.jpg",
+    "file": "1944_0005_a.jpg",
+    "folder": "1944",
+    "date": "1944-03-13",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "Document",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "High School Readmission Card",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1944/1944_0004_a.jpg",
+    "file": "1944_0004_a.jpg",
+    "folder": "1944",
+    "date": "1944-03-17",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "Document",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "High School Readmission Card",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1944/1944_0003_a.jpg",
+    "file": "1944_0003_a.jpg",
+    "folder": "1944",
+    "date": "1944-03-21",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "Document",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "High School Readmission Card",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1945/1945_April,12-14_0101_a.jpg",
+    "file": "1945_April,12-14_0101_a.jpg",
+    "folder": "1945",
+    "date": "1945-04-12",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "Newspaper",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1946/01_pilot_and_student_licenses_received.jpg",
+    "file": "01_pilot_and_student_licenses_received.jpg",
+    "folder": "1946",
+    "date": "1946-01-01",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "Newspaper",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "Alma Tharp Receives Private Pilot License",
+    "description": "Newspaper clipping reporting that Alma Tharp of Folly Beach, South Carolina, qualified for her private pilot license at Carolina Skyways Airport. William S. Scott was president of Carolina Skyways. Alma subsequently became a member of the Ninety-Nines; an October 1946 Ninety-Nines publication identifies her as a new member and reports a meeting held at her Folly Beach home.",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/1946/Alma2.jpg",
     "file": "Alma2.jpg",
     "folder": "1946",
@@ -303,14 +555,16 @@
     ],
     "tags": [
       "Alma Bell",
-      "People|Alma Bell"
+      "Charleston",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -323,14 +577,16 @@
     ],
     "tags": [
       "Alma Bell",
-      "People|Alma Bell"
+      "Charleston",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -343,14 +599,16 @@
     ],
     "tags": [
       "Alma Bell",
-      "People|Alma Bell"
+      "Charleston",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -363,7 +621,32 @@
     ],
     "tags": [
       "Alma Bell",
-      "People|Alma Bell"
+      "Charleston",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1947/Alma and Eli.png",
+    "file": "Alma and Eli.png",
+    "folder": "1947",
+    "date": "1947-01-01",
+    "people": [
+      "Alma Bell",
+      "Graham Eli Tharp"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Graham Eli Tharp",
+      "People|Alma Bell",
+      "People|Graham Eli Tharp"
     ],
     "title": "",
     "description": "",
@@ -371,6 +654,431 @@
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1947/Document_20260719_0007.jpg",
+    "file": "Document_20260719_0007.jpg",
+    "folder": "1947",
+    "date": "1947-01-01",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1947/Document_20260719_0006.jpg",
+    "file": "Document_20260719_0006.jpg",
+    "folder": "1947",
+    "date": "1947-08-17",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "Newspaper",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1947/Screenshot 2026-07-24 151402.png",
+    "file": "Screenshot 2026-07-24 151402.png",
+    "folder": "1947",
+    "date": "1947-11-01",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "Newspaper",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1948/03_carolina_99ers_arrive_in_city.jpg",
+    "file": "03_carolina_99ers_arrive_in_city.jpg",
+    "folder": "1948",
+    "date": "1948-01-01",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "Newspaper",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "Alma Tharp Flies to Carolina Ninety-Nines Annual Convention",
+    "description": "Alma Tharp flies to Carolinas Ninety-Nines convention, Spartanburg, S.C., circa 1948. Newspaper report on the two-day annual convention of the Carolinas Chapter of the Ninety-Nines. Alma Tharp flew from Charleston to Spartanburg in her nearly new Ercoupe. Other attendees included Jewell Bailey, Lucille Greenwood, Louise Smith, Bird Eaton, Emalie Stone and Edna Hartness. Exact publication date remains under investigation.",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1948/04_women_flyers_of_carolinas_to_meet_here.jpg",
+    "file": "04_women_flyers_of_carolinas_to_meet_here.jpg",
+    "folder": "1948",
+    "date": "1948-01-01",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "Newspaper",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "Carolina Ninety-Nines Annual Meeting in Spartanburg",
+    "description": "Circa 1948 — Spartanburg, South Carolina. Newspaper announcement of the annual meeting of the Carolinas Chapter of the Ninety-Nines, the international organization of women pilots. Members were scheduled to gather in Spartanburg for a weekend meeting, including a buffet supper and the chapter's annual business meeting at the Cleveland Hotel. The article lists “Alma Thorpe” of Charleston, apparently a newspaper misspelling of Alma Tharp, along with fellow Charleston pilot Jewell Bailey. Other expected attendees included Emalie Stone, Edna Hartness, Louise Smith, Bird Eaton, Lucille Greene, Anne Fishburne and Vera Self.",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1948/1940s_0111_a.jpg",
+    "file": "1940s_0111_a.jpg",
+    "folder": "1948",
+    "date": "1948-01-01",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "People|Alma Bell"
+    ],
+    "title": "Alma Tharp with Her Ercoupe",
+    "description": "Circa 1948. Alma Tharp, at left, with another woman beside an Ercoupe aircraft. Alma was an active member of the Carolinas Chapter of the Ninety-Nines and a licensed private pilot. A contemporary newspaper account records Alma flying her nearly new Ercoupe from Charleston to Spartanburg for a Carolinas Ninety-Nines convention. Exact date and location of this photograph have not yet been confirmed.",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1948/1940s_0112_a.jpg",
+    "file": "1940s_0112_a.jpg",
+    "folder": "1948",
+    "date": "1948-04-01",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "Alma Tharp in Evening Gown, Charleston Area, late 1940s",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1948/1940s_0113_a.jpg",
+    "file": "1940s_0113_a.jpg",
+    "folder": "1948",
+    "date": "1948-04-01",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "Alma Tharp Portrait in Evening Gown, Charleston Area, late 1940s",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1948/1940s_0114_a.jpg",
+    "file": "1940s_0114_a.jpg",
+    "folder": "1948",
+    "date": "1948-04-01",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "",
+    "description": "ALMA IS 9th FROM LEFT TO RIGHT",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1948/1940s_0115_a.jpg",
+    "file": "1940s_0115_a.jpg",
+    "folder": "1948",
+    "date": "1948-04-01",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1948/1940s_0116_a.jpg",
+    "file": "1940s_0116_a.jpg",
+    "folder": "1948",
+    "date": "1948-04-01",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1948/Document_20260719_0002_v1.jpg",
+    "file": "Document_20260719_0002_v1.jpg",
+    "folder": "1948",
+    "date": "1948-04-02",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1948/1940s_0117_a.jpg",
+    "file": "1940s_0117_a.jpg",
+    "folder": "1948",
+    "date": "1948-04-13",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "Charleston Azalea Festival Parade — Folly Beach delegation / Alma Tharp — 1948",
+    "description": "Folly Beach delegation participating in the Charleston Azalea Festival parade. Alma Tharp represented Folly Beach after being selected queen of the Folly Beach festival float.",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1948/1948_0004_a_Restored.jpg",
+    "file": "1948_0004_a_Restored.jpg",
+    "folder": "1948",
+    "date": "1948-04-13",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "Charleston Azalea Festival Parade — Folly Beach delegation / Alma Tharp — 1948",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1948/1948_April_0001-1_a.jpg",
+    "file": "1948_April_0001-1_a.jpg",
+    "folder": "1948",
+    "date": "1948-04-14",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "Newspaper",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1948/Document_20260719_0001_v1.jpg",
+    "file": "Document_20260719_0001_v1.jpg",
+    "folder": "1948",
+    "date": "1948-04-14",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "Newspaper",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1948/Document_20260719_0003_v1.jpg",
+    "file": "Document_20260719_0003_v1.jpg",
+    "folder": "1948",
+    "date": "1948-04-14",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "Newspaper",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1948/Document_20260719_0004.jpg",
+    "file": "Document_20260719_0004.jpg",
+    "folder": "1948",
+    "date": "1948-04-14",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "Newspaper",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1948/Document_20260719_0006.jpg",
+    "file": "Document_20260719_0006.jpg",
+    "folder": "1948",
+    "date": "1948-04-14",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Charleston",
+      "Newspaper",
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
+    ],
+    "title": "April 1947 — Charleston Azalea Festival, Charleston, South Carolina",
+    "description": "",
+    "location": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -383,15 +1091,17 @@
     ],
     "tags": [
       "Alma Bell",
+      "Charleston",
       "Newspaper",
-      "People|Alma Bell"
+      "People|Alma Bell",
+      "Places|South Carolina|Charleston"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {

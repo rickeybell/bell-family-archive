@@ -7,15 +7,29 @@ exts={'.jpg','.jpeg','.png','.JPG','.JPEG','.PNG'}
 files=[p for p in IMG.rglob('*') if p.is_file() and p.suffix in exts]
 if not files:
     raise SystemExit('No images found')
-cmd=['exiftool','-json','-n',
-     '-DateTimeOriginal','-CreateDate','-DateCreated',
-     '-Subject','-Keywords','-HierarchicalSubject','-TagsList','-CatalogSets','-LastKeywordXMP',
-     '-Description','-Caption-Abstract','-Title',
-     '-GPSLatitude','-GPSLongitude',
-     '-Location','-Sublocation','-Sub-location',
-     '-City','-State','-Province-State',
-     '-Country','-Country-PrimaryLocationName']+[str(p) for p in files]
-raw=json.loads(subprocess.check_output(cmd))
+base_cmd = [
+    'exiftool', '-json', '-n',
+    '-DateTimeOriginal', '-CreateDate', '-DateCreated',
+    '-Subject', '-Keywords', '-HierarchicalSubject', '-TagsList',
+    '-CatalogSets', '-LastKeywordXMP',
+    '-Description', '-Caption-Abstract', '-Title',
+    '-GPSLatitude', '-GPSLongitude',
+    '-Location', '-Sublocation', '-Sub-location',
+    '-City', '-State', '-Province-State',
+    '-Country', '-Country-PrimaryLocationName'
+]
+
+raw = []
+
+batch_size = 200
+
+for i in range(0, len(files), batch_size):
+    batch = files[i:i + batch_size]
+    cmd = base_cmd + [str(p) for p in batch]
+    batch_raw = json.loads(subprocess.check_output(cmd))
+    raw.extend(batch_raw)
+
+    print(f"Read metadata {min(i + batch_size, len(files))}/{len(files)}")
 out=[]
 STATE_ABBR={
     'Alabama':'AL','Alaska':'AK','Arizona':'AZ','Arkansas':'AR','California':'CA','Colorado':'CO','Connecticut':'CT','Delaware':'DE','Florida':'FL','Georgia':'GA','Hawaii':'HI','Idaho':'ID','Illinois':'IL','Indiana':'IN','Iowa':'IA','Kansas':'KS','Kentucky':'KY','Louisiana':'LA','Maine':'ME','Maryland':'MD','Massachusetts':'MA','Michigan':'MI','Minnesota':'MN','Mississippi':'MS','Missouri':'MO','Montana':'MT','Nebraska':'NE','Nevada':'NV','New Hampshire':'NH','New Jersey':'NJ','New Mexico':'NM','New York':'NY','North Carolina':'NC','North Dakota':'ND','Ohio':'OH','Oklahoma':'OK','Oregon':'OR','Pennsylvania':'PA','Rhode Island':'RI','South Carolina':'SC','South Dakota':'SD','Tennessee':'TN','Texas':'TX','Utah':'UT','Vermont':'VT','Virginia':'VA','Washington':'WA','West Virginia':'WV','Wisconsin':'WI','Wyoming':'WY','District of Columbia':'DC'
