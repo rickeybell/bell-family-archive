@@ -1,0 +1,126 @@
+name: Deploy Bell Family Archive to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build lightweight Pages site
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          rm -rf _site
+          mkdir -p _site
+
+          # Public website pages and lightweight support files.
+          find . -maxdepth 1 -type f \( \
+              -name '*.html' -o \
+              -name '*.css' -o \
+              -name '*.js' -o \
+              -name '*.json' -o \
+              -name '*.ico' -o \
+              -name '*.webmanifest' -o \
+              -name '.nojekyll' \
+            \) -exec cp -p {} _site/ \;
+
+          # Website derivatives only. Full-resolution originals are deliberately
+          # NOT copied into the GitHub Pages artifact.
+          if [ -d images ]; then
+            cp -a images _site/images
+          fi
+
+          if [ -d thumbs ]; then
+            cp -a thumbs _site/thumbs
+          fi
+
+          # Rewrite full-resolution download links so deployed pages fetch
+          # originals directly from the GitHub repository instead of Pages.
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          from urllib.parse import quote
+
+          root = Path("_site")
+          raw_base = "https://raw.githubusercontent.com/rickeybell/bell-family-archive/main/"
+
+          for page in root.glob("*.html"):
+              text = page.read_text(encoding="utf-8")
+
+              def repl(match):
+                  path = match.group(1).replace("\\", "/")
+                  encoded = "/".join(quote(part) for part in path.split("/"))
+                  return f'href="{raw_base}{encoded}"'
+
+              text = re.sub(
+                  r'href=["\'](originals/[^"\']+)["\']',
+                  repl,
+                  text,
+                  flags=re.IGNORECASE
+              )
+
+              # The gallery JavaScript also stores original URLs in JSON.
+              def repl_json(match):
+                  path = match.group(1).replace("\\\\", "/").replace("\\", "/")
+                  encoded = "/".join(quote(part) for part in path.split("/"))
+                  return '"orig":"' + raw_base + encoded + '"'
+
+              text = re.sub(
+                  r'"orig"\s*:\s*"((?:originals/)[^"]+)"',
+                  repl_json,
+                  text,
+                  flags=re.IGNORECASE
+              )
+
+              page.write_text(text, encoding="utf-8")
+          PY
+
+          echo
+          echo "Pages package:"
+          du -sh _site
+          echo
+          echo "Largest top-level items:"
+          du -sh _site/* 2>/dev/null | sort -h | tail -20
+
+          # Safety stop well below GitHub Pages' 1 GB artifact ceiling.
+          SIZE_BYTES=$(du -sb _site | cut -f1)
+          LIMIT_BYTES=$((900 * 1024 * 1024))
+          if [ "$SIZE_BYTES" -ge "$LIMIT_BYTES" ]; then
+            echo "ERROR: Pages package is 900 MB or larger."
+            exit 1
+          fi
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
