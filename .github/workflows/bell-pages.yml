@@ -1,4 +1,4 @@
-name: Deploy Bell Family Archive to Pages
+﻿name: Deploy Bell Family Archive to Pages
 
 on:
   push:
@@ -43,7 +43,7 @@ jobs:
               -name '.nojekyll' \
             \) -exec cp -p {} _site/ \;
 
-          # Website derivatives only. Full-resolution originals are deliberately
+          # Website derivatives only. High-resolution downloads are deliberately
           # NOT copied into the GitHub Pages artifact.
           if [ -d images ]; then
             cp -a images _site/images
@@ -53,7 +53,7 @@ jobs:
             cp -a thumbs _site/thumbs
           fi
 
-          # Rewrite full-resolution download links so deployed pages fetch
+          # Rewrite high-resolution download links so deployed pages fetch
           # originals directly from the GitHub repository instead of Pages.
           python3 - <<'PY'
           from pathlib import Path
@@ -72,7 +72,7 @@ jobs:
                   return f'href="{raw_base}{encoded}"'
 
               text = re.sub(
-                  r'href=["\'](originals/[^"\']+)["\']',
+                  r'href=["\'](highres/[^"\']+)["\']',
                   repl,
                   text,
                   flags=re.IGNORECASE
@@ -85,7 +85,7 @@ jobs:
                   return '"orig":"' + raw_base + encoded + '"'
 
               text = re.sub(
-                  r'"orig"\s*:\s*"((?:originals/)[^"]+)"',
+                  r'"orig"\s*:\s*"((?:highres/)[^"]+)"',
                   repl_json,
                   text,
                   flags=re.IGNORECASE
@@ -124,3 +124,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
