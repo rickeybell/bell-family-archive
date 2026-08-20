@@ -15,6 +15,7 @@ $Generator = Join-Path $RepoRoot "Sync-BellWebsitePhotos-v3.8.ps1"
 $Manifest = Join-Path $RepoRoot "website-photo-manifest.csv"
 $BuildMetadata = Join-Path $RepoRoot "tools\build_photo_metadata.py"
 $BuildGallery = Join-Path $RepoRoot "tools\build_dynamic_gallery.py"
+$ReportRoot = Join-Path ([Environment]::GetFolderPath("MyDocuments")) "BellWebsite-SizeReports"
 
 function Invoke-Checked {
     param(
@@ -43,10 +44,7 @@ function Test-RepoClean {
 }
 
 function Assert-MasterSourcesOutsideRepo {
-    if (!(Test-Path -LiteralPath $Manifest)) {
-        throw "Manifest not found: $Manifest"
-    }
-
+    if (!(Test-Path -LiteralPath $Manifest)) { throw "Manifest not found: $Manifest" }
     $repoFull = [System.IO.Path]::GetFullPath($RepoRoot).TrimEnd('\') + '\'
     $bad = @()
 
@@ -62,14 +60,70 @@ function Assert-MasterSourcesOutsideRepo {
 
     if ($bad.Count -gt 0) {
         $sample = ($bad | Select-Object -First 10) -join "`n  "
-        throw @"
-SAFETY STOP: website/repository files appear in the manifest as source masters.
-
-DigiKam/master photos must remain authoritative.
-First entries found:
-  $sample
-"@
+        throw "SAFETY STOP: repository files appear as source masters.`n  $sample"
     }
+}
+
+function Test-DecadePlaceholderFolderName {
+    param([string]$Name)
+    return ($Name -match '^(18|19|20)\d0s$')
+}
+
+function Remove-GeneratedPlaceholderDirectories {
+    foreach ($rootName in @("images","thumbs","highres")) {
+        $root = Join-Path $RepoRoot $rootName
+        if (!(Test-Path -LiteralPath $root)) { continue }
+        $matches = @(Get-ChildItem -LiteralPath $root -Directory -Recurse -Force -ErrorAction SilentlyContinue |
+            Where-Object { Test-DecadePlaceholderFolderName $_.Name } |
+            Sort-Object { $_.FullName.Length } -Descending)
+        foreach ($dir in $matches) {
+            if (Test-Path -LiteralPath $dir.FullName) {
+                Write-Host "Removing generated placeholder directory: $($dir.FullName)"
+                Remove-Item -LiteralPath $dir.FullName -Recurse -Force
+            }
+        }
+    }
+}
+
+function Get-FolderStat {
+    param([string]$Name)
+    $path = Join-Path $RepoRoot $Name
+    if (!(Test-Path -LiteralPath $path)) {
+        return [pscustomobject]@{Folder=$Name;Files=0;TotalGB=0;AverageMB=0;LargestMB=0}
+    }
+    $files = @(Get-ChildItem -LiteralPath $path -File -Recurse -ErrorAction SilentlyContinue)
+    if ($files.Count -eq 0) {
+        return [pscustomobject]@{Folder=$Name;Files=0;TotalGB=0;AverageMB=0;LargestMB=0}
+    }
+    $sum = ($files | Measure-Object Length -Sum).Sum
+    $largest = ($files | Sort-Object Length -Descending | Select-Object -First 1).Length
+    return [pscustomobject]@{
+        Folder=$Name
+        Files=$files.Count
+        TotalGB=[math]::Round($sum/1GB,3)
+        AverageMB=[math]::Round(($sum/$files.Count)/1MB,3)
+        LargestMB=[math]::Round($largest/1MB,3)
+    }
+}
+
+function Save-SizeReport {
+    param($Before,$After)
+    if (!(Test-Path -LiteralPath $ReportRoot)) {
+        New-Item -ItemType Directory -Path $ReportRoot -Force | Out-Null
+    }
+    $path = Join-Path $ReportRoot ("BellWebsite-Live-SizeReport-" + (Get-Date -Format "yyyyMMdd-HHmmss") + ".txt")
+    $text = @"
+Bell Family Archive LIVE Before/After Size Report
+Generated: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
+
+BEFORE
+$($Before | Format-Table -AutoSize | Out-String)
+
+AFTER
+$($After | Format-Table -AutoSize | Out-String)
+"@
+    $text | Set-Content -LiteralPath $path -Encoding UTF8
+    Write-Host "Size report saved: $path"
 }
 
 Write-Host ""
@@ -94,6 +148,13 @@ if (!(Test-RepoClean)) {
     throw "Repository is not clean. Commit, stash, or discard existing changes before running the updater."
 }
 
+$before = @(
+    Get-FolderStat "thumbs"
+    Get-FolderStat "images"
+    Get-FolderStat "originals"
+    Get-FolderStat "highres"
+)
+
 if (!$SkipPull) {
     Write-Host "[1/7] Updating local main branch..."
     Invoke-Checked git.exe -C $RepoRoot checkout main
@@ -102,17 +163,15 @@ if (!$SkipPull) {
     Write-Host "[1/7] Git pull skipped."
 }
 
-Write-Host "[2/7] Refreshing DigiKam Website-tag manifest..."
+Write-Host "[2/7] Refreshing DigiKam Website-tag manifest and generating derivatives..."
 $syncArgs = @(
     "-ExecutionPolicy", "Bypass",
     "-File", $Generator,
     "-FromYear", "$FromYear",
     "-ToYear", "$ToYear"
 )
-
 if (!$SkipManifestRefresh) { $syncArgs += "-RefreshManifest" }
-if ($DryRun) { $syncArgs += "-DryRun" }
-else { $syncArgs += "-Live" }
+if ($DryRun) { $syncArgs += "-DryRun" } else { $syncArgs += "-Live" }
 
 Invoke-Checked powershell.exe @syncArgs
 
@@ -122,8 +181,26 @@ if ($DryRun) {
     exit 0
 }
 
-Write-Host "[3/7] Verifying that DigiKam/master files are authoritative..."
+Write-Host "[3/7] Safety cleanup and master verification..."
 Assert-MasterSourcesOutsideRepo
+Remove-GeneratedPlaceholderDirectories
+
+# Once highres has been generated successfully, the repository originals folder
+# is retired. DigiKam/master remains the authoritative archival copy.
+$highresPath = Join-Path $RepoRoot "highres"
+if (!(Test-Path -LiteralPath $highresPath)) {
+    throw "SAFETY STOP: highres folder was not generated. originals will NOT be removed."
+}
+$highCount = @(Get-ChildItem -LiteralPath $highresPath -File -Recurse -ErrorAction SilentlyContinue).Count
+if ($highCount -eq 0) {
+    throw "SAFETY STOP: highres folder is empty. originals will NOT be removed."
+}
+
+$originalsPath = Join-Path $RepoRoot "originals"
+if (Test-Path -LiteralPath $originalsPath) {
+    Write-Host "Retiring GitHub originals folder after successful HighRes generation..."
+    Remove-Item -LiteralPath $originalsPath -Recurse -Force
+}
 
 $py = Get-PythonCommand
 
@@ -133,13 +210,26 @@ Invoke-Checked $py.File @($py.Prefix + @($BuildMetadata))
 Write-Host "[5/7] Rebuilding chronological and person photo galleries..."
 Invoke-Checked $py.File @($py.Prefix + @($BuildGallery))
 
+$after = @(
+    Get-FolderStat "thumbs"
+    Get-FolderStat "images"
+    Get-FolderStat "originals"
+    Get-FolderStat "highres"
+)
+
+Write-Host ""
+Write-Host "BEFORE:"
+$before | Format-Table -AutoSize
+Write-Host "AFTER:"
+$after | Format-Table -AutoSize
+Save-SizeReport $before $after
+
 Write-Host "[6/7] Reviewing changed files..."
 $status = git -C $RepoRoot status --short
 if ([string]::IsNullOrWhiteSpace(($status -join "`n"))) {
     Write-Host "No website changes detected."
     exit 0
 }
-
 $status | ForEach-Object { Write-Host $_ }
 
 Write-Host ""
@@ -149,29 +239,20 @@ git -C $RepoRoot diff --stat
 if (!$Publish) {
     Write-Host ""
     Write-Host "Update complete, but nothing was committed or pushed."
-    Write-Host "Review the site locally, then run again with -Publish when ready."
-    Write-Host ""
-    Write-Host "Example:"
-    Write-Host "  .\Update-BellWebsite.ps1 -FromYear 1940 -ToYear 1949 -Publish"
+    Write-Host "Review the site and size report first."
     exit 0
 }
 
 Write-Host "[7/7] Committing and pushing approved website changes..."
 
 if ([string]::IsNullOrWhiteSpace($CommitMessage)) {
-    if ($FromYear -eq 0 -and $ToYear -eq 9999) {
-        $CommitMessage = "Update website from DigiKam master metadata and photos"
-    } elseif ($FromYear -eq $ToYear) {
-        $CommitMessage = "Update $FromYear photos, metadata, and galleries"
-    } else {
-        $CommitMessage = "Update $FromYear-$ToYear photos, metadata, and galleries"
-    }
+    $CommitMessage = "Optimize website images and replace originals with HighRes downloads"
 }
 
-# Stage only known website-generated content and metadata.
 $paths = @(
     "images",
     "thumbs",
+    "highres",
     "originals",
     "photo_metadata.json",
     "gallery.html",
@@ -184,14 +265,14 @@ $paths = @(
     "sonja-photos.html",
     "spooky-photos.html",
     "stephanie-photos.html",
-    "website-photo-manifest.csv"
+    "website-photo-manifest.csv",
+    "tools/build_dynamic_gallery.py",
+    ".github/workflows/bell-pages.yml"
 )
 
 foreach ($p in $paths) {
-    if (Test-Path -LiteralPath (Join-Path $RepoRoot $p)) {
-        git -C $RepoRoot add -- $p
-        if ($LASTEXITCODE -ne 0) { throw "Failed to stage $p" }
-    }
+    git -C $RepoRoot add -A -- $p
+    if ($LASTEXITCODE -ne 0) { throw "Failed to stage $p" }
 }
 
 $staged = git -C $RepoRoot diff --cached --name-only
@@ -209,8 +290,5 @@ Invoke-Checked git.exe -C $RepoRoot push origin main
 
 Write-Host ""
 Write-Host "Published successfully."
-Write-Host "Commit:"
 git -C $RepoRoot log -1 --oneline
-Write-Host ""
-Write-Host "Live site:"
-Write-Host "  https://rickeybell.github.io/bell-family-archive/"
+Write-Host "https://rickeybell.github.io/bell-family-archive/"
