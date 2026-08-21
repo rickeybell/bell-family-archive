@@ -9,6 +9,21 @@ document.addEventListener("DOMContentLoaded",()=>{
    if(main){main.style.width="100%";main.style.maxWidth="1500px";main.style.margin="0 auto";}
  }
 
+
+ // Keep the biography-page archive count synchronized with the same
+ // photo_metadata.json used to generate the person's photo archive.
+ const personCount=document.querySelector(".person-count");
+ const personName=document.querySelector(".person-hero h1")?.textContent?.trim();
+ if(personCount && personName){
+   fetch("photo_metadata.json",{cache:"no-store"})
+     .then(r=>{if(!r.ok)throw new Error("photo metadata unavailable");return r.json();})
+     .then(items=>{
+       const count=items.filter(x=>Array.isArray(x.people)&&x.people.includes(personName)).length;
+       personCount.textContent=`${count} currently identified archive item${count===1?"":"s"}`;
+     })
+     .catch(err=>console.warn("Biography archive count could not be refreshed:",err));
+ }
+
  const cards=[...document.querySelectorAll(".photo-card")];
 
  // Use the restored display copy from the organized 1960 image folder.
