@@ -521,3 +521,1214 @@ footer{
   overflow:visible !important;
   line-height:1.25 !important;
 }
+
+
+/* Bell family relationship tree clean layout v4 */
+.dickey-family-branch-v3{
+  width:min(1280px,100%);
+  margin:0 auto;
+  padding:0 28px 36px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.dickey-family-branch-v3 .branch-title{
+  margin:0 -28px 26px;
+  padding:14px 20px;
+  text-align:center;
+  background:#f1ede2;
+  border-bottom:1px solid var(--line);
+  font-size:24px;
+  font-weight:700;
+  color:var(--green);
+}
+.dickey-top-row{
+  display:grid;
+  grid-template-columns:210px 90px 210px 90px 210px;
+  gap:18px;
+  justify-content:center;
+  align-items:center;
+}
+.relationship-marker{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  gap:3px;
+  min-width:80px;
+}
+.relationship-symbol{font-size:36px;line-height:1;font-weight:700}
+.heart-symbol{color:#a2364b}
+.x-symbol{color:#6a4b44;font-size:40px}
+.relationship-text{font-size:12px;line-height:1.25}
+.relationship-text strong,.relationship-text span{display:block}
+.tree-person-static{cursor:default}
+.tree-photo-placeholder{
+  height:160px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#ece7dc;
+  color:var(--muted);
+  font-size:13px;
+  font-style:italic;
+  text-align:center;
+}
+.parent-line{
+  position:relative;
+  width:820px;
+  height:62px;
+  margin:0 auto;
+}
+.parent-line-left{
+  position:absolute;left:16px;top:14px;width:2px;height:24px;background:#7b8971;
+}
+.parent-line-right{
+  position:absolute;right:16px;top:14px;width:2px;height:24px;background:#7b8971;
+}
+.parent-line::before{
+  content:"";position:absolute;left:16px;right:16px;top:37px;height:2px;background:#7b8971;
+}
+.parent-line-down{
+  position:absolute;left:50%;top:37px;width:2px;height:25px;background:#7b8971;
+}
+.parentage-caption{
+  text-align:center;margin:-2px 0 18px;color:var(--muted);font-size:12px;font-style:italic;
+}
+.rickey-stephanie-row{
+  display:grid;
+  grid-template-columns:210px 95px 210px;
+  gap:22px;
+  justify-content:center;
+  align-items:center;
+}
+.children-line{
+  position:relative;
+  width:610px;
+  height:64px;
+  margin:0 auto;
+}
+.children-line::before{
+  content:"";position:absolute;left:50%;top:0;width:2px;height:30px;background:#7b8971;
+}
+.children-line::after{
+  content:"";position:absolute;left:25%;right:25%;top:30px;height:2px;background:#7b8971;
+}
+.children-generation-row{
+  display:grid;
+  grid-template-columns:360px 620px;
+  gap:80px;
+  align-items:start;
+  justify-content:center;
+}
+.child-family{display:flex;justify-content:center}
+.jarred-dominique-row{
+  display:grid;
+  grid-template-columns:210px 100px 210px;
+  gap:18px;
+  align-items:center;
+  justify-content:center;
+}
+.grandchildren-row{
+  position:relative;
+  display:grid;
+  grid-template-columns:210px 210px 210px;
+  gap:42px;
+  justify-content:center;
+  align-items:start;
+  margin-top:78px;
+}
+.grandchildren-row::before{
+  content:"";position:absolute;left:14%;right:14%;top:-42px;height:2px;background:#7b8971;
+}
+.grandchildren-row > .tree-person{position:relative}
+.grandchildren-row > .tree-person::before{
+  content:"";position:absolute;left:50%;top:-42px;width:2px;height:42px;background:#7b8971;
+}
+.grandchildren-row > .tree-person::after{
+  content:"";position:absolute;left:50%;top:-78px;width:2px;height:36px;background:#7b8971;
+}
+
+@media(max-width:1180px){
+  .dickey-family-branch-v3{padding-left:18px;padding-right:18px}
+  .dickey-family-branch-v3 .branch-title{margin-left:-18px;margin-right:-18px}
+  .children-generation-row{grid-template-columns:300px 560px;gap:40px}
+  .jarred-dominique-row{grid-template-columns:200px 90px 200px;gap:12px}
+}
+@media(max-width:930px){
+  .dickey-top-row{
+    grid-template-columns:210px 70px 210px;
+    grid-template-areas:"dickey heart sonja" "dickey ex debbie";
+  }
+  .dickey-top-row > :nth-child(1){grid-area:dickey}
+  .dickey-top-row > :nth-child(2){grid-area:heart}
+  .dickey-top-row > :nth-child(3){grid-area:sonja}
+  .dickey-top-row > :nth-child(4){grid-area:ex}
+  .dickey-top-row > :nth-child(5){grid-area:debbie}
+  .parent-line{display:none}
+  .children-generation-row{display:flex;flex-direction:column;align-items:center;gap:44px}
+  .grandchildren-row{grid-template-columns:repeat(2,210px)}
+}
+@media(max-width:650px){
+  .dickey-top-row,.rickey-stephanie-row,.jarred-dominique-row{
+    display:flex;flex-direction:column;align-items:center;
+  }
+  .children-line,.grandchildren-row::before,.grandchildren-row > .tree-person::before,.grandchildren-row > .tree-person::after{
+    display:none;
+  }
+  .grandchildren-row{grid-template-columns:210px;margin-top:36px}
+}
+
+
+/* Bell family relationship tree compact layout v5 */
+
+.dickey-family-branch-v3{
+  width:100%;
+  max-width:1000px;
+  padding-left:20px;
+  padding-right:20px;
+}
+.dickey-family-branch-v3 .branch-title{
+  margin-left:-20px;
+  margin-right:-20px;
+}
+
+.dickey-family-branch-v3 .tree-person{
+  width:185px;
+}
+.dickey-family-branch-v3 .tree-photo{
+  height:155px;
+}
+.dickey-family-branch-v3 .tree-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.dickey-family-branch-v3 .tree-name{
+  font-size:16px;
+}
+.dickey-family-branch-v3 .tree-vitals,
+.dickey-family-branch-v3 .tree-relation,
+.dickey-family-branch-v3 .tree-count{
+  font-size:11px;
+}
+
+.dickey-top-row{
+  grid-template-columns:185px 60px 185px 60px 185px;
+  gap:10px;
+}
+.relationship-marker{
+  min-width:54px;
+}
+.relationship-symbol{
+  font-size:31px;
+}
+.x-symbol{
+  font-size:34px;
+}
+.relationship-text{
+  font-size:11px;
+}
+
+.parent-line{
+  width:700px;
+}
+
+.rickey-stephanie-row{
+  grid-template-columns:185px 65px 185px;
+  gap:12px;
+}
+
+.children-line{
+  width:500px;
+}
+.children-generation-row{
+  grid-template-columns:260px 500px;
+  gap:28px;
+}
+.jarred-dominique-row{
+  grid-template-columns:185px 70px 185px;
+  gap:10px;
+}
+
+.grandchildren-row{
+  grid-template-columns:repeat(3,185px);
+  gap:24px;
+  margin-top:66px;
+}
+
+.sibling-branches{
+  width:100%;
+  max-width:1500px;
+  margin-left:auto;
+  margin-right:auto;
+  gap:18px;
+  align-items:flex-start;
+}
+.sibling-branches > .family-branch:first-child{
+  flex:0 1 540px;
+  max-width:540px;
+}
+.sibling-branches > .dickey-family-branch-v3{
+  flex:1 1 900px;
+  min-width:0;
+}
+
+@media(max-width:1450px){
+  .sibling-branches{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .sibling-branches > .family-branch:first-child,
+  .sibling-branches > .dickey-family-branch-v3{
+    width:min(100%,1000px);
+    max-width:1000px;
+  }
+}
+
+@media(max-width:1000px){
+  .dickey-top-row{
+    grid-template-columns:185px 55px 185px;
+  }
+  .parent-line{
+    display:none;
+  }
+  .children-generation-row{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+}
+
+
+/* Bell family explicit lineage lines v8 */
+
+.lineage-rickey-children{
+  position:relative;
+  width:814px;
+  height:68px;
+  margin:0 auto;
+}
+.lineage-rickey-children .line-down-from-parents{
+  position:absolute;
+  left:50%;
+  top:0;
+  width:2px;
+  height:30px;
+  background:#74826c;
+}
+.lineage-rickey-children .line-horizontal{
+  position:absolute;
+  left:140px;
+  right:250px;
+  top:29px;
+  height:2px;
+  background:#74826c;
+}
+.lineage-rickey-children .line-down-samatha{
+  position:absolute;
+  left:140px;
+  top:29px;
+  width:2px;
+  height:39px;
+  background:#74826c;
+}
+.lineage-rickey-children .line-down-jarred{
+  position:absolute;
+  left:564px;
+  top:29px;
+  width:2px;
+  height:39px;
+  background:#74826c;
+}
+
+.children-generation-row.lineage-children-row{
+  display:grid;
+  grid-template-columns:280px 500px;
+  gap:34px;
+  justify-content:center;
+  align-items:start;
+}
+.lineage-family{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:100%;
+}
+
+.samatha-sophia-line{
+  width:2px;
+  height:64px;
+  background:#74826c;
+  margin:0 auto;
+}
+
+.jarred-dom-children-line{
+  position:relative;
+  width:394px;
+  height:64px;
+  margin:0 auto;
+}
+.jarred-dom-children-line .couple-mid{
+  position:absolute;
+  left:50%;
+  top:0;
+  width:2px;
+  height:31px;
+  background:#74826c;
+}
+.jarred-dom-children-line .couple-horizontal{
+  position:absolute;
+  left:92px;
+  right:92px;
+  top:30px;
+  height:2px;
+  background:#74826c;
+}
+.jarred-dom-children-line .olivia-stem{
+  position:absolute;
+  left:92px;
+  top:30px;
+  width:2px;
+  height:34px;
+  background:#74826c;
+}
+.jarred-dom-children-line .ivy-stem{
+  position:absolute;
+  right:92px;
+  top:30px;
+  width:2px;
+  height:34px;
+  background:#74826c;
+}
+
+.jarred-children-row{
+  display:grid;
+  grid-template-columns:185px 185px;
+  gap:24px;
+  justify-content:center;
+  align-items:start;
+}
+
+.samatha-family > .descendant-person,
+.jarred-children-row > .descendant-person{
+  margin-top:0;
+}
+
+.jarred-dominique-row{
+  grid-template-columns:185px 62px 185px !important;
+  gap:8px !important;
+}
+.jarred-dom-marker{
+  min-width:58px !important;
+}
+
+.grandchildren-row,
+.grandchildren-row::before,
+.grandchildren-row > .tree-person::before,
+.grandchildren-row > .tree-person::after,
+.single-parent-connector,
+.couple-children-connector{
+  display:none !important;
+}
+
+@media(max-width:1000px){
+  .lineage-rickey-children{display:none}
+  .children-generation-row.lineage-children-row{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:44px;
+  }
+}
+
+
+/* Bell family child-line trim v9 */
+
+/* Stop Rickey + Stephanie's horizontal child line at Jarred's stem.
+   This removes the stray segment extending to the right of Jarred. */
+.lineage-rickey-children .line-horizontal{
+  left:140px !important;
+  right:auto !important;
+  width:424px !important;
+}
+
+
+/* Definitive lineage connector cleanup v10 */
+
+.children-line::before,
+.children-line::after{
+  content:none !important;
+  display:none !important;
+}
+
+.lineage-rickey-children{
+  position:relative !important;
+  width:814px !important;
+  height:68px !important;
+  margin:0 auto !important;
+}
+.lineage-rickey-children .line-down-from-parents{
+  display:block !important;
+  position:absolute !important;
+  left:50% !important;
+  top:0 !important;
+  width:2px !important;
+  height:30px !important;
+  background:#74826c !important;
+}
+.lineage-rickey-children .line-horizontal{
+  display:block !important;
+  position:absolute !important;
+  left:140px !important;
+  top:29px !important;
+  width:424px !important;
+  height:2px !important;
+  background:#74826c !important;
+}
+.lineage-rickey-children .line-down-samatha{
+  display:block !important;
+  position:absolute !important;
+  left:140px !important;
+  top:29px !important;
+  width:2px !important;
+  height:39px !important;
+  background:#74826c !important;
+}
+.lineage-rickey-children .line-down-jarred{
+  display:block !important;
+  position:absolute !important;
+  left:564px !important;
+  top:29px !important;
+  width:2px !important;
+  height:39px !important;
+  background:#74826c !important;
+}
+
+.samatha-sophia-line{
+  display:block !important;
+  width:2px !important;
+  height:64px !important;
+  margin:0 auto !important;
+  background:#74826c !important;
+}
+
+.jarred-dom-children-line{
+  display:block !important;
+  position:relative !important;
+  width:394px !important;
+  height:64px !important;
+  margin:0 auto !important;
+}
+.jarred-dom-children-line .couple-mid{
+  display:block !important;
+  position:absolute !important;
+  left:50% !important;
+  top:0 !important;
+  width:2px !important;
+  height:31px !important;
+  background:#74826c !important;
+}
+.jarred-dom-children-line .couple-horizontal{
+  display:block !important;
+  position:absolute !important;
+  left:92px !important;
+  right:92px !important;
+  top:30px !important;
+  height:2px !important;
+  background:#74826c !important;
+}
+.jarred-dom-children-line .olivia-stem{
+  display:block !important;
+  position:absolute !important;
+  left:92px !important;
+  top:30px !important;
+  width:2px !important;
+  height:34px !important;
+  background:#74826c !important;
+}
+.jarred-dom-children-line .ivy-stem{
+  display:block !important;
+  position:absolute !important;
+  right:92px !important;
+  top:30px !important;
+  width:2px !important;
+  height:34px !important;
+  background:#74826c !important;
+}
+
+.grandchildren-row::before,
+.grandchildren-row > .tree-person::before,
+.grandchildren-row > .tree-person::after,
+.jarred-children-row > .tree-person::before,
+.jarred-children-row > .tree-person::after,
+.samatha-family > .tree-person::before,
+.samatha-family > .tree-person::after{
+  content:none !important;
+  display:none !important;
+}
+
+
+/* Bell family lineage bars v11 */
+
+.children-line::before,
+.children-line::after,
+.lineage-rickey-children .line-down-from-parents,
+.lineage-rickey-children .line-horizontal,
+.lineage-rickey-children .line-down-samatha,
+.lineage-rickey-children .line-down-jarred,
+.jarred-dom-children-line .couple-mid,
+.jarred-dom-children-line .couple-horizontal,
+.grandchildren-row::before,
+.grandchildren-row > .tree-person::before,
+.grandchildren-row > .tree-person::after,
+.jarred-children-row > .tree-person::before,
+.jarred-children-row > .tree-person::after{
+  content:none !important;
+  display:none !important;
+}
+
+.lineage-couple-children{
+  position:relative !important;
+  display:block !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+.lineage-couple-children .parent-stem,
+.lineage-couple-children .child-stem,
+.lineage-couple-children .family-bar{
+  display:block !important;
+  position:absolute !important;
+  background:#74826c !important;
+}
+
+.lineage-rickey-children{
+  width:814px !important;
+  height:72px !important;
+}
+.lineage-rickey-children .family-bar{
+  left:140px !important;
+  top:30px !important;
+  width:404px !important;
+  height:2px !important;
+}
+.lineage-rickey-children .rickey-stem{
+  left:270px !important;
+  top:0 !important;
+  width:2px !important;
+  height:32px !important;
+}
+.lineage-rickey-children .stephanie-stem{
+  left:544px !important;
+  top:0 !important;
+  width:2px !important;
+  height:32px !important;
+}
+.lineage-rickey-children .samatha-stem{
+  left:140px !important;
+  top:30px !important;
+  width:2px !important;
+  height:42px !important;
+}
+.lineage-rickey-children .jarred-stem{
+  left:433px !important;
+  top:30px !important;
+  width:2px !important;
+  height:42px !important;
+}
+
+.samatha-sophia-line{
+  display:block !important;
+  width:2px !important;
+  height:64px !important;
+  margin:0 auto !important;
+  background:#74826c !important;
+}
+
+.jarred-dom-children-line{
+  width:500px !important;
+  height:72px !important;
+}
+.jarred-dom-children-line .family-bar{
+  left:119px !important;
+  top:30px !important;
+  width:263px !important;
+  height:2px !important;
+}
+.jarred-dom-children-line .jarred-parent-stem{
+  left:119px !important;
+  top:0 !important;
+  width:2px !important;
+  height:32px !important;
+}
+.jarred-dom-children-line .dominique-parent-stem{
+  left:382px !important;
+  top:0 !important;
+  width:2px !important;
+  height:32px !important;
+}
+.jarred-dom-children-line .olivia-stem{
+  left:146px !important;
+  top:30px !important;
+  width:2px !important;
+  height:42px !important;
+}
+.jarred-dom-children-line .ivy-stem{
+  left:355px !important;
+  top:30px !important;
+  width:2px !important;
+  height:42px !important;
+}
+
+@media(max-width:1000px){
+  .lineage-rickey-children{
+    display:none !important;
+  }
+}
+
+/* Disable the previous generic trunk/branch pseudo-lines for these two areas. */
+.tree-trunk,
+.spooky-helen-child-line::before,
+.spooky-helen-child-line::after{
+  background:none !important;
+  border:0 !important;
+}
+
+/* ------------------------------------------------------------
+   Buster + Alma -> Spooky and Dickey
+   One shared family bar, with separate parent and child stems.
+   ------------------------------------------------------------ */
+.ancestor-children-line{
+  position:relative;
+  display:block;
+  width:min(1180px,92vw);
+  height:82px;
+  margin:-2px auto 0;
+}
+.ancestor-children-line span{
+  position:absolute;
+  display:block;
+  background:#74826c;
+}
+.ancestor-bar{
+  left:8%;
+  right:8%;
+  top:34px;
+  height:2px;
+}
+.buster-parent{
+  left:39%;
+  top:0;
+  width:2px;
+  height:36px;
+}
+.alma-parent{
+  left:59%;
+  top:0;
+  width:2px;
+  height:36px;
+}
+.spooky-child{
+  left:16%;
+  top:34px;
+  width:2px;
+  height:48px;
+}
+.dickey-child{
+  left:73%;
+  top:34px;
+  width:2px;
+  height:48px;
+}
+
+/* ------------------------------------------------------------
+   Spooky + Helen -> Heather
+   ------------------------------------------------------------ */
+.spooky-helen-child-line{
+  position:relative;
+  display:block;
+  width:410px;
+  height:72px;
+  margin:0 auto;
+}
+.spooky-helen-child-line span{
+  position:absolute;
+  display:block;
+  background:#74826c;
+}
+.spooky-family-bar{
+  left:75px;
+  right:75px;
+  top:30px;
+  height:2px;
+}
+.spooky-parent{
+  left:105px;
+  top:0;
+  width:2px;
+  height:32px;
+}
+.helen-parent{
+  right:105px;
+  top:0;
+  width:2px;
+  height:32px;
+}
+.heather-child{
+  left:50%;
+  top:30px;
+  width:2px;
+  height:42px;
+}
+
+/* Make sure the upper connector does not create horizontal overflow. */
+.family-tree,
+.sibling-branches{
+  overflow:visible;
+}
+@media(max-width:1000px){
+  .ancestor-children-line{
+    width:92%;
+  }
+}
+
+/* Same heart-marker look for all couple relationships. */
+.grandparent-heart,
+.spooky-heart{
+  min-width:72px;
+}
+
+/* Buster + Alma -> Spooky and Dickey.
+   One vertical line from the center of the couple heart to a shared sibling bar. */
+.ancestor-center-v14{
+  position:relative !important;
+  width:min(1180px,92vw) !important;
+  height:82px !important;
+  margin:0 auto !important;
+}
+.ancestor-center-v14 span{
+  position:absolute !important;
+  display:block !important;
+  background:#74826c !important;
+}
+.ancestor-center-v14 .ancestor-couple-down{
+  left:50% !important;
+  top:0 !important;
+  width:2px !important;
+  height:32px !important;
+}
+.ancestor-center-v14 .ancestor-family-bar{
+  left:14% !important;
+  right:14% !important;
+  top:31px !important;
+  height:2px !important;
+}
+.ancestor-center-v14 .ancestor-spooky-down{
+  left:22% !important;
+  top:31px !important;
+  width:2px !important;
+  height:51px !important;
+}
+.ancestor-center-v14 .ancestor-dickey-down{
+  left:73% !important;
+  top:31px !important;
+  width:2px !important;
+  height:51px !important;
+}
+
+/* Remove old upper-line attempts. */
+.ancestor-children-line::before,
+.ancestor-children-line::after,
+.tree-trunk{
+  content:none !important;
+  display:none !important;
+}
+
+/* Spooky + Helen -> Heather.
+   One vertical from the relationship heart center to a short family bar. */
+.spooky-center-v14{
+  position:relative !important;
+  width:390px !important;
+  height:72px !important;
+  margin:0 auto !important;
+}
+.spooky-center-v14 span{
+  position:absolute !important;
+  display:block !important;
+  background:#74826c !important;
+}
+.spooky-center-v14 .spooky-couple-down{
+  left:50% !important;
+  top:0 !important;
+  width:2px !important;
+  height:30px !important;
+}
+.spooky-center-v14 .spooky-family-bar{
+  left:22% !important;
+  right:22% !important;
+  top:29px !important;
+  height:2px !important;
+}
+.spooky-center-v14 .heather-down{
+  left:50% !important;
+  top:29px !important;
+  width:2px !important;
+  height:43px !important;
+}
+
+.spooky-helen-child-line::before,
+.spooky-helen-child-line::after{
+  content:none !important;
+  display:none !important;
+}
+
+/* Center Heather directly below Spooky/Helen. */
+.sibling-branches > .family-branch:first-child .children-row{
+  justify-content:center !important;
+}
+
+
+/* Clean upper SVG lineage v15 */
+
+/* Hide all obsolete upper lineage remnants. */
+.tree-trunk,
+.ancestor-children-line,
+.spooky-helen-child-line,
+.sibling-branches > .family-branch:first-child .branch-line{
+  display:none !important;
+}
+
+/* Buster + Alma -> Spooky + Dickey */
+.upper-lineage-svg-wrap{
+  width:min(1180px,94vw);
+  height:92px;
+  margin:0 auto -4px;
+  overflow:visible;
+}
+.upper-lineage-svg{
+  width:100%;
+  height:100%;
+  display:block;
+  overflow:visible;
+}
+.upper-lineage-svg path{
+  fill:none;
+  stroke:#74826c;
+  stroke-width:2;
+  vector-effect:non-scaling-stroke;
+  stroke-linecap:square;
+  stroke-linejoin:miter;
+}
+
+/* Spooky + Helen -> Heather */
+.spooky-lineage-svg-wrap{
+  width:410px;
+  height:72px;
+  margin:0 auto;
+  overflow:visible;
+}
+.spooky-lineage-svg{
+  width:100%;
+  height:100%;
+  display:block;
+  overflow:visible;
+}
+.spooky-lineage-svg path{
+  fill:none;
+  stroke:#74826c;
+  stroke-width:2;
+  vector-effect:non-scaling-stroke;
+  stroke-linecap:square;
+  stroke-linejoin:miter;
+}
+
+/* Keep branch panels immediately under the SVG child stems. */
+.sibling-branches{
+  margin-top:0 !important;
+}
+.sibling-branches > .family-branch:first-child .children-row{
+  margin-top:0 !important;
+  justify-content:center !important;
+}
+
+@media(max-width:1450px){
+  .upper-lineage-svg-wrap{
+    width:min(1000px,92vw);
+  }
+}
+
+
+/* Dynamic family tree lines v1 */
+.tree-trunk,
+.branch-line,
+.parent-line,
+.children-line,
+.samatha-sophia-line,
+.jarred-dom-children-line,
+.ancestor-children-line,
+.spooky-helen-child-line,
+.upper-lineage-svg-wrap,
+.spooky-lineage-svg-wrap,
+.ancestor-lineage,
+.spooky-lineage,
+.sibling-branches::before,
+.family-branch::before,
+.grandchildren-row::before,
+.grandchildren-row > .tree-person::before,
+.grandchildren-row > .tree-person::after,
+.jarred-children-row > .tree-person::before,
+.jarred-children-row > .tree-person::after{
+  display:none !important;
+  content:none !important;
+}
+
+.family-tree{
+  position:relative !important;
+}
+#familyTreeLineLayer{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  overflow:visible;
+  pointer-events:none;
+  z-index:10;
+}
+#familyTreeLineLayer path{
+  fill:none;
+  stroke:#74826c;
+  stroke-width:2;
+  vector-effect:non-scaling-stroke;
+  stroke-linecap:square;
+  stroke-linejoin:miter;
+}
+.tree-person,
+.relationship-marker,
+.branch-title{
+  position:relative;
+  z-index:11;
+}
+.family-branch{
+  z-index:1;
+}
+.sibling-branches{
+  padding-top:24px !important;
+}
+
+
+/* Dynamic family tree generation spacing v2 */
+
+/*
+  The JavaScript now draws the lineage from the real card positions.
+  These rules only create vertical breathing room between generations.
+  They do NOT draw any lines.
+*/
+
+/* Dickey/Debbie -> Rickey/Stephanie */
+.parentage-caption{
+  margin-top:12px !important;
+  margin-bottom:22px !important;
+}
+.rickey-stephanie-row{
+  margin-top:0 !important;
+  margin-bottom:0 !important;
+}
+
+/* Rickey/Stephanie -> Samatha and Jarred */
+.children-generation-row.lineage-children-row{
+  margin-top:78px !important;
+}
+
+/* Keep Samatha and the Jarred/Dominique pair at the same generation height. */
+.samatha-family,
+.jarred-family{
+  align-self:start !important;
+}
+
+/* Samatha -> Sophia */
+.samatha-family > .descendant-person{
+  margin-top:76px !important;
+}
+
+/* Jarred + Dominique -> Olivia and Ivy */
+.jarred-children-row{
+  margin-top:76px !important;
+}
+
+/* Keep Olivia and Ivy level with one another. */
+.jarred-children-row > .tree-person{
+  margin-top:0 !important;
+}
+
+/* Do not let hidden legacy connector elements reserve stray space. */
+.samatha-sophia-line,
+.jarred-dom-children-line,
+.children-line,
+.parent-line{
+  height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* A little room beneath the last generation. */
+.children-generation-row.lineage-children-row{
+  padding-bottom:28px !important;
+}
+
+@media(max-width:1000px){
+  .children-generation-row.lineage-children-row{
+    margin-top:38px !important;
+  }
+  .samatha-family > .descendant-person,
+  .jarred-children-row{
+    margin-top:38px !important;
+  }
+}
+
+
+/* Dickey-Debbie middle lineage spacing v3 */
+
+/*
+  The dynamic JavaScript connector is correct here; the problem is that
+  the parentage caption occupies the same vertical band as the horizontal
+  Dickey + Debbie -> Rickey family line.
+*/
+
+/* Create a clear connector band immediately below Dickey and Debbie. */
+.dickey-top-row{
+  margin-bottom:0 !important;
+}
+
+/* Push the caption below the dynamic horizontal lineage bar. */
+.parentage-caption{
+  margin-top:52px !important;
+  margin-bottom:16px !important;
+  position:relative !important;
+  z-index:12 !important;
+  line-height:1.3 !important;
+}
+
+/* Give the caption a small page-colored pad so it stays readable without
+   covering the actual vertical child stem. */
+.parentage-caption{
+  display:table !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  padding:2px 10px !important;
+  background:var(--paper) !important;
+}
+
+/* Keep Rickey and Stephanie comfortably below the caption. */
+.rickey-stephanie-row{
+  margin-top:0 !important;
+}
+
+/* The old hidden static parent-line must reserve absolutely no room. */
+.parent-line,
+.dickey-debbie-line{
+  display:none !important;
+  height:0 !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* On narrower screens use a slightly smaller gap. */
+@media(max-width:1000px){
+  .parentage-caption{
+    margin-top:34px !important;
+  }
+}
+
+
+/* Middle tree alignment fine-tune v4 */
+
+/* Shift the Dickey + Debbie parentage caption about 3/8 inch to the right.
+   3/8 inch at standard browser CSS resolution is approximately 36px. */
+.parentage-caption{
+  transform:translateX(36px) !important;
+}
+
+/* Move Heather down to approximately the same generation level as Rickey.
+   The dynamic lineage JavaScript will automatically lengthen/reposition
+   the Spooky/Helen -> Heather connector after the card moves. */
+.sibling-branches > .family-branch:first-child .children-row{
+  margin-top:82px !important;
+}
+
+/* Keep Heather centered under Spooky and Helen. */
+.sibling-branches > .family-branch:first-child .children-row .tree-person[href="heather.html"]{
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+
+/* Center descendants under Buster and Alma v5 */
+
+/*
+  The Dickey branch is much wider than the Spooky branch, so the combined
+  descendants visually lean to the right even though the container itself
+  is centered. Shift the complete descendant block left so its visual center
+  sits under Buster + Alma.
+*/
+.sibling-branches{
+  transform:translateX(-92px) !important;
+}
+
+/*
+  The dynamic family-tree-line script measures the cards after layout, so
+  its connector lines will automatically follow this shift.
+*/
+
+/* Keep the shift modest on narrower screens and remove it once branches stack. */
+@media(max-width:1550px){
+  .sibling-branches{
+    transform:translateX(-70px) !important;
+  }
+}
+@media(max-width:1450px){
+  .sibling-branches{
+    transform:none !important;
+  }
+}
+
+
+/* Grandchild card height + Debbie count v6 */
+
+/* Sophia, Olivia and Ivy need more room for vitals, relationship text,
+   and archive/count text. Keep their widths the same, only increase height. */
+.tree-person.descendant-person{
+  min-height:355px !important;
+  height:355px !important;
+}
+
+/* Give the bottom text areas enough room so nothing is clipped. */
+.tree-person.descendant-person .tree-relation{
+  min-height:66px !important;
+  height:auto !important;
+  overflow:visible !important;
+}
+.tree-person.descendant-person .tree-count{
+  min-height:48px !important;
+  height:auto !important;
+  overflow:visible !important;
+  padding-bottom:12px !important;
+}
+
+/* Extra safety for the three bottom-generation cards specifically. */
+.tree-person[href="sophia.html"],
+.tree-person[href="olivia.html"],
+.tree-person[href="ivy.html"]{
+  overflow:hidden !important;
+}
+
+@media(max-width:700px){
+  .tree-person.descendant-person{
+    min-height:340px !important;
+    height:340px !important;
+  }
+}
