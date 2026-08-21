@@ -29,13 +29,26 @@ function Invoke-Checked {
 }
 
 function Get-PythonCommand {
-    if (Get-Command py.exe -ErrorAction SilentlyContinue) {
-        return @{ File = "py.exe"; Prefix = @("-3") }
+    # Prefer a working python.exe.  On this system the Microsoft launcher
+    # exposes Python 3.14 through python.exe, while `py -3` is not valid.
+    $python = Get-Command python.exe -ErrorAction SilentlyContinue
+    if ($python) {
+        & $python.Source --version *> $null
+        if ($LASTEXITCODE -eq 0) {
+            return @{ File = $python.Source; Prefix = @() }
+        }
     }
-    if (Get-Command python.exe -ErrorAction SilentlyContinue) {
-        return @{ File = "python.exe"; Prefix = @() }
+
+    # Fallback: use py.exe only if its default interpreter actually works.
+    $py = Get-Command py.exe -ErrorAction SilentlyContinue
+    if ($py) {
+        & $py.Source --version *> $null
+        if ($LASTEXITCODE -eq 0) {
+            return @{ File = $py.Source; Prefix = @() }
+        }
     }
-    throw "Python 3 was not found."
+
+    throw "A working Python 3 runtime was not found."
 }
 
 function Test-RepoClean {
