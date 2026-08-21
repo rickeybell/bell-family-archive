@@ -52,6 +52,10 @@ jobs:
           if [ -d thumbs ]; then
             cp -a thumbs _site/thumbs
           fi
+          # Small fixed portraits used by the family tree and family-member cards.
+          if [ -d tree_portraits ]; then
+            cp -a tree_portraits _site/tree_portraits
+          fi
 
           # Rewrite high-resolution download links so deployed pages fetch
           # originals directly from the GitHub repository instead of Pages.
@@ -124,4 +128,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
 

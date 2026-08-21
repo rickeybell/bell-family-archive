@@ -1,4 +1,4 @@
-
+﻿
 document.addEventListener("DOMContentLoaded",()=>{
   // Biography pages no longer have the legacy archive sidebar. Expand the remaining
   // content across the full site width instead of leaving it in the old 270px grid column.
@@ -9,6 +9,23 @@ document.addEventListener("DOMContentLoaded",()=>{
     if(main){main.style.width="100%";main.style.maxWidth="1500px";main.style.margin="0 auto";}
   }
 
+
+  // Keep archive-item counts synchronized with the current generated metadata.
+  // Counts therefore reflect the currently identified Website-tagged archive,
+  // rather than old hard-coded values.
+  const countTargets=[...document.querySelectorAll("[data-archive-person]")];
+  if(countTargets.length){
+    fetch("photo_metadata.json",{cache:"no-store"})
+      .then(r=>{if(!r.ok)throw new Error("metadata unavailable");return r.json();})
+      .then(items=>{
+        countTargets.forEach(el=>{
+          const person=el.dataset.archivePerson;
+          const count=items.filter(x=>Array.isArray(x.people)&&x.people.includes(person)).length;
+          el.textContent=`${count} archive item${count===1?"":"s"}`;
+        });
+      })
+      .catch(err=>console.warn("Archive counts could not be refreshed:",err));
+  }
   const cards=[...document.querySelectorAll(".photo-card")];
 
   // Restored display copies can live in organized subfolders while the archive card keeps its identity.
@@ -17,7 +34,7 @@ document.addEventListener("DOMContentLoaded",()=>{
       src:"images/1960/1960s_0002_a_Restored.png",
       file:"1960s_0002_a_Restored.png",
       date:"August 1960",
-      description:"August 1960 — Dickey on the far right; Spooky in the center rear. Restored display copy; faces were not generatively altered."
+      description:"August 1960 â€” Dickey on the far right; Spooky in the center rear. Restored display copy; faces were not generatively altered."
     }
   };
   cards.forEach(card=>{
@@ -157,3 +174,4 @@ document.addEventListener("DOMContentLoaded",()=>{
   close?.addEventListener("click",()=>box?.classList.remove("open"));
   box?.addEventListener("click",e=>{if(e.target===box)box.classList.remove("open");});
 });
+
