@@ -1,4 +1,4 @@
-﻿param(
+param(
     [switch]$DryRun,
     [switch]$RefreshManifest,
     [switch]$Live,
@@ -173,55 +173,11 @@ if (!$Live) {
     Write-Host "Copied $copied generated files into website-test-v38."
 }
 
-$ExifTool = Get-ExifToolPath
-$stats = [ordered]@{
-    Processed=0
-    ViewsTagged=0
-    ThumbsTagged=0
-    HighResTagged=0
-    Errors=0
-}
-
-foreach ($row in $selected) {
-    $stats.Processed++
-    $relative = $row.RelativePath -replace '/', '\'
-    $source = $row.SourcePath
-    $view = Join-Path $ViewRoot $relative
-    $thumb = Join-Path $ThumbRoot $relative
-    $highres = Join-Path $HighResRoot $relative
-    $tags = @(Get-CleanTags $row.Tags)
-
-    if (Copy-GenealogyMetadata -ExifTool $ExifTool -Source $source -Destination $view -CleanTags $tags) {
-        $stats.ViewsTagged++
-    } else { $stats.Errors++ }
-
-    if (Copy-GenealogyMetadata -ExifTool $ExifTool -Source $source -Destination $thumb -CleanTags $tags) {
-        $stats.ThumbsTagged++
-    } else { $stats.Errors++ }
-
-    if (Copy-GenealogyMetadata -ExifTool $ExifTool -Source $source -Destination $highres -CleanTags $tags) {
-        $stats.HighResTagged++
-    } else { $stats.Errors++ }
-
-    if (($stats.Processed % 50) -eq 0) {
-        Write-Host "Metadata $($stats.Processed)/$($selected.Count) | views $($stats.ViewsTagged) | highres $($stats.HighResTagged) | thumbs $($stats.ThumbsTagged) | errors $($stats.Errors)"
-    }
-}
-
 Write-Host ""
-Write-Host "========== METADATA RESULTS =========="
-Write-Host "Placeholder ignored:   $placeholderSkipped"
-Write-Host "Selected:              $($selected.Count)"
-Write-Host "Views tagged:          $($stats.ViewsTagged)"
-Write-Host "HighRes tagged:        $($stats.HighResTagged)"
-Write-Host "Thumbnails tagged:     $($stats.ThumbsTagged)"
-Write-Host "Metadata errors:       $($stats.Errors)"
-Write-Host "Website tag removed:   yes"
-Write-Host "======================================"
+Write-Host "========== METADATA MODE =========="
+Write-Host "Binary derivative metadata embedding: DISABLED"
+Write-Host "photo_metadata.json reads directly from DigiKam/master files."
+Write-Host "Metadata-only edits will not rewrite images, thumbs, or highres."
+Write-Host "==================================="
 Write-Host ""
 Write-Host "Output root: $OutputRoot"
-Write-Host "Preserved: people, tags, title/caption, dates, GPS, copyright/creator, orientation."
-
-if($stats.Errors -gt 0){
-    throw "Metadata processing completed with $($stats.Errors) error(s)."
-}
