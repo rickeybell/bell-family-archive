@@ -1,4 +1,4 @@
-﻿
+
 document.addEventListener("DOMContentLoaded",()=>{
   // Biography pages no longer have the legacy archive sidebar. Expand the remaining
   // content across the full site width instead of leaving it in the old 270px grid column.
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded",()=>{
       src:"images/1960/1960s_0002_a_Restored.png",
       file:"1960s_0002_a_Restored.png",
       date:"August 1960",
-      description:"August 1960 â€” Dickey on the far right; Spooky in the center rear. Restored display copy; faces were not generatively altered."
+      description:"August 1960 &mdash; Dickey on the far right; Spooky in the center rear. Restored display copy; faces were not generatively altered."
     }
   };
   cards.forEach(card=>{
