@@ -109,26 +109,90 @@ function Get-HighResMaxDimension {
     return [int][Math]::Min($srcMax, $target)
 }
 
+function Get-SourceOrientationNumber {
+    param([string]$Source)
+
+    $img=$null
+    try {
+        $img=[System.Drawing.Image]::FromFile($Source)
+        if ($img.PropertyIdList -contains 274) {
+            $prop=$img.GetPropertyItem(274)
+            if ($prop -and $prop.Value -and $prop.Value.Length -gt 0) {
+                return [int]$prop.Value[0]
+            }
+        }
+    }
+    catch {}
+    finally {
+        if($img){$img.Dispose()}
+    }
+    return 1
+}
+
+function Get-ExpectedScaledDimensions {
+    param([string]$Source,[int]$ExpectedMax)
+
+    $img=$null
+    try {
+        $img=[System.Drawing.Image]::FromFile($Source)
+        $w=[int]$img.Width
+        $h=[int]$img.Height
+    }
+    finally {
+        if($img){$img.Dispose()}
+    }
+
+    $orientation=Get-SourceOrientationNumber $Source
+
+    if($orientation -in 5,6,7,8){
+        $tmp=$w
+        $w=$h
+        $h=$tmp
+    }
+
+    $scale=[Math]::Min(1.0,$ExpectedMax/[double][Math]::Max($w,$h))
+
+    return [pscustomobject]@{
+        Width=[Math]::Max(1,[int][Math]::Round($w*$scale))
+        Height=[Math]::Max(1,[int][Math]::Round($h*$scale))
+        Orientation=$orientation
+    }
+}
+
 function Test-ScaledFileNeedsBuild {
     param(
         [string]$Source,
         [string]$Destination,
         [int]$ExpectedMax
     )
+
     if (!(Test-Path -LiteralPath $Destination)) { return $true }
-    $sourceTime = (Get-Item -LiteralPath $Source).LastWriteTimeUtc
-    $destTime = (Get-Item -LiteralPath $Destination).LastWriteTimeUtc
+
+    $sourceTime=(Get-Item -LiteralPath $Source).LastWriteTimeUtc
+    $destTime=(Get-Item -LiteralPath $Destination).LastWriteTimeUtc
     if ($destTime -lt $sourceTime) { return $true }
 
     try {
-        $actual = Get-ImageMaxDimension $Destination
-        # Existing derivatives from the old workflow may still be full-size.
-        # Rebuild if the pixel dimensions do not match the current rule.
-        if ($actual -ne $ExpectedMax) { return $true }
+        $expected=Get-ExpectedScaledDimensions $Source $ExpectedMax
+
+        $img=$null
+        try {
+            $img=[System.Drawing.Image]::FromFile($Destination)
+            $actualW=[int]$img.Width
+            $actualH=[int]$img.Height
+        }
+        finally {
+            if($img){$img.Dispose()}
+        }
+
+        if($actualW -ne $expected.Width -or $actualH -ne $expected.Height){
+            return $true
+        }
     }
     catch {
         return $true
     }
+
     return $false
 }
 
