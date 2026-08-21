@@ -1,4 +1,4 @@
-﻿param(
+param(
     [switch]$DryRun,
     [switch]$RefreshManifest,
     [switch]$Live,
@@ -146,6 +146,52 @@ function Save-ScaledImage {
     }
 }
 
+
+function Test-SameImagePixels {
+    param([string]$A,[string]$B)
+    if (!(Test-Path -LiteralPath $A) -or !(Test-Path -LiteralPath $B)) { return $false }
+    $ia=$null;$ib=$null;$ba=$null;$bb=$null
+    try {
+        $ia=[System.Drawing.Image]::FromFile($A)
+        $ib=[System.Drawing.Image]::FromFile($B)
+        if ($ia.Width -ne $ib.Width -or $ia.Height -ne $ib.Height) { return $false }
+        $ba=New-Object System.Drawing.Bitmap($ia)
+        $bb=New-Object System.Drawing.Bitmap($ib)
+        for($y=0;$y -lt $ba.Height;$y++){
+            for($x=0;$x -lt $ba.Width;$x++){
+                if($ba.GetPixel($x,$y).ToArgb() -ne $bb.GetPixel($x,$y).ToArgb()){
+                    return $false
+                }
+            }
+        }
+        return $true
+    }
+    finally {
+        if($ba){$ba.Dispose()}; if($bb){$bb.Dispose()}
+        if($ia){$ia.Dispose()}; if($ib){$ib.Dispose()}
+    }
+}
+
+function Save-ScaledImageIfPixelsChanged {
+    param([string]$Source,[string]$Destination,[int]$MaxDimension,[int]$Quality)
+    $folder=Split-Path -Parent $Destination
+    if(!(Test-Path -LiteralPath $folder)){New-Item -ItemType Directory -Path $folder -Force | Out-Null}
+    $ext=[System.IO.Path]::GetExtension($Destination)
+    $temp=Join-Path $folder ([System.IO.Path]::GetFileNameWithoutExtension($Destination)+".candidate-"+[guid]::NewGuid().ToString("N")+$ext)
+    try {
+        Save-ScaledImage $Source $temp $MaxDimension $Quality
+        if((Test-Path -LiteralPath $Destination) -and (Test-SameImagePixels $temp $Destination)){
+            Remove-Item -LiteralPath $temp -Force
+            return $false
+        }
+        Move-Item -LiteralPath $temp -Destination $Destination -Force
+        return $true
+    }
+    finally {
+        if(Test-Path -LiteralPath $temp){Remove-Item -LiteralPath $temp -Force -ErrorAction SilentlyContinue}
+    }
+}
+
 Write-Host ""
 Write-Host "Bell Family Archive Website Photo Generator v$ScriptVersion"
 Write-Host "Mode:               $(if($Live){'LIVE'}else{'TEST'})"
@@ -239,27 +285,30 @@ foreach($item in $selected){
         $expectedHigh=Get-HighResMaxDimension $source
 
         $needView=Test-ScaledFileNeedsBuild $source $viewDest $expectedView
+        $viewChanged=$false
         if($needView){
-            Save-ScaledImage $source $viewDest $viewMax $quality
+            $viewChanged=Save-ScaledImageIfPixelsChanged $source $viewDest $viewMax $quality
             (Get-Item -LiteralPath $viewDest).LastWriteTimeUtc=$sourceTime
-            if($item.IsDocument){$stats.DocumentViews++}else{$stats.PhotoViews++}
+            if($viewChanged){if($item.IsDocument){$stats.DocumentViews++}else{$stats.PhotoViews++}}
         }
 
         $needThumb=Test-ScaledFileNeedsBuild $source $thumbDest $expectedThumb
+        $thumbChanged=$false
         if($needThumb){
-            Save-ScaledImage $source $thumbDest $ThumbMax $PhotoQuality
+            $thumbChanged=Save-ScaledImageIfPixelsChanged $source $thumbDest $ThumbMax $PhotoQuality
             (Get-Item -LiteralPath $thumbDest).LastWriteTimeUtc=$sourceTime
-            $stats.Thumbs++
+            if($thumbChanged){$stats.Thumbs++}
         }
 
         $needHigh=Test-ScaledFileNeedsBuild $source $highDest $expectedHigh
+        $highChanged=$false
         if($needHigh){
-            Save-ScaledImage $source $highDest $expectedHigh $HighResQuality
+            $highChanged=Save-ScaledImageIfPixelsChanged $source $highDest $expectedHigh $HighResQuality
             (Get-Item -LiteralPath $highDest).LastWriteTimeUtc=$sourceTime
-            $stats.HighRes++
+            if($highChanged){$stats.HighRes++}
         }
 
-        if(!$needView-and!$needThumb-and!$needHigh){$stats.Current++}
+        if(!$viewChanged-and!$thumbChanged-and!$highChanged){$stats.Current++}
     }
     catch{
         $stats.Errors++
