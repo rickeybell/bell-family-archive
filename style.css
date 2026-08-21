@@ -1732,3 +1732,35 @@ footer{
     height:340px !important;
   }
 }
+
+
+/* Family tree portrait crop fine-tune v7 */
+
+/* Spooky: move the portrait down in the frame so the top of his head is visible. */
+.tree-person[href="spooky.html"] .tree-photo img{
+  object-position:center 0% !important;
+}
+
+/* Dickey: move the portrait slightly upward in the frame. */
+.tree-person[href="dickey.html"] .tree-photo img{
+  object-position:center 18% !important;
+}
+
+/* Heather: move the portrait slightly downward in the frame. */
+.tree-person[href="heather.html"] .tree-photo img{
+  object-position:center 2% !important;
+}
+
+/* DICKEY 85 SPOOKY MINUS20 - START */
+.tree-person[href="dickey.html"] .tree-photo img, img[src*="dickey_bell"] {
+ object-fit:cover !important; object-position:center 85% !important;
+}
+.tree-person[href="spooky.html"] .tree-photo img, img[src*="james_s_spooky_bell_iii"], img[src*="spooky_bell"] {
+ object-fit:cover !important; object-position:center -20% !important;
+}
+/* DICKEY 85 SPOOKY MINUS20 - END */
+
+/* DICKEY 85 SPOOKY 0 - START */
+.tree-person[href="dickey.html"] .tree-photo img, img[src*="dickey_bell"] { object-fit: cover !important; object-position: center 85% !important; }
+.tree-person[href="spooky.html"] .tree-photo img, img[src*="james_s_spooky_bell_iii"], img[src*="spooky_bell"] { object-fit: cover !important; object-position: center 0% !important; }
+/* DICKEY 85 SPOOKY 0 - END */
