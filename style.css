@@ -1764,3 +1764,11 @@ footer{
 .tree-person[href="dickey.html"] .tree-photo img, img[src*="dickey_bell"] { object-fit: cover !important; object-position: center 85% !important; }
 .tree-person[href="spooky.html"] .tree-photo img, img[src*="james_s_spooky_bell_iii"], img[src*="spooky_bell"] { object-fit: cover !important; object-position: center 0% !important; }
 /* DICKEY 85 SPOOKY 0 - END */
+
+/* BELL TREE UPRIGHT FIX - START */
+/* Correct orientation of the Bell Family header tree SVG. */
+.tree-logo {
+    transform: rotate(180deg) !important;
+    transform-origin: center center !important;
+}
+/* BELL TREE UPRIGHT FIX - END */
