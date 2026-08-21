@@ -54,6 +54,34 @@ function Test-DocumentTag {
     return $false
 }
 
+
+function Apply-ExifOrientation {
+    param([System.Drawing.Image]$Image)
+
+    try {
+        if ($Image.PropertyIdList -contains 274) {
+            $prop = $Image.GetPropertyItem(274)
+            if ($prop -and $prop.Value -and $prop.Value.Length -gt 0) {
+                $orientation = [int]$prop.Value[0]
+                switch ($orientation) {
+                    2 { $Image.RotateFlip([System.Drawing.RotateFlipType]::RotateNoneFlipX) }
+                    3 { $Image.RotateFlip([System.Drawing.RotateFlipType]::Rotate180FlipNone) }
+                    4 { $Image.RotateFlip([System.Drawing.RotateFlipType]::Rotate180FlipX) }
+                    5 { $Image.RotateFlip([System.Drawing.RotateFlipType]::Rotate90FlipX) }
+                    6 { $Image.RotateFlip([System.Drawing.RotateFlipType]::Rotate90FlipNone) }
+                    7 { $Image.RotateFlip([System.Drawing.RotateFlipType]::Rotate270FlipX) }
+                    8 { $Image.RotateFlip([System.Drawing.RotateFlipType]::Rotate270FlipNone) }
+                }
+            }
+        }
+    }
+    catch {
+        Write-Warning "Could not apply EXIF orientation: $($_.Exception.Message)"
+    }
+
+    return $Image
+}
+
 function Get-JpegEncoder {
     foreach($codec in [System.Drawing.Imaging.ImageCodecInfo]::GetImageEncoders()){
         if($codec.MimeType -eq 'image/jpeg'){ return $codec }
@@ -109,6 +137,7 @@ function Save-ScaledImage {
     $src=$null;$bmp=$null;$g=$null;$encParams=$null
     try {
         $src=[System.Drawing.Image]::FromFile($Source)
+        $src = Apply-ExifOrientation $src
         $scale=[Math]::Min(1.0,$MaxDimension/[double][Math]::Max($src.Width,$src.Height))
         $newW=[Math]::Max(1,[int][Math]::Round($src.Width*$scale))
         $newH=[Math]::Max(1,[int][Math]::Round($src.Height*$scale))
@@ -201,6 +230,7 @@ Write-Host "Document/Newspaper: $DocumentViewMax px / JPEG $DocumentQuality"
 Write-Host "Thumbnail:          $ThumbMax px"
 Write-Host "HighRes download:   $([int]($HighResScale*100))% master, minimum $HighResMin px, never enlarged / JPEG $HighResQuality"
 Write-Host "Decade placeholders: ignored (1940s, 1980s, 2000s, etc.)"
+Write-Host "EXIF orientation:    applied to derivative pixels before resize"
 if($DryRun){Write-Host "*** DRY RUN - NO FILES WILL BE CREATED OR CHANGED ***"}
 
 if($RefreshManifest){
