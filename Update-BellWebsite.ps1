@@ -52,7 +52,9 @@ function Get-PythonCommand {
 }
 
 function Test-RepoClean {
-    $status = git -C $RepoRoot status --porcelain
+    # Ignore local untracked helper/backup files. Tracked modifications must
+    # still stop the updater so website work cannot be overwritten.
+    $status = git -C $RepoRoot status --porcelain --untracked-files=no
     return [string]::IsNullOrWhiteSpace(($status -join "`n"))
 }
 
@@ -156,9 +158,9 @@ if (!(Test-Path -LiteralPath $BuildGallery)) { throw "Gallery builder not found:
 Invoke-Checked git.exe -C $RepoRoot rev-parse --is-inside-work-tree | Out-Null
 
 if (!(Test-RepoClean)) {
-    Write-Host "Current repository changes:"
-    git -C $RepoRoot status --short
-    throw "Repository is not clean. Commit, stash, or discard existing changes before running the updater."
+    Write-Host "Current tracked repository changes:"
+    git -C $RepoRoot status --short --untracked-files=no
+    throw "Repository has tracked changes. Commit, stash, or discard them before running the updater."
 }
 
 $before = @(
@@ -238,7 +240,7 @@ $after | Format-Table -AutoSize
 Save-SizeReport $before $after
 
 Write-Host "[6/7] Reviewing changed files..."
-$status = git -C $RepoRoot status --short
+$status = git -C $RepoRoot status --short --untracked-files=no
 if ([string]::IsNullOrWhiteSpace(($status -join "`n"))) {
     Write-Host "No website changes detected."
     exit 0
