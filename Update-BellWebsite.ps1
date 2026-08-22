@@ -12,7 +12,9 @@ $ErrorActionPreference = "Stop"
 
 $RepoRoot = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive"
 $Generator = Join-Path $RepoRoot "Sync-BellWebsitePhotos-v3.8.ps1"
+$VideoGenerator = Join-Path $RepoRoot "Sync-BellWebsiteVideos.ps1"
 $Manifest = Join-Path $RepoRoot "website-photo-manifest.csv"
+$VideoManifest = Join-Path $RepoRoot "website-video-manifest.csv"
 $BuildMetadata = Join-Path $RepoRoot "tools\build_photo_metadata.py"
 $BuildGallery = Join-Path $RepoRoot "tools\build_dynamic_gallery.py"
 $ReportRoot = Join-Path ([Environment]::GetFolderPath("MyDocuments")) "BellWebsite-SizeReports"
@@ -29,25 +31,16 @@ function Invoke-Checked {
 }
 
 function Get-PythonCommand {
-    # Prefer a working python.exe.  On this system the Microsoft launcher
-    # exposes Python 3.14 through python.exe, while `py -3` is not valid.
     $python = Get-Command python.exe -ErrorAction SilentlyContinue
     if ($python) {
         & $python.Source --version *> $null
-        if ($LASTEXITCODE -eq 0) {
-            return @{ File = $python.Source; Prefix = @() }
-        }
+        if ($LASTEXITCODE -eq 0) { return @{ File = $python.Source; Prefix = @() } }
     }
-
-    # Fallback: use py.exe only if its default interpreter actually works.
     $py = Get-Command py.exe -ErrorAction SilentlyContinue
     if ($py) {
         & $py.Source --version *> $null
-        if ($LASTEXITCODE -eq 0) {
-            return @{ File = $py.Source; Prefix = @() }
-        }
+        if ($LASTEXITCODE -eq 0) { return @{ File = $py.Source; Prefix = @() } }
     }
-
     throw "A working Python 3 runtime was not found."
 }
 
@@ -59,23 +52,21 @@ function Test-RepoClean {
 }
 
 function Assert-MasterSourcesOutsideRepo {
-    if (!(Test-Path -LiteralPath $Manifest)) { throw "Manifest not found: $Manifest" }
-    $repoFull = [System.IO.Path]::GetFullPath($RepoRoot).TrimEnd('\') + '\'
-    $bad = @()
-
-    foreach ($row in (Import-Csv -LiteralPath $Manifest)) {
-        if ([string]::IsNullOrWhiteSpace($row.SourcePath)) { continue }
-        try {
-            $srcFull = [System.IO.Path]::GetFullPath($row.SourcePath)
-            if ($srcFull.StartsWith($repoFull, [System.StringComparison]::OrdinalIgnoreCase)) {
-                $bad += $row.SourcePath
-            }
-        } catch {}
-    }
-
-    if ($bad.Count -gt 0) {
-        $sample = ($bad | Select-Object -First 10) -join "`n  "
-        throw "SAFETY STOP: repository files appear as source masters.`n  $sample"
+    foreach ($manifestPath in @($Manifest,$VideoManifest)) {
+        if (!(Test-Path -LiteralPath $manifestPath)) { continue }
+        $repoFull = [System.IO.Path]::GetFullPath($RepoRoot).TrimEnd('\') + '\'
+        $bad = @()
+        foreach ($row in (Import-Csv -LiteralPath $manifestPath)) {
+            if ([string]::IsNullOrWhiteSpace($row.SourcePath)) { continue }
+            try {
+                $srcFull = [System.IO.Path]::GetFullPath($row.SourcePath)
+                if ($srcFull.StartsWith($repoFull, [System.StringComparison]::OrdinalIgnoreCase)) { $bad += $row.SourcePath }
+            } catch {}
+        }
+        if ($bad.Count -gt 0) {
+            $sample = ($bad | Select-Object -First 10) -join "`n  "
+            throw "SAFETY STOP: repository files appear as source masters in $manifestPath.`n  $sample"
+        }
     }
 }
 
@@ -85,7 +76,7 @@ function Test-DecadePlaceholderFolderName {
 }
 
 function Remove-GeneratedPlaceholderDirectories {
-    foreach ($rootName in @("images","thumbs","highres")) {
+    foreach ($rootName in @("images","thumbs","highres","videos")) {
         $root = Join-Path $RepoRoot $rootName
         if (!(Test-Path -LiteralPath $root)) { continue }
         $matches = @(Get-ChildItem -LiteralPath $root -Directory -Recurse -Force -ErrorAction SilentlyContinue |
@@ -103,29 +94,20 @@ function Remove-GeneratedPlaceholderDirectories {
 function Get-FolderStat {
     param([string]$Name)
     $path = Join-Path $RepoRoot $Name
-    if (!(Test-Path -LiteralPath $path)) {
-        return [pscustomobject]@{Folder=$Name;Files=0;TotalGB=0;AverageMB=0;LargestMB=0}
-    }
+    if (!(Test-Path -LiteralPath $path)) { return [pscustomobject]@{Folder=$Name;Files=0;TotalGB=0;AverageMB=0;LargestMB=0} }
     $files = @(Get-ChildItem -LiteralPath $path -File -Recurse -ErrorAction SilentlyContinue)
-    if ($files.Count -eq 0) {
-        return [pscustomobject]@{Folder=$Name;Files=0;TotalGB=0;AverageMB=0;LargestMB=0}
-    }
+    if ($files.Count -eq 0) { return [pscustomobject]@{Folder=$Name;Files=0;TotalGB=0;AverageMB=0;LargestMB=0} }
     $sum = ($files | Measure-Object Length -Sum).Sum
     $largest = ($files | Sort-Object Length -Descending | Select-Object -First 1).Length
     return [pscustomobject]@{
-        Folder=$Name
-        Files=$files.Count
-        TotalGB=[math]::Round($sum/1GB,3)
-        AverageMB=[math]::Round(($sum/$files.Count)/1MB,3)
-        LargestMB=[math]::Round($largest/1MB,3)
+        Folder=$Name; Files=$files.Count; TotalGB=[math]::Round($sum/1GB,3)
+        AverageMB=[math]::Round(($sum/$files.Count)/1MB,3); LargestMB=[math]::Round($largest/1MB,3)
     }
 }
 
 function Save-SizeReport {
     param($Before,$After)
-    if (!(Test-Path -LiteralPath $ReportRoot)) {
-        New-Item -ItemType Directory -Path $ReportRoot -Force | Out-Null
-    }
+    if (!(Test-Path -LiteralPath $ReportRoot)) { New-Item -ItemType Directory -Path $ReportRoot -Force | Out-Null }
     $path = Join-Path $ReportRoot ("BellWebsite-Live-SizeReport-" + (Get-Date -Format "yyyyMMdd-HHmmss") + ".txt")
     $text = @"
 Bell Family Archive LIVE Before/After Size Report
@@ -148,15 +130,16 @@ Write-Host "=============================================="
 Write-Host "Repository: $RepoRoot"
 Write-Host "Years:      $FromYear through $ToYear"
 Write-Host "Mode:       $(if ($DryRun) {'DRY RUN'} elseif ($Publish) {'UPDATE + PUBLISH'} else {'UPDATE ONLY'})"
+Write-Host "Media:      Photos + Videos"
 Write-Host ""
 
 if (!(Test-Path -LiteralPath $RepoRoot)) { throw "Repository not found: $RepoRoot" }
-if (!(Test-Path -LiteralPath $Generator)) { throw "Generator not found: $Generator" }
+if (!(Test-Path -LiteralPath $Generator)) { throw "Photo generator not found: $Generator" }
+if (!(Test-Path -LiteralPath $VideoGenerator)) { throw "Video generator not found: $VideoGenerator" }
 if (!(Test-Path -LiteralPath $BuildMetadata)) { throw "Metadata builder not found: $BuildMetadata" }
 if (!(Test-Path -LiteralPath $BuildGallery)) { throw "Gallery builder not found: $BuildGallery" }
 
 Invoke-Checked git.exe -C $RepoRoot rev-parse --is-inside-work-tree | Out-Null
-
 if (!(Test-RepoClean)) {
     Write-Host "Current tracked repository changes:"
     git -C $RepoRoot status --short --untracked-files=no
@@ -164,31 +147,25 @@ if (!(Test-RepoClean)) {
 }
 
 $before = @(
-    Get-FolderStat "thumbs"
-    Get-FolderStat "images"
-    Get-FolderStat "originals"
-    Get-FolderStat "highres"
+    Get-FolderStat "thumbs"; Get-FolderStat "images"; Get-FolderStat "highres"; Get-FolderStat "videos"; Get-FolderStat "originals"
 )
 
 if (!$SkipPull) {
-    Write-Host "[1/7] Updating local main branch..."
+    Write-Host "[1/8] Updating local main branch..."
     Invoke-Checked git.exe -C $RepoRoot checkout main
     Invoke-Checked git.exe -C $RepoRoot pull --ff-only origin main
-} else {
-    Write-Host "[1/7] Git pull skipped."
-}
+} else { Write-Host "[1/8] Git pull skipped." }
 
-Write-Host "[2/7] Refreshing DigiKam Website-tag manifest and generating derivatives..."
-$syncArgs = @(
-    "-ExecutionPolicy", "Bypass",
-    "-File", $Generator,
-    "-FromYear", "$FromYear",
-    "-ToYear", "$ToYear"
-)
+Write-Host "[2/8] Refreshing DigiKam Website-tag photo manifest and generating photo derivatives..."
+$syncArgs = @("-ExecutionPolicy","Bypass","-File",$Generator,"-FromYear","$FromYear","-ToYear","$ToYear")
 if (!$SkipManifestRefresh) { $syncArgs += "-RefreshManifest" }
 if ($DryRun) { $syncArgs += "-DryRun" } else { $syncArgs += "-Live" }
-
 Invoke-Checked powershell.exe @syncArgs
+
+Write-Host "[3/8] Scanning and syncing Website-tagged videos..."
+$videoArgs = @("-ExecutionPolicy","Bypass","-File",$VideoGenerator,"-FromYear","$FromYear","-ToYear","$ToYear")
+if ($DryRun) { $videoArgs += "-DryRun" }
+Invoke-Checked powershell.exe @videoArgs
 
 if ($DryRun) {
     Write-Host ""
@@ -196,21 +173,14 @@ if ($DryRun) {
     exit 0
 }
 
-Write-Host "[3/7] Safety cleanup and master verification..."
+Write-Host "[4/8] Safety cleanup and master verification..."
 Assert-MasterSourcesOutsideRepo
 Remove-GeneratedPlaceholderDirectories
 
-# Once highres has been generated successfully, the repository originals folder
-# is retired. DigiKam/master remains the authoritative archival copy.
 $highresPath = Join-Path $RepoRoot "highres"
-if (!(Test-Path -LiteralPath $highresPath)) {
-    throw "SAFETY STOP: highres folder was not generated. originals will NOT be removed."
-}
+if (!(Test-Path -LiteralPath $highresPath)) { throw "SAFETY STOP: highres folder was not generated. originals will NOT be removed." }
 $highCount = @(Get-ChildItem -LiteralPath $highresPath -File -Recurse -ErrorAction SilentlyContinue).Count
-if ($highCount -eq 0) {
-    throw "SAFETY STOP: highres folder is empty. originals will NOT be removed."
-}
-
+if ($highCount -eq 0) { throw "SAFETY STOP: highres folder is empty. originals will NOT be removed." }
 $originalsPath = Join-Path $RepoRoot "originals"
 if (Test-Path -LiteralPath $originalsPath) {
     Write-Host "Retiring GitHub originals folder after successful HighRes generation..."
@@ -218,38 +188,23 @@ if (Test-Path -LiteralPath $originalsPath) {
 }
 
 $py = Get-PythonCommand
-
-Write-Host "[4/7] Rebuilding photo_metadata.json from generated website images..."
+Write-Host "[5/8] Rebuilding photo_metadata.json from DigiKam/master photos and videos..."
 Invoke-Checked $py.File @($py.Prefix + @($BuildMetadata))
-
-Write-Host "[5/7] Rebuilding chronological and person photo galleries..."
+Write-Host "[6/8] Rebuilding chronological and person galleries..."
 Invoke-Checked $py.File @($py.Prefix + @($BuildGallery))
 
 $after = @(
-    Get-FolderStat "thumbs"
-    Get-FolderStat "images"
-    Get-FolderStat "originals"
-    Get-FolderStat "highres"
+    Get-FolderStat "thumbs"; Get-FolderStat "images"; Get-FolderStat "highres"; Get-FolderStat "videos"; Get-FolderStat "originals"
 )
-
-Write-Host ""
-Write-Host "BEFORE:"
-$before | Format-Table -AutoSize
-Write-Host "AFTER:"
-$after | Format-Table -AutoSize
+Write-Host ""; Write-Host "BEFORE:"; $before | Format-Table -AutoSize
+Write-Host "AFTER:"; $after | Format-Table -AutoSize
 Save-SizeReport $before $after
 
-Write-Host "[6/7] Reviewing changed files..."
+Write-Host "[7/8] Reviewing changed files..."
 $status = git -C $RepoRoot status --short --untracked-files=no
-if ([string]::IsNullOrWhiteSpace(($status -join "`n"))) {
-    Write-Host "No website changes detected."
-    exit 0
-}
+if ([string]::IsNullOrWhiteSpace(($status -join "`n"))) { Write-Host "No website changes detected."; exit 0 }
 $status | ForEach-Object { Write-Host $_ }
-
-Write-Host ""
-Write-Host "Change summary:"
-git -C $RepoRoot diff --stat
+Write-Host ""; Write-Host "Change summary:"; git -C $RepoRoot diff --stat
 
 if (!$Publish) {
     Write-Host ""
@@ -258,52 +213,29 @@ if (!$Publish) {
     exit 0
 }
 
-Write-Host "[7/7] Committing and pushing approved website changes..."
-
-if ([string]::IsNullOrWhiteSpace($CommitMessage)) {
-    $CommitMessage = "Optimize website images and replace originals with HighRes downloads"
-}
+Write-Host "[8/8] Committing and pushing approved website changes..."
+if ([string]::IsNullOrWhiteSpace($CommitMessage)) { $CommitMessage = "Update website photos, videos, metadata, and galleries" }
 
 $paths = @(
-    "images",
-    "thumbs",
-    "highres",
-    "originals",
-    "photo_metadata.json",
-    "gallery.html",
-    "alma-photos.html",
-    "buster-photos.html",
-    "dickey-photos.html",
-    "heather-photos.html",
-    "jarred-photos.html",
-    "rickey-photos.html",
-    "sonja-photos.html",
-    "spooky-photos.html",
-    "stephanie-photos.html",
-    "website-photo-manifest.csv",
-    "tools/build_dynamic_gallery.py",
-    ".github/workflows/bell-pages.yml"
+    "images","thumbs","highres","videos","originals",
+    "photo_metadata.json","gallery.html",
+    "alma-photos.html","buster-photos.html","debbie-photos.html","dickey-photos.html",
+    "dominique-photos.html","heather-photos.html","helen-photos.html","ivy-photos.html",
+    "jarred-photos.html","olivia-photos.html","rickey-photos.html","samatha-photos.html",
+    "sonja-photos.html","sophia-photos.html","spooky-photos.html","stephanie-photos.html",
+    "website-photo-manifest.csv","website-video-manifest.csv",
+    "tools/build_photo_metadata.py","tools/build_dynamic_gallery.py",
+    "Sync-BellWebsiteVideos.ps1",".github/workflows/bell-pages.yml"
 )
-
 foreach ($p in $paths) {
     git -C $RepoRoot add -A -- $p
     if ($LASTEXITCODE -ne 0) { throw "Failed to stage $p" }
 }
-
 $staged = git -C $RepoRoot diff --cached --name-only
-if ([string]::IsNullOrWhiteSpace(($staged -join "`n"))) {
-    Write-Host "Nothing staged; no commit needed."
-    exit 0
-}
-
-Write-Host ""
-Write-Host "Files to commit:"
-$staged | ForEach-Object { Write-Host "  $_" }
-
+if ([string]::IsNullOrWhiteSpace(($staged -join "`n"))) { Write-Host "Nothing staged; no commit needed."; exit 0 }
+Write-Host ""; Write-Host "Files to commit:"; $staged | ForEach-Object { Write-Host "  $_" }
 Invoke-Checked git.exe -C $RepoRoot commit -m $CommitMessage
 Invoke-Checked git.exe -C $RepoRoot push origin main
-
-Write-Host ""
-Write-Host "Published successfully."
+Write-Host ""; Write-Host "Published successfully."
 git -C $RepoRoot log -1 --oneline
 Write-Host "https://rickeybell.github.io/bell-family-archive/"
