@@ -2,23 +2,29 @@
 import csv, json, pathlib, re, subprocess
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-MANIFEST = ROOT / "website-photo-manifest.csv"
+PHOTO_MANIFEST = ROOT / "website-photo-manifest.csv"
+VIDEO_MANIFEST = ROOT / "website-video-manifest.csv"
 OUT = ROOT / "photo_metadata.json"
 
-if not MANIFEST.exists():
-    raise SystemExit(f"Manifest not found: {MANIFEST}")
+if not PHOTO_MANIFEST.exists() and not VIDEO_MANIFEST.exists():
+    raise SystemExit("No website photo/video manifest found")
 
-rows=[]
-with MANIFEST.open("r", encoding="utf-8-sig", newline="") as f:
-    for row in csv.DictReader(f):
-        src=pathlib.Path(row.get("SourcePath") or "")
-        rel=(row.get("RelativePath") or "").replace(chr(92),"/").lstrip("/")
-        if not src.exists() or not rel:
-            continue
-        if any(re.fullmatch(r"(18|19|20)\d0s", p) for p in rel.split("/")):
-            continue
-        rows.append((src,rel))
+def eligible_rows(path, media_type):
+    rows=[]
+    if not path.exists():
+        return rows
+    with path.open("r", encoding="utf-8-sig", newline="") as f:
+        for row in csv.DictReader(f):
+            src=pathlib.Path(row.get("SourcePath") or "")
+            rel=(row.get("RelativePath") or "").replace(chr(92),"/").lstrip("/")
+            if not src.exists() or not rel:
+                continue
+            if any(re.fullmatch(r"(18|19|20)\d0s", p) for p in rel.split("/")):
+                continue
+            rows.append((src,rel,media_type))
+    return rows
 
+rows=eligible_rows(PHOTO_MANIFEST,"photo") + eligible_rows(VIDEO_MANIFEST,"video")
 if not rows:
     raise SystemExit("No eligible manifest records found")
 
@@ -33,7 +39,7 @@ cmd0=["exiftool","-json","-n",
       "-Country","-Country-PrimaryLocationName"]
 
 meta={}
-sources=[s for s,_ in rows]
+sources=[s for s,_,_ in rows]
 for i in range(0,len(sources),150):
     batch=sources[i:i+150]
     recs=json.loads(subprocess.check_output(cmd0+[str(p) for p in batch]))
@@ -82,7 +88,7 @@ def place_from_tags(tags):
     return loc,city,state,country
 
 out=[]
-for src,rel in rows:
+for src,rel,media_type in rows:
     m=meta.get(str(src.resolve()).lower())
     if not m:
         print("WARNING no metadata:",src)
@@ -93,6 +99,8 @@ for src,rel in rows:
     elif re.fullmatch(r"\d{4}",folder): date=folder
 
     tags=tags_for(m)
+    if media_type == "video" and not any(re.split(r"[|/\\]",t)[-1].strip().lower()=="video" for t in tags):
+        tags.append("Video")
     people=[]
     for tag in tags:
         n=tag.replace(chr(92),"/").replace("|","/")
@@ -112,8 +120,10 @@ for src,rel in rows:
     tl,tc,ts,tco=place_from_tags(tags)
     loc=loc or tl; city=city or tc; state=state or ts; country=country or tco
 
+    prefix="videos/" if media_type=="video" else "images/"
     out.append({
-      "path":"images/"+rel,
+      "path":prefix+rel,
+      "media_type":media_type,
       "file":pathlib.PurePosixPath(rel).name,
       "folder":folder,
       "date":date,
@@ -128,4 +138,6 @@ for src,rel in rows:
 
 out.sort(key=lambda x:(x["date"] or "9999",x["path"].lower()))
 OUT.write_text(json.dumps(out,indent=2,ensure_ascii=False),encoding="utf-8")
-print(f"Wrote {len(out)} records from DigiKam/master metadata")
+photo_count=sum(1 for x in out if x.get("media_type")=="photo")
+video_count=sum(1 for x in out if x.get("media_type")=="video")
+print(f"Wrote {len(out)} records from DigiKam/master metadata ({photo_count} photos, {video_count} videos)")
