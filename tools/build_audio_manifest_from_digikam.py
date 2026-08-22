@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import argparse, csv, os, pathlib, sqlite3, sys
+import argparse, csv, os, pathlib, re, sqlite3
 
 AUDIO_EXTS={'.mp3','.m4a','.wav','.aac','.flac','.wma','.ogg','.oga','.opus'}
 
@@ -19,7 +19,6 @@ def find_db(source_root: pathlib.Path):
         if p: candidates.append(p)
     for p in candidates:
         if p.exists() and p.is_file(): return p
-    # Last resort: search the user's Pictures/OneDrive trees for the normal SQLite DB name.
     roots=[]
     for r in [source_root, home/'OneDrive', home/'Pictures']:
         if r.exists() and r not in roots: roots.append(r)
@@ -85,6 +84,18 @@ def get_date(con,image_id):
     return ''
 
 
+def normalized_date(value):
+    value=str(value or '').strip()
+    if not value:return ''
+    return value.replace('T',' ').split(' ')[0].replace(':','-',2)
+
+
+def year_from_date(value):
+    d=normalized_date(value)
+    m=re.match(r'^((?:18|19|20)\d{2})',d)
+    return int(m.group(1)) if m else None
+
+
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument('--source-root',required=True)
@@ -112,7 +123,7 @@ def main():
     by_name={}
     for p in disk: by_name.setdefault(p.name.lower(),[]).append(p)
 
-    rows=[]; db_matches=0; website=0
+    rows=[]; db_matches=0; website=0; date_year_fallbacks=0
     q='''select i.id imageid,i.name,a.relativePath from Images i join Albums a on a.id=i.album where lower(i.name)=lower(?)'''
     for name,candidates in sorted(by_name.items()):
         recs=con.execute(q,(candidates[0].name,)).fetchall()
@@ -134,13 +145,26 @@ def main():
             leaves=[p.replace('\\','/').split('/')[-1].strip() for p in paths]
             if not any(x.lower()=='website' for x in leaves): continue
             website+=1
-            rel=chosen.relative_to(source_root).as_posix()
-            parts=rel.split('/')
-            if any(__import__('re').fullmatch(r'(18|19|20)\d0s',x) for x in parts): continue
+
+            source_rel=chosen.relative_to(source_root).as_posix()
+            source_parts=source_rel.split('/')
+            if any(re.fullmatch(r'(18|19|20)\d0s',x) for x in source_parts): continue
+
+            db_date=normalized_date(get_date(con,image_id))
             year=None
-            for part in parts:
-                if __import__('re').fullmatch(r'(18|19|20)\d{2}',part): year=int(part); break
+            for part in source_parts:
+                if re.fullmatch(r'(18|19|20)\d{2}',part):
+                    year=int(part); break
+            if year is None:
+                year=year_from_date(db_date)
+                if year is not None:
+                    date_year_fallbacks+=1
             if year is None or year<args.from_year or year>args.to_year: continue
+
+            # Website audio always lives under audio/<year>/ even when the source
+            # master is stored in a non-year DigiKam album such as Dad or Voicemail.
+            rel=f'{year}/{chosen.name}'
+
             people=[]
             for tp in paths:
                 n=tp.replace('\\','/')
@@ -153,13 +177,11 @@ def main():
                 if leaf.lower()=='website': continue
                 if tp not in clean: clean.append(tp)
             if not any(x.replace('\\','/').split('/')[-1].strip().lower()=='sound' for x in clean): clean.append('Sound')
-            date=get_date(con,image_id)
-            if date:
-                date=date.replace('T',' ').split(' ')[0].replace(':','-',2)
+
             description=get_comment(con,image_id)
             rows.append({
                 'SourcePath':str(chosen),'RelativePath':rel.replace('/','\\'),
-                'DestinationPath':'','FileName':chosen.name,'Date':date,
+                'DestinationPath':'','FileName':chosen.name,'Date':db_date,
                 'People':'; '.join(people),'Title':'','Description':description,
                 'Tags':'; '.join(clean),'GPSLatitude':'','GPSLongitude':'',
                 'Length':chosen.stat().st_size,'LastWriteUtc':chosen.stat().st_mtime_ns
@@ -174,6 +196,7 @@ def main():
     print(f'Audio files matched in DigiKam:   {db_matches}')
     print(f'Website-tagged audio selected:    {len(rows)}')
     print(f'DigiKam Website matches total:    {website}')
+    print(f'Year from DigiKam date fallback:  {date_year_fallbacks}')
     print(f'Audio manifest: {out}')
 
 if __name__=='__main__': main()
