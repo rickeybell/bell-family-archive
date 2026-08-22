@@ -1,4 +1,4 @@
-﻿name: Deploy Bell Family Archive to Pages
+name: Deploy Bell Family Archive to Pages
 
 on:
   push:
@@ -52,6 +52,15 @@ jobs:
           if [ -d thumbs ]; then
             cp -a thumbs _site/thumbs
           fi
+
+          if [ -d videos ]; then
+            cp -a videos _site/videos
+          fi
+
+          if [ -d audio ]; then
+            cp -a audio _site/audio
+          fi
+
           # Small fixed portraits used by the family tree and family-member cards.
           if [ -d tree_portraits ]; then
             cp -a tree_portraits _site/tree_portraits
@@ -128,5 +137,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-
