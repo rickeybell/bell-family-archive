@@ -4,10 +4,11 @@ import csv, json, pathlib, re, subprocess
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 PHOTO_MANIFEST = ROOT / "website-photo-manifest.csv"
 VIDEO_MANIFEST = ROOT / "website-video-manifest.csv"
+AUDIO_MANIFEST = ROOT / "website-audio-manifest.csv"
 OUT = ROOT / "photo_metadata.json"
 
-if not PHOTO_MANIFEST.exists() and not VIDEO_MANIFEST.exists():
-    raise SystemExit("No website photo/video manifest found")
+if not PHOTO_MANIFEST.exists() and not VIDEO_MANIFEST.exists() and not AUDIO_MANIFEST.exists():
+    raise SystemExit("No website photo/video/audio manifest found")
 
 def eligible_rows(path, media_type):
     rows=[]
@@ -24,7 +25,9 @@ def eligible_rows(path, media_type):
             rows.append((src,rel,media_type))
     return rows
 
-rows=eligible_rows(PHOTO_MANIFEST,"photo") + eligible_rows(VIDEO_MANIFEST,"video")
+rows=(eligible_rows(PHOTO_MANIFEST,"photo") +
+      eligible_rows(VIDEO_MANIFEST,"video") +
+      eligible_rows(AUDIO_MANIFEST,"audio"))
 if not rows:
     raise SystemExit("No eligible manifest records found")
 
@@ -99,8 +102,10 @@ for src,rel,media_type in rows:
     elif re.fullmatch(r"\d{4}",folder): date=folder
 
     tags=tags_for(m)
-    if media_type == "video" and not any(re.split(r"[|/\\]",t)[-1].strip().lower()=="video" for t in tags):
-        tags.append("Video")
+    required_tag={"video":"Video","audio":"Sound"}.get(media_type)
+    if required_tag and not any(re.split(r"[|/\\]",t)[-1].strip().lower()==required_tag.lower() for t in tags):
+        tags.append(required_tag)
+
     people=[]
     for tag in tags:
         n=tag.replace(chr(92),"/").replace("|","/")
@@ -120,7 +125,7 @@ for src,rel,media_type in rows:
     tl,tc,ts,tco=place_from_tags(tags)
     loc=loc or tl; city=city or tc; state=state or ts; country=country or tco
 
-    prefix="videos/" if media_type=="video" else "images/"
+    prefix={"video":"videos/","audio":"audio/"}.get(media_type,"images/")
     out.append({
       "path":prefix+rel,
       "media_type":media_type,
@@ -140,4 +145,5 @@ out.sort(key=lambda x:(x["date"] or "9999",x["path"].lower()))
 OUT.write_text(json.dumps(out,indent=2,ensure_ascii=False),encoding="utf-8")
 photo_count=sum(1 for x in out if x.get("media_type")=="photo")
 video_count=sum(1 for x in out if x.get("media_type")=="video")
-print(f"Wrote {len(out)} records from DigiKam/master metadata ({photo_count} photos, {video_count} videos)")
+audio_count=sum(1 for x in out if x.get("media_type")=="audio")
+print(f"Wrote {len(out)} records from DigiKam/master metadata ({photo_count} photos, {video_count} videos, {audio_count} audio)")
