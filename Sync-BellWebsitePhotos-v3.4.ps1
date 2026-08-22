@@ -3,7 +3,7 @@
     [switch]$ForceFullScan
 )
 
-$ScriptVersion = "3.4"
+$ScriptVersion = "3.4.1"
 $RepoRoot   = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive"
 $SourceRoot = "C:\Users\rbell\OneDrive\Pictures"
 $DestRoot   = Join-Path $RepoRoot "images"
@@ -34,11 +34,34 @@ function Get-ImageFilesSkippingDTrash {
     }
 }
 
+function Get-YearFromMetadataRecord {
+    param($Record)
+    if (!$Record) { return $null }
+    foreach ($property in @("DateTimeOriginal", "CreateDate")) {
+        if ($Record.PSObject.Properties.Name -notcontains $property) { continue }
+        $value = [string]$Record.$property
+        if ([string]::IsNullOrWhiteSpace($value)) { continue }
+        if ($value -match '^((18|19|20)\d{2})[:\-]') { return [int]$Matches[1] }
+    }
+    return $null
+}
+
 function Get-DestinationRelativePath {
-    param([System.IO.FileInfo]$File)
+    param([System.IO.FileInfo]$File, $Record = $null)
     $relative = $File.FullName.Substring($SourceRoot.Length).TrimStart('\')
     $parts = $relative -split '\\'
-    foreach ($part in $parts) { if ($part -match '^(18|19|20)\d{2}$') { return Join-Path $part $File.Name } }
+    foreach ($part in $parts) {
+        if ($part -match '^(18|19|20)\d{2}$') { return Join-Path $part $File.Name }
+    }
+
+    # Masters outside normal YYYY folders (for example Dad\... or Death Docs\...)
+    # are published under the year from DigiKam/embedded date metadata. The master
+    # file itself is never moved or renamed.
+    $metadataYear = Get-YearFromMetadataRecord -Record $Record
+    if ($null -ne $metadataYear) { return Join-Path ([string]$metadataYear) $File.Name }
+
+    # If there is no usable date, preserve the old relative path. The derivative
+    # generator will continue to skip paths that do not contain a four-digit year.
     return $relative
 }
 
@@ -117,7 +140,7 @@ function Process-Batch {
         if (!$record) { $script:stats.Errors++; Write-Warning "No metadata record matched: $($file.FullName)"; continue }
 
         $published = Test-WebsiteTagFromRecord $record
-        $destRelative = Get-DestinationRelativePath $file
+        $destRelative = Get-DestinationRelativePath -File $file -Record $record
         $destPath = Join-Path $DestRoot $destRelative
         if ($published) {
             [void]$script:PublishedDestinations.Add((Get-NormalizedPathKey $destPath))
@@ -174,7 +197,7 @@ $NewManifest=@{}
 $PublishedRows=New-Object "System.Collections.Generic.List[object]"
 $PublishedDestinations=New-Object "System.Collections.Generic.HashSet[string]" ([System.StringComparer]::OrdinalIgnoreCase)
 $stats=[ordered]@{Scanned=0;ExcludedDTrashFolders=0;MetadataRead=0;UnchangedSkipped=0;PublishedNew=0;PublishedUpdated=0;PublishedAlreadyCurrent=0;Unpublished=0;Orphans=0;OrphansReferenced=0;OrphansUnreferenced=0;Errors=0}
-Write-Host "`nBell Family Archive Website Photo Sync v$ScriptVersion";Write-Host "Source:      $SourceRoot";Write-Host "Destination: $DestRoot";Write-Host "Publish tag: $PublishTag";if($DryRun){Write-Host "*** DRY RUN - NO FILES WILL BE COPIED OR DELETED ***"};Write-Host ""
+Write-Host "`nBell Family Archive Website Photo Sync v$ScriptVersion";Write-Host "Source:      $SourceRoot";Write-Host "Destination: $DestRoot";Write-Host "Publish tag: $PublishTag";Write-Host "Non-year masters: metadata year fallback";if($DryRun){Write-Host "*** DRY RUN - NO FILES WILL BE COPIED OR DELETED ***"};Write-Host ""
 $batch=New-Object 'System.Collections.Generic.List[System.IO.FileInfo]'
 Get-ImageFilesSkippingDTrash -Root $SourceRoot | ForEach-Object {
     $file=$_;$stats.Scanned++
@@ -228,4 +251,3 @@ Write-Host "====================================="
 Write-Host "`nWebsite manifest report: $WebsiteManifestCsv"
 Write-Host "Orphan review report:    $OrphanReportCsv"
 if($DryRun){Write-Host "`nDry run complete. No photographs were copied or deleted."}else{Write-Host "`nWebsite image sync complete. No orphan photographs were deleted."}
-
