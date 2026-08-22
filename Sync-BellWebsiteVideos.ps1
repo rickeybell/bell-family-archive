@@ -5,7 +5,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-$ScriptVersion = "1.0"
+$ScriptVersion = "1.1"
 $RepoRoot = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive"
 $SourceRoot = "C:\Users\rbell\OneDrive\Pictures"
 $VideoRoot = Join-Path $RepoRoot "videos"
@@ -115,9 +115,13 @@ $skippedPlaceholder = 0
 for ($i=0; $i -lt $files.Count; $i += 50) {
     $batch = @($files[$i..([Math]::Min($i+49,$files.Count-1))])
     if ($batch.Count -eq 0) { continue }
-    $args = @('-json','-Subject','-Keywords','-HierarchicalSubject','-PersonInImage','-RegionPersonDisplayName','-Title','-Description','-Caption-Abstract','-DateTimeOriginal','-CreateDate','-GPSLatitude','-GPSLongitude')
+    # -q -q suppresses ExifTool's normal "N image files read" summary. Windows
+    # PowerShell otherwise promotes that harmless stderr status line to a
+    # NativeCommandError because this script uses ErrorActionPreference=Stop.
+    $args = @('-q','-q','-json','-Subject','-Keywords','-HierarchicalSubject','-PersonInImage','-RegionPersonDisplayName','-Title','-Description','-Caption-Abstract','-DateTimeOriginal','-CreateDate','-GPSLatitude','-GPSLongitude')
     foreach ($file in $batch) { $args += $file.FullName }
     $json = & $ExifTool @args 2>$null
+    if ($LASTEXITCODE -ne 0) { throw "ExifTool failed while reading video metadata (exit $LASTEXITCODE)." }
     if (!$json) { continue }
     $records = (($json -join [Environment]::NewLine) | ConvertFrom-Json)
     if ($records -isnot [System.Array]) { $records = @($records) }
