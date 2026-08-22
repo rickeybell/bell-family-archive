@@ -23492,6 +23492,60 @@
     }
   },
   {
+    "path": "images/2015/20150206_035037000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20150206_035037000_iOS.jpg",
+    "folder": "2015",
+    "date": "2015-02-03",
+    "people": [
+      "Debbie Phillips",
+      "Everate Faulkenberry",
+      "Lisa Steen"
+    ],
+    "tags": [
+      "Debbie Phillips",
+      "Everate Faulkenberry",
+      "Lisa Steen",
+      "People/Debbie Phillips",
+      "People/Everate Faulkenberry",
+      "People/Lisa Steen",
+      "People|Debbie Phillips",
+      "People|Everate Faulkenberry",
+      "People|Lisa Steen"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "audio/2015/Irvin VM to Derrick Joyner.mp3",
+    "media_type": "audio",
+    "file": "Irvin VM to Derrick Joyner.mp3",
+    "folder": "2015",
+    "date": "2015-04-30",
+    "people": [
+      "Charles Joner",
+      "Irvin Phillips"
+    ],
+    "tags": [
+      "People/Charles Joner",
+      "People/Irvin Phillips",
+      "Sound",
+      "_Digikam_Internal_Tags_/Color Label None"
+    ],
+    "title": "",
+    "description": "30 minutes later was the last time Derrick spoke to Irvin prior to his death",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2016/Document_20260731_0001.jpg",
     "media_type": "photo",
     "file": "Document_20260731_0001.jpg",
@@ -25315,8 +25369,8 @@
     "state": "",
     "country": "",
     "gps": {
-      "lat": 34.9321248833333,
-      "lon": -81.0828025833333
+      "lat": 34.9321248827778,
+      "lon": -81.0828025827778
     }
   },
   {
@@ -25409,6 +25463,29 @@
     ],
     "title": "",
     "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "audio/2025/Voicemail_from_Dickey Bell_2025_09_11_14_39_06.mp3",
+    "media_type": "audio",
+    "file": "Voicemail_from_Dickey Bell_2025_09_11_14_39_06.mp3",
+    "folder": "2025",
+    "date": "2025-08-10",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "People/Dickey Bell",
+      "Sound",
+      "_Digikam_Internal_Tags_/Color Label None",
+      "_Digikam_Internal_Tags_/Pick Label None"
+    ],
+    "title": "",
+    "description": "Voice Mail from Dickey",
     "location": "",
     "city": "",
     "state": "",
