@@ -13,10 +13,13 @@ $ErrorActionPreference = "Stop"
 $RepoRoot = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive"
 $Generator = Join-Path $RepoRoot "Sync-BellWebsitePhotos-v3.8.ps1"
 $VideoGenerator = Join-Path $RepoRoot "Sync-BellWebsiteVideos.ps1"
+$AudioGenerator = Join-Path $RepoRoot "Sync-BellWebsiteAudio.ps1"
 $Manifest = Join-Path $RepoRoot "website-photo-manifest.csv"
 $VideoManifest = Join-Path $RepoRoot "website-video-manifest.csv"
+$AudioManifest = Join-Path $RepoRoot "website-audio-manifest.csv"
 $BuildMetadata = Join-Path $RepoRoot "tools\build_photo_metadata.py"
 $BuildGallery = Join-Path $RepoRoot "tools\build_dynamic_gallery.py"
+$AddAudioPlayers = Join-Path $RepoRoot "tools\add_audio_players.py"
 $ReportRoot = Join-Path ([Environment]::GetFolderPath("MyDocuments")) "BellWebsite-SizeReports"
 
 function Invoke-Checked {
@@ -45,14 +48,12 @@ function Get-PythonCommand {
 }
 
 function Test-RepoClean {
-    # Ignore local untracked helper/backup files. Tracked modifications must
-    # still stop the updater so website work cannot be overwritten.
     $status = git -C $RepoRoot status --porcelain --untracked-files=no
     return [string]::IsNullOrWhiteSpace(($status -join "`n"))
 }
 
 function Assert-MasterSourcesOutsideRepo {
-    foreach ($manifestPath in @($Manifest,$VideoManifest)) {
+    foreach ($manifestPath in @($Manifest,$VideoManifest,$AudioManifest)) {
         if (!(Test-Path -LiteralPath $manifestPath)) { continue }
         $repoFull = [System.IO.Path]::GetFullPath($RepoRoot).TrimEnd('\') + '\'
         $bad = @()
@@ -76,7 +77,7 @@ function Test-DecadePlaceholderFolderName {
 }
 
 function Remove-GeneratedPlaceholderDirectories {
-    foreach ($rootName in @("images","thumbs","highres","videos")) {
+    foreach ($rootName in @("images","thumbs","highres","videos","audio")) {
         $root = Join-Path $RepoRoot $rootName
         if (!(Test-Path -LiteralPath $root)) { continue }
         $matches = @(Get-ChildItem -LiteralPath $root -Directory -Recurse -Force -ErrorAction SilentlyContinue |
@@ -130,14 +131,16 @@ Write-Host "=============================================="
 Write-Host "Repository: $RepoRoot"
 Write-Host "Years:      $FromYear through $ToYear"
 Write-Host "Mode:       $(if ($DryRun) {'DRY RUN'} elseif ($Publish) {'UPDATE + PUBLISH'} else {'UPDATE ONLY'})"
-Write-Host "Media:      Photos + Videos"
+Write-Host "Media:      Photos + Videos + Audio"
 Write-Host ""
 
 if (!(Test-Path -LiteralPath $RepoRoot)) { throw "Repository not found: $RepoRoot" }
 if (!(Test-Path -LiteralPath $Generator)) { throw "Photo generator not found: $Generator" }
 if (!(Test-Path -LiteralPath $VideoGenerator)) { throw "Video generator not found: $VideoGenerator" }
+if (!(Test-Path -LiteralPath $AudioGenerator)) { throw "Audio generator not found: $AudioGenerator" }
 if (!(Test-Path -LiteralPath $BuildMetadata)) { throw "Metadata builder not found: $BuildMetadata" }
 if (!(Test-Path -LiteralPath $BuildGallery)) { throw "Gallery builder not found: $BuildGallery" }
+if (!(Test-Path -LiteralPath $AddAudioPlayers)) { throw "Audio gallery post-processor not found: $AddAudioPlayers" }
 
 Invoke-Checked git.exe -C $RepoRoot rev-parse --is-inside-work-tree | Out-Null
 if (!(Test-RepoClean)) {
@@ -147,25 +150,30 @@ if (!(Test-RepoClean)) {
 }
 
 $before = @(
-    Get-FolderStat "thumbs"; Get-FolderStat "images"; Get-FolderStat "highres"; Get-FolderStat "videos"; Get-FolderStat "originals"
+    Get-FolderStat "thumbs"; Get-FolderStat "images"; Get-FolderStat "highres"; Get-FolderStat "videos"; Get-FolderStat "audio"; Get-FolderStat "originals"
 )
 
 if (!$SkipPull) {
-    Write-Host "[1/8] Updating local main branch..."
+    Write-Host "[1/9] Updating local main branch..."
     Invoke-Checked git.exe -C $RepoRoot checkout main
     Invoke-Checked git.exe -C $RepoRoot pull --ff-only origin main
-} else { Write-Host "[1/8] Git pull skipped." }
+} else { Write-Host "[1/9] Git pull skipped." }
 
-Write-Host "[2/8] Refreshing DigiKam Website-tag photo manifest and generating photo derivatives..."
+Write-Host "[2/9] Refreshing DigiKam Website-tag photo manifest and generating photo derivatives..."
 $syncArgs = @("-ExecutionPolicy","Bypass","-File",$Generator,"-FromYear","$FromYear","-ToYear","$ToYear")
 if (!$SkipManifestRefresh) { $syncArgs += "-RefreshManifest" }
 if ($DryRun) { $syncArgs += "-DryRun" } else { $syncArgs += "-Live" }
 Invoke-Checked powershell.exe @syncArgs
 
-Write-Host "[3/8] Scanning and syncing Website-tagged videos..."
+Write-Host "[3/9] Scanning and syncing Website-tagged videos..."
 $videoArgs = @("-ExecutionPolicy","Bypass","-File",$VideoGenerator,"-FromYear","$FromYear","-ToYear","$ToYear")
 if ($DryRun) { $videoArgs += "-DryRun" }
 Invoke-Checked powershell.exe @videoArgs
+
+Write-Host "[4/9] Scanning and syncing Website-tagged audio..."
+$audioArgs = @("-ExecutionPolicy","Bypass","-File",$AudioGenerator,"-FromYear","$FromYear","-ToYear","$ToYear")
+if ($DryRun) { $audioArgs += "-DryRun" }
+Invoke-Checked powershell.exe @audioArgs
 
 if ($DryRun) {
     Write-Host ""
@@ -173,7 +181,7 @@ if ($DryRun) {
     exit 0
 }
 
-Write-Host "[4/8] Safety cleanup and master verification..."
+Write-Host "[5/9] Safety cleanup and master verification..."
 Assert-MasterSourcesOutsideRepo
 Remove-GeneratedPlaceholderDirectories
 
@@ -188,19 +196,20 @@ if (Test-Path -LiteralPath $originalsPath) {
 }
 
 $py = Get-PythonCommand
-Write-Host "[5/8] Rebuilding photo_metadata.json from DigiKam/master photos and videos..."
+Write-Host "[6/9] Rebuilding photo_metadata.json from DigiKam/master photos, videos, and audio..."
 Invoke-Checked $py.File @($py.Prefix + @($BuildMetadata))
-Write-Host "[6/8] Rebuilding chronological and person galleries..."
+Write-Host "[7/9] Rebuilding chronological and person galleries..."
 Invoke-Checked $py.File @($py.Prefix + @($BuildGallery))
+Invoke-Checked $py.File @($py.Prefix + @($AddAudioPlayers))
 
 $after = @(
-    Get-FolderStat "thumbs"; Get-FolderStat "images"; Get-FolderStat "highres"; Get-FolderStat "videos"; Get-FolderStat "originals"
+    Get-FolderStat "thumbs"; Get-FolderStat "images"; Get-FolderStat "highres"; Get-FolderStat "videos"; Get-FolderStat "audio"; Get-FolderStat "originals"
 )
 Write-Host ""; Write-Host "BEFORE:"; $before | Format-Table -AutoSize
 Write-Host "AFTER:"; $after | Format-Table -AutoSize
 Save-SizeReport $before $after
 
-Write-Host "[7/8] Reviewing changed files..."
+Write-Host "[8/9] Reviewing changed files..."
 $status = git -C $RepoRoot status --short --untracked-files=no
 if ([string]::IsNullOrWhiteSpace(($status -join "`n"))) { Write-Host "No website changes detected."; exit 0 }
 $status | ForEach-Object { Write-Host $_ }
@@ -213,19 +222,19 @@ if (!$Publish) {
     exit 0
 }
 
-Write-Host "[8/8] Committing and pushing approved website changes..."
-if ([string]::IsNullOrWhiteSpace($CommitMessage)) { $CommitMessage = "Update website photos, videos, metadata, and galleries" }
+Write-Host "[9/9] Committing and pushing approved website changes..."
+if ([string]::IsNullOrWhiteSpace($CommitMessage)) { $CommitMessage = "Update website photos, videos, audio, metadata, and galleries" }
 
 $paths = @(
-    "images","thumbs","highres","videos","originals",
+    "images","thumbs","highres","videos","audio","originals",
     "photo_metadata.json","gallery.html",
     "alma-photos.html","buster-photos.html","debbie-photos.html","dickey-photos.html",
     "dominique-photos.html","heather-photos.html","helen-photos.html","ivy-photos.html",
     "jarred-photos.html","olivia-photos.html","rickey-photos.html","samatha-photos.html",
     "sonja-photos.html","sophia-photos.html","spooky-photos.html","stephanie-photos.html",
-    "website-photo-manifest.csv","website-video-manifest.csv",
-    "tools/build_photo_metadata.py","tools/build_dynamic_gallery.py",
-    "Sync-BellWebsiteVideos.ps1",".github/workflows/bell-pages.yml"
+    "website-photo-manifest.csv","website-video-manifest.csv","website-audio-manifest.csv",
+    "tools/build_photo_metadata.py","tools/build_dynamic_gallery.py","tools/add_audio_players.py",
+    "Sync-BellWebsiteVideos.ps1","Sync-BellWebsiteAudio.ps1",".github/workflows/bell-pages.yml"
 )
 foreach ($p in $paths) {
     git -C $RepoRoot add -A -- $p
