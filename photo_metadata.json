@@ -15715,6 +15715,28 @@
     "gps": null
   },
   {
+    "path": "images/1992/91 H & Car.jpg",
+    "media_type": "photo",
+    "file": "91 H & Car.jpg",
+    "folder": "1992",
+    "date": "1992-07-01",
+    "people": [
+      "Heather Bell"
+    ],
+    "tags": [
+      "Heather Bell",
+      "People/Heather Bell",
+      "People|Heather Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/1992/91 H & Rickey @ Beach.jpg",
     "media_type": "photo",
     "file": "91 H & Rickey @ Beach.jpg",
@@ -16104,6 +16126,50 @@
     "gps": null
   },
   {
+    "path": "images/1993/20141226_042207000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20141226_042207000_iOS.jpg",
+    "folder": "1993",
+    "date": "1993-07-01",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1993/93 School Pic.jpg",
+    "media_type": "photo",
+    "file": "93 School Pic.jpg",
+    "folder": "1993",
+    "date": "1993-07-01",
+    "people": [
+      "Heather Bell"
+    ],
+    "tags": [
+      "Heather Bell",
+      "People/Heather Bell",
+      "People|Heather Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/1993/93 H & Alma Thanksgiving.jpg",
     "media_type": "photo",
     "file": "93 H & Alma Thanksgiving.jpg",
@@ -16193,6 +16259,28 @@
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1993/heather christmas 93.jpg",
+    "media_type": "photo",
+    "file": "heather christmas 93.jpg",
+    "folder": "1993",
+    "date": "1993-12-25",
+    "people": [
+      "Heather Bell"
+    ],
+    "tags": [
+      "Heather Bell",
+      "People/Heather Bell",
+      "People|Heather Bell"
+    ],
+    "title": "",
+    "description": "WANG2_",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
     "gps": null
   },
   {
@@ -17594,11 +17682,37 @@
     "gps": null
   },
   {
-    "path": "images/1994/Alma4.jpg",
+    "path": "images/1994/Alma Tharp Bell Death.jpg",
     "media_type": "photo",
-    "file": "Alma4.jpg",
+    "file": "Alma Tharp Bell Death.jpg",
     "folder": "1994",
-    "date": "1994-05-01",
+    "date": "1994-05-18",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Document",
+      "Lancaster County",
+      "People/Alma Bell",
+      "People|Alma Bell",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1994/Screenshot 2026-07-22 085844.png",
+    "media_type": "photo",
+    "file": "Screenshot 2026-07-22 085844.png",
+    "folder": "1994",
+    "date": "1994-05-19",
     "people": [
       "Alma Bell"
     ],
@@ -17902,6 +18016,38 @@
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1994/1994_May_0003_a.jpg",
+    "media_type": "photo",
+    "file": "1994_May_0003_a.jpg",
+    "folder": "1994",
+    "date": "1994-05-20",
+    "people": [
+      "Dickey Bell",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Lancaster County",
+      "People/Dickey Bell",
+      "People/Rickey Bell",
+      "People|Dickey Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Rickey Bell",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -19929,16 +20075,19 @@
       "Samatha Bell"
     ],
     "tags": [
+      "900 Confederate Ave",
       "People/Samatha Bell",
       "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
       "Samatha Bell"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -19951,16 +20100,19 @@
       "Samatha Bell"
     ],
     "tags": [
+      "900 Confederate Ave",
       "People/Samatha Bell",
       "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
       "Samatha Bell"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -19973,16 +20125,19 @@
       "Samatha Bell"
     ],
     "tags": [
+      "900 Confederate Ave",
       "People/Samatha Bell",
       "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
       "Samatha Bell"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -19995,16 +20150,19 @@
       "Samatha Bell"
     ],
     "tags": [
+      "900 Confederate Ave",
       "People/Samatha Bell",
       "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
       "Samatha Bell"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -20017,16 +20175,19 @@
       "Samatha Bell"
     ],
     "tags": [
+      "900 Confederate Ave",
       "People/Samatha Bell",
       "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
       "Samatha Bell"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -20101,16 +20262,19 @@
       "Samatha Bell"
     ],
     "tags": [
+      "900 Confederate Ave",
       "People/Samatha Bell",
       "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
       "Samatha Bell"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -20220,16 +20384,19 @@
       "Samatha Bell"
     ],
     "tags": [
+      "900 Confederate Ave",
       "People/Samatha Bell",
       "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
       "Samatha Bell"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -20277,16 +20444,19 @@
       "Samatha Bell"
     ],
     "tags": [
+      "900 Confederate Ave",
       "People/Samatha Bell",
       "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
       "Samatha Bell"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -20562,9 +20732,9 @@
     "gps": null
   },
   {
-    "path": "images/1996/sit2.jpg",
+    "path": "images/1996/1996_January_0025_a.jpg",
     "media_type": "photo",
-    "file": "sit2.jpg",
+    "file": "1996_January_0025_a.jpg",
     "folder": "1996",
     "date": "1996-01-31",
     "people": [
@@ -20585,7 +20755,7 @@
       "South Carolina"
     ],
     "title": "",
-    "description": "LEAD Technologies Inc. V1.01",
+    "description": "",
     "location": "900 Confederate Ave",
     "city": "Lancaster County",
     "state": "South Carolina",
@@ -20906,19 +21076,22 @@
       "Samatha Bell"
     ],
     "tags": [
+      "900 Confederate Ave",
       "People/Rickey Bell",
       "People/Samatha Bell",
       "People|Rickey Bell",
       "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
       "Rickey Bell",
       "Samatha Bell"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -20931,16 +21104,19 @@
       "Samatha Bell"
     ],
     "tags": [
+      "900 Confederate Ave",
       "People/Samatha Bell",
       "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
       "Samatha Bell"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -20954,19 +21130,22 @@
       "Samatha Bell"
     ],
     "tags": [
+      "900 Confederate Ave",
       "People/Rickey Bell",
       "People/Samatha Bell",
       "People|Rickey Bell",
       "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
       "Rickey Bell",
       "Samatha Bell"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -20979,16 +21158,19 @@
       "Samatha Bell"
     ],
     "tags": [
+      "900 Confederate Ave",
       "People/Samatha Bell",
       "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
       "Samatha Bell"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -21017,32 +21199,6 @@
       "Places|South Carolina|Lancaster County|900 Confederate Ave",
       "South Carolina",
       "Stephanie Bell"
-    ],
-    "title": "",
-    "description": "",
-    "location": "900 Confederate Ave",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
-    "path": "images/1996/1996_February_0004_a.jpg",
-    "media_type": "photo",
-    "file": "1996_February_0004_a.jpg",
-    "folder": "1996",
-    "date": "1996-02-04",
-    "people": [],
-    "tags": [
-      "900 Confederate Ave",
-      "Lancaster County",
-      "Places/South Carolina",
-      "Places/South Carolina/Lancaster County",
-      "Places/South Carolina/Lancaster County/900 Confederate Ave",
-      "Places|South Carolina",
-      "Places|South Carolina|Lancaster County",
-      "Places|South Carolina|Lancaster County|900 Confederate Ave",
-      "South Carolina"
     ],
     "title": "",
     "description": "",
@@ -21093,16 +21249,19 @@
       "Samatha Bell"
     ],
     "tags": [
+      "900 Confederate Ave",
       "People/Samatha Bell",
       "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
       "Samatha Bell"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -21150,16 +21309,19 @@
       "Samatha Bell"
     ],
     "tags": [
+      "900 Confederate Ave",
       "People/Samatha Bell",
       "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
       "Samatha Bell"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -21172,16 +21334,19 @@
       "Samatha Bell"
     ],
     "tags": [
+      "900 Confederate Ave",
       "People/Samatha Bell",
       "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
       "Samatha Bell"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -22532,36 +22697,6 @@
     "gps": null
   },
   {
-    "path": "images/1997/1990s_0038_a.jpg",
-    "media_type": "photo",
-    "file": "1990s_0038_a.jpg",
-    "folder": "1997",
-    "date": "1997-01-01",
-    "people": [
-      "Rickey Bell",
-      "Samatha Bell",
-      "Stephanie Bell"
-    ],
-    "tags": [
-      "People/Rickey Bell",
-      "People/Samatha Bell",
-      "People/Stephanie Bell",
-      "People|Rickey Bell",
-      "People|Samatha Bell",
-      "People|Stephanie Bell",
-      "Rickey Bell",
-      "Samatha Bell",
-      "Stephanie Bell"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
     "path": "images/1998/TSI.jpg",
     "media_type": "photo",
     "file": "TSI.jpg",
@@ -22609,6 +22744,36 @@
       "People|Rickey Bell",
       "People|Stephanie Bell",
       "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1998/1990s_0038_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0038_a.jpg",
+    "folder": "1998",
+    "date": "1998-11-21",
+    "people": [
+      "Rickey Bell",
+      "Samatha Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "People/Rickey Bell",
+      "People/Samatha Bell",
+      "People/Stephanie Bell",
+      "People|Rickey Bell",
+      "People|Samatha Bell",
+      "People|Stephanie Bell",
+      "Rickey Bell",
+      "Samatha Bell",
       "Stephanie Bell"
     ],
     "title": "",
@@ -22742,6 +22907,28 @@
     "gps": null
   },
   {
+    "path": "images/1999/dick.JPG",
+    "media_type": "photo",
+    "file": "dick.JPG",
+    "folder": "1999",
+    "date": "1999-07-31",
+    "people": [
+      "Dick Bell"
+    ],
+    "tags": [
+      "Dick Bell",
+      "People/Dick Bell",
+      "People|Dick Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/1999/dickey.JPG",
     "media_type": "photo",
     "file": "dickey.JPG",
@@ -22776,6 +22963,32 @@
     "gps": null
   },
   {
+    "path": "images/1999/sam&sonja.JPG",
+    "media_type": "photo",
+    "file": "sam&sonja.JPG",
+    "folder": "1999",
+    "date": "1999-07-31",
+    "people": [
+      "Samatha Bell",
+      "Sonja Bell"
+    ],
+    "tags": [
+      "People/Samatha Bell",
+      "People/Sonja Bell",
+      "People|Samatha Bell",
+      "People|Sonja Bell",
+      "Samatha Bell",
+      "Sonja Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/1999/Spookey12.JPG",
     "media_type": "photo",
     "file": "Spookey12.JPG",
@@ -22788,6 +23001,116 @@
       "People/Spooky Bell",
       "People|Spooky Bell",
       "Spooky Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1999/Hallow3.JPG",
+    "media_type": "photo",
+    "file": "Hallow3.JPG",
+    "folder": "1999",
+    "date": "1999-10-30",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1999/9B7E1834_v1.JPG",
+    "media_type": "photo",
+    "file": "9B7E1834_v1.JPG",
+    "folder": "1999",
+    "date": "1999-11-07",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1999/9B7E1901_v1.JPG",
+    "media_type": "photo",
+    "file": "9B7E1901_v1.JPG",
+    "folder": "1999",
+    "date": "1999-11-07",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1999/9B7E1926_v1.JPG",
+    "media_type": "photo",
+    "file": "9B7E1926_v1.JPG",
+    "folder": "1999",
+    "date": "1999-11-07",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1999/9B7E1940_v1.JPG",
+    "media_type": "photo",
+    "file": "9B7E1940_v1.JPG",
+    "folder": "1999",
+    "date": "1999-11-07",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
     ],
     "title": "",
     "description": "",
@@ -22850,6 +23173,109 @@
     "gps": null
   },
   {
+    "path": "images/2000/2000s_0010.jpg",
+    "media_type": "photo",
+    "file": "2000s_0010.jpg",
+    "folder": "2000",
+    "date": "2000-01-01",
+    "people": [
+      "Jarred Bell",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People/Samatha Bell",
+      "People|Jarred Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2000/2000s_0010_a.jpg",
+    "media_type": "photo",
+    "file": "2000s_0010_a.jpg",
+    "folder": "2000",
+    "date": "2000-01-01",
+    "people": [
+      "Jarred Bell",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People/Samatha Bell",
+      "People|Jarred Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2000/Sam&Rick on Boat.JPG",
+    "media_type": "photo",
+    "file": "Sam&Rick on Boat.JPG",
+    "folder": "2000",
+    "date": "2000-01-01",
+    "people": [
+      "Rickey Bell",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Crystal River",
+      "People/Rickey Bell",
+      "People/Samatha Bell",
+      "People|Rickey Bell",
+      "People|Samatha Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Rickey Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2000/07EK5211.JPG",
+    "media_type": "photo",
+    "file": "07EK5211.JPG",
+    "folder": "2000",
+    "date": "2000-07-01",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "LEAD Technologies Inc. V1.01",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2001/1112_0021_a.jpg",
     "media_type": "photo",
     "file": "1112_0021_a.jpg",
@@ -22869,6 +23295,41 @@
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2001/Sam Drew posing 2.jpg",
+    "media_type": "photo",
+    "file": "Sam Drew posing 2.jpg",
+    "folder": "2001",
+    "date": "2001-03-31",
+    "people": [
+      "Andrew Morgan",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Andrew Morgan",
+      "Lancaster County",
+      "People/Andrew Morgan",
+      "People/Samatha Bell",
+      "People|Andrew Morgan",
+      "People|Samatha Bell",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Samatha Bell",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -22901,6 +23362,60 @@
     "gps": null
   },
   {
+    "path": "images/2001/Rick&Sam Gator$Snake.JPG",
+    "media_type": "photo",
+    "file": "Rick&Sam Gator$Snake.JPG",
+    "folder": "2001",
+    "date": "2001-07-04",
+    "people": [
+      "Rickey Bell",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "GatorLand",
+      "People/Rickey Bell",
+      "People/Samatha Bell",
+      "People|Rickey Bell",
+      "People|Samatha Bell",
+      "Places/Florida/Orlando/GatorLand",
+      "Places|Florida|Orlando|GatorLand",
+      "Rickey Bell",
+      "Samatha Bell"
+    ],
+    "title": "Gatorland",
+    "description": "",
+    "location": "GatorLand",
+    "city": "Orlando",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2001/Rick&Sam On Gator.JPG",
+    "media_type": "photo",
+    "file": "Rick&Sam On Gator.JPG",
+    "folder": "2001",
+    "date": "2001-07-04",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "GatorLand",
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Places/Florida/Orlando/GatorLand",
+      "Places|Florida|Orlando|GatorLand",
+      "Samatha Bell"
+    ],
+    "title": "Gatorland",
+    "description": "",
+    "location": "GatorLand",
+    "city": "Orlando",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2001/198D1711.JPG",
     "media_type": "photo",
     "file": "198D1711.JPG",
@@ -22927,6 +23442,35 @@
     "gps": null
   },
   {
+    "path": "images/2001/Sam_Holding_Jarred.jpg",
+    "media_type": "photo",
+    "file": "Sam_Holding_Jarred.jpg",
+    "folder": "2001",
+    "date": "2001-12-20",
+    "people": [
+      "Jarred Bell",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "695 Lancaster Bypass E TSI_QDS Office",
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People/Samatha Bell",
+      "People|Jarred Bell",
+      "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/695 Lancaster Bypass E TSI_QDS Office",
+      "Places|South Carolina|Lancaster County|695 Lancaster Bypass E TSI_QDS Office",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "695 Lancaster Bypass E TSI_QDS Office",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2001/2001_0001.jpg",
     "media_type": "photo",
     "file": "2001_0001.jpg",
@@ -22947,6 +23491,155 @@
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2002/1112_0022.jpg",
+    "media_type": "photo",
+    "file": "1112_0022.jpg",
+    "folder": "2002",
+    "date": "2002-01-01",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2002/1112_0022_a.jpg",
+    "media_type": "photo",
+    "file": "1112_0022_a.jpg",
+    "folder": "2002",
+    "date": "2002-01-01",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2002/103-0357_IMG.JPG",
+    "media_type": "photo",
+    "file": "103-0357_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-05-25",
+    "people": [
+      "Jarred Bell",
+      "Samatha Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Jarred Bell",
+      "Lancaster County",
+      "People/Jarred Bell",
+      "People/Samatha Bell",
+      "People/Stephanie Bell",
+      "People|Jarred Bell",
+      "People|Samatha Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Samatha Bell",
+      "South Carolina",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/106-0678_IMG.JPG",
+    "media_type": "photo",
+    "file": "106-0678_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-06-02",
+    "people": [
+      "Donna Brown",
+      "Jarred Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Donna Brown",
+      "Jarred Bell",
+      "Lancaster County",
+      "People/Donna Brown",
+      "People/Jarred Bell",
+      "People|Donna Brown",
+      "People|Jarred Bell",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/105-0540_IMG.JPG",
+    "media_type": "photo",
+    "file": "105-0540_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-06-11",
+    "people": [
+      "Jarred Bell"
+    ],
+    "tags": [
+      "695 Lancaster Bypass E TSI_QDS Office",
+      "Jarred Bell",
+      "Lancaster County",
+      "People/Jarred Bell",
+      "People|Jarred Bell",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/695 Lancaster Bypass E TSI_QDS Office",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|695 Lancaster Bypass E TSI_QDS Office",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "LEAD Technologies Inc. V1.01",
+    "location": "695 Lancaster Bypass E TSI_QDS Office",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -23063,6 +23756,68 @@
     "gps": null
   },
   {
+    "path": "images/2002/100-0067_IMG.JPG",
+    "media_type": "photo",
+    "file": "100-0067_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-06-23",
+    "people": [
+      "Sonja Bell"
+    ],
+    "tags": [
+      "Animal/Blaze",
+      "Animal|Blaze",
+      "Blaze",
+      "Myrtle Beach",
+      "People/Sonja Bell",
+      "People|Sonja Bell",
+      "Places/South Carolina/Myrtle Beach",
+      "Places/South Carolina/Myrtle Beach/Tilghman Shores",
+      "Places|South Carolina|Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach|Tilghman Shores",
+      "Sonja Bell",
+      "Tilghman Shores"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Tilghman Shores",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/111-1134_IMG.JPG",
+    "media_type": "photo",
+    "file": "111-1134_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-06-23",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "2044 DOUGLAS RD",
+      "Lancaster County",
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/2044 DOUGLAS RD",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|2044 DOUGLAS RD",
+      "Samatha Bell",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "2044 DOUGLAS RD",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2002/100-0072_IMG.JPG",
     "media_type": "photo",
     "file": "100-0072_IMG.JPG",
@@ -23108,6 +23863,34 @@
       "Places/South Carolina/Myrtle Beach/Tilghman Shores",
       "Places|South Carolina|Myrtle Beach",
       "Places|South Carolina|Myrtle Beach|Tilghman Shores",
+      "Tilghman Shores"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Tilghman Shores",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/101-0107_IMG.JPG",
+    "media_type": "photo",
+    "file": "101-0107_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-06-25",
+    "people": [
+      "Sonja Bell"
+    ],
+    "tags": [
+      "Myrtle Beach",
+      "People/Sonja Bell",
+      "People|Sonja Bell",
+      "Places/South Carolina/Myrtle Beach",
+      "Places/South Carolina/Myrtle Beach/Tilghman Shores",
+      "Places|South Carolina|Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach|Tilghman Shores",
+      "Sonja Bell",
       "Tilghman Shores"
     ],
     "title": "",
@@ -23173,6 +23956,62 @@
     "gps": null
   },
   {
+    "path": "images/2002/117-1701_IMG.JPG",
+    "media_type": "photo",
+    "file": "117-1701_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-08-05",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Lancaster County",
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Samatha Bell",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/100-0006_IMG_v1.JPG",
+    "media_type": "photo",
+    "file": "100-0006_IMG_v1.JPG",
+    "folder": "2002",
+    "date": "2002-08-15",
+    "people": [
+      "Sonja Bell"
+    ],
+    "tags": [
+      "People/Sonja Bell",
+      "People|Sonja Bell",
+      "Places/South Carolina/Lancaster County/Winsor Dr",
+      "Places|South Carolina|Lancaster County|Winsor Dr",
+      "Sonja Bell",
+      "Winsor Dr"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Winsor Dr",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2002/2002_0001_a.jpg",
     "media_type": "photo",
     "file": "2002_0001_a.jpg",
@@ -23201,6 +24040,82 @@
     "location": "",
     "city": "Myrtle Beach",
     "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/2002_0002_a.jpg",
+    "media_type": "photo",
+    "file": "2002_0002_a.jpg",
+    "folder": "2002",
+    "date": "2002-10-01",
+    "people": [
+      "Jarred Bell",
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Jarred Bell",
+      "Myrtle Beach",
+      "People/Jarred Bell",
+      "People/Rickey Bell",
+      "People/Stephanie Bell",
+      "People|Jarred Bell",
+      "People|Rickey Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina",
+      "Places|South Carolina|Myrtle Beach",
+      "Rickey Bell",
+      "South Carolina",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "Heather's Funeral",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/122-2242_IMG.JPG",
+    "media_type": "photo",
+    "file": "122-2242_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-10-20",
+    "people": [
+      "Charlie Brown",
+      "Jarred Bell",
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Charlie Brown",
+      "Florida",
+      "Jarred Bell",
+      "Orlando",
+      "People/Charlie Brown",
+      "People/Jarred Bell",
+      "People/Rickey Bell",
+      "People/Stephanie Bell",
+      "People|Charlie Brown",
+      "People|Jarred Bell",
+      "People|Rickey Bell",
+      "People|Stephanie Bell",
+      "Places/Florida",
+      "Places/Florida/Orlando",
+      "Places|Florida",
+      "Places|Florida|Orlando",
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Orlando",
+    "state": "Florida",
     "country": "United States",
     "gps": null
   },
@@ -23587,6 +24502,41 @@
     "gps": null
   },
   {
+    "path": "images/2002/127-2747_IMG.JPG",
+    "media_type": "photo",
+    "file": "127-2747_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-12-24",
+    "people": [
+      "Jackie Steen",
+      "Peggy Faulkenberry"
+    ],
+    "tags": [
+      "1578 Oakwood Ave Faulkenberry Family Home",
+      "Jackie Steen",
+      "Lancaster County",
+      "Peggy Faulkenberry",
+      "People/Jackie Steen",
+      "People/Peggy Faulkenberry",
+      "People|Jackie Steen",
+      "People|Peggy Faulkenberry",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/1578 Oakwood Ave Faulkenberry Family Home",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|1578 Oakwood Ave Faulkenberry Family Home",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "1578 Oakwood Ave Faulkenberry Family Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2002/127-2750_IMG.JPG",
     "media_type": "photo",
     "file": "127-2750_IMG.JPG",
@@ -23644,6 +24594,37 @@
       "People|Debbie Phillips",
       "People|Irvin Phillips",
       "People|Jackie Steen",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/1578 Oakwood Ave Faulkenberry Family Home",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|1578 Oakwood Ave Faulkenberry Family Home",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "1578 Oakwood Ave Faulkenberry Family Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/127-2752_IMG.JPG",
+    "media_type": "photo",
+    "file": "127-2752_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-12-24",
+    "people": [
+      "Everate Faulkenberry"
+    ],
+    "tags": [
+      "1578 Oakwood Ave Faulkenberry Family Home",
+      "Everate Faulkenberry",
+      "Lancaster County",
+      "People/Everate Faulkenberry",
+      "People|Everate Faulkenberry",
       "Places/South Carolina",
       "Places/South Carolina/Lancaster County",
       "Places/South Carolina/Lancaster County/1578 Oakwood Ave Faulkenberry Family Home",
@@ -23731,6 +24712,81 @@
     "gps": null
   },
   {
+    "path": "images/2002/128-2859_IMG.JPG",
+    "media_type": "photo",
+    "file": "128-2859_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-12-29",
+    "people": [
+      "Jarred Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Jarred Bell",
+      "Lancaster County",
+      "People/Jarred Bell",
+      "People|Jarred Bell",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2003/130-3079_IMG.JPG",
+    "media_type": "photo",
+    "file": "130-3079_IMG.JPG",
+    "folder": "2003",
+    "date": "2003-02-21",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2003/130-3080_IMG.JPG",
+    "media_type": "photo",
+    "file": "130-3080_IMG.JPG",
+    "folder": "2003",
+    "date": "2003-02-21",
+    "people": [
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "People/Stephanie Bell",
+      "People|Stephanie Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2003/131-3126_IMG.JPG",
     "media_type": "photo",
     "file": "131-3126_IMG.JPG",
@@ -23743,6 +24799,168 @@
       "Dickey Bell",
       "People/Dickey Bell",
       "People|Dickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2003/132-3229_IMG.JPG",
+    "media_type": "photo",
+    "file": "132-3229_IMG.JPG",
+    "folder": "2003",
+    "date": "2003-02-22",
+    "people": [
+      "Rickii Lear",
+      "Samatha Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "People/Rickii Lear",
+      "People/Samatha Bell",
+      "People/Stephanie Bell",
+      "People|Rickii Lear",
+      "People|Samatha Bell",
+      "People|Stephanie Bell",
+      "Rickii Lear",
+      "Samatha Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2003/Sam Desat copy.jpg",
+    "media_type": "photo",
+    "file": "Sam Desat copy.jpg",
+    "folder": "2003",
+    "date": "2003-05-25",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2003/138-3863_IMG copy.jpg",
+    "media_type": "photo",
+    "file": "138-3863_IMG copy.jpg",
+    "folder": "2003",
+    "date": "2003-07-25",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "695 Lancaster Bypass E TSI_QDS Office",
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/695 Lancaster Bypass E TSI_QDS Office",
+      "Places|South Carolina|Lancaster County|695 Lancaster Bypass E TSI_QDS Office",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "695 Lancaster Bypass E TSI_QDS Office",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2003/139-3948_IMG.JPG",
+    "media_type": "photo",
+    "file": "139-3948_IMG.JPG",
+    "folder": "2003",
+    "date": "2003-08-17",
+    "people": [
+      "Rickey Bell",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People/Rickey Bell",
+      "People/Samatha Bell",
+      "People|Rickey Bell",
+      "People|Samatha Bell",
+      "Rickey Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2003/2003_117.jpg",
+    "media_type": "photo",
+    "file": "2003_117.jpg",
+    "folder": "2003",
+    "date": "2003-11-17",
+    "people": [
+      "Charlie Brown",
+      "Jarred Bell",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "2044 DOUGLAS RD",
+      "Charlie Brown",
+      "Jarred Bell",
+      "People/Charlie Brown",
+      "People/Jarred Bell",
+      "People/Samatha Bell",
+      "People|Charlie Brown",
+      "People|Jarred Bell",
+      "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/2044 DOUGLAS RD",
+      "Places|South Carolina|Lancaster County|2044 DOUGLAS RD",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "2044 DOUGLAS RD",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2003/2003_12_28 065.jpg",
+    "media_type": "photo",
+    "file": "2003_12_28 065.jpg",
+    "folder": "2003",
+    "date": "2003-12-26",
+    "people": [
+      "Jarred Bell",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People/Samatha Bell",
+      "People|Jarred Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
     ],
     "title": "",
     "description": "",
@@ -23850,6 +25068,166 @@
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/2004_1_16 097.jpg",
+    "media_type": "photo",
+    "file": "2004_1_16 097.jpg",
+    "folder": "2004",
+    "date": "2004-01-14",
+    "people": [
+      "Jarred Bell",
+      "Sonja Bell"
+    ],
+    "tags": [
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People/Sonja Bell",
+      "People|Jarred Bell",
+      "People|Sonja Bell",
+      "Sonja Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/1 037.jpg",
+    "media_type": "photo",
+    "file": "1 037.jpg",
+    "folder": "2004",
+    "date": "2004-02-27",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/1 051.jpg",
+    "media_type": "photo",
+    "file": "1 051.jpg",
+    "folder": "2004",
+    "date": "2004-02-28",
+    "people": [
+      "Jarred Bell",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People/Samatha Bell",
+      "People|Jarred Bell",
+      "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2004/1 017.jpg",
+    "media_type": "photo",
+    "file": "1 017.jpg",
+    "folder": "2004",
+    "date": "2004-03-07",
+    "people": [
+      "Charlie Brown",
+      "Jarred Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Charlie Brown",
+      "Jarred Bell",
+      "People/Charlie Brown",
+      "People/Jarred Bell",
+      "People|Charlie Brown",
+      "People|Jarred Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2004/2 008.jpg",
+    "media_type": "photo",
+    "file": "2 008.jpg",
+    "folder": "2004",
+    "date": "2004-03-16",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "403 W Arch St",
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/403 W Arch St",
+      "Places|South Carolina|Lancaster County|403 W Arch St",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "403 W Arch St",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2004/Picture 054.jpg",
+    "media_type": "photo",
+    "file": "Picture 054.jpg",
+    "folder": "2004",
+    "date": "2004-04-09",
+    "people": [
+      "Jarred Bell",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People/Samatha Bell",
+      "People|Jarred Bell",
+      "People|Samatha Bell",
+      "Places/Florida/Weeki Wachee Springs",
+      "Places|Florida|Weeki Wachee Springs",
+      "Samatha Bell",
+      "Weeki Wachee Springs"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Weeki Wachee Springs",
+    "state": "Florida",
+    "country": "United States",
     "gps": null
   },
   {
@@ -24025,6 +25403,28 @@
     "gps": null
   },
   {
+    "path": "images/2005/PIX_#62.jpg",
+    "media_type": "photo",
+    "file": "PIX_#62.jpg",
+    "folder": "2005",
+    "date": "2005-11-29",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2005/12-24-05_1859.jpg",
     "media_type": "photo",
     "file": "12-24-05_1859.jpg",
@@ -24145,6 +25545,219 @@
     "gps": null
   },
   {
+    "path": "images/2006/10-31-06_1700.jpg",
+    "media_type": "photo",
+    "file": "10-31-06_1700.jpg",
+    "folder": "2006",
+    "date": "2006-10-31",
+    "people": [
+      "Jarred Bell",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People/Samatha Bell",
+      "People|Jarred Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2006/2006_December_0001.jpg",
+    "media_type": "photo",
+    "file": "2006_December_0001.jpg",
+    "folder": "2006",
+    "date": "2006-12-01",
+    "people": [
+      "Helen Bell",
+      "Spooky Bell"
+    ],
+    "tags": [
+      "Document",
+      "Helen Bell",
+      "People/Helen Bell",
+      "People/Spooky Bell",
+      "People|Helen Bell",
+      "People|Spooky Bell",
+      "Spooky Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2007/01-13-07_1322.jpg",
+    "media_type": "photo",
+    "file": "01-13-07_1322.jpg",
+    "folder": "2007",
+    "date": "2007-01-13",
+    "people": [
+      "Jarred Bell"
+    ],
+    "tags": [
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People|Jarred Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2007/2007_April_0001.jpg",
+    "media_type": "photo",
+    "file": "2007_April_0001.jpg",
+    "folder": "2007",
+    "date": "2007-04-01",
+    "people": [
+      "Anna Lear",
+      "Charlie Brown",
+      "Donna Brown",
+      "Jarred Bell",
+      "Samatha Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Anna Lear",
+      "Charlie Brown",
+      "Donna Brown",
+      "Jarred Bell",
+      "People/Anna Lear",
+      "People/Charlie Brown",
+      "People/Donna Brown",
+      "People/Jarred Bell",
+      "People/Samatha Bell",
+      "People/Stephanie Bell",
+      "People|Anna Lear",
+      "People|Charlie Brown",
+      "People|Donna Brown",
+      "People|Jarred Bell",
+      "People|Samatha Bell",
+      "People|Stephanie Bell",
+      "Samatha Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2008/IMAGE_155.jpg",
+    "media_type": "photo",
+    "file": "IMAGE_155.jpg",
+    "folder": "2008",
+    "date": "2008-03-23",
+    "people": [
+      "Jarred Bell",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People/Samatha Bell",
+      "People|Jarred Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2008/DSCI0053.JPG",
+    "media_type": "photo",
+    "file": "DSCI0053.JPG",
+    "folder": "2008",
+    "date": "2008-03-29",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2008/209.jpg",
+    "media_type": "photo",
+    "file": "209.jpg",
+    "folder": "2008",
+    "date": "2008-04-10",
+    "people": [
+      "Jarred Bell",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People/Rickey Bell",
+      "People|Jarred Bell",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2008/IMAGE_031.jpg",
+    "media_type": "photo",
+    "file": "IMAGE_031.jpg",
+    "folder": "2008",
+    "date": "2008-08-01",
+    "people": [
+      "Jarred Bell"
+    ],
+    "tags": [
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People|Jarred Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2008/FILE0009.JPG",
     "media_type": "photo",
     "file": "FILE0009.JPG",
@@ -24246,6 +25859,62 @@
       "People/Dickey Bell",
       "People/Jarred Bell",
       "People|Dickey Bell",
+      "People|Jarred Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2011/103_0660.JPG",
+    "media_type": "photo",
+    "file": "103_0660.JPG",
+    "folder": "2011",
+    "date": "2009-01-01",
+    "people": [
+      "Adam Lear",
+      "Dickey Bell",
+      "Sonja Bell"
+    ],
+    "tags": [
+      "Adam Lear",
+      "Dickey Bell",
+      "People/Adam Lear",
+      "People/Dickey Bell",
+      "People/Sonja Bell",
+      "People|Adam Lear",
+      "People|Dickey Bell",
+      "People|Sonja Bell",
+      "Sonja Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2009/IMAGE_182.jpg",
+    "media_type": "photo",
+    "file": "IMAGE_182.jpg",
+    "folder": "2009",
+    "date": "2009-03-29",
+    "people": [
+      "Andrew Morgan",
+      "Jarred Bell"
+    ],
+    "tags": [
+      "Andrew Morgan",
+      "Jarred Bell",
+      "People/Andrew Morgan",
+      "People/Jarred Bell",
+      "People|Andrew Morgan",
       "People|Jarred Bell"
     ],
     "title": "",
@@ -24415,6 +26084,53 @@
     "gps": null
   },
   {
+    "path": "images/2011/495343390_9563659190408544_596081264550873104_n.jpg",
+    "media_type": "photo",
+    "file": "495343390_9563659190408544_596081264550873104_n.jpg",
+    "folder": "2011",
+    "date": "2011-10-12",
+    "people": [
+      "Irvin Phillips"
+    ],
+    "tags": [
+      "Irvin Phillips",
+      "People/Irvin Phillips",
+      "People|Irvin Phillips"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2011/IMG_0072.JPG",
+    "media_type": "photo",
+    "file": "IMG_0072.JPG",
+    "folder": "2011",
+    "date": "2011-11-02",
+    "people": [
+      "Debbie Phillips"
+    ],
+    "tags": [
+      "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Debbie Phillips",
+      "People/Debbie Phillips",
+      "People|Debbie Phillips",
+      "Places/South Carolina/Lancaster County/973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Places|South Carolina|Lancaster County|973 Community Lane Deb_Irvin_Rickey_Jarred Home"
+    ],
+    "title": "",
+    "description": "",
+    "location": "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2012/2012-06-15_13-27-05_410.jpg",
     "media_type": "photo",
     "file": "2012-06-15_13-27-05_410.jpg",
@@ -24465,6 +26181,84 @@
     }
   },
   {
+    "path": "images/2013/20150506_145349000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20150506_145349000_iOS.jpg",
+    "folder": "2013",
+    "date": "2013-01-01",
+    "people": [
+      "Debbie Phillips"
+    ],
+    "tags": [
+      "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Debbie Phillips",
+      "People/Debbie Phillips",
+      "People|Debbie Phillips",
+      "Places/South Carolina/Lancaster County/973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Places|South Carolina|Lancaster County|973 Community Lane Deb_Irvin_Rickey_Jarred Home"
+    ],
+    "title": "",
+    "description": "",
+    "location": "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6986976222222,
+      "lon": -80.7073125383333
+    }
+  },
+  {
+    "path": "images/2013/20150506_145351000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20150506_145351000_iOS.jpg",
+    "folder": "2013",
+    "date": "2013-01-01",
+    "people": [
+      "Debbie Phillips"
+    ],
+    "tags": [
+      "Debbie Phillips",
+      "People/Debbie Phillips",
+      "People|Debbie Phillips"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2013/20150506_145355000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20150506_145355000_iOS.jpg",
+    "folder": "2013",
+    "date": "2013-01-01",
+    "people": [
+      "Debbie Phillips"
+    ],
+    "tags": [
+      "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Debbie Phillips",
+      "People/Debbie Phillips",
+      "People|Debbie Phillips",
+      "Places/South Carolina/Lancaster County/973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Places|South Carolina|Lancaster County|973 Community Lane Deb_Irvin_Rickey_Jarred Home"
+    ],
+    "title": "",
+    "description": "",
+    "location": "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6986976222222,
+      "lon": -80.7073125383333
+    }
+  },
+  {
     "path": "images/2013/20130303_165538996_iOS.jpg",
     "media_type": "photo",
     "file": "20130303_165538996_iOS.jpg",
@@ -24482,18 +26276,18 @@
       "People/Irvin Phillips",
       "People|Carl Whitcomb",
       "People|Irvin Phillips",
-      "Places/South Carolina/Lancaster/900 Confederate Ave",
-      "Places|South Carolina|Lancaster|900 Confederate Ave"
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
     ],
     "title": "",
     "description": "",
     "location": "900 Confederate Ave",
-    "city": "Lancaster",
+    "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.6933333163889,
-      "lon": -80.8253333336111
+      "lat": 34.6933333166667,
+      "lon": -80.8253333166667
     }
   },
   {
@@ -24529,6 +26323,107 @@
     }
   },
   {
+    "path": "images/2013/IrvinChristmas.jpg",
+    "media_type": "photo",
+    "file": "IrvinChristmas.jpg",
+    "folder": "2013",
+    "date": "2013-12-27",
+    "people": [
+      "Irvin Phillips",
+      "Jackie Steen",
+      "Jarred Bell",
+      "Lisa Steen",
+      "Macey Steen",
+      "Peggy Faulkenberry",
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "1578 Oakwood Ave Faulkenberry Family Home",
+      "Irvin Phillips",
+      "Jackie Steen",
+      "Jarred Bell",
+      "Lisa Steen",
+      "Macey Steen",
+      "Peggy Faulkenberry",
+      "People/Irvin Phillips",
+      "People/Jackie Steen",
+      "People/Jarred Bell",
+      "People/Lisa Steen",
+      "People/Macey Steen",
+      "People/Peggy Faulkenberry",
+      "People/Rickey Bell",
+      "People/Stephanie Bell",
+      "People|Irvin Phillips",
+      "People|Jackie Steen",
+      "People|Jarred Bell",
+      "People|Lisa Steen",
+      "People|Macey Steen",
+      "People|Peggy Faulkenberry",
+      "People|Rickey Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County/1578 Oakwood Ave Faulkenberry Family Home",
+      "Places|South Carolina|Lancaster County|1578 Oakwood Ave Faulkenberry Family Home",
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "1578 Oakwood Ave Faulkenberry Family Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2014/506249601_9867533246687802_3731353793760265556_n.jpg",
+    "media_type": "photo",
+    "file": "506249601_9867533246687802_3731353793760265556_n.jpg",
+    "folder": "2014",
+    "date": "2014-03-21",
+    "people": [
+      "Irvin Phillips"
+    ],
+    "tags": [
+      "Irvin Phillips",
+      "People/Irvin Phillips",
+      "People|Irvin Phillips"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2014/20150511_222036017_iOS.jpg",
+    "media_type": "photo",
+    "file": "20150511_222036017_iOS.jpg",
+    "folder": "2014",
+    "date": "2014-10-21",
+    "people": [
+      "Debbie Phillips"
+    ],
+    "tags": [
+      "Debbie Phillips",
+      "Document",
+      "People/Debbie Phillips",
+      "People|Debbie Phillips"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": {
+      "lat": 34.6933999836111,
+      "lon": -80.8250194333333
+    }
+  },
+  {
     "path": "images/2014/Debbie Death Cert.jpg",
     "media_type": "photo",
     "file": "Debbie Death Cert.jpg",
@@ -24549,31 +26444,6 @@
     "city": "",
     "state": "",
     "country": "",
-    "gps": null
-  },
-  {
-    "path": "images/2014/IMG_0072.JPG",
-    "media_type": "photo",
-    "file": "IMG_0072.JPG",
-    "folder": "2014",
-    "date": "2014-10-29",
-    "people": [
-      "Debbie Phillips"
-    ],
-    "tags": [
-      "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
-      "Debbie Phillips",
-      "People/Debbie Phillips",
-      "People|Debbie Phillips",
-      "Places/South Carolina/Lancaster County/973 Community Lane Deb_Irvin_Rickey_Jarred Home",
-      "Places|South Carolina|Lancaster County|973 Community Lane Deb_Irvin_Rickey_Jarred Home"
-    ],
-    "title": "",
-    "description": "",
-    "location": "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
     "gps": null
   },
   {
@@ -24601,46 +26471,52 @@
     "gps": null
   },
   {
-    "path": "images/2015/20150506_145349000_iOS.jpg",
+    "path": "images/2015/20150511_222101922_iOS.jpg",
     "media_type": "photo",
-    "file": "20150506_145349000_iOS.jpg",
+    "file": "20150511_222101922_iOS.jpg",
     "folder": "2015",
-    "date": "2015-05-05",
+    "date": "2015-05-02",
     "people": [
-      "Debbie Phillips"
+      "Irvin Phillips"
     ],
     "tags": [
-      "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
-      "Debbie Phillips",
-      "People/Debbie Phillips",
-      "People|Debbie Phillips",
-      "Places/South Carolina/Lancaster County/973 Community Lane Deb_Irvin_Rickey_Jarred Home",
-      "Places|South Carolina|Lancaster County|973 Community Lane Deb_Irvin_Rickey_Jarred Home"
+      "Document",
+      "Irvin Phillips",
+      "People/Irvin Phillips",
+      "People|Irvin Phillips"
     ],
-    "title": "",
+    "title": "Irvin Death Cert",
     "description": "",
-    "location": "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
     "gps": {
-      "lat": 34.6986976211111,
-      "lon": -80.7073125388889
+      "lat": 34.6933694172222,
+      "lon": -80.8249972169444
     }
   },
   {
-    "path": "images/2015/20150506_145351000_iOS.jpg",
+    "path": "images/2015/20150503_025201000_iOS.jpg",
     "media_type": "photo",
-    "file": "20150506_145351000_iOS.jpg",
+    "file": "20150503_025201000_iOS.jpg",
     "folder": "2015",
     "date": "2015-05-05",
     "people": [
-      "Debbie Phillips"
+      "Debbie Phillips",
+      "Irvin Phillips",
+      "Samatha Bell"
     ],
     "tags": [
       "Debbie Phillips",
+      "Irvin Phillips",
       "People/Debbie Phillips",
-      "People|Debbie Phillips"
+      "People/Irvin Phillips",
+      "People/Samatha Bell",
+      "People|Debbie Phillips",
+      "People|Irvin Phillips",
+      "People|Samatha Bell",
+      "Samatha Bell"
     ],
     "title": "",
     "description": "",
@@ -24651,31 +26527,31 @@
     "gps": null
   },
   {
-    "path": "images/2015/20150506_145355000_iOS.jpg",
+    "path": "images/2015/20150509_160446485_iOS.jpg",
     "media_type": "photo",
-    "file": "20150506_145355000_iOS.jpg",
+    "file": "20150509_160446485_iOS.jpg",
     "folder": "2015",
-    "date": "2015-05-05",
+    "date": "2015-05-08",
     "people": [
-      "Debbie Phillips"
+      "Irvin Phillips"
     ],
     "tags": [
-      "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
-      "Debbie Phillips",
-      "People/Debbie Phillips",
-      "People|Debbie Phillips",
-      "Places/South Carolina/Lancaster County/973 Community Lane Deb_Irvin_Rickey_Jarred Home",
-      "Places|South Carolina|Lancaster County|973 Community Lane Deb_Irvin_Rickey_Jarred Home"
+      "Irvin Phillips",
+      "Lancaster County",
+      "People/Irvin Phillips",
+      "People|Irvin Phillips",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County"
     ],
     "title": "",
     "description": "",
-    "location": "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+    "location": "",
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.6986976211111,
-      "lon": -80.7073125388889
+      "lat": 34.707875,
+      "lon": -80.7242194333333
     }
   },
   {
@@ -24854,18 +26730,18 @@
       "Dickey Bell",
       "People/Dickey Bell",
       "People|Dickey Bell",
-      "Places/South Carolina/Lancaster/900 Confederate Ave",
-      "Places|South Carolina|Lancaster|900 Confederate Ave"
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
     ],
     "title": "",
     "description": "",
     "location": "900 Confederate Ave",
-    "city": "Lancaster",
+    "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.69350555,
-      "lon": -80.8251638833333
+      "lat": 34.6935055333333,
+      "lon": -80.8251638666667
     }
   },
   {
@@ -24873,7 +26749,7 @@
     "media_type": "photo",
     "file": "20161121_012742755_iOS.jpg",
     "folder": "2016",
-    "date": "2016-11-19",
+    "date": "2016-11-20",
     "people": [
       "Donna Brown",
       "Samatha Bell",
@@ -24888,20 +26764,20 @@
       "People|Donna Brown",
       "People|Samatha Bell",
       "People|Stephanie Bell",
-      "Places/South Carolina/Lancaster/900 Confederate Ave",
-      "Places|South Carolina|Lancaster|900 Confederate Ave",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
       "Samatha Bell",
       "Stephanie Bell"
     ],
     "title": "",
     "description": "",
     "location": "900 Confederate Ave",
-    "city": "Lancaster",
+    "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.6934861002778,
-      "lon": -80.8251333166667
+      "lat": 34.6934861,
+      "lon": -80.8251333
     }
   },
   {
@@ -24931,38 +26807,6 @@
     "gps": null
   },
   {
-    "path": "images/2016/20161123_022840953_iOS.jpg",
-    "media_type": "photo",
-    "file": "20161123_022840953_iOS.jpg",
-    "folder": "2016",
-    "date": "2016-11-21",
-    "people": [
-      "Lady",
-      "Sophia Bell"
-    ],
-    "tags": [
-      "900 Confederate Ave",
-      "Animal/Lady",
-      "Animal|Lady",
-      "Lady",
-      "People/Sophia Bell",
-      "People|Sophia Bell",
-      "Places/South Carolina/Lancaster/900 Confederate Ave",
-      "Places|South Carolina|Lancaster|900 Confederate Ave",
-      "Sophia Bell"
-    ],
-    "title": "",
-    "description": "",
-    "location": "900 Confederate Ave",
-    "city": "Lancaster",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.6934611002778,
-      "lon": -80.8251277669444
-    }
-  },
-  {
     "path": "images/2016/20161122_225727000_iOS.jpg",
     "media_type": "photo",
     "file": "20161122_225727000_iOS.jpg",
@@ -24983,6 +26827,38 @@
     "state": "",
     "country": "",
     "gps": null
+  },
+  {
+    "path": "images/2016/20161123_022840953_iOS.jpg",
+    "media_type": "photo",
+    "file": "20161123_022840953_iOS.jpg",
+    "folder": "2016",
+    "date": "2016-11-22",
+    "people": [
+      "Lady",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Lady",
+      "Animal|Lady",
+      "Lady",
+      "People/Sophia Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6934611,
+      "lon": -80.8251277666667
+    }
   },
   {
     "path": "images/2016/20161201_020409478_iOS.jpg",
@@ -25088,19 +26964,19 @@
       "People/Sophia Bell",
       "People|Mike Morgan",
       "People|Sophia Bell",
-      "Places/South Carolina/Lancaster/900 Confederate Ave",
-      "Places|South Carolina|Lancaster|900 Confederate Ave",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
       "Sophia Bell"
     ],
     "title": "",
     "description": "",
     "location": "900 Confederate Ave",
-    "city": "Lancaster",
+    "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
     "gps": {
       "lat": 34.6933833333333,
-      "lon": -80.8252805497222
+      "lon": -80.82528055
     }
   },
   {
@@ -26675,94 +28551,6 @@
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
-    "path": "images/1999/9B7E1834.JPG",
-    "media_type": "photo",
-    "file": "9B7E1834.JPG",
-    "folder": "1999",
-    "date": "2023-02-18",
-    "people": [
-      "Samatha Bell"
-    ],
-    "tags": [
-      "People/Samatha Bell",
-      "People|Samatha Bell",
-      "Samatha Bell"
-    ],
-    "title": "",
-    "description": "LEAD Technologies Inc. V1.01",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
-    "path": "images/1999/9B7E1901.JPG",
-    "media_type": "photo",
-    "file": "9B7E1901.JPG",
-    "folder": "1999",
-    "date": "2023-02-18",
-    "people": [
-      "Samatha Bell"
-    ],
-    "tags": [
-      "People/Samatha Bell",
-      "People|Samatha Bell",
-      "Samatha Bell"
-    ],
-    "title": "",
-    "description": "LEAD Technologies Inc. V1.01",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
-    "path": "images/1999/9B7E1926.JPG",
-    "media_type": "photo",
-    "file": "9B7E1926.JPG",
-    "folder": "1999",
-    "date": "2023-02-18",
-    "people": [
-      "Samatha Bell"
-    ],
-    "tags": [
-      "People/Samatha Bell",
-      "People|Samatha Bell",
-      "Samatha Bell"
-    ],
-    "title": "",
-    "description": "LEAD Technologies Inc. V1.01",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
-    "path": "images/1999/9B7E1940.JPG",
-    "media_type": "photo",
-    "file": "9B7E1940.JPG",
-    "folder": "1999",
-    "date": "2023-02-18",
-    "people": [
-      "Samatha Bell"
-    ],
-    "tags": [
-      "People/Samatha Bell",
-      "People|Samatha Bell",
-      "Samatha Bell"
-    ],
-    "title": "",
-    "description": "LEAD Technologies Inc. V1.01",
     "location": "",
     "city": "",
     "state": "",
