@@ -106,7 +106,10 @@ foreach ($m in $metadata) { if ($m.path) {$key=([string]$m.path -replace '\\','/
 $ExifTool = Get-ExifToolPath
 if ($ExifTool) { Write-Host "ExifTool:           $ExifTool" } else { Write-Warning 'ExifTool not found; embedded Places fallback unavailable.' }
 $exts=@('.jpg','.jpeg','.png','.tif','.tiff','.webp')
-$thumbs=Get-ChildItem -LiteralPath $ThumbRoot -File -Recurse | Where-Object {$exts -contains $_.Extension.ToLowerInvariant()} | Sort-Object FullName
+$thumbs=Get-ChildItem -LiteralPath $ThumbRoot -File -Recurse | Where-Object {
+    $_.FullName -notmatch '(?i)(^|[\\/])\.dtrash([\\/]|$)' -and
+    $exts -contains $_.Extension.ToLowerInvariant()
+} | Sort-Object FullName
 $cards=New-Object System.Collections.Generic.List[string]
 $items=New-Object System.Collections.Generic.List[string]
 $missingView=0;$missingOriginal=0;$missingMetadata=0;$embeddedLocations=0;$index=0

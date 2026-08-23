@@ -173,6 +173,7 @@ function Get-SiteReferences {
         $FileName
     ) | Select-Object -Unique
     $textFiles = Get-ChildItem -LiteralPath $RepoRoot -File -Recurse -ErrorAction SilentlyContinue | Where-Object {
+        $_.FullName -notmatch '(?i)(^|[\\/])\.dtrash([\\/]|$)' -and
         $_.FullName -notlike "$DestRoot*" -and $_.Extension.ToLowerInvariant() -in @('.html','.htm','.css','.js','.json','.md')
     }
     foreach ($tf in $textFiles) {
@@ -216,7 +217,7 @@ Process-Batch $batch $ExifTool;$batch.Clear()
 
 $OrphanRows=New-Object "System.Collections.Generic.List[object]"
 if(Test-Path -LiteralPath $DestRoot){
-    Get-ChildItem -LiteralPath $DestRoot -Recurse -File -ErrorAction SilentlyContinue|Where-Object{$ImageExtensions -contains $_.Extension.ToLowerInvariant()}|ForEach-Object{
+    Get-ChildItem -LiteralPath $DestRoot -Recurse -File -ErrorAction SilentlyContinue|Where-Object{$_.FullName-notmatch'(?i)(^|[\\/])\.dtrash([\\/]|$)'-and$ImageExtensions-contains$_.Extension.ToLowerInvariant()}|ForEach-Object{
         $destFile=$_;$key=Get-NormalizedPathKey $destFile.FullName
         if(!$PublishedDestinations.Contains($key)){
             $stats.Orphans++;$relative=$destFile.FullName.Substring($DestRoot.Length).TrimStart('\')

@@ -167,8 +167,11 @@ Write-Host "Root        : $Root"
 Write-Host "CRF/Preset  : $Crf / $Preset"
 Write-Host "Log         : $csvPath"
 Write-Host "Original MOV files are NEVER deleted or overwritten."
+Write-Host "Excluded    : all .dtrash folders"
 
-$files = Get-ChildItem -LiteralPath $Root -Recurse -File -Filter *.mov -Force:$IncludeHidden
+$files = @(Get-ChildItem -LiteralPath $Root -Recurse -File -Filter *.mov -Force:$IncludeHidden | Where-Object {
+    $_.FullName -notmatch '(?i)(^|[\\/])\.dtrash([\\/]|$)'
+})
 $results = New-Object System.Collections.Generic.List[object]
 
 $totalMovBytes = [int64]0

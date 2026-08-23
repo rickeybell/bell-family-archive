@@ -81,7 +81,10 @@ function Remove-GeneratedPlaceholderDirectories {
         $root = Join-Path $RepoRoot $rootName
         if (!(Test-Path -LiteralPath $root)) { continue }
         $matches = @(Get-ChildItem -LiteralPath $root -Directory -Recurse -Force -ErrorAction SilentlyContinue |
-            Where-Object { Test-DecadePlaceholderFolderName $_.Name } |
+            Where-Object {
+                $_.FullName -notmatch '(?i)(^|[\\/])\.dtrash([\\/]|$)' -and
+                (Test-DecadePlaceholderFolderName $_.Name)
+            } |
             Sort-Object { $_.FullName.Length } -Descending)
         foreach ($dir in $matches) {
             if (Test-Path -LiteralPath $dir.FullName) {
@@ -96,7 +99,9 @@ function Get-FolderStat {
     param([string]$Name)
     $path = Join-Path $RepoRoot $Name
     if (!(Test-Path -LiteralPath $path)) { return [pscustomobject]@{Folder=$Name;Files=0;TotalGB=0;AverageMB=0;LargestMB=0} }
-    $files = @(Get-ChildItem -LiteralPath $path -File -Recurse -ErrorAction SilentlyContinue)
+    $files = @(Get-ChildItem -LiteralPath $path -File -Recurse -ErrorAction SilentlyContinue | Where-Object {
+        $_.FullName -notmatch '(?i)(^|[\\/])\.dtrash([\\/]|$)'
+    })
     if ($files.Count -eq 0) { return [pscustomobject]@{Folder=$Name;Files=0;TotalGB=0;AverageMB=0;LargestMB=0} }
     $sum = ($files | Measure-Object Length -Sum).Sum
     $largest = ($files | Sort-Object Length -Descending | Select-Object -First 1).Length
@@ -187,7 +192,9 @@ Remove-GeneratedPlaceholderDirectories
 
 $highresPath = Join-Path $RepoRoot "highres"
 if (!(Test-Path -LiteralPath $highresPath)) { throw "SAFETY STOP: highres folder was not generated. originals will NOT be removed." }
-$highCount = @(Get-ChildItem -LiteralPath $highresPath -File -Recurse -ErrorAction SilentlyContinue).Count
+$highCount = @(Get-ChildItem -LiteralPath $highresPath -File -Recurse -ErrorAction SilentlyContinue | Where-Object {
+    $_.FullName -notmatch '(?i)(^|[\\/])\.dtrash([\\/]|$)'
+}).Count
 if ($highCount -eq 0) { throw "SAFETY STOP: highres folder is empty. originals will NOT be removed." }
 $originalsPath = Join-Path $RepoRoot "originals"
 if (Test-Path -LiteralPath $originalsPath) {

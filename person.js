@@ -1,5 +1,19 @@
 
 document.addEventListener("DOMContentLoaded",()=>{
+ // Keep current ages accurate on living relatives' profile pages.
+ const today=new Date();
+ document.querySelectorAll(".person-page-vitals[data-birthdate]").forEach(vitals=>{
+   if(vitals.querySelector(".current-age"))return;
+   const [year,month,day]=vitals.dataset.birthdate.split("-").map(Number);
+   let age=today.getFullYear()-year;
+   const monthNow=today.getMonth()+1;
+   if(monthNow<month || (monthNow===month && today.getDate()<day))age--;
+   const line=document.createElement("span");
+   line.className="current-age";
+   line.innerHTML=`<strong>Current age:</strong> ${age}`;
+   vitals.appendChild(line);
+ });
+
  // Biography pages no longer have the legacy archive sidebar. Expand the remaining
  // content across the full site width instead of leaving it in the old 270px grid column.
  const shell=document.querySelector(".site-shell");

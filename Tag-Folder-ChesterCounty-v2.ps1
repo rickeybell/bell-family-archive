@@ -256,6 +256,7 @@ Write-Host "Reading GPS from supported photos/videos..." -ForegroundColor Cyan
 
 $ExifArgs = @(
     '-json','-n',
+    '-i','.dtrash',
     '-GPSLatitude','-GPSLongitude',
     '-FileName','-Directory','-FileTypeExtension'
 )
@@ -272,6 +273,11 @@ catch {
     Write-Host "ERROR: Could not read ExifTool output." -ForegroundColor Red
     exit 1
 }
+
+$Items = @($Items | Where-Object {
+    $candidate = Join-Path $_.Directory $_.FileName
+    $candidate -notmatch '(?i)(^|[\\/])\.dtrash([\\/]|$)'
+})
 
 $Rows = @()
 

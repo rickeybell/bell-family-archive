@@ -1,5 +1,29 @@
 
 document.addEventListener("DOMContentLoaded",()=>{
+  // Keep current ages accurate for living relatives as birthdays pass.
+  const today=new Date();
+  document.querySelectorAll(".tree-person[data-birthdate]").forEach(card=>{
+    const vitals=card.querySelector(".tree-vitals");
+    if(!vitals || vitals.querySelector(".current-age"))return;
+    const [year,month,day]=card.dataset.birthdate.split("-").map(Number);
+    let age=today.getFullYear()-year;
+    const monthNow=today.getMonth()+1;
+    if(monthNow<month || (monthNow===month && today.getDate()<day))age--;
+    const line=document.createElement("span");
+    line.className="current-age";
+    line.innerHTML=`<strong>Current age:</strong> ${age}`;
+    vitals.appendChild(line);
+  });
+  document.querySelectorAll(".tree-person[data-birth-year]").forEach(card=>{
+    const vitals=card.querySelector(".tree-vitals");
+    if(!vitals || vitals.querySelector(".current-age"))return;
+    const age=today.getFullYear()-Number(card.dataset.birthYear);
+    const line=document.createElement("span");
+    line.className="current-age";
+    line.innerHTML=`<strong>Current age:</strong> about ${age}`;
+    vitals.appendChild(line);
+  });
+
   // Biography pages no longer have the legacy archive sidebar. Expand the remaining
   // content across the full site width instead of leaving it in the old 270px grid column.
   const shell=document.querySelector(".site-shell");
@@ -174,4 +198,3 @@ document.addEventListener("DOMContentLoaded",()=>{
   close?.addEventListener("click",()=>box?.classList.remove("open"));
   box?.addEventListener("click",e=>{if(e.target===box)box.classList.remove("open");});
 });
-

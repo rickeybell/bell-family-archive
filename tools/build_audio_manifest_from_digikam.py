@@ -25,6 +25,8 @@ def find_db(source_root: pathlib.Path):
     for r in roots:
         try:
             for p in r.rglob('digikam4.db'):
+                if '.dtrash' in {part.lower() for part in p.parts}:
+                    continue
                 if p.is_file(): return p
         except OSError:
             pass

@@ -1817,3 +1817,269 @@ footer{
     flex-direction:column;
   }
 }
+
+/* Stephanie Bell's parents: Donna and Charlie Brown */
+.rickey-stephanie-row{
+  display:grid !important;
+  grid-template-columns:auto auto !important;
+  gap:34px !important;
+  justify-content:center !important;
+  align-items:center !important;
+}
+.rickey-stephanie-couple,
+.stephanie-parents-couple{
+  display:grid;
+  grid-template-columns:190px 55px 190px;
+  gap:8px;
+  justify-content:center;
+  align-items:center;
+}
+.rickey-stephanie-couple{
+  position:relative;
+}
+.rickey-stephanie-row{
+  margin-top:70px !important;
+}
+.rickey-stephanie-couple .parentage-caption,
+.stephanie-parents-label{
+  position:absolute !important;
+  left:0 !important;
+  right:0 !important;
+  top:-28px !important;
+  width:auto !important;
+  margin:0 !important;
+  padding:0 !important;
+  transform:none !important;
+  display:block !important;
+  background:transparent !important;
+  color:var(--muted) !important;
+  font-size:12px !important;
+  font-style:italic !important;
+  font-weight:400 !important;
+  line-height:1.3 !important;
+  text-align:center !important;
+}
+.rickey-stephanie-couple .parentage-caption{
+  transform:translateX(36px) !important;
+}
+.stephanie-parents-block{
+  position:relative;
+  z-index:11;
+}
+.stephanie-parents-block::before{
+  content:"";
+  position:absolute;
+  left:-34px;
+  top:50%;
+  width:34px;
+  height:2px;
+  background:#74826c;
+}
+.stephanie-parents-label{
+  position:absolute;
+  left:0;
+  right:0;
+  top:-28px;
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+  font-style:italic;
+}
+.tree-person-static:hover{
+  transform:none;
+  box-shadow:0 4px 14px rgba(50,40,20,.10);
+  border-color:var(--line);
+}
+.tree-initials{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:86px;
+  height:86px;
+  border-radius:50%;
+  background:#d9d2c4;
+  color:var(--green);
+  font-size:30px;
+  font-weight:700;
+  font-style:normal;
+  letter-spacing:1px;
+}
+.person-profile-placeholder{
+  width:min(100%,430px);
+  min-height:360px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#e8e3d9;
+  border:9px solid #fff;
+  box-shadow:0 2px 10px rgba(0,0,0,.15);
+}
+.person-profile-placeholder .tree-initials{
+  width:132px;
+  height:132px;
+  font-size:44px;
+}
+.brown-children-line{
+  position:absolute;
+  left:0;
+  top:100%;
+  width:451px;
+  height:72px;
+}
+.brown-children-line span{
+  display:block;
+  position:absolute;
+  background:#74826c;
+}
+.brown-children-line .donna-brown-stem{
+  left:95px;
+  top:0;
+  width:2px;
+  height:32px;
+}
+.brown-children-line .charlie-brown-stem{
+  left:356px;
+  top:0;
+  width:2px;
+  height:32px;
+}
+.brown-children-line .brown-family-bar{
+  left:95px;
+  top:30px;
+  width:261px;
+  height:2px;
+}
+.brown-children-line .rickii-lear-stem{
+  left:356px;
+  top:30px;
+  width:2px;
+  height:42px;
+}
+.brown-children-row{
+  position:absolute;
+  left:0;
+  top:calc(100% + 72px);
+  width:451px;
+  display:grid;
+  grid-template-columns:190px 55px 190px;
+  gap:8px;
+}
+.rickii-lear-card{
+  grid-column:3;
+}
+.rickii-children-line{
+  position:absolute;
+  left:0;
+  top:calc(100% + 417px);
+  width:451px;
+  height:82px;
+}
+.rickii-children-line span{
+  display:block;
+  position:absolute;
+  background:#74826c;
+}
+.rickii-children-line .rickii-parent-stem{
+  left:356px;
+  top:0;
+  width:2px;
+  height:32px;
+}
+.rickii-children-line .rickii-family-bar{
+  left:189px;
+  top:30px;
+  width:198px;
+  height:2px;
+}
+.rickii-children-line .breana-lear-stem{
+  left:189px;
+  top:30px;
+  width:2px;
+  height:52px;
+}
+.rickii-children-line .xavier-lear-stem{
+  left:387px;
+  top:30px;
+  width:2px;
+  height:52px;
+}
+.rickii-children-row{
+  position:absolute;
+  left:104px;
+  top:calc(100% + 499px);
+  width:368px;
+  display:grid;
+  grid-template-columns:170px 170px;
+  gap:28px;
+}
+.rickii-child-card{
+  width:170px !important;
+  min-height:315px !important;
+  height:315px !important;
+}
+.jarred-family{
+  transform:translateX(-80px);
+}
+.samatha-family > .descendant-person{
+  transform:translateX(-1px);
+}
+.jarred-children-row{
+  grid-template-columns:170px 170px !important;
+  gap:28px !important;
+  transform:translateX(-48px);
+}
+.children-generation-row.lineage-children-row{
+  transform:translateX(-120px) !important;
+}
+
+@media(max-width:1100px){
+  .rickey-stephanie-row{
+    display:flex !important;
+    flex-direction:column;
+    gap:62px !important;
+  }
+  .stephanie-parents-block::before{
+    display:none;
+  }
+  .brown-children-line,
+  .brown-children-row,
+  .rickii-children-line,
+  .rickii-children-row{
+    position:relative;
+    left:auto;
+    top:auto;
+  }
+  .jarred-family{
+    transform:none;
+  }
+  .samatha-family > .descendant-person,
+  .jarred-children-row{
+    transform:none;
+  }
+  .children-generation-row.lineage-children-row{
+    transform:none !important;
+  }
+}
+
+@media(max-width:650px){
+  .rickey-stephanie-couple,
+  .stephanie-parents-couple{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .brown-children-line,
+  .rickii-children-line{
+    display:none;
+  }
+  .brown-children-row,
+  .rickii-children-row{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    margin-top:38px;
+  }
+}

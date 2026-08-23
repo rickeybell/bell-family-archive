@@ -368,7 +368,10 @@ $OrphanRows = New-Object "System.Collections.Generic.List[object]"
 
 if (Test-Path -LiteralPath $DestRoot) {
     Get-ChildItem -LiteralPath $DestRoot -Recurse -File -ErrorAction SilentlyContinue |
-        Where-Object { $ImageExtensions -contains $_.Extension.ToLowerInvariant() } |
+        Where-Object {
+            $_.FullName -notmatch '(?i)(^|[\\/])\.dtrash([\\/]|$)' -and
+            $ImageExtensions -contains $_.Extension.ToLowerInvariant()
+        } |
         ForEach-Object {
             $destFile = $_
             $key = Get-NormalizedPathKey -Path $destFile.FullName

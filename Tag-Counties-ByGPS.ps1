@@ -336,6 +336,7 @@ Write-Host "Reading GPS from supported photos/videos..." -ForegroundColor Cyan
 
 $ExifArgs=@(
     '-json','-n',
+    '-i','.dtrash',
     '-GPSLatitude','-GPSLongitude',
     '-FileName','-Directory','-FileTypeExtension'
 )
@@ -347,6 +348,10 @@ foreach ($ext in ($PhotoExtensions+$VideoExtensions)) {
 $ExifArgs += @('-r',$Root)
 
 $Items=(& $ExifTool.Source @ExifArgs) | ConvertFrom-Json
+$Items=@($Items | Where-Object {
+    $candidate=Join-Path $_.Directory $_.FileName
+    $candidate -notmatch '(?i)(^|[\\/])\.dtrash([\\/]|$)'
+})
 $Rows=@()
 
 foreach ($Item in $Items) {
