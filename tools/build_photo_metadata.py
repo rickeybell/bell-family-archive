@@ -7,6 +7,13 @@ VIDEO_MANIFEST = ROOT / "website-video-manifest.csv"
 AUDIO_MANIFEST = ROOT / "website-audio-manifest.csv"
 OUT = ROOT / "photo_metadata.json"
 
+previous_by_path={}
+if OUT.exists():
+    try:
+        previous_by_path={str(x.get("path") or "").lower():x for x in json.loads(OUT.read_text(encoding="utf-8")) if x.get("path")}
+    except (OSError,ValueError,TypeError):
+        previous_by_path={}
+
 if not PHOTO_MANIFEST.exists() and not VIDEO_MANIFEST.exists() and not AUDIO_MANIFEST.exists():
     raise SystemExit("No website photo/video/audio manifest found")
 
@@ -17,9 +24,15 @@ def eligible_rows(path, media_type):
         for row in csv.DictReader(f):
             src=pathlib.Path(row.get("SourcePath") or "")
             rel=(row.get("RelativePath") or "").replace(chr(92),"/").lstrip("/")
-            if not src.exists() or not rel: continue
+            if not rel: continue
             if any(re.fullmatch(r"(18|19|20)\d0s", p) for p in rel.split("/")): continue
-            rows.append({"src":src,"rel":rel,"media_type":media_type,"row":row})
+            prefix={"video":"videos/","audio":"audio/"}.get(media_type,"images/")
+            previous=previous_by_path.get((prefix+rel).lower())
+            if not src.exists():
+                if previous and (ROOT/(prefix+rel)).exists():
+                    rows.append({"src":src,"rel":rel,"media_type":media_type,"row":row,"previous":previous})
+                continue
+            rows.append({"src":src,"rel":rel,"media_type":media_type,"row":row,"previous":None})
     return rows
 
 rows=(eligible_rows(PHOTO_MANIFEST,"photo") + eligible_rows(VIDEO_MANIFEST,"video") + eligible_rows(AUDIO_MANIFEST,"audio"))
@@ -32,7 +45,7 @@ cmd0=["exiftool","-json","-n","-DateTimeOriginal","-CreateDate","-DateCreated",
       "-Province-State","-Country","-Country-PrimaryLocationName"]
 
 meta={}
-sources=[x["src"] for x in rows if x["media_type"]!="audio"]
+sources=[x["src"] for x in rows if x["media_type"]!="audio" and not x.get("previous")]
 for i in range(0,len(sources),150):
     batch=sources[i:i+150]
     recs=json.loads(subprocess.check_output(cmd0+[str(p) for p in batch]))
@@ -81,6 +94,11 @@ out=[]
 for item in rows:
     src=item["src"];rel=item["rel"];media_type=item["media_type"];manifest=item["row"]
     folder=pathlib.PurePosixPath(rel).parent.name
+
+    if item.get("previous"):
+        out.append(item["previous"])
+        print("WARNING preserved prior metadata for missing master:",src)
+        continue
 
     if media_type=="audio":
         tags=split_manifest(manifest.get("Tags"))

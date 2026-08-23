@@ -1741,6 +1741,29 @@
     "gps": null
   },
   {
+    "path": "images/1956/Debbie Birth Cert.jpg",
+    "media_type": "photo",
+    "file": "Debbie Birth Cert.jpg",
+    "folder": "1956",
+    "date": "1956-07-17",
+    "people": [
+      "Debbie Phillips"
+    ],
+    "tags": [
+      "Debbie Phillips",
+      "Document",
+      "People/Debbie Phillips",
+      "People|Debbie Phillips"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/1956/The lancaster news Alma.jpg",
     "media_type": "photo",
     "file": "The lancaster news Alma.jpg",
@@ -8300,6 +8323,62 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": null
+  },
+  {
+    "path": "images/2015/20150509_165407148_iOS.jpg",
+    "media_type": "photo",
+    "file": "20150509_165407148_iOS.jpg",
+    "folder": "2015",
+    "date": "1978-12-31",
+    "people": [
+      "Irvin Phillips"
+    ],
+    "tags": [
+      "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Irvin Phillips",
+      "People/Irvin Phillips",
+      "People|Irvin Phillips",
+      "Places/South Carolina/Lancaster County/973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Places|South Carolina|Lancaster County|973 Community Lane Deb_Irvin_Rickey_Jarred Home"
+    ],
+    "title": "",
+    "description": "",
+    "location": "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7078444333333,
+      "lon": -80.7243111
+    }
+  },
+  {
+    "path": "images/2015/20150509_165411639_iOS.jpg",
+    "media_type": "photo",
+    "file": "20150509_165411639_iOS.jpg",
+    "folder": "2015",
+    "date": "1978-12-31",
+    "people": [
+      "Irvin Phillips"
+    ],
+    "tags": [
+      "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Irvin Phillips",
+      "People/Irvin Phillips",
+      "People|Irvin Phillips",
+      "Places/South Carolina/Lancaster County/973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Places|South Carolina|Lancaster County|973 Community Lane Deb_Irvin_Rickey_Jarred Home"
+    ],
+    "title": "",
+    "description": "",
+    "location": "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7078527666667,
+      "lon": -80.7242666669444
+    }
   },
   {
     "path": "images/1979/1970s_0003_a.jpg",
@@ -22793,6 +22872,61 @@
     "gps": null
   },
   {
+    "path": "images/2001/2001_0002_a_Restored.jpg",
+    "media_type": "photo",
+    "file": "2001_0002_a_Restored.jpg",
+    "folder": "2001",
+    "date": "2001-07-04",
+    "people": [
+      "Rickey Bell",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Orlando",
+      "People/Rickey Bell",
+      "People/Samatha Bell",
+      "People|Rickey Bell",
+      "People|Samatha Bell",
+      "Places/Florida/Orlando",
+      "Places|Florida|Orlando",
+      "Rickey Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Orlando",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2001/198D1711.JPG",
+    "media_type": "photo",
+    "file": "198D1711.JPG",
+    "folder": "2001",
+    "date": "2001-09-01",
+    "people": [
+      "Jarred Bell",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People/Samatha Bell",
+      "People|Jarred Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "LEAD Technologies Inc. V1.01",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2001/2001_0001.jpg",
     "media_type": "photo",
     "file": "2001_0001.jpg",
@@ -23071,6 +23205,532 @@
     "gps": null
   },
   {
+    "path": "images/2002/126-2700_IMG.JPG",
+    "media_type": "photo",
+    "file": "126-2700_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-12-24",
+    "people": [
+      "Debbie Phillips",
+      "Irvin Phillips"
+    ],
+    "tags": [
+      "1578 Oakwood Ave Faulkenberry Family Home",
+      "Debbie Phillips",
+      "Irvin Phillips",
+      "Lancaster County",
+      "People/Debbie Phillips",
+      "People/Irvin Phillips",
+      "People|Debbie Phillips",
+      "People|Irvin Phillips",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/1578 Oakwood Ave Faulkenberry Family Home",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|1578 Oakwood Ave Faulkenberry Family Home",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "1578 Oakwood Ave Faulkenberry Family Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/127-2704_IMG.JPG",
+    "media_type": "photo",
+    "file": "127-2704_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-12-24",
+    "people": [
+      "Debbie Phillips",
+      "Everate Faulkenberry",
+      "Macey Steen"
+    ],
+    "tags": [
+      "1578 Oakwood Ave Faulkenberry Family Home",
+      "Debbie Phillips",
+      "Everate Faulkenberry",
+      "Lancaster County",
+      "Macey Steen",
+      "People/Debbie Phillips",
+      "People/Everate Faulkenberry",
+      "People/Macey Steen",
+      "People|Debbie Phillips",
+      "People|Everate Faulkenberry",
+      "People|Macey Steen",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/1578 Oakwood Ave Faulkenberry Family Home",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|1578 Oakwood Ave Faulkenberry Family Home",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "1578 Oakwood Ave Faulkenberry Family Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/127-2706_IMG.JPG",
+    "media_type": "photo",
+    "file": "127-2706_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-12-24",
+    "people": [
+      "Debbie Phillips",
+      "Irvin Phillips"
+    ],
+    "tags": [
+      "1578 Oakwood Ave Faulkenberry Family Home",
+      "Debbie Phillips",
+      "Irvin Phillips",
+      "Lancaster County",
+      "People/Debbie Phillips",
+      "People/Irvin Phillips",
+      "People|Debbie Phillips",
+      "People|Irvin Phillips",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/1578 Oakwood Ave Faulkenberry Family Home",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|1578 Oakwood Ave Faulkenberry Family Home",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "1578 Oakwood Ave Faulkenberry Family Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/127-2716_IMG.JPG",
+    "media_type": "photo",
+    "file": "127-2716_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-12-24",
+    "people": [
+      "Debbie Phillips",
+      "Everate Faulkenberry",
+      "Irvin Phillips",
+      "Macey Steen"
+    ],
+    "tags": [
+      "1578 Oakwood Ave Faulkenberry Family Home",
+      "Debbie Phillips",
+      "Everate Faulkenberry",
+      "Irvin Phillips",
+      "Lancaster County",
+      "Macey Steen",
+      "People/Debbie Phillips",
+      "People/Everate Faulkenberry",
+      "People/Irvin Phillips",
+      "People/Macey Steen",
+      "People|Debbie Phillips",
+      "People|Everate Faulkenberry",
+      "People|Irvin Phillips",
+      "People|Macey Steen",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/1578 Oakwood Ave Faulkenberry Family Home",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|1578 Oakwood Ave Faulkenberry Family Home",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "1578 Oakwood Ave Faulkenberry Family Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/127-2717_IMG.JPG",
+    "media_type": "photo",
+    "file": "127-2717_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-12-24",
+    "people": [
+      "Debbie Phillips"
+    ],
+    "tags": [
+      "1578 Oakwood Ave Faulkenberry Family Home",
+      "Debbie Phillips",
+      "Lancaster County",
+      "People/Debbie Phillips",
+      "People|Debbie Phillips",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/1578 Oakwood Ave Faulkenberry Family Home",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|1578 Oakwood Ave Faulkenberry Family Home",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "1578 Oakwood Ave Faulkenberry Family Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/127-2722_IMG.JPG",
+    "media_type": "photo",
+    "file": "127-2722_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-12-24",
+    "people": [
+      "Debbie Phillips",
+      "Irvin Phillips",
+      "Macey Steen",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "1578 Oakwood Ave Faulkenberry Family Home",
+      "Debbie Phillips",
+      "Irvin Phillips",
+      "Lancaster County",
+      "Macey Steen",
+      "People/Debbie Phillips",
+      "People/Irvin Phillips",
+      "People/Macey Steen",
+      "People/Samatha Bell",
+      "People|Debbie Phillips",
+      "People|Irvin Phillips",
+      "People|Macey Steen",
+      "People|Samatha Bell",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/1578 Oakwood Ave Faulkenberry Family Home",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|1578 Oakwood Ave Faulkenberry Family Home",
+      "Samatha Bell",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "1578 Oakwood Ave Faulkenberry Family Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/127-2727_IMG.JPG",
+    "media_type": "photo",
+    "file": "127-2727_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-12-24",
+    "people": [
+      "Debbie Phillips",
+      "Irvin Phillips",
+      "Macey Steen",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "1578 Oakwood Ave Faulkenberry Family Home",
+      "Debbie Phillips",
+      "Irvin Phillips",
+      "Lancaster County",
+      "Macey Steen",
+      "People/Debbie Phillips",
+      "People/Irvin Phillips",
+      "People/Macey Steen",
+      "People/Samatha Bell",
+      "People|Debbie Phillips",
+      "People|Irvin Phillips",
+      "People|Macey Steen",
+      "People|Samatha Bell",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/1578 Oakwood Ave Faulkenberry Family Home",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|1578 Oakwood Ave Faulkenberry Family Home",
+      "Samatha Bell",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "1578 Oakwood Ave Faulkenberry Family Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/127-2731_IMG.JPG",
+    "media_type": "photo",
+    "file": "127-2731_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-12-24",
+    "people": [
+      "Debbie Phillips",
+      "Irvin Phillips",
+      "Macey Steen",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "1578 Oakwood Ave Faulkenberry Family Home",
+      "Debbie Phillips",
+      "Irvin Phillips",
+      "Lancaster County",
+      "Macey Steen",
+      "People/Debbie Phillips",
+      "People/Irvin Phillips",
+      "People/Macey Steen",
+      "People/Samatha Bell",
+      "People|Debbie Phillips",
+      "People|Irvin Phillips",
+      "People|Macey Steen",
+      "People|Samatha Bell",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/1578 Oakwood Ave Faulkenberry Family Home",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|1578 Oakwood Ave Faulkenberry Family Home",
+      "Samatha Bell",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "1578 Oakwood Ave Faulkenberry Family Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/127-2733_IMG.JPG",
+    "media_type": "photo",
+    "file": "127-2733_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-12-24",
+    "people": [
+      "Debbie Phillips",
+      "Irvin Phillips",
+      "Macey Steen"
+    ],
+    "tags": [
+      "1578 Oakwood Ave Faulkenberry Family Home",
+      "Debbie Phillips",
+      "Irvin Phillips",
+      "Lancaster County",
+      "Macey Steen",
+      "People/Debbie Phillips",
+      "People/Irvin Phillips",
+      "People/Macey Steen",
+      "People|Debbie Phillips",
+      "People|Irvin Phillips",
+      "People|Macey Steen",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/1578 Oakwood Ave Faulkenberry Family Home",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|1578 Oakwood Ave Faulkenberry Family Home",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "1578 Oakwood Ave Faulkenberry Family Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/127-2738_IMG.JPG",
+    "media_type": "photo",
+    "file": "127-2738_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-12-24",
+    "people": [
+      "Debbie Phillips"
+    ],
+    "tags": [
+      "1578 Oakwood Ave Faulkenberry Family Home",
+      "Debbie Phillips",
+      "Lancaster County",
+      "People/Debbie Phillips",
+      "People|Debbie Phillips",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/1578 Oakwood Ave Faulkenberry Family Home",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|1578 Oakwood Ave Faulkenberry Family Home",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "1578 Oakwood Ave Faulkenberry Family Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/127-2750_IMG.JPG",
+    "media_type": "photo",
+    "file": "127-2750_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-12-24",
+    "people": [
+      "Debbie Phillips",
+      "Irvin Phillips"
+    ],
+    "tags": [
+      "1578 Oakwood Ave Faulkenberry Family Home",
+      "Debbie Phillips",
+      "Irvin Phillips",
+      "Lancaster County",
+      "People/Debbie Phillips",
+      "People/Irvin Phillips",
+      "People|Debbie Phillips",
+      "People|Irvin Phillips",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/1578 Oakwood Ave Faulkenberry Family Home",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|1578 Oakwood Ave Faulkenberry Family Home",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "1578 Oakwood Ave Faulkenberry Family Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/127-2751_IMG.JPG",
+    "media_type": "photo",
+    "file": "127-2751_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-12-24",
+    "people": [
+      "Debbie Phillips",
+      "Irvin Phillips",
+      "Jackie Steen"
+    ],
+    "tags": [
+      "1578 Oakwood Ave Faulkenberry Family Home",
+      "Debbie Phillips",
+      "Irvin Phillips",
+      "Jackie Steen",
+      "Lancaster County",
+      "People/Debbie Phillips",
+      "People/Irvin Phillips",
+      "People/Jackie Steen",
+      "People|Debbie Phillips",
+      "People|Irvin Phillips",
+      "People|Jackie Steen",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/1578 Oakwood Ave Faulkenberry Family Home",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|1578 Oakwood Ave Faulkenberry Family Home",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "1578 Oakwood Ave Faulkenberry Family Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/127-2768_IMG.JPG",
+    "media_type": "photo",
+    "file": "127-2768_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-12-25",
+    "people": [
+      "Debbie Phillips",
+      "Jacob Starnes"
+    ],
+    "tags": [
+      "2346 FLAT CREEK RD Phillips Family Home",
+      "Debbie Phillips",
+      "Jacob Starnes",
+      "Lancaster County",
+      "People/Debbie Phillips",
+      "People/Jacob Starnes",
+      "People|Debbie Phillips",
+      "People|Jacob Starnes",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/2346 FLAT CREEK RD Phillips Family Home",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|2346 FLAT CREEK RD Phillips Family Home",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "2346 FLAT CREEK RD Phillips Family Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/128-2808_IMG.JPG",
+    "media_type": "photo",
+    "file": "128-2808_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-12-25",
+    "people": [
+      "Irvin Phillips",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "2346 FLAT CREEK RD Phillips Family Home",
+      "Irvin Phillips",
+      "Lancaster County",
+      "People/Irvin Phillips",
+      "People/Stephanie Bell",
+      "People|Irvin Phillips",
+      "People|Stephanie Bell",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/2346 FLAT CREEK RD Phillips Family Home",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|2346 FLAT CREEK RD Phillips Family Home",
+      "South Carolina",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "2346 FLAT CREEK RD Phillips Family Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2003/131-3126_IMG.JPG",
     "media_type": "photo",
     "file": "131-3126_IMG.JPG",
@@ -23223,6 +23883,40 @@
     "gps": null
   },
   {
+    "path": "images/2004/2 008.jpg",
+    "media_type": "photo",
+    "file": "2 008.jpg",
+    "folder": "2004",
+    "date": "2004-11-04",
+    "people": [
+      "Irvin Phillips",
+      "Jackie Steen",
+      "Lisa Steen",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Irvin Phillips",
+      "Jackie Steen",
+      "Lisa Steen",
+      "People/Irvin Phillips",
+      "People/Jackie Steen",
+      "People/Lisa Steen",
+      "People/Stephanie Bell",
+      "People|Irvin Phillips",
+      "People|Jackie Steen",
+      "People|Lisa Steen",
+      "People|Stephanie Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2005/2000s_0007.jpg",
     "media_type": "photo",
     "file": "2000s_0007.jpg",
@@ -23295,6 +23989,88 @@
       "People|Jarred Bell",
       "People|Rickey Bell",
       "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2005/1 001.jpg",
+    "media_type": "photo",
+    "file": "1 001.jpg",
+    "folder": "2005",
+    "date": "2005-07-15",
+    "people": [
+      "Debbie Phillips",
+      "Irvin Phillips"
+    ],
+    "tags": [
+      "Debbie Phillips",
+      "Irvin Phillips",
+      "People/Debbie Phillips",
+      "People/Irvin Phillips",
+      "People|Debbie Phillips",
+      "People|Irvin Phillips"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2005/12-24-05_1859.jpg",
+    "media_type": "photo",
+    "file": "12-24-05_1859.jpg",
+    "folder": "2005",
+    "date": "2005-12-24",
+    "people": [
+      "Debbie Phillips",
+      "Irvin Phillips"
+    ],
+    "tags": [
+      "Debbie Phillips",
+      "Irvin Phillips",
+      "People/Debbie Phillips",
+      "People/Irvin Phillips",
+      "People|Debbie Phillips",
+      "People|Irvin Phillips"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2005/12-24-05_1904.jpg",
+    "media_type": "photo",
+    "file": "12-24-05_1904.jpg",
+    "folder": "2005",
+    "date": "2005-12-25",
+    "people": [
+      "Debbie Phillips",
+      "Samatha Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Debbie Phillips",
+      "People/Debbie Phillips",
+      "People/Samatha Bell",
+      "People/Stephanie Bell",
+      "People|Debbie Phillips",
+      "People|Samatha Bell",
+      "People|Stephanie Bell",
+      "Samatha Bell",
+      "Stephanie Bell"
     ],
     "title": "",
     "description": "",
@@ -23689,6 +24465,118 @@
     }
   },
   {
+    "path": "images/2013/20130303_165538996_iOS.jpg",
+    "media_type": "photo",
+    "file": "20130303_165538996_iOS.jpg",
+    "folder": "2013",
+    "date": "2013-03-03",
+    "people": [
+      "Carl Whitcomb",
+      "Irvin Phillips"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Carl Whitcomb",
+      "Irvin Phillips",
+      "People/Carl Whitcomb",
+      "People/Irvin Phillips",
+      "People|Carl Whitcomb",
+      "People|Irvin Phillips",
+      "Places/South Carolina/Lancaster/900 Confederate Ave",
+      "Places|South Carolina|Lancaster|900 Confederate Ave"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6933333163889,
+      "lon": -80.8253333336111
+    }
+  },
+  {
+    "path": "images/2013/20130303_165547923_iOS.jpg",
+    "media_type": "photo",
+    "file": "20130303_165547923_iOS.jpg",
+    "folder": "2013",
+    "date": "2013-03-03",
+    "people": [
+      "Carl Whitcomb",
+      "Irvin Phillips"
+    ],
+    "tags": [
+      "Carl Whitcomb",
+      "Irvin Phillips",
+      "Lancaster County",
+      "People/Carl Whitcomb",
+      "People/Irvin Phillips",
+      "People|Carl Whitcomb",
+      "People|Irvin Phillips",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6929999827778,
+      "lon": -80.8251666666667
+    }
+  },
+  {
+    "path": "images/2014/Debbie Death Cert.jpg",
+    "media_type": "photo",
+    "file": "Debbie Death Cert.jpg",
+    "folder": "2014",
+    "date": "2014-10-21",
+    "people": [
+      "Debbie Phillips"
+    ],
+    "tags": [
+      "Debbie Phillips",
+      "Document",
+      "People/Debbie Phillips",
+      "People|Debbie Phillips"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2014/IMG_0072.JPG",
+    "media_type": "photo",
+    "file": "IMG_0072.JPG",
+    "folder": "2014",
+    "date": "2014-10-29",
+    "people": [
+      "Debbie Phillips"
+    ],
+    "tags": [
+      "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Debbie Phillips",
+      "People/Debbie Phillips",
+      "People|Debbie Phillips",
+      "Places/South Carolina/Lancaster County/973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Places|South Carolina|Lancaster County|973 Community Lane Deb_Irvin_Rickey_Jarred Home"
+    ],
+    "title": "",
+    "description": "",
+    "location": "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "audio/2015/Irvin VM to Derrick Joyner.mp3",
     "media_type": "audio",
     "file": "Irvin VM to Derrick Joyner.mp3",
@@ -23711,6 +24599,197 @@
     "state": "",
     "country": "",
     "gps": null
+  },
+  {
+    "path": "images/2015/20150506_145349000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20150506_145349000_iOS.jpg",
+    "folder": "2015",
+    "date": "2015-05-05",
+    "people": [
+      "Debbie Phillips"
+    ],
+    "tags": [
+      "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Debbie Phillips",
+      "People/Debbie Phillips",
+      "People|Debbie Phillips",
+      "Places/South Carolina/Lancaster County/973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Places|South Carolina|Lancaster County|973 Community Lane Deb_Irvin_Rickey_Jarred Home"
+    ],
+    "title": "",
+    "description": "",
+    "location": "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6986976211111,
+      "lon": -80.7073125388889
+    }
+  },
+  {
+    "path": "images/2015/20150506_145351000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20150506_145351000_iOS.jpg",
+    "folder": "2015",
+    "date": "2015-05-05",
+    "people": [
+      "Debbie Phillips"
+    ],
+    "tags": [
+      "Debbie Phillips",
+      "People/Debbie Phillips",
+      "People|Debbie Phillips"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2015/20150506_145355000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20150506_145355000_iOS.jpg",
+    "folder": "2015",
+    "date": "2015-05-05",
+    "people": [
+      "Debbie Phillips"
+    ],
+    "tags": [
+      "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Debbie Phillips",
+      "People/Debbie Phillips",
+      "People|Debbie Phillips",
+      "Places/South Carolina/Lancaster County/973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Places|South Carolina|Lancaster County|973 Community Lane Deb_Irvin_Rickey_Jarred Home"
+    ],
+    "title": "",
+    "description": "",
+    "location": "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6986976211111,
+      "lon": -80.7073125388889
+    }
+  },
+  {
+    "path": "images/2015/20150509_160502785_iOS.jpg",
+    "media_type": "photo",
+    "file": "20150509_160502785_iOS.jpg",
+    "folder": "2015",
+    "date": "2015-05-08",
+    "people": [
+      "Irvin Phillips",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Irvin Phillips",
+      "Lancaster County",
+      "People/Irvin Phillips",
+      "People/Rickey Bell",
+      "People|Irvin Phillips",
+      "People|Rickey Bell",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.707875,
+      "lon": -80.7242194333333
+    }
+  },
+  {
+    "path": "images/2015/20150509_165416589_iOS.jpg",
+    "media_type": "photo",
+    "file": "20150509_165416589_iOS.jpg",
+    "folder": "2015",
+    "date": "2015-05-09",
+    "people": [
+      "Debbie Phillips",
+      "Irvin Phillips",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Debbie Phillips",
+      "Irvin Phillips",
+      "Lancaster County",
+      "People/Debbie Phillips",
+      "People/Irvin Phillips",
+      "People/Rickey Bell",
+      "People|Debbie Phillips",
+      "People|Irvin Phillips",
+      "People|Rickey Bell",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7078527666667,
+      "lon": -80.7242194333333
+    }
+  },
+  {
+    "path": "images/2015/20150509_165420966_iOS.jpg",
+    "media_type": "photo",
+    "file": "20150509_165420966_iOS.jpg",
+    "folder": "2015",
+    "date": "2015-05-09",
+    "people": [
+      "Clyde Phillips",
+      "Debbie Phillips",
+      "Irvin Phillips",
+      "Jacob Starnes",
+      "Lorene Phillips",
+      "Mrs Phillips"
+    ],
+    "tags": [
+      "Clyde Phillips",
+      "Debbie Phillips",
+      "Irvin Phillips",
+      "Jacob Starnes",
+      "Lancaster County",
+      "Lorene Phillips",
+      "People/Clyde Phillips",
+      "People/Debbie Phillips",
+      "People/Irvin Phillips",
+      "People/Jacob Starnes",
+      "People/Lorene Phillips",
+      "People|Clyde Phillips",
+      "People|Debbie Phillips",
+      "People|Irvin Phillips",
+      "People|Jacob Starnes",
+      "People|Lorene Phillips",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7078444333333,
+      "lon": -80.7242138830556
+    }
   },
   {
     "path": "images/2016/Document_20260731_0001.jpg",
@@ -23760,31 +24839,6 @@
     "state": "",
     "country": "",
     "gps": null
-  },
-  {
-    "path": "images/2016/10_20161008_175348092_iOS.jpg",
-    "media_type": "photo",
-    "file": "10_20161008_175348092_iOS.jpg",
-    "folder": "2016",
-    "date": "2016-10-08",
-    "people": [
-      "Dickey Bell"
-    ],
-    "tags": [
-      "Dickey Bell",
-      "People/Dickey Bell",
-      "People|Dickey Bell"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": {
-      "lat": 34.69350555,
-      "lon": -80.8251638833333
-    }
   },
   {
     "path": "images/2016/20161008_175348092_iOS.jpg",
@@ -24016,35 +25070,6 @@
     "state": "",
     "country": "",
     "gps": null
-  },
-  {
-    "path": "images/2016/12_20161227_023031180_iOS.jpg",
-    "media_type": "photo",
-    "file": "12_20161227_023031180_iOS.jpg",
-    "folder": "2016",
-    "date": "2016-12-26",
-    "people": [
-      "Mike Morgan",
-      "Sophia Bell"
-    ],
-    "tags": [
-      "Mike Morgan",
-      "People/Mike Morgan",
-      "People/Sophia Bell",
-      "People|Mike Morgan",
-      "People|Sophia Bell",
-      "Sophia Bell"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": {
-      "lat": 34.6933833333333,
-      "lon": -80.82528055
-    }
   },
   {
     "path": "images/2016/20161227_023031180_iOS.jpg",
@@ -25880,9 +26905,7 @@
     ],
     "tags": [
       "People/Dickey Bell",
-      "Sound",
-      "_Digikam_Internal_Tags_/Color Label None",
-      "_Digikam_Internal_Tags_/Pick Label None"
+      "Sound"
     ],
     "title": "",
     "description": "Voice Mail from Dickey",

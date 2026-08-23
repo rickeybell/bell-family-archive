@@ -122,7 +122,7 @@ function Test-HasSpecificLancasterTag {
 
         # Any child under Places > South Carolina > Lancaster County counts as more specific.
         # Do NOT anchor this to the beginning: ExifTool can return multiple tags
-        # in one string, e.g. "People/Tony Roberts, Places/South Carolina/Lancaster/900 Confederate Ave".
+        # in one string, e.g. "People/Tony Roberts, Places/South Carolina/Lancaster County/900 Confederate Ave".
         if ($t -match '(?i)Places[/|]South Carolina[/|]Lancaster County[/|][^,]+') {
             return $true
         }

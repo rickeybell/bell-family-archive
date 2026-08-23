@@ -62,8 +62,8 @@ $ConfederateProperties = @(
     @{
         Name = '900 Confederate Ave'
         LeafTag = '900 Confederate Ave'
-        DigiKamTag = 'Places/South Carolina/Lancaster/900 Confederate Ave'
-        HierTag = 'Places|South Carolina|Lancaster|900 Confederate Ave'
+        DigiKamTag = 'Places/South Carolina/Lancaster County/900 Confederate Ave'
+        HierTag = 'Places|South Carolina|Lancaster County|900 Confederate Ave'
         Polygon = @(
             @(-80.82542616455852, 34.69375765889696),
             @(-80.82484058767655, 34.69366359372555),
@@ -74,8 +74,8 @@ $ConfederateProperties = @(
     @{
         Name = '910 Confederate Ave (map zone -> tag as 900)'
         LeafTag = '900 Confederate Ave'
-        DigiKamTag = 'Places/South Carolina/Lancaster/900 Confederate Ave'
-        HierTag = 'Places|South Carolina|Lancaster|900 Confederate Ave'
+        DigiKamTag = 'Places/South Carolina/Lancaster County/900 Confederate Ave'
+        HierTag = 'Places|South Carolina|Lancaster County|900 Confederate Ave'
         Polygon = @(
             @(-80.82489026386473, 34.69366606912564),
             @(-80.82457564800784, 34.69361037259382),
@@ -86,8 +86,8 @@ $ConfederateProperties = @(
     @{
         Name = '909 Confederate Ave'
         LeafTag = '909 Confederate Ave'
-        DigiKamTag = 'Places/South Carolina/Lancaster/909 Confederate Ave'
-        HierTag = 'Places|South Carolina|Lancaster|909 Confederate Ave'
+        DigiKamTag = 'Places/South Carolina/Lancaster County/909 Confederate Ave'
+        HierTag = 'Places|South Carolina|Lancaster County|909 Confederate Ave'
         Polygon = @(
             @(-80.82485714639385, 34.69404604224939),
             @(-80.8245184451125, 34.69399034597329),

@@ -61,7 +61,7 @@ def page(title,subtitle,items,filename):
             t,v,o=media_paths(x)
             is_video=(x.get('media_type')=='video' or str(x.get('path') or '').startswith('videos/'))
             is_audio=(x.get('media_type')=='audio' or str(x.get('path') or '').startswith('audio/'))
-            ttl=str(x.get('title') or '').strip();desc=str(x.get('description') or '')
+            ttl=str(x.get('title') or '').strip();desc='\n'.join(line.rstrip() for line in str(x.get('description') or '').strip().splitlines())
             date=nice_date(str(x.get('date') or ''));loc=display_location(x);ppl=display_people(x.get('people'))
             fn=str(x.get('file') or pathlib.PurePosixPath(str(x.get('path') or '')).name)
             lines=[f'<div class="archive-meta-line">{esc(date)}</div>']

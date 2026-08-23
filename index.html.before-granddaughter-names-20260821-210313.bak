@@ -1,0 +1,198 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Bell Family &mdash; Family Tree</title><link rel="stylesheet" href="style.css"></head><body class="tree-page">
+<header class="site-header"><a class="brand brand-home" href="index.html" aria-label="Bell Family home"><div class="tree-mark" aria-hidden="true"><svg class="tree-logo" viewBox="0 0 72 72" aria-hidden="true">
+  <g fill="currentColor">
+    <circle cx="20" cy="25" r="8"/>
+    <circle cx="29" cy="18" r="9"/>
+    <circle cx="40" cy="17" r="9"/>
+    <circle cx="50" cy="24" r="8"/>
+    <circle cx="24" cy="34" r="9"/>
+    <circle cx="36" cy="30" r="10"/>
+    <circle cx="48" cy="34" r="9"/>
+  </g>
+  <path d="M36 64V39M36 47L27 37M36 46L45 36M36 42L31 31M36 42L41 29"
+        fill="none" stroke="currentColor" stroke-width="4.5"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M28 64h16"
+        fill="none" stroke="currentColor" stroke-width="3.5"
+        stroke-linecap="round"/>
+</svg></div><div><div class="brand-title">The Bell Family</div><div class="brand-tagline">Generations of Love, Memories &amp; Legacy</div></div></a><nav class="top-nav"><a class="active" href="index.html">Family Tree</a><a href="dickey.html">Dickey Bell</a><a href="gallery.html">Photo Gallery</a></nav></header>
+<main class="tree-main"><section class="tree-intro"><span class="eyebrow">Bell Family Archive</span><h1>Our Family Tree</h1><p>Choose a family member to open their personal page of photographs, documents, and memories.</p></section>
+
+<section class="family-tree branched-tree">
+  <div class="tree-generation tree-grandparents">
+    <a class="tree-person" href="buster.html"><div class="tree-photo"><img src="tree_portraits/buster_bell.png" alt="Buster Bell" loading="lazy"></div><div class="tree-name">Buster Bell</div><div class="tree-vitals"><span><strong>Born:</strong> September 3, 1920</span><span><strong>Died:</strong> April 2, 1990</span><span><strong>Age at death:</strong> 69</span></div><div class="tree-relation">Family patriarch</div><div class="tree-count" data-archive-person="Buster Bell">5 archive items</div></a><div class="relationship-marker grandparent-heart">
+      <div class="relationship-symbol heart-symbol">&#9829;</div>
+      <div class="relationship-text"><strong>Married</strong><span>April 23, 1951</span></div>
+    </div><a class="tree-person" href="alma.html"><div class="tree-photo"><img src="tree_portraits/alma_bell.png" alt="Alma Bell" loading="lazy"></div><div class="tree-name">Alma Bell</div><div class="tree-vitals"><span><strong>Born:</strong> March 4, 1927</span><span><strong>Died:</strong> May 18, 1994</span><span><strong>Age at death:</strong> 67</span></div><div class="tree-relation">Family matriarch</div><div class="tree-count" data-archive-person="Alma Bell">5 archive items</div></a>
+  </div>
+  <div class="ancestor-lineage" aria-hidden="true">
+    <span class="ancestor-parent-stem"></span>
+    <span class="ancestor-family-bar"></span>
+    <span class="ancestor-spooky-stem"></span>
+    <span class="ancestor-dickey-stem"></span>
+  </div>
+
+  <div class="sibling-branches">
+    <section class="family-branch">
+      <div class="branch-title">Spooky Bell Family</div>
+      <div class="couple-row">
+        <a class="tree-person" href="spooky.html"><div class="tree-photo"><img src="tree_portraits/spooky_bell.png" alt="Spooky Bell" loading="lazy"></div><div class="tree-name">Spooky Bell</div><div class="tree-vitals"><span><strong>Born:</strong> October 31, 1953</span><span><strong>Died:</strong> May 29, 2006</span><span><strong>Age at death:</strong> 52</span></div><div class="tree-relation">Son of Buster &amp; Alma</div><div class="tree-count" data-archive-person="Spooky Bell">36 archive items</div></a><div class="relationship-marker spooky-heart">
+      <div class="relationship-symbol heart-symbol">&#9829;</div>
+      <div class="relationship-text"><strong>Married</strong></div>
+    </div><a class="tree-person" href="spooky.html"><div class="tree-photo"><img src="tree_portraits/helen_bell.jpg" alt="Helen Bell" loading="lazy"></div><div class="tree-name">Helen Bell</div><div class="tree-vitals"><span><strong>Born:</strong> circa 1946</span></div><div class="tree-relation">Spooky&rsquo;s wife</div><div class="tree-count">View Spooky family branch</div></a>
+      </div>
+      <div class="spooky-lineage" aria-hidden="true">
+        <span class="spooky-parent-left"></span>
+        <span class="spooky-parent-right"></span>
+        <span class="spooky-family-bar"></span>
+        <span class="heather-stem"></span>
+      </div>
+      <div class="children-row"><a class="tree-person" href="heather.html"><div class="tree-photo"><img src="tree_portraits/heather_bell.png" alt="Heather Bell" loading="lazy"></div><div class="tree-name">Heather Bell</div><div class="tree-vitals"><span><strong>Born:</strong> September 20, 1976</span><span><strong>Died:</strong> September 29, 2002</span><span><strong>Age at death:</strong> 26</span></div><div class="tree-relation">Daughter of Spooky &amp; Helen</div><div class="tree-count" data-archive-person="Heather Bell">5 archive items</div></a></div>
+    </section>
+
+    <section class="family-branch dickey-family-branch-v3">
+  <div class="branch-title">Dickey Bell Family</div>
+
+  <div class="dickey-top-row">
+    <a class="tree-person" href="dickey.html">
+      <div class="tree-photo"><img src="tree_portraits/dickey_bell.png" alt="Dickey Bell" loading="lazy"></div>
+      <div class="tree-name">Dickey Bell</div>
+      <div class="tree-vitals"><span><strong>Born:</strong> August 15, 1956</span><span><strong>Died:</strong> July 1, 2026</span><span><strong>Age at death:</strong> 69</span></div>
+      <div class="tree-relation">Son of Buster &amp; Alma</div>
+      <div class="tree-count" data-archive-person="Dickey Bell">archive items</div>
+    </a>
+
+    <div class="relationship-marker">
+      <div class="relationship-symbol heart-symbol">&#9829;</div>
+      <div class="relationship-text"><strong>Married</strong><span>August 7, 1994</span></div>
+    </div>
+
+    <a class="tree-person" href="sonja.html">
+      <div class="tree-photo"><img src="tree_portraits/sonja_bell.png" alt="Sonja Bell" loading="lazy"></div>
+      <div class="tree-name">Sonja Bell</div>
+      <div class="tree-vitals"><span><strong>Born:</strong> December 20, 1959</span></div>
+      <div class="tree-relation">Dickey&rsquo;s wife</div>
+      <div class="tree-count" data-archive-person="Sonja Bell">archive items</div>
+    </a>
+
+    <div class="relationship-marker">
+      <div class="relationship-symbol x-symbol">&times;</div>
+      <div class="relationship-text"><strong>Former marriage</strong></div>
+    </div>
+
+    <a class="tree-person" href="debbie.html"><div class="tree-photo"><img src="tree_portraits/debbie_phillips.jpg" alt="Debbie Phillips" loading="lazy"></div>
+      <div class="tree-name">Debbie Phillips</div><div class="tree-vitals"><span><strong>Born:</strong> July 17, 1956</span><span><strong>Died:</strong> October 21, 2014</span><span><strong>Age at death:</strong> 58</span></div><div class="tree-relation">Dickey&rsquo;s ex-wife<br>Rickey&rsquo;s mother</div><div class="tree-count" data-archive-person="Debbie Phillips">archive items</div></a>
+  </div>
+
+  <div class="parent-line dickey-debbie-line" aria-hidden="true">
+    <div class="parent-line-left"></div>
+    <div class="parent-line-right"></div>
+    <div class="parent-line-down"></div>
+  </div>
+  <div class="parentage-caption">Dickey Bell + Debbie Phillips &mdash; parents of Rickey Bell</div>
+
+  <div class="rickey-stephanie-row">
+    <a class="tree-person" href="rickey.html">
+      <div class="tree-photo"><img src="tree_portraits/rickey_bell.jpg" alt="Rickey Bell" loading="lazy"></div>
+      <div class="tree-name">Rickey Bell</div>
+      <div class="tree-vitals"><span><strong>Born:</strong> March 6, 1975</span></div>
+      <div class="tree-relation">Son of Dickey &amp; Debbie</div>
+      <div class="tree-count" data-archive-person="Rickey Bell">archive items</div>
+    </a>
+
+    <div class="relationship-marker">
+      <div class="relationship-symbol heart-symbol">&#9829;</div>
+      <div class="relationship-text"><strong>Married</strong><span>December 31, 1993</span></div>
+    </div>
+
+    <a class="tree-person" href="stephanie.html">
+      <div class="tree-photo"><img src="tree_portraits/stephanie_bell.jpg" alt="Stephanie Bell" loading="lazy"></div>
+      <div class="tree-name">Stephanie Bell</div>
+      <div class="tree-vitals"><span><strong>Born:</strong> December 6, 1974</span></div>
+      <div class="tree-relation">Rickey&rsquo;s wife</div>
+      <div class="tree-count" data-archive-person="Stephanie Bell">archive items</div>
+    </a>
+  </div>
+
+  <div class="children-line lineage-rickey-children lineage-couple-children" aria-hidden="true">
+  <span class="parent-stem rickey-stem"></span>
+  <span class="parent-stem stephanie-stem"></span>
+  <span class="family-bar"></span>
+  <span class="child-stem samatha-stem"></span>
+  <span class="child-stem jarred-stem"></span>
+</div>
+
+<div class="children-generation-row lineage-children-row">
+
+  <div class="child-family samatha-family lineage-family">
+    <a class="tree-person" href="samatha.html">
+      <div class="tree-photo"><img src="tree_portraits/samantha_bell.jpg" alt="Samatha Bell" loading="lazy"></div>
+      <div class="tree-name">Samatha Bell</div>
+      <div class="tree-vitals"><span><strong>Born:</strong> July 28, 1995</span></div>
+      <div class="tree-relation">Daughter of Rickey &amp; Stephanie</div>
+      <div class="tree-count" data-archive-person="Samatha Bell">archive items</div>
+    </a>
+
+    <div class="samatha-sophia-line" aria-hidden="true"></div>
+
+    <a class="tree-person descendant-person" href="sophia.html">
+      <div class="tree-photo"><img src="tree_portraits/sophia.jpg" alt="Sophia" loading="lazy"></div>
+      <div class="tree-name">Sophia</div>
+      <div class="tree-vitals"><span><strong>Born:</strong> November 21, 2016</span></div>
+      <div class="tree-relation">Samatha&rsquo;s daughter</div>
+      <div class="tree-count">Bell family descendant</div>
+    </a>
+  </div>
+
+  <div class="child-family jarred-family lineage-family">
+    <div class="jarred-dominique-row">
+      <a class="tree-person" href="jarred.html">
+        <div class="tree-photo"><img src="tree_portraits/jarred_bell.png" alt="Jarred Bell" loading="lazy"></div>
+        <div class="tree-name">Jarred Bell</div>
+        <div class="tree-vitals"><span><strong>Born:</strong> August 1, 2001</span></div>
+        <div class="tree-relation">Son of Rickey &amp; Stephanie</div>
+        <div class="tree-count" data-archive-person="Jarred Bell">archive items</div>
+      </a>
+
+      <div class="relationship-marker jarred-dom-marker">
+        <div class="relationship-symbol heart-symbol">&#9829;</div>
+        <div class="relationship-text"><strong>In a relationship</strong></div>
+      </div>
+
+      <a class="tree-person" href="dominique.html"><div class="tree-photo"><img src="tree_portraits/dominique_burwell.jpg" alt="Dominique Burwell" loading="lazy"></div>
+        <div class="tree-name">Dominique Burwell</div><div class="tree-vitals"><span><strong>Born:</strong> July 2, 2002</span></div><div class="tree-relation">Jarred&rsquo;s girlfriend<br>Mother of Olivia &amp; Ivy</div></a>
+    </div>
+
+    <div class="jarred-dom-children-line lineage-couple-children" aria-hidden="true">
+  <span class="parent-stem jarred-parent-stem"></span>
+  <span class="parent-stem dominique-parent-stem"></span>
+  <span class="family-bar"></span>
+  <span class="child-stem olivia-stem"></span>
+  <span class="child-stem ivy-stem"></span>
+</div>
+
+    <div class="jarred-children-row">
+      <a class="tree-person descendant-person" href="olivia.html">
+        <div class="tree-photo"><img src="tree_portraits/olivia.jpg" alt="Olivia" loading="lazy"></div>
+        <div class="tree-name">Olivia</div>
+        <div class="tree-vitals"><span><strong>Born:</strong> May 22, 2025</span></div>
+        <div class="tree-relation">Daughter of Jarred &amp; Dominique</div>
+        <div class="tree-count">Bell family descendant</div>
+      </a>
+
+      <a class="tree-person descendant-person" href="ivy.html">
+        <div class="tree-photo"><img src="tree_portraits/ivy.jpg" alt="Ivy" loading="lazy"></div>
+        <div class="tree-name">Ivy</div>
+        <div class="tree-vitals"><span><strong>Born:</strong> May 3, 2022</span></div>
+        <div class="tree-relation">Daughter of Jarred &amp; Dominique</div>
+        <div class="tree-count">Bell family descendant</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+</section>
+  </div>
+</section>
+<section class="tree-note"><h2>Growing Archive</h2><p>This family tree is the starting point. As more relatives are added, each person can have their own page and can be linked to multiple photographs, documents, stories, places, and events.</p></section></main>
+<footer>&copy; 2026 The Bell Family Archive &middot; Preserving Our Legacy for Future Generations</footer><script src="site.js"></script><script src="family-tree-lines.js"></script></body></html>

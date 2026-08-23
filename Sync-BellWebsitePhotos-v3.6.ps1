@@ -365,6 +365,17 @@ foreach($item in $selected){
         Write-Host "Processed $($stats.Processed)/$($selected.Count) | views $($stats.PhotoViews+$stats.DocumentViews) | highres $($stats.HighRes) | thumbs $($stats.Thumbs)"
     }
 
+    if(!(Test-Path -LiteralPath $source)){
+        if((Test-Path -LiteralPath $viewDest) -and (Test-Path -LiteralPath $thumbDest) -and (Test-Path -LiteralPath $highDest)){
+            Write-Warning "Master missing; preserving existing website derivatives for $relative"
+            $stats.Current++
+            continue
+        }
+        $stats.Errors++
+        Write-Warning "Master missing and website derivatives are incomplete for $relative : $source"
+        continue
+    }
+
     if($DryRun){
         $highMax=Get-HighResMaxDimension $source
         Write-Host "WOULD GENERATE $relative [view $viewMax px | highres $highMax px | thumb $ThumbMax px]"

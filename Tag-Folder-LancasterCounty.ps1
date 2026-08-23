@@ -120,8 +120,8 @@ function Test-HasSpecificLancasterTag {
     foreach ($tag in $allTags) {
         $t=[string]$tag
 
-        # Any child under Places > South Carolina > Lancaster counts as more specific.
-        if ($t -match '(?i)^Places[/|]South Carolina[/|]Lancaster[/|].+') {
+        # Any child under Places > South Carolina > Lancaster County counts as more specific.
+        if ($t -match '(?i)^Places[/|]South Carolina[/|]Lancaster County[/|].+') {
             return $true
         }
     }
@@ -193,7 +193,7 @@ Write-Host "Mode   : $Mode"
 Write-Host "Folder : $Root"
 Write-Host "Tag    : $DigiKamTag"
 Write-Host ""
-Write-Host "RULE: if a file already has Places/South Carolina/Lancaster/<specific place>, it is skipped." -ForegroundColor Yellow
+Write-Host "RULE: if a file already has Places/South Carolina/Lancaster County/<specific place>, it is skipped." -ForegroundColor Yellow
 Write-Host ""
 
 $ExifTool=Get-Command exiftool -ErrorAction SilentlyContinue
