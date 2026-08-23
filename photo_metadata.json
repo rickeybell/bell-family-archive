@@ -12450,6 +12450,36 @@
     "gps": null
   },
   {
+    "path": "images/1980/20150206_035037000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20150206_035037000_iOS.jpg",
+    "folder": "1980",
+    "date": "1980-01-01",
+    "people": [
+      "Debbie Phillips",
+      "Everate Faulkenberry",
+      "Lisa Steen"
+    ],
+    "tags": [
+      "Debbie Phillips",
+      "Everate Faulkenberry",
+      "Lisa Steen",
+      "People/Debbie Phillips",
+      "People/Everate Faulkenberry",
+      "People/Lisa Steen",
+      "People|Debbie Phillips",
+      "People|Everate Faulkenberry",
+      "People|Lisa Steen"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/1980/1980_0052_a.jpg",
     "media_type": "photo",
     "file": "1980_0052_a.jpg",
@@ -15114,6 +15144,32 @@
       "People/Stephanie Bell",
       "People|Stephanie Bell",
       "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1991/20160201_234639000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20160201_234639000_iOS.jpg",
+    "folder": "1991",
+    "date": "1991-01-01",
+    "people": [
+      "Mike Morgan",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Mike Morgan",
+      "People/Mike Morgan",
+      "People/Rickey Bell",
+      "People|Mike Morgan",
+      "People|Rickey Bell",
+      "Rickey Bell"
     ],
     "title": "",
     "description": "",
@@ -22689,6 +22745,32 @@
     "gps": null
   },
   {
+    "path": "images/2000/2000s_0004_a.jpg",
+    "media_type": "photo",
+    "file": "2000s_0004_a.jpg",
+    "folder": "2000",
+    "date": "2000-01-01",
+    "people": [
+      "Jarred Bell",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People/Samatha Bell",
+      "People|Jarred Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2001/1112_0021_a.jpg",
     "media_type": "photo",
     "file": "1112_0021_a.jpg",
@@ -22737,12 +22819,15 @@
     "path": "images/2002/100-0006_IMG.JPG",
     "media_type": "photo",
     "file": "100-0006_IMG.JPG",
-    "folder": "2001_06_16",
+    "folder": "2002",
     "date": "2002-06-15",
     "people": [
       "Dickey Bell"
     ],
     "tags": [
+      "Animal/Blaze",
+      "Animal|Blaze",
+      "Blaze",
       "Dickey Bell",
       "People/Dickey Bell",
       "People|Dickey Bell"
@@ -22815,7 +22900,7 @@
     "path": "images/2002/100-0051_IMG.JPG",
     "media_type": "photo",
     "file": "100-0051_IMG.JPG",
-    "folder": "2001_09_08",
+    "folder": "2002",
     "date": "2002-06-23",
     "people": [
       "Dickey Bell",
@@ -22823,110 +22908,134 @@
     ],
     "tags": [
       "Dickey Bell",
+      "Myrtle Beach",
       "People/Dickey Bell",
       "People/Sonja Bell",
       "People|Dickey Bell",
       "People|Sonja Bell",
-      "Sonja Bell"
+      "Places/South Carolina/Myrtle Beach",
+      "Places/South Carolina/Myrtle Beach/Tilghman Shores",
+      "Places|South Carolina|Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach|Tilghman Shores",
+      "Sonja Bell",
+      "Tilghman Shores"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "Tilghman Shores",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
     "path": "images/2002/100-0072_IMG.JPG",
     "media_type": "photo",
     "file": "100-0072_IMG.JPG",
-    "folder": "2001_09_08",
+    "folder": "2002",
     "date": "2002-06-25",
     "people": [
       "Dickey Bell"
     ],
     "tags": [
       "Dickey Bell",
+      "Myrtle Beach",
       "People/Dickey Bell",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Places/South Carolina/Myrtle Beach",
+      "Places/South Carolina/Myrtle Beach/Tilghman Shores",
+      "Places|South Carolina|Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach|Tilghman Shores",
+      "Tilghman Shores"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "Tilghman Shores",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
     "path": "images/2002/100-0076_IMG.JPG",
     "media_type": "photo",
     "file": "100-0076_IMG.JPG",
-    "folder": "2001_09_08",
+    "folder": "2002",
     "date": "2002-06-25",
     "people": [
       "Dickey Bell"
     ],
     "tags": [
       "Dickey Bell",
+      "Myrtle Beach",
       "People/Dickey Bell",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Places/South Carolina/Myrtle Beach",
+      "Places/South Carolina/Myrtle Beach/Tilghman Shores",
+      "Places|South Carolina|Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach|Tilghman Shores",
+      "Tilghman Shores"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "Tilghman Shores",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
     "path": "images/2002/102-0206_IMG.JPG",
     "media_type": "photo",
     "file": "102-0206_IMG.JPG",
-    "folder": "2001_10_11",
+    "folder": "2002",
     "date": "2002-08-01",
     "people": [
       "Dickey Bell",
       "Jarred Bell"
     ],
     "tags": [
+      "900 Confederate Ave",
       "Dickey Bell",
       "Jarred Bell",
       "People/Dickey Bell",
       "People/Jarred Bell",
       "People|Dickey Bell",
-      "People|Jarred Bell"
+      "People|Jarred Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
     "path": "images/2002/102-0217_IMG.JPG",
     "media_type": "photo",
     "file": "102-0217_IMG.JPG",
-    "folder": "2001_10_11",
+    "folder": "2002",
     "date": "2002-08-01",
     "people": [
       "Dickey Bell"
     ],
     "tags": [
+      "900 Confederate Ave",
       "Dickey Bell",
       "People/Dickey Bell",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -23372,6 +23481,94 @@
     "gps": null
   },
   {
+    "path": "images/2010/2010s_0001_a.jpg",
+    "media_type": "photo",
+    "file": "2010s_0001_a.jpg",
+    "folder": "2010",
+    "date": "2010-01-01",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "People/Dickey Bell",
+      "People|Dickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2010/2010s_0002_a.jpg",
+    "media_type": "photo",
+    "file": "2010s_0002_a.jpg",
+    "folder": "2010",
+    "date": "2010-01-01",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "People/Dickey Bell",
+      "People|Dickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2010/2010s_0003_a.jpg",
+    "media_type": "photo",
+    "file": "2010s_0003_a.jpg",
+    "folder": "2010",
+    "date": "2010-01-01",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "People/Dickey Bell",
+      "People|Dickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2010/2010s_0004_a.jpg",
+    "media_type": "photo",
+    "file": "2010s_0004_a.jpg",
+    "folder": "2010",
+    "date": "2010-01-01",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "People/Dickey Bell",
+      "People|Dickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2011/103_0902.JPG",
     "media_type": "photo",
     "file": "103_0902.JPG",
@@ -23539,9 +23736,35 @@
     "gps": null
   },
   {
-    "path": "images/2016/20161008_175348092_iOS.jpg",
+    "path": "images/2016/20160506_135103000_iOS.jpg",
     "media_type": "photo",
-    "file": "20161008_175348092_iOS.jpg",
+    "file": "20160506_135103000_iOS.jpg",
+    "folder": "2016",
+    "date": "2016-05-06",
+    "people": [
+      "Samatha Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "People/Samatha Bell",
+      "People/Sophia Bell",
+      "People|Samatha Bell",
+      "People|Sophia Bell",
+      "Samatha Bell",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2016/10_20161008_175348092_iOS.jpg",
+    "media_type": "photo",
+    "file": "10_20161008_175348092_iOS.jpg",
     "folder": "2016",
     "date": "2016-10-08",
     "people": [
@@ -23561,6 +23784,128 @@
     "gps": {
       "lat": 34.69350555,
       "lon": -80.8251638833333
+    }
+  },
+  {
+    "path": "images/2016/20161008_175348092_iOS.jpg",
+    "media_type": "photo",
+    "file": "20161008_175348092_iOS.jpg",
+    "folder": "2016",
+    "date": "2016-10-08",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Dickey Bell",
+      "People/Dickey Bell",
+      "People|Dickey Bell",
+      "Places/South Carolina/Lancaster/900 Confederate Ave",
+      "Places|South Carolina|Lancaster|900 Confederate Ave"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.69350555,
+      "lon": -80.8251638833333
+    }
+  },
+  {
+    "path": "images/2016/20161121_012742755_iOS.jpg",
+    "media_type": "photo",
+    "file": "20161121_012742755_iOS.jpg",
+    "folder": "2016",
+    "date": "2016-11-19",
+    "people": [
+      "Donna Brown",
+      "Samatha Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Donna Brown",
+      "People/Donna Brown",
+      "People/Samatha Bell",
+      "People/Stephanie Bell",
+      "People|Donna Brown",
+      "People|Samatha Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster/900 Confederate Ave",
+      "Places|South Carolina|Lancaster|900 Confederate Ave",
+      "Samatha Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6934861002778,
+      "lon": -80.8251333166667
+    }
+  },
+  {
+    "path": "images/2016/20161121_125207257_iOS.jpg",
+    "media_type": "photo",
+    "file": "20161121_125207257_iOS.jpg",
+    "folder": "2016",
+    "date": "2016-11-21",
+    "people": [
+      "Samatha Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "People/Samatha Bell",
+      "People/Sophia Bell",
+      "People|Samatha Bell",
+      "People|Sophia Bell",
+      "Samatha Bell",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2016/20161123_022840953_iOS.jpg",
+    "media_type": "photo",
+    "file": "20161123_022840953_iOS.jpg",
+    "folder": "2016",
+    "date": "2016-11-21",
+    "people": [
+      "Lady",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Lady",
+      "Animal|Lady",
+      "Lady",
+      "People/Sophia Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Lancaster/900 Confederate Ave",
+      "Places|South Carolina|Lancaster|900 Confederate Ave",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6934611002778,
+      "lon": -80.8251277669444
     }
   },
   {
@@ -23595,15 +23940,18 @@
       "Dickey Bell"
     ],
     "tags": [
+      "Chicago",
       "Dickey Bell",
       "People/Dickey Bell",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Places/Chicago",
+      "Places|Chicago"
     ],
     "title": "",
     "description": "",
     "location": "",
     "city": "",
-    "state": "",
+    "state": "Chicago",
     "country": "",
     "gps": {
       "lat": 41.8731833166667,
@@ -23621,21 +23969,24 @@
       "Rickey Bell"
     ],
     "tags": [
+      "Chicago",
       "Dickey Bell",
       "People/Dickey Bell",
       "People/Rickey Bell",
       "People|Dickey Bell",
       "People|Rickey Bell",
+      "Places/Chicago",
+      "Places|Chicago",
       "Rickey Bell"
     ],
     "title": "",
     "description": "",
     "location": "",
     "city": "",
-    "state": "",
+    "state": "Chicago",
     "country": "",
     "gps": {
-      "lat": 41.8327777666667,
+      "lat": 41.8327777672222,
       "lon": -87.6870111
     }
   },
@@ -23667,9 +24018,9 @@
     "gps": null
   },
   {
-    "path": "images/2016/20161227_023031180_iOS.jpg",
+    "path": "images/2016/12_20161227_023031180_iOS.jpg",
     "media_type": "photo",
-    "file": "20161227_023031180_iOS.jpg",
+    "file": "12_20161227_023031180_iOS.jpg",
     "folder": "2016",
     "date": "2016-12-26",
     "people": [
@@ -23693,6 +24044,70 @@
     "gps": {
       "lat": 34.6933833333333,
       "lon": -80.82528055
+    }
+  },
+  {
+    "path": "images/2016/20161227_023031180_iOS.jpg",
+    "media_type": "photo",
+    "file": "20161227_023031180_iOS.jpg",
+    "folder": "2016",
+    "date": "2016-12-26",
+    "people": [
+      "Mike Morgan",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Mike Morgan",
+      "People/Mike Morgan",
+      "People/Sophia Bell",
+      "People|Mike Morgan",
+      "People|Sophia Bell",
+      "Places/South Carolina/Lancaster/900 Confederate Ave",
+      "Places|South Carolina|Lancaster|900 Confederate Ave",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6933833333333,
+      "lon": -80.8252805497222
+    }
+  },
+  {
+    "path": "images/2017/20170416_003944666_iOS.jpg",
+    "media_type": "photo",
+    "file": "20170416_003944666_iOS.jpg",
+    "folder": "2017",
+    "date": "2017-04-14",
+    "people": [
+      "Samatha Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Lancaster County",
+      "People/Samatha Bell",
+      "People/Sophia Bell",
+      "People|Samatha Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County",
+      "Samatha Bell",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7305416669444,
+      "lon": -80.7609416494444
     }
   },
   {
@@ -24848,7 +25263,7 @@
     "path": "images/2022/Aug08144.JPG",
     "media_type": "photo",
     "file": "Aug08144.JPG",
-    "folder": "Dad",
+    "folder": "2022",
     "date": "2022-05-26",
     "people": [
       "Dickey Bell",
@@ -24874,7 +25289,7 @@
     "path": "images/2022/Aug08145.JPG",
     "media_type": "photo",
     "file": "Aug08145.JPG",
-    "folder": "Dad",
+    "folder": "2022",
     "date": "2022-05-26",
     "people": [
       "Dickey Bell",
@@ -24900,29 +25315,35 @@
     "path": "images/2022/Aug16170.JPG",
     "media_type": "photo",
     "file": "Aug16170.JPG",
-    "folder": "Dad",
+    "folder": "2022",
     "date": "2022-05-26",
     "people": [
       "Dickey Bell"
     ],
     "tags": [
+      "Animal/Blaze",
+      "Animal|Blaze",
+      "Blaze",
       "Dickey Bell",
       "People/Dickey Bell",
-      "People|Dickey Bell"
+      "People|Dickey Bell",
+      "Places/South Carolina/Myrtle Beach/Tilghman Shores",
+      "Places|South Carolina|Myrtle Beach|Tilghman Shores",
+      "Tilghman Shores"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "Tilghman Shores",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
     "path": "images/2022/Aug16171.JPG",
     "media_type": "photo",
     "file": "Aug16171.JPG",
-    "folder": "Dad",
+    "folder": "2022",
     "date": "2022-05-26",
     "people": [
       "Dickey Bell"
@@ -24944,7 +25365,7 @@
     "path": "images/2022/Aug16172.JPG",
     "media_type": "photo",
     "file": "Aug16172.JPG",
-    "folder": "Dad",
+    "folder": "2022",
     "date": "2022-05-26",
     "people": [
       "Dickey Bell"
@@ -24966,33 +25387,36 @@
     "path": "images/2022/bdjerrad&me2002.jpg",
     "media_type": "photo",
     "file": "bdjerrad&me2002.jpg",
-    "folder": "Dad",
+    "folder": "2022",
     "date": "2022-05-26",
     "people": [
       "Dickey Bell",
       "Jarred Bell"
     ],
     "tags": [
+      "900 Confederate Ave",
       "Dickey Bell",
       "Jarred Bell",
       "People/Dickey Bell",
       "People/Jarred Bell",
       "People|Dickey Bell",
-      "People|Jarred Bell"
+      "People|Jarred Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
     ],
     "title": "",
     "description": "LEAD Technologies Inc. V1.01",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
     "path": "images/2022/beachbells1.JPG",
     "media_type": "photo",
     "file": "beachbells1.JPG",
-    "folder": "Dad",
+    "folder": "2022",
     "date": "2022-05-26",
     "people": [
       "Dickey Bell",
@@ -25018,7 +25442,7 @@
     "path": "images/2022/beachbells2.JPG",
     "media_type": "photo",
     "file": "beachbells2.JPG",
-    "folder": "Dad",
+    "folder": "2022",
     "date": "2022-05-26",
     "people": [
       "Dickey Bell",
@@ -25030,21 +25454,24 @@
       "People/Sonja Bell",
       "People|Dickey Bell",
       "People|Sonja Bell",
-      "Sonja Bell"
+      "Places/South Carolina/Myrtle Beach/Tilghman Shores",
+      "Places|South Carolina|Myrtle Beach|Tilghman Shores",
+      "Sonja Bell",
+      "Tilghman Shores"
     ],
     "title": "",
     "description": "File written by Adobe Photoshop� 4.0",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "Tilghman Shores",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
     "path": "images/2022/beachbells3.jpg",
     "media_type": "photo",
     "file": "beachbells3.jpg",
-    "folder": "Dad",
+    "folder": "2022",
     "date": "2022-05-26",
     "people": [
       "Dickey Bell",
@@ -25056,21 +25483,24 @@
       "People/Sonja Bell",
       "People|Dickey Bell",
       "People|Sonja Bell",
-      "Sonja Bell"
+      "Places/South Carolina/Myrtle Beach/Tilghman Shores",
+      "Places|South Carolina|Myrtle Beach|Tilghman Shores",
+      "Sonja Bell",
+      "Tilghman Shores"
     ],
     "title": "",
     "description": "LEAD Technologies Inc. V1.01",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "Tilghman Shores",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
     "path": "images/2022/Sep18$60.JPG",
     "media_type": "photo",
     "file": "Sep18$60.JPG",
-    "folder": "Dad",
+    "folder": "2022",
     "date": "2022-05-26",
     "people": [
       "Dickey Bell",
@@ -25634,7 +26064,7 @@
     "path": "images/2026/Dickey Death Cert.jpg",
     "media_type": "photo",
     "file": "Dickey Death Cert.jpg",
-    "folder": "Dickey",
+    "folder": "2026",
     "date": "2026-07-01",
     "people": [
       "Dickey Bell"
