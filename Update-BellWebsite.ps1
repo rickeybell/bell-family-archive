@@ -228,7 +228,7 @@ if ([string]::IsNullOrWhiteSpace($CommitMessage)) { $CommitMessage = "Update web
 $paths = @(
     "images","thumbs","highres","videos","audio","originals",
     "photo_metadata.json","gallery.html",
-    "alma-photos.html","buster-photos.html","debbie-photos.html","dickey-photos.html",
+    "alma-photos.html","buster-photos.html","debbie-photos.html","dickey-photos.html","irvin-photos.html",
     "dominique-photos.html","heather-photos.html","helen-photos.html","ivy-photos.html",
     "jarred-photos.html","olivia-photos.html","rickey-photos.html","samatha-photos.html",
     "sonja-photos.html","sophia-photos.html","spooky-photos.html","stephanie-photos.html",

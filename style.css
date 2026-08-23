@@ -1772,3 +1772,52 @@ footer{
     transform-origin: center center !important;
 }
 /* BELL TREE UPRIGHT FIX - END */
+
+/* Debbie Phillips and Irvin Phillips couple */
+.dickey-top-row{
+  grid-template-columns:185px 55px 185px 55px 185px 55px 185px;
+  gap:8px;
+}
+.tree-person[href="irvin.html"] .tree-photo{
+  overflow:hidden;
+}
+.tree-person[href="irvin.html"] .tree-photo img{
+  transform:scale(2.7);
+  transform-origin:53% 47%;
+}
+
+@media(max-width:1180px){
+  .dickey-top-row{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+  }
+}
+
+@media(max-width:1750px){
+  .sibling-branches{
+    display:flex !important;
+    flex-direction:column;
+    align-items:center;
+    transform:none !important;
+  }
+  .sibling-branches > .family-branch:first-child,
+  .sibling-branches > .dickey-family-branch-v3{
+    flex:none !important;
+  }
+  .sibling-branches > .family-branch:first-child{
+    width:min(100%,540px) !important;
+    max-width:540px;
+  }
+  .sibling-branches > .dickey-family-branch-v3{
+    width:min(100%,1000px) !important;
+    max-width:1000px;
+  }
+}
+
+@media(max-width:650px){
+  .dickey-top-row{
+    flex-direction:column;
+  }
+}
