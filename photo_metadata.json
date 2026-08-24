@@ -7194,6 +7194,28 @@
     "gps": null
   },
   {
+    "path": "images/1975/50 copy-Alien.jpg",
+    "media_type": "photo",
+    "file": "50 copy-Alien.jpg",
+    "folder": "1975",
+    "date": "1975-01-01",
+    "people": [
+      "Donna Brown"
+    ],
+    "tags": [
+      "Donna Brown",
+      "People/Donna Brown",
+      "People|Donna Brown"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/1975/50 copy.jpg",
     "media_type": "photo",
     "file": "50 copy.jpg",
@@ -7206,6 +7228,36 @@
       "Donna Brown",
       "People/Donna Brown",
       "People|Donna Brown"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1975/Untitled-2 copy-Alien.jpg",
+    "media_type": "photo",
+    "file": "Untitled-2 copy-Alien.jpg",
+    "folder": "1975",
+    "date": "1976-01-01",
+    "people": [
+      "Charlie Brown",
+      "Donna Brown",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Charlie Brown",
+      "Donna Brown",
+      "People/Charlie Brown",
+      "People/Donna Brown",
+      "People/Stephanie Bell",
+      "People|Charlie Brown",
+      "People|Donna Brown",
+      "People|Stephanie Bell",
+      "Stephanie Bell"
     ],
     "title": "",
     "description": "",
@@ -7269,37 +7321,6 @@
     "title": "",
     "description": "",
     "location": "",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
-    "path": "images/1976/1976_0004_a.jpg",
-    "media_type": "photo",
-    "file": "1976_0004_a.jpg",
-    "folder": "1976",
-    "date": "1976-01-01",
-    "people": [
-      "Heather Bell"
-    ],
-    "tags": [
-      "Heather Bell",
-      "Kaywood Dr Spooky_Helen Home",
-      "Lancaster County",
-      "People/Heather Bell",
-      "People|Heather Bell",
-      "Places/South Carolina",
-      "Places/South Carolina/Lancaster County",
-      "Places/South Carolina/Lancaster County/Kaywood Dr Spooky_Helen Home",
-      "Places|South Carolina",
-      "Places|South Carolina|Lancaster County",
-      "Places|South Carolina|Lancaster County|Kaywood Dr Spooky_Helen Home",
-      "South Carolina"
-    ],
-    "title": "",
-    "description": "",
-    "location": "Kaywood Dr Spooky_Helen Home",
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
@@ -7481,6 +7502,37 @@
       "People/Helen Bell",
       "People|Heather Bell",
       "People|Helen Bell",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/Kaywood Dr Spooky_Helen Home",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|Kaywood Dr Spooky_Helen Home",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Kaywood Dr Spooky_Helen Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1976/1976_0004_a.jpg",
+    "media_type": "photo",
+    "file": "1976_0004_a.jpg",
+    "folder": "1976",
+    "date": "1976-10-01",
+    "people": [
+      "Heather Bell"
+    ],
+    "tags": [
+      "Heather Bell",
+      "Kaywood Dr Spooky_Helen Home",
+      "Lancaster County",
+      "People/Heather Bell",
+      "People|Heather Bell",
       "Places/South Carolina",
       "Places/South Carolina/Lancaster County",
       "Places/South Carolina/Lancaster County/Kaywood Dr Spooky_Helen Home",
@@ -8289,39 +8341,6 @@
     "gps": null
   },
   {
-    "path": "images/1978/1970s_0026_a.jpg",
-    "media_type": "photo",
-    "file": "1970s_0026_a.jpg",
-    "folder": "1978",
-    "date": "1978-03-01",
-    "people": [
-      "Heather Bell",
-      "Mike Morgan",
-      "Rickey Bell"
-    ],
-    "tags": [
-      "109 Fairview Dr",
-      "Heather Bell",
-      "Mike Morgan",
-      "People/Heather Bell",
-      "People/Mike Morgan",
-      "People/Rickey Bell",
-      "People|Heather Bell",
-      "People|Mike Morgan",
-      "People|Rickey Bell",
-      "Places/South Carolina/Lancaster County/109 Fairview Dr",
-      "Places|South Carolina|Lancaster County|109 Fairview Dr",
-      "Rickey Bell"
-    ],
-    "title": "Believed to be Rickey's 3rd Birthday",
-    "description": "",
-    "location": "109 Fairview Dr",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/1978/Dickey Seperation_Page1.jpg",
     "media_type": "photo",
     "file": "Dickey Seperation_Page1.jpg",
@@ -8915,6 +8934,39 @@
       "South Carolina"
     ],
     "title": "",
+    "description": "",
+    "location": "109 Fairview Dr",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1979/1970s_0026_a.jpg",
+    "media_type": "photo",
+    "file": "1970s_0026_a.jpg",
+    "folder": "1979",
+    "date": "1979-03-01",
+    "people": [
+      "Heather Bell",
+      "Mike Morgan",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "109 Fairview Dr",
+      "Heather Bell",
+      "Mike Morgan",
+      "People/Heather Bell",
+      "People/Mike Morgan",
+      "People/Rickey Bell",
+      "People|Heather Bell",
+      "People|Mike Morgan",
+      "People|Rickey Bell",
+      "Places/South Carolina/Lancaster County/109 Fairview Dr",
+      "Places|South Carolina|Lancaster County|109 Fairview Dr",
+      "Rickey Bell"
+    ],
+    "title": "Someones 3rd birthday",
     "description": "",
     "location": "109 Fairview Dr",
     "city": "Lancaster County",
@@ -13381,6 +13433,35 @@
     "gps": null
   },
   {
+    "path": "images/1982/82 Wonder Woman & Rickey 2.jpg",
+    "media_type": "photo",
+    "file": "82 Wonder Woman & Rickey 2.jpg",
+    "folder": "1982",
+    "date": "1982-01-01",
+    "people": [
+      "Heather Bell",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "109 Fairview Dr",
+      "Heather Bell",
+      "People/Heather Bell",
+      "People/Rickey Bell",
+      "People|Heather Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina/Lancaster County/109 Fairview Dr",
+      "Places|South Carolina|Lancaster County|109 Fairview Dr",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "109 Fairview Dr",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/1982/1982_0003_a.jpg",
     "media_type": "photo",
     "file": "1982_0003_a.jpg",
@@ -15026,6 +15107,109 @@
     "gps": null
   },
   {
+    "path": "images/1990/1990s_0087.jpg",
+    "media_type": "photo",
+    "file": "1990s_0087.jpg",
+    "folder": "1990",
+    "date": "1990-01-01",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1990/1990s_0089.jpg",
+    "media_type": "photo",
+    "file": "1990s_0089.jpg",
+    "folder": "1990",
+    "date": "1990-01-01",
+    "people": [
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "People/Rickey Bell",
+      "People/Stephanie Bell",
+      "People|Rickey Bell",
+      "People|Stephanie Bell",
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1990/1990s_0089_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0089_a.jpg",
+    "folder": "1990",
+    "date": "1990-01-01",
+    "people": [
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "109 Fairview Dr",
+      "People/Rickey Bell",
+      "People/Stephanie Bell",
+      "People|Rickey Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County/109 Fairview Dr",
+      "Places|South Carolina|Lancaster County|109 Fairview Dr",
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "109 Fairview Dr",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1992/1990s_0090.jpg",
+    "media_type": "photo",
+    "file": "1990s_0090.jpg",
+    "folder": "1992",
+    "date": "1990-01-01",
+    "people": [
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "People/Rickey Bell",
+      "People/Stephanie Bell",
+      "People|Rickey Bell",
+      "People|Stephanie Bell",
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/1990/1990_0003.jpg",
     "media_type": "photo",
     "file": "1990_0003.jpg",
@@ -15191,29 +15375,40 @@
     "gps": null
   },
   {
-    "path": "images/1990/90 H & Alma Carowinds.jpg",
+    "path": "images/1990/1990s_0087_a.jpg",
     "media_type": "photo",
-    "file": "90 H & Alma Carowinds.jpg",
+    "file": "1990s_0087_a.jpg",
     "folder": "1990",
     "date": "1990-09-01",
     "people": [
-      "Alma Bell",
-      "Heather Bell"
+      "Helen Bell",
+      "Rickey Bell",
+      "Stephanie Bell",
+      "Teresa Cooper"
     ],
     "tags": [
-      "Alma Bell",
-      "Heather Bell",
-      "People/Alma Bell",
-      "People/Heather Bell",
-      "People|Alma Bell",
-      "People|Heather Bell"
+      "Carowinds",
+      "Helen Bell",
+      "People/Helen Bell",
+      "People/Rickey Bell",
+      "People/Stephanie Bell",
+      "People/Teresa Cooper",
+      "People|Helen Bell",
+      "People|Rickey Bell",
+      "People|Stephanie Bell",
+      "People|Teresa Cooper",
+      "Places/South Carolina/Carowinds",
+      "Places|South Carolina|Carowinds",
+      "Rickey Bell",
+      "Stephanie Bell",
+      "Teresa Cooper"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Carowinds",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -15627,6 +15822,43 @@
     "title": "",
     "description": "",
     "location": "109 Fairview Dr",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1991/1990s_0150_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0150_a.jpg",
+    "folder": "1991",
+    "date": "1991-01-01",
+    "people": [
+      "Carla Pittman",
+      "Rickey Bell",
+      "Stephanie Bell",
+      "Teri Wallace"
+    ],
+    "tags": [
+      "Carla Pittman",
+      "Lancaster High School",
+      "People/Carla Pittman",
+      "People/Rickey Bell",
+      "People/Stephanie Bell",
+      "People/Teri Wallace",
+      "People|Carla Pittman",
+      "People|Rickey Bell",
+      "People|Stephanie Bell",
+      "People|Teri Wallace",
+      "Places/South Carolina/Lancaster County/Lancaster High School",
+      "Places|South Carolina|Lancaster County|Lancaster High School",
+      "Rickey Bell",
+      "Stephanie Bell",
+      "Teri Wallace"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Lancaster High School",
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
@@ -16100,6 +16332,95 @@
     "gps": null
   },
   {
+    "path": "images/1992/1990s_0090_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0090_a.jpg",
+    "folder": "1992",
+    "date": "1992-01-01",
+    "people": [
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "109 Fairview Dr",
+      "People/Rickey Bell",
+      "People/Stephanie Bell",
+      "People|Rickey Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County/109 Fairview Dr",
+      "Places|South Carolina|Lancaster County|109 Fairview Dr",
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "109 Fairview Dr",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1992/1990s_0147_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0147_a.jpg",
+    "folder": "1992",
+    "date": "1992-01-01",
+    "people": [
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Douglas Heights",
+      "People/Rickey Bell",
+      "People/Stephanie Bell",
+      "People|Rickey Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County/Douglas Heights",
+      "Places|South Carolina|Lancaster County|Douglas Heights",
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Douglas Heights",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1992/1992_0001.jpg",
+    "media_type": "photo",
+    "file": "1992_0001.jpg",
+    "folder": "1992",
+    "date": "1992-01-01",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "109 Fairview Dr",
+      "Lancaster County",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/109 Fairview Dr",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|109 Fairview Dr",
+      "Rickey Bell",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "109 Fairview Dr",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/1992/1992_0001_a.jpg",
     "media_type": "photo",
     "file": "1992_0001_a.jpg",
@@ -16400,6 +16721,32 @@
     "gps": null
   },
   {
+    "path": "images/1990/90 H & Alma Carowinds.jpg",
+    "media_type": "photo",
+    "file": "90 H & Alma Carowinds.jpg",
+    "folder": "1990",
+    "date": "1992-09-01",
+    "people": [
+      "Alma Bell",
+      "Heather Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Heather Bell",
+      "People/Alma Bell",
+      "People/Heather Bell",
+      "People|Alma Bell",
+      "People|Heather Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/1992/90 H & Spooky @ Carowinds.jpg",
     "media_type": "photo",
     "file": "90 H & Spooky @ Carowinds.jpg",
@@ -16509,63 +16856,81 @@
     "gps": null
   },
   {
-    "path": "images/1993/1993_0004_a.jpg",
+    "path": "images/1993/1993_0008_a.jpg",
     "media_type": "photo",
-    "file": "1993_0004_a.jpg",
+    "file": "1993_0008_a.jpg",
     "folder": "1993",
-    "date": "1993-01-01",
+    "date": "1993-06-05",
     "people": [
       "Rickey Bell"
     ],
     "tags": [
+      "Myrtle Beach",
       "People/Rickey Bell",
       "People|Rickey Bell",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach",
       "Rickey Bell"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
-    "path": "images/1993/1994_0040_a.jpg",
+    "path": "images/1993/1993_0023_a.jpg",
     "media_type": "photo",
-    "file": "1994_0040_a.jpg",
+    "file": "1993_0023_a.jpg",
     "folder": "1993",
-    "date": "1993-01-01",
+    "date": "1993-06-05",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Myrtle Beach",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1993/1993_0083_a.jpg",
+    "media_type": "photo",
+    "file": "1993_0083_a.jpg",
+    "folder": "1993",
+    "date": "1993-07-01",
     "people": [
       "Rickey Bell",
-      "Sonja Bell",
       "Stephanie Bell"
     ],
     "tags": [
-      "900 Confederate Ave",
-      "Lancaster County",
+      "Disney World",
       "People/Rickey Bell",
-      "People/Sonja Bell",
       "People/Stephanie Bell",
       "People|Rickey Bell",
-      "People|Sonja Bell",
       "People|Stephanie Bell",
-      "Places/South Carolina",
-      "Places/South Carolina/Lancaster County",
-      "Places/South Carolina/Lancaster County/900 Confederate Ave",
-      "Places|South Carolina",
-      "Places|South Carolina|Lancaster County",
-      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Places/Florida/Orlando/Disney World",
+      "Places|Florida|Orlando|Disney World",
       "Rickey Bell",
-      "Sonja Bell",
-      "South Carolina",
       "Stephanie Bell"
     ],
     "title": "",
     "description": "",
-    "location": "900 Confederate Ave",
-    "city": "Lancaster County",
-    "state": "South Carolina",
+    "location": "Disney World",
+    "city": "Orlando",
+    "state": "Florida",
     "country": "United States",
     "gps": null
   },
@@ -16738,19 +17103,61 @@
       "Stephanie Bell"
     ],
     "tags": [
+      "900 Confederate Ave",
       "People/Rickey Bell",
       "People/Stephanie Bell",
       "People|Rickey Bell",
       "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
       "Rickey Bell",
       "Stephanie Bell"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1994/1994_0040_a.jpg",
+    "media_type": "photo",
+    "file": "1994_0040_a.jpg",
+    "folder": "1994",
+    "date": "1994-01-01",
+    "people": [
+      "Rickey Bell",
+      "Sonja Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Lancaster County",
+      "People/Rickey Bell",
+      "People/Sonja Bell",
+      "People/Stephanie Bell",
+      "People|Rickey Bell",
+      "People|Sonja Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Rickey Bell",
+      "Sonja Bell",
+      "South Carolina",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -18463,38 +18870,6 @@
     "gps": null
   },
   {
-    "path": "images/1994/1994_May_0003_a.jpg",
-    "media_type": "photo",
-    "file": "1994_May_0003_a.jpg",
-    "folder": "1994",
-    "date": "1994-05-20",
-    "people": [
-      "Dickey Bell",
-      "Rickey Bell"
-    ],
-    "tags": [
-      "Dickey Bell",
-      "Lancaster County",
-      "People/Dickey Bell",
-      "People/Rickey Bell",
-      "People|Dickey Bell",
-      "People|Rickey Bell",
-      "Places/South Carolina",
-      "Places/South Carolina/Lancaster County",
-      "Places|South Carolina",
-      "Places|South Carolina|Lancaster County",
-      "Rickey Bell",
-      "South Carolina"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/1994/1994_May_0004_a.jpg",
     "media_type": "photo",
     "file": "1994_May_0004_a.jpg",
@@ -19448,32 +19823,6 @@
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
-    "gps": null
-  },
-  {
-    "path": "images/1994/94 H & Spooky Wedding.jpg",
-    "media_type": "photo",
-    "file": "94 H & Spooky Wedding.jpg",
-    "folder": "1994",
-    "date": "1994-08-20",
-    "people": [
-      "Heather Bell",
-      "Spooky Bell"
-    ],
-    "tags": [
-      "Heather Bell",
-      "People/Heather Bell",
-      "People/Spooky Bell",
-      "People|Heather Bell",
-      "People|Spooky Bell",
-      "Spooky Bell"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
     "gps": null
   },
   {
@@ -23499,6 +23848,28 @@
     "gps": null
   },
   {
+    "path": "images/1999/9B7E1901_v1-Alien.JPG",
+    "media_type": "photo",
+    "file": "9B7E1901_v1-Alien.JPG",
+    "folder": "1999",
+    "date": "1999-11-07",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/1999/9B7E1901_v1.JPG",
     "media_type": "photo",
     "file": "9B7E1901_v1.JPG",
@@ -23521,9 +23892,53 @@
     "gps": null
   },
   {
+    "path": "images/1999/9B7E1926_v1-Alien.JPG",
+    "media_type": "photo",
+    "file": "9B7E1926_v1-Alien.JPG",
+    "folder": "1999",
+    "date": "1999-11-07",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/1999/9B7E1926_v1.JPG",
     "media_type": "photo",
     "file": "9B7E1926_v1.JPG",
+    "folder": "1999",
+    "date": "1999-11-07",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1999/9B7E1940_v1-Alien.JPG",
+    "media_type": "photo",
+    "file": "9B7E1940_v1-Alien.JPG",
     "folder": "1999",
     "date": "1999-11-07",
     "people": [
@@ -23669,6 +24084,89 @@
     "gps": null
   },
   {
+    "path": "images/2000/Sam & Mikey.JPG",
+    "media_type": "photo",
+    "file": "Sam & Mikey.JPG",
+    "folder": "2000",
+    "date": "2000-01-01",
+    "people": [
+      "Mikey Morgan",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Crystal River",
+      "Mikey Morgan",
+      "People/Mikey Morgan",
+      "People/Samatha Bell",
+      "People|Mikey Morgan",
+      "People|Samatha Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2000/Sam & Rick woth Scuba.JPG",
+    "media_type": "photo",
+    "file": "Sam & Rick woth Scuba.JPG",
+    "folder": "2000",
+    "date": "2000-01-01",
+    "people": [
+      "Rickey Bell",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Crystal River",
+      "People/Rickey Bell",
+      "People/Samatha Bell",
+      "People|Rickey Bell",
+      "People|Samatha Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Rickey Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2000/Sam on Boat2.JPG",
+    "media_type": "photo",
+    "file": "Sam on Boat2.JPG",
+    "folder": "2000",
+    "date": "2000-01-01",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Crystal River",
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2000/Sam&Rick on Boat.JPG",
     "media_type": "photo",
     "file": "Sam&Rick on Boat.JPG",
@@ -23687,6 +24185,31 @@
       "Places/Florida/Crystal River",
       "Places|Florida|Crystal River",
       "Rickey Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2000/Sam.JPG",
+    "media_type": "photo",
+    "file": "Sam.JPG",
+    "folder": "2000",
+    "date": "2000-01-01",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Crystal River",
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
       "Samatha Bell"
     ],
     "title": "",
@@ -23824,6 +24347,31 @@
       "Places/Florida/Orlando/GatorLand",
       "Places|Florida|Orlando|GatorLand",
       "Rickey Bell",
+      "Samatha Bell"
+    ],
+    "title": "Gatorland",
+    "description": "",
+    "location": "GatorLand",
+    "city": "Orlando",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2001/Rick&Sam On Gator-Alien.JPG",
+    "media_type": "photo",
+    "file": "Rick&Sam On Gator-Alien.JPG",
+    "folder": "2001",
+    "date": "2001-07-04",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "GatorLand",
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Places/Florida/Orlando/GatorLand",
+      "Places|Florida|Orlando|GatorLand",
       "Samatha Bell"
     ],
     "title": "Gatorland",
@@ -27484,7 +28032,7 @@
     "state": "",
     "country": "",
     "gps": {
-      "lat": 34.6933333166667,
+      "lat": 34.6933333163889,
       "lon": -80.8252777666667
     }
   },
@@ -27509,7 +28057,7 @@
     "state": "",
     "country": "",
     "gps": {
-      "lat": 34.6933333166667,
+      "lat": 34.6933333163889,
       "lon": -80.825
     }
   },
@@ -27619,7 +28167,7 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.6933333166667,
+      "lat": 34.6933333163889,
       "lon": -80.8253333166667
     }
   },
@@ -27803,6 +28351,34 @@
     "state": "",
     "country": "",
     "gps": null
+  },
+  {
+    "path": "images/2014/20141129_183941954_iOS.jpg",
+    "media_type": "photo",
+    "file": "20141129_183941954_iOS.jpg",
+    "folder": "2014",
+    "date": "2014-11-29",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Crystal River",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": {
+      "lat": 28.8387472169444,
+      "lon": -82.9774388833333
+    }
   },
   {
     "path": "audio/2015/Irvin VM to Derrick Joyner.mp3",
@@ -28098,7 +28674,7 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.6935055333333,
+      "lat": 34.6935055330556,
       "lon": -80.8251638666667
     }
   },
@@ -28134,8 +28710,8 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.6934861,
-      "lon": -80.8251333
+      "lat": 34.6934861002778,
+      "lon": -80.8251332997222
     }
   },
   {
@@ -28214,8 +28790,8 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.6934611,
-      "lon": -80.8251277666667
+      "lat": 34.6934611002778,
+      "lon": -80.8251277669444
     }
   },
   {
@@ -28334,7 +28910,7 @@
     "country": "United States",
     "gps": {
       "lat": 34.6933833333333,
-      "lon": -80.82528055
+      "lon": -80.8252805497222
     }
   },
   {
@@ -29114,17 +29690,17 @@
       "Jarred Bell"
     ],
     "tags": [
-      "Florida",
+      "Crystal River",
       "Jarred Bell",
       "People/Jarred Bell",
       "People|Jarred Bell",
-      "Places/Florida",
-      "Places|Florida"
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
+    "city": "Crystal River",
     "state": "Florida",
     "country": "United States",
     "gps": {
@@ -29512,7 +30088,7 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.6933202833333,
+      "lat": 34.6933202827778,
       "lon": -80.8252497
     }
   },
@@ -29866,7 +30442,7 @@
     "state": "",
     "country": "",
     "gps": {
-      "lat": 34.6965476,
+      "lat": 34.6965476005556,
       "lon": -80.8092295
     }
   },
@@ -29895,7 +30471,7 @@
     "state": "",
     "country": "",
     "gps": {
-      "lat": 34.6123902833333,
+      "lat": 34.6123902830556,
       "lon": -80.8038517833333
     }
   },
@@ -29924,8 +30500,8 @@
     "state": "",
     "country": "",
     "gps": {
-      "lat": 34.6934592,
-      "lon": -80.8253376
+      "lat": 34.6934592002778,
+      "lon": -80.8253376002778
     }
   },
   {
@@ -29950,7 +30526,7 @@
     "country": "",
     "gps": {
       "lat": 34.7185887833333,
-      "lon": -80.86064
+      "lon": -80.8606400002778
     }
   },
   {
@@ -30124,6 +30700,50 @@
     "state": "",
     "country": "",
     "gps": null
+  },
+  {
+    "path": "images/2025/20251128_122003.jpg",
+    "media_type": "photo",
+    "file": "20251128_122003.jpg",
+    "folder": "2025",
+    "date": "2025-11-28",
+    "people": [
+      "Mike Morgan",
+      "Rickey Bell",
+      "Samatha Bell",
+      "Sophia Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Crystal River",
+      "Mike Morgan",
+      "People/Mike Morgan",
+      "People/Rickey Bell",
+      "People/Samatha Bell",
+      "People/Sophia Bell",
+      "People/Stephanie Bell",
+      "People|Mike Morgan",
+      "People|Rickey Bell",
+      "People|Samatha Bell",
+      "People|Sophia Bell",
+      "People|Stephanie Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Rickey Bell",
+      "Samatha Bell",
+      "Sophia Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": {
+      "lat": 28.8927608002778,
+      "lon": -82.5864406833333
+    }
   },
   {
     "path": "images/2025/20251204_154810.jpg",
@@ -30341,8 +30961,8 @@
     "state": "",
     "country": "",
     "gps": {
-      "lat": 34.6933731000361,
-      "lon": -80.8252587000055
+      "lat": 34.6933731005556,
+      "lon": -80.8252587
     }
   },
   {
