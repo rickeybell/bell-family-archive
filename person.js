@@ -29,10 +29,11 @@ document.addEventListener("DOMContentLoaded",()=>{
  const personCount=document.querySelector(".person-count");
  const personName=document.querySelector(".person-hero h1")?.textContent?.trim();
  if(personCount && personName){
+   const archivePerson=personCount.dataset.archivePerson||personName;
    fetch("photo_metadata.json",{cache:"no-store"})
      .then(r=>{if(!r.ok)throw new Error("photo metadata unavailable");return r.json();})
      .then(items=>{
-       const count=items.filter(x=>Array.isArray(x.people)&&x.people.includes(personName)).length;
+       const count=items.filter(x=>Array.isArray(x.people)&&x.people.includes(archivePerson)).length;
        personCount.textContent=`${count} currently identified archive item${count===1?"":"s"}`;
      })
      .catch(err=>console.warn("Biography archive count could not be refreshed:",err));
