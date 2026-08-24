@@ -7238,36 +7238,6 @@
     "gps": null
   },
   {
-    "path": "images/1975/Untitled-2 copy-Alien.jpg",
-    "media_type": "photo",
-    "file": "Untitled-2 copy-Alien.jpg",
-    "folder": "1975",
-    "date": "1976-01-01",
-    "people": [
-      "Charlie Brown",
-      "Donna Brown",
-      "Stephanie Bell"
-    ],
-    "tags": [
-      "Charlie Brown",
-      "Donna Brown",
-      "People/Charlie Brown",
-      "People/Donna Brown",
-      "People/Stephanie Bell",
-      "People|Charlie Brown",
-      "People|Donna Brown",
-      "People|Stephanie Bell",
-      "Stephanie Bell"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
     "path": "images/1975/Untitled-2 copy.jpg",
     "media_type": "photo",
     "file": "Untitled-2 copy.jpg",
@@ -27055,48 +27025,6 @@
       "Jarred Bell",
       "People/Jarred Bell",
       "People|Jarred Bell"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
-    "path": "images/2007/2007_April_0001.jpg",
-    "media_type": "photo",
-    "file": "2007_April_0001.jpg",
-    "folder": "2007",
-    "date": "2007-04-01",
-    "people": [
-      "Anna Lear",
-      "Charlie Brown",
-      "Donna Brown",
-      "Jarred Bell",
-      "Samatha Bell",
-      "Stephanie Bell"
-    ],
-    "tags": [
-      "Anna Lear",
-      "Charlie Brown",
-      "Donna Brown",
-      "Jarred Bell",
-      "People/Anna Lear",
-      "People/Charlie Brown",
-      "People/Donna Brown",
-      "People/Jarred Bell",
-      "People/Samatha Bell",
-      "People/Stephanie Bell",
-      "People|Anna Lear",
-      "People|Charlie Brown",
-      "People|Donna Brown",
-      "People|Jarred Bell",
-      "People|Samatha Bell",
-      "People|Stephanie Bell",
-      "Samatha Bell",
-      "Stephanie Bell"
     ],
     "title": "",
     "description": "",
