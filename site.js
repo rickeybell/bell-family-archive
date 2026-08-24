@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded",()=>{
   // Keep current ages accurate for living relatives as birthdays pass.
   const today=new Date();
-  document.querySelectorAll(".tree-person[data-birthdate]").forEach(card=>{
+  document.querySelectorAll(".tree-person[data-birthdate], .archive-community-card[data-birthdate]").forEach(card=>{
     const vitals=card.querySelector(".tree-vitals");
     if(!vitals || vitals.querySelector(".current-age"))return;
     const [year,month,day]=card.dataset.birthdate.split("-").map(Number);
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     line.innerHTML=`<strong>Current age:</strong> ${age}`;
     vitals.appendChild(line);
   });
-  document.querySelectorAll(".tree-person[data-birth-year]").forEach(card=>{
+  document.querySelectorAll(".tree-person[data-birth-year], .archive-community-card[data-birth-year]").forEach(card=>{
     const vitals=card.querySelector(".tree-vitals");
     if(!vitals || vitals.querySelector(".current-age"))return;
     const age=today.getFullYear()-Number(card.dataset.birthYear);
@@ -37,14 +37,21 @@ document.addEventListener("DOMContentLoaded",()=>{
   // Keep archive-item counts synchronized with the current generated metadata.
   // Counts therefore reflect the currently identified Website-tagged archive,
   // rather than old hard-coded values.
-  const countTargets=[...document.querySelectorAll("[data-archive-person]")];
+  const countTargets=[...document.querySelectorAll("[data-archive-person], [data-archive-tag]")];
   if(countTargets.length){
     fetch("photo_metadata.json",{cache:"no-store"})
       .then(r=>{if(!r.ok)throw new Error("metadata unavailable");return r.json();})
       .then(items=>{
         countTargets.forEach(el=>{
           const person=el.dataset.archivePerson;
-          const count=items.filter(x=>Array.isArray(x.people)&&x.people.includes(person)).length;
+          const tag=el.dataset.archiveTag;
+          const count=person
+            ? items.filter(x=>Array.isArray(x.people)&&x.people.includes(person)).length
+            : items.filter(x=>Array.isArray(x.tags)&&x.tags.includes(tag)).length;
+          if(el.closest("#fallen-first-responders")){
+            el.hidden=count===0;
+            if(count===0)return;
+          }
           el.textContent=`${count} archive item${count===1?"":"s"}`;
         });
       })
@@ -194,7 +201,8 @@ document.addEventListener("DOMContentLoaded",()=>{
 
   // Portrait still opens in the simple lightbox.
   const box=document.getElementById("lightbox"), boxImg=box?.querySelector("img"), close=document.getElementById("close");
-  document.querySelectorAll(".portrait-wrap img").forEach(img=>img.addEventListener("click",()=>{if(box&&boxImg){boxImg.src=img.src;box.classList.add("open");}}));
-  close?.addEventListener("click",()=>box?.classList.remove("open"));
-  box?.addEventListener("click",e=>{if(e.target===box)box.classList.remove("open");});
+  document.querySelectorAll(".portrait-wrap img, #fallen-first-responders .archive-community-photo img").forEach(img=>img.addEventListener("click",()=>{if(box&&boxImg){boxImg.src=img.src;boxImg.alt=img.alt||"";box.classList.add("open");box.setAttribute("aria-hidden","false");}}));
+  const closeBox=()=>{box?.classList.remove("open");box?.setAttribute("aria-hidden","true");};
+  close?.addEventListener("click",closeBox);
+  box?.addEventListener("click",e=>{if(e.target===box)closeBox();});
 });

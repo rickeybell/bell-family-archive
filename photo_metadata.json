@@ -15317,6 +15317,38 @@
     "gps": null
   },
   {
+    "path": "images/1991/1990s_0037_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0037_a.jpg",
+    "folder": "1991",
+    "date": "1990-07-01",
+    "people": [
+      "Dickey Bell",
+      "Sonja Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Myrtle Beach",
+      "People/Dickey Bell",
+      "People/Sonja Bell",
+      "People|Dickey Bell",
+      "People|Sonja Bell",
+      "Places/South Carolina",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina",
+      "Places|South Carolina|Myrtle Beach",
+      "Sonja Bell",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/1990/1990s_0044_a.jpg",
     "media_type": "photo",
     "file": "1990s_0044_a.jpg",
@@ -15989,38 +16021,6 @@
       "Rickey Bell",
       "South Carolina",
       "Stephanie Bell"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "Myrtle Beach",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
-    "path": "images/1991/1990s_0037_a.jpg",
-    "media_type": "photo",
-    "file": "1990s_0037_a.jpg",
-    "folder": "1991",
-    "date": "1991-07-01",
-    "people": [
-      "Dickey Bell",
-      "Sonja Bell"
-    ],
-    "tags": [
-      "Dickey Bell",
-      "Myrtle Beach",
-      "People/Dickey Bell",
-      "People/Sonja Bell",
-      "People|Dickey Bell",
-      "People|Sonja Bell",
-      "Places/South Carolina",
-      "Places/South Carolina/Myrtle Beach",
-      "Places|South Carolina",
-      "Places|South Carolina|Myrtle Beach",
-      "Sonja Bell",
-      "South Carolina"
     ],
     "title": "",
     "description": "",
@@ -16798,6 +16798,151 @@
     "title": "",
     "description": "Taken for a newspaper article about both were JROTC LCT and Battalion Commanders.",
     "location": "109 Fairview Dr",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1993/1990s_0093_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0093_a.jpg",
+    "folder": "1993",
+    "date": "1993-01-01",
+    "people": [
+      "Debbie Phillips",
+      "Patsy Cline's Angel",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Animal/Patsy Cline's Angel",
+      "Animal|Patsy Cline's Angel",
+      "Debbie Phillips",
+      "Patsy Cline's Angel",
+      "People/Debbie Phillips",
+      "People/Stephanie Bell",
+      "People|Debbie Phillips",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County/973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Places|South Carolina|Lancaster County|973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1993/1990s_0094_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0094_a.jpg",
+    "folder": "1993",
+    "date": "1993-01-01",
+    "people": [
+      "Debbie Phillips",
+      "Patsy Cline's Angel"
+    ],
+    "tags": [
+      "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Animal/Patsy Cline's Angel",
+      "Animal|Patsy Cline's Angel",
+      "Debbie Phillips",
+      "Patsy Cline's Angel",
+      "People/Debbie Phillips",
+      "People|Debbie Phillips",
+      "Places/South Carolina/Lancaster County/973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Places|South Carolina|Lancaster County|973 Community Lane Deb_Irvin_Rickey_Jarred Home"
+    ],
+    "title": "",
+    "description": "",
+    "location": "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1993/1990s_0095_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0095_a.jpg",
+    "folder": "1993",
+    "date": "1993-01-01",
+    "people": [
+      "Patsy Cline's Angel"
+    ],
+    "tags": [
+      "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Animal/Patsy Cline's Angel",
+      "Animal|Patsy Cline's Angel",
+      "Patsy Cline's Angel",
+      "Places/South Carolina/Lancaster County/973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Places|South Carolina|Lancaster County|973 Community Lane Deb_Irvin_Rickey_Jarred Home"
+    ],
+    "title": "",
+    "description": "",
+    "location": "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1993/1990s_0096_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0096_a.jpg",
+    "folder": "1993",
+    "date": "1993-01-01",
+    "people": [
+      "Debbie Phillips",
+      "Patsy Cline's Angel"
+    ],
+    "tags": [
+      "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Animal/Patsy Cline's Angel",
+      "Animal|Patsy Cline's Angel",
+      "Debbie Phillips",
+      "Patsy Cline's Angel",
+      "People/Debbie Phillips",
+      "People|Debbie Phillips",
+      "Places/South Carolina/Lancaster County/973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Places|South Carolina|Lancaster County|973 Community Lane Deb_Irvin_Rickey_Jarred Home"
+    ],
+    "title": "",
+    "description": "",
+    "location": "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1993/1990s_0110_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0110_a.jpg",
+    "folder": "1993",
+    "date": "1993-01-01",
+    "people": [
+      "Debbie Phillips",
+      "Patsy Cline's Angel"
+    ],
+    "tags": [
+      "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Animal/Patsy Cline's Angel",
+      "Animal|Patsy Cline's Angel",
+      "Debbie Phillips",
+      "Patsy Cline's Angel",
+      "People/Debbie Phillips",
+      "People|Debbie Phillips",
+      "Places/South Carolina/Lancaster County/973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Places|South Carolina|Lancaster County|973 Community Lane Deb_Irvin_Rickey_Jarred Home"
+    ],
+    "title": "",
+    "description": "",
+    "location": "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
@@ -22778,6 +22923,37 @@
     "gps": null
   },
   {
+    "path": "images/1996/1996_April_0014_a.jpg",
+    "media_type": "photo",
+    "file": "1996_April_0014_a.jpg",
+    "folder": "1996",
+    "date": "1996-04-25",
+    "people": [
+      "Patsy Cline's Angel"
+    ],
+    "tags": [
+      "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Animal/Patsy Cline's Angel",
+      "Animal|Patsy Cline's Angel",
+      "Lancaster County",
+      "Patsy Cline's Angel",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "South Carolina"
+    ],
+    "title": "",
+    "description": "",
+    "location": "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/1996/1996_April_0016_a.jpg",
     "media_type": "photo",
     "file": "1996_April_0016_a.jpg",
@@ -24002,32 +24178,6 @@
     "gps": null
   },
   {
-    "path": "images/2000/2000s_0010.jpg",
-    "media_type": "photo",
-    "file": "2000s_0010.jpg",
-    "folder": "2000",
-    "date": "2000-01-01",
-    "people": [
-      "Jarred Bell",
-      "Samatha Bell"
-    ],
-    "tags": [
-      "Jarred Bell",
-      "People/Jarred Bell",
-      "People/Samatha Bell",
-      "People|Jarred Bell",
-      "People|Samatha Bell",
-      "Samatha Bell"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
     "path": "images/2000/2000s_0010_a.jpg",
     "media_type": "photo",
     "file": "2000s_0010_a.jpg",
@@ -24500,6 +24650,37 @@
     "gps": null
   },
   {
+    "path": "images/2002/102-0275_IMG.JPG",
+    "media_type": "photo",
+    "file": "102-0275_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-05-24",
+    "people": [
+      "Tanisha"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Tanisha",
+      "Animal|Tanisha",
+      "Lancaster County",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "South Carolina",
+      "Tanisha"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2002/103-0357_IMG.JPG",
     "media_type": "photo",
     "file": "103-0357_IMG.JPG",
@@ -24630,6 +24811,31 @@
     "gps": null
   },
   {
+    "path": "images/2002/100-0007_IMG.JPG",
+    "media_type": "photo",
+    "file": "100-0007_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-06-15",
+    "people": [
+      "Sonja Bell"
+    ],
+    "tags": [
+      "Animal/Blaze",
+      "Animal|Blaze",
+      "Blaze",
+      "People/Sonja Bell",
+      "People|Sonja Bell",
+      "Sonja Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2002/108-0893_IMG.JPG",
     "media_type": "photo",
     "file": "108-0893_IMG.JPG",
@@ -24681,6 +24887,87 @@
     "description": "",
     "location": "",
     "city": "Kershaw",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/100-0039_IMG.JPG",
+    "media_type": "photo",
+    "file": "100-0039_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-06-22",
+    "people": [
+      "Sonja Bell"
+    ],
+    "tags": [
+      "Animal/Blaze",
+      "Animal|Blaze",
+      "Blaze",
+      "Myrtle Beach",
+      "People/Sonja Bell",
+      "People|Sonja Bell",
+      "Places/South Carolina/Myrtle Beach",
+      "Places/South Carolina/Myrtle Beach/Tilghman Shores",
+      "Places|South Carolina|Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach|Tilghman Shores",
+      "Sonja Bell",
+      "Tilghman Shores"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Tilghman Shores",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/109-0967_IMG.JPG",
+    "media_type": "photo",
+    "file": "109-0967_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-06-22",
+    "people": [
+      "Jason Hoke"
+    ],
+    "tags": [
+      "Fishing Creek",
+      "Jason Hoke",
+      "People/Jason Hoke",
+      "People|Jason Hoke",
+      "Places/South Carolina/Lancaster County/Fishing Creek",
+      "Places|South Carolina|Lancaster County|Fishing Creek"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Fishing Creek",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/110-1001_IMG.JPG",
+    "media_type": "photo",
+    "file": "110-1001_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-06-22",
+    "people": [
+      "Jason Hoke"
+    ],
+    "tags": [
+      "Fishing Creek",
+      "Jason Hoke",
+      "People/Jason Hoke",
+      "People|Jason Hoke",
+      "Places/South Carolina/Lancaster County/Fishing Creek",
+      "Places|South Carolina|Lancaster County|Fishing Creek"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Fishing Creek",
+    "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
     "gps": null
@@ -24744,6 +25031,81 @@
     "description": "",
     "location": "Tilghman Shores",
     "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/110-1055_IMG.JPG",
+    "media_type": "photo",
+    "file": "110-1055_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-06-23",
+    "people": [
+      "Jason Hoke"
+    ],
+    "tags": [
+      "Fishing Creek",
+      "Jason Hoke",
+      "People/Jason Hoke",
+      "People|Jason Hoke",
+      "Places/South Carolina/Lancaster County/Fishing Creek",
+      "Places|South Carolina|Lancaster County|Fishing Creek"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Fishing Creek",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/110-1062_IMG.JPG",
+    "media_type": "photo",
+    "file": "110-1062_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-06-23",
+    "people": [
+      "Jason Hoke"
+    ],
+    "tags": [
+      "Fishing Creek",
+      "Jason Hoke",
+      "People/Jason Hoke",
+      "People|Jason Hoke",
+      "Places/South Carolina/Lancaster County/Fishing Creek",
+      "Places|South Carolina|Lancaster County|Fishing Creek"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Fishing Creek",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/110-1074_IMG.JPG",
+    "media_type": "photo",
+    "file": "110-1074_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-06-23",
+    "people": [
+      "Jason Hoke"
+    ],
+    "tags": [
+      "Fishing Creek",
+      "Jason Hoke",
+      "People/Jason Hoke",
+      "People|Jason Hoke",
+      "Places/South Carolina/Lancaster County/Fishing Creek",
+      "Places|South Carolina|Lancaster County|Fishing Creek"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Fishing Creek",
+    "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
     "gps": null
@@ -24907,6 +25269,37 @@
       "Sonja Bell"
     ],
     "tags": [
+      "Myrtle Beach",
+      "People/Sonja Bell",
+      "People|Sonja Bell",
+      "Places/South Carolina/Myrtle Beach",
+      "Places/South Carolina/Myrtle Beach/Tilghman Shores",
+      "Places|South Carolina|Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach|Tilghman Shores",
+      "Sonja Bell",
+      "Tilghman Shores"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Tilghman Shores",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/101-0112_IMG.JPG",
+    "media_type": "photo",
+    "file": "101-0112_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-06-25",
+    "people": [
+      "Sonja Bell"
+    ],
+    "tags": [
+      "Animal/Blaze",
+      "Animal|Blaze",
+      "Blaze",
       "Myrtle Beach",
       "People/Sonja Bell",
       "People|Sonja Bell",
@@ -26532,6 +26925,36 @@
     "gps": null
   },
   {
+    "path": "images/2004/Rescue Drysuit 9-23-04 002.jpg",
+    "media_type": "photo",
+    "file": "Rescue Drysuit 9-23-04 002.jpg",
+    "folder": "2004",
+    "date": "2004-09-12",
+    "people": [
+      "Ann Hoke",
+      "Carl Whitcomb",
+      "Jason Hoke"
+    ],
+    "tags": [
+      "Ann Hoke",
+      "Carl Whitcomb",
+      "Jason Hoke",
+      "People/Ann Hoke",
+      "People/Carl Whitcomb",
+      "People/Jason Hoke",
+      "People|Ann Hoke",
+      "People|Carl Whitcomb",
+      "People|Jason Hoke"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2004/2004_10_4 025.jpg",
     "media_type": "photo",
     "file": "2004_10_4 025.jpg",
@@ -26552,6 +26975,88 @@
       "People|Jarred Bell",
       "People|Samatha Bell",
       "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/1 018.jpg",
+    "media_type": "photo",
+    "file": "1 018.jpg",
+    "folder": "2004",
+    "date": "2004-10-24",
+    "people": [
+      "Jason Hoke"
+    ],
+    "tags": [
+      "Jason Hoke",
+      "People/Jason Hoke",
+      "People|Jason Hoke"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/1 078.jpg",
+    "media_type": "photo",
+    "file": "1 078.jpg",
+    "folder": "2004",
+    "date": "2004-10-24",
+    "people": [
+      "Ann Hoke",
+      "Dustin Fletcher 'Freak'",
+      "Jason Hoke"
+    ],
+    "tags": [
+      "Ann Hoke",
+      "Dustin Fletcher 'Freak'",
+      "Jason Hoke",
+      "People/Ann Hoke",
+      "People/Dustin Fletcher 'Freak'",
+      "People/Jason Hoke",
+      "People|Ann Hoke",
+      "People|Dustin Fletcher 'Freak'",
+      "People|Jason Hoke"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/1 094.jpg",
+    "media_type": "photo",
+    "file": "1 094.jpg",
+    "folder": "2004",
+    "date": "2004-10-24",
+    "people": [
+      "Anna Burley",
+      "Dustin Fletcher 'Freak'",
+      "Jason Hoke"
+    ],
+    "tags": [
+      "Anna Burley",
+      "Dustin Fletcher 'Freak'",
+      "Jason Hoke",
+      "People/Anna Burley",
+      "People/Dustin Fletcher 'Freak'",
+      "People/Jason Hoke",
+      "People|Anna Burley",
+      "People|Dustin Fletcher 'Freak'",
+      "People|Jason Hoke"
     ],
     "title": "",
     "description": "",
@@ -26586,6 +27091,188 @@
       "People|Lisa Steen",
       "People|Stephanie Bell",
       "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/1 015.jpg",
+    "media_type": "photo",
+    "file": "1 015.jpg",
+    "folder": "2004",
+    "date": "2004-11-20",
+    "people": [
+      "Dustin Fletcher 'Freak'",
+      "Jason Hoke",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Dustin Fletcher 'Freak'",
+      "Jason Hoke",
+      "People/Dustin Fletcher 'Freak'",
+      "People/Jason Hoke",
+      "People/Stephanie Bell",
+      "People|Dustin Fletcher 'Freak'",
+      "People|Jason Hoke",
+      "People|Stephanie Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/1 016.jpg",
+    "media_type": "photo",
+    "file": "1 016.jpg",
+    "folder": "2004",
+    "date": "2004-11-20",
+    "people": [
+      "Jason Hoke"
+    ],
+    "tags": [
+      "Jason Hoke",
+      "People/Jason Hoke",
+      "People|Jason Hoke"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/1 019.jpg",
+    "media_type": "photo",
+    "file": "1 019.jpg",
+    "folder": "2004",
+    "date": "2004-11-20",
+    "people": [
+      "Ann Hoke",
+      "Jason Hoke"
+    ],
+    "tags": [
+      "Ann Hoke",
+      "Jason Hoke",
+      "People/Ann Hoke",
+      "People/Jason Hoke",
+      "People|Ann Hoke",
+      "People|Jason Hoke"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/1 045.jpg",
+    "media_type": "photo",
+    "file": "1 045.jpg",
+    "folder": "2004",
+    "date": "2004-11-20",
+    "people": [
+      "Ann Hoke",
+      "Brian Dove",
+      "Jason Hoke",
+      "Mickey Morgan"
+    ],
+    "tags": [
+      "Ann Hoke",
+      "Brian Dove",
+      "Jason Hoke",
+      "Mickey Morgan",
+      "People/Ann Hoke",
+      "People/Brian Dove",
+      "People/Jason Hoke",
+      "People/Mickey Morgan",
+      "People|Ann Hoke",
+      "People|Brian Dove",
+      "People|Jason Hoke",
+      "People|Mickey Morgan"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/1 063.jpg",
+    "media_type": "photo",
+    "file": "1 063.jpg",
+    "folder": "2004",
+    "date": "2004-11-20",
+    "people": [
+      "Jason Hoke",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Jason Hoke",
+      "People/Jason Hoke",
+      "People/Stephanie Bell",
+      "People|Jason Hoke",
+      "People|Stephanie Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/1 079.jpg",
+    "media_type": "photo",
+    "file": "1 079.jpg",
+    "folder": "2004",
+    "date": "2004-11-20",
+    "people": [
+      "Jason Hoke"
+    ],
+    "tags": [
+      "Jason Hoke",
+      "People/Jason Hoke",
+      "People|Jason Hoke"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/3 002.jpg",
+    "media_type": "photo",
+    "file": "3 002.jpg",
+    "folder": "2004",
+    "date": "2004-12-18",
+    "people": [
+      "Jason Hoke"
+    ],
+    "tags": [
+      "Jason Hoke",
+      "People/Jason Hoke",
+      "People|Jason Hoke"
     ],
     "title": "",
     "description": "",
@@ -26896,6 +27583,28 @@
     "gps": null
   },
   {
+    "path": "images/2006/05-06-06_1457.jpg",
+    "media_type": "photo",
+    "file": "05-06-06_1457.jpg",
+    "folder": "2006",
+    "date": "2006-05-06",
+    "people": [
+      "Jason Hoke"
+    ],
+    "tags": [
+      "Jason Hoke",
+      "People/Jason Hoke",
+      "People|Jason Hoke"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2006/2006_0004_a.jpg",
     "media_type": "photo",
     "file": "2006_0004_a.jpg",
@@ -27003,6 +27712,36 @@
       "People|Helen Bell",
       "People|Spooky Bell",
       "Spooky Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2007/0409062128.jpg",
+    "media_type": "photo",
+    "file": "0409062128.jpg",
+    "folder": "2007",
+    "date": "2007-01-01",
+    "people": [
+      "Jason Hoke",
+      "Mickey Morgan",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Jason Hoke",
+      "Mickey Morgan",
+      "People/Jason Hoke",
+      "People/Mickey Morgan",
+      "People/Rickey Bell",
+      "People|Jason Hoke",
+      "People|Mickey Morgan",
+      "People|Rickey Bell",
+      "Rickey Bell"
     ],
     "title": "",
     "description": "",
@@ -27207,6 +27946,31 @@
     "gps": null
   },
   {
+    "path": "images/2008/DSCI0056.JPG",
+    "media_type": "photo",
+    "file": "DSCI0056.JPG",
+    "folder": "2008",
+    "date": "2008-03-31",
+    "people": [
+      "Tanisha"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Tanisha",
+      "Animal|Tanisha",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Tanisha"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2008/209.jpg",
     "media_type": "photo",
     "file": "209.jpg",
@@ -27230,6 +27994,31 @@
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2008/018.JPG",
+    "media_type": "photo",
+    "file": "018.JPG",
+    "folder": "2008",
+    "date": "2008-06-03",
+    "people": [
+      "Tanisha"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Tanisha",
+      "Animal|Tanisha",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Tanisha"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -27278,6 +28067,56 @@
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2008/FILE0055.JPG",
+    "media_type": "photo",
+    "file": "FILE0055.JPG",
+    "folder": "2008",
+    "date": "2008-09-19",
+    "people": [
+      "Tanisha"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Tanisha",
+      "Animal|Tanisha",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Tanisha"
+    ],
+    "title": "",
+    "description": "DCIM\\100MEDIA",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2008/FILE0060.JPG",
+    "media_type": "photo",
+    "file": "FILE0060.JPG",
+    "folder": "2008",
+    "date": "2008-09-20",
+    "people": [
+      "Tanisha"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Tanisha",
+      "Animal|Tanisha",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Tanisha"
+    ],
+    "title": "",
+    "description": "DCIM\\100MEDIA",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -27397,6 +28236,31 @@
     "gps": null
   },
   {
+    "path": "images/2009/IMAGE_147.jpg",
+    "media_type": "photo",
+    "file": "IMAGE_147.jpg",
+    "folder": "2009",
+    "date": "2009-03-07",
+    "people": [
+      "Tanisha"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Tanisha",
+      "Animal|Tanisha",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Tanisha"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2009/IMAGE_182.jpg",
     "media_type": "photo",
     "file": "IMAGE_182.jpg",
@@ -27414,6 +28278,38 @@
       "People|Andrew Morgan",
       "People|Jarred Bell"
     ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2009/518329165_10163331326685907_3621366299995287460_n.jpg",
+    "media_type": "photo",
+    "file": "518329165_10163331326685907_3621366299995287460_n.jpg",
+    "folder": "2009",
+    "date": "2009-05-04",
+    "people": [],
+    "tags": [],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2009/518349465_10163331330870907_699826374149744219_n.jpg",
+    "media_type": "photo",
+    "file": "518349465_10163331330870907_699826374149744219_n.jpg",
+    "folder": "2009",
+    "date": "2009-05-04",
+    "people": [],
+    "tags": [],
     "title": "",
     "description": "",
     "location": "",
@@ -27530,6 +28426,35 @@
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2010/101_0096.JPG",
+    "media_type": "photo",
+    "file": "101_0096.JPG",
+    "folder": "2010",
+    "date": "2010-02-13",
+    "people": [
+      "Jarred Bell",
+      "Tanisha"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Tanisha",
+      "Animal|Tanisha",
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People|Jarred Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Tanisha"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -27741,6 +28666,53 @@
     "gps": null
   },
   {
+    "path": "images/2011/416.JPG",
+    "media_type": "photo",
+    "file": "416.JPG",
+    "folder": "2011",
+    "date": "2010-04-11",
+    "people": [
+      "Tanisha"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Tanisha",
+      "Animal|Tanisha",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Tanisha"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2010/506148369_3031705520338383_354332108135005363_n.jpg",
+    "media_type": "photo",
+    "file": "506148369_3031705520338383_354332108135005363_n.jpg",
+    "folder": "2010",
+    "date": "2010-06-03",
+    "people": [
+      "Jason Hoke"
+    ],
+    "tags": [
+      "Jason Hoke",
+      "People/Jason Hoke",
+      "People|Jason Hoke"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2011/103_0902.JPG",
     "media_type": "photo",
     "file": "103_0902.JPG",
@@ -27815,6 +28787,31 @@
     "gps": null
   },
   {
+    "path": "images/2011/103_0927.JPG",
+    "media_type": "photo",
+    "file": "103_0927.JPG",
+    "folder": "2011",
+    "date": "2010-12-26",
+    "people": [
+      "Tanisha"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Tanisha",
+      "Animal|Tanisha",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Tanisha"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2011/813.JPG",
     "media_type": "photo",
     "file": "813.JPG",
@@ -27871,6 +28868,34 @@
     "gps": null
   },
   {
+    "path": "images/2011/Lancaster-20110415-00175.jpg",
+    "media_type": "photo",
+    "file": "Lancaster-20110415-00175.jpg",
+    "folder": "2011",
+    "date": "2011-04-15",
+    "people": [
+      "Tanisha"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Tanisha",
+      "Animal|Tanisha",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Tanisha"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6934166494444,
+      "lon": -80.8252833
+    }
+  },
+  {
     "path": "images/2011/103_1037.JPG",
     "media_type": "photo",
     "file": "103_1037.JPG",
@@ -27891,6 +28916,34 @@
     "state": "",
     "country": "",
     "gps": null
+  },
+  {
+    "path": "images/2011/Lancaster-20110427-00196.jpg",
+    "media_type": "photo",
+    "file": "Lancaster-20110427-00196.jpg",
+    "folder": "2011",
+    "date": "2011-04-27",
+    "people": [
+      "Tanisha"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Tanisha",
+      "Animal|Tanisha",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Tanisha"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7222666333333,
+      "lon": -80.8075666333333
+    }
   },
   {
     "path": "images/2011/495343390_9563659190408544_596081264550873104_n.jpg",
@@ -27937,6 +28990,22 @@
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2012/504865242_23981251511525179_1340636950249587489_n.jpg",
+    "media_type": "photo",
+    "file": "504865242_23981251511525179_1340636950249587489_n.jpg",
+    "folder": "2012",
+    "date": "2012-05-31",
+    "people": [],
+    "tags": [],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
     "gps": null
   },
   {
@@ -28132,6 +29201,37 @@
     }
   },
   {
+    "path": "images/2013/20130309_214223363_iOS.jpg",
+    "media_type": "photo",
+    "file": "20130309_214223363_iOS.jpg",
+    "folder": "2013",
+    "date": "2013-03-09",
+    "people": [
+      "Lady"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Lady",
+      "Animal|Lady",
+      "Lady",
+      "Lancaster County",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6929999827778,
+      "lon": -80.8254999833333
+    }
+  },
+  {
     "path": "images/2013/20130314_223627748_iOS.jpg",
     "media_type": "photo",
     "file": "20130314_223627748_iOS.jpg",
@@ -28151,6 +29251,31 @@
     "title": "",
     "description": "",
     "location": "South Middle School",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2013/20130525_195538000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20130525_195538000_iOS.jpg",
+    "folder": "2013",
+    "date": "2013-05-25",
+    "people": [
+      "Lady"
+    ],
+    "tags": [
+      "403 W Arch St",
+      "Animal/Lady",
+      "Animal|Lady",
+      "Lady",
+      "Places/South Carolina/Lancaster County/403 W Arch St",
+      "Places|South Carolina|Lancaster County|403 W Arch St"
+    ],
+    "title": "",
+    "description": "",
+    "location": "403 W Arch St",
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
@@ -28232,6 +29357,92 @@
     "gps": null
   },
   {
+    "path": "images/2014/20140515_115043000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20140515_115043000_iOS.jpg",
+    "folder": "2014",
+    "date": "2014-05-15",
+    "people": [
+      "Lady"
+    ],
+    "tags": [
+      "Animal/Lady",
+      "Animal|Lady",
+      "Lady"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2014/20140717_001418376_iOS.jpg",
+    "media_type": "photo",
+    "file": "20140717_001418376_iOS.jpg",
+    "folder": "2014",
+    "date": "2014-07-16",
+    "people": [
+      "Midnight",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Midnight",
+      "Animal|Midnight",
+      "Midnight",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6933472166667,
+      "lon": -80.8252194336111
+    }
+  },
+  {
+    "path": "images/2014/20140809_010914911_iOS.jpg",
+    "media_type": "photo",
+    "file": "20140809_010914911_iOS.jpg",
+    "folder": "2014",
+    "date": "2014-08-08",
+    "people": [
+      "Lady",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Lady",
+      "Animal|Lady",
+      "Lady",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6934166494444,
+      "lon": -80.8251333166667
+    }
+  },
+  {
     "path": "images/2014/20150511_222036017_iOS.jpg",
     "media_type": "photo",
     "file": "20150511_222036017_iOS.jpg",
@@ -28281,6 +29492,34 @@
     "gps": null
   },
   {
+    "path": "images/2014/IMG_0062.JPG (2).JPG",
+    "media_type": "photo",
+    "file": "IMG_0062.JPG (2).JPG",
+    "folder": "2014",
+    "date": "2014-11-13",
+    "people": [
+      "Midnight"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Midnight",
+      "Animal|Midnight",
+      "Midnight",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6935583336111,
+      "lon": -80.8251638666667
+    }
+  },
+  {
     "path": "images/2014/20141129_183941954_iOS.jpg",
     "media_type": "photo",
     "file": "20141129_183941954_iOS.jpg",
@@ -28307,6 +29546,84 @@
       "lat": 28.8387472169444,
       "lon": -82.9774388833333
     }
+  },
+  {
+    "path": "images/2014/20141223_013214618_iOS.jpg",
+    "media_type": "photo",
+    "file": "20141223_013214618_iOS.jpg",
+    "folder": "2014",
+    "date": "2014-12-22",
+    "people": [
+      "Midnight"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Midnight",
+      "Animal|Midnight",
+      "Midnight",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6935972172222,
+      "lon": -80.8251111
+    }
+  },
+  {
+    "path": "images/2015/0186dfc34753046024d656ab860b6cde82334891dd.jpg",
+    "media_type": "photo",
+    "file": "0186dfc34753046024d656ab860b6cde82334891dd.jpg",
+    "folder": "2015",
+    "date": "2015-01-01",
+    "people": [
+      "Lady"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Lady",
+      "Animal|Lady",
+      "Lady",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2015/20150427_210942.jpg",
+    "media_type": "photo",
+    "file": "20150427_210942.jpg",
+    "folder": "2015",
+    "date": "2015-04-27",
+    "people": [
+      "Midnight"
+    ],
+    "tags": [
+      "909 Confederate Ave",
+      "Animal/Midnight",
+      "Animal|Midnight",
+      "Midnight",
+      "Places/South Carolina/Lancaster County/909 Confederate Ave",
+      "Places|South Carolina|Lancaster County|909 Confederate Ave"
+    ],
+    "title": "",
+    "description": "",
+    "location": "909 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
   },
   {
     "path": "audio/2015/Irvin VM to Derrick Joyner.mp3",
@@ -28530,6 +29847,120 @@
     }
   },
   {
+    "path": "images/2015/20150910_000358578_iOS.jpg",
+    "media_type": "photo",
+    "file": "20150910_000358578_iOS.jpg",
+    "folder": "2015",
+    "date": "2015-09-09",
+    "people": [
+      "Midnight"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Midnight",
+      "Animal|Midnight",
+      "Midnight",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6936694336111,
+      "lon": -80.8250972
+    }
+  },
+  {
+    "path": "images/2015/20150910_001859490_iOS.jpg",
+    "media_type": "photo",
+    "file": "20150910_001859490_iOS.jpg",
+    "folder": "2015",
+    "date": "2015-09-09",
+    "people": [
+      "Lady",
+      "Midnight",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Lady",
+      "Animal/Midnight",
+      "Animal|Lady",
+      "Animal|Midnight",
+      "Lady",
+      "Midnight",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6936305502778,
+      "lon": -80.8251194163889
+    }
+  },
+  {
+    "path": "images/2015/20151212_013059716_iOS.jpg",
+    "media_type": "photo",
+    "file": "20151212_013059716_iOS.jpg",
+    "folder": "2015",
+    "date": "2015-12-10",
+    "people": [
+      "Lady"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Lady",
+      "Animal|Lady",
+      "Lady",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.693175,
+      "lon": -80.8256527666667
+    }
+  },
+  {
+    "path": "images/2015/01d815de3da24bfc3e90af58abab4071230621d3ee.jpg",
+    "media_type": "photo",
+    "file": "01d815de3da24bfc3e90af58abab4071230621d3ee.jpg",
+    "folder": "2015",
+    "date": "2015-12-13",
+    "people": [
+      "Lady"
+    ],
+    "tags": [
+      "Animal/Lady",
+      "Animal|Lady",
+      "Lady"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2016/Document_20260731_0001.jpg",
     "media_type": "photo",
     "file": "Document_20260731_0001.jpg",
@@ -28577,6 +30008,34 @@
     "state": "",
     "country": "",
     "gps": null
+  },
+  {
+    "path": "images/2016/20161001_233118089_iOS.jpg",
+    "media_type": "photo",
+    "file": "20161001_233118089_iOS.jpg",
+    "folder": "2016",
+    "date": "2016-10-01",
+    "people": [
+      "Midnight"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Midnight",
+      "Animal|Midnight",
+      "Midnight",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6933888838889,
+      "lon": -80.8252249663889
+    }
   },
   {
     "path": "images/2016/20161008_175348092_iOS.jpg",
@@ -28810,6 +30269,34 @@
     "gps": null
   },
   {
+    "path": "images/2016/20161217_153332565_iOS.jpg",
+    "media_type": "photo",
+    "file": "20161217_153332565_iOS.jpg",
+    "folder": "2016",
+    "date": "2016-12-17",
+    "people": [
+      "Midnight"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Midnight",
+      "Animal|Midnight",
+      "Midnight",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6932611,
+      "lon": -80.8250972
+    }
+  },
+  {
     "path": "images/2016/20161227_023031180_iOS.jpg",
     "media_type": "photo",
     "file": "20161227_023031180_iOS.jpg",
@@ -28839,6 +30326,34 @@
     "gps": {
       "lat": 34.6933833333333,
       "lon": -80.8252805497222
+    }
+  },
+  {
+    "path": "images/2017/20170102_193625392_iOS.jpg",
+    "media_type": "photo",
+    "file": "20170102_193625392_iOS.jpg",
+    "folder": "2017",
+    "date": "2017-01-02",
+    "people": [
+      "Gabby"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Gabby",
+      "Animal|Gabby",
+      "Gabby",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6934444163889,
+      "lon": -80.8251499833333
     }
   },
   {
@@ -28872,6 +30387,70 @@
       "lat": 34.7305416669444,
       "lon": -80.7609416494444
     }
+  },
+  {
+    "path": "images/2017/468008985_10232519895967183_3421278970797980434_n.jpg",
+    "media_type": "photo",
+    "file": "468008985_10232519895967183_3421278970797980434_n.jpg",
+    "folder": "2017",
+    "date": "2017-10-02",
+    "people": [],
+    "tags": [],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2017/468543829_10162304518174456_3941061009983554318_n.jpg",
+    "media_type": "photo",
+    "file": "468543829_10162304518174456_3941061009983554318_n.jpg",
+    "folder": "2017",
+    "date": "2017-10-02",
+    "people": [],
+    "tags": [],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2017/506353102_3031705583671710_2119485921027383882_n.jpg",
+    "media_type": "photo",
+    "file": "506353102_3031705583671710_2119485921027383882_n.jpg",
+    "folder": "2017",
+    "date": "2017-10-02",
+    "people": [],
+    "tags": [],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2017/514416987_24401491146135820_4944414982021118326_n.jpg",
+    "media_type": "photo",
+    "file": "514416987_24401491146135820_4944414982021118326_n.jpg",
+    "folder": "2017",
+    "date": "2017-10-02",
+    "people": [],
+    "tags": [],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
   },
   {
     "path": "images/2019/FB_IMG_1559348679999.jpg",
@@ -29178,6 +30757,34 @@
     "gps": {
       "lat": 34.7313,
       "lon": -80.7833000002778
+    }
+  },
+  {
+    "path": "images/2019/20190603_203150.jpg",
+    "media_type": "photo",
+    "file": "20190603_203150.jpg",
+    "folder": "2019",
+    "date": "2019-06-03",
+    "people": [
+      "Lady"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Lady",
+      "Animal|Lady",
+      "Lady",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6932557666667,
+      "lon": -80.8251711836111
     }
   },
   {
@@ -29957,6 +31564,31 @@
     "gps": null
   },
   {
+    "path": "images/2020/20201021_175637.jpg",
+    "media_type": "photo",
+    "file": "20201021_175637.jpg",
+    "folder": "2020",
+    "date": "2020-10-21",
+    "people": [
+      "Gabby"
+    ],
+    "tags": [
+      "Animal/Gabby",
+      "Animal|Gabby",
+      "Gabby"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": {
+      "lat": 34.6933958838889,
+      "lon": -80.8252511836111
+    }
+  },
+  {
     "path": "images/2021/20210404_170354.jpg",
     "media_type": "photo",
     "file": "20210404_170354.jpg",
@@ -30324,6 +31956,31 @@
     "gps": null
   },
   {
+    "path": "images/2022/Jun16$13.JPG",
+    "media_type": "photo",
+    "file": "Jun16$13.JPG",
+    "folder": "2022",
+    "date": "2022-05-26",
+    "people": [
+      "Sonja Bell"
+    ],
+    "tags": [
+      "Animal/Blaze",
+      "Animal|Blaze",
+      "Blaze",
+      "People/Sonja Bell",
+      "People|Sonja Bell",
+      "Sonja Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2022/Sep18$60.JPG",
     "media_type": "photo",
     "file": "Sep18$60.JPG",
@@ -30347,6 +32004,34 @@
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2022/slb&blaze.JPG",
+    "media_type": "photo",
+    "file": "slb&blaze.JPG",
+    "folder": "2022",
+    "date": "2022-05-26",
+    "people": [
+      "Sonja Bell"
+    ],
+    "tags": [
+      "Animal/Blaze",
+      "Animal|Blaze",
+      "Blaze",
+      "People/Sonja Bell",
+      "People|Sonja Bell",
+      "Places/South Carolina/Myrtle Beach/Tilghman Shores",
+      "Places|South Carolina|Myrtle Beach|Tilghman Shores",
+      "Sonja Bell",
+      "Tilghman Shores"
+    ],
+    "title": "",
+    "description": "File written by Adobe Photoshop� 4.0",
+    "location": "Tilghman Shores",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -30484,6 +32169,142 @@
     "gps": null
   },
   {
+    "path": "images/2022/20221216_171049.jpg",
+    "media_type": "photo",
+    "file": "20221216_171049.jpg",
+    "folder": "2022",
+    "date": "2022-12-16",
+    "people": [
+      "Gabby"
+    ],
+    "tags": [
+      "Animal/Gabby",
+      "Animal|Gabby",
+      "Gabby"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": {
+      "lat": 34.6934144833333,
+      "lon": -80.8252209
+    }
+  },
+  {
+    "path": "images/2023/20230611_144847.jpg",
+    "media_type": "photo",
+    "file": "20230611_144847.jpg",
+    "folder": "2023",
+    "date": "2023-06-11",
+    "people": [
+      "Lady",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Animal/Lady",
+      "Animal|Lady",
+      "Lady",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": {
+      "lat": 34.6933444,
+      "lon": -80.8251367
+    }
+  },
+  {
+    "path": "images/2023/20230619_190914.jpg",
+    "media_type": "photo",
+    "file": "20230619_190914.jpg",
+    "folder": "2023",
+    "date": "2023-06-19",
+    "people": [
+      "Aria",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "909 Confederate Ave",
+      "Animal/Aria",
+      "Animal|Aria",
+      "Aria",
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/909 Confederate Ave",
+      "Places|South Carolina|Lancaster County|909 Confederate Ave",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "909 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6938427002778,
+      "lon": -80.8248968002778
+    }
+  },
+  {
+    "path": "images/2023/20230730_214743.jpg",
+    "media_type": "photo",
+    "file": "20230730_214743.jpg",
+    "folder": "2023",
+    "date": "2023-07-30",
+    "people": [
+      "Aria"
+    ],
+    "tags": [
+      "Animal/Aria",
+      "Animal|Aria",
+      "Aria"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": {
+      "lat": 34.6934971,
+      "lon": -80.8250524833333
+    }
+  },
+  {
+    "path": "images/2023/20230805_231025 1.jpg",
+    "media_type": "photo",
+    "file": "20230805_231025 1.jpg",
+    "folder": "2023",
+    "date": "2023-08-05",
+    "people": [
+      "Aria"
+    ],
+    "tags": [
+      "Animal/Aria",
+      "Animal|Aria",
+      "Aria"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": {
+      "lat": 34.6934011,
+      "lon": -80.8252367833333
+    }
+  },
+  {
     "path": "images/2023/20230907_190738.jpg",
     "media_type": "photo",
     "file": "20230907_190738.jpg",
@@ -30609,6 +32430,28 @@
     "gps": null
   },
   {
+    "path": "images/2025/20250628_003129571_iOS.jpg",
+    "media_type": "photo",
+    "file": "20250628_003129571_iOS.jpg",
+    "folder": "2025",
+    "date": "2025-07-04",
+    "people": [
+      "Gabby"
+    ],
+    "tags": [
+      "Animal/Gabby",
+      "Animal|Gabby",
+      "Gabby"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "audio/2025/Voicemail_from_Dickey Bell_2025_09_11_14_39_06.mp3",
     "media_type": "audio",
     "file": "Voicemail_from_Dickey Bell_2025_09_11_14_39_06.mp3",
@@ -30696,6 +32539,50 @@
     "gps": null
   },
   {
+    "path": "images/2025/Lady.jpg",
+    "media_type": "photo",
+    "file": "Lady.jpg",
+    "folder": "2025",
+    "date": "2025-12-19",
+    "people": [
+      "Lady"
+    ],
+    "tags": [
+      "Animal/Lady",
+      "Animal|Lady",
+      "Lady"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2025/YPdJbPoC.jpg",
+    "media_type": "photo",
+    "file": "YPdJbPoC.jpg",
+    "folder": "2025",
+    "date": "2025-12-19",
+    "people": [
+      "Lady"
+    ],
+    "tags": [
+      "Animal/Lady",
+      "Animal|Lady",
+      "Lady"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2026/627971633_2141999573235693_7603030066341199478_n.jpg",
     "media_type": "photo",
     "file": "627971633_2141999573235693_7603030066341199478_n.jpg",
@@ -30708,6 +32595,28 @@
       "Dominique Burwell",
       "People/Dominique Burwell",
       "People|Dominique Burwell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2026/20260217_215409.jpg",
+    "media_type": "photo",
+    "file": "20260217_215409.jpg",
+    "folder": "2026",
+    "date": "2026-02-20",
+    "people": [
+      "Lady"
+    ],
+    "tags": [
+      "Animal/Lady",
+      "Animal|Lady",
+      "Lady"
     ],
     "title": "",
     "description": "",

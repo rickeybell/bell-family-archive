@@ -220,8 +220,19 @@ for ($i=0; $i -lt $files.Count; $i += 50) {
     if ($batch.Count -eq 0) { continue }
     $args = @('-q','-q','-json','-Subject','-Keywords','-HierarchicalSubject','-PersonInImage','-RegionPersonDisplayName','-Title','-Description','-Caption-Abstract','-DateTimeOriginal','-CreateDate','-GPSLatitude','-GPSLongitude')
     foreach ($file in $batch) { $args += $file.FullName }
-    $json = & $ExifTool @args 2>$null
-    if ($LASTEXITCODE -ne 0) { throw "ExifTool failed while reading video metadata (exit $LASTEXITCODE)." }
+    # Windows PowerShell promotes harmless native stderr text (including ExifTool's
+    # Perl locale warning) to an error when the script uses ErrorActionPreference=Stop.
+    # Suppress that stream for this call, but still enforce ExifTool's real exit code.
+    $priorErrorActionPreference = $ErrorActionPreference
+    $ErrorActionPreference = 'Continue'
+    try {
+        $json = & $ExifTool @args 2>$null
+        $exifExitCode = $LASTEXITCODE
+    }
+    finally {
+        $ErrorActionPreference = $priorErrorActionPreference
+    }
+    if ($exifExitCode -ne 0) { throw "ExifTool failed while reading video metadata (exit $exifExitCode)." }
     if (!$json) { continue }
     $records = (($json -join [Environment]::NewLine) | ConvertFrom-Json)
     if ($records -isnot [System.Array]) { $records = @($records) }

@@ -16,6 +16,8 @@
 # v2.12: Video tag is now enforced unconditionally for every MOV/MP4/M4V/AVI.
 #        REPORT marks every supported video for an additive Video-tag write.
 #        Existing tags are preserved; missing sidecars are created safely.
+# Confederate Avenue safeguard: an existing 900 Confederate Ave tag takes
+# priority and prevents the 909 Confederate Ave tag from being added.
 
 # -----------------------------
 # County definitions
@@ -823,6 +825,43 @@ foreach ($Item in $Items) {
     }
 
     if ($confederateMatches.Count -gt 0) {
+        # Some GPS points can fall in or near the 909 property polygon even when
+        # the media has already been intentionally identified as 900. Preserve
+        # that existing identification and never add 909 in that situation.
+        $has909Match=@($confederateMatches | Where-Object { $_.LeafTag -eq '909 Confederate Ave' }).Count -gt 0
+        $confederate900Property=$ConfederateProperties | Where-Object {
+            $_.LeafTag -eq '900 Confederate Ave'
+        } | Select-Object -First 1
+        $alreadyTagged900=$false
+
+        if ($has909Match -and $confederate900Property) {
+            $alreadyTagged900=Test-AlreadyHasCountyTag `
+                -MediaPath $fullPath `
+                -County $confederate900Property
+        }
+
+        if ($has909Match -and $alreadyTagged900) {
+            $Rows += [PSCustomObject]@{
+                FileName=$Item.FileName
+                FileType=$kind
+                FullPath=$fullPath
+                HasGPS='YES'
+                Latitude=[Math]::Round($lat,7)
+                Longitude=[Math]::Round($lon,7)
+                DistanceTo973Ft=[Math]::Round($distanceFeet,1)
+                DistanceToDouglasFt=[Math]::Round($douglasDistanceFeet,1)
+                DistanceToSubFiberFt=[Math]::Round($subFiberDistanceFeet,1)
+                ConfederateMatch=($confederateMatches.Name -join ' | ')
+                CountyMatch='Lancaster County'
+                ProtectedChildLocation='900 Confederate Ave'
+                AlreadyCountyTag='YES'
+                VideoTagNeeded=if($videoTagNeeded){'YES'}else{'NO'}
+                Action='SKIP - existing 900 Confederate Ave blocks 909 Confederate Ave'
+                ProposedTag=''
+            }
+            continue
+        }
+
         # 900 and the old 910 map zone intentionally produce the same 900 tag.
         $uniqueConfederateTags=@($confederateMatches | ForEach-Object { $_.DigiKamTag } | Sort-Object -Unique)
 
@@ -1179,6 +1218,7 @@ $skipErwin=@($Rows | Where-Object {$_.Action -eq 'SKIP - already Erwin Elementar
 $skip900=@($Rows | Where-Object {$_.Action -eq 'SKIP - already 900 Confederate Ave tagged'}).Count
 $tag900=@($Rows | Where-Object {$_.Action -eq 'TAG 900 Confederate Ave'})
 $skip909=@($Rows | Where-Object {$_.Action -eq 'SKIP - already 909 Confederate Ave tagged'}).Count
+$skip909Because900=@($Rows | Where-Object {$_.Action -eq 'SKIP - existing 900 Confederate Ave blocks 909 Confederate Ave'}).Count
 $tag909=@($Rows | Where-Object {$_.Action -eq 'TAG 909 Confederate Ave'})
 $skipSubFiber=@($Rows | Where-Object {$_.Action -eq 'SKIP - already Sub Fiber tagged'}).Count
 $tagSubFiber=@($Rows | Where-Object {$_.Action -eq 'TAG Sub Fiber'})
@@ -1216,6 +1256,7 @@ Write-Host "Erwin tags needing GPS     : $($embedErwin.Count)"
 Write-Host "Skipped - already 900 tag  : $skip900"
 Write-Host "900/910 GPS matches/tag    : $($tag900.Count)"
 Write-Host "Skipped - already 909 tag  : $skip909"
+Write-Host "Skipped 909 - kept 900 tag : $skip909Because900"
 Write-Host "909 GPS matches/tag        : $($tag909.Count)"
 Write-Host "Skipped - already SubFiber : $skipSubFiber"
 Write-Host "Sub Fiber GPS matches/tag  : $($tagSubFiber.Count)"
@@ -1274,6 +1315,7 @@ if ($toWrite.Count -eq 0) {
 Write-Host ""
 Write-Host "WRITE mode will:" -ForegroundColor Yellow
 Write-Host "  Confederate Ave: existing 900 polygon + 910 map-zone -> 900 tag; 909 polygon -> 909 tag"
+Write-Host "  Confederate Ave: an existing 900 tag always blocks a new 909 tag"
 Write-Host "  973 rule: GPS within 500 ft -> add the specific home tag"
 Write-Host "  973 rule: photo has the home tag but no GPS -> embed the fixed GPS in photo + sidecar"
 Write-Host "  2044 Douglas Rd: GPS within 500 ft -> tag; existing tag without GPS -> embed fixed GPS"
