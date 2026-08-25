@@ -18,7 +18,7 @@
   <nav class="top-nav">
     <a href="index.html">Family Tree</a>
     <a href="dickey.html">Dickey Bell</a>
-    <a href="gallery.html">Photo Gallery</a>
+    <a href="#archive">Photo Gallery</a>
   </nav>
 </header>
 
@@ -35,20 +35,25 @@
     <p class="person-subtitle">Bell family member</p>
     <p>Debbie Phillips was Dickey Bell's former wife and is Rickey Bell's mother.</p>
     <div class="tree-vitals person-page-vitals"><span><strong>Born:</strong> July 17, 1956</span><span><strong>Died:</strong> October 21, 2014</span><span><strong>Age at death:</strong> 58</span><span><strong>Cause of death:</strong> Cancer</span></div>
-    <div class="person-count">0 currently identified archive items</div>
+    <div class="person-count" data-archive-person="Debbie Phillips">41 currently identified archive items</div>
   </div>
 </section>
 
-<section class="tree-note">
-  <h2>Current Photo Archive</h2>
-  <p>Archive items currently tagged with Debbie Phillips.</p>
-  <p><a href="debbie-photos.html"><strong>Open Debbie Phillips photo archive &rarr;</strong></a></p>
-</section>
 
+<section class="embedded-archive" id="archive" aria-labelledby="debbie-archive-title">
+  <div class="embedded-archive-heading">
+    <div class="eyebrow">Bell Family Archive</div>
+    <h2 id="debbie-archive-title">Debbie&rsquo;s Photo Gallery</h2>
+    <p>Browse Debbie&rsquo;s 41 currently identified archive items below.</p>
+  </div>
+  <div class="embedded-archive-content" data-gallery-source="debbie-photos.html" data-gallery-name="Debbie" aria-busy="true">
+    <p class="embedded-archive-loading">Loading Debbie&rsquo;s photo gallery&hellip;</p>
+  </div>
+</section>
 </main>
 </div>
 
 <footer>&copy; 2026 The Bell Family Archive &middot; Preserving Our Legacy for Future Generations</footer>
-<script src="person.js"></script>
+<script src="embedded-gallery.js"></script><script src="person.js"></script>
 </body>
 </html>

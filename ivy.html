@@ -18,7 +18,7 @@
   <nav class="top-nav">
     <a href="index.html">Family Tree</a>
     <a href="dickey.html">Dickey Bell</a>
-    <a href="gallery.html">Photo Gallery</a>
+    <a href="#archive">Photo Gallery</a>
   </nav>
 </header>
 
@@ -35,20 +35,25 @@
     <p class="person-subtitle">Bell family descendant</p>
     <p>A dedicated archive page for Ivy Bell, daughter of Jarred Bell and Dominique Burwell.</p>
     <div class="tree-vitals person-page-vitals"><span><strong>Born:</strong> May 3, 2022</span></div>
-    <div class="person-count">7 currently identified archive items</div>
+    <div class="person-count" data-archive-person="Ivy Bell">10 currently identified archive items</div>
   </div>
 </section>
 
-<section class="tree-note">
-  <h2>Current Photo Archive</h2>
-  <p>This page is ready to use the Bell Family Archive metadata when photographs are tagged with Ivy Bell.</p>
-  <p><a href="ivy-photos.html"><strong>Open Ivy Bell photo archive &rarr;</strong></a></p>
-</section>
 
+<section class="embedded-archive" id="archive" aria-labelledby="ivy-archive-title">
+  <div class="embedded-archive-heading">
+    <div class="eyebrow">Bell Family Archive</div>
+    <h2 id="ivy-archive-title">Ivy&rsquo;s Photo Gallery</h2>
+    <p>Browse Ivy&rsquo;s 10 currently identified archive items below.</p>
+  </div>
+  <div class="embedded-archive-content" data-gallery-source="ivy-photos.html" data-gallery-name="Ivy" aria-busy="true">
+    <p class="embedded-archive-loading">Loading Ivy&rsquo;s photo gallery&hellip;</p>
+  </div>
+</section>
 </main>
 </div>
 
 <footer>&copy; 2026 The Bell Family Archive &middot; Preserving Our Legacy for Future Generations</footer>
-<script src="person.js"></script>
+<script src="embedded-gallery.js"></script><script src="person.js"></script>
 </body>
 </html>
