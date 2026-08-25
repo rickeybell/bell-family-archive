@@ -142,7 +142,7 @@
       "Places/South Carolina/Charleston",
       "Places|South Carolina|Charleston"
     ],
-    "title": "",
+    "title": "Charleston Victory Corps Formed",
     "description": "",
     "location": "",
     "city": "Charleston",
@@ -168,7 +168,7 @@
       "Places/South Carolina/Charleston",
       "Places|South Carolina|Charleston"
     ],
-    "title": "",
+    "title": "Victory Coprs Officers Named",
     "description": "",
     "location": "",
     "city": "Charleston",
@@ -194,7 +194,7 @@
       "Places/South Carolina/Charleston",
       "Places|South Carolina|Charleston"
     ],
-    "title": "",
+    "title": "Commencement Exercises Announcment",
     "description": "",
     "location": "",
     "city": "Charleston",
@@ -245,7 +245,7 @@
       "Places/South Carolina/Charleston",
       "Places|South Carolina|Charleston"
     ],
-    "title": "",
+    "title": "1944 Yearbook Photo",
     "description": "",
     "location": "",
     "city": "Charleston",
@@ -426,7 +426,7 @@
       "Places/South Carolina/Charleston",
       "Places|South Carolina|Charleston"
     ],
-    "title": "",
+    "title": "US Coast Guard Auxiliary",
     "description": "",
     "location": "",
     "city": "Charleston",
@@ -451,7 +451,7 @@
       "Places/South Carolina/Charleston",
       "Places|South Carolina|Charleston"
     ],
-    "title": "",
+    "title": "US Coast Guard Auxiliary",
     "description": "",
     "location": "",
     "city": "Charleston",
@@ -14499,8 +14499,8 @@
       "People|Sarah Alice Bell Owens",
       "Sarah Alice Bell Owens"
     ],
-    "title": "",
-    "description": "",
+    "title": "Bell Siblings",
+    "description": "From left to right.\nEthel, Buster, Emory, Dick, Sarah Alice",
     "location": "",
     "city": "",
     "state": "",
@@ -14553,7 +14553,7 @@
       "Spooky Bell"
     ],
     "title": "",
-    "description": "",
+    "description": "From left to right\nSpooky, Buster, Rickey",
     "location": "",
     "city": "",
     "state": "",
@@ -17481,6 +17481,85 @@
     "gps": null
   },
   {
+    "path": "images/1993/1993_July_0001_a.jpg",
+    "media_type": "photo",
+    "file": "1993_July_0001_a.jpg",
+    "folder": "1993",
+    "date": "1993-07-01",
+    "people": [
+      "Charlie Brown",
+      "Donna Brown"
+    ],
+    "tags": [
+      "Charlie Brown",
+      "Disney World",
+      "Donna Brown",
+      "People/Charlie Brown",
+      "People/Donna Brown",
+      "People|Charlie Brown",
+      "People|Donna Brown",
+      "Places/Florida/Orlando/Disney World",
+      "Places|Florida|Orlando|Disney World"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Disney World",
+    "city": "Orlando",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1993/1993_July_0024_a.jpg",
+    "media_type": "photo",
+    "file": "1993_July_0024_a.jpg",
+    "folder": "1993",
+    "date": "1993-07-01",
+    "people": [
+      "Rickii Lear"
+    ],
+    "tags": [
+      "Disney World",
+      "People/Rickii Lear",
+      "People|Rickii Lear",
+      "Places/Florida/Orlando/Disney World",
+      "Places|Florida|Orlando|Disney World",
+      "Rickii Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Disney World",
+    "city": "Orlando",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1993/1993_July_0031_a.jpg",
+    "media_type": "photo",
+    "file": "1993_July_0031_a.jpg",
+    "folder": "1993",
+    "date": "1993-07-01",
+    "people": [
+      "Charlie Brown"
+    ],
+    "tags": [
+      "Charlie Brown",
+      "Disney World",
+      "People/Charlie Brown",
+      "People|Charlie Brown",
+      "Places/Florida/Orlando/Disney World",
+      "Places|Florida|Orlando|Disney World"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Disney World",
+    "city": "Orlando",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/1993/20141226_042207000_iOS.jpg",
     "media_type": "photo",
     "file": "20141226_042207000_iOS.jpg",
@@ -19613,6 +19692,64 @@
     "gps": null
   },
   {
+    "path": "images/1994/1994_June_0006_a.jpg",
+    "media_type": "photo",
+    "file": "1994_June_0006_a.jpg",
+    "folder": "1994",
+    "date": "1994-06-01",
+    "people": [
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "People/Stephanie Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County/Second Bapt Church",
+      "Places|South Carolina|Lancaster County|Second Bapt Church",
+      "Second Bapt Church",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Second Bapt Church",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1994/1994_June_0017_a.jpg",
+    "media_type": "photo",
+    "file": "1994_June_0017_a.jpg",
+    "folder": "1994",
+    "date": "1994-06-01",
+    "people": [
+      "Debbie Phillips",
+      "Judy Wallace",
+      "Tabitha Green"
+    ],
+    "tags": [
+      "Debbie Phillips",
+      "Douglas Heights",
+      "Judy Wallace",
+      "People/Debbie Phillips",
+      "People/Judy Wallace",
+      "People/Tabitha Green",
+      "People|Debbie Phillips",
+      "People|Judy Wallace",
+      "People|Tabitha Green",
+      "Places/South Carolina/Lancaster County/Douglas Heights",
+      "Places|South Carolina|Lancaster County|Douglas Heights",
+      "Tabitha Green"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Douglas Heights",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/1994/1994_0009_a.jpg",
     "media_type": "photo",
     "file": "1994_0009_a.jpg",
@@ -19997,6 +20134,97 @@
     "gps": null
   },
   {
+    "path": "images/1994/1994_July_0005_a.jpg",
+    "media_type": "photo",
+    "file": "1994_July_0005_a.jpg",
+    "folder": "1994",
+    "date": "1994-07-01",
+    "people": [
+      "Kristie Bradley",
+      "Michelle Morgan",
+      "Stephanie Bell",
+      "Teri Wallace"
+    ],
+    "tags": [
+      "Kristie Bradley",
+      "Lancaster County",
+      "Michelle Morgan",
+      "People/Kristie Bradley",
+      "People/Michelle Morgan",
+      "People/Stephanie Bell",
+      "People/Teri Wallace",
+      "People|Kristie Bradley",
+      "People|Michelle Morgan",
+      "People|Stephanie Bell",
+      "People|Teri Wallace",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County",
+      "Stephanie Bell",
+      "Teri Wallace"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1994/1994_July_0017_a.jpg",
+    "media_type": "photo",
+    "file": "1994_July_0017_a.jpg",
+    "folder": "1994",
+    "date": "1994-07-01",
+    "people": [
+      "Carla Pittman",
+      "Michelle Morgan"
+    ],
+    "tags": [
+      "Carla Pittman",
+      "Lancaster County",
+      "Michelle Morgan",
+      "People/Carla Pittman",
+      "People/Michelle Morgan",
+      "People|Carla Pittman",
+      "People|Michelle Morgan",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1994/1994_July_0023_a.jpg",
+    "media_type": "photo",
+    "file": "1994_July_0023_a.jpg",
+    "folder": "1994",
+    "date": "1994-07-01",
+    "people": [
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Lancaster County",
+      "People/Stephanie Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/1994/2006_0002_a.jpg",
     "media_type": "photo",
     "file": "2006_0002_a.jpg",
@@ -20065,6 +20293,31 @@
     "location": "",
     "city": "Myrtle Beach",
     "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1994/1994_August_0030_a.jpg",
+    "media_type": "photo",
+    "file": "1994_August_0030_a.jpg",
+    "folder": "1994",
+    "date": "1994-08-01",
+    "people": [
+      "Mickey Morgan"
+    ],
+    "tags": [
+      "American Studios",
+      "Mickey Morgan",
+      "People/Mickey Morgan",
+      "People|Mickey Morgan",
+      "Places/North Carolina/Charlotte/American Studios",
+      "Places|North Carolina|Charlotte|American Studios"
+    ],
+    "title": "American Studios",
+    "description": "",
+    "location": "American Studios",
+    "city": "Charlotte",
+    "state": "North Carolina",
     "country": "United States",
     "gps": null
   },
@@ -20219,7 +20472,6 @@
       "Stephanie Bell"
     ],
     "tags": [
-      "2nd Bapt Church",
       "Lancaster County",
       "People/Rickey Bell",
       "People/Stephanie Bell",
@@ -20227,17 +20479,18 @@
       "People|Stephanie Bell",
       "Places/South Carolina",
       "Places/South Carolina/Lancaster County",
-      "Places/South Carolina/Lancaster County/2nd Bapt Church",
+      "Places/South Carolina/Lancaster County/Second Bapt Church",
       "Places|South Carolina",
       "Places|South Carolina|Lancaster County",
-      "Places|South Carolina|Lancaster County|2nd Bapt Church",
+      "Places|South Carolina|Lancaster County|Second Bapt Church",
       "Rickey Bell",
+      "Second Bapt Church",
       "South Carolina",
       "Stephanie Bell"
     ],
     "title": "",
     "description": "",
-    "location": "2nd Bapt Church",
+    "location": "Second Bapt Church",
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
@@ -20347,7 +20600,6 @@
       "Stephanie Bell"
     ],
     "tags": [
-      "2nd Bapt Church",
       "Lancaster County",
       "People/Rickey Bell",
       "People/Stephanie Bell",
@@ -20355,17 +20607,18 @@
       "People|Stephanie Bell",
       "Places/South Carolina",
       "Places/South Carolina/Lancaster County",
-      "Places/South Carolina/Lancaster County/2nd Bapt Church",
+      "Places/South Carolina/Lancaster County/Second Bapt Church",
       "Places|South Carolina",
       "Places|South Carolina|Lancaster County",
-      "Places|South Carolina|Lancaster County|2nd Bapt Church",
+      "Places|South Carolina|Lancaster County|Second Bapt Church",
       "Rickey Bell",
+      "Second Bapt Church",
       "South Carolina",
       "Stephanie Bell"
     ],
     "title": "",
     "description": "",
-    "location": "2nd Bapt Church",
+    "location": "Second Bapt Church",
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
@@ -20391,7 +20644,6 @@
       "Tony Neely"
     ],
     "tags": [
-      "2nd Bapt Church",
       "Dickey Bell",
       "Heather Bell",
       "Irvin Phillips",
@@ -20421,12 +20673,13 @@
       "People|Tony Neely",
       "Places/South Carolina",
       "Places/South Carolina/Lancaster County",
-      "Places/South Carolina/Lancaster County/2nd Bapt Church",
+      "Places/South Carolina/Lancaster County/Second Bapt Church",
       "Places|South Carolina",
       "Places|South Carolina|Lancaster County",
-      "Places|South Carolina|Lancaster County|2nd Bapt Church",
+      "Places|South Carolina|Lancaster County|Second Bapt Church",
       "Rickey Bell",
       "Rickii Lear",
+      "Second Bapt Church",
       "South Carolina",
       "Spooky Bell",
       "Stephanie Bell",
@@ -20436,7 +20689,7 @@
     ],
     "title": "",
     "description": "",
-    "location": "2nd Bapt Church",
+    "location": "Second Bapt Church",
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
@@ -20457,7 +20710,6 @@
       "Teri Wallace"
     ],
     "tags": [
-      "2nd Bapt Church",
       "Allison Hobkins",
       "Heather Bell",
       "Lancaster County",
@@ -20475,11 +20727,12 @@
       "People|Teri Wallace",
       "Places/South Carolina",
       "Places/South Carolina/Lancaster County",
-      "Places/South Carolina/Lancaster County/2nd Bapt Church",
+      "Places/South Carolina/Lancaster County/Second Bapt Church",
       "Places|South Carolina",
       "Places|South Carolina|Lancaster County",
-      "Places|South Carolina|Lancaster County|2nd Bapt Church",
+      "Places|South Carolina|Lancaster County|Second Bapt Church",
       "Rickii Lear",
+      "Second Bapt Church",
       "South Carolina",
       "Stephanie Bell",
       "Teresa Cooper",
@@ -20487,7 +20740,7 @@
     ],
     "title": "",
     "description": "WANG2_",
-    "location": "2nd Bapt Church",
+    "location": "Second Bapt Church",
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
@@ -20504,7 +20757,6 @@
       "Spooky Bell"
     ],
     "tags": [
-      "2nd Bapt Church",
       "Heather Bell",
       "Lancaster County",
       "People/Heather Bell",
@@ -20513,16 +20765,17 @@
       "People|Spooky Bell",
       "Places/South Carolina",
       "Places/South Carolina/Lancaster County",
-      "Places/South Carolina/Lancaster County/2nd Bapt Church",
+      "Places/South Carolina/Lancaster County/Second Bapt Church",
       "Places|South Carolina",
       "Places|South Carolina|Lancaster County",
-      "Places|South Carolina|Lancaster County|2nd Bapt Church",
+      "Places|South Carolina|Lancaster County|Second Bapt Church",
+      "Second Bapt Church",
       "South Carolina",
       "Spooky Bell"
     ],
     "title": "",
     "description": "WANG2_",
-    "location": "2nd Bapt Church",
+    "location": "Second Bapt Church",
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",

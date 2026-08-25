@@ -8,7 +8,13 @@
 
     [int]$FromYear = 0,
 
-    [int]$ToYear = 9999
+    [int]$ToYear = 9999,
+
+    [string]$DigiKamDatabase = 'C:\Users\rbell\OneDrive\Pictures\digikam4.db',
+
+    [string]$DigiKamCollectionRoot = 'C:\Users\rbell\OneDrive\Pictures',
+
+    [switch]$SkipDigiKamCatalogSync
 )
 
 # Keep ExifTool's Perl runtime quiet and deterministic on Windows.
@@ -17,6 +23,7 @@ $env:LC_CTYPE = 'C'
 $env:LANG = 'C'
 $ErrorActionPreference = 'Stop'
 
+# v2.17: synchronizes affected tags/GPS into digiKam SQLite after verified metadata writes.
 # v2.16: caches embedded and sidecar tags in two batch reads instead of rereading each file.
 # v2.15: adds a scoped year range so multiple year folders can be scanned in one safe pass.
 # v2.14: adds 500-foot Lancaster Rescue Squad and 212 S Main St QDS Office geofences.
@@ -672,12 +679,27 @@ function Set-GpsOnSidecar {
     return 'ERROR'
 }
 
+function Get-PythonCommand {
+    $candidates=@()
+    $python=Get-Command python.exe -ErrorAction SilentlyContinue
+    if ($python) { $candidates += @{ File=$python.Source; Prefix=@() } }
+    $py=Get-Command py.exe -ErrorAction SilentlyContinue
+    if ($py) { $candidates += @{ File=$py.Source; Prefix=@() } }
+    $bundled=Join-Path $env:USERPROFILE '.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+    if (Test-Path -LiteralPath $bundled) { $candidates += @{ File=$bundled; Prefix=@() } }
+    foreach ($candidate in $candidates) {
+        & $candidate.File @($candidate.Prefix + @('--version')) *> $null
+        if ($LASTEXITCODE -eq 0) { return $candidate }
+    }
+    throw 'A working Python 3 runtime was not found for digiKam catalog synchronization.'
+}
+
 # -----------------------------
 # Setup
 # -----------------------------
 
 Write-Host ""
-Write-Host "Bell Family Archive - Combined Property + County GPS Geotagger v2.16" -ForegroundColor Cyan
+Write-Host "Bell Family Archive - Combined Property + County GPS Geotagger v2.17" -ForegroundColor Cyan
 Write-Host "Mode   : $Mode"
 Write-Host "Folder : $Root"
 if ($UseYearRange) { Write-Host "Years  : $FromYear through $ToYear ($($ScanRoots.Count) folders)" }
@@ -1508,7 +1530,27 @@ Write-Host "  Photos: write location/county tags to image AND .xmp sidecar"
 Write-Host "  Videos: write location/county tags to .xmp sidecar only"
 Write-Host "  Existing tags are preserved"
 Write-Host "  Protected child locations are re-checked before county writes"
+if (-not $SkipDigiKamCatalogSync) {
+    Write-Host "  Affected tags and GPS are synchronized into the digiKam catalog"
+    Write-Host "  digiKam must be closed; the catalog is backed up and verified"
+}
 Write-Host ""
+
+$CatalogSyncHelper=Join-Path $PSScriptRoot 'tools\sync_gps_metadata_to_digikam.py'
+$PythonCommand=$null
+if (-not $SkipDigiKamCatalogSync) {
+    if (Get-Process -Name digikam -ErrorAction SilentlyContinue) {
+        Write-Host 'WRITE STOPPED: close digiKam before running catalog synchronization.' -ForegroundColor Red
+        exit 1
+    }
+    foreach ($required in @($DigiKamDatabase,$DigiKamCollectionRoot,$CatalogSyncHelper)) {
+        if (-not (Test-Path -LiteralPath $required)) {
+            Write-Host "WRITE STOPPED: required catalog-sync path is missing: $required" -ForegroundColor Red
+            exit 1
+        }
+    }
+    $PythonCommand=Get-PythonCommand
+}
 
 $answer=Read-Host "Type YES to continue"
 
@@ -2150,6 +2192,32 @@ $WriteLog | Export-Csv `
     -NoTypeInformation `
     -Encoding UTF8
 
+$CatalogSyncStatus='SKIPPED'
+if (-not $SkipDigiKamCatalogSync) {
+    if (Get-Process -Name digikam -ErrorAction SilentlyContinue) {
+        throw 'Metadata writes completed, but catalog sync stopped because digiKam was opened. Close digiKam and rerun the catalog helper using the affected-path list.'
+    }
+    $syncStamp=Get-Date -Format 'yyyyMMdd-HHmmss'
+    $CatalogSyncPaths=Join-Path $BackupRoot "DigiKam-GPS-Sync-Paths-$syncStamp.txt"
+    @($toWrite | ForEach-Object { $_.FullPath } | Sort-Object -Unique) |
+        Set-Content -LiteralPath $CatalogSyncPaths -Encoding UTF8
+    $syncArgs=@($PythonCommand.Prefix) + @(
+        $CatalogSyncHelper,
+        '--database',$DigiKamDatabase,
+        '--collection-root',$DigiKamCollectionRoot,
+        '--paths-file',$CatalogSyncPaths,
+        '--backup-dir',$BackupRoot,
+        '--exiftool',$ExifTool.Source
+    )
+    Write-Host ''
+    Write-Host 'Synchronizing affected metadata into the digiKam catalog...' -ForegroundColor Cyan
+    & $PythonCommand.File @syncArgs
+    if ($LASTEXITCODE -ne 0) {
+        throw "Metadata files were written, but digiKam catalog synchronization failed (exit $LASTEXITCODE). Catalog path list: $CatalogSyncPaths"
+    }
+    $CatalogSyncStatus='COMPLETE'
+}
+
 Write-Host ""
 Write-Host "WRITE COMPLETE" -ForegroundColor Green
 Write-Host "Changed          : $changed"
@@ -2158,5 +2226,11 @@ Write-Host "Skipped at write : $skippedAtWrite"
 Write-Host "Errors           : $errors"
 Write-Host "Write log        : $WriteLogPath"
 Write-Host "Backups          : $BackupRoot"
+Write-Host "DigiKam catalog  : $CatalogSyncStatus"
 Write-Host ""
-Write-Host "Then use DigiKam: Reread Metadata From File for the folder." -ForegroundColor Cyan
+if ($SkipDigiKamCatalogSync) {
+    Write-Host "Then use DigiKam: Reread Metadata From File for the folder." -ForegroundColor Cyan
+}
+else {
+    Write-Host "No DigiKam metadata reread is required. Reopen digiKam." -ForegroundColor Cyan
+}

@@ -76,7 +76,6 @@ foreach ($profile in $profiles) {
 
     $itemWord = if ($count -eq 1) { 'item' } else { 'items' }
     $section = @"
-
 <section class="embedded-archive" id="archive" aria-labelledby="$($profile.Slug)-archive-title">
   <div class="embedded-archive-heading">
     <div class="eyebrow">Bell Family Archive</div>
@@ -87,10 +86,13 @@ foreach ($profile in $profiles) {
     <p class="embedded-archive-loading">Loading $($profile.Label)&rsquo;s photo gallery&hellip;</p>
   </div>
 </section>
-
 "@
 
-    $html = $html.Replace('</main>', $section + '</main>')
+    $html = [regex]::Replace(
+        $html,
+        '\s*</main>',
+        "`n`n" + $section.TrimEnd() + "`n</main>"
+    )
     $html = [regex]::Replace(
         $html,
         '<a([^>]*?)href="[^"]*"([^>]*?)>Photo Gallery</a>',
