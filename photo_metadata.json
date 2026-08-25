@@ -9458,35 +9458,6 @@
     "gps": null
   },
   {
-    "path": "images/1980/1970s_0014_a.jpg",
-    "media_type": "photo",
-    "file": "1970s_0014_a.jpg",
-    "folder": "1980",
-    "date": "1980-01-01",
-    "people": [
-      "Dickey Bell",
-      "Rickey Bell"
-    ],
-    "tags": [
-      "109 Fairview Dr",
-      "Dickey Bell",
-      "People/Dickey Bell",
-      "People/Rickey Bell",
-      "People|Dickey Bell",
-      "People|Rickey Bell",
-      "Places/South Carolina/Lancaster County/109 Fairview Dr",
-      "Places|South Carolina|Lancaster County|109 Fairview Dr",
-      "Rickey Bell"
-    ],
-    "title": "",
-    "description": "",
-    "location": "109 Fairview Dr",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/1980/1970s_0015_a.jpg",
     "media_type": "photo",
     "file": "1970s_0015_a.jpg",
@@ -10484,32 +10455,6 @@
     "gps": null
   },
   {
-    "path": "images/1980/1980s_0032_a.jpg",
-    "media_type": "photo",
-    "file": "1980s_0032_a.jpg",
-    "folder": "1980",
-    "date": "1980-01-01",
-    "people": [
-      "Dickey Bell",
-      "Heather Bell"
-    ],
-    "tags": [
-      "Dickey Bell",
-      "Heather Bell",
-      "People/Dickey Bell",
-      "People/Heather Bell",
-      "People|Dickey Bell",
-      "People|Heather Bell"
-    ],
-    "title": "",
-    "description": "Christmas circa 1980–1981 — Dickey with his niece Heather Nicole Bell (born September 20, 1976; died September 29, 2002).",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
     "path": "images/1980/1980s_0033_a.jpg",
     "media_type": "photo",
     "file": "1980s_0033_a.jpg",
@@ -10527,32 +10472,6 @@
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
-    "gps": null
-  },
-  {
-    "path": "images/1980/1980s_0034_a.jpg",
-    "media_type": "photo",
-    "file": "1980s_0034_a.jpg",
-    "folder": "1980",
-    "date": "1980-01-01",
-    "people": [
-      "Dickey Bell",
-      "Rickey Bell"
-    ],
-    "tags": [
-      "Dickey Bell",
-      "People/Dickey Bell",
-      "People/Rickey Bell",
-      "People|Dickey Bell",
-      "People|Rickey Bell",
-      "Rickey Bell"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
     "gps": null
   },
   {
@@ -13078,32 +12997,6 @@
     "gps": null
   },
   {
-    "path": "images/1981/1981_0006_a.jpg",
-    "media_type": "photo",
-    "file": "1981_0006_a.jpg",
-    "folder": "1981",
-    "date": "1981-03-01",
-    "people": [
-      "Heather Bell",
-      "Rickey Bell"
-    ],
-    "tags": [
-      "Heather Bell",
-      "People/Heather Bell",
-      "People/Rickey Bell",
-      "People|Heather Bell",
-      "People|Rickey Bell",
-      "Rickey Bell"
-    ],
-    "title": "",
-    "description": "Rickey 6 years\nHeather 4.5 years",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
     "path": "images/1981/80 H wallet (4.5 years).jpg",
     "media_type": "photo",
     "file": "80 H wallet (4.5 years).jpg",
@@ -13119,32 +13012,6 @@
     ],
     "title": "",
     "description": "Heather 4.5 years",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
-    "path": "images/1981/81 H & Rick wallet.jpg",
-    "media_type": "photo",
-    "file": "81 H & Rick wallet.jpg",
-    "folder": "1981",
-    "date": "1981-03-01",
-    "people": [
-      "Heather Bell",
-      "Rickey Bell"
-    ],
-    "tags": [
-      "Heather Bell",
-      "People/Heather Bell",
-      "People/Rickey Bell",
-      "People|Heather Bell",
-      "People|Rickey Bell",
-      "Rickey Bell"
-    ],
-    "title": "",
-    "description": "",
     "location": "",
     "city": "",
     "state": "",
@@ -13196,6 +13063,28 @@
     "gps": null
   },
   {
+    "path": "images/1981/81 H & Helen wallet (5 Years).jpg",
+    "media_type": "photo",
+    "file": "81 H & Helen wallet (5 Years).jpg",
+    "folder": "1981",
+    "date": "1981-09-01",
+    "people": [
+      "Heather Bell"
+    ],
+    "tags": [
+      "Heather Bell",
+      "People/Heather Bell",
+      "People|Heather Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/1981/81 H wallet (5 Years).jpg",
     "media_type": "photo",
     "file": "81 H wallet (5 Years).jpg",
@@ -13211,6 +13100,61 @@
     ],
     "title": "circa September 20, 1981",
     "description": "Heather 5 years",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1981/1970s_0014_a.jpg",
+    "media_type": "photo",
+    "file": "1970s_0014_a.jpg",
+    "folder": "1981",
+    "date": "1981-12-01",
+    "people": [
+      "Dickey Bell",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "109 Fairview Dr",
+      "Dickey Bell",
+      "People/Dickey Bell",
+      "People/Rickey Bell",
+      "People|Dickey Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina/Lancaster County/109 Fairview Dr",
+      "Places|South Carolina|Lancaster County|109 Fairview Dr",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "109 Fairview Dr",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1981/1980s_0032_a.jpg",
+    "media_type": "photo",
+    "file": "1980s_0032_a.jpg",
+    "folder": "1981",
+    "date": "1981-12-25",
+    "people": [
+      "Dickey Bell",
+      "Heather Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Heather Bell",
+      "People/Dickey Bell",
+      "People/Heather Bell",
+      "People|Dickey Bell",
+      "People|Heather Bell"
+    ],
+    "title": "",
+    "description": "Christmas circa 1980–1981 — Dickey with his niece Heather Nicole Bell (born September 20, 1976; died September 29, 2002).",
     "location": "",
     "city": "",
     "state": "",
@@ -13241,6 +13185,64 @@
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1981/82 Wonder Woman & Rickey 1.jpg",
+    "media_type": "photo",
+    "file": "82 Wonder Woman & Rickey 1.jpg",
+    "folder": "1981",
+    "date": "1981-12-25",
+    "people": [
+      "Heather Bell",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "109 Fairview Dr",
+      "Heather Bell",
+      "People/Heather Bell",
+      "People/Rickey Bell",
+      "People|Heather Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina/Lancaster County/109 Fairview Dr",
+      "Places|South Carolina|Lancaster County|109 Fairview Dr",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "109 Fairview Dr",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1981/82 Wonder Woman & Rickey 2.jpg",
+    "media_type": "photo",
+    "file": "82 Wonder Woman & Rickey 2.jpg",
+    "folder": "1981",
+    "date": "1981-12-25",
+    "people": [
+      "Heather Bell",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "109 Fairview Dr",
+      "Heather Bell",
+      "People/Heather Bell",
+      "People/Rickey Bell",
+      "People|Heather Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina/Lancaster County/109 Fairview Dr",
+      "Places|South Carolina|Lancaster County|109 Fairview Dr",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "109 Fairview Dr",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -13378,21 +13380,17 @@
     "gps": null
   },
   {
-    "path": "images/1982/82 Wonder Woman & Rickey 2.jpg",
+    "path": "images/1982/1980s_0037_a.jpg",
     "media_type": "photo",
-    "file": "82 Wonder Woman & Rickey 2.jpg",
+    "file": "1980s_0037_a.jpg",
     "folder": "1982",
-    "date": "1982-01-01",
+    "date": "1982-12-25",
     "people": [
-      "Heather Bell",
       "Rickey Bell"
     ],
     "tags": [
       "109 Fairview Dr",
-      "Heather Bell",
-      "People/Heather Bell",
       "People/Rickey Bell",
-      "People|Heather Bell",
       "People|Rickey Bell",
       "Places/South Carolina/Lancaster County/109 Fairview Dr",
       "Places|South Carolina|Lancaster County|109 Fairview Dr",
@@ -13471,7 +13469,7 @@
       "Places|South Carolina|Lancaster County|109 Fairview Dr",
       "Rickey Bell"
     ],
-    "title": "",
+    "title": "Rickey with his new Puch Dirt Bike",
     "description": "",
     "location": "109 Fairview Dr",
     "city": "Lancaster County",
@@ -13571,6 +13569,47 @@
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1982/Christmas 83.png",
+    "media_type": "photo",
+    "file": "Christmas 83.png",
+    "folder": "1982",
+    "date": "1982-12-25",
+    "people": [
+      "Buster Bell",
+      "Dickey Bell",
+      "Johnny Tharp",
+      "Rickey Bell",
+      "Sonja Bell"
+    ],
+    "tags": [
+      "109 Fairview Dr",
+      "Buster Bell",
+      "Dickey Bell",
+      "Johnny Tharp",
+      "People/Buster Bell",
+      "People/Dickey Bell",
+      "People/Johnny Tharp",
+      "People/Rickey Bell",
+      "People/Sonja Bell",
+      "People|Buster Bell",
+      "People|Dickey Bell",
+      "People|Johnny Tharp",
+      "People|Rickey Bell",
+      "People|Sonja Bell",
+      "Places/South Carolina/Lancaster County/109 Fairview Dr",
+      "Places|South Carolina|Lancaster County|109 Fairview Dr",
+      "Rickey Bell",
+      "Sonja Bell"
+    ],
+    "title": "Rickey with his new Puch Dirt Bike",
+    "description": "Christmas 1982 — Dickey on the back left, Sonja beside him, Rickey in front, Johnny Tharp second from right, and Buster at far right. Dickey and Sonja’s first Christmas after they began dating September 29, 1982.",
+    "location": "109 Fairview Dr",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -13776,72 +13815,6 @@
     "gps": null
   },
   {
-    "path": "images/1980/1980s_0037_a.jpg",
-    "media_type": "photo",
-    "file": "1980s_0037_a.jpg",
-    "folder": "1980",
-    "date": "1983-12-25",
-    "people": [
-      "Rickey Bell"
-    ],
-    "tags": [
-      "109 Fairview Dr",
-      "People/Rickey Bell",
-      "People|Rickey Bell",
-      "Places/South Carolina/Lancaster County/109 Fairview Dr",
-      "Places|South Carolina|Lancaster County|109 Fairview Dr",
-      "Rickey Bell"
-    ],
-    "title": "",
-    "description": "",
-    "location": "109 Fairview Dr",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
-    "path": "images/1983/Christmas 83.png",
-    "media_type": "photo",
-    "file": "Christmas 83.png",
-    "folder": "1983",
-    "date": "1983-12-25",
-    "people": [
-      "Buster Bell",
-      "Dickey Bell",
-      "Johnny Tharp",
-      "Rickey Bell",
-      "Sonja Bell"
-    ],
-    "tags": [
-      "109 Fairview Dr",
-      "Buster Bell",
-      "Dickey Bell",
-      "Johnny Tharp",
-      "People/Buster Bell",
-      "People/Dickey Bell",
-      "People/Johnny Tharp",
-      "People/Rickey Bell",
-      "People/Sonja Bell",
-      "People|Buster Bell",
-      "People|Dickey Bell",
-      "People|Johnny Tharp",
-      "People|Rickey Bell",
-      "People|Sonja Bell",
-      "Places/South Carolina/Lancaster County/109 Fairview Dr",
-      "Places|South Carolina|Lancaster County|109 Fairview Dr",
-      "Rickey Bell",
-      "Sonja Bell"
-    ],
-    "title": "image.png",
-    "description": "Christmas 1982 — Dickey on the back left, Sonja beside him, Rickey in front, Johnny Tharp second from right, and Buster at far right. Dickey and Sonja’s first Christmas after they began dating September 29, 1982.",
-    "location": "109 Fairview Dr",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/1984/1984_0002_a.jpg",
     "media_type": "photo",
     "file": "1984_0002_a.jpg",
@@ -13900,6 +13873,32 @@
       "People/Heather Bell",
       "People/Rickey Bell",
       "People|Heather Bell",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1984/1980s_0034_a.jpg",
+    "media_type": "photo",
+    "file": "1980s_0034_a.jpg",
+    "folder": "1984",
+    "date": "1984-11-01",
+    "people": [
+      "Dickey Bell",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "People/Dickey Bell",
+      "People/Rickey Bell",
+      "People|Dickey Bell",
       "People|Rickey Bell",
       "Rickey Bell"
     ],
@@ -14599,6 +14598,28 @@
       "People/Helen Bell",
       "People|Heather Bell",
       "People|Helen Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1988/88 Christmas Wallet.jpg",
+    "media_type": "photo",
+    "file": "88 Christmas Wallet.jpg",
+    "folder": "1988",
+    "date": "1988-01-01",
+    "people": [
+      "Heather Bell"
+    ],
+    "tags": [
+      "Heather Bell",
+      "People/Heather Bell",
+      "People|Heather Bell"
     ],
     "title": "",
     "description": "",
@@ -15413,6 +15434,47 @@
     "gps": null
   },
   {
+    "path": "images/1990/1990s_0084_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0084_a.jpg",
+    "folder": "1990",
+    "date": "1990-09-01",
+    "people": [
+      "Heather Bell",
+      "Heather, Heather's Friend",
+      "Rickey Bell",
+      "Stephanie Bell",
+      "Teresa Cooper"
+    ],
+    "tags": [
+      "Carowinds",
+      "Heather Bell",
+      "Heather, Heather's Friend",
+      "People/Heather Bell",
+      "People/Heather, Heather's Friend",
+      "People/Rickey Bell",
+      "People/Stephanie Bell",
+      "People/Teresa Cooper",
+      "People|Heather Bell",
+      "People|Heather, Heather's Friend",
+      "People|Rickey Bell",
+      "People|Stephanie Bell",
+      "People|Teresa Cooper",
+      "Places/South Carolina/Carowinds",
+      "Places|South Carolina|Carowinds",
+      "Rickey Bell",
+      "Stephanie Bell",
+      "Teresa Cooper"
+    ],
+    "title": "",
+    "description": "Left Teresa, Rickey, Stephanie, Heather B, Heather, unknown boyfriend",
+    "location": "",
+    "city": "Carowinds",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/1990/1990s_0087_a.jpg",
     "media_type": "photo",
     "file": "1990s_0087_a.jpg",
@@ -15548,32 +15610,6 @@
     "gps": null
   },
   {
-    "path": "images/1990/90 H & Group carowinds.jpg",
-    "media_type": "photo",
-    "file": "90 H & Group carowinds.jpg",
-    "folder": "1990",
-    "date": "1990-09-01",
-    "people": [
-      "Heather Bell",
-      "Stephanie Bell"
-    ],
-    "tags": [
-      "Heather Bell",
-      "People/Heather Bell",
-      "People/Stephanie Bell",
-      "People|Heather Bell",
-      "People|Stephanie Bell",
-      "Stephanie Bell"
-    ],
-    "title": "",
-    "description": "Left Teresa, Rickey, Stephanie, Heather B, Heather, unknown boyfriend",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
     "path": "images/1990/90 H & Rickey Kissing in Lancaster.jpg",
     "media_type": "photo",
     "file": "90 H & Rickey Kissing in Lancaster.jpg",
@@ -15680,32 +15716,6 @@
     "city": "",
     "state": "",
     "country": "",
-    "gps": null
-  },
-  {
-    "path": "images/1990/1990s_0017_a-Alien.jpg",
-    "media_type": "photo",
-    "file": "1990s_0017_a-Alien.jpg",
-    "folder": "1990",
-    "date": "1990-12-25",
-    "people": [],
-    "tags": [
-      "109 Fairview Dr",
-      "Lancaster County",
-      "Places/South Carolina",
-      "Places/South Carolina/Lancaster County",
-      "Places/South Carolina/Lancaster County/109 Fairview Dr",
-      "Places|South Carolina",
-      "Places|South Carolina|Lancaster County",
-      "Places|South Carolina|Lancaster County|109 Fairview Dr",
-      "South Carolina"
-    ],
-    "title": "",
-    "description": "",
-    "location": "109 Fairview Dr",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
     "gps": null
   },
   {
@@ -16363,6 +16373,31 @@
     "gps": null
   },
   {
+    "path": "images/1992/1990s_0082_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0082_a.jpg",
+    "folder": "1992",
+    "date": "1992-01-01",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "109 Fairview Dr",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina/Lancaster County/109 Fairview Dr",
+      "Places|South Carolina|Lancaster County|109 Fairview Dr",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "109 Fairview Dr",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/1992/1990s_0090_a.jpg",
     "media_type": "photo",
     "file": "1990s_0090_a.jpg",
@@ -16386,6 +16421,81 @@
     "title": "",
     "description": "",
     "location": "109 Fairview Dr",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1992/1990s_0099_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0099_a.jpg",
+    "folder": "1992",
+    "date": "1992-01-01",
+    "people": [
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Lancaster County",
+      "People/Stephanie Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1992/1990s_0101_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0101_a.jpg",
+    "folder": "1992",
+    "date": "1992-01-01",
+    "people": [
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Lancaster County",
+      "People/Stephanie Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1992/1990s_0103_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0103_a.jpg",
+    "folder": "1992",
+    "date": "1992-01-01",
+    "people": [
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Lancaster County",
+      "People/Stephanie Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
@@ -16471,6 +16581,100 @@
     "location": "",
     "city": "",
     "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1992/1990s_0155_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0155_a.jpg",
+    "folder": "1992",
+    "date": "1992-01-01",
+    "people": [
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Douglas Heights",
+      "People/Rickey Bell",
+      "People/Stephanie Bell",
+      "People|Rickey Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County/Douglas Heights",
+      "Places|South Carolina|Lancaster County|Douglas Heights",
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Douglas Heights",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1992/1990s_0167_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0167_a.jpg",
+    "folder": "1992",
+    "date": "1992-01-01",
+    "people": [
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Douglas Heights",
+      "People/Stephanie Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County/Douglas Heights",
+      "Places|South Carolina|Lancaster County|Douglas Heights",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Douglas Heights",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1992/1990s_0168_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0168_a.jpg",
+    "folder": "1992",
+    "date": "1992-01-01",
+    "people": [],
+    "tags": [
+      "Douglas Heights",
+      "Places/South Carolina/Lancaster County/Douglas Heights",
+      "Places|South Carolina|Lancaster County|Douglas Heights"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Douglas Heights",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1992/1990s_0169_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0169_a.jpg",
+    "folder": "1992",
+    "date": "1992-01-01",
+    "people": [],
+    "tags": [
+      "Lancaster County",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
     "country": "United States",
     "gps": null
   },
@@ -16884,6 +17088,35 @@
     "gps": null
   },
   {
+    "path": "images/1992/1990s_0166_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0166_a.jpg",
+    "folder": "1992",
+    "date": "1992-10-01",
+    "people": [
+      "Marsha Timmons",
+      "Mike Morgan"
+    ],
+    "tags": [
+      "Lancaster County",
+      "Marsha Timmons",
+      "Mike Morgan",
+      "People/Marsha Timmons",
+      "People/Mike Morgan",
+      "People|Marsha Timmons",
+      "People|Mike Morgan",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/1992/1992_November_0001_a.jpg",
     "media_type": "photo",
     "file": "1992_November_0001_a.jpg",
@@ -17209,6 +17442,31 @@
     "gps": null
   },
   {
+    "path": "images/1993/1990s_0148_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0148_a.jpg",
+    "folder": "1993",
+    "date": "1993-01-01",
+    "people": [
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Douglas Heights",
+      "People/Stephanie Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County/Douglas Heights",
+      "Places|South Carolina|Lancaster County|Douglas Heights",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Douglas Heights",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/1993/1993_0002_a.jpg",
     "media_type": "photo",
     "file": "1993_0002_a.jpg",
@@ -17228,6 +17486,31 @@
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1993/1993_0027_a.jpg",
+    "media_type": "photo",
+    "file": "1993_0027_a.jpg",
+    "folder": "1993",
+    "date": "1993-01-01",
+    "people": [
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Douglas Heights",
+      "People/Stephanie Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County/Douglas Heights",
+      "Places|South Carolina|Lancaster County|Douglas Heights",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Douglas Heights",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -17403,6 +17686,31 @@
       "Places/South Carolina/Myrtle Beach",
       "Places|South Carolina|Myrtle Beach",
       "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1993/1993_0026_a.jpg",
+    "media_type": "photo",
+    "file": "1993_0026_a.jpg",
+    "folder": "1993",
+    "date": "1993-06-05",
+    "people": [
+      "Tony Neely"
+    ],
+    "tags": [
+      "Myrtle Beach",
+      "People/Tony Neely",
+      "People|Tony Neely",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach",
+      "Tony Neely"
     ],
     "title": "",
     "description": "",
@@ -19194,6 +19502,32 @@
     "gps": null
   },
   {
+    "path": "images/1994/Alma4.jpg",
+    "media_type": "photo",
+    "file": "Alma4.jpg",
+    "folder": "1994",
+    "date": "1994-05-01",
+    "people": [
+      "Alma Bell"
+    ],
+    "tags": [
+      "Alma Bell",
+      "Lancaster County",
+      "Newspaper",
+      "People/Alma Bell",
+      "People|Alma Bell",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County"
+    ],
+    "title": "Alma turned love of flying into daring hobby",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/1994/Alma Tharp Bell Death.jpg",
     "media_type": "photo",
     "file": "Alma Tharp Bell Death.jpg",
@@ -19753,6 +20087,31 @@
     "gps": null
   },
   {
+    "path": "images/1994/1994_June_0013_a.jpg",
+    "media_type": "photo",
+    "file": "1994_June_0013_a.jpg",
+    "folder": "1994",
+    "date": "1994-06-01",
+    "people": [
+      "Donna Brown"
+    ],
+    "tags": [
+      "Donna Brown",
+      "People/Donna Brown",
+      "People|Donna Brown",
+      "Places/South Carolina/Lancaster County/Second Bapt Church",
+      "Places|South Carolina|Lancaster County|Second Bapt Church",
+      "Second Bapt Church"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Second Bapt Church",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/1994/1994_June_0017_a.jpg",
     "media_type": "photo",
     "file": "1994_June_0017_a.jpg",
@@ -20207,6 +20566,31 @@
     "gps": null
   },
   {
+    "path": "images/1994/1994_July_0013_a.jpg",
+    "media_type": "photo",
+    "file": "1994_July_0013_a.jpg",
+    "folder": "1994",
+    "date": "1994-07-01",
+    "people": [
+      "Teri Wallace"
+    ],
+    "tags": [
+      "Lancaster County",
+      "People/Teri Wallace",
+      "People|Teri Wallace",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County",
+      "Teri Wallace"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/1994/1994_July_0017_a.jpg",
     "media_type": "photo",
     "file": "1994_July_0017_a.jpg",
@@ -20226,6 +20610,39 @@
       "People|Michelle Morgan",
       "Places/South Carolina/Lancaster County",
       "Places|South Carolina|Lancaster County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1994/1994_July_0022_a.jpg",
+    "media_type": "photo",
+    "file": "1994_July_0022_a.jpg",
+    "folder": "1994",
+    "date": "1994-07-01",
+    "people": [
+      "Karen Gaskin",
+      "Kristie Bradley",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Karen Gaskin",
+      "Kristie Bradley",
+      "Lancaster County",
+      "People/Karen Gaskin",
+      "People/Kristie Bradley",
+      "People/Stephanie Bell",
+      "People|Karen Gaskin",
+      "People|Kristie Bradley",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County",
+      "Stephanie Bell"
     ],
     "title": "",
     "description": "",
@@ -20970,6 +21387,288 @@
     "gps": null
   },
   {
+    "path": "images/1995/1995_May_0001_a.jpg",
+    "media_type": "photo",
+    "file": "1995_May_0001_a.jpg",
+    "folder": "1995",
+    "date": "1995-05-01",
+    "people": [
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Douglas Heights",
+      "People/Stephanie Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County/Douglas Heights",
+      "Places|South Carolina|Lancaster County|Douglas Heights",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Douglas Heights",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_May_0002_a.jpg",
+    "media_type": "photo",
+    "file": "1995_May_0002_a.jpg",
+    "folder": "1995",
+    "date": "1995-05-01",
+    "people": [
+      "Peggy Faulkenberry",
+      "Sonja Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Douglas Heights",
+      "Peggy Faulkenberry",
+      "People/Peggy Faulkenberry",
+      "People/Sonja Bell",
+      "People/Stephanie Bell",
+      "People|Peggy Faulkenberry",
+      "People|Sonja Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County/Douglas Heights",
+      "Places|South Carolina|Lancaster County|Douglas Heights",
+      "Sonja Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Douglas Heights",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_May_0004_a.jpg",
+    "media_type": "photo",
+    "file": "1995_May_0004_a.jpg",
+    "folder": "1995",
+    "date": "1995-05-01",
+    "people": [
+      "Teri Wallace"
+    ],
+    "tags": [
+      "Douglas Heights",
+      "People/Teri Wallace",
+      "People|Teri Wallace",
+      "Places/South Carolina/Lancaster County/Douglas Heights",
+      "Places|South Carolina|Lancaster County|Douglas Heights",
+      "Teri Wallace"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Douglas Heights",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_June_0078_a.jpg",
+    "media_type": "photo",
+    "file": "1995_June_0078_a.jpg",
+    "folder": "1995",
+    "date": "1995-06-01",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_June_0081_a.jpg",
+    "media_type": "photo",
+    "file": "1995_June_0081_a.jpg",
+    "folder": "1995",
+    "date": "1995-06-01",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "Look at that baby sporting the M60",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_July_0001_a.jpg",
+    "media_type": "photo",
+    "file": "1995_July_0001_a.jpg",
+    "folder": "1995",
+    "date": "1995-07-01",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Lake Wateree",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina/Kershaw/Lake Wateree",
+      "Places|South Carolina|Kershaw|Lake Wateree",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Lake Wateree",
+    "city": "Kershaw",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_July_0015_a.jpg",
+    "media_type": "photo",
+    "file": "1995_July_0015_a.jpg",
+    "folder": "1995",
+    "date": "1995-07-01",
+    "people": [
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "People/Stephanie Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_July_0016_a.jpg",
+    "media_type": "photo",
+    "file": "1995_July_0016_a.jpg",
+    "folder": "1995",
+    "date": "1995-07-01",
+    "people": [
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Lake Wateree",
+      "People/Stephanie Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Kershaw/Lake Wateree",
+      "Places|South Carolina|Kershaw|Lake Wateree",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Lake Wateree",
+    "city": "Kershaw",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_July_0022_a.jpg",
+    "media_type": "photo",
+    "file": "1995_July_0022_a.jpg",
+    "folder": "1995",
+    "date": "1995-07-01",
+    "people": [
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "People/Stephanie Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_July_0029_a.jpg",
+    "media_type": "photo",
+    "file": "1995_July_0029_a.jpg",
+    "folder": "1995",
+    "date": "1995-07-01",
+    "people": [
+      "Samatha Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "People/Samatha Bell",
+      "People/Stephanie Bell",
+      "People|Samatha Bell",
+      "People|Stephanie Bell",
+      "Samatha Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_July_0036_a.jpg",
+    "media_type": "photo",
+    "file": "1995_July_0036_a.jpg",
+    "folder": "1995",
+    "date": "1995-07-01",
+    "people": [
+      "Samatha Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "People/Samatha Bell",
+      "People/Stephanie Bell",
+      "People|Samatha Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Samatha Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/1995/1995_October_0001_a.jpg",
     "media_type": "photo",
     "file": "1995_October_0001_a.jpg",
@@ -21103,6 +21802,164 @@
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_October_0013_a.jpg",
+    "media_type": "photo",
+    "file": "1995_October_0013_a.jpg",
+    "folder": "1995",
+    "date": "1995-10-01",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_October_0014_a.jpg",
+    "media_type": "photo",
+    "file": "1995_October_0014_a.jpg",
+    "folder": "1995",
+    "date": "1995-10-01",
+    "people": [
+      "Rickey Bell",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "People/Rickey Bell",
+      "People/Samatha Bell",
+      "People|Rickey Bell",
+      "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Rickey Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_October_0021_a.jpg",
+    "media_type": "photo",
+    "file": "1995_October_0021_a.jpg",
+    "folder": "1995",
+    "date": "1995-10-01",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_October_0023_a.jpg",
+    "media_type": "photo",
+    "file": "1995_October_0023_a.jpg",
+    "folder": "1995",
+    "date": "1995-10-01",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_October_0026_a.jpg",
+    "media_type": "photo",
+    "file": "1995_October_0026_a.jpg",
+    "folder": "1995",
+    "date": "1995-10-01",
+    "people": [
+      "Donna Brown",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Donna Brown",
+      "People/Donna Brown",
+      "People/Samatha Bell",
+      "People|Donna Brown",
+      "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_October_0034_a.jpg",
+    "media_type": "photo",
+    "file": "1995_October_0034_a.jpg",
+    "folder": "1995",
+    "date": "1995-10-01",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -21360,63 +22217,6 @@
     "gps": null
   },
   {
-    "path": "images/1995/1995_December_0010_a.jpg",
-    "media_type": "photo",
-    "file": "1995_December_0010_a.jpg",
-    "folder": "1995",
-    "date": "1995-12-01",
-    "people": [
-      "Tim Neely"
-    ],
-    "tags": [
-      "Douglas Heights",
-      "Lancaster County",
-      "People/Tim Neely",
-      "People|Tim Neely",
-      "Places/South Carolina",
-      "Places/South Carolina/Lancaster County",
-      "Places/South Carolina/Lancaster County/Douglas Heights",
-      "Places|South Carolina",
-      "Places|South Carolina|Lancaster County",
-      "Places|South Carolina|Lancaster County|Douglas Heights",
-      "South Carolina",
-      "Tim Neely"
-    ],
-    "title": "",
-    "description": "",
-    "location": "Douglas Heights",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
-    "path": "images/1995/1995_December_0011_a.jpg",
-    "media_type": "photo",
-    "file": "1995_December_0011_a.jpg",
-    "folder": "1995",
-    "date": "1995-12-01",
-    "people": [],
-    "tags": [
-      "Douglas Heights",
-      "Lancaster County",
-      "Places/South Carolina",
-      "Places/South Carolina/Lancaster County",
-      "Places/South Carolina/Lancaster County/Douglas Heights",
-      "Places|South Carolina",
-      "Places|South Carolina|Lancaster County",
-      "Places|South Carolina|Lancaster County|Douglas Heights",
-      "South Carolina"
-    ],
-    "title": "",
-    "description": "",
-    "location": "Douglas Heights",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/1995/1995_December_0012_a.jpg",
     "media_type": "photo",
     "file": "1995_December_0012_a.jpg",
@@ -21446,6 +22246,243 @@
     "title": "",
     "description": "",
     "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_December_0020_a.jpg",
+    "media_type": "photo",
+    "file": "1995_December_0020_a.jpg",
+    "folder": "1995",
+    "date": "1995-12-25",
+    "people": [
+      "Charlie Brown"
+    ],
+    "tags": [
+      "Charlie Brown",
+      "Douglas Heights",
+      "People/Charlie Brown",
+      "People|Charlie Brown",
+      "Places/South Carolina/Lancaster County/Douglas Heights",
+      "Places|South Carolina|Lancaster County|Douglas Heights"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Douglas Heights",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_December_0021_a.jpg",
+    "media_type": "photo",
+    "file": "1995_December_0021_a.jpg",
+    "folder": "1995",
+    "date": "1995-12-25",
+    "people": [
+      "Donna Brown",
+      "Samatha Bell",
+      "Tim Neely"
+    ],
+    "tags": [
+      "Donna Brown",
+      "Douglas Heights",
+      "People/Donna Brown",
+      "People/Samatha Bell",
+      "People/Tim Neely",
+      "People|Donna Brown",
+      "People|Samatha Bell",
+      "People|Tim Neely",
+      "Places/South Carolina/Lancaster County/Douglas Heights",
+      "Places|South Carolina|Lancaster County|Douglas Heights",
+      "Samatha Bell",
+      "Tim Neely"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Douglas Heights",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_December_0026_a.jpg",
+    "media_type": "photo",
+    "file": "1995_December_0026_a.jpg",
+    "folder": "1995",
+    "date": "1995-12-25",
+    "people": [
+      "Tony Neely"
+    ],
+    "tags": [
+      "Douglas Heights",
+      "People/Tony Neely",
+      "People|Tony Neely",
+      "Places/South Carolina/Lancaster County/Douglas Heights",
+      "Places|South Carolina|Lancaster County|Douglas Heights",
+      "Tony Neely"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Douglas Heights",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_December_0031_a.jpg",
+    "media_type": "photo",
+    "file": "1995_December_0031_a.jpg",
+    "folder": "1995",
+    "date": "1995-12-25",
+    "people": [
+      "Charlie Brown"
+    ],
+    "tags": [
+      "Charlie Brown",
+      "Douglas Heights",
+      "People/Charlie Brown",
+      "People|Charlie Brown",
+      "Places/South Carolina/Lancaster County/Douglas Heights",
+      "Places|South Carolina|Lancaster County|Douglas Heights"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Douglas Heights",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_December_0032_a.jpg",
+    "media_type": "photo",
+    "file": "1995_December_0032_a.jpg",
+    "folder": "1995",
+    "date": "1995-12-25",
+    "people": [
+      "Tony Neely"
+    ],
+    "tags": [
+      "Douglas Heights",
+      "People/Tony Neely",
+      "People|Tony Neely",
+      "Places/South Carolina/Lancaster County/Douglas Heights",
+      "Places|South Carolina|Lancaster County|Douglas Heights",
+      "Tony Neely"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Douglas Heights",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_December_0034_a.jpg",
+    "media_type": "photo",
+    "file": "1995_December_0034_a.jpg",
+    "folder": "1995",
+    "date": "1995-12-25",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Douglas Heights",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina/Lancaster County/Douglas Heights",
+      "Places|South Carolina|Lancaster County|Douglas Heights",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Douglas Heights",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_December_0036_a.jpg",
+    "media_type": "photo",
+    "file": "1995_December_0036_a.jpg",
+    "folder": "1995",
+    "date": "1995-12-25",
+    "people": [
+      "Samatha Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Douglas Heights",
+      "People/Samatha Bell",
+      "People/Stephanie Bell",
+      "People|Samatha Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County/Douglas Heights",
+      "Places|South Carolina|Lancaster County|Douglas Heights",
+      "Samatha Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Douglas Heights",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_December_0038_a.jpg",
+    "media_type": "photo",
+    "file": "1995_December_0038_a.jpg",
+    "folder": "1995",
+    "date": "1995-12-25",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Douglas Heights",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina/Lancaster County/Douglas Heights",
+      "Places|South Carolina|Lancaster County|Douglas Heights",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Douglas Heights",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1995/1995_December_0039_a.jpg",
+    "media_type": "photo",
+    "file": "1995_December_0039_a.jpg",
+    "folder": "1995",
+    "date": "1995-12-25",
+    "people": [
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Douglas Heights",
+      "People/Stephanie Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County/Douglas Heights",
+      "Places|South Carolina|Lancaster County|Douglas Heights",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Douglas Heights",
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
@@ -25074,6 +26111,56 @@
     "gps": null
   },
   {
+    "path": "images/2000/Sam on Boat3.JPG",
+    "media_type": "photo",
+    "file": "Sam on Boat3.JPG",
+    "folder": "2000",
+    "date": "2000-01-01",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Crystal River",
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2000/Sam Reg.JPG",
+    "media_type": "photo",
+    "file": "Sam Reg.JPG",
+    "folder": "2000",
+    "date": "2000-01-01",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Crystal River",
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2000/Sam&Rick on Boat.JPG",
     "media_type": "photo",
     "file": "Sam&Rick on Boat.JPG",
@@ -25128,6 +26215,35 @@
     "gps": null
   },
   {
+    "path": "images/2000/Steph & Mike on Boat.JPG",
+    "media_type": "photo",
+    "file": "Steph & Mike on Boat.JPG",
+    "folder": "2000",
+    "date": "2000-01-01",
+    "people": [
+      "Mike Morgan",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Crystal River",
+      "Mike Morgan",
+      "People/Mike Morgan",
+      "People/Stephanie Bell",
+      "People|Mike Morgan",
+      "People|Stephanie Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2015/517619764_10239547001118786_1674420501074952262_n.jpg",
     "media_type": "photo",
     "file": "517619764_10239547001118786_1674420501074952262_n.jpg",
@@ -25154,6 +26270,22 @@
     "gps": null
   },
   {
+    "path": "images/2000/07EK5138.JPG",
+    "media_type": "photo",
+    "file": "07EK5138.JPG",
+    "folder": "2000",
+    "date": "2000-07-01",
+    "people": [],
+    "tags": [],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2000/07EK5211.JPG",
     "media_type": "photo",
     "file": "07EK5211.JPG",
@@ -25169,6 +26301,22 @@
     ],
     "title": "",
     "description": "LEAD Technologies Inc. V1.01",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2000/07EK5223.JPG",
+    "media_type": "photo",
+    "file": "07EK5223.JPG",
+    "folder": "2000",
+    "date": "2000-07-01",
+    "people": [],
+    "tags": [],
+    "title": "",
+    "description": "",
     "location": "",
     "city": "",
     "state": "",
@@ -29622,6 +30770,28 @@
     "gps": null
   },
   {
+    "path": "images/2008/FILE0234.JPG",
+    "media_type": "photo",
+    "file": "FILE0234.JPG",
+    "folder": "2008",
+    "date": "2008-12-21",
+    "people": [
+      "Andrew Morgan"
+    ],
+    "tags": [
+      "Andrew Morgan",
+      "People/Andrew Morgan",
+      "People|Andrew Morgan"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2010/031.JPG",
     "media_type": "photo",
     "file": "031.JPG",
@@ -29698,6 +30868,32 @@
       "People/Jarred Bell",
       "People|Dickey Bell",
       "People|Jarred Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2011/103_0643.JPG",
+    "media_type": "photo",
+    "file": "103_0643.JPG",
+    "folder": "2011",
+    "date": "2009-01-01",
+    "people": [
+      "Andrew Morgan",
+      "Mickey Morgan"
+    ],
+    "tags": [
+      "Andrew Morgan",
+      "Mickey Morgan",
+      "People/Andrew Morgan",
+      "People/Mickey Morgan",
+      "People|Andrew Morgan",
+      "People|Mickey Morgan"
     ],
     "title": "",
     "description": "",
@@ -30399,6 +31595,35 @@
     "title": "",
     "description": "",
     "location": "2022 OLD OAKLAND CIR -Mickey Morgan's Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2011/IMG-20110311-00042.jpg",
+    "media_type": "photo",
+    "file": "IMG-20110311-00042.jpg",
+    "folder": "2011",
+    "date": "2011-03-11",
+    "people": [
+      "Andrew Morgan",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Andrew Morgan",
+      "People/Andrew Morgan",
+      "People/Samatha Bell",
+      "People|Andrew Morgan",
+      "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
@@ -32964,6 +34189,34 @@
     }
   },
   {
+    "path": "images/2019/20191124_125211.jpg",
+    "media_type": "photo",
+    "file": "20191124_125211.jpg",
+    "folder": "2019",
+    "date": "2019-11-24",
+    "people": [
+      "Andrew Morgan"
+    ],
+    "tags": [
+      "Andrew Morgan",
+      "Lancaster County",
+      "People/Andrew Morgan",
+      "People|Andrew Morgan",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6800322786111,
+      "lon": -80.7631830830556
+    }
+  },
+  {
     "path": "images/2019/20191126_093945.jpg",
     "media_type": "photo",
     "file": "20191126_093945.jpg",
@@ -33208,6 +34461,63 @@
     "gps": {
       "lat": 34.6938,
       "lon": -80.8252999836111
+    }
+  },
+  {
+    "path": "images/2020/20200211_132405.jpg",
+    "media_type": "photo",
+    "file": "20200211_132405.jpg",
+    "folder": "2020",
+    "date": "2020-02-11",
+    "people": [
+      "Andrew Morgan"
+    ],
+    "tags": [
+      "Andrew Morgan",
+      "Chester County",
+      "People/Andrew Morgan",
+      "People|Andrew Morgan",
+      "Places/South Carolina/Chester County",
+      "Places|South Carolina|Chester County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6443979666667,
+      "lon": -81.1271063497222
+    }
+  },
+  {
+    "path": "videos/2020/20200320_192039.mp4",
+    "media_type": "video",
+    "file": "20200320_192039.mp4",
+    "folder": "2020",
+    "date": "2020-03-20",
+    "people": [
+      "Andrew Morgan"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Andrew Morgan",
+      "People/Andrew Morgan",
+      "People|Andrew Morgan",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6934999994444,
+      "lon": -80.8251999833333
     }
   },
   {
