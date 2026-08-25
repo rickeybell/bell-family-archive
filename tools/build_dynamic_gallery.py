@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import json, html, pathlib, re
+import json, html, pathlib, re, urllib.parse
 from datetime import datetime
 
 ROOT=pathlib.Path(__file__).resolve().parents[1]
@@ -7,6 +7,7 @@ DATA=json.loads((ROOT/'photo_metadata.json').read_text(encoding='utf-8'))
 STATE_ABBR={'Florida':'FL','Georgia':'GA','North Carolina':'NC','South Carolina':'SC','Virginia':'VA','Tennessee':'TN','New York':'NY','Pennsylvania':'PA','Maryland':'MD','Alabama':'AL','Mississippi':'MS','Texas':'TX','California':'CA','Ohio':'OH','West Virginia':'WV'}
 
 def esc(v): return html.escape(str(v or ''),quote=True)
+def url(v): return urllib.parse.quote(str(v or ''),safe='/')
 def nice_date(v):
     if not v:return 'Date unknown'
     if re.fullmatch(r'\d{4}',v):return f'Circa {v}'
@@ -69,16 +70,16 @@ def page(title,subtitle,items,filename):
             if ppl:lines.append(f'<div class="archive-meta-line">{esc(ppl)}</div>')
             th=f'<h3>{esc(ttl)}</h3>' if ttl else ''
             if is_video:
-                media=f'<div class="archive-video-wrap"><video controls preload="metadata" playsinline src="{esc(v)}">Your browser does not support this video.</video><div class="archive-video-label">Video</div></div>'
-                actions=f'<div class="archive-actions"><a href="{esc(o)}" download>Download video</a></div>'
+                media=f'<div class="archive-video-wrap"><video controls preload="metadata" playsinline src="{esc(url(v))}">Your browser does not support this video.</video><div class="archive-video-label">Video</div></div>'
+                actions=f'<div class="archive-actions"><a href="{esc(url(o))}" download>Download video</a></div>'
             elif is_audio:
-                media=f'<div class="archive-audio-wrap"><div class="archive-audio-label">Sound</div><audio controls preload="metadata" src="{esc(v)}">Your browser does not support this audio.</audio></div>'
-                actions=f'<div class="archive-actions"><a href="{esc(o)}" download>Download audio</a></div>'
+                media=f'<div class="archive-audio-wrap"><div class="archive-audio-label">Sound</div><audio controls preload="metadata" src="{esc(url(v))}">Your browser does not support this audio.</audio></div>'
+                actions=f'<div class="archive-actions"><a href="{esc(url(o))}" download>Download audio</a></div>'
             else:
-                media=f'<button class="archive-pic" data-view-i="{idx}"><img src="{esc(t)}" alt="{esc(ttl or "Archive photo")}" loading="lazy"></button>'
-                actions=f'<div class="archive-actions"><button data-view-i="{idx}">View</button><a href="{esc(o)}" download>Download high resolution</a></div>'
+                media=f'<button class="archive-pic" data-view-i="{idx}"><img src="{esc(url(t))}" alt="{esc(ttl or "Archive photo")}" loading="lazy"></button>'
+                actions=f'<div class="archive-actions"><button data-view-i="{idx}">View</button><a href="{esc(url(o))}" download>Download high resolution</a></div>'
             cards.append(f'''<article class="archive-card" data-i="{idx}">{media}<div class="archive-copy">{th}<div class="archive-meta">{''.join(lines)}</div>{f'<p>{esc(desc)}</p>' if desc else ''}<div class="archive-file">{esc(fn)}</div>{actions}</div></article>''')
-            viewer.append({'view':v,'orig':o,'title':ttl,'date':date,'location':loc,'people':ppl,'people_raw':x.get('people') or [],'categories':x.get('categories') or [],'tags':x.get('tags') or [],'description':desc,'name':fn,'media_type':'video' if is_video else ('audio' if is_audio else 'photo')})
+            viewer.append({'view':url(v),'orig':url(o),'title':ttl,'date':date,'location':loc,'people':ppl,'people_raw':x.get('people') or [],'categories':x.get('categories') or [],'tags':x.get('tags') or [],'description':desc,'name':fn,'media_type':'video' if is_video else ('audio' if is_audio else 'photo')})
             idx+=1
         sections.append(f'<section class="archive-year"><h2>{esc(y)}</h2><div class="archive-grid">{"".join(cards)}</div></section>')
 
@@ -86,7 +87,7 @@ def page(title,subtitle,items,filename):
     base_person=None
     if filename.endswith('-photos.html') and filename!='gallery.html':
         slug=filename[:-12]
-        base_person={'dickey':'Dickey Bell','spooky':'Spooky Bell','buster':'Buster Bell','alma':'Alma Bell','rickey':'Rickey Bell','sonja':'Sonja Bell','heather':'Heather Bell','helen':'Helen Bell','stephanie':'Stephanie Bell','jarred':'Jarred Bell','samatha':'Samatha Bell','ivy':'Ivy Bell','olivia':'Olivia Bell','sophia':'Sophia Bell','dominique':'Dominique Burwell','debbie':'Debbie Phillips','irvin':'Irvin Phillips','rickii':'Rickii Lear','breana':'Anna Lear','donna':'Donna Brown','charlie':'Charlie Brown','jason':'Jason Hoke'}.get(slug)
+        base_person={'dickey':'Dickey Bell','spooky':'Spooky Bell','buster':'Buster Bell','alma':'Alma Bell','rickey':'Rickey Bell','sonja':'Sonja Bell','heather':'Heather Bell','helen':'Helen Bell','stephanie':'Stephanie Bell','jarred':'Jarred Bell','samatha':'Samatha Bell','ivy':'Ivy Bell','olivia':'Olivia Bell','sophia':'Sophia Bell','dominique':'Dominique Burwell','debbie':'Debbie Phillips','irvin':'Irvin Phillips','rickii':'Rickii Lear','breana':'Anna Lear','donna':'Donna Brown','charlie':'Charlie Brown','jason':'Jason Hoke','mike-morgan':'Mike Morgan','teri-wallace':'Teri Wallace','mickey-morgan':'Mickey Morgan','andrew-morgan':'Andrew Morgan','teresa-cooper':'Teresa Cooper','carla-pittman':'Carla Pittman','dick-bell':'Dick Bell','rachel-bell':'Rachel Bell','everate-faulkenberry':'Everate Faulkenberry','peggy-faulkenberry':'Peggy Faulkenberry','lisa-steen':'Lisa Steen','macey-steen':'Macey Steen','tony-neely':'Tony Neely'}.get(slug)
     person_label=f'Person &mdash; with {esc(base_person)}' if base_person else 'Person'
     person_all=f'Anyone with {esc(base_person)}' if base_person else 'All people'
     person_context=(f'<div class="archive-filter-context">This album already shows items containing <strong>{esc(base_person)}</strong>. Choosing a person below narrows it to items containing both people.</div>' if base_person else '')
@@ -117,8 +118,8 @@ document.querySelectorAll('[data-view-i]').forEach(e=>e.onclick=()=>show(+e.data
     (ROOT/filename).write_text(body,encoding='utf-8')
 
 page('Photo Gallery','Chronological gallery generated from the current Bell Family Archive metadata.',DATA,'gallery.html')
-people={'dickey':'Dickey Bell','spooky':'Spooky Bell','buster':'Buster Bell','alma':'Alma Bell','rickey':'Rickey Bell','sonja':'Sonja Bell','heather':'Heather Bell','helen':'Helen Bell','stephanie':'Stephanie Bell','jarred':'Jarred Bell','samatha':'Samatha Bell','ivy':'Ivy Bell','olivia':'Olivia Bell','sophia':'Sophia Bell','dominique':'Dominique Burwell','debbie':'Debbie Phillips','irvin':'Irvin Phillips','rickii':'Rickii Lear','breana':'Anna Lear','donna':'Donna Brown','charlie':'Charlie Brown','jason':'Jason Hoke'}
+people={'dickey':'Dickey Bell','spooky':'Spooky Bell','buster':'Buster Bell','alma':'Alma Bell','rickey':'Rickey Bell','sonja':'Sonja Bell','heather':'Heather Bell','helen':'Helen Bell','stephanie':'Stephanie Bell','jarred':'Jarred Bell','samatha':'Samatha Bell','ivy':'Ivy Bell','olivia':'Olivia Bell','sophia':'Sophia Bell','dominique':'Dominique Burwell','debbie':'Debbie Phillips','irvin':'Irvin Phillips','rickii':'Rickii Lear','breana':'Anna Lear','donna':'Donna Brown','charlie':'Charlie Brown','jason':'Jason Hoke','mike-morgan':'Mike Morgan','teri-wallace':'Teri Wallace','mickey-morgan':'Mickey Morgan','andrew-morgan':'Andrew Morgan','teresa-cooper':'Teresa Cooper','carla-pittman':'Carla Pittman','dick-bell':'Dick Bell','rachel-bell':'Rachel Bell','everate-faulkenberry':'Everate Faulkenberry','peggy-faulkenberry':'Peggy Faulkenberry','lisa-steen':'Lisa Steen','macey-steen':'Macey Steen','tony-neely':'Tony Neely'}
 for slug,name in people.items():
-    display_name={'samatha':'Samatha Bell','breana':'BreAna Lear'}.get(slug,name)
+    display_name={'samatha':'Samatha Bell','breana':'BreeAna Lear','teri-wallace':'Teri Wallace Harrison','teresa-cooper':'Teresa Cooper Justice','carla-pittman':'Carla Pittman Lilly','peggy-faulkenberry':'Peggy Elliot Faulkenberry','lisa-steen':'Lisa Faulkenberry Steen','macey-steen':'Macey Steen Payne'}.get(slug,name)
     page(f'{display_name} - Photo Archive',f'Archive items currently tagged {name} in the Bell Family Archive.',[x for x in DATA if name in(x.get('people') or [])],f'{slug}-photos.html')
 print('Generated gallery and',len(people),'person galleries from',len(DATA),'metadata records including video and audio support')

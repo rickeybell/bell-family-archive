@@ -5,7 +5,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-$ScriptVersion = "2.0"
+$ScriptVersion = "2.1"
 $RepoRoot = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive"
 $SourceRoot = "C:\Users\rbell\OneDrive\Pictures"
 $VideoRoot = Join-Path $RepoRoot "videos"
@@ -201,7 +201,7 @@ Write-Host ""
 
 $files = @(Get-ChildItem -LiteralPath $SourceRoot -Recurse -File -ErrorAction SilentlyContinue |
     Where-Object {
-        $_.FullName -notmatch '[\\/]\.dtrash[\\/]' -and
+        $_.FullName -notmatch '(?i)[\\/](\.dtrash|_Tag_Backups)[\\/]' -and
         $VideoExtensions -contains $_.Extension.ToLowerInvariant()
     })
 

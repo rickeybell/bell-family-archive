@@ -52,7 +52,8 @@ document.addEventListener("DOMContentLoaded",()=>{
             el.hidden=count===0;
             if(count===0)return;
           }
-          el.textContent=`${count} archive item${count===1?"":"s"}`;
+          const prefix=el.dataset.archivePrefix||"";
+          el.textContent=`${prefix}${count} archive item${count===1?"":"s"}`;
         });
       })
       .catch(err=>console.warn("Archive counts could not be refreshed:",err));

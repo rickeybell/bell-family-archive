@@ -4,9 +4,22 @@
 
     [string]$Root = 'C:\Users\rbell\OneDrive\Pictures\2019',
 
-    [switch]$NoRecurse
+    [switch]$NoRecurse,
+
+    [int]$FromYear = 0,
+
+    [int]$ToYear = 9999
 )
 
+# Keep ExifTool's Perl runtime quiet and deterministic on Windows.
+$env:LC_ALL = 'C'
+$env:LC_CTYPE = 'C'
+$env:LANG = 'C'
+$ErrorActionPreference = 'Stop'
+
+# v2.16: caches embedded and sidecar tags in two batch reads instead of rereading each file.
+# v2.15: adds a scoped year range so multiple year folders can be scanned in one safe pass.
+# v2.14: adds 500-foot Lancaster Rescue Squad and 212 S Main St QDS Office geofences.
 # v2.10: adds travel-state/city GPS tagging for GA, VA, DC, TN, LA and additional FL destinations.
 #       Photos get GPS in image + sidecar; videos get GPS in sidecar only.
 # v2.6: safer video sidecar handling. Existing .xmp sidecars are never recreated;
@@ -122,6 +135,29 @@ $DouglasRoad = @{
     ProtectedParents = @()
 }
 
+# Specific Lancaster County workplace geofences. Evaluated before county rules.
+$LancasterRescueSquad = @{
+    Name = 'Lancaster Rescue Squad'
+    LeafTag = 'Lancaster Rescue Squad'
+    DigiKamTag = 'Places/South Carolina/Lancaster County/Lancaster Rescue Squad'
+    HierTag = 'Places|South Carolina|Lancaster County|Lancaster Rescue Squad'
+    Latitude = 34.702819927107065
+    Longitude = -80.77137060962954
+    RadiusMeters = 152.4   # 500 ft
+    ProtectedParents = @()
+}
+
+$QDSOffice = @{
+    Name = '212 S Main St QDS Office'
+    LeafTag = '212 S Main St QDS Office'
+    DigiKamTag = 'Places/South Carolina/Lancaster County/212 S Main St QDS Office'
+    HierTag = 'Places|South Carolina|Lancaster County|212 S Main St QDS Office'
+    Latitude = 34.71835029983651
+    Longitude = -80.77003196631922
+    RadiusMeters = 152.4   # 500 ft
+    ProtectedParents = @()
+}
+
 
 # Specific Lancaster County school geofences. Evaluated before general county rules.
 $LancasterHighSchool = @{
@@ -228,10 +264,36 @@ $VideoTag = @{
 
 $PhotoExtensions = @('jpg','jpeg','heic','png','tif','tiff')
 $VideoExtensions = @('mp4','mov','m4v','avi')
+$script:TargetTagCache = @{}
+$script:VideoSidecarTagCache = @{}
 
-$ReportPath = Join-Path $Root 'GPS-County-Geofence-Report.csv'
-$WriteLogPath = Join-Path $Root 'GPS-County-Geofence-WriteLog.csv'
-$BackupRoot = Join-Path (Split-Path $Root -Parent) '_Tag_Backups\County_GPS_Tagging'
+$UseYearRange = ($FromYear -gt 0 -or $ToYear -lt 9999)
+if ($FromYear -lt 0 -or $ToYear -lt $FromYear) {
+    throw "Invalid year range: $FromYear through $ToYear"
+}
+
+$ScanRoots = @($Root)
+$RangeSuffix = ''
+if ($UseYearRange) {
+    $ScanRoots = @(
+        foreach ($year in $FromYear..$ToYear) {
+            $yearPath = Join-Path $Root ([string]$year)
+            if (Test-Path -LiteralPath $yearPath -PathType Container) { $yearPath }
+        }
+    )
+    if ($ScanRoots.Count -eq 0) {
+        throw "No year folders from $FromYear through $ToYear were found under $Root"
+    }
+    $RangeSuffix = "-$FromYear-$ToYear"
+}
+
+$ReportPath = Join-Path $Root "GPS-County-Geofence-Report$RangeSuffix.csv"
+$WriteLogPath = Join-Path $Root "GPS-County-Geofence-WriteLog$RangeSuffix.csv"
+$BackupRoot = if ($UseYearRange) {
+    Join-Path $Root "_Tag_Backups\County_GPS_Tagging\$FromYear-$ToYear"
+} else {
+    Join-Path (Split-Path $Root -Parent) '_Tag_Backups\County_GPS_Tagging'
+}
 
 # -----------------------------
 # Geometry helpers
@@ -335,6 +397,25 @@ function Get-DistanceMeters {
 # Metadata helpers
 # -----------------------------
 
+function Get-CacheKey {
+    param([string]$Path)
+    try { return [System.IO.Path]::GetFullPath($Path).ToLowerInvariant() }
+    catch { return ([string]$Path).ToLowerInvariant() }
+}
+
+function Get-AllTagsFromRecord {
+    param($Record)
+
+    if ($null -eq $Record) { return @() }
+    $all=@()
+    $all += @($Record.TagsList)
+    $all += @($Record.HierarchicalSubject)
+    $all += @($Record.Subject)
+    $all += @($Record.LastKeywordXMP)
+    $all += @($Record.Keywords)
+    return @($all | Where-Object { -not [string]::IsNullOrWhiteSpace([string]$_) })
+}
+
 function Get-FileKind {
     param([string]$Extension)
 
@@ -372,7 +453,13 @@ function New-VideoSidecarFromMedia {
 function Get-AllTagsFromTarget {
     param([string]$Target)
 
+    $cacheKey=Get-CacheKey -Path $Target
+    if ($script:TargetTagCache.ContainsKey($cacheKey)) {
+        return @($script:TargetTagCache[$cacheKey])
+    }
+
     if (-not (Test-Path -LiteralPath $Target)) {
+        $script:TargetTagCache[$cacheKey]=@()
         return @()
     }
 
@@ -384,18 +471,9 @@ function Get-AllTagsFromTarget {
         -IPTC:Keywords `
         $Target) | ConvertFrom-Json
 
-    $all=@()
-    $all += @($meta[0].TagsList)
-    $all += @($meta[0].HierarchicalSubject)
-    $all += @($meta[0].Subject)
-    $all += @($meta[0].LastKeywordXMP)
-    $all += @($meta[0].Keywords)
-
-    return @(
-        $all | Where-Object {
-            -not [string]::IsNullOrWhiteSpace([string]$_)
-        }
-    )
+    $all=@(Get-AllTagsFromRecord -Record $meta[0])
+    $script:TargetTagCache[$cacheKey]=@($all)
+    return @($all)
 }
 
 function Get-AllTagsForMedia {
@@ -448,6 +526,11 @@ function Test-HasDigiKamVideoTag {
     $sidecar="$MediaPath.xmp"
     if (-not (Test-Path -LiteralPath $sidecar)) { return $false }
 
+    $cacheKey=Get-CacheKey -Path $sidecar
+    if ($script:VideoSidecarTagCache.ContainsKey($cacheKey)) {
+        return [bool]$script:VideoSidecarTagCache[$cacheKey]
+    }
+
     $meta = (& $script:ExifTool.Source -json `
         -XMP-digiKam:TagsList `
         -XMP-lr:HierarchicalSubject `
@@ -461,10 +544,12 @@ function Test-HasDigiKamVideoTag {
     $tags += @($meta[0].HierarchicalSubject)
     $tags += @($meta[0].Subject)
 
+    $hasVideoTag=$false
     foreach ($tag in $tags) {
-        if ([string]$tag -ieq 'Video') { return $true }
+        if ([string]$tag -ieq 'Video') { $hasVideoTag=$true; break }
     }
-    return $false
+    $script:VideoSidecarTagCache[$cacheKey]=$hasVideoTag
+    return $hasVideoTag
 }
 
 function Test-AlreadyHasCountyTag {
@@ -592,13 +677,16 @@ function Set-GpsOnSidecar {
 # -----------------------------
 
 Write-Host ""
-Write-Host "Bell Family Archive - Combined Property + County GPS Geotagger v2.12" -ForegroundColor Cyan
+Write-Host "Bell Family Archive - Combined Property + County GPS Geotagger v2.16" -ForegroundColor Cyan
 Write-Host "Mode   : $Mode"
 Write-Host "Folder : $Root"
+if ($UseYearRange) { Write-Host "Years  : $FromYear through $ToYear ($($ScanRoots.Count) folders)" }
 Write-Host "Recurse: $(if ($NoRecurse) { 'NO' } else { 'YES' })"
 Write-Host "Confederate Ave     : existing 900/910->900 and 909 polygon rules"
 Write-Host "973 Community Lane: $($CommunityLane.Latitude), $($CommunityLane.Longitude) / 500 ft"
 Write-Host "2044 Douglas Rd    : $($DouglasRoad.Latitude), $($DouglasRoad.Longitude) / 500 ft"
+Write-Host "Lancaster Rescue   : $($LancasterRescueSquad.Latitude), $($LancasterRescueSquad.Longitude) / 500 ft"
+Write-Host "212 S Main QDS     : $($QDSOffice.Latitude), $($QDSOffice.Longitude) / 500 ft"
 Write-Host "Lancaster High     : $($LancasterHighSchool.Latitude), $($LancasterHighSchool.Longitude) / 1000 ft"
 Write-Host "Erwin Elementary   : $($ErwinElementary.Latitude), $($ErwinElementary.Longitude) / 1000 ft"
 Write-Host "Sub Fiber          : $($SubFiber.Latitude), $($SubFiber.Longitude) / 1000 ft"
@@ -674,7 +762,9 @@ $ExifArgs=@(
     '-json','-n',
     '-i','.dtrash',
     '-GPSLatitude','-GPSLongitude',
-    '-FileName','-Directory','-FileTypeExtension'
+    '-FileName','-Directory','-FileTypeExtension',
+    '-XMP-digiKam:TagsList','-XMP-lr:HierarchicalSubject','-XMP-dc:Subject',
+    '-XMP-MicrosoftPhoto:LastKeywordXMP','-IPTC:Keywords'
 )
 
 foreach ($ext in ($PhotoExtensions+$VideoExtensions)) {
@@ -682,10 +772,11 @@ foreach ($ext in ($PhotoExtensions+$VideoExtensions)) {
 }
 
 if ($NoRecurse) {
-    $ExifArgs += $Root
+    $ExifArgs += $ScanRoots
 }
 else {
-    $ExifArgs += @('-r',$Root)
+    $ExifArgs += '-r'
+    $ExifArgs += $ScanRoots
 }
 
 $Items=(& $ExifTool.Source @ExifArgs) | ConvertFrom-Json
@@ -693,6 +784,40 @@ $Items=@($Items | Where-Object {
     $candidate=Join-Path $_.Directory $_.FileName
     $candidate -notmatch '(?i)(^|[\\/])\.dtrash([\\/]|$)'
 })
+
+foreach ($Item in $Items) {
+    $target=Join-Path $Item.Directory $Item.FileName
+    $script:TargetTagCache[(Get-CacheKey -Path $target)]=@(Get-AllTagsFromRecord -Record $Item)
+}
+
+Write-Host "Reading XMP sidecar tags in one batch..." -ForegroundColor Cyan
+$SidecarArgs=@(
+    '-json','-i','.dtrash',
+    '-FileName','-Directory',
+    '-XMP-digiKam:TagsList','-XMP-lr:HierarchicalSubject','-XMP-dc:Subject',
+    '-XMP-MicrosoftPhoto:LastKeywordXMP','-IPTC:Keywords',
+    '-ext','xmp'
+)
+if ($NoRecurse) {
+    $SidecarArgs += $ScanRoots
+}
+else {
+    $SidecarArgs += '-r'
+    $SidecarArgs += $ScanRoots
+}
+$SidecarItems=(& $ExifTool.Source @SidecarArgs) | ConvertFrom-Json
+$SidecarItems=@($SidecarItems)
+foreach ($SidecarItem in $SidecarItems) {
+    $target=Join-Path $SidecarItem.Directory $SidecarItem.FileName
+    $cacheKey=Get-CacheKey -Path $target
+    $script:TargetTagCache[$cacheKey]=@(Get-AllTagsFromRecord -Record $SidecarItem)
+    $videoTags=@()
+    $videoTags += @($SidecarItem.TagsList)
+    $videoTags += @($SidecarItem.HierarchicalSubject)
+    $videoTags += @($SidecarItem.Subject)
+    $script:VideoSidecarTagCache[$cacheKey]=(@($videoTags | Where-Object { [string]$_ -ieq 'Video' }).Count -gt 0)
+}
+Write-Host "Cached tags for $($Items.Count) media files and $($SidecarItems.Count) sidecars." -ForegroundColor Green
 $Rows=@()
 
 foreach ($Item in $Items) {
@@ -719,7 +844,7 @@ foreach ($Item in $Items) {
         # a specific location tag but lacks GPS, use that location's fixed
         # reference coordinate. Existing GPS is never replaced.
         $trustedPoint=$null
-        foreach ($point in @($CommunityLane,$DouglasRoad,$LancasterHighSchool,$ErwinElementary,$SubFiber)) {
+        foreach ($point in @($CommunityLane,$DouglasRoad,$LancasterRescueSquad,$QDSOffice,$LancasterHighSchool,$ErwinElementary,$SubFiber)) {
             if (Test-AlreadyHasCountyTag -MediaPath $fullPath -County $point) {
                 $trustedPoint=$point
                 break
@@ -778,6 +903,18 @@ foreach ($Item in $Items) {
         -Lon2 $DouglasRoad.Longitude
 
     $douglasDistanceFeet=$douglasDistanceMeters * 3.280839895
+
+    $lancasterRescueDistanceMeters=Get-DistanceMeters `
+        -Lat1 $lat `
+        -Lon1 $lon `
+        -Lat2 $LancasterRescueSquad.Latitude `
+        -Lon2 $LancasterRescueSquad.Longitude
+
+    $qdsOfficeDistanceMeters=Get-DistanceMeters `
+        -Lat1 $lat `
+        -Lon1 $lon `
+        -Lat2 $QDSOffice.Latitude `
+        -Lon2 $QDSOffice.Longitude
 
 
     $lancasterHighDistanceMeters=Get-DistanceMeters `
@@ -907,6 +1044,32 @@ foreach ($Item in $Items) {
             VideoTagNeeded=if($videoTagNeeded){'YES'}else{'NO'}
             Action=if($hasPropertyTag){"SKIP - already $($Property.LeafTag) tagged"}else{"TAG $($Property.LeafTag)"}
             ProposedTag=if($hasPropertyTag){''}else{$Property.DigiKamTag}
+        }
+        continue
+    }
+
+    # Lancaster workplaces are checked before schools and general county classification.
+    $workplaceMatch=$null
+    if ($lancasterRescueDistanceMeters -le $LancasterRescueSquad.RadiusMeters) {
+        $workplaceMatch=$LancasterRescueSquad
+    }
+    elseif ($qdsOfficeDistanceMeters -le $QDSOffice.RadiusMeters) {
+        $workplaceMatch=$QDSOffice
+    }
+
+    if ($workplaceMatch) {
+        $hasWorkplaceTag=Test-AlreadyHasCountyTag -MediaPath $fullPath -County $workplaceMatch
+        $Rows += [PSCustomObject]@{
+            FileName=$Item.FileName; FileType=$kind; FullPath=$fullPath; HasGPS='YES'
+            Latitude=[Math]::Round($lat,7); Longitude=[Math]::Round($lon,7)
+            DistanceTo973Ft=[Math]::Round($distanceFeet,1)
+            DistanceToDouglasFt=[Math]::Round($douglasDistanceFeet,1)
+            DistanceToSubFiberFt=[Math]::Round($subFiberDistanceFeet,1)
+            ConfederateMatch=''; CountyMatch='Lancaster County'; ProtectedChildLocation=''
+            AlreadyCountyTag=if($hasWorkplaceTag){'YES'}else{'NO'}
+            VideoTagNeeded=if($videoTagNeeded){'YES'}else{'NO'}
+            Action=if($hasWorkplaceTag){"SKIP - already $($workplaceMatch.Name) tagged"}else{"TAG $($workplaceMatch.Name)"}
+            ProposedTag=if($hasWorkplaceTag){''}else{$workplaceMatch.DigiKamTag}
         }
         continue
     }
@@ -1206,11 +1369,17 @@ $skip973=@($Rows | Where-Object {$_.Action -eq 'SKIP - already 973 Community Lan
 $tag973=@($Rows | Where-Object {$_.Action -eq 'TAG 973 Community Lane'})
 $embed973=@($Rows | Where-Object {$_.Action -eq 'EMBED GPS 973 Community Lane'})
 $embedDouglas=@($Rows | Where-Object {$_.Action -eq 'EMBED GPS 2044 Douglas Rd'})
+$embedLancasterRescue=@($Rows | Where-Object {$_.Action -eq 'EMBED GPS Lancaster Rescue Squad'})
+$embedQDSOffice=@($Rows | Where-Object {$_.Action -eq 'EMBED GPS 212 S Main St QDS Office'})
 $embedLancasterHigh=@($Rows | Where-Object {$_.Action -eq 'EMBED GPS Lancaster High School'})
 $embedErwin=@($Rows | Where-Object {$_.Action -eq 'EMBED GPS Erwin Elementary'})
 $embedSubFiber=@($Rows | Where-Object {$_.Action -eq 'EMBED GPS Sub Fiber'})
 $tagDouglas=@($Rows | Where-Object {$_.Action -eq 'TAG 2044 Douglas Rd'})
 $skipDouglas=@($Rows | Where-Object {$_.Action -eq 'SKIP - already 2044 Douglas Rd tagged'}).Count
+$tagLancasterRescue=@($Rows | Where-Object {$_.Action -eq 'TAG Lancaster Rescue Squad'})
+$skipLancasterRescue=@($Rows | Where-Object {$_.Action -eq 'SKIP - already Lancaster Rescue Squad tagged'}).Count
+$tagQDSOffice=@($Rows | Where-Object {$_.Action -eq 'TAG 212 S Main St QDS Office'})
+$skipQDSOffice=@($Rows | Where-Object {$_.Action -eq 'SKIP - already 212 S Main St QDS Office tagged'}).Count
 $tagLancasterHigh=@($Rows | Where-Object {$_.Action -eq 'TAG Lancaster High School'})
 $skipLancasterHigh=@($Rows | Where-Object {$_.Action -eq 'SKIP - already Lancaster High School tagged'}).Count
 $tagErwin=@($Rows | Where-Object {$_.Action -eq 'TAG Erwin Elementary'})
@@ -1247,6 +1416,12 @@ Write-Host "973 tags needing GPS       : $($embed973.Count)"
 Write-Host "Skipped - already Douglas  : $skipDouglas"
 Write-Host "2044 Douglas GPS matches   : $($tagDouglas.Count)"
 Write-Host "2044 Douglas tags need GPS : $($embedDouglas.Count)"
+Write-Host "Skipped - already Rescue   : $skipLancasterRescue"
+Write-Host "Lancaster Rescue matches   : $($tagLancasterRescue.Count)"
+Write-Host "Lancaster Rescue needs GPS : $($embedLancasterRescue.Count)"
+Write-Host "Skipped - already QDS      : $skipQDSOffice"
+Write-Host "212 S Main QDS matches     : $($tagQDSOffice.Count)"
+Write-Host "212 S Main QDS needs GPS   : $($embedQDSOffice.Count)"
 Write-Host "Skipped - already LHS      : $skipLancasterHigh"
 Write-Host "Lancaster High matches/tag : $($tagLancasterHigh.Count)"
 Write-Host "Lancaster High tags needGPS: $($embedLancasterHigh.Count)"
@@ -1359,7 +1534,7 @@ foreach ($row in $toWrite) {
     # Trusted point tag -> GPS reverse geocoding
     # ---------------------------------------------------------
     if ($row.Action -like 'EMBED GPS *') {
-        $Point=@($CommunityLane,$DouglasRoad,$LancasterHighSchool,$ErwinElementary,$SubFiber) | Where-Object {
+        $Point=@($CommunityLane,$DouglasRoad,$LancasterRescueSquad,$QDSOffice,$LancasterHighSchool,$ErwinElementary,$SubFiber) | Where-Object {
             $_.DigiKamTag -eq $row.ProposedTag
         } | Select-Object -First 1
 
@@ -1539,13 +1714,13 @@ foreach ($row in $toWrite) {
             $photo=$row.FullPath
             $sidecar="$photo.xmp"
             $relative=$photo.Substring($Root.Length).TrimStart('\')
-            $photoBackup=Join-Path $BackupRoot ($relative -replace '[\/:*?"<>|]','_')
+            $photoBackup=Join-Path $BackupRoot ($relative -replace '[\\/:*?"<>|]','_')
             if (-not (Test-Path -LiteralPath $photoBackup)) { Copy-Item -LiteralPath $photo -Destination $photoBackup }
 
             $sidecarBackup=''
             if (Test-Path -LiteralPath $sidecar) {
                 $stamp=Get-Date -Format 'yyyyMMdd_HHmmss'
-                $sidecarBackup=Join-Path $BackupRoot ((($row.FileName+"_$stamp.xmp")) -replace '[\/:*?"<>|]','_')
+                $sidecarBackup=Join-Path $BackupRoot ((($row.FileName+"_$stamp.xmp")) -replace '[\\/:*?"<>|]','_')
                 Copy-Item -LiteralPath $sidecar -Destination $sidecarBackup
             }
             else {
@@ -1775,7 +1950,7 @@ foreach ($row in $toWrite) {
     }
 
     $TravelCityTargets=@($TravelStates | ForEach-Object { $_.Cities })
-    $AllGenericTargets=@($Counties) + @($DouglasRoad,$LancasterHighSchool,$ErwinElementary,$MyrtleBeach,$CrystalRiver,$Orlando,$DaytonaBeach,$FloridaKeys,$Florida) + @($TravelStates) + @($TravelCityTargets)
+    $AllGenericTargets=@($Counties) + @($DouglasRoad,$LancasterRescueSquad,$QDSOffice,$LancasterHighSchool,$ErwinElementary,$MyrtleBeach,$CrystalRiver,$Orlando,$DaytonaBeach,$FloridaKeys,$Florida) + @($TravelStates) + @($TravelCityTargets)
     $County=$AllGenericTargets | Where-Object {
         $_.DigiKamTag -eq $row.ProposedTag
     } | Select-Object -First 1

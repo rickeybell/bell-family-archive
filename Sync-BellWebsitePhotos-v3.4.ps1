@@ -3,7 +3,7 @@
     [switch]$ForceFullScan
 )
 
-$ScriptVersion = "3.4.1"
+$ScriptVersion = "3.4.2"
 $RepoRoot   = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive"
 $SourceRoot = "C:\Users\rbell\OneDrive\Pictures"
 $DestRoot   = Join-Path $RepoRoot "images"
@@ -25,12 +25,16 @@ function Get-ExifToolPath {
     throw "ExifTool was not found. Put exiftool.exe in C:\ExifTool or add it to PATH."
 }
 
-function Get-ImageFilesSkippingDTrash {
+function Get-ImageFilesSkippingExcludedFolders {
     param([string]$Root)
     Get-ChildItem -LiteralPath $Root -File -ErrorAction SilentlyContinue | Where-Object { $ImageExtensions -contains $_.Extension.ToLowerInvariant() }
     foreach ($dir in (Get-ChildItem -LiteralPath $Root -Directory -ErrorAction SilentlyContinue)) {
-        if ($dir.Name -ieq ".dtrash") { $script:stats.ExcludedDTrashFolders++; Write-Host "SKIP FOLDER  $($dir.FullName)"; continue }
-        Get-ImageFilesSkippingDTrash -Root $dir.FullName
+        if ($dir.Name -ieq ".dtrash" -or $dir.Name -ieq "_Tag_Backups") {
+            $script:stats.ExcludedFolders++
+            Write-Host "SKIP FOLDER  $($dir.FullName)"
+            continue
+        }
+        Get-ImageFilesSkippingExcludedFolders -Root $dir.FullName
     }
 }
 
@@ -197,10 +201,10 @@ if((Test-Path -LiteralPath $ManifestPath)-and !$ForceFullScan){try{$saved=Get-Co
 $NewManifest=@{}
 $PublishedRows=New-Object "System.Collections.Generic.List[object]"
 $PublishedDestinations=New-Object "System.Collections.Generic.HashSet[string]" ([System.StringComparer]::OrdinalIgnoreCase)
-$stats=[ordered]@{Scanned=0;ExcludedDTrashFolders=0;MetadataRead=0;UnchangedSkipped=0;PublishedNew=0;PublishedUpdated=0;PublishedAlreadyCurrent=0;Unpublished=0;Orphans=0;OrphansReferenced=0;OrphansUnreferenced=0;Errors=0}
+$stats=[ordered]@{Scanned=0;ExcludedFolders=0;MetadataRead=0;UnchangedSkipped=0;PublishedNew=0;PublishedUpdated=0;PublishedAlreadyCurrent=0;Unpublished=0;Orphans=0;OrphansReferenced=0;OrphansUnreferenced=0;Errors=0}
 Write-Host "`nBell Family Archive Website Photo Sync v$ScriptVersion";Write-Host "Source:      $SourceRoot";Write-Host "Destination: $DestRoot";Write-Host "Publish tag: $PublishTag";Write-Host "Non-year masters: metadata year fallback";if($DryRun){Write-Host "*** DRY RUN - NO FILES WILL BE COPIED OR DELETED ***"};Write-Host ""
 $batch=New-Object 'System.Collections.Generic.List[System.IO.FileInfo]'
-Get-ImageFilesSkippingDTrash -Root $SourceRoot | ForEach-Object {
+Get-ImageFilesSkippingExcludedFolders -Root $SourceRoot | ForEach-Object {
     $file=$_;$stats.Scanned++
     if(($stats.Scanned%$ProgressEvery)-eq 0){Write-Host ("Scanned {0:N0} | Metadata {1:N0} | Cached {2:N0} | New {3:N0} | Updated {4:N0}" -f $stats.Scanned,$stats.MetadataRead,$stats.UnchangedSkipped,$stats.PublishedNew,$stats.PublishedUpdated)}
     $sourceKey=$file.FullName;$lastWriteUtc=$file.LastWriteTimeUtc.ToString("o");$old=$Manifest[$sourceKey]
@@ -237,7 +241,7 @@ if(!$DryRun){
 }
 Write-Host "`n============== RESULTS =============="
 Write-Host ("Images scanned:             {0:N0}" -f $stats.Scanned)
-Write-Host ("Skipped .dtrash folders:    {0:N0}" -f $stats.ExcludedDTrashFolders)
+Write-Host ("Skipped excluded folders:   {0:N0}" -f $stats.ExcludedFolders)
 Write-Host ("Metadata records read:      {0:N0}" -f $stats.MetadataRead)
 Write-Host ("Unchanged/cache skipped:    {0:N0}" -f $stats.UnchangedSkipped)
 Write-Host ("New Website-tagged files:   {0:N0}" -f $stats.PublishedNew)
