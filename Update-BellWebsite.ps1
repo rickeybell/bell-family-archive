@@ -232,26 +232,8 @@ if (!$Publish) {
 Write-Host "[9/9] Committing and pushing approved website changes..."
 if ([string]::IsNullOrWhiteSpace($CommitMessage)) { $CommitMessage = "Update website photos, videos, audio, metadata, and galleries" }
 
-$paths = @(
-    "images","thumbs","highres","videos","audio","originals",
-    "photo_metadata.json","gallery.html",
-    "alma-photos.html","buster-photos.html","debbie-photos.html","dickey-photos.html","irvin-photos.html",
-    "dominique-photos.html","heather-photos.html","helen-photos.html","ivy-photos.html",
-    "jarred-photos.html","olivia-photos.html","rickey-photos.html","samatha-photos.html",
-    "sonja-photos.html","sophia-photos.html","spooky-photos.html","stephanie-photos.html",
-    "website-photo-manifest.csv","website-video-manifest.csv","website-audio-manifest.csv",
-    "tools/build_photo_metadata.py","tools/build_dynamic_gallery.py","tools/add_audio_players.py",
-    "Sync-BellWebsiteVideos.ps1","Sync-BellWebsiteAudio.ps1",".github/workflows/bell-pages.yml"
-)
-foreach ($p in $paths) {
-    $trackedPath = git -C $RepoRoot ls-files -- $p
-    if (!(Test-Path -LiteralPath (Join-Path $RepoRoot $p)) -and [string]::IsNullOrWhiteSpace(($trackedPath -join "`n"))) {
-        Write-Host "Skipping absent untracked path: $p"
-        continue
-    }
-    git -C $RepoRoot add -A -- $p
-    if ($LASTEXITCODE -ne 0) { throw "Failed to stage $p" }
-}
+git -C $RepoRoot add -A -- .
+if ($LASTEXITCODE -ne 0) { throw "Failed to stage all repository changes" }
 $staged = git -C $RepoRoot diff --cached --name-only
 if ([string]::IsNullOrWhiteSpace(($staged -join "`n"))) { Write-Host "Nothing staged; no commit needed."; exit 0 }
 Write-Host ""; Write-Host "Files to commit:"; $staged | ForEach-Object { Write-Host "  $_" }
