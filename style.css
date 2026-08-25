@@ -34,7 +34,7 @@ body{
 .tree-mark{
   width:54px;height:60px;display:grid;place-items:center;
   color:var(--green);font-size:52px;line-height:1;
-  transform:rotate(180deg);
+  transform:none;
 }
 .brand-title{font-size:34px;font-weight:700;line-height:1;color:#172016;letter-spacing:-.5px}
 .brand-tagline{font-size:16px;font-style:italic;margin-top:6px}
@@ -1814,7 +1814,7 @@ a.archive-community-card:hover,a.archive-community-card:focus-visible{transform:
 /* BELL TREE UPRIGHT FIX - START */
 /* Correct orientation of the Bell Family header tree SVG. */
 .tree-logo {
-    transform: rotate(180deg) !important;
+    transform: none !important;
     transform-origin: center center !important;
 }
 /* BELL TREE UPRIGHT FIX - END */
