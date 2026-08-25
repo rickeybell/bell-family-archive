@@ -244,6 +244,11 @@ $paths = @(
     "Sync-BellWebsiteVideos.ps1","Sync-BellWebsiteAudio.ps1",".github/workflows/bell-pages.yml"
 )
 foreach ($p in $paths) {
+    $trackedPath = git -C $RepoRoot ls-files -- $p
+    if (!(Test-Path -LiteralPath (Join-Path $RepoRoot $p)) -and [string]::IsNullOrWhiteSpace(($trackedPath -join "`n"))) {
+        Write-Host "Skipping absent untracked path: $p"
+        continue
+    }
     git -C $RepoRoot add -A -- $p
     if ($LASTEXITCODE -ne 0) { throw "Failed to stage $p" }
 }
