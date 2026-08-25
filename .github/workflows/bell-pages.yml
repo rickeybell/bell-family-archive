@@ -66,6 +66,10 @@ jobs:
             cp -a tree_portraits _site/tree_portraits
           fi
 
+          if [ -d tree_thumbs ]; then
+            cp -a tree_thumbs _site/tree_thumbs
+          fi
+
           # Rewrite high-resolution download links so deployed pages fetch
           # originals directly from the GitHub repository instead of Pages.
           python3 - <<'PY'
