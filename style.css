@@ -285,6 +285,9 @@ a.archive-community-card:hover,a.archive-community-card:focus-visible{transform:
 .archive-community-photo-tammy img{object-position:76% 24%}
 .archive-community-photo-patsy img{object-position:30% 35%}
 .archive-community-photo-suade img{object-position:28% 35%}
+#extended-family .archive-community-photo img,
+#family-friends .archive-community-photo img,
+#family-pets .archive-community-photo img,
 #fallen-first-responders .archive-community-photo img{cursor:zoom-in}
 .archive-community-name{margin:0;color:var(--green);font-family:Georgia,serif;font-size:16px;line-height:1.18;overflow-wrap:normal;word-break:normal;hyphens:none}
 .archive-community-card .tree-vitals{min-height:0 !important;margin:8px 0 0;padding:0 !important;font-size:11px !important;line-height:1.35 !important}

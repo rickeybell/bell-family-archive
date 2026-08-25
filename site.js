@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
   // Portrait still opens in the simple lightbox.
   const box=document.getElementById("lightbox"), boxImg=box?.querySelector("img"), close=document.getElementById("close");
-  document.querySelectorAll(".portrait-wrap img, #fallen-first-responders .archive-community-photo img").forEach(img=>img.addEventListener("click",()=>{if(box&&boxImg){boxImg.src=img.src;boxImg.alt=img.alt||"";box.classList.add("open");box.setAttribute("aria-hidden","false");}}));
+  document.querySelectorAll(".portrait-wrap img, #extended-family .archive-community-photo img, #family-friends .archive-community-photo img, #family-pets .archive-community-photo img, #fallen-first-responders .archive-community-photo img").forEach(img=>img.addEventListener("click",()=>{if(box&&boxImg){boxImg.src=img.src;boxImg.alt=img.alt||"";box.classList.add("open");box.setAttribute("aria-hidden","false");}}));
   const closeBox=()=>{box?.classList.remove("open");box?.setAttribute("aria-hidden","true");};
   close?.addEventListener("click",closeBox);
   box?.addEventListener("click",e=>{if(e.target===box)closeBox();});
