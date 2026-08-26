@@ -306,6 +306,7 @@ a.archive-community-card:hover,a.archive-community-card:focus-visible{transform:
 .family-tree{position:relative;display:flex;flex-direction:column;align-items:center;gap:12px}
 .tree-generation{display:flex;align-items:stretch;justify-content:center;gap:28px;flex-wrap:wrap;position:relative;z-index:2}
 .tree-person{width:210px;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:0 4px 14px rgba(50,40,20,.10);overflow:hidden;text-align:center;transition:.16s}
+.tree-person.not-living,.archive-community-card.not-living{background:#fef3f3}
 .tree-person:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(50,40,20,.16);border-color:#aeb9a2}
 .tree-photo{height:180px;background:#e8e3d9;display:flex;align-items:center;justify-content:center}
 .tree-photo img{width:100%;height:100%;object-fit:contain}
@@ -589,8 +590,8 @@ a.archive-community-card:hover,a.archive-community-card:focus-visible{transform:
   margin:0 -28px 26px;
   padding:14px 20px;
   text-align:center;
-  background:#f1ede2;
-  border-bottom:1px solid var(--line);
+  background:var(--paper);
+  border-bottom:0;
   font-size:24px;
   font-weight:700;
   color:var(--green);
@@ -1822,6 +1823,18 @@ a.archive-community-card:hover,a.archive-community-card:focus-visible{transform:
     transform: none !important;
     transform-origin: center center !important;
 }
+
+/* Memorial tiles: placed last so later tree layout rules cannot override the color. */
+.tree-page .tree-person.not-living,
+.tree-page .archive-community-card.not-living,
+.tree-page .archive-community-card[data-living="false"],
+.tree-page .archive-community-card:has(.archive-community-cod),
+#fallen-first-responders .archive-community-card,
+.tree-page .archive-community-card:has([data-archive-person="Dick Bell"]),
+.tree-page .archive-community-card:has([data-archive-person="Rachel Bell"]),
+.tree-page .archive-community-card:has([data-archive-person="Johnny Tharp"]){
+  background:#fef3f3 !important;
+}
 /* BELL TREE UPRIGHT FIX - END */
 
 /* Debbie Phillips and Irvin Phillips couple */
@@ -2133,4 +2146,28 @@ a.archive-community-card:hover,a.archive-community-card:focus-visible{transform:
     justify-content:center;
     margin-top:38px;
   }
+}
+
+/* Final tree-page status colors. Keep this block last in the stylesheet. */
+.tree-page .tree-person,
+.tree-page .archive-community-card.archive-community-person,
+.tree-page .archive-community-card.archive-community-pet{
+  background:#f6fdf7 !important;
+}
+
+.tree-page .tree-person[href="buster.html"],
+.tree-page .tree-person[href="alma.html"],
+.tree-page .tree-person[href="spooky.html"],
+.tree-page .tree-person[href="heather.html"],
+.tree-page .tree-person[href="dickey.html"],
+.tree-page .tree-person[href="debbie.html"],
+.tree-page .tree-person[href="irvin.html"],
+.tree-page .archive-community-card.not-living,
+.tree-page .archive-community-card[data-living="false"],
+.tree-page .archive-community-card:has(.archive-community-cod),
+#fallen-first-responders .archive-community-card,
+.tree-page .archive-community-card:has([data-archive-person="Dick Bell"]),
+.tree-page .archive-community-card:has([data-archive-person="Rachel Bell"]),
+.tree-page .archive-community-card:has([data-archive-person="Johnny Tharp"]){
+  background:#fef3f3 !important;
 }

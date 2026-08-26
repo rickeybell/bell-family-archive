@@ -1,5 +1,12 @@
 
 document.addEventListener("DOMContentLoaded",()=>{
+  // Give every deceased person or pet the same quiet memorial background.
+  document.querySelectorAll(".tree-person, .archive-community-card").forEach(card=>{
+    const hasDeathDate=/\bDied:\s*/i.test(card.textContent||"");
+    const isMemorial=card.dataset.living==="false" || hasDeathDate || !!card.querySelector(".archive-community-cod");
+    card.classList.toggle("not-living",isMemorial);
+  });
+
   // Keep current ages accurate for living relatives as birthdays pass.
   const today=new Date();
   document.querySelectorAll(".tree-person[data-birthdate], .archive-community-card[data-birthdate]").forEach(card=>{

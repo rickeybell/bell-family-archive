@@ -14,7 +14,11 @@
 
     [string]$DigiKamCollectionRoot = 'C:\Users\rbell\OneDrive\Pictures',
 
-    [switch]$SkipDigiKamCatalogSync
+    [string]$BackupBase = 'G:\ChatGPT\Backups\digiKam\GPS Location Tagging',
+
+    [switch]$SkipDigiKamCatalogSync,
+
+    [switch]$ConfirmWrite
 )
 
 # Keep ExifTool's Perl runtime quiet and deterministic on Windows.
@@ -23,6 +27,7 @@ $env:LC_CTYPE = 'C'
 $env:LANG = 'C'
 $ErrorActionPreference = 'Stop'
 
+# v2.18: stores every new run backup under G:\ChatGPT in a timestamped folder.
 # v2.17: synchronizes affected tags/GPS into digiKam SQLite after verified metadata writes.
 # v2.16: caches embedded and sidecar tags in two batch reads instead of rereading each file.
 # v2.15: adds a scoped year range so multiple year folders can be scanned in one safe pass.
@@ -296,11 +301,13 @@ if ($UseYearRange) {
 
 $ReportPath = Join-Path $Root "GPS-County-Geofence-Report$RangeSuffix.csv"
 $WriteLogPath = Join-Path $Root "GPS-County-Geofence-WriteLog$RangeSuffix.csv"
-$BackupRoot = if ($UseYearRange) {
-    Join-Path $Root "_Tag_Backups\County_GPS_Tagging\$FromYear-$ToYear"
+$BackupRunStamp = Get-Date -Format 'yyyyMMdd-HHmmss'
+$BackupScope = if ($UseYearRange) {
+    "$FromYear-$ToYear"
 } else {
-    Join-Path (Split-Path $Root -Parent) '_Tag_Backups\County_GPS_Tagging'
+    Split-Path $Root -Leaf
 }
+$BackupRoot = Join-Path $BackupBase "$BackupScope\$BackupRunStamp"
 
 # -----------------------------
 # Geometry helpers
@@ -699,7 +706,7 @@ function Get-PythonCommand {
 # -----------------------------
 
 Write-Host ""
-Write-Host "Bell Family Archive - Combined Property + County GPS Geotagger v2.17" -ForegroundColor Cyan
+Write-Host "Bell Family Archive - Combined Property + County GPS Geotagger v2.18" -ForegroundColor Cyan
 Write-Host "Mode   : $Mode"
 Write-Host "Folder : $Root"
 if ($UseYearRange) { Write-Host "Years  : $FromYear through $ToYear ($($ScanRoots.Count) folders)" }
@@ -1552,7 +1559,7 @@ if (-not $SkipDigiKamCatalogSync) {
     $PythonCommand=Get-PythonCommand
 }
 
-$answer=Read-Host "Type YES to continue"
+$answer=if ($ConfirmWrite) { 'YES' } else { Read-Host "Type YES to continue" }
 
 if ($answer -cne 'YES') {
     Write-Host "Cancelled. Nothing was changed." -ForegroundColor Yellow
