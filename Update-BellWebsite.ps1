@@ -241,4 +241,4 @@ Invoke-Checked git.exe -C $RepoRoot commit -m $CommitMessage
 Invoke-Checked git.exe -C $RepoRoot push origin main
 Write-Host ""; Write-Host "Published successfully."
 git -C $RepoRoot log -1 --oneline
-Write-Host "https://rickeybell.github.io/bell-family-archive/"
+Write-Host "https://bellfamilyarchive.us/"
