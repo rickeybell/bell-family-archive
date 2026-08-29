@@ -1,11 +1,16 @@
 ﻿param(
     [switch]$DryRun,
-    [switch]$ForceFullScan
+    [switch]$ForceFullScan,
+    [switch]$SkipOrphanScan,
+    [string[]]$SourceRoots = @(
+        "C:\Users\rbell\OneDrive\Pictures",
+        "G:\Pictures\Stephanie"
+    )
 )
 
-$ScriptVersion = "3.4.2"
+$ScriptVersion = "3.4.3"
 $RepoRoot   = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive"
-$SourceRoot = "C:\Users\rbell\OneDrive\Pictures"
+$DbSourceHelper = Join-Path $RepoRoot "tools\list_website_sources_from_digikam.py"
 $DestRoot   = Join-Path $RepoRoot "images"
 $PublishTag = "Website"
 $ManifestPath = Join-Path $RepoRoot ".website-photo-manifest.json"
@@ -23,6 +28,18 @@ function Get-ExifToolPath {
         if (Test-Path -LiteralPath $candidate) { return $candidate }
     }
     throw "ExifTool was not found. Put exiftool.exe in C:\ExifTool or add it to PATH."
+}
+
+function Get-PythonCommand {
+    if ($env:BELL_PYTHON -and (Test-Path -LiteralPath $env:BELL_PYTHON)) { return $env:BELL_PYTHON }
+    foreach ($name in @("python.exe", "py.exe")) {
+        $command = Get-Command $name -ErrorAction SilentlyContinue
+        if ($command) {
+            & $command.Source --version *> $null
+            if ($LASTEXITCODE -eq 0) { return $command.Source }
+        }
+    }
+    throw "A working Python 3 runtime was not found."
 }
 
 function Get-ImageFilesSkippingExcludedFolders {
@@ -52,7 +69,11 @@ function Get-YearFromMetadataRecord {
 
 function Get-DestinationRelativePath {
     param([System.IO.FileInfo]$File, $Record = $null)
-    $relative = $File.FullName.Substring($SourceRoot.Length).TrimStart('\')
+    $sourceRoot = $SourceRoots | Where-Object {
+        $File.FullName.StartsWith(($_.TrimEnd('\') + '\'), [System.StringComparison]::OrdinalIgnoreCase)
+    } | Select-Object -First 1
+    if (!$sourceRoot) { throw "Source file is outside the configured collections: $($File.FullName)" }
+    $relative = $File.FullName.Substring($sourceRoot.Length).TrimStart('\')
     $parts = $relative -split '\\'
     foreach ($part in $parts) {
         if ($part -match '^(18|19|20)\d{2}$') { return Join-Path $part $File.Name }
@@ -143,10 +164,16 @@ function Process-Batch {
         }
         if (!$record) { $script:stats.Errors++; Write-Warning "No metadata record matched: $($file.FullName)"; continue }
 
-        $published = Test-WebsiteTagFromRecord $record
+        $published = $script:WebsiteSourcePaths.Contains((Get-NormalizedPathKey $file.FullName))
         $destRelative = Get-DestinationRelativePath -File $file -Record $record
         $destPath = Join-Path $DestRoot $destRelative
         if ($published) {
+            $destKey = Get-NormalizedPathKey $destPath
+            if ($script:PublishedSourceByDestination.ContainsKey($destKey) -and
+                $script:PublishedSourceByDestination[$destKey] -ine $file.FullName) {
+                throw "Two Website-tagged masters map to the same website path: $($script:PublishedSourceByDestination[$destKey]) and $($file.FullName) -> $destRelative"
+            }
+            $script:PublishedSourceByDestination[$destKey] = $file.FullName
             [void]$script:PublishedDestinations.Add((Get-NormalizedPathKey $destPath))
             $tags = Join-MetadataValues $record @("Subject","Keywords","HierarchicalSubject")
             if ($tags) {
@@ -194,33 +221,55 @@ function Get-SiteReferences {
 }
 
 $ExifTool=Get-ExifToolPath
-if(!(Test-Path -LiteralPath $SourceRoot)){throw "Source folder does not exist: $SourceRoot"}
+foreach ($sourceRoot in $SourceRoots) {
+    if (!(Test-Path -LiteralPath $sourceRoot)) { throw "Source folder does not exist: $sourceRoot" }
+}
+if (!(Test-Path -LiteralPath $DbSourceHelper)) { throw "digiKam Website-source helper not found: $DbSourceHelper" }
+$python = Get-PythonCommand
+$websiteSourceJson = Join-Path $env:TEMP ("bell-website-photo-sources-" + [guid]::NewGuid().ToString("N") + ".json")
+$helperArgs = @($DbSourceHelper)
+foreach ($sourceRoot in $SourceRoots) { $helperArgs += @('--source-root', $sourceRoot) }
+$helperArgs += @('--require-green', '--output', $websiteSourceJson)
+& $python @helperArgs
+if ($LASTEXITCODE -ne 0 -or !(Test-Path -LiteralPath $websiteSourceJson)) { throw "Could not read current Website tags from digiKam." }
+$sourceData = Get-Content -LiteralPath $websiteSourceJson -Raw | ConvertFrom-Json
+Remove-Item -LiteralPath $websiteSourceJson -Force -ErrorAction SilentlyContinue
+$WebsiteSourcePaths = New-Object "System.Collections.Generic.HashSet[string]" ([System.StringComparer]::OrdinalIgnoreCase)
+foreach ($sourcePath in $sourceData.website_sources) { [void]$WebsiteSourcePaths.Add((Get-NormalizedPathKey ([string]$sourcePath))) }
 if(!(Test-Path -LiteralPath $DestRoot)-and !$DryRun){New-Item -ItemType Directory -Path $DestRoot -Force|Out-Null}
 $Manifest=@{}
 if((Test-Path -LiteralPath $ManifestPath)-and !$ForceFullScan){try{$saved=Get-Content -LiteralPath $ManifestPath -Raw|ConvertFrom-Json;foreach($item in $saved.files){$Manifest[[string]$item.source]=@{LastWriteUtc=[string]$item.lastWriteUtc;Length=[int64]$item.length;Published=[bool]$item.published;Destination=[string]$item.destination}}}catch{Write-Warning "Manifest unreadable; performing a full scan.";$Manifest=@{}}}
 $NewManifest=@{}
 $PublishedRows=New-Object "System.Collections.Generic.List[object]"
 $PublishedDestinations=New-Object "System.Collections.Generic.HashSet[string]" ([System.StringComparer]::OrdinalIgnoreCase)
+$PublishedSourceByDestination=@{}
 $stats=[ordered]@{Scanned=0;ExcludedFolders=0;MetadataRead=0;UnchangedSkipped=0;PublishedNew=0;PublishedUpdated=0;PublishedAlreadyCurrent=0;Unpublished=0;Orphans=0;OrphansReferenced=0;OrphansUnreferenced=0;Errors=0}
-Write-Host "`nBell Family Archive Website Photo Sync v$ScriptVersion";Write-Host "Source:      $SourceRoot";Write-Host "Destination: $DestRoot";Write-Host "Publish tag: $PublishTag";Write-Host "Non-year masters: metadata year fallback";if($DryRun){Write-Host "*** DRY RUN - NO FILES WILL BE COPIED OR DELETED ***"};Write-Host ""
+Write-Host "`nBell Family Archive Website Photo Sync v$ScriptVersion";Write-Host "Sources:";foreach($sourceRoot in $SourceRoots){Write-Host "  $sourceRoot"};Write-Host "Destination: $DestRoot";Write-Host "Publish rule: current digiKam Website tag + Green color label";Write-Host "Non-year masters: metadata year fallback";if($DryRun){Write-Host "*** DRY RUN - NO FILES WILL BE COPIED OR DELETED ***"};Write-Host ""
 $batch=New-Object 'System.Collections.Generic.List[System.IO.FileInfo]'
-Get-ImageFilesSkippingExcludedFolders -Root $SourceRoot | ForEach-Object {
-    $file=$_;$stats.Scanned++
+$filesToScan = @(
+    foreach ($sourcePath in $sourceData.website_sources) {
+        $file = Get-Item -LiteralPath ([string]$sourcePath) -ErrorAction SilentlyContinue
+        if ($file -and $ImageExtensions -contains $file.Extension.ToLowerInvariant()) { $file }
+    }
+)
+foreach ($file in $filesToScan) {
+    $stats.Scanned++
     if(($stats.Scanned%$ProgressEvery)-eq 0){Write-Host ("Scanned {0:N0} | Metadata {1:N0} | Cached {2:N0} | New {3:N0} | Updated {4:N0}" -f $stats.Scanned,$stats.MetadataRead,$stats.UnchangedSkipped,$stats.PublishedNew,$stats.PublishedUpdated)}
     $sourceKey=$file.FullName;$lastWriteUtc=$file.LastWriteTimeUtc.ToString("o");$old=$Manifest[$sourceKey]
-    $needsMetadata=$ForceFullScan -or !$old -or $old.LastWriteUtc -ne $lastWriteUtc -or [int64]$old.Length -ne $file.Length
+    $catalogPublished=$WebsiteSourcePaths.Contains((Get-NormalizedPathKey $sourceKey))
+    $needsMetadata=$ForceFullScan -or !$old -or $old.LastWriteUtc -ne $lastWriteUtc -or [int64]$old.Length -ne $file.Length -or [bool]$old.Published -ne $catalogPublished
     if(!$needsMetadata){
         $NewManifest[$sourceKey]=@{LastWriteUtc=$lastWriteUtc;Length=$file.Length;Published=[bool]$old.Published;Destination=[string]$old.Destination}
         Add-PublishedFromManifest -SourcePath $sourceKey -Old $old
         if([bool]$old.Published){$stats.PublishedAlreadyCurrent++}else{$stats.Unpublished++}
-        $stats.UnchangedSkipped++;return
+        $stats.UnchangedSkipped++;continue
     }
     $batch.Add($file);if($batch.Count-ge$BatchSize){Process-Batch $batch $ExifTool;$batch.Clear()}
 }
 Process-Batch $batch $ExifTool;$batch.Clear()
 
 $OrphanRows=New-Object "System.Collections.Generic.List[object]"
-if(Test-Path -LiteralPath $DestRoot){
+if(!$SkipOrphanScan -and (Test-Path -LiteralPath $DestRoot)){
     Get-ChildItem -LiteralPath $DestRoot -Recurse -File -ErrorAction SilentlyContinue|Where-Object{$_.FullName-notmatch'(?i)(^|[\\/])\.dtrash([\\/]|$)'-and$ImageExtensions-contains$_.Extension.ToLowerInvariant()}|ForEach-Object{
         $destFile=$_;$key=Get-NormalizedPathKey $destFile.FullName
         if(!$PublishedDestinations.Contains($key)){
@@ -237,7 +286,7 @@ $PublishedRows|Sort-Object RelativePath|Export-Csv -LiteralPath $WebsiteManifest
 $OrphanRows|Sort-Object RelativePath|Export-Csv -LiteralPath $OrphanReportCsv -NoTypeInformation -Encoding UTF8
 if(!$DryRun){
     $items=foreach($sourceKey in($NewManifest.Keys|Sort-Object)){$m=$NewManifest[$sourceKey];[pscustomobject]@{source=$sourceKey;lastWriteUtc=$m.LastWriteUtc;length=$m.Length;published=$m.Published;destination=$m.Destination}}
-    [pscustomobject]@{version=4;sourceRoot=$SourceRoot;destRoot=$DestRoot;publishTag=$PublishTag;updatedUtc=[DateTime]::UtcNow.ToString('o');files=@($items)}|ConvertTo-Json -Depth 6|Set-Content -LiteralPath $ManifestPath -Encoding UTF8
+    [pscustomobject]@{version=5;sourceRoots=$SourceRoots;destRoot=$DestRoot;publishTag=$PublishTag;updatedUtc=[DateTime]::UtcNow.ToString('o');files=@($items)}|ConvertTo-Json -Depth 6|Set-Content -LiteralPath $ManifestPath -Encoding UTF8
 }
 Write-Host "`n============== RESULTS =============="
 Write-Host ("Images scanned:             {0:N0}" -f $stats.Scanned)

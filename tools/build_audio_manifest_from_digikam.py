@@ -98,16 +98,27 @@ def year_from_date(value):
     return int(m.group(1)) if m else None
 
 
+def owning_root(path: pathlib.Path, roots: list[pathlib.Path]):
+    for root in roots:
+        try:
+            path.relative_to(root)
+            return root
+        except ValueError:
+            continue
+    raise ValueError(f'File is outside the configured collections: {path}')
+
+
 def main():
     ap=argparse.ArgumentParser()
-    ap.add_argument('--source-root',required=True)
+    ap.add_argument('--source-root',required=True,action='append')
     ap.add_argument('--output',required=True)
     ap.add_argument('--from-year',type=int,default=0)
     ap.add_argument('--to-year',type=int,default=9999)
+    ap.add_argument('--require-green',action='store_true')
     args=ap.parse_args()
-    source_root=pathlib.Path(args.source_root).resolve()
+    source_roots=[pathlib.Path(value).resolve() for value in args.source_root]
     out=pathlib.Path(args.output)
-    db=find_db(source_root)
+    db=find_db(source_roots[0])
     if not db:
         raise SystemExit('Could not locate DigiKam SQLite database (digikam4.db). Set DIGIKAM_DB to its full path if needed.')
     print(f'DigiKam database: {db}')
@@ -119,20 +130,26 @@ def main():
     tpaths=tag_paths(con)
 
     disk=[]
-    for p in source_root.rglob('*'):
-        if p.is_file() and p.suffix.lower() in AUDIO_EXTS and '.dtrash' not in {x.lower() for x in p.parts}:
-            disk.append(p)
+    for source_root in source_roots:
+        for p in source_root.rglob('*'):
+            if p.is_file() and p.suffix.lower() in AUDIO_EXTS and '.dtrash' not in {x.lower() for x in p.parts}:
+                disk.append(p)
     by_name={}
     for p in disk: by_name.setdefault(p.name.lower(),[]).append(p)
 
-    rows=[]; db_matches=0; website=0; date_year_fallbacks=0
-    q='''select i.id imageid,i.name,a.relativePath from Images i join Albums a on a.id=i.album where lower(i.name)=lower(?)'''
+    root_ids={str(row[1]).strip().lower():int(row[0]) for row in con.execute('select id,label from AlbumRoots')}
+    rows=[]; db_matches=0; website=0; date_year_fallbacks=0; destinations={}
+    q='''select i.id imageid,i.name,a.relativePath,a.albumRoot from Images i join Albums a on a.id=i.album where lower(i.name)=lower(?)'''
     for name,candidates in sorted(by_name.items()):
         recs=con.execute(q,(candidates[0].name,)).fetchall()
         for rec in recs:
             rel_album=str(rec['relativePath'] or '').replace('\\','/').strip('/')
             chosen=None
             for p in candidates:
+                source_root=owning_root(p,source_roots)
+                expected_root_id=root_ids.get(source_root.name.lower())
+                if expected_root_id is not None and expected_root_id != int(rec['albumRoot']):
+                    continue
                 rel=p.relative_to(source_root).as_posix()
                 parent=pathlib.PurePosixPath(rel).parent.as_posix().strip('.')
                 if not rel_album or parent.lower().endswith(rel_album.lower()):
@@ -147,7 +164,9 @@ def main():
             leaves=[p.replace('\\','/').split('/')[-1].strip() for p in paths]
             if not any(x.lower()=='website' for x in leaves): continue
             website+=1
+            if args.require_green and not any(x.lower()=='color label green' for x in leaves): continue
 
+            source_root=owning_root(chosen,source_roots)
             source_rel=chosen.relative_to(source_root).as_posix()
             source_parts=source_rel.split('/')
             if any(re.fullmatch(r'(18|19|20)\d0s',x) for x in source_parts): continue
@@ -166,6 +185,10 @@ def main():
             # Website audio always lives under audio/<year>/ even when the source
             # master is stored in a non-year DigiKam album such as Dad or Voicemail.
             rel=f'{year}/{chosen.name}'
+            destination_key=rel.lower()
+            if destination_key in destinations and destinations[destination_key] != chosen:
+                raise SystemExit(f'Two Website-tagged audio masters map to {rel}: {destinations[destination_key]} and {chosen}')
+            destinations[destination_key]=chosen
 
             people=[]
             for tp in paths:
@@ -194,6 +217,8 @@ def main():
     out.parent.mkdir(parents=True,exist_ok=True)
     with out.open('w',encoding='utf-8-sig',newline='') as f:
         w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(sorted(rows,key=lambda r:r['RelativePath'].lower()))
+    print('Source collections:')
+    for source_root in source_roots: print(f'  {source_root}')
     print(f'Audio files on disk:              {len(disk)}')
     print(f'Audio files matched in DigiKam:   {db_matches}')
     print(f'Website-tagged audio selected:    {len(rows)}')

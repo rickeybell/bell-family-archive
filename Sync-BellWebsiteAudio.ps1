@@ -1,18 +1,22 @@
 param(
     [switch]$DryRun,
     [int]$FromYear = 0,
-    [int]$ToYear = 9999
+    [int]$ToYear = 9999,
+    [string[]]$SourceRoots = @(
+        "C:\Users\rbell\OneDrive\Pictures",
+        "G:\Pictures\Stephanie"
+    )
 )
 
 $ErrorActionPreference = "Stop"
 $ScriptVersion = "2.0"
 $RepoRoot = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive"
-$SourceRoot = "C:\Users\rbell\OneDrive\Pictures"
 $AudioRoot = Join-Path $RepoRoot "audio"
 $ManifestCsv = Join-Path $RepoRoot "website-audio-manifest.csv"
 $DbHelper = Join-Path $RepoRoot "tools\build_audio_manifest_from_digikam.py"
 
 function Get-PythonCommand {
+    if ($env:BELL_PYTHON -and (Test-Path -LiteralPath $env:BELL_PYTHON)) { return $env:BELL_PYTHON }
     $python = Get-Command python.exe -ErrorAction SilentlyContinue
     if ($python) {
         & $python.Source --version *> $null
@@ -26,16 +30,19 @@ function Get-PythonCommand {
     throw "A working Python 3 runtime was not found."
 }
 
-if (!(Test-Path -LiteralPath $SourceRoot)) { throw "Source folder does not exist: $SourceRoot" }
+foreach ($sourceRoot in $SourceRoots) {
+    if (!(Test-Path -LiteralPath $sourceRoot)) { throw "Source folder does not exist: $sourceRoot" }
+}
 if (!(Test-Path -LiteralPath $DbHelper)) { throw "DigiKam audio helper not found: $DbHelper" }
 $python = Get-PythonCommand
 
 Write-Host ""
 Write-Host "Bell Family Archive Website Audio Sync v$ScriptVersion"
-Write-Host "Source: $SourceRoot"
+Write-Host "Sources:"
+foreach ($sourceRoot in $SourceRoots) { Write-Host "  $sourceRoot" }
 Write-Host "Destination: $AudioRoot"
 Write-Host "Metadata source: DigiKam database"
-Write-Host "Publish rule: DigiKam tag Website"
+Write-Host "Publish rule: current digiKam Website tag + Green color label"
 Write-Host "Archive type: Sound"
 Write-Host "Years: $FromYear through $ToYear"
 Write-Host "Decade placeholders: ignored"
@@ -50,7 +57,10 @@ if ($DryRun) {
 }
 
 try {
-    & $python $DbHelper --source-root $SourceRoot --output $manifestForRun --from-year $FromYear --to-year $ToYear
+    $helperArgs = @($DbHelper)
+    foreach ($sourceRoot in $SourceRoots) { $helperArgs += @('--source-root', $sourceRoot) }
+    $helperArgs += @('--require-green', '--output', $manifestForRun, '--from-year', $FromYear, '--to-year', $ToYear)
+    & $python @helperArgs
     if ($LASTEXITCODE -ne 0) { throw "DigiKam audio manifest builder failed (exit $LASTEXITCODE)." }
     if (!(Test-Path -LiteralPath $manifestForRun)) { throw "Audio manifest was not created: $manifestForRun" }
 

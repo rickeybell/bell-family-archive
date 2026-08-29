@@ -1,13 +1,17 @@
 param(
     [switch]$DryRun,
     [int]$FromYear = 0,
-    [int]$ToYear = 9999
+    [int]$ToYear = 9999,
+    [string[]]$SourceRoots = @(
+        "C:\Users\rbell\OneDrive\Pictures",
+        "G:\Pictures\Stephanie"
+    )
 )
 
 $ErrorActionPreference = "Stop"
-$ScriptVersion = "2.1"
+$ScriptVersion = "2.2"
 $RepoRoot = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive"
-$SourceRoot = "C:\Users\rbell\OneDrive\Pictures"
+$DbSourceHelper = Join-Path $RepoRoot "tools\list_website_sources_from_digikam.py"
 $VideoRoot = Join-Path $RepoRoot "videos"
 $ManifestCsv = Join-Path $RepoRoot "website-video-manifest.csv"
 $PublishTag = "Website"
@@ -25,6 +29,18 @@ function Get-ExifToolPath {
         if (Test-Path -LiteralPath $candidate) { return $candidate }
     }
     throw "ExifTool was not found."
+}
+
+function Get-PythonCommand {
+    if ($env:BELL_PYTHON -and (Test-Path -LiteralPath $env:BELL_PYTHON)) { return $env:BELL_PYTHON }
+    foreach ($name in @("python.exe", "py.exe")) {
+        $command = Get-Command $name -ErrorAction SilentlyContinue
+        if ($command) {
+            & $command.Source --version *> $null
+            if ($LASTEXITCODE -eq 0) { return $command.Source }
+        }
+    }
+    throw "A working Python 3 runtime was not found."
 }
 
 function Get-FFmpegToolPath {
@@ -72,7 +88,11 @@ function Get-YearFromRelativePath {
 
 function Get-SourceRelativePath {
     param([System.IO.FileInfo]$File)
-    return $File.FullName.Substring($SourceRoot.Length).TrimStart('\')
+    $sourceRoot = $SourceRoots | Where-Object {
+        $File.FullName.StartsWith(($_.TrimEnd('\') + '\'), [System.StringComparison]::OrdinalIgnoreCase)
+    } | Select-Object -First 1
+    if (!$sourceRoot) { throw "Source file is outside the configured collections: $($File.FullName)" }
+    return $File.FullName.Substring($sourceRoot.Length).TrimStart('\')
 }
 
 function Get-WebsiteRelativePath {
@@ -182,16 +202,35 @@ function Write-WebVideoDerivative {
     }
 }
 
-if (!(Test-Path -LiteralPath $SourceRoot)) { throw "Source folder does not exist: $SourceRoot" }
+foreach ($sourceRoot in $SourceRoots) {
+    if (!(Test-Path -LiteralPath $sourceRoot)) { throw "Source folder does not exist: $sourceRoot" }
+}
+if (!(Test-Path -LiteralPath $DbSourceHelper)) { throw "digiKam Website-source helper not found: $DbSourceHelper" }
+$python = Get-PythonCommand
+$websiteSourceJson = Join-Path $env:TEMP ("bell-website-video-sources-" + [guid]::NewGuid().ToString("N") + ".json")
+$helperArgs = @($DbSourceHelper)
+foreach ($sourceRoot in $SourceRoots) { $helperArgs += @('--source-root', $sourceRoot) }
+$helperArgs += @('--require-green', '--output', $websiteSourceJson)
+& $python @helperArgs
+if ($LASTEXITCODE -ne 0 -or !(Test-Path -LiteralPath $websiteSourceJson)) { throw "Could not read current Website tags from digiKam." }
+$sourceData = Get-Content -LiteralPath $websiteSourceJson -Raw | ConvertFrom-Json
+Remove-Item -LiteralPath $websiteSourceJson -Force -ErrorAction SilentlyContinue
+$WebsiteSourcePaths = New-Object "System.Collections.Generic.HashSet[string]" ([System.StringComparer]::OrdinalIgnoreCase)
+foreach ($sourcePath in $sourceData.website_sources) {
+    try { $normalized = [System.IO.Path]::GetFullPath([string]$sourcePath) } catch { $normalized = [string]$sourcePath }
+    [void]$WebsiteSourcePaths.Add(($normalized -replace '/', '\').TrimEnd('\'))
+}
 $ExifTool = Get-ExifToolPath
 $FFmpeg = Get-FFmpegToolPath 'ffmpeg'
 $FFprobe = Get-FFmpegToolPath 'ffprobe'
 
 Write-Host ""
 Write-Host "Bell Family Archive Website Video Sync v$ScriptVersion"
-Write-Host "Source: $SourceRoot"
+Write-Host "Sources:"
+foreach ($sourceRoot in $SourceRoots) { Write-Host "  $sourceRoot" }
 Write-Host "Destination: $VideoRoot"
 Write-Host "Years: $FromYear through $ToYear"
+Write-Host "Publish rule: current digiKam Website tag + Green color label"
 Write-Host "Decade placeholders: ignored"
 Write-Host "Website format: MP4 / H.264 / AAC / yuv420p / faststart"
 Write-Host "FFmpeg: $FFmpeg"
@@ -199,11 +238,12 @@ Write-Host "FFprobe: $FFprobe"
 if ($DryRun) { Write-Host "*** DRY RUN - NO VIDEO FILES WILL BE WRITTEN ***" }
 Write-Host ""
 
-$files = @(Get-ChildItem -LiteralPath $SourceRoot -Recurse -File -ErrorAction SilentlyContinue |
-    Where-Object {
-        $_.FullName -notmatch '(?i)[\\/](\.dtrash|_Tag_Backups)[\\/]' -and
-        $VideoExtensions -contains $_.Extension.ToLowerInvariant()
-    })
+$files = @(
+    foreach ($sourcePath in $sourceData.website_sources) {
+        $file = Get-Item -LiteralPath ([string]$sourcePath) -ErrorAction SilentlyContinue
+        if ($file -and $VideoExtensions -contains $file.Extension.ToLowerInvariant()) { $file }
+    }
+)
 
 $rows = New-Object "System.Collections.Generic.List[object]"
 $scanned = 0
@@ -214,6 +254,7 @@ $transcoded = 0
 $current = 0
 $skippedPlaceholder = 0
 $probeErrors = 0
+$destinationSources = @{}
 
 for ($i=0; $i -lt $files.Count; $i += 50) {
     $batch = @($files[$i..([Math]::Min($i+49,$files.Count-1))])
@@ -239,9 +280,9 @@ for ($i=0; $i -lt $files.Count; $i += 50) {
 
     foreach ($record in $records) {
         $scanned++
-        if (!(Test-WebsiteTag $record)) { continue }
         $file = Get-Item -LiteralPath ([string]$record.SourceFile) -ErrorAction SilentlyContinue
         if (!$file) { continue }
+        if (!$WebsiteSourcePaths.Contains($file.FullName.TrimEnd('\'))) { continue }
 
         $sourceRelative = Get-SourceRelativePath $file
         if (Test-DecadePlaceholderPath $sourceRelative) { $skippedPlaceholder++; continue }
@@ -250,6 +291,11 @@ for ($i=0; $i -lt $files.Count; $i += 50) {
 
         $websiteTagged++
         $relative = Get-WebsiteRelativePath $file
+        $destinationKey = $relative.ToLowerInvariant()
+        if ($destinationSources.ContainsKey($destinationKey) -and $destinationSources[$destinationKey] -ine $file.FullName) {
+            throw "Two Website-tagged videos map to the same website path: $($destinationSources[$destinationKey]) and $($file.FullName) -> $relative"
+        }
+        $destinationSources[$destinationKey] = $file.FullName
         $dest = Join-Path $VideoRoot $relative
         $sourceCompat = Get-VideoCompatibility $file.FullName
         if (!$sourceCompat.Readable) {

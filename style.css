@@ -293,8 +293,8 @@ a.archive-community-card:hover,a.archive-community-card:focus-visible{transform:
 #extended-family .archive-community-photo img,
 #family-friends .archive-community-photo img,
 #family-pets .archive-community-photo img,
-#family-hobbies .archive-community-photo img,
 #fallen-first-responders .archive-community-photo img{cursor:zoom-in}
+#family-hobbies .archive-community-photo img{cursor:pointer}
 .archive-community-name{margin:0;color:var(--green);font-family:Georgia,serif;font-size:16px;line-height:1.18;overflow-wrap:normal;word-break:normal;hyphens:none}
 .archive-community-card .tree-vitals{min-height:0 !important;margin:8px 0 0;padding:0 !important;font-size:11px !important;line-height:1.35 !important}
 .archive-community-note,.archive-community-cod{margin:8px 0 0;color:#514b42;font-size:10.5px;line-height:1.35;overflow-wrap:anywhere}
