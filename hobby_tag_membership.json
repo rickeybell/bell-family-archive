@@ -1,0 +1,147 @@
+{
+  "tagRoot": "Hobbies",
+  "memberships": {
+    "images/1946/Alma2.jpg": [
+      "Aviation"
+    ],
+    "images/1946/Alma3.jpg": [
+      "Aviation"
+    ],
+    "images/1947/Screenshot 2026-07-24 151402.png": [
+      "Aviation"
+    ],
+    "images/1948/03_carolina_99ers_arrive_in_city.jpg": [
+      "Aviation"
+    ],
+    "images/1948/04_women_flyers_of_carolinas_to_meet_here.jpg": [
+      "Aviation"
+    ],
+    "images/1948/1940s_0111_a.jpg": [
+      "Aviation"
+    ],
+    "images/1950/05_transcontinental_womens_air_race_to_end_in_state.jpg": [
+      "Aviation"
+    ],
+    "images/1950/Document_20260719_0005_0001.jpg": [
+      "Aviation"
+    ],
+    "images/1950/Document_20260719_0008.jpg": [
+      "Aviation"
+    ],
+    "images/1950/Screenshot 2026-07-22 085530.png": [
+      "Aviation"
+    ],
+    "images/1950/Screenshot 2026-07-22 085608.png": [
+      "Aviation"
+    ],
+    "images/1952/1950s_0013_a.jpg": [
+      "Aviation"
+    ],
+    "images/1952/Document_20260719_0005.jpg": [
+      "Aviation"
+    ],
+    "images/1954/1954_0002_a.jpg": [
+      "Aviation"
+    ],
+    "images/1956/The lancaster news Alma.jpg": [
+      "Aviation"
+    ],
+    "images/1961/1961_0006_a.jpg": [
+      "Shooting"
+    ],
+    "images/1974/Document_20260717_0002.jpg": [
+      "Shooting"
+    ],
+    "images/2000/Mike With Scuba2.JPG": [
+      "Scuba"
+    ],
+    "images/2000/Rick With Scuba3.JPG": [
+      "Scuba"
+    ],
+    "images/2000/Rotation.jpg": [
+      "Scuba"
+    ],
+    "images/2000/Sam & Rick woth Scuba.JPG": [
+      "Scuba"
+    ],
+    "images/2000/Sam Reg.JPG": [
+      "Scuba"
+    ],
+    "images/2000/Steph & Mike on Boat.JPG": [
+      "Boating"
+    ],
+    "images/2001/2001_3_4_Blue_Grotto__Image016.jpg": [
+      "Scuba"
+    ],
+    "images/2002/100-0051_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/100-0072_IMG.JPG": [
+      "Boating"
+    ],
+    "images/2002/100-0076_IMG.JPG": [
+      "Boating"
+    ],
+    "images/2002/103-0386_IMG.JPG": [
+      "Boating",
+      "Scuba"
+    ],
+    "images/2002/104-0492_IMG.JPG": [
+      "Boating",
+      "Scuba"
+    ],
+    "images/2002/105-0519_IMG.JPG": [
+      "Boating",
+      "Scuba"
+    ],
+    "images/2002/109-0967_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/110-1001_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/110-1055_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/110-1062_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/110-1074_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/113-1320_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/113-1341_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2003/139-3948_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2003/Cozumel Dive 4 018copy.jpg": [
+      "Scuba"
+    ],
+    "images/2004/Rescue Drysuit 9-23-04 002.jpg": [
+      "Scuba"
+    ],
+    "images/2004/c copy.jpg": [
+      "Off-Roading"
+    ]
+  },
+  "taggedCounts": {
+    "Aviation": 931,
+    "Scuba": 1144,
+    "Shooting": 133,
+    "Boating": 391,
+    "Off-Roading": 313,
+    "Camping": 13
+  },
+  "publicCounts": {
+    "Aviation": 15,
+    "Scuba": 20,
+    "Shooting": 2,
+    "Boating": 6,
+    "Off-Roading": 1,
+    "Camping": 0
+  }
+}

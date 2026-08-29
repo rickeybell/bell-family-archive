@@ -18,6 +18,7 @@ $Manifest = Join-Path $RepoRoot "website-photo-manifest.csv"
 $VideoManifest = Join-Path $RepoRoot "website-video-manifest.csv"
 $AudioManifest = Join-Path $RepoRoot "website-audio-manifest.csv"
 $BuildMetadata = Join-Path $RepoRoot "tools\build_photo_metadata.py"
+$BuildHobbyTags = Join-Path $RepoRoot "tools\build_hobby_tag_membership.py"
 $BuildGallery = Join-Path $RepoRoot "tools\build_dynamic_gallery.py"
 $AddAudioPlayers = Join-Path $RepoRoot "tools\add_audio_players.py"
 $ReportRoot = Join-Path ([Environment]::GetFolderPath("MyDocuments")) "BellWebsite-SizeReports"
@@ -144,6 +145,7 @@ if (!(Test-Path -LiteralPath $Generator)) { throw "Photo generator not found: $G
 if (!(Test-Path -LiteralPath $VideoGenerator)) { throw "Video generator not found: $VideoGenerator" }
 if (!(Test-Path -LiteralPath $AudioGenerator)) { throw "Audio generator not found: $AudioGenerator" }
 if (!(Test-Path -LiteralPath $BuildMetadata)) { throw "Metadata builder not found: $BuildMetadata" }
+if (!(Test-Path -LiteralPath $BuildHobbyTags)) { throw "Hobby tag builder not found: $BuildHobbyTags" }
 if (!(Test-Path -LiteralPath $BuildGallery)) { throw "Gallery builder not found: $BuildGallery" }
 if (!(Test-Path -LiteralPath $AddAudioPlayers)) { throw "Audio gallery post-processor not found: $AddAudioPlayers" }
 
@@ -205,6 +207,8 @@ if (Test-Path -LiteralPath $originalsPath) {
 $py = Get-PythonCommand
 Write-Host "[6/9] Rebuilding photo_metadata.json from DigiKam/master photos, videos, and audio..."
 Invoke-Checked $py.File @($py.Prefix + @($BuildMetadata))
+Write-Host "      Mapping DigiKam Hobbies tags to public archive media..."
+Invoke-Checked $py.File @($py.Prefix + @($BuildHobbyTags))
 Write-Host "[7/9] Rebuilding chronological and person galleries..."
 Invoke-Checked $py.File @($py.Prefix + @($BuildGallery))
 Invoke-Checked $py.File @($py.Prefix + @($AddAudioPlayers))
