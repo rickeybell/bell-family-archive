@@ -43,12 +43,9 @@ jobs:
               -name '.nojekyll' \
             \) -exec cp -p {} _site/ \;
 
-          # Website derivatives only. High-resolution downloads are deliberately
-          # NOT copied into the GitHub Pages artifact.
-          if [ -d images ]; then
-            cp -a images _site/images
-          fi
-
+          # Thumbnails and browser-safe media remain in the Pages artifact.
+          # Full photo views and high-resolution downloads are served directly
+          # from the same GitHub repository to keep the Pages package below 1 GB.
           if [ -d thumbs ]; then
             cp -a thumbs _site/thumbs
           fi
@@ -70,45 +67,49 @@ jobs:
             cp -a tree_thumbs _site/tree_thumbs
           fi
 
-          # Rewrite high-resolution download links so deployed pages fetch
-          # originals directly from the GitHub repository instead of Pages.
+          # Rewrite full photo views and high-resolution download links so
+          # deployed pages fetch them directly from the GitHub repository.
           python3 - <<'PY'
           from pathlib import Path
+          import json
           import re
-          from urllib.parse import quote
+          from urllib.parse import quote, unquote
 
           root = Path("_site")
           raw_base = "https://raw.githubusercontent.com/rickeybell/bell-family-archive/main/"
 
+          def raw_url(path):
+              path = unquote(path.replace("\\\\", "/").replace("\\", "/"))
+              encoded = "/".join(quote(part, safe="") for part in path.split("/"))
+              return raw_base + encoded
+
           for page in root.glob("*.html"):
               text = page.read_text(encoding="utf-8")
 
-              def repl(match):
-                  path = match.group(1).replace("\\", "/")
-                  encoded = "/".join(quote(part) for part in path.split("/"))
-                  return f'href="{raw_base}{encoded}"'
+              def repl_repo_media(match):
+                  quote_char = match.group(1)
+                  return quote_char + raw_url(match.group(2)) + quote_char
 
+              # Covers ordinary src/href values plus the inline gallery JSON.
               text = re.sub(
-                  r'href=["\'](highres/[^"\']+)["\']',
-                  repl,
+                  r'(["\'])((?:highres|images)/[^"\']+)\1',
+                  repl_repo_media,
                   text,
                   flags=re.IGNORECASE
               )
-
-              # The gallery JavaScript also stores original URLs in JSON.
-              def repl_json(match):
-                  path = match.group(1).replace("\\\\", "/").replace("\\", "/")
-                  encoded = "/".join(quote(part) for part in path.split("/"))
-                  return '"orig":"' + raw_base + encoded + '"'
-
-              text = re.sub(
-                  r'"orig"\s*:\s*"((?:highres/)[^"]+)"',
-                  repl_json,
-                  text,
-                  flags=re.IGNORECASE
-              )
-
               page.write_text(text, encoding="utf-8")
+
+          metadata_path = root / "photo_metadata.json"
+          if metadata_path.is_file():
+              records = json.loads(metadata_path.read_text(encoding="utf-8-sig"))
+              for record in records:
+                  path = str(record.get("path", ""))
+                  if path.lower().startswith("images/"):
+                      record["path"] = raw_url(path)
+              metadata_path.write_text(
+                  json.dumps(records, ensure_ascii=False, separators=(",", ":")),
+                  encoding="utf-8"
+              )
           PY
 
           echo
