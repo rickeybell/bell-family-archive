@@ -281,6 +281,7 @@ a.archive-community-card{transition:transform .16s,border-color .16s,box-shadow 
 a.archive-community-card:hover,a.archive-community-card:focus-visible{transform:translateY(-2px);border-color:#8f9d83;box-shadow:0 6px 16px rgba(50,40,20,.14)}
 .archive-community-card .archive-community-mark{flex:0 0 auto;width:48px;height:48px;margin-bottom:8px;font-size:15px}
 .archive-community-photo{width:100%;height:112px;margin-bottom:9px;overflow:hidden;border-radius:7px;background:#e8e3d9}
+#family-hobbies .archive-community-photo{height:170px}
 .archive-community-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 28%}
 .archive-community-photo-andrew img{object-position:12% 28%}
 .archive-community-photo-katie img{object-position:center 24%}

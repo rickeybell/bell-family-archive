@@ -18,7 +18,9 @@
 
     [switch]$SkipDigiKamCatalogSync,
 
-    [switch]$ConfirmWrite
+    [switch]$ConfirmWrite,
+
+    [string]$TerrainDirectory = 'G:\ChatGPT\Terrain\USGS-3DEP-1ArcSecond'
 )
 
 # Keep ExifTool's Perl runtime quiet and deterministic on Windows.
@@ -27,6 +29,41 @@ $env:LC_CTYPE = 'C'
 $env:LANG = 'C'
 $ErrorActionPreference = 'Stop'
 
+# The main collection remains the parameter default. Stephanie's collection is
+# on G:, so select that album root automatically for catalog synchronization.
+if (-not $PSBoundParameters.ContainsKey('DigiKamCollectionRoot')) {
+    $normalizedScanRoot=[IO.Path]::GetFullPath($Root).TrimEnd('\')
+    $stephanieCollectionRoot='G:\Pictures\Stephanie'
+    if ($normalizedScanRoot -ieq $stephanieCollectionRoot -or
+        $normalizedScanRoot.StartsWith("$stephanieCollectionRoot\",[StringComparison]::OrdinalIgnoreCase)) {
+        $DigiKamCollectionRoot=$stephanieCollectionRoot
+    }
+}
+
+# v2.30: replaces the airborne Vehicle/Plane tag with Hobbies/Aviation and
+#        removes the obsolete Plane and Vehicle/Plane metadata when writing.
+# v2.29: Chester State Park matches require and write both the State Park tag
+#        and its Chester County parent tag in photos and sidecars.
+# v2.28: required Vehicle/Plane in both a photo and its sidecar and fixed the
+#        one-item ExifTool argument list used for sidecar Plane writes.
+# v2.27: used the former Vehicle/Plane hierarchy and removed the legacy
+#        root-level Plane entry when an airborne photo was written.
+# v2.26: automatically selects G:\Pictures\Stephanie as the digiKam collection
+#        root when scanning that collection, unless an explicit root is passed.
+# v2.25: Aviation means at least 500 ft above local USGS 3DEP terrain. When the
+#        local terrain tile is unavailable, the rule falls back to 1,000 ft
+#        above sea level. A root-level Locked tag freezes GPS/tag automation.
+#        The script no longer creates a visible Automation marker tag.
+# v2.24: every successful GPS-script tag write added the parent Automation tag;
+#        Locked remained the nested Automation/Locked manual override.
+# v2.23: expands Fishing Creek water boundaries by 500 ft and honors the
+#        Automation/Locked tag for all automated tag/GPS changes. Color-label
+#        processing remains independent and is not blocked by this tag.
+# v2.22: photos with GPS altitude of at least 1,000 ft receive the Aviation tag.
+# v2.21: adds Fishing Creek Lake, Fishing Creek Reservoir, and the Catawba
+#        River reach from Fishing Creek Dam through Landsford Canal State Park.
+# v2.20: adds the official Census incorporated-place boundary for Rock Hill.
+# v2.19: adds a 2,000-foot Chester State Park geofence before Chester County.
 # v2.18: stores every new run backup under G:\ChatGPT in a timestamped folder.
 # v2.17: synchronizes affected tags/GPS into digiKam SQLite after verified metadata writes.
 # v2.16: caches embedded and sidecar tags in two batch reads instead of rereading each file.
@@ -81,6 +118,42 @@ $Counties = @(
         )
     }
 )
+
+$script:ChesterCounty=@($Counties | Where-Object { $_.Name -eq 'Chester County' })[0]
+
+# Official Rock Hill incorporated-place boundary. The geometry is downloaded
+# from Census TIGERweb and evaluated before the general York County rule.
+$RockHill = @{
+    Name = 'Rock Hill'
+    GeoId = '4561405'
+    LeafTag = 'Rock Hill'
+    DigiKamTag = 'Places/South Carolina/York County/Rock Hill'
+    HierTag = 'Places|South Carolina|York County|Rock Hill'
+    ProtectedParents = @()
+}
+
+# Combined water boundary for the archive's existing Fishing Creek tag. Census
+# TIGERweb supplies the reservoir and Catawba River polygons; USGS NHD supplies
+# the separate small Fishing Creek Lake polygon immediately below the dam.
+$FishingCreek = @{
+    Name = 'Fishing Creek'
+    LeafTag = 'Fishing Creek'
+    DigiKamTag = 'Places/South Carolina/Lancaster County/Fishing Creek'
+    HierTag = 'Places|South Carolina|Lancaster County|Fishing Creek'
+    ProtectedParents = @()
+    CensusOids = @(
+        '110229666938',  # Catawba River: Fishing Creek Reservoir to/through Landsford Canal State Park
+        '110462860488',  # Fishing Creek Reservoir
+        '1102220258830', # Fishing Creek Reservoir / Catawba River reach
+        '110229666974',  # Fishing Creek Reservoir
+        '110229666975'   # Fishing Creek Reservoir / Catawba River reach
+    )
+    UsgsPermanentIdentifiers = @(
+        '98893207'       # Fishing Creek Lake
+    )
+    BufferMeters = 152.4 # 500 ft shoreline/GPS tolerance
+    Geometries = @()
+}
 
 # Existing Confederate Avenue geofences carried forward from
 # Tag-2022-20220506_173635-900-or-910-to-900-v3.ps1.
@@ -194,6 +267,17 @@ $ErwinElementary = @{
     ProtectedParents = @()
 }
 
+# Specific Chester County State Park geofence. Evaluated before county rules.
+$ChesterStatePark = @{
+    Name = 'Chester State Park'
+    LeafTag = 'State Park'
+    DigiKamTag = 'Places/South Carolina/Chester County/State Park'
+    HierTag = 'Places|South Carolina|Chester County|State Park'
+    Latitude = 34.67893499765742
+    Longitude = -81.24115127527698
+    RadiusMeters = 609.6   # 2000 ft
+}
+
 # Specific Chester County Sub Fiber geofence. Evaluated before county rules.
 $SubFiber = @{
     Name = 'Sub Fiber'
@@ -274,6 +358,26 @@ $VideoTag = @{
     HierTag = 'Video'
 }
 
+# Generic media-type tag for photos taken at least 500 feet above local terrain.
+# If terrain is unavailable, use 1,000 feet above sea level as the fallback.
+$AviationTag = @{
+    Name = 'Aviation'
+    LeafTag = 'Aviation'
+    DigiKamTag = 'Hobbies/Aviation'
+    HierTag = 'Hobbies|Aviation'
+}
+$AviationAglThresholdMeters = 152.4
+$AviationFallbackAltitudeMeters = 304.8
+
+# A single manual override freezes all automated tag and GPS changes for an
+# item. The separate Website/color-label process intentionally ignores it.
+$LockedTag = @{
+    Name = 'Locked'
+    LeafTag = 'Locked'
+    DigiKamTag = 'Locked'
+    HierTag = 'Locked'
+}
+
 $PhotoExtensions = @('jpg','jpeg','heic','png','tif','tiff')
 $VideoExtensions = @('mp4','mov','m4v','avi')
 $script:TargetTagCache = @{}
@@ -300,6 +404,7 @@ if ($UseYearRange) {
 }
 
 $ReportPath = Join-Path $Root "GPS-County-Geofence-Report$RangeSuffix.csv"
+$AirborneReportPath = Join-Path $Root "GPS-Airborne-Aviation-Report$RangeSuffix.csv"
 $WriteLogPath = Join-Path $Root "GPS-County-Geofence-WriteLog$RangeSuffix.csv"
 $BackupRunStamp = Get-Date -Format 'yyyyMMdd-HHmmss'
 $BackupScope = if ($UseYearRange) {
@@ -372,6 +477,90 @@ function Test-PointInGeoJsonGeometry {
                 -Longitude $Longitude `
                 -PolygonCoordinates $polygon) {
                 return $true
+            }
+        }
+        return $false
+    }
+
+    throw "Unsupported GeoJSON geometry type: $($Geometry.type)"
+}
+
+function Get-DistanceToGeoJsonSegmentMeters {
+    param(
+        [double]$Latitude,
+        [double]$Longitude,
+        [array]$PointA,
+        [array]$PointB
+    )
+
+    # Local equirectangular projection. At a 500-foot tolerance this is both
+    # stable and much more accurate than GPS/shoreline source precision.
+    $earthRadius=6371000.0
+    $latitudeRadians=$Latitude * [Math]::PI / 180.0
+    $metersPerLongitudeRadian=$earthRadius * [Math]::Cos($latitudeRadians)
+
+    $x1=([double]$PointA[0]-$Longitude) * [Math]::PI / 180.0 * $metersPerLongitudeRadian
+    $y1=([double]$PointA[1]-$Latitude) * [Math]::PI / 180.0 * $earthRadius
+    $x2=([double]$PointB[0]-$Longitude) * [Math]::PI / 180.0 * $metersPerLongitudeRadian
+    $y2=([double]$PointB[1]-$Latitude) * [Math]::PI / 180.0 * $earthRadius
+
+    $dx=$x2-$x1
+    $dy=$y2-$y1
+    $lengthSquared=($dx*$dx)+($dy*$dy)
+    if ($lengthSquared -le 0.0) {
+        return [Math]::Sqrt(($x1*$x1)+($y1*$y1))
+    }
+
+    $t=(-($x1*$dx)-($y1*$dy))/$lengthSquared
+    $t=[Math]::Max(0.0,[Math]::Min(1.0,$t))
+    $nearestX=$x1+($t*$dx)
+    $nearestY=$y1+($t*$dy)
+    return [Math]::Sqrt(($nearestX*$nearestX)+($nearestY*$nearestY))
+}
+
+function Get-DistanceToGeoJsonRingMeters {
+    param([double]$Latitude,[double]$Longitude,[array]$Ring)
+
+    if ($Ring.Count -lt 2) { return [double]::PositiveInfinity }
+    $minimum=[double]::PositiveInfinity
+    for ($i=1; $i -lt $Ring.Count; $i++) {
+        $distance=Get-DistanceToGeoJsonSegmentMeters `
+            -Latitude $Latitude `
+            -Longitude $Longitude `
+            -PointA $Ring[$i-1] `
+            -PointB $Ring[$i]
+        if ($distance -lt $minimum) { $minimum=$distance }
+    }
+    return $minimum
+}
+
+function Test-PointInOrNearGeoJsonGeometry {
+    param(
+        [double]$Latitude,
+        [double]$Longitude,
+        $Geometry,
+        [double]$BufferMeters
+    )
+
+    if (Test-PointInGeoJsonGeometry -Latitude $Latitude -Longitude $Longitude -Geometry $Geometry) {
+        return $true
+    }
+
+    if ($Geometry.type -eq 'Polygon') {
+        foreach ($ring in $Geometry.coordinates) {
+            if ((Get-DistanceToGeoJsonRingMeters -Latitude $Latitude -Longitude $Longitude -Ring $ring) -le $BufferMeters) {
+                return $true
+            }
+        }
+        return $false
+    }
+
+    if ($Geometry.type -eq 'MultiPolygon') {
+        foreach ($polygon in $Geometry.coordinates) {
+            foreach ($ring in $polygon) {
+                if ((Get-DistanceToGeoJsonRingMeters -Latitude $Latitude -Longitude $Longitude -Ring $ring) -le $BufferMeters) {
+                    return $true
+                }
             }
         }
         return $false
@@ -505,6 +694,24 @@ function Get-AllTagsForMedia {
     return @($all)
 }
 
+function Test-IsLocked {
+    param(
+        [string]$MediaPath,
+        [switch]$Refresh
+    )
+
+    if ($Refresh) {
+        foreach ($target in @($MediaPath,"$MediaPath.xmp")) {
+            $cacheKey=Get-CacheKey -Path $target
+            $script:TargetTagCache.Remove($cacheKey)
+        }
+    }
+
+    return Test-AlreadyHasCountyTag `
+        -MediaPath $MediaPath `
+        -County $LockedTag
+}
+
 function Get-ProtectedChildTags {
     param(
         [string]$MediaPath,
@@ -587,6 +794,26 @@ function Test-AlreadyHasCountyTag {
     return $false
 }
 
+function Test-HasAviationTag {
+    param([string]$MediaPath)
+
+    # The leaf keyword alone is ambiguous. Require the Hobbies hierarchy in
+    # both the media file and its sidecar.
+    $targets=@($MediaPath,"$MediaPath.xmp")
+    foreach ($target in $targets) {
+        if (-not (Test-Path -LiteralPath $target)) { return $false }
+        $hasDigiKam=$false
+        $hasHierarchical=$false
+        foreach ($tag in (Get-AllTagsFromTarget -Target $target)) {
+            $value=[string]$tag
+            if ($value -ieq 'Hobbies/Aviation') { $hasDigiKam=$true }
+            if ($value -ieq 'Hobbies|Aviation') { $hasHierarchical=$true }
+        }
+        if (-not $hasDigiKam -or -not $hasHierarchical) { return $false }
+    }
+    return $true
+}
+
 function Add-TagsToTarget {
     param(
         [string]$Target,
@@ -635,6 +862,94 @@ function Add-TagsToTarget {
         return 'Tagged'
     }
 
+    return 'ERROR'
+}
+
+function Add-ChesterPointTagsToTarget {
+    param(
+        [string]$Target,
+        [bool]$PreserveTimestamp,
+        [hashtable]$Location
+    )
+
+    $results=@()
+    if ($Location.Name -ieq 'Chester State Park') {
+        $results += Add-TagsToTarget `
+            -Target $Target `
+            -PreserveTimestamp $PreserveTimestamp `
+            -County $script:ChesterCounty
+    }
+
+    $results += Add-TagsToTarget `
+        -Target $Target `
+        -PreserveTimestamp $PreserveTimestamp `
+        -County $Location
+
+    if ($results -contains 'ERROR') { return 'ERROR' }
+    if (@($results | Where-Object { $_ -ne 'Already tagged' }).Count -eq 0) {
+        return 'Already tagged'
+    }
+    return 'Tagged'
+}
+
+function Set-AviationTagOnTarget {
+    param(
+        [string]$Target,
+        [bool]$PreserveTimestamp
+    )
+
+    $meta = (& $script:ExifTool.Source -json `
+        -XMP-digiKam:TagsList `
+        -XMP-lr:HierarchicalSubject `
+        -XMP-dc:Subject `
+        $Target) | ConvertFrom-Json
+
+    $currentDigiKam=@($meta[0].TagsList)
+    $currentHier=@($meta[0].HierarchicalSubject)
+    $currentSubject=@($meta[0].Subject)
+    $args=@('-overwrite_original')
+    if ($PreserveTimestamp) {
+        $args=@('-P','-overwrite_original')
+    }
+
+    # Remove the former Plane hierarchy and root entries during migration.
+    foreach ($legacyTag in @('Plane','Vehicle/Plane')) {
+        if ($currentDigiKam -contains $legacyTag) {
+            $args += "-XMP-digiKam:TagsList-=$legacyTag"
+        }
+    }
+    foreach ($legacyTag in @('Plane','Vehicle|Plane')) {
+        if ($currentHier -contains $legacyTag) {
+            $args += "-XMP-lr:HierarchicalSubject-=$legacyTag"
+        }
+    }
+    if ($currentSubject -contains 'Plane') {
+        $args += '-XMP-dc:Subject-=Plane'
+    }
+
+    # Avoid creating a separate root-level Aviation tag. Keep Aviation only as
+    # the leaf keyword of Hobbies/Aviation.
+    if ($currentDigiKam -contains 'Aviation') {
+        $args += '-XMP-digiKam:TagsList-=Aviation'
+    }
+    if ($currentHier -contains 'Aviation') {
+        $args += '-XMP-lr:HierarchicalSubject-=Aviation'
+    }
+    if ($currentDigiKam -notcontains 'Hobbies/Aviation') {
+        $args += '-XMP-digiKam:TagsList+=Hobbies/Aviation'
+    }
+    if ($currentHier -notcontains 'Hobbies|Aviation') {
+        $args += '-XMP-lr:HierarchicalSubject+=Hobbies|Aviation'
+    }
+    if ($currentSubject -notcontains 'Aviation') {
+        $args += '-XMP-dc:Subject+=Aviation'
+    }
+
+    $baseCount=if($PreserveTimestamp){2}else{1}
+    if ($args.Count -eq $baseCount) { return 'Already tagged' }
+    $args += $Target
+    & $script:ExifTool.Source @args | Out-Null
+    if ($LASTEXITCODE -eq 0) { return 'Tagged' }
     return 'ERROR'
 }
 
@@ -688,12 +1003,13 @@ function Set-GpsOnSidecar {
 
 function Get-PythonCommand {
     $candidates=@()
+    # Prefer the bundled runtime because the terrain helper requires Pillow.
+    $bundled=Join-Path $env:USERPROFILE '.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+    if (Test-Path -LiteralPath $bundled) { $candidates += @{ File=$bundled; Prefix=@() } }
     $python=Get-Command python.exe -ErrorAction SilentlyContinue
     if ($python) { $candidates += @{ File=$python.Source; Prefix=@() } }
     $py=Get-Command py.exe -ErrorAction SilentlyContinue
     if ($py) { $candidates += @{ File=$py.Source; Prefix=@() } }
-    $bundled=Join-Path $env:USERPROFILE '.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
-    if (Test-Path -LiteralPath $bundled) { $candidates += @{ File=$bundled; Prefix=@() } }
     foreach ($candidate in $candidates) {
         & $candidate.File @($candidate.Prefix + @('--version')) *> $null
         if ($LASTEXITCODE -eq 0) { return $candidate }
@@ -706,7 +1022,7 @@ function Get-PythonCommand {
 # -----------------------------
 
 Write-Host ""
-Write-Host "Bell Family Archive - Combined Property + County GPS Geotagger v2.18" -ForegroundColor Cyan
+Write-Host "Bell Family Archive - Combined Property + County GPS Geotagger v2.30" -ForegroundColor Cyan
 Write-Host "Mode   : $Mode"
 Write-Host "Folder : $Root"
 if ($UseYearRange) { Write-Host "Years  : $FromYear through $ToYear ($($ScanRoots.Count) folders)" }
@@ -718,13 +1034,18 @@ Write-Host "Lancaster Rescue   : $($LancasterRescueSquad.Latitude), $($Lancaster
 Write-Host "212 S Main QDS     : $($QDSOffice.Latitude), $($QDSOffice.Longitude) / 500 ft"
 Write-Host "Lancaster High     : $($LancasterHighSchool.Latitude), $($LancasterHighSchool.Longitude) / 1000 ft"
 Write-Host "Erwin Elementary   : $($ErwinElementary.Latitude), $($ErwinElementary.Longitude) / 1000 ft"
+Write-Host "Chester State Park : $($ChesterStatePark.Latitude), $($ChesterStatePark.Longitude) / 2000 ft"
 Write-Host "Sub Fiber          : $($SubFiber.Latitude), $($SubFiber.Longitude) / 1000 ft"
+Write-Host "Rock Hill          : official Census incorporated-place boundary"
+Write-Host "Fishing Creek      : official water boundaries plus 500-ft shoreline tolerance"
 Write-Host "Myrtle Beach       : $($MyrtleBeach.Latitude), $($MyrtleBeach.Longitude) / 50 miles"
 Write-Host "Crystal River      : $($CrystalRiver.Latitude), $($CrystalRiver.Longitude) / 20 miles"
 Write-Host "Florida            : anywhere else in Florida -> Places/Florida"
 Write-Host "Florida cities     : Orlando, Daytona Beach / 20 miles; Keys regional geofence"
 Write-Host "Travel states      : Georgia (Savannah, Atlanta); Virginia (Newport News); Washington DC; Tennessee (Nashville, Memphis, Knoxville, Chattanooga); Louisiana (New Orleans)"
 Write-Host "Videos             : add Video tag"
+Write-Host "Airborne photos     : >=500 ft AGL; fallback >=1,000 ft MSL -> Aviation"
+Write-Host "Terrain source      : local USGS 3DEP tiles in $TerrainDirectory"
 Write-Host ""
 
 $ExifTool=Get-Command exiftool -ErrorAction SilentlyContinue
@@ -768,6 +1089,48 @@ foreach ($County in $Counties) {
 Write-Host "All county boundaries loaded successfully." -ForegroundColor Green
 Write-Host ""
 
+# Load the current official Rock Hill incorporated-place boundary.
+Write-Host "Downloading Rock Hill city boundary..." -ForegroundColor Cyan
+$rockHillQuery="https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Places_CouSub_ConCity_SubMCD/MapServer/4/query?where=GEOID%3D%27$($RockHill.GeoId)%27&outFields=GEOID%2CNAME%2CBASENAME&returnGeometry=true&outSR=4326&f=geojson"
+try { $rockHillGeo=Invoke-RestMethod -Uri $rockHillQuery -Method Get }
+catch { Write-Host "ERROR: Could not download the Rock Hill city boundary." -ForegroundColor Red; Write-Host $_; exit 1 }
+if (-not $rockHillGeo.features -or $rockHillGeo.features.Count -lt 1) {
+    Write-Host "ERROR: No geometry returned for Rock Hill." -ForegroundColor Red
+    exit 1
+}
+$RockHill.Geometry=$rockHillGeo.features[0].geometry
+Write-Host "Rock Hill city boundary loaded successfully." -ForegroundColor Green
+Write-Host ""
+
+# Load the official Fishing Creek water boundaries. The selected Census OIDs
+# are stable TIGER hydrography identifiers for the local reservoir and river
+# reach; the USGS permanent identifier selects the distinct lake below the dam.
+Write-Host "Downloading Fishing Creek water boundaries..." -ForegroundColor Cyan
+$fishingCreekCensusWhere=($FishingCreek.CensusOids | ForEach-Object { "%27$_%27" }) -join '%2C'
+$fishingCreekCensusQuery="https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Hydro/MapServer/1/query?where=OID%20IN%20($fishingCreekCensusWhere)&outFields=OID%2CNAME%2CBASENAME%2CMTFCC%2CAREAWATER&returnGeometry=true&outSR=4326&f=geojson"
+$fishingCreekUsgsWhere=($FishingCreek.UsgsPermanentIdentifiers | ForEach-Object { "%27$_%27" }) -join '%2C'
+$fishingCreekUsgsQuery="https://hydro.nationalmap.gov/arcgis/rest/services/nhd/MapServer/12/query?where=PERMANENT_IDENTIFIER%20IN%20($fishingCreekUsgsWhere)&outFields=PERMANENT_IDENTIFIER%2CGNIS_NAME%2CGNIS_ID%2CAREASQKM%2CREACHCODE&returnGeometry=true&outSR=4326&f=geojson"
+try {
+    $fishingCreekCensusGeo=Invoke-RestMethod -Uri $fishingCreekCensusQuery -Method Get
+    $fishingCreekUsgsGeo=Invoke-RestMethod -Uri $fishingCreekUsgsQuery -Method Get
+}
+catch {
+    Write-Host "ERROR: Could not download the Fishing Creek water boundaries." -ForegroundColor Red
+    Write-Host $_
+    exit 1
+}
+if (-not $fishingCreekCensusGeo.features -or $fishingCreekCensusGeo.features.Count -ne $FishingCreek.CensusOids.Count) {
+    Write-Host "ERROR: The expected Census Fishing Creek/Catawba water polygons were not returned." -ForegroundColor Red
+    exit 1
+}
+if (-not $fishingCreekUsgsGeo.features -or $fishingCreekUsgsGeo.features.Count -ne $FishingCreek.UsgsPermanentIdentifiers.Count) {
+    Write-Host "ERROR: The expected USGS Fishing Creek Lake polygon was not returned." -ForegroundColor Red
+    exit 1
+}
+$FishingCreek.Geometries=@($fishingCreekCensusGeo.features | ForEach-Object { $_.geometry }) + @($fishingCreekUsgsGeo.features | ForEach-Object { $_.geometry })
+Write-Host "Fishing Creek water boundaries loaded successfully." -ForegroundColor Green
+Write-Host ""
+
 # Load travel state boundaries from Census TIGERweb.
 $AllTravelStates=@($Florida)+@($TravelStates)
 foreach ($State in $AllTravelStates) {
@@ -790,7 +1153,7 @@ Write-Host "Reading GPS from supported photos/videos..." -ForegroundColor Cyan
 $ExifArgs=@(
     '-json','-n',
     '-i','.dtrash',
-    '-GPSLatitude','-GPSLongitude',
+    '-GPSLatitude','-GPSLongitude','-GPSAltitude',
     '-FileName','-Directory','-FileTypeExtension',
     '-XMP-digiKam:TagsList','-XMP-lr:HierarchicalSubject','-XMP-dc:Subject',
     '-XMP-MicrosoftPhoto:LastKeywordXMP','-IPTC:Keywords'
@@ -847,7 +1210,70 @@ foreach ($SidecarItem in $SidecarItems) {
     $script:VideoSidecarTagCache[$cacheKey]=(@($videoTags | Where-Object { [string]$_ -ieq 'Video' }).Count -gt 0)
 }
 Write-Host "Cached tags for $($Items.Count) media files and $($SidecarItems.Count) sidecars." -ForegroundColor Green
+
+# Resolve local ground elevations in one batch. Only regional tile names are
+# used; exact photo coordinates never leave this computer. Missing or unreadable
+# tiles are handled later by the 1,000-foot MSL fallback rule.
+$TerrainByPath=@{}
+$TerrainHelper=Join-Path $PSScriptRoot 'tools\lookup-usgs-terrain.py'
+$TerrainCandidates=@($Items | Where-Object {
+    (Get-FileKind -Extension ([string]$_.FileTypeExtension)) -eq 'Photo' -and
+    $null -ne $_.GPSLatitude -and
+    $null -ne $_.GPSLongitude -and
+    $null -ne $_.GPSAltitude -and
+    [double]$_.GPSAltitude -ge $AviationAglThresholdMeters -and
+    -not (Test-IsLocked -MediaPath (Join-Path $_.Directory $_.FileName))
+})
+
+if ($TerrainCandidates.Count -gt 0 -and
+    (Test-Path -LiteralPath $TerrainHelper) -and
+    (Test-Path -LiteralPath $TerrainDirectory)) {
+    $terrainToken=[guid]::NewGuid().ToString('N')
+    $terrainInput=Join-Path $env:TEMP "gps-terrain-input-$terrainToken.csv"
+    $terrainOutput=Join-Path $env:TEMP "gps-terrain-output-$terrainToken.csv"
+    try {
+        $TerrainCandidates | ForEach-Object {
+            [PSCustomObject]@{
+                FullPath=Join-Path $_.Directory $_.FileName
+                Latitude=[double]$_.GPSLatitude
+                Longitude=[double]$_.GPSLongitude
+            }
+        } | Export-Csv -LiteralPath $terrainInput -NoTypeInformation -Encoding utf8
+
+        $TerrainPython=Get-PythonCommand
+        $terrainArgs=@($TerrainPython.Prefix)+@(
+            $TerrainHelper,
+            '--terrain-dir',$TerrainDirectory,
+            '--input',$terrainInput,
+            '--output',$terrainOutput
+        )
+        & $TerrainPython.File @terrainArgs
+        if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $terrainOutput)) {
+            throw 'The local terrain lookup did not complete successfully.'
+        }
+        foreach ($terrainRow in (Import-Csv -LiteralPath $terrainOutput)) {
+            $TerrainByPath[(Get-CacheKey -Path $terrainRow.FullPath)]=$terrainRow
+        }
+        $terrainOk=@($TerrainByPath.Values | Where-Object {$_.Status -eq 'OK'}).Count
+        $terrainMissing=$TerrainByPath.Count-$terrainOk
+        Write-Host "Local terrain resolved for $terrainOk photos; fallback required for $terrainMissing." -ForegroundColor Green
+    }
+    catch {
+        Write-Host "WARNING: Local terrain lookup failed; the Aviation rule will use the 1,000-ft MSL fallback." -ForegroundColor Yellow
+        Write-Host $_ -ForegroundColor Yellow
+        $TerrainByPath=@{}
+    }
+    finally {
+        Remove-Item -LiteralPath $terrainInput -Force -ErrorAction SilentlyContinue
+        Remove-Item -LiteralPath $terrainOutput -Force -ErrorAction SilentlyContinue
+    }
+}
+elseif ($TerrainCandidates.Count -gt 0) {
+    Write-Host "WARNING: Local terrain files are unavailable; the Aviation rule will use the 1,000-ft MSL fallback." -ForegroundColor Yellow
+}
+
 $Rows=@()
+$AirborneRows=@()
 
 foreach ($Item in $Items) {
     $kind=Get-FileKind -Extension ([string]$Item.FileTypeExtension)
@@ -857,6 +1283,105 @@ foreach ($Item in $Items) {
         $null -ne $Item.GPSLatitude -and
         $null -ne $Item.GPSLongitude
     )
+    $automationLocked=Test-IsLocked -MediaPath $fullPath
+
+    if ($automationLocked) {
+        if (
+            $kind -eq 'Photo' -and
+            $null -ne $Item.GPSAltitude -and
+            [double]$Item.GPSAltitude -ge $AviationFallbackAltitudeMeters
+        ) {
+            $altitudeMeters=[double]$Item.GPSAltitude
+            $AirborneRows += [PSCustomObject]@{
+                FileName=$Item.FileName
+                FileType=$kind
+                FullPath=$fullPath
+                GPSAltitudeMeters=[Math]::Round($altitudeMeters,1)
+                GPSAltitudeFeet=[Math]::Round(($altitudeMeters * 3.280839895),0)
+                TerrainElevationMeters=''
+                TerrainElevationFeet=''
+                AboveGroundMeters=''
+                AboveGroundFeet=''
+                AviationRule='Locked; no evaluation'
+                TerrainStatus='LOCKED'
+                AlreadyAviationTag=''
+                Action='SKIP - locked'
+                ProposedTag=''
+            }
+        }
+
+        $Rows += [PSCustomObject]@{
+            FileName=$Item.FileName
+            FileType=$kind
+            FullPath=$fullPath
+            HasGPS=if($hasGps){'YES'}else{'NO'}
+            Latitude=if($hasGps){[Math]::Round([double]$Item.GPSLatitude,7)}else{''}
+            Longitude=if($hasGps){[Math]::Round([double]$Item.GPSLongitude,7)}else{''}
+            DistanceTo973Ft=''
+            DistanceToDouglasFt=''
+            DistanceToSubFiberFt=''
+            ConfederateMatch=''
+            CountyMatch=''
+            ProtectedChildLocation='Locked'
+            AlreadyCountyTag=''
+            VideoTagNeeded='NO'
+            Action='SKIP - locked'
+            ProposedTag=''
+        }
+        continue
+    }
+
+    if ($kind -eq 'Photo' -and $null -ne $Item.GPSAltitude) {
+        $altitudeMeters=[double]$Item.GPSAltitude
+        $terrainElevation=$null
+        $aboveGround=$null
+        $terrainStatus='NOT_NEEDED'
+        $aviationRule=''
+        $isAviation=$false
+
+        if ($altitudeMeters -ge $AviationAglThresholdMeters) {
+            $terrainKey=Get-CacheKey -Path $fullPath
+            if ($TerrainByPath.ContainsKey($terrainKey)) {
+                $terrainResult=$TerrainByPath[$terrainKey]
+                $terrainStatus=[string]$terrainResult.Status
+            }
+            else {
+                $terrainResult=$null
+                $terrainStatus='UNAVAILABLE'
+            }
+
+            if ($null -ne $terrainResult -and $terrainResult.Status -eq 'OK') {
+                $terrainElevation=[double]$terrainResult.GroundElevationMeters
+                $aboveGround=$altitudeMeters-$terrainElevation
+                $aviationRule='500 ft AGL'
+                $isAviation=($aboveGround -ge $AviationAglThresholdMeters)
+            }
+            else {
+                $aviationRule='Fallback 1,000 ft MSL'
+                $isAviation=($altitudeMeters -ge $AviationFallbackAltitudeMeters)
+            }
+        }
+
+        if ($isAviation) {
+            $alreadyAviation=Test-HasAviationTag -MediaPath $fullPath
+            $AirborneRows += [PSCustomObject]@{
+                FileName=$Item.FileName
+                FileType=$kind
+                FullPath=$fullPath
+                GPSAltitudeMeters=[Math]::Round($altitudeMeters,1)
+                GPSAltitudeFeet=[Math]::Round(($altitudeMeters * 3.280839895),0)
+                TerrainElevationMeters=if($null -ne $terrainElevation){[Math]::Round($terrainElevation,1)}else{''}
+                TerrainElevationFeet=if($null -ne $terrainElevation){[Math]::Round(($terrainElevation * 3.280839895),0)}else{''}
+                AboveGroundMeters=if($null -ne $aboveGround){[Math]::Round($aboveGround,1)}else{''}
+                AboveGroundFeet=if($null -ne $aboveGround){[Math]::Round(($aboveGround * 3.280839895),0)}else{''}
+                AviationRule=$aviationRule
+                TerrainStatus=$terrainStatus
+                AlreadyAviationTag=if($alreadyAviation){'YES'}else{'NO'}
+                Action=if($alreadyAviation){'SKIP - already Aviation tagged'}else{'TAG Aviation'}
+                ProposedTag=$AviationTag.DigiKamTag
+            }
+        }
+    }
 
     $hasVideoTag=$false
     $videoTagNeeded=$false
@@ -873,7 +1398,7 @@ foreach ($Item in $Items) {
         # a specific location tag but lacks GPS, use that location's fixed
         # reference coordinate. Existing GPS is never replaced.
         $trustedPoint=$null
-        foreach ($point in @($CommunityLane,$DouglasRoad,$LancasterRescueSquad,$QDSOffice,$LancasterHighSchool,$ErwinElementary,$SubFiber)) {
+        foreach ($point in @($CommunityLane,$DouglasRoad,$LancasterRescueSquad,$QDSOffice,$LancasterHighSchool,$ErwinElementary,$ChesterStatePark,$SubFiber)) {
             if (Test-AlreadyHasCountyTag -MediaPath $fullPath -County $point) {
                 $trustedPoint=$point
                 break
@@ -883,7 +1408,7 @@ foreach ($Item in $Items) {
         if ($trustedPoint) {
             $action="EMBED GPS $($trustedPoint.Name)"
             $proposed=$trustedPoint.DigiKamTag
-            if ($trustedPoint -eq $SubFiber) { $countyMatch='Chester County' }
+            if ($trustedPoint.DigiKamTag -like 'Places/South Carolina/Chester County/*') { $countyMatch='Chester County' }
             else { $countyMatch='Lancaster County' }
         }
         else {
@@ -957,6 +1482,12 @@ foreach ($Item in $Items) {
         -Lon1 $lon `
         -Lat2 $ErwinElementary.Latitude `
         -Lon2 $ErwinElementary.Longitude
+
+    $chesterStateParkDistanceMeters=Get-DistanceMeters `
+        -Lat1 $lat `
+        -Lon1 $lon `
+        -Lat2 $ChesterStatePark.Latitude `
+        -Lon2 $ChesterStatePark.Longitude
 
     $subFiberDistanceMeters=Get-DistanceMeters `
         -Lat1 $lat `
@@ -1156,6 +1687,37 @@ foreach ($Item in $Items) {
         continue
     }
 
+    # Chester State Park is checked before general Chester County classification.
+    if ($chesterStateParkDistanceMeters -le $ChesterStatePark.RadiusMeters) {
+        $hasChesterStateParkChildTag=Test-AlreadyHasCountyTag `
+            -MediaPath $fullPath `
+            -County $ChesterStatePark
+        $hasChesterCountyTag=Test-AlreadyHasCountyTag `
+            -MediaPath $fullPath `
+            -County $script:ChesterCounty
+        $hasChesterStateParkTag=($hasChesterStateParkChildTag -and $hasChesterCountyTag)
+
+        $Rows += [PSCustomObject]@{
+            FileName=$Item.FileName
+            FileType=$kind
+            FullPath=$fullPath
+            HasGPS='YES'
+            Latitude=[Math]::Round($lat,7)
+            Longitude=[Math]::Round($lon,7)
+            DistanceTo973Ft=[Math]::Round($distanceFeet,1)
+            DistanceToDouglasFt=[Math]::Round($douglasDistanceFeet,1)
+            DistanceToSubFiberFt=[Math]::Round($subFiberDistanceFeet,1)
+            ConfederateMatch=''
+            CountyMatch='Chester County'
+            ProtectedChildLocation=''
+            AlreadyCountyTag=if($hasChesterStateParkTag){'YES'}else{'NO'}
+            VideoTagNeeded=if($videoTagNeeded){'YES'}else{'NO'}
+            Action=if($hasChesterStateParkTag){'SKIP - already Chester State Park tagged'}else{'TAG Chester State Park'}
+            ProposedTag=if($hasChesterStateParkTag){''}else{$ChesterStatePark.DigiKamTag}
+        }
+        continue
+    }
+
     # Chester County Sub Fiber rule is checked before general county classification.
     if ($subFiberDistanceMeters -le $SubFiber.RadiusMeters) {
         $hasSubFiberTag=Test-AlreadyHasCountyTag `
@@ -1280,6 +1842,67 @@ foreach ($Item in $Items) {
     }
     if ($travelMatched) { continue }
 
+    # Fishing Creek Lake, Fishing Creek Reservoir, and the Catawba River reach
+    # through Landsford Canal State Park are checked before county rules. A
+    # 500-foot buffer absorbs phone-GPS drift and shoreline polygon gaps.
+    $inFishingCreek=$false
+    foreach ($fishingCreekGeometry in $FishingCreek.Geometries) {
+        if (Test-PointInOrNearGeoJsonGeometry `
+            -Latitude $lat `
+            -Longitude $lon `
+            -Geometry $fishingCreekGeometry `
+            -BufferMeters $FishingCreek.BufferMeters) {
+            $inFishingCreek=$true
+            break
+        }
+    }
+    if ($inFishingCreek) {
+        $hasFishingCreekTag=Test-AlreadyHasCountyTag -MediaPath $fullPath -County $FishingCreek
+        $Rows += [PSCustomObject]@{
+            FileName=$Item.FileName
+            FileType=$kind
+            FullPath=$fullPath
+            HasGPS='YES'
+            Latitude=[Math]::Round($lat,7)
+            Longitude=[Math]::Round($lon,7)
+            DistanceTo973Ft=[Math]::Round($distanceFeet,1)
+            DistanceToDouglasFt=[Math]::Round($douglasDistanceFeet,1)
+            DistanceToSubFiberFt=[Math]::Round($subFiberDistanceFeet,1)
+            ConfederateMatch=''
+            CountyMatch='Lancaster County'
+            ProtectedChildLocation=''
+            AlreadyCountyTag=if($hasFishingCreekTag){'YES'}else{'NO'}
+            VideoTagNeeded=if($videoTagNeeded){'YES'}else{'NO'}
+            Action=if($hasFishingCreekTag){'SKIP - already Fishing Creek tagged'}else{'TAG Fishing Creek'}
+            ProposedTag=if($hasFishingCreekTag){''}else{$FishingCreek.DigiKamTag}
+        }
+        continue
+    }
+
+    # Rock Hill's official incorporated-place polygon is checked before York County.
+    if (Test-PointInGeoJsonGeometry -Latitude $lat -Longitude $lon -Geometry $RockHill.Geometry) {
+        $hasRockHillTag=Test-AlreadyHasCountyTag -MediaPath $fullPath -County $RockHill
+        $Rows += [PSCustomObject]@{
+            FileName=$Item.FileName
+            FileType=$kind
+            FullPath=$fullPath
+            HasGPS='YES'
+            Latitude=[Math]::Round($lat,7)
+            Longitude=[Math]::Round($lon,7)
+            DistanceTo973Ft=[Math]::Round($distanceFeet,1)
+            DistanceToDouglasFt=[Math]::Round($douglasDistanceFeet,1)
+            DistanceToSubFiberFt=[Math]::Round($subFiberDistanceFeet,1)
+            ConfederateMatch=''
+            CountyMatch='York County'
+            ProtectedChildLocation=''
+            AlreadyCountyTag=if($hasRockHillTag){'YES'}else{'NO'}
+            VideoTagNeeded=if($videoTagNeeded){'YES'}else{'NO'}
+            Action=if($hasRockHillTag){'SKIP - already Rock Hill tagged'}else{'TAG Rock Hill'}
+            ProposedTag=if($hasRockHillTag){''}else{$RockHill.DigiKamTag}
+        }
+        continue
+    }
+
     $matchedCounties=@()
 
     foreach ($County in $Counties) {
@@ -1385,6 +2008,11 @@ $Rows | Export-Csv `
     -NoTypeInformation `
     -Encoding UTF8
 
+$AirborneRows | Export-Csv `
+    -LiteralPath $AirborneReportPath `
+    -NoTypeInformation `
+    -Encoding UTF8
+
 # -----------------------------
 # Report summary
 # -----------------------------
@@ -1402,6 +2030,7 @@ $embedLancasterRescue=@($Rows | Where-Object {$_.Action -eq 'EMBED GPS Lancaster
 $embedQDSOffice=@($Rows | Where-Object {$_.Action -eq 'EMBED GPS 212 S Main St QDS Office'})
 $embedLancasterHigh=@($Rows | Where-Object {$_.Action -eq 'EMBED GPS Lancaster High School'})
 $embedErwin=@($Rows | Where-Object {$_.Action -eq 'EMBED GPS Erwin Elementary'})
+$embedChesterStatePark=@($Rows | Where-Object {$_.Action -eq 'EMBED GPS Chester State Park'})
 $embedSubFiber=@($Rows | Where-Object {$_.Action -eq 'EMBED GPS Sub Fiber'})
 $tagDouglas=@($Rows | Where-Object {$_.Action -eq 'TAG 2044 Douglas Rd'})
 $skipDouglas=@($Rows | Where-Object {$_.Action -eq 'SKIP - already 2044 Douglas Rd tagged'}).Count
@@ -1418,8 +2047,14 @@ $tag900=@($Rows | Where-Object {$_.Action -eq 'TAG 900 Confederate Ave'})
 $skip909=@($Rows | Where-Object {$_.Action -eq 'SKIP - already 909 Confederate Ave tagged'}).Count
 $skip909Because900=@($Rows | Where-Object {$_.Action -eq 'SKIP - existing 900 Confederate Ave blocks 909 Confederate Ave'}).Count
 $tag909=@($Rows | Where-Object {$_.Action -eq 'TAG 909 Confederate Ave'})
+$skipChesterStatePark=@($Rows | Where-Object {$_.Action -eq 'SKIP - already Chester State Park tagged'}).Count
+$tagChesterStatePark=@($Rows | Where-Object {$_.Action -eq 'TAG Chester State Park'})
 $skipSubFiber=@($Rows | Where-Object {$_.Action -eq 'SKIP - already Sub Fiber tagged'}).Count
 $tagSubFiber=@($Rows | Where-Object {$_.Action -eq 'TAG Sub Fiber'})
+$skipRockHill=@($Rows | Where-Object {$_.Action -eq 'SKIP - already Rock Hill tagged'}).Count
+$tagRockHill=@($Rows | Where-Object {$_.Action -eq 'TAG Rock Hill'})
+$skipFishingCreek=@($Rows | Where-Object {$_.Action -eq 'SKIP - already Fishing Creek tagged'}).Count
+$tagFishingCreek=@($Rows | Where-Object {$_.Action -eq 'TAG Fishing Creek'})
 $tagMyrtleBeach=@($Rows | Where-Object {$_.Action -eq 'TAG Myrtle Beach'})
 $skipMyrtleBeach=@($Rows | Where-Object {$_.Action -eq 'SKIP - already Myrtle Beach tagged'}).Count
 $tagCrystalRiver=@($Rows | Where-Object {$_.Action -eq 'TAG Crystal River'})
@@ -1427,6 +2062,9 @@ $skipCrystalRiver=@($Rows | Where-Object {$_.Action -eq 'SKIP - already Crystal 
 $tagFlorida=@($Rows | Where-Object {$_.Action -eq 'TAG Florida'})
 $skipFlorida=@($Rows | Where-Object {$_.Action -eq 'SKIP - already Florida tagged'}).Count
 $videoTags=@($Rows | Where-Object {$_.VideoTagNeeded -eq 'YES'})
+$aviationTags=@($AirborneRows | Where-Object {$_.Action -eq 'TAG Aviation'})
+$skipAviation=@($AirborneRows | Where-Object {$_.Action -eq 'SKIP - already Aviation tagged'}).Count
+$skipLocked=@($Rows | Where-Object {$_.Action -eq 'SKIP - locked'}).Count
 $toWrite=@($Rows | Where-Object {
     $_.Action -like 'TAG *' -or
     $_.Action -like 'EMBED GPS *' -or
@@ -1462,9 +2100,16 @@ Write-Host "900/910 GPS matches/tag    : $($tag900.Count)"
 Write-Host "Skipped - already 909 tag  : $skip909"
 Write-Host "Skipped 909 - kept 900 tag : $skip909Because900"
 Write-Host "909 GPS matches/tag        : $($tag909.Count)"
+Write-Host "Skipped - already StatePark: $skipChesterStatePark"
+Write-Host "Chester State Park matches : $($tagChesterStatePark.Count)"
+Write-Host "State Park tags needing GPS: $($embedChesterStatePark.Count)"
 Write-Host "Skipped - already SubFiber : $skipSubFiber"
 Write-Host "Sub Fiber GPS matches/tag  : $($tagSubFiber.Count)"
 Write-Host "Sub Fiber tags needing GPS : $($embedSubFiber.Count)"
+Write-Host "Skipped - already Rock Hill: $skipRockHill"
+Write-Host "Rock Hill boundary matches : $($tagRockHill.Count)"
+Write-Host "Skipped - already Fishing  : $skipFishingCreek"
+Write-Host "Fishing Creek boundary matches: $($tagFishingCreek.Count)"
 Write-Host "Skipped - already Myrtle   : $skipMyrtleBeach"
 Write-Host "Myrtle Beach matches/tag   : $($tagMyrtleBeach.Count)"
 Write-Host "Skipped - already Crystal  : $skipCrystalRiver"
@@ -1472,8 +2117,11 @@ Write-Host "Crystal River matches/tag  : $($tagCrystalRiver.Count)"
 Write-Host "Skipped - already Florida  : $skipFlorida"
 Write-Host "Florida matches/tag        : $($tagFlorida.Count)"
 Write-Host "Videos to enforce Video tag: $($videoTags.Count)"
+Write-Host "Airborne photos to tag Aviation: $($aviationTags.Count)"
+Write-Host "Already tagged Aviation        : $skipAviation"
+Write-Host "Skipped - Locked tag        : $skipLocked"
 Write-Host "Needs review               : $reviewCount"
-Write-Host "Total write actions        : $($toWrite.Count)"
+Write-Host "Total write actions        : $($toWrite.Count + $aviationTags.Count)"
 Write-Host ""
 
 foreach ($County in $Counties) {
@@ -1492,6 +2140,7 @@ foreach ($County in $Counties) {
 
 Write-Host ""
 Write-Host "Report: $ReportPath"
+Write-Host "Airborne report: $AirborneReportPath"
 
 if ($Mode -eq 'REPORT') {
     Write-Host ""
@@ -1510,7 +2159,7 @@ if ($reviewCount -gt 0) {
     exit 1
 }
 
-if ($toWrite.Count -eq 0) {
+if ($toWrite.Count -eq 0 -and $aviationTags.Count -eq 0) {
     Write-Host ""
     Write-Host "Nothing needs location/county changes." -ForegroundColor Green
     exit 0
@@ -1532,6 +2181,10 @@ Write-Host "  Florida: otherwise anywhere in Florida -> add Places/Florida"
 Write-Host "  Florida: Orlando and Daytona Beach within 20 miles; Keys regional geofence"
 Write-Host "  Travel states: city tags within 20 miles, otherwise state tag for GA/VA/DC/TN/LA"
 Write-Host "  Every supported video -> add Video tag"
+Write-Host "  Photos at least 500 ft above local terrain -> add Hobbies/Aviation tag"
+Write-Host "  Missing terrain tile -> fall back to at least 1,000 ft above sea level"
+Write-Host "  Locked -> make no automated tag or GPS changes"
+Write-Host "  Color-label processing is independent and ignores Locked"
 Write-Host "  Existing GPS is NEVER replaced"
 Write-Host "  Photos: write location/county tags to image AND .xmp sidecar"
 Write-Host "  Videos: write location/county tags to .xmp sidecar only"
@@ -1577,13 +2230,77 @@ $already=0
 $errors=0
 $skippedAtWrite=0
 
+# Aviation is an independent media-type tag, so apply it before location rules.
+foreach ($row in $aviationTags) {
+    $photo=$row.FullPath
+
+    if (Test-IsLocked -MediaPath $photo -Refresh) {
+        $skippedAtWrite++
+        $WriteLog += [PSCustomObject]@{
+            FileName=$row.FileName; FileType='Photo'; County='';
+            Result='SKIPPED at write - locked';
+            PhotoResult=''; SidecarResult=''; Backup=''
+        }
+        continue
+    }
+
+    $sidecar="$photo.xmp"
+    $relative=$photo.Substring($Root.Length).TrimStart('\')
+    $photoBackup=Join-Path $BackupRoot ($relative -replace '[\\/:*?"<>|]','_')
+
+    if (-not (Test-Path -LiteralPath $photoBackup)) {
+        Copy-Item -LiteralPath $photo -Destination $photoBackup
+    }
+
+    $sidecarBackup=''
+    if (Test-Path -LiteralPath $sidecar) {
+        $stamp=Get-Date -Format 'yyyyMMdd_HHmmss'
+        $sidecarBackup=Join-Path $BackupRoot ((($row.FileName+"_$stamp.xmp")) -replace '[\\/:*?"<>|]','_')
+        Copy-Item -LiteralPath $sidecar -Destination $sidecarBackup
+    }
+    else {
+        & $ExifTool.Source -o $sidecar $photo | Out-Null
+        if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $sidecar)) {
+            $errors++
+            $WriteLog += [PSCustomObject]@{FileName=$row.FileName;FileType='Photo';County='';Result='ERROR creating photo sidecar';PhotoResult='';SidecarResult='';Backup=$photoBackup}
+            continue
+        }
+    }
+
+    $photoResult=Set-AviationTagOnTarget -Target $photo -PreserveTimestamp:$true
+    $sidecarResult=Set-AviationTagOnTarget -Target $sidecar -PreserveTimestamp:$false
+
+    if ($photoResult -eq 'ERROR' -or $sidecarResult -eq 'ERROR') { $errors++; $overall='ERROR' }
+    elseif ($photoResult -eq 'Already tagged' -and $sidecarResult -eq 'Already tagged') { $already++; $overall='Already tagged' }
+    else { $changed++; $overall='Aviation tagged' }
+
+    $WriteLog += [PSCustomObject]@{
+        FileName=$row.FileName; FileType='Photo'; County=''; Result=$overall
+        PhotoResult=$photoResult; SidecarResult=$sidecarResult; Backup="$photoBackup | $sidecarBackup"
+    }
+}
+
 foreach ($row in $toWrite) {
+
+    if (Test-IsLocked -MediaPath $row.FullPath -Refresh) {
+        $skippedAtWrite++
+        $WriteLog += [PSCustomObject]@{
+            FileName=$row.FileName
+            FileType=$row.FileType
+            County=''
+            Result='SKIPPED at write - locked'
+            PhotoResult=''
+            SidecarResult=''
+            Backup=''
+        }
+        continue
+    }
 
     # ---------------------------------------------------------
     # Trusted point tag -> GPS reverse geocoding
     # ---------------------------------------------------------
     if ($row.Action -like 'EMBED GPS *') {
-        $Point=@($CommunityLane,$DouglasRoad,$LancasterRescueSquad,$QDSOffice,$LancasterHighSchool,$ErwinElementary,$SubFiber) | Where-Object {
+        $Point=@($CommunityLane,$DouglasRoad,$LancasterRescueSquad,$QDSOffice,$LancasterHighSchool,$ErwinElementary,$ChesterStatePark,$SubFiber) | Where-Object {
             $_.DigiKamTag -eq $row.ProposedTag
         } | Select-Object -First 1
 
@@ -1724,9 +2441,13 @@ foreach ($row in $toWrite) {
     }
 
     # ---------------------------------------------------------
-    # Sub Fiber special rule
+    # Chester County point-location special rules
     # ---------------------------------------------------------
-    if ($row.ProposedTag -eq $SubFiber.DigiKamTag) {
+    $ChesterPoint=@($ChesterStatePark,$SubFiber) | Where-Object {
+        $_.DigiKamTag -eq $row.ProposedTag
+    } | Select-Object -First 1
+
+    if ($ChesterPoint) {
         if ($row.FileType -eq 'Video') {
             $sidecar="$($row.FullPath).xmp"
             $backup=''
@@ -1745,15 +2466,15 @@ foreach ($row in $toWrite) {
                 }
             }
 
-            $locResult=Add-TagsToTarget -Target $sidecar -PreserveTimestamp:$false -County $SubFiber
+            $locResult=Add-ChesterPointTagsToTarget -Target $sidecar -PreserveTimestamp:$false -Location $ChesterPoint
             $videoResult=Add-TagsToTarget -Target $sidecar -PreserveTimestamp:$false -County $VideoTag
 
             if ($locResult -eq 'ERROR' -or $videoResult -eq 'ERROR') { $errors++; $overall='ERROR' }
             elseif ($locResult -eq 'Already tagged' -and $videoResult -eq 'Already tagged') { $already++; $overall='Already tagged' }
-            else { $changed++; $overall='Sub Fiber + Video tagged' }
+            else { $changed++; $overall="$($ChesterPoint.Name) + Video tagged" }
 
             $WriteLog += [PSCustomObject]@{
-                FileName=$row.FileName; FileType='Video'; County='Chester County/Sub Fiber'; Result=$overall
+                FileName=$row.FileName; FileType='Video'; County="Chester County/$($ChesterPoint.Name)"; Result=$overall
                 PhotoResult=''; SidecarResult="$locResult / $videoResult"; Backup=$backup
             }
             continue
@@ -1777,15 +2498,15 @@ foreach ($row in $toWrite) {
                 if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $sidecar)) { $errors++; continue }
             }
 
-            $photoResult=Add-TagsToTarget -Target $photo -PreserveTimestamp:$true -County $SubFiber
-            $sidecarResult=Add-TagsToTarget -Target $sidecar -PreserveTimestamp:$false -County $SubFiber
+            $photoResult=Add-ChesterPointTagsToTarget -Target $photo -PreserveTimestamp:$true -Location $ChesterPoint
+            $sidecarResult=Add-ChesterPointTagsToTarget -Target $sidecar -PreserveTimestamp:$false -Location $ChesterPoint
 
             if ($photoResult -eq 'ERROR' -or $sidecarResult -eq 'ERROR') { $errors++; $overall='ERROR' }
             elseif ($photoResult -eq 'Already tagged' -and $sidecarResult -eq 'Already tagged') { $already++; $overall='Already tagged' }
-            else { $changed++; $overall='Sub Fiber tagged' }
+            else { $changed++; $overall="$($ChesterPoint.Name) tagged" }
 
             $WriteLog += [PSCustomObject]@{
-                FileName=$row.FileName; FileType='Photo'; County='Chester County/Sub Fiber'; Result=$overall
+                FileName=$row.FileName; FileType='Photo'; County="Chester County/$($ChesterPoint.Name)"; Result=$overall
                 PhotoResult=$photoResult; SidecarResult=$sidecarResult; Backup="$photoBackup | $sidecarBackup"
             }
             continue
@@ -1999,7 +2720,7 @@ foreach ($row in $toWrite) {
     }
 
     $TravelCityTargets=@($TravelStates | ForEach-Object { $_.Cities })
-    $AllGenericTargets=@($Counties) + @($DouglasRoad,$LancasterRescueSquad,$QDSOffice,$LancasterHighSchool,$ErwinElementary,$MyrtleBeach,$CrystalRiver,$Orlando,$DaytonaBeach,$FloridaKeys,$Florida) + @($TravelStates) + @($TravelCityTargets)
+    $AllGenericTargets=@($Counties) + @($RockHill,$FishingCreek,$DouglasRoad,$LancasterRescueSquad,$QDSOffice,$LancasterHighSchool,$ErwinElementary,$MyrtleBeach,$CrystalRiver,$Orlando,$DaytonaBeach,$FloridaKeys,$Florida) + @($TravelStates) + @($TravelCityTargets)
     $County=$AllGenericTargets | Where-Object {
         $_.DigiKamTag -eq $row.ProposedTag
     } | Select-Object -First 1
@@ -2206,7 +2927,8 @@ if (-not $SkipDigiKamCatalogSync) {
     }
     $syncStamp=Get-Date -Format 'yyyyMMdd-HHmmss'
     $CatalogSyncPaths=Join-Path $BackupRoot "DigiKam-GPS-Sync-Paths-$syncStamp.txt"
-    @($toWrite | ForEach-Object { $_.FullPath } | Sort-Object -Unique) |
+    $CatalogSyncMedia=@($toWrite)+@($aviationTags)
+    @($CatalogSyncMedia | ForEach-Object { $_.FullPath } | Sort-Object -Unique) |
         Set-Content -LiteralPath $CatalogSyncPaths -Encoding UTF8
     $syncArgs=@($PythonCommand.Prefix) + @(
         $CatalogSyncHelper,
