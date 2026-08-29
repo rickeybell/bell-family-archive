@@ -1,6 +1,9 @@
 {
   "tagRoot": "Hobbies",
   "memberships": {
+    "images/1946/01_pilot_and_student_licenses_received.jpg": [
+      "Aviation"
+    ],
     "images/1946/Alma2.jpg": [
       "Aviation"
     ],
@@ -52,7 +55,28 @@
     "images/1974/Document_20260717_0002.jpg": [
       "Shooting"
     ],
+    "images/1995/1995_July_0001_a.jpg": [
+      "Boating"
+    ],
+    "images/2000/MVC-001F.JPG": [
+      "Boating"
+    ],
+    "images/2000/MVC-004F_v1.JPG": [
+      "Scuba"
+    ],
+    "images/2000/MVC-007F_v1.JPG": [
+      "Scuba"
+    ],
     "images/2000/Mike With Scuba2.JPG": [
+      "Scuba"
+    ],
+    "images/2000/No Wake Sign.JPG": [
+      "Boating"
+    ],
+    "images/2000/Rick Scuba2.JPG": [
+      "Scuba"
+    ],
+    "images/2000/Rick With Scuba.JPG": [
       "Scuba"
     ],
     "images/2000/Rick With Scuba3.JPG": [
@@ -70,7 +94,72 @@
     "images/2000/Steph & Mike on Boat.JPG": [
       "Boating"
     ],
+    "images/2001/2001_3_02__Image003.jpg": [
+      "Scuba"
+    ],
+    "images/2001/2001_3_02__Image007.jpg": [
+      "Scuba"
+    ],
+    "images/2001/2001_3_02__Image008.jpg": [
+      "Scuba"
+    ],
+    "images/2001/2001_3_02__Image019.jpg": [
+      "Scuba"
+    ],
+    "images/2001/2001_3_4_Blue_Grotto__Image003.jpg": [
+      "Scuba"
+    ],
+    "images/2001/2001_3_4_Blue_Grotto__Image004.jpg": [
+      "Scuba"
+    ],
+    "images/2001/2001_3_4_Blue_Grotto__Image005.jpg": [
+      "Scuba"
+    ],
+    "images/2001/2001_3_4_Blue_Grotto__Image006.jpg": [
+      "Scuba"
+    ],
+    "images/2001/2001_3_4_Blue_Grotto__Image007.jpg": [
+      "Scuba"
+    ],
+    "images/2001/2001_3_4_Blue_Grotto__Image008.jpg": [
+      "Scuba"
+    ],
     "images/2001/2001_3_4_Blue_Grotto__Image016.jpg": [
+      "Scuba"
+    ],
+    "images/2001/2001_4_14_Hollis__Image006.jpg": [
+      "Scuba"
+    ],
+    "images/2001/2001_4_14_Hollis__Image011.jpg": [
+      "Scuba"
+    ],
+    "images/2001/2001_4_14_Hollis__Image013.jpg": [
+      "Scuba"
+    ],
+    "images/2001/2001_4_14_Hollis__Image014.jpg": [
+      "Scuba"
+    ],
+    "images/2001/2001_4_14_Hollis__Image016.jpg": [
+      "Scuba"
+    ],
+    "images/2001/2001_4_30__Image001.jpg": [
+      "Scuba"
+    ],
+    "images/2001/2001_4_30__Image003.jpg": [
+      "Scuba"
+    ],
+    "images/2001/2001_4_30__Image004.jpg": [
+      "Scuba"
+    ],
+    "images/2001/2001_4_30__Image007.jpg": [
+      "Scuba"
+    ],
+    "images/2001/Image028.jpg": [
+      "Boating",
+      "Scuba"
+    ],
+    "images/2001/Image036.jpg": [
+      "Boating",
       "Scuba"
     ],
     "images/2002/100-0051_IMG.JPG": [
@@ -81,6 +170,10 @@
     ],
     "images/2002/100-0076_IMG.JPG": [
       "Boating"
+    ],
+    "images/2002/103-0380_IMG.JPG": [
+      "Boating",
+      "Scuba"
     ],
     "images/2002/103-0386_IMG.JPG": [
       "Boating",
@@ -103,22 +196,322 @@
     "images/2002/110-1055_IMG.JPG": [
       "Scuba"
     ],
+    "images/2002/110-1057_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/110-1061_IMG.JPG": [
+      "Scuba"
+    ],
     "images/2002/110-1062_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/110-1065_IMG.JPG": [
       "Scuba"
     ],
     "images/2002/110-1074_IMG.JPG": [
       "Scuba"
     ],
+    "images/2002/110-1078_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/110-1099_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/112-1212_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/112-1216_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/112-1219_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/112-1237_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/112-1241_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/113-1317_IMG.JPG": [
+      "Scuba"
+    ],
     "images/2002/113-1320_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/113-1326_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/113-1331_IMG.JPG": [
       "Scuba"
     ],
     "images/2002/113-1341_IMG.JPG": [
       "Scuba"
     ],
+    "images/2002/113-1392_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/114-1407_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/114-1455_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/114-1458_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/114-1487_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/115-1507_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/115-1520_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/115-1550_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/115-1551_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/115-1565_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/115-1568_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/115-1572_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/115-1573_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/115-1589_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/116-1605_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/116-1609_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/116-1610_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/116-1641_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/116-1649_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/117-1729_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/117-1741_IMG.JPG": [
+      "Aviation"
+    ],
+    "images/2002/117-1743_IMG.JPG": [
+      "Aviation"
+    ],
+    "images/2002/121-2134_IMG.JPG": [
+      "Boating",
+      "Scuba"
+    ],
+    "images/2002/126-2677_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/IMG_1398.JPG": [
+      "Scuba"
+    ],
+    "images/2002/Key West Dive Trip Oct. 2002 082.jpg": [
+      "Boating",
+      "Scuba"
+    ],
+    "images/2002/ScannedImage-2.jpg": [
+      "Scuba"
+    ],
+    "images/2002/ScannedImage-3.jpg": [
+      "Scuba"
+    ],
+    "images/2002/ScannedImage-4.jpg": [
+      "Scuba"
+    ],
+    "images/2002/ScannedImage-5.jpg": [
+      "Scuba"
+    ],
+    "images/2002/ScannedImage-6.jpg": [
+      "Scuba"
+    ],
+    "images/2002/ScannedImage-7.jpg": [
+      "Scuba"
+    ],
+    "images/2002/ScannedImage.jpg": [
+      "Scuba"
+    ],
+    "images/2002/hendersongang.jpeg": [
+      "Scuba"
+    ],
+    "images/2002/springtrip2002 009.jpg": [
+      "Scuba"
+    ],
+    "images/2002/springtrip2002 047.jpg": [
+      "Scuba"
+    ],
+    "images/2002/springtrip2002 072.jpg": [
+      "Scuba"
+    ],
+    "images/2003/0106690-R1-018-7A.jpg": [
+      "Off-Roading"
+    ],
+    "images/2003/0106690-R1-042-19A.jpg": [
+      "Off-Roading"
+    ],
+    "images/2003/0106690-R1-046-21A.jpg": [
+      "Off-Roading"
+    ],
+    "images/2003/129-2942_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2003/130-3014_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2003/130-3018_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2003/132-3290_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2003/132-3291_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2003/132-3293_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2003/132-3294_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2003/134-3462_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2003/134-3463_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2003/137-3766_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2003/137-3795_IMG copy.jpg": [
+      "Scuba"
+    ],
+    "images/2003/139-3929_IMG.JPG": [
+      "Boating",
+      "Scuba"
+    ],
+    "images/2003/139-3930_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2003/139-3944_IMG.JPG": [
+      "Scuba"
+    ],
     "images/2003/139-3948_IMG.JPG": [
       "Scuba"
     ],
+    "images/2003/2003_12_23_BrownMnt__2651410-R1-008-2A.jpg": [
+      "Off-Roading"
+    ],
+    "images/2003/2003_12_23_BrownMnt__2651410-R1-036-16A.jpg": [
+      "Off-Roading"
+    ],
+    "images/2003/2003_12_23_BrownMnt__2651420-R1-036-16A.jpg": [
+      "Off-Roading"
+    ],
+    "images/2003/2003_12_23_BrownMnt__2651430-R1-044-20A.jpg": [
+      "Off-Roading"
+    ],
+    "images/2003/2003_12_28_TnT__1a__2657080-R1-048-22A.jpg": [
+      "Off-Roading"
+    ],
+    "images/2003/34.jpg": [
+      "Off-Roading"
+    ],
+    "images/2003/35.jpg": [
+      "Off-Roading"
+    ],
+    "images/2003/Cozumel Dive 1 005.jpg": [
+      "Scuba"
+    ],
+    "images/2003/Cozumel Dive 1 026.jpg": [
+      "Scuba"
+    ],
+    "images/2003/Cozumel Dive 1 038.jpg": [
+      "Scuba"
+    ],
+    "images/2003/Cozumel Dive 1 039.jpg": [
+      "Scuba"
+    ],
+    "images/2003/Cozumel Dive 2 007.jpg": [
+      "Scuba"
+    ],
+    "images/2003/Cozumel Dive 2 012.jpg": [
+      "Scuba"
+    ],
+    "images/2003/Cozumel Dive 2 014.jpg": [
+      "Scuba"
+    ],
+    "images/2003/Cozumel Dive 2 030.jpg": [
+      "Scuba"
+    ],
+    "images/2003/Cozumel Dive 2 031.jpg": [
+      "Scuba"
+    ],
+    "images/2003/Cozumel Dive 3 002copy.jpg": [
+      "Scuba"
+    ],
+    "images/2003/Cozumel Dive 3 004copy.jpg": [
+      "Scuba"
+    ],
+    "images/2003/Cozumel Dive 3 007copy.jpg": [
+      "Scuba"
+    ],
     "images/2003/Cozumel Dive 4 018copy.jpg": [
+      "Scuba"
+    ],
+    "images/2003/Cozumel Dive 4 023copy.jpg": [
+      "Scuba"
+    ],
+    "images/2003/Cozumel Dive 4 065copy.jpg": [
+      "Scuba"
+    ],
+    "images/2003/Ricky's 1 011.jpg": [
+      "Scuba"
+    ],
+    "images/2003/Ricky's 1 018.jpg": [
+      "Scuba"
+    ],
+    "images/2004/1 0301.jpg": [
+      "Scuba"
+    ],
+    "images/2004/2004_3_14_Crystal_River__1 027.jpg": [
+      "Scuba"
+    ],
+    "images/2004/2004_8_2__Picture 041.jpg": [
+      "Scuba"
+    ],
+    "images/2004/2004_8_2__Picture 044.jpg": [
+      "Scuba"
+    ],
+    "images/2004/2004_8_2__Picture 056.jpg": [
+      "Scuba"
+    ],
+    "images/2004/2004_8_2__Picture 061.jpg": [
+      "Scuba"
+    ],
+    "images/2004/HighRes_WF31C04192623616.jpg": [
+      "Off-Roading"
+    ],
+    "images/2004/Picture 0842.jpg": [
+      "Scuba"
+    ],
+    "images/2004/Rescue Drysuit 9-23-04 001.jpg": [
       "Scuba"
     ],
     "images/2004/Rescue Drysuit 9-23-04 002.jpg": [
@@ -126,22 +519,82 @@
     ],
     "images/2004/c copy.jpg": [
       "Off-Roading"
+    ],
+    "images/2019/20190830_152936.jpg": [
+      "Shooting"
+    ],
+    "images/2019/20190830_152945.jpg": [
+      "Shooting"
+    ],
+    "images/2019/received_792143041187439.jpeg": [
+      "Shooting"
+    ],
+    "images/2020/20201107_161212.jpg": [
+      "Off-Roading"
+    ],
+    "images/2020/20201107_161234.jpg": [
+      "Off-Roading"
+    ],
+    "images/2020/20201107_164139.jpg": [
+      "Off-Roading"
+    ],
+    "images/2020/20201108_121754.jpg": [
+      "Off-Roading"
+    ],
+    "images/2020/20201108_135216.jpg": [
+      "Off-Roading"
+    ],
+    "images/2020/20201108_144225(1).jpg": [
+      "Off-Roading"
+    ],
+    "images/2025/20250105_174552.jpg": [
+      "Camping"
+    ],
+    "images/2025/20250105_180434.jpg": [
+      "Camping"
+    ],
+    "images/2025/20250322_141239.jpg": [
+      "Aviation"
+    ],
+    "images/2025/20250607_192649.jpg": [
+      "Aviation"
+    ],
+    "images/2025/20250917_184207.jpg": [
+      "Shooting"
+    ],
+    "images/2025/20251130_121448.jpg": [
+      "Aviation"
+    ],
+    "images/2025/20251204_154810.jpg": [
+      "Shooting"
+    ],
+    "images/2025/20251225_170331.jpg": [
+      "Shooting"
+    ],
+    "images/2025/20251228_171824.jpg": [
+      "Shooting"
+    ],
+    "images/2025/Messenger_creation_B04CB034-2F44-464E-927F-8C1B63DA9BA5.jpg": [
+      "Shooting"
+    ],
+    "videos/2025/ATNX0024.mp4": [
+      "Shooting"
     ]
   },
   "taggedCounts": {
     "Aviation": 931,
     "Scuba": 1144,
     "Shooting": 133,
-    "Boating": 391,
+    "Boating": 459,
     "Off-Roading": 313,
-    "Camping": 13
+    "Camping": 111
   },
   "publicCounts": {
-    "Aviation": 15,
-    "Scuba": 20,
-    "Shooting": 2,
-    "Boating": 6,
-    "Off-Roading": 1,
-    "Camping": 0
+    "Aviation": 21,
+    "Scuba": 132,
+    "Shooting": 11,
+    "Boating": 15,
+    "Off-Roading": 18,
+    "Camping": 2
   }
 }
