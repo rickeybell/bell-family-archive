@@ -10,6 +10,30 @@
     "images/1946/Alma3.jpg": [
       "Aviation"
     ],
+    "images/1947/1111_0019_a.jpg": [
+      "Aviation"
+    ],
+    "images/1947/1111_0020_a.jpg": [
+      "Aviation"
+    ],
+    "images/1947/1940s_0011_a.jpg": [
+      "Aviation"
+    ],
+    "images/1947/1940s_0013_a.jpg": [
+      "Aviation"
+    ],
+    "images/1947/1940s_0014_a.jpg": [
+      "Aviation"
+    ],
+    "images/1947/1940s_0037_a.jpg": [
+      "Aviation"
+    ],
+    "images/1947/1940s_0039_a.jpg": [
+      "Aviation"
+    ],
+    "images/1947/1940s_0085_a.jpg": [
+      "Aviation"
+    ],
     "images/1947/Screenshot 2026-07-24 151402.png": [
       "Aviation"
     ],
@@ -20,6 +44,9 @@
       "Aviation"
     ],
     "images/1948/1940s_0111_a.jpg": [
+      "Aviation"
+    ],
+    "images/1948/1948_0021b.png": [
       "Aviation"
     ],
     "images/1950/05_transcontinental_womens_air_race_to_end_in_state.jpg": [
@@ -35,6 +62,12 @@
       "Aviation"
     ],
     "images/1950/Screenshot 2026-07-22 085608.png": [
+      "Aviation"
+    ],
+    "images/1951/Eli Graham1.jpg": [
+      "Aviation"
+    ],
+    "images/1951/Eli Graham2.jpg": [
       "Aviation"
     ],
     "images/1952/1950s_0013_a.jpg": [
@@ -309,6 +342,9 @@
     "images/2002/117-1743_IMG.JPG": [
       "Aviation"
     ],
+    "images/2002/117-1752_IMG.JPG": [
+      "Aviation"
+    ],
     "images/2002/121-2134_IMG.JPG": [
       "Scuba"
     ],
@@ -483,6 +519,26 @@
     "images/2004/1 0301.jpg": [
       "Scuba"
     ],
+    "images/2004/2004_11_21__3 030.jpg": [
+      "Boating"
+    ],
+    "images/2004/2004_11_21__3 033.jpg": [
+      "Boating"
+    ],
+    "images/2004/2004_11_21__3 039.jpg": [
+      "Boating"
+    ],
+    "images/2004/2004_3_14_Crystal_River__1 003.jpg": [
+      "Boating"
+    ],
+    "images/2004/2004_3_14_Crystal_River__1 005.jpg": [
+      "Boating",
+      "Scuba"
+    ],
+    "images/2004/2004_3_14_Crystal_River__1 025.jpg": [
+      "Boating",
+      "Scuba"
+    ],
     "images/2004/2004_3_14_Crystal_River__1 027.jpg": [
       "Scuba"
     ],
@@ -513,7 +569,16 @@
     "images/2004/c copy.jpg": [
       "Off-Roading"
     ],
+    "images/2005/PC310001.JPG": [
+      "Boating"
+    ],
+    "images/2005/PC310002.JPG": [
+      "Boating"
+    ],
     "images/2015/IMG_2629.JPG": [
+      "Boating"
+    ],
+    "images/2019/20190525_143624.jpg": [
       "Boating"
     ],
     "images/2019/20190830_152936.jpg": [
@@ -521,6 +586,15 @@
     ],
     "images/2019/20190830_152945.jpg": [
       "Shooting"
+    ],
+    "images/2019/IMG_4059.JPEG": [
+      "Boating"
+    ],
+    "images/2019/IMG_4065.JPEG": [
+      "Boating"
+    ],
+    "images/2019/IMG_4083.JPEG": [
+      "Boating"
     ],
     "images/2019/received_792143041187439.jpeg": [
       "Shooting"
@@ -543,25 +617,274 @@
     "images/2020/20201108_144225(1).jpg": [
       "Off-Roading"
     ],
+    "images/2021/20210501_123139.jpg": [
+      "Boating"
+    ],
+    "images/2021/20210906_142624.jpg": [
+      "Boating"
+    ],
+    "images/2021/20210906_144852.jpg": [
+      "Boating"
+    ],
+    "images/2021/20210912_150328.jpg": [
+      "Boating"
+    ],
+    "images/2021/20211124_182542.jpg": [
+      "Camping"
+    ],
+    "images/2021/20211124_185537.jpg": [
+      "Camping"
+    ],
+    "images/2021/20211205_173132.jpg": [
+      "Camping"
+    ],
+    "images/2022/20220123_172405.jpg": [
+      "Camping"
+    ],
+    "images/2022/20220127_071547.jpg": [
+      "Camping"
+    ],
+    "images/2022/20220130_111426.jpg": [
+      "Camping"
+    ],
+    "images/2022/20220130_113615.jpg": [
+      "Camping"
+    ],
+    "images/2022/20221014_194549.jpg": [
+      "Camping"
+    ],
+    "images/2022/20221015_175346.jpg": [
+      "Camping"
+    ],
+    "images/2022/20221015_183743.jpg": [
+      "Camping"
+    ],
+    "images/2023/20230107_153901.jpg": [
+      "Camping"
+    ],
+    "images/2023/20230630_182611.jpg": [
+      "Boating"
+    ],
+    "images/2023/20230701_173021.jpg": [
+      "Boating"
+    ],
+    "images/2023/20230701_173124.jpg": [
+      "Boating"
+    ],
+    "images/2023/20230701_173539.jpg": [
+      "Boating"
+    ],
+    "images/2023/20230819_164319.jpg": [
+      "Aviation"
+    ],
+    "images/2023/20230902_150700.jpg": [
+      "Aviation"
+    ],
+    "images/2023/20230903_174732.jpg": [
+      "Aviation"
+    ],
+    "images/2023/20230903_193620.jpg": [
+      "Aviation"
+    ],
+    "images/2023/20231020_102913.jpg": [
+      "Camping"
+    ],
+    "images/2023/20231021_113457.jpg": [
+      "Camping"
+    ],
+    "images/2023/20231021_193951.jpg": [
+      "Camping"
+    ],
+    "images/2023/20231124_183640.jpg": [
+      "Camping"
+    ],
+    "images/2023/20231124_183647.jpg": [
+      "Camping"
+    ],
+    "images/2023/Screenshot_20230224_185255_Photos~2.jpg": [
+      "Aviation"
+    ],
+    "images/2023/Screenshot_20230928_202417_Facebook-edited.jpg": [
+      "Boating"
+    ],
+    "images/2024/20240131_191515.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240131_191659.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240131_191743.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240131_191820.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240131_192010.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240201_014846275_iOS.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240207_174208.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240224_113433.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240314_121948.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240418_164559.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240423_204429.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240502_135244-edited.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240502_163251.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240504_114434.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240504_151012-edited.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240504_151108-edited.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240506_091200-edited.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240506_102947-edited.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240506_102951-edited.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240506_133538-edited.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240506_152919000_iOS.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240507_150549.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240507_150737.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240507_150802.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240507_150822.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240525_082712.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240525_082743~2.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240525_082833.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240525_101056~2.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240531_213943.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240531_213954.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20241020_140748.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20241129_130824~2.jpg": [
+      "Aviation"
+    ],
+    "images/2025/20250103_150308.jpg": [
+      "Aviation"
+    ],
+    "images/2025/20250105_174525.jpg": [
+      "Camping"
+    ],
     "images/2025/20250105_174552.jpg": [
       "Camping"
     ],
     "images/2025/20250105_180434.jpg": [
       "Camping"
     ],
+    "images/2025/20250126_161029.jpg": [
+      "Aviation"
+    ],
+    "images/2025/20250126_175847.jpg": [
+      "Aviation"
+    ],
+    "images/2025/20250126_192800.jpg": [
+      "Aviation"
+    ],
+    "images/2025/20250126_192816.jpg": [
+      "Aviation"
+    ],
     "images/2025/20250322_141239.jpg": [
+      "Aviation"
+    ],
+    "images/2025/20250412_132713.jpg": [
+      "Aviation"
+    ],
+    "images/2025/20250506_210255.jpg": [
+      "Aviation"
+    ],
+    "images/2025/20250605_175357.jpg": [
+      "Aviation"
+    ],
+    "images/2025/20250605_175431.jpg": [
+      "Aviation"
+    ],
+    "images/2025/20250605_175438.jpg": [
       "Aviation"
     ],
     "images/2025/20250607_192649.jpg": [
       "Aviation"
     ],
+    "images/2025/20250720_110146.jpg": [
+      "Aviation"
+    ],
+    "images/2025/20250816_131704.jpg": [
+      "Aviation"
+    ],
+    "images/2025/20250824_075430.jpg": [
+      "Aviation"
+    ],
+    "images/2025/20250914_131919~2.jpg": [
+      "Aviation"
+    ],
+    "images/2025/20250914_192358.jpg": [
+      "Aviation"
+    ],
+    "images/2025/20250917_174603.jpg": [
+      "Shooting"
+    ],
     "images/2025/20250917_184207.jpg": [
       "Shooting"
+    ],
+    "images/2025/20251128_092341.jpg": [
+      "Aviation"
     ],
     "images/2025/20251130_121448.jpg": [
       "Aviation"
     ],
     "images/2025/20251204_154810.jpg": [
+      "Shooting"
+    ],
+    "images/2025/20251211_175716.jpg": [
+      "Aviation"
+    ],
+    "images/2025/20251211_211802.jpg": [
       "Shooting"
     ],
     "images/2025/20251225_170331.jpg": [
@@ -572,6 +895,24 @@
     ],
     "images/2025/Messenger_creation_B04CB034-2F44-464E-927F-8C1B63DA9BA5.jpg": [
       "Shooting"
+    ],
+    "images/2025/Screenshot_20241231_195133_Photos-edited.jpg": [
+      "Aviation"
+    ],
+    "images/2025/Screenshot_20251223_205225_Photos~3.jpg": [
+      "Aviation"
+    ],
+    "images/2026/20260218_082856.jpg": [
+      "Camping"
+    ],
+    "images/2026/20260403_150405.jpg": [
+      "Boating"
+    ],
+    "images/2026/20260403_154258.jpg": [
+      "Boating"
+    ],
+    "images/2026/Screenshot_20260325_185337_Messenger.jpg": [
+      "Aviation"
     ],
     "videos/2002/104-0431_MVI.mp4": [
       "Boating",
@@ -588,6 +929,30 @@
     ],
     "videos/2020/20201108_143701.mp4": [
       "Off-Roading"
+    ],
+    "videos/2021/20210426_160908.mp4": [
+      "Boating"
+    ],
+    "videos/2021/20210906_125908.mp4": [
+      "Boating"
+    ],
+    "videos/2022/20221014_205010.mp4": [
+      "Camping"
+    ],
+    "videos/2023/20230819_165251.mp4": [
+      "Aviation"
+    ],
+    "videos/2023/20231124_193230.mp4": [
+      "Camping"
+    ],
+    "videos/2024/20240414_121540000_iOS.mp4": [
+      "Aviation"
+    ],
+    "videos/2024/20240506_113710.mp4": [
+      "Aviation"
+    ],
+    "videos/2024/20240506_132353.mp4": [
+      "Aviation"
     ],
     "videos/2025/20250105_220052.mp4": [
       "Camping"
@@ -606,10 +971,13 @@
     ],
     "videos/2025/ATNX0024.mp4": [
       "Shooting"
+    ],
+    "videos/2025/Coyote 2025.mp4": [
+      "Shooting"
     ]
   },
   "taggedCounts": {
-    "Aviation": 931,
+    "Aviation": 922,
     "Scuba": 1144,
     "Shooting": 133,
     "Boating": 450,
@@ -617,11 +985,11 @@
     "Camping": 111
   },
   "publicCounts": {
-    "Aviation": 21,
-    "Scuba": 134,
-    "Shooting": 15,
-    "Boating": 10,
+    "Aviation": 95,
+    "Scuba": 136,
+    "Shooting": 18,
+    "Boating": 35,
     "Off-Roading": 21,
-    "Camping": 3
+    "Camping": 23
   }
 }

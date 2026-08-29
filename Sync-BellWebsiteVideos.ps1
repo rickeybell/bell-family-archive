@@ -9,13 +9,14 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-$ScriptVersion = "2.2"
+$ScriptVersion = "2.3"
 $RepoRoot = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive"
 $DbSourceHelper = Join-Path $RepoRoot "tools\list_website_sources_from_digikam.py"
 $VideoRoot = Join-Path $RepoRoot "videos"
 $ManifestCsv = Join-Path $RepoRoot "website-video-manifest.csv"
 $PublishTag = "Website"
 $VideoExtensions = @('.mp4','.mov','.m4v','.avi','.wmv','.mpeg','.mpg','.mts','.m2ts','.3gp','.webm')
+$MaxGitHubVideoBytes = 95MB
 
 function Get-ExifToolPath {
     $cmd = Get-Command exiftool.exe -ErrorAction SilentlyContinue
@@ -182,7 +183,8 @@ function Write-WebVideoDerivative {
     param(
         [Parameter(Mandatory=$true)][System.IO.FileInfo]$Source,
         [Parameter(Mandatory=$true)][string]$Destination,
-        [Parameter(Mandatory=$true)]$SourceCompatibility
+        [Parameter(Mandatory=$true)]$SourceCompatibility,
+        [switch]$ForceSizeReduction
     )
     $folder = Split-Path -Parent $Destination
     if (!(Test-Path -LiteralPath $folder)) { New-Item -ItemType Directory -Path $folder -Force | Out-Null }
@@ -190,12 +192,20 @@ function Write-WebVideoDerivative {
     if (Test-Path -LiteralPath $temp) { Remove-Item -LiteralPath $temp -Force }
 
     try {
-        if ($SourceCompatibility.WebCodecs) {
+        if ($SourceCompatibility.WebCodecs -and !$ForceSizeReduction) {
             Write-Host "REMUX   $($Source.FullName)"
             Invoke-FFmpeg @('-hide_banner','-loglevel','error','-y','-i',$Source.FullName,'-map','0:v:0','-map','0:a?','-c','copy','-movflags','+faststart',$temp)
         } else {
-            Write-Host "TRANSCODE $($Source.FullName) [$($SourceCompatibility.VideoCodec)/$($SourceCompatibility.AudioCodec)]"
-            Invoke-FFmpeg @('-hide_banner','-loglevel','error','-y','-i',$Source.FullName,'-map','0:v:0','-map','0:a?','-c:v','libx264','-preset','medium','-crf','20','-pix_fmt','yuv420p','-c:a','aac','-b:a','160k','-movflags','+faststart',$temp)
+            $crfValues = if ($ForceSizeReduction) { @(23,26,29,32) } else { @(20,23,26,29,32) }
+            foreach ($crf in $crfValues) {
+                Write-Host "TRANSCODE $($Source.FullName) [$($SourceCompatibility.VideoCodec)/$($SourceCompatibility.AudioCodec), CRF $crf]"
+                Invoke-FFmpeg @('-hide_banner','-loglevel','error','-y','-i',$Source.FullName,'-map','0:v:0','-map','0:a?','-c:v','libx264','-preset','medium','-crf',"$crf",'-pix_fmt','yuv420p','-c:a','aac','-b:a','128k','-movflags','+faststart',$temp)
+                if ((Get-Item -LiteralPath $temp).Length -le $MaxGitHubVideoBytes) { break }
+                Remove-Item -LiteralPath $temp -Force
+            }
+            if (!(Test-Path -LiteralPath $temp) -or (Get-Item -LiteralPath $temp).Length -gt $MaxGitHubVideoBytes) {
+                throw "Unable to create a GitHub-safe video under $([math]::Round($MaxGitHubVideoBytes/1MB)) MB: $($Source.FullName)"
+            }
         }
         Move-Item -LiteralPath $temp -Destination $Destination -Force
         (Get-Item -LiteralPath $Destination).LastWriteTimeUtc = $Source.LastWriteTimeUtc
@@ -235,6 +245,7 @@ Write-Host "Years: $FromYear through $ToYear"
 Write-Host "Publish rule: current digiKam Website tag + Green color label"
 Write-Host "Decade placeholders: ignored"
 Write-Host "Website format: MP4 / H.264 / AAC / yuv420p / faststart"
+Write-Host "GitHub file limit guard: website videos at or below $([math]::Round($MaxGitHubVideoBytes/1MB)) MB"
 Write-Host "FFmpeg: $FFmpeg"
 Write-Host "FFprobe: $FFprobe"
 if ($DryRun) { Write-Host "*** DRY RUN - NO VIDEO FILES WILL BE WRITTEN ***" }
@@ -308,12 +319,14 @@ for ($i=0; $i -lt $files.Count; $i += 50) {
 
         $destExists = Test-Path -LiteralPath $dest
         $destCompat = if ($destExists) { Get-VideoCompatibility $dest } else { $null }
-        $destWebSafe = $destExists -and $destCompat -and $destCompat.Readable -and $destCompat.WebCodecs -and $destCompat.Mp4Container
+        $destSizeSafe = $destExists -and ((Get-Item -LiteralPath $dest).Length -le $MaxGitHubVideoBytes)
+        $destWebSafe = $destExists -and $destCompat -and $destCompat.Readable -and $destCompat.WebCodecs -and $destCompat.Mp4Container -and $destSizeSafe
         $timestampCurrent = $destExists -and ((Get-Item -LiteralPath $dest).LastWriteTimeUtc -eq $file.LastWriteTimeUtc)
         $needsWrite = !($destWebSafe -and $timestampCurrent)
 
         if ($needsWrite) {
-            $mode = if ($sourceCompat.WebCodecs -and $file.Extension -ieq '.mp4') { 'COPY' } elseif ($sourceCompat.WebCodecs) { 'REMUX' } else { 'TRANSCODE' }
+            $sourceTooLarge = $file.Length -gt $MaxGitHubVideoBytes
+            $mode = if ($sourceTooLarge) { 'TRANSCODE-SIZE' } elseif ($sourceCompat.WebCodecs -and $file.Extension -ieq '.mp4') { 'COPY' } elseif ($sourceCompat.WebCodecs) { 'REMUX' } else { 'TRANSCODE' }
             Write-Host "$mode  videos\$relative"
             if (!$DryRun) {
                 $folder = Split-Path -Parent $dest
@@ -323,7 +336,7 @@ for ($i=0; $i -lt $files.Count; $i += 50) {
                     (Get-Item -LiteralPath $dest).LastWriteTimeUtc = $file.LastWriteTimeUtc
                     $copied++
                 } else {
-                    Write-WebVideoDerivative -Source $file -Destination $dest -SourceCompatibility $sourceCompat
+                    Write-WebVideoDerivative -Source $file -Destination $dest -SourceCompatibility $sourceCompat -ForceSizeReduction:($mode -eq 'TRANSCODE-SIZE')
                     if ($mode -eq 'REMUX') { $remuxed++ } else { $transcoded++ }
                 }
                 $verify = Get-VideoCompatibility $dest
