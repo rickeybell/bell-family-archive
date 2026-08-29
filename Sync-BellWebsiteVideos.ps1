@@ -163,7 +163,9 @@ function Get-VideoCompatibility {
     $hasAudio = $a.Count -gt 0
     $formatName = [string]$probe.format.format_name
     $mp4Container = $formatName -match '(^|,)mp4(,|$)|(^|,)mov(,|$)' -and ([System.IO.Path]::GetExtension($Path) -ieq '.mp4')
-    $webCodecs = ($videoCodec -eq 'h264') -and ((!$hasAudio) -or ($audioCodec -eq 'aac')) -and (($pixelFormat -eq '') -or ($pixelFormat -match '^yuv420p'))
+    # FFmpeg reports full-range 4:2:0 H.264 as yuvj420p. It is the browser-safe
+    # full-range alias of yuv420p, so accept both spellings during verification.
+    $webCodecs = ($videoCodec -eq 'h264') -and ((!$hasAudio) -or ($audioCodec -eq 'aac')) -and (($pixelFormat -eq '') -or ($pixelFormat -match '^yuvj?420p'))
     return [pscustomobject]@{
         Readable=$true; VideoCodec=$videoCodec; AudioCodec=$audioCodec; HasAudio=$hasAudio
         WebCodecs=$webCodecs; Mp4Container=$mp4Container; PixelFormat=$pixelFormat

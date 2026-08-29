@@ -172,19 +172,15 @@
       "Boating"
     ],
     "images/2002/103-0380_IMG.JPG": [
-      "Boating",
       "Scuba"
     ],
     "images/2002/103-0386_IMG.JPG": [
-      "Boating",
       "Scuba"
     ],
     "images/2002/104-0492_IMG.JPG": [
-      "Boating",
       "Scuba"
     ],
     "images/2002/105-0519_IMG.JPG": [
-      "Boating",
       "Scuba"
     ],
     "images/2002/109-0967_IMG.JPG": [
@@ -314,7 +310,6 @@
       "Aviation"
     ],
     "images/2002/121-2134_IMG.JPG": [
-      "Boating",
       "Scuba"
     ],
     "images/2002/126-2677_IMG.JPG": [
@@ -324,7 +319,6 @@
       "Scuba"
     ],
     "images/2002/Key West Dive Trip Oct. 2002 082.jpg": [
-      "Boating",
       "Scuba"
     ],
     "images/2002/ScannedImage-2.jpg": [
@@ -403,7 +397,6 @@
       "Scuba"
     ],
     "images/2003/139-3929_IMG.JPG": [
-      "Boating",
       "Scuba"
     ],
     "images/2003/139-3930_IMG.JPG": [
@@ -520,6 +513,9 @@
     "images/2004/c copy.jpg": [
       "Off-Roading"
     ],
+    "images/2015/IMG_2629.JPG": [
+      "Boating"
+    ],
     "images/2019/20190830_152936.jpg": [
       "Shooting"
     ],
@@ -577,6 +573,37 @@
     "images/2025/Messenger_creation_B04CB034-2F44-464E-927F-8C1B63DA9BA5.jpg": [
       "Shooting"
     ],
+    "videos/2002/104-0431_MVI.mp4": [
+      "Boating",
+      "Scuba"
+    ],
+    "videos/2002/115-1595_MVI.mp4": [
+      "Scuba"
+    ],
+    "videos/2020/20201108_135400.mp4": [
+      "Off-Roading"
+    ],
+    "videos/2020/20201108_142550.mp4": [
+      "Off-Roading"
+    ],
+    "videos/2020/20201108_143701.mp4": [
+      "Off-Roading"
+    ],
+    "videos/2025/20250105_220052.mp4": [
+      "Camping"
+    ],
+    "videos/2025/20250902_154833.mp4": [
+      "Shooting"
+    ],
+    "videos/2025/20251120_085834.mp4": [
+      "Shooting"
+    ],
+    "videos/2025/20251125_173121.mp4": [
+      "Shooting"
+    ],
+    "videos/2025/20251126_135615.mp4": [
+      "Shooting"
+    ],
     "videos/2025/ATNX0024.mp4": [
       "Shooting"
     ]
@@ -585,16 +612,16 @@
     "Aviation": 931,
     "Scuba": 1144,
     "Shooting": 133,
-    "Boating": 459,
+    "Boating": 450,
     "Off-Roading": 313,
     "Camping": 111
   },
   "publicCounts": {
     "Aviation": 21,
-    "Scuba": 132,
-    "Shooting": 11,
-    "Boating": 15,
-    "Off-Roading": 18,
-    "Camping": 2
+    "Scuba": 134,
+    "Shooting": 15,
+    "Boating": 10,
+    "Off-Roading": 21,
+    "Camping": 3
   }
 }
