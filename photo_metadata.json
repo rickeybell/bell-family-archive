@@ -26863,6 +26863,29 @@
     "gps": null
   },
   {
+    "path": "images/2000/Bonner Lee.JPG",
+    "media_type": "photo",
+    "file": "Bonner Lee.JPG",
+    "folder": "2000",
+    "date": "2000-01-01",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
+    ],
+    "title": "Bonner Lee",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2000/Mike atTruck.JPG",
     "media_type": "photo",
     "file": "Mike atTruck.JPG",
@@ -29216,6 +29239,40 @@
     "description": "",
     "location": "900 Confederate Ave",
     "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/103-0378_IMG.JPG",
+    "media_type": "photo",
+    "file": "103-0378_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-05-26",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Hobbies/Boating",
+      "Hobbies/Scuba",
+      "Hobbies|Boating",
+      "Hobbies|Scuba",
+      "Myrtle Beach",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina",
+      "Places|South Carolina|Myrtle Beach",
+      "Rickey Bell",
+      "Scuba",
+      "South Carolina"
+    ],
+    "title": "Rickey's Hiding Spot",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
     "state": "South Carolina",
     "country": "United States",
     "gps": null
@@ -36485,6 +36542,42 @@
     "gps": null
   },
   {
+    "path": "images/2004/2004_11_21__3 057.jpg",
+    "media_type": "photo",
+    "file": "2004_11_21__3 057.jpg",
+    "folder": "2004",
+    "date": "2004-11-28",
+    "people": [
+      "Jarred Bell",
+      "Mike Morgan",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Jarred Bell",
+      "Mike Morgan",
+      "People/Jarred Bell",
+      "People/Mike Morgan",
+      "People/Samatha Bell",
+      "People|Jarred Bell",
+      "People|Mike Morgan",
+      "People|Samatha Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2004/2004_12_20_Christmas_Party__3 002.jpg",
     "media_type": "photo",
     "file": "2004_12_20_Christmas_Party__3 002.jpg",
@@ -37238,6 +37331,26 @@
     "gps": null
   },
   {
+    "path": "images/2008/01-09-08_1142.jpg",
+    "media_type": "photo",
+    "file": "01-09-08_1142.jpg",
+    "folder": "2008",
+    "date": "2008-01-09",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Hobbies/Boating",
+      "Hobbies|Boating"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2008/IMAGE_155.jpg",
     "media_type": "photo",
     "file": "IMAGE_155.jpg",
@@ -37410,6 +37523,26 @@
     "path": "images/2008/051.JPG",
     "media_type": "photo",
     "file": "051.JPG",
+    "folder": "2008",
+    "date": "2008-06-04",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Hobbies/Boating",
+      "Hobbies|Boating"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2008/061.JPG",
+    "media_type": "photo",
+    "file": "061.JPG",
     "folder": "2008",
     "date": "2008-06-04",
     "people": [],
@@ -38251,6 +38384,143 @@
     "gps": null
   },
   {
+    "path": "images/2010/103_0595.JPG",
+    "media_type": "photo",
+    "file": "103_0595.JPG",
+    "folder": "2010",
+    "date": "2010-06-13",
+    "people": [
+      "Terri Faulkenberry",
+      "josh Faulkenberry"
+    ],
+    "tags": [
+      "Boating",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Terri Faulkenberry",
+      "People/josh Faulkenberry",
+      "People|Terri Faulkenberry",
+      "People|josh Faulkenberry",
+      "Terri Faulkenberry",
+      "josh Faulkenberry"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2010/103_0598.JPG",
+    "media_type": "photo",
+    "file": "103_0598.JPG",
+    "folder": "2010",
+    "date": "2010-06-13",
+    "people": [
+      "Terri Faulkenberry",
+      "josh Faulkenberry"
+    ],
+    "tags": [
+      "Boating",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Terri Faulkenberry",
+      "People/josh Faulkenberry",
+      "People|Terri Faulkenberry",
+      "People|josh Faulkenberry",
+      "Terri Faulkenberry",
+      "josh Faulkenberry"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2010/103_0606.JPG",
+    "media_type": "photo",
+    "file": "103_0606.JPG",
+    "folder": "2010",
+    "date": "2010-06-13",
+    "people": [
+      "Terri Faulkenberry",
+      "josh Faulkenberry"
+    ],
+    "tags": [
+      "Boating",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Terri Faulkenberry",
+      "People/josh Faulkenberry",
+      "People|Terri Faulkenberry",
+      "People|josh Faulkenberry",
+      "Terri Faulkenberry",
+      "josh Faulkenberry"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2010/103_0609.JPG",
+    "media_type": "photo",
+    "file": "103_0609.JPG",
+    "folder": "2010",
+    "date": "2010-06-13",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2010/103_0610.JPG",
+    "media_type": "photo",
+    "file": "103_0610.JPG",
+    "folder": "2010",
+    "date": "2010-06-13",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2010/012-2 (1).jpg",
     "media_type": "photo",
     "file": "012-2 (1).jpg",
@@ -38267,6 +38537,57 @@
       "Mike Morgan",
       "People/Mike Morgan",
       "People|Mike Morgan",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
+    ],
+    "title": "Sunk Pontoon",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2010/016-2.jpg",
+    "media_type": "photo",
+    "file": "016-2.jpg",
+    "folder": "2010",
+    "date": "2010-07-18",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Rickey Bell"
+    ],
+    "title": "Sunk Pontoon",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2010/020-2.jpg",
+    "media_type": "photo",
+    "file": "020-2.jpg",
+    "folder": "2010",
+    "date": "2010-07-18",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
       "Places/Florida/Crystal River",
       "Places|Florida|Crystal River"
     ],
@@ -39296,6 +39617,27 @@
     }
   },
   {
+    "path": "videos/2014/2014-11-29 17.22.03.mp4",
+    "media_type": "video",
+    "file": "2014-11-29 17.22.03.mp4",
+    "folder": "2014",
+    "date": "2014-11-29",
+    "people": [],
+    "tags": [
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": {
+      "lat": 28.9296,
+      "lon": -82.8806
+    }
+  },
+  {
     "path": "images/2014/20141223_013214618_iOS.jpg",
     "media_type": "photo",
     "file": "20141223_013214618_iOS.jpg",
@@ -39834,6 +40176,37 @@
     "gps": null
   },
   {
+    "path": "images/2016/20160805_225506134_iOS.jpg",
+    "media_type": "photo",
+    "file": "20160805_225506134_iOS.jpg",
+    "folder": "2016",
+    "date": "2016-08-04",
+    "people": [
+      "Mike Morgan"
+    ],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Mike Morgan",
+      "People/Mike Morgan",
+      "People|Mike Morgan",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
+    ],
+    "title": "48' Motor Yacht",
+    "description": "The boat never ran again!",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": {
+      "lat": 28.9224944330556,
+      "lon": -82.688775
+    }
+  },
+  {
     "path": "videos/2016/20160805_211243000_iOS.mp4",
     "media_type": "video",
     "file": "20160805_211243000_iOS.mp4",
@@ -39853,6 +40226,259 @@
       "lat": 28.8951,
       "lon": -82.6074
     }
+  },
+  {
+    "path": "images/2016/20160809_184355000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20160809_184355000_iOS.jpg",
+    "folder": "2016",
+    "date": "2016-08-09",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
+    ],
+    "title": "48' Motor Yacht",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2016/20160809_184408000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20160809_184408000_iOS.jpg",
+    "folder": "2016",
+    "date": "2016-08-09",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
+    ],
+    "title": "48' Motor Yacht",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2016/20160809_184418000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20160809_184418000_iOS.jpg",
+    "folder": "2016",
+    "date": "2016-08-09",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
+    ],
+    "title": "48' Motor Yacht",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2016/20160809_184422000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20160809_184422000_iOS.jpg",
+    "folder": "2016",
+    "date": "2016-08-09",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
+    ],
+    "title": "48' Motor Yacht",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2016/20160809_184427000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20160809_184427000_iOS.jpg",
+    "folder": "2016",
+    "date": "2016-08-09",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
+    ],
+    "title": "48' Motor Yacht",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2016/20160809_184508000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20160809_184508000_iOS.jpg",
+    "folder": "2016",
+    "date": "2016-08-09",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
+    ],
+    "title": "48' Motor Yacht",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2016/20160809_184509000_iOS 1.jpg",
+    "media_type": "photo",
+    "file": "20160809_184509000_iOS 1.jpg",
+    "folder": "2016",
+    "date": "2016-08-09",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
+    ],
+    "title": "48' Motor Yacht",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2016/20160809_184509000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20160809_184509000_iOS.jpg",
+    "folder": "2016",
+    "date": "2016-08-09",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
+    ],
+    "title": "48' Motor Yacht",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2016/20160809_184510000_iOS 1.jpg",
+    "media_type": "photo",
+    "file": "20160809_184510000_iOS 1.jpg",
+    "folder": "2016",
+    "date": "2016-08-09",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
+    ],
+    "title": "48' Motor Yacht",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2016/20160809_184510000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20160809_184510000_iOS.jpg",
+    "folder": "2016",
+    "date": "2016-08-09",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
+    ],
+    "title": "48' Motor Yacht",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2016/20160809_184516000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20160809_184516000_iOS.jpg",
+    "folder": "2016",
+    "date": "2016-08-09",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
+    ],
+    "title": "48' Motor Yacht",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
   },
   {
     "path": "images/2016/20161001_233118089_iOS.jpg",
@@ -40390,6 +41016,111 @@
     }
   },
   {
+    "path": "images/2017/20170901_064941000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20170901_064941000_iOS.jpg",
+    "folder": "2017",
+    "date": "2017-09-01",
+    "people": [
+      "Mike Morgan"
+    ],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Mike Morgan",
+      "People/Mike Morgan",
+      "People|Mike Morgan",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
+    ],
+    "title": "48' Motor Yacht",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "videos/2017/20170901_155333000_iOS.mp4",
+    "media_type": "video",
+    "file": "20170901_155333000_iOS.mp4",
+    "folder": "2017",
+    "date": "2017-09-01",
+    "people": [],
+    "tags": [
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": {
+      "lat": 28.8427,
+      "lon": -82.7766
+    }
+  },
+  {
+    "path": "images/2017/IMG_1152.JPG",
+    "media_type": "photo",
+    "file": "IMG_1152.JPG",
+    "folder": "2017",
+    "date": "2017-09-03",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2017/IMG_1157.JPG",
+    "media_type": "photo",
+    "file": "IMG_1157.JPG",
+    "folder": "2017",
+    "date": "2017-09-03",
+    "people": [
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Stephanie Bell",
+      "People|Stephanie Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2017/hoke_2.png",
     "media_type": "photo",
     "file": "hoke_2.png",
@@ -40453,6 +41184,394 @@
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2018/20180318_144816.jpg",
+    "media_type": "photo",
+    "file": "20180318_144816.jpg",
+    "folder": "2018",
+    "date": "2018-03-18",
+    "people": [
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Stephanie Bell",
+      "People|Stephanie Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": {
+      "lat": 28.8423216002778,
+      "lon": -82.7771898005556
+    }
+  },
+  {
+    "path": "images/2018/20180318_144825.jpg",
+    "media_type": "photo",
+    "file": "20180318_144825.jpg",
+    "folder": "2018",
+    "date": "2018-03-18",
+    "people": [
+      "Jarred Bell",
+      "Mike Morgan"
+    ],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Jarred Bell",
+      "Mike Morgan",
+      "People/Jarred Bell",
+      "People/Mike Morgan",
+      "People|Jarred Bell",
+      "People|Mike Morgan",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": {
+      "lat": 28.8423302002778,
+      "lon": -82.7771453994444
+    }
+  },
+  {
+    "path": "images/2018/20180318_162354.jpg",
+    "media_type": "photo",
+    "file": "20180318_162354.jpg",
+    "folder": "2018",
+    "date": "2018-03-18",
+    "people": [
+      "Jarred Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People|Jarred Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": {
+      "lat": 28.9259942997222,
+      "lon": -82.9182959
+    }
+  },
+  {
+    "path": "images/2018/IMG_1850.JPEG",
+    "media_type": "photo",
+    "file": "IMG_1850.JPEG",
+    "folder": "2018",
+    "date": "2018-03-18",
+    "people": [
+      "Jarred Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People|Jarred Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "videos/2018/20180318_163348.mp4",
+    "media_type": "video",
+    "file": "20180318_163348.mp4",
+    "folder": "2018",
+    "date": "2018-03-18",
+    "people": [],
+    "tags": [
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": {
+      "lat": 28.9262,
+      "lon": -82.9183
+    }
+  },
+  {
+    "path": "videos/2018/IMG_1851.mp4",
+    "media_type": "video",
+    "file": "IMG_1851.mp4",
+    "folder": "2018",
+    "date": "2018-03-18",
+    "people": [],
+    "tags": [
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2018/20180319_102918.jpg",
+    "media_type": "photo",
+    "file": "20180319_102918.jpg",
+    "folder": "2018",
+    "date": "2018-03-19",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
+    ],
+    "title": "20180319_102918.jpg",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": {
+      "lat": 28.8933157,
+      "lon": -82.5968734
+    }
+  },
+  {
+    "path": "images/2018/20180319_112831.jpg",
+    "media_type": "photo",
+    "file": "20180319_112831.jpg",
+    "folder": "2018",
+    "date": "2018-03-19",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
+    ],
+    "title": "20180319_112831.jpg",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": {
+      "lat": 28.9037327,
+      "lon": -82.5102514002778
+    }
+  },
+  {
+    "path": "videos/2018/20180319_112554.mp4",
+    "media_type": "video",
+    "file": "20180319_112554.mp4",
+    "folder": "2018",
+    "date": "2018-03-19",
+    "people": [],
+    "tags": [
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": {
+      "lat": 28.9039,
+      "lon": -82.5098
+    }
+  },
+  {
+    "path": "videos/2018/IMG_2143.mp4",
+    "media_type": "video",
+    "file": "IMG_2143.mp4",
+    "folder": "2018",
+    "date": "2018-05-05",
+    "people": [
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Sophia Bell",
+      "People|Sophia Bell",
+      "Sophia Bell",
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2018/20181229_123721.jpg",
+    "media_type": "photo",
+    "file": "20181229_123721.jpg",
+    "folder": "2018",
+    "date": "2018-12-29",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
+    ],
+    "title": "Working out of the boat!",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": {
+      "lat": 28.8938901997222,
+      "lon": -82.5979851997222
+    }
+  },
+  {
+    "path": "images/2018/IMG_3461.JPEG",
+    "media_type": "photo",
+    "file": "IMG_3461.JPEG",
+    "folder": "2018",
+    "date": "2018-12-29",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2018/IMG_3464.JPEG",
+    "media_type": "photo",
+    "file": "IMG_3464.JPEG",
+    "folder": "2018",
+    "date": "2018-12-29",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2018/IMG_3492.JPEG",
+    "media_type": "photo",
+    "file": "IMG_3492.JPEG",
+    "folder": "2018",
+    "date": "2018-12-30",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2018/IMG_3499.JPEG",
+    "media_type": "photo",
+    "file": "IMG_3499.JPEG",
+    "folder": "2018",
+    "date": "2018-12-31",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
     "gps": null
   },
   {
@@ -40684,6 +41803,32 @@
     "gps": null
   },
   {
+    "path": "images/2019/20190508_182039.jpg",
+    "media_type": "photo",
+    "file": "20190508_182039.jpg",
+    "folder": "2019",
+    "date": "2019-05-08",
+    "people": [],
+    "tags": [
+      "900 Confederate Ave",
+      "Boating",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6932257502778,
+      "lon": -80.8254860502778
+    }
+  },
+  {
     "path": "images/2019/IMG_4059.JPEG",
     "media_type": "photo",
     "file": "IMG_4059.JPEG",
@@ -40692,15 +41837,18 @@
     "people": [],
     "tags": [
       "Boating",
+      "Fishing Creek",
       "Hobbies/Boating",
-      "Hobbies|Boating"
+      "Hobbies|Boating",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Fishing Creek",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -40712,15 +41860,18 @@
     "people": [],
     "tags": [
       "Boating",
+      "Fishing Creek",
       "Hobbies/Boating",
-      "Hobbies|Boating"
+      "Hobbies|Boating",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Fishing Creek",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -40763,15 +41914,41 @@
     "people": [],
     "tags": [
       "Boating",
+      "Fishing Creek",
       "Hobbies/Boating",
-      "Hobbies|Boating"
+      "Hobbies|Boating",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Fishing Creek",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2019/IMG_4096.JPEG",
+    "media_type": "photo",
+    "file": "IMG_4096.JPEG",
+    "folder": "2019",
+    "date": "2019-05-18",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Fishing Creek",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Fishing Creek",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -40803,6 +41980,39 @@
     }
   },
   {
+    "path": "images/2019/20190525_143611.jpg",
+    "media_type": "photo",
+    "file": "20190525_143611.jpg",
+    "folder": "2019",
+    "date": "2019-05-25",
+    "people": [
+      "Tony Roberts"
+    ],
+    "tags": [
+      "Boating",
+      "Fishing Creek",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Tony Roberts",
+      "People|Tony Roberts",
+      "Places/South Carolina/Fishing Creek",
+      "Places/South Carolina/Lancaster County/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
+      "Places|South Carolina|Lancaster County|Fishing Creek",
+      "Tony Roberts"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Fishing Creek",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6191000833333,
+      "lon": -80.8873431333333
+    }
+  },
+  {
     "path": "images/2019/20190525_143624.jpg",
     "media_type": "photo",
     "file": "20190525_143624.jpg",
@@ -40814,7 +42024,9 @@
       "Fishing Creek",
       "Hobbies/Boating",
       "Hobbies|Boating",
+      "Places/South Carolina/Fishing Creek",
       "Places/South Carolina/Lancaster County/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
       "Places|South Carolina|Lancaster County|Fishing Creek"
     ],
     "title": "",
@@ -41792,6 +43004,191 @@
     }
   },
   {
+    "path": "images/2020/IMG_5606.JPEG",
+    "media_type": "photo",
+    "file": "IMG_5606.JPEG",
+    "folder": "2020",
+    "date": "2020-03-27",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "videos/2020/IMG_5939.mp4",
+    "media_type": "video",
+    "file": "IMG_5939.mp4",
+    "folder": "2020",
+    "date": "2020-07-05",
+    "people": [
+      "Rickey Bell",
+      "Samatha Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Fishing Creek",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Rickey Bell",
+      "People/Samatha Bell",
+      "People/Sophia Bell",
+      "People|Rickey Bell",
+      "People|Samatha Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
+      "Rickey Bell",
+      "Samatha Bell",
+      "Sophia Bell",
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Fishing Creek",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2020/IMG_5995.JPEG",
+    "media_type": "photo",
+    "file": "IMG_5995.JPEG",
+    "folder": "2020",
+    "date": "2020-07-12",
+    "people": [
+      "Rickey Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Fishing Creek",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Rickey Bell",
+      "People/Sophia Bell",
+      "People|Rickey Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
+      "Rickey Bell",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Fishing Creek",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2020/IMG_5997.JPEG",
+    "media_type": "photo",
+    "file": "IMG_5997.JPEG",
+    "folder": "2020",
+    "date": "2020-07-12",
+    "people": [
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Fishing Creek",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Sophia Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Fishing Creek",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2020/IMG_6247.JPEG",
+    "media_type": "photo",
+    "file": "IMG_6247.JPEG",
+    "folder": "2020",
+    "date": "2020-08-20",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Fishing Creek",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Fishing Creek",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2020/IMG_6307.JPEG",
+    "media_type": "photo",
+    "file": "IMG_6307.JPEG",
+    "folder": "2020",
+    "date": "2020-09-07",
+    "people": [
+      "Jarred Bell",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Fishing Creek",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People/Rickey Bell",
+      "People|Jarred Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Fishing Creek",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2020/NRA.jpg",
     "media_type": "photo",
     "file": "NRA.jpg",
@@ -42124,6 +43521,72 @@
     }
   },
   {
+    "path": "images/2020/20201127_130713.jpg",
+    "media_type": "photo",
+    "file": "20201127_130713.jpg",
+    "folder": "2020",
+    "date": "2020-11-27",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Keys",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/Florida/Keys",
+      "Places|Florida|Keys",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Keys",
+    "state": "Florida",
+    "country": "United States",
+    "gps": {
+      "lat": 24.7015909,
+      "lon": -81.1693197
+    }
+  },
+  {
+    "path": "images/2020/original_ed040481-0439-4f8b-b371-9095675a3314_20201127_170054.jpg",
+    "media_type": "photo",
+    "file": "original_ed040481-0439-4f8b-b371-9095675a3314_20201127_170054.jpg",
+    "folder": "2020",
+    "date": "2020-11-27",
+    "people": [
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Keys",
+      "People/Rickey Bell",
+      "People/Stephanie Bell",
+      "People|Rickey Bell",
+      "People|Stephanie Bell",
+      "Places/Florida/Keys",
+      "Places|Florida|Keys",
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Keys",
+    "state": "Florida",
+    "country": "United States",
+    "gps": {
+      "lat": 24.7111408838889,
+      "lon": -81.1047248836111
+    }
+  },
+  {
     "path": "videos/2020/MOVIE.mp4",
     "media_type": "video",
     "file": "MOVIE.mp4",
@@ -42151,6 +43614,93 @@
     "city": "Keys",
     "state": "Florida",
     "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2021/20210313_150458.jpg",
+    "media_type": "photo",
+    "file": "20210313_150458.jpg",
+    "folder": "2021",
+    "date": "2021-03-13",
+    "people": [
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Fishing Creek",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Stephanie Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County/Fishing Creek",
+      "Places|South Carolina|Lancaster County|Fishing Creek",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Fishing Creek",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6940670830556,
+      "lon": -80.8636649830556
+    }
+  },
+  {
+    "path": "images/2021/20210313_150525.jpg",
+    "media_type": "photo",
+    "file": "20210313_150525.jpg",
+    "folder": "2021",
+    "date": "2021-03-13",
+    "people": [
+      "Rickey Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Chester County",
+      "Fishing Creek",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Rickey Bell",
+      "People/Sophia Bell",
+      "People|Rickey Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Chester County",
+      "Places/South Carolina/Lancaster County/Fishing Creek",
+      "Places|South Carolina|Chester County",
+      "Places|South Carolina|Lancaster County|Fishing Creek",
+      "Rickey Bell",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Fishing Creek",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6939795980556,
+      "lon": -80.8637460994444
+    }
+  },
+  {
+    "path": "videos/2021/20210313_160617.mp4",
+    "media_type": "video",
+    "file": "20210313_160617.mp4",
+    "folder": "2021",
+    "date": "2021-03-13",
+    "people": [],
+    "tags": [
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
     "gps": null
   },
   {
