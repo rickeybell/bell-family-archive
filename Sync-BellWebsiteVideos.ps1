@@ -234,6 +234,14 @@ if (Test-Path -LiteralPath $ProbeCachePath) {
     } catch { Write-Warning "Video probe cache is unreadable and will be rebuilt." }
 }
 
+$PreviousManifest = @{}
+if (Test-Path -LiteralPath $ManifestCsv) {
+    foreach ($entry in @(Import-Csv -LiteralPath $ManifestCsv)) {
+        $key = ([string]$entry.DestinationPath -replace '/', '\').ToLowerInvariant()
+        if ($key) { $PreviousManifest[$key] = $entry }
+    }
+}
+
 function Get-VideoCompatibilityCached {
     param([Parameter(Mandatory=$true)][string]$Path,[switch]$Refresh)
     $item = Get-Item -LiteralPath $Path -ErrorAction SilentlyContinue
@@ -371,7 +379,18 @@ for ($i=0; $i -lt $files.Count; $i += 50) {
         $destSizeSafe = $destExists -and ((Get-Item -LiteralPath $dest).Length -le $MaxGitHubVideoBytes)
         $destWebSafe = $destExists -and $destCompat -and $destCompat.Readable -and $destCompat.WebCodecs -and $destCompat.Mp4Container -and $destSizeSafe
         $timestampCurrent = $destExists -and ((Get-Item -LiteralPath $dest).LastWriteTimeUtc -eq $file.LastWriteTimeUtc)
-        $needsWrite = !($destWebSafe -and $timestampCurrent)
+        $manifestKey = ((Join-Path 'videos' $relative) -replace '/', '\').ToLowerInvariant()
+        $previous = $PreviousManifest[$manifestKey]
+        $manifestCurrent = $false
+        if ($previous) {
+            $previousTime = [datetime]::MinValue
+            $timeValid = [datetime]::TryParse([string]$previous.LastWriteUtc, [ref]$previousTime)
+            $manifestCurrent = $timeValid -and
+                ([int64]$previous.Length -eq $file.Length) -and
+                ($previousTime.ToUniversalTime().Ticks -eq $file.LastWriteTimeUtc.Ticks) -and
+                ([string]$previous.SourcePath -ieq $file.FullName)
+        }
+        $needsWrite = !($destWebSafe -and ($timestampCurrent -or $manifestCurrent))
 
         if ($needsWrite) {
             $sourceTooLarge = $file.Length -gt $MaxGitHubVideoBytes
