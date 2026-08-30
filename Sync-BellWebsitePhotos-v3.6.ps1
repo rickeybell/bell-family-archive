@@ -15,7 +15,7 @@ param(
 )
 
 $ScriptVersion = "3.9"
-$RepoRoot = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive"
+$RepoRoot = $PSScriptRoot
 $ManifestCsv = Join-Path $RepoRoot "website-photo-manifest.csv"
 $V34 = Join-Path $RepoRoot "Sync-BellWebsitePhotos-v3.4.ps1"
 $OutputRoot = if ($Live) { $RepoRoot } else { Join-Path $RepoRoot "website-test-v36" }

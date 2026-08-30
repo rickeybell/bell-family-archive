@@ -1,6 +1,7 @@
 ﻿param(
     [switch]$DryRun,
     [switch]$ForceFullScan,
+    [switch]$ManifestOnly,
     [switch]$SkipOrphanScan,
     [string[]]$SourceRoots = @(
         "C:\Users\rbell\OneDrive\Pictures",
@@ -9,7 +10,7 @@
 )
 
 $ScriptVersion = "3.4.3"
-$RepoRoot   = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive"
+$RepoRoot   = $PSScriptRoot
 $DbSourceHelper = Join-Path $RepoRoot "tools\list_website_sources_from_digikam.py"
 $DestRoot   = Join-Path $RepoRoot "images"
 $PublishTag = "Website"
@@ -141,6 +142,11 @@ function Add-PublishedFromManifest {
     if (![string]::IsNullOrWhiteSpace($destRelative)) {
         [void]$script:PublishedDestinations.Add((Get-NormalizedPathKey -Path (Join-Path $DestRoot $destRelative)))
     }
+    $prior = $script:PriorPublishedRows[(Get-NormalizedPathKey $SourcePath)]
+    if ($prior) {
+        $prior.DestinationPath = Join-Path $DestRoot $destRelative
+        $script:PublishedRows.Add($prior)
+    }
 }
 
 function Process-Batch {
@@ -187,7 +193,7 @@ function Process-Batch {
             if ($destExists) { $destFile=Get-Item -LiteralPath $destPath; $shouldCopy=($destFile.Length -ne $file.Length) -or ($destFile.LastWriteTimeUtc -lt $file.LastWriteTimeUtc) }
             if ($shouldCopy) {
                 $verb=if($destExists){"UPDATE"}else{"NEW   "}; Write-Host "$verb  $destRelative"
-                if (!$DryRun) { $destFolder=Split-Path -Parent $destPath; if(!(Test-Path -LiteralPath $destFolder)){New-Item -ItemType Directory -Path $destFolder -Force|Out-Null}; Copy-Item -LiteralPath $file.FullName -Destination $destPath -Force; (Get-Item -LiteralPath $destPath).LastWriteTimeUtc=$file.LastWriteTimeUtc }
+                if (!$DryRun -and !$ManifestOnly) { $destFolder=Split-Path -Parent $destPath; if(!(Test-Path -LiteralPath $destFolder)){New-Item -ItemType Directory -Path $destFolder -Force|Out-Null}; Copy-Item -LiteralPath $file.FullName -Destination $destPath -Force; (Get-Item -LiteralPath $destPath).LastWriteTimeUtc=$file.LastWriteTimeUtc }
                 if($destExists){$script:stats.PublishedUpdated++}else{$script:stats.PublishedNew++}
             } else { $script:stats.PublishedAlreadyCurrent++ }
         } else { $script:stats.Unpublished++ }
@@ -241,29 +247,46 @@ $Manifest=@{}
 if((Test-Path -LiteralPath $ManifestPath)-and !$ForceFullScan){try{$saved=Get-Content -LiteralPath $ManifestPath -Raw|ConvertFrom-Json;foreach($item in $saved.files){$Manifest[[string]$item.source]=@{LastWriteUtc=[string]$item.lastWriteUtc;Length=[int64]$item.length;Published=[bool]$item.published;Destination=[string]$item.destination}}}catch{Write-Warning "Manifest unreadable; performing a full scan.";$Manifest=@{}}}
 $NewManifest=@{}
 $PublishedRows=New-Object "System.Collections.Generic.List[object]"
+$PriorPublishedRows=@{}
+if(Test-Path -LiteralPath $WebsiteManifestCsv){
+    foreach($priorRow in (Import-Csv -LiteralPath $WebsiteManifestCsv)){
+        if($priorRow.SourcePath){$PriorPublishedRows[(Get-NormalizedPathKey ([string]$priorRow.SourcePath))]=$priorRow}
+    }
+}
 $PublishedDestinations=New-Object "System.Collections.Generic.HashSet[string]" ([System.StringComparer]::OrdinalIgnoreCase)
 $PublishedSourceByDestination=@{}
 $stats=[ordered]@{Scanned=0;ExcludedFolders=0;MetadataRead=0;UnchangedSkipped=0;PublishedNew=0;PublishedUpdated=0;PublishedAlreadyCurrent=0;Unpublished=0;Orphans=0;OrphansReferenced=0;OrphansUnreferenced=0;Errors=0}
 Write-Host "`nBell Family Archive Website Photo Sync v$ScriptVersion";Write-Host "Sources:";foreach($sourceRoot in $SourceRoots){Write-Host "  $sourceRoot"};Write-Host "Destination: $DestRoot";Write-Host "Publish rule: current digiKam Website tag (green label assigned automatically)";Write-Host "Non-year masters: metadata year fallback";if($DryRun){Write-Host "*** DRY RUN - NO FILES WILL BE COPIED OR DELETED ***"};Write-Host ""
 $batch=New-Object 'System.Collections.Generic.List[System.IO.FileInfo]'
-$filesToScan = @(
-    foreach ($sourcePath in $sourceData.website_sources) {
-        $file = Get-Item -LiteralPath ([string]$sourcePath) -ErrorAction SilentlyContinue
-        if ($file -and $ImageExtensions -contains $file.Extension.ToLowerInvariant()) { $file }
-    }
-)
-foreach ($file in $filesToScan) {
+$sourceItems = if ($sourceData.PSObject.Properties.Name -contains 'website_items') {
+    @($sourceData.website_items)
+} else {
+    @($sourceData.website_sources | ForEach-Object { [pscustomobject]@{path=[string]$_;length=$null;last_write_utc=$null} })
+}
+foreach ($sourceItem in $sourceItems) {
+    $sourceKey=[string]$sourceItem.path
+    if($ImageExtensions -notcontains [System.IO.Path]::GetExtension($sourceKey).ToLowerInvariant()){continue}
     $stats.Scanned++
     if(($stats.Scanned%$ProgressEvery)-eq 0){Write-Host ("Scanned {0:N0} | Metadata {1:N0} | Cached {2:N0} | New {3:N0} | Updated {4:N0}" -f $stats.Scanned,$stats.MetadataRead,$stats.UnchangedSkipped,$stats.PublishedNew,$stats.PublishedUpdated)}
-    $sourceKey=$file.FullName;$lastWriteUtc=$file.LastWriteTimeUtc.ToString("o");$old=$Manifest[$sourceKey]
+    $old=$Manifest[$sourceKey]
+    $lastWriteUtc=[string]$sourceItem.last_write_utc
+    $sourceLength=if($null-ne$sourceItem.length){[int64]$sourceItem.length}else{0L}
+    if([string]::IsNullOrWhiteSpace($lastWriteUtc)-or$sourceLength-le0){
+        $file=Get-Item -LiteralPath $sourceKey -ErrorAction SilentlyContinue
+        if(!$file){$stats.Errors++;continue}
+        $lastWriteUtc=$file.LastWriteTimeUtc.ToString("o");$sourceLength=$file.Length
+    }
     $catalogPublished=$WebsiteSourcePaths.Contains((Get-NormalizedPathKey $sourceKey))
-    $needsMetadata=$ForceFullScan -or !$old -or $old.LastWriteUtc -ne $lastWriteUtc -or [int64]$old.Length -ne $file.Length -or [bool]$old.Published -ne $catalogPublished
+    $priorRow=$PriorPublishedRows[(Get-NormalizedPathKey $sourceKey)]
+    $needsMetadata=$ForceFullScan -or !$old -or !$priorRow -or $old.LastWriteUtc -ne $lastWriteUtc -or [int64]$old.Length -ne $sourceLength -or [bool]$old.Published -ne $catalogPublished
     if(!$needsMetadata){
-        $NewManifest[$sourceKey]=@{LastWriteUtc=$lastWriteUtc;Length=$file.Length;Published=[bool]$old.Published;Destination=[string]$old.Destination}
+        $NewManifest[$sourceKey]=@{LastWriteUtc=$lastWriteUtc;Length=$sourceLength;Published=[bool]$old.Published;Destination=[string]$old.Destination}
         Add-PublishedFromManifest -SourcePath $sourceKey -Old $old
         if([bool]$old.Published){$stats.PublishedAlreadyCurrent++}else{$stats.Unpublished++}
         $stats.UnchangedSkipped++;continue
     }
+    $file=Get-Item -LiteralPath $sourceKey -ErrorAction SilentlyContinue
+    if(!$file){$stats.Errors++;continue}
     $batch.Add($file);if($batch.Count-ge$BatchSize){Process-Batch $batch $ExifTool;$batch.Clear()}
 }
 Process-Batch $batch $ExifTool;$batch.Clear()
@@ -304,4 +327,4 @@ Write-Host ("Errors:                      {0:N0}" -f $stats.Errors)
 Write-Host "====================================="
 Write-Host "`nWebsite manifest report: $WebsiteManifestCsv"
 Write-Host "Orphan review report:    $OrphanReportCsv"
-if($DryRun){Write-Host "`nDry run complete. No photographs were copied or deleted."}else{Write-Host "`nWebsite image sync complete. No orphan photographs were deleted."}
+if($DryRun){Write-Host "`nDry run complete. No photographs were copied or deleted."}elseif($ManifestOnly){Write-Host "`nIncremental website manifest refresh complete. Media files were not changed."}else{Write-Host "`nWebsite image sync complete. No orphan photographs were deleted."}

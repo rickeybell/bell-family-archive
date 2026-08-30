@@ -10,7 +10,7 @@ param(
 
 $ErrorActionPreference = "Stop"
 $ScriptVersion = "2.0"
-$RepoRoot = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive"
+$RepoRoot = $PSScriptRoot
 $AudioRoot = Join-Path $RepoRoot "audio"
 $ManifestCsv = Join-Path $RepoRoot "website-audio-manifest.csv"
 $DbHelper = Join-Path $RepoRoot "tools\build_audio_manifest_from_digikam.py"

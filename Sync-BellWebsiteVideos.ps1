@@ -1,5 +1,6 @@
 param(
     [switch]$DryRun,
+    [switch]$FullAudit,
     [int]$FromYear = 0,
     [int]$ToYear = 9999,
     [string[]]$SourceRoots = @(
@@ -10,11 +11,12 @@ param(
 
 $ErrorActionPreference = "Stop"
 $ScriptVersion = "2.3"
-$RepoRoot = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive"
+$RepoRoot = $PSScriptRoot
 $DbSourceHelper = Join-Path $RepoRoot "tools\list_website_sources_from_digikam.py"
 $GreenSyncHelper = Join-Path $RepoRoot "tools\ensure_website_green_in_digikam.py"
 $VideoRoot = Join-Path $RepoRoot "videos"
 $ManifestCsv = Join-Path $RepoRoot "website-video-manifest.csv"
+$ProbeCachePath = Join-Path $RepoRoot ".website-video-probe-cache.json"
 $PublishTag = "Website"
 $VideoExtensions = @('.mp4','.mov','.m4v','.avi','.wmv','.mpeg','.mpg','.mts','.m2ts','.3gp','.webm')
 $MaxGitHubVideoBytes = 95MB
@@ -218,6 +220,41 @@ function Write-WebVideoDerivative {
 foreach ($sourceRoot in $SourceRoots) {
     if (!(Test-Path -LiteralPath $sourceRoot)) { throw "Source folder does not exist: $sourceRoot" }
 }
+
+$ProbeCache = @{}
+if (Test-Path -LiteralPath $ProbeCachePath) {
+    try {
+        $savedCache = Get-Content -LiteralPath $ProbeCachePath -Raw | ConvertFrom-Json
+        foreach ($entry in @($savedCache.records)) { $ProbeCache[[string]$entry.path] = $entry }
+    } catch { Write-Warning "Video probe cache is unreadable and will be rebuilt." }
+}
+
+function Get-VideoCompatibilityCached {
+    param([Parameter(Mandatory=$true)][string]$Path,[switch]$Refresh)
+    $item = Get-Item -LiteralPath $Path -ErrorAction SilentlyContinue
+    if (!$item) { return $null }
+    $key = $item.FullName.ToLowerInvariant()
+    $entry = $script:ProbeCache[$key]
+    if (!$Refresh -and !$FullAudit -and $entry -and
+        [int64]$entry.length -eq $item.Length -and
+        [int64]$entry.mtimeTicks -eq $item.LastWriteTimeUtc.Ticks) {
+        return [pscustomobject]@{
+            Readable=[bool]$entry.readable; VideoCodec=[string]$entry.videoCodec
+            AudioCodec=[string]$entry.audioCodec; HasAudio=[bool]$entry.hasAudio
+            WebCodecs=[bool]$entry.webCodecs; Mp4Container=[bool]$entry.mp4Container
+            PixelFormat=[string]$entry.pixelFormat
+        }
+    }
+    $result = Get-VideoCompatibility $item.FullName
+    $script:ProbeCache[$key] = [pscustomobject]@{
+        path=$key; length=[int64]$item.Length; mtimeTicks=[int64]$item.LastWriteTimeUtc.Ticks
+        readable=[bool]$result.Readable; videoCodec=[string]$result.VideoCodec
+        audioCodec=[string]$result.AudioCodec; hasAudio=[bool]$result.HasAudio
+        webCodecs=[bool]$result.WebCodecs; mp4Container=[bool]$result.Mp4Container
+        pixelFormat=[string]$result.PixelFormat
+    }
+    return $result
+}
 if (!(Test-Path -LiteralPath $DbSourceHelper)) { throw "digiKam Website-source helper not found: $DbSourceHelper" }
 if (!(Test-Path -LiteralPath $GreenSyncHelper)) { throw "digiKam green-label helper not found: $GreenSyncHelper" }
 $python = Get-PythonCommand
@@ -249,6 +286,7 @@ foreach ($sourceRoot in $SourceRoots) { Write-Host "  $sourceRoot" }
 Write-Host "Destination: $VideoRoot"
 Write-Host "Years: $FromYear through $ToYear"
 Write-Host "Publish rule: current digiKam Website tag (green label assigned automatically)"
+Write-Host "Probe mode: $(if($FullAudit){'FULL AUDIT'}else{'CACHED / INCREMENTAL'})"
 Write-Host "Decade placeholders: ignored"
 Write-Host "Website format: MP4 / H.264 / AAC / yuv420p / faststart"
 Write-Host "GitHub file limit guard: website videos at or below $([math]::Round($MaxGitHubVideoBytes/1MB)) MB"
@@ -316,7 +354,7 @@ for ($i=0; $i -lt $files.Count; $i += 50) {
         }
         $destinationSources[$destinationKey] = $file.FullName
         $dest = Join-Path $VideoRoot $relative
-        $sourceCompat = Get-VideoCompatibility $file.FullName
+        $sourceCompat = Get-VideoCompatibilityCached $file.FullName
         if (!$sourceCompat.Readable) {
             Write-Warning "FFprobe could not read video: $($file.FullName)"
             $probeErrors++
@@ -324,7 +362,7 @@ for ($i=0; $i -lt $files.Count; $i += 50) {
         }
 
         $destExists = Test-Path -LiteralPath $dest
-        $destCompat = if ($destExists) { Get-VideoCompatibility $dest } else { $null }
+        $destCompat = if ($destExists) { Get-VideoCompatibilityCached $dest } else { $null }
         $destSizeSafe = $destExists -and ((Get-Item -LiteralPath $dest).Length -le $MaxGitHubVideoBytes)
         $destWebSafe = $destExists -and $destCompat -and $destCompat.Readable -and $destCompat.WebCodecs -and $destCompat.Mp4Container -and $destSizeSafe
         $timestampCurrent = $destExists -and ((Get-Item -LiteralPath $dest).LastWriteTimeUtc -eq $file.LastWriteTimeUtc)
@@ -345,7 +383,7 @@ for ($i=0; $i -lt $files.Count; $i += 50) {
                     Write-WebVideoDerivative -Source $file -Destination $dest -SourceCompatibility $sourceCompat -ForceSizeReduction:($mode -eq 'TRANSCODE-SIZE')
                     if ($mode -eq 'REMUX') { $remuxed++ } else { $transcoded++ }
                 }
-                $verify = Get-VideoCompatibility $dest
+                $verify = Get-VideoCompatibilityCached $dest -Refresh
                 if (!$verify -or !$verify.Readable -or !$verify.WebCodecs -or !$verify.Mp4Container) {
                     throw "Generated website video is not browser-safe: $dest"
                 }
@@ -382,6 +420,7 @@ for ($i=0; $i -lt $files.Count; $i += 50) {
 
 if (!$DryRun) {
     $rows | Sort-Object RelativePath | Export-Csv -LiteralPath $ManifestCsv -NoTypeInformation -Encoding UTF8
+    [pscustomobject]@{version=1;records=@($ProbeCache.Values)} | ConvertTo-Json -Depth 5 -Compress | Set-Content -LiteralPath $ProbeCachePath -Encoding UTF8
 }
 
 Write-Host ""
@@ -394,3 +433,4 @@ Write-Host "Already browser-safe/current:    $current"
 Write-Host "FFprobe read errors:              $probeErrors"
 Write-Host "Placeholder-decade videos skip:  $skippedPlaceholder"
 if (!$DryRun) { Write-Host "Video manifest: $ManifestCsv" }
+if (!$DryRun) { Write-Host "Video probe cache: $ProbeCachePath" }

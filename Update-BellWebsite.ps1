@@ -3,6 +3,9 @@
     [switch]$Publish,
     [switch]$SkipPull,
     [switch]$SkipManifestRefresh,
+    [switch]$FullAudit,
+    [switch]$ForcePhotoRebuild,
+    [int]$PhotoWorkers = 4,
     [int]$FromYear = 0,
     [int]$ToYear = 9999,
     [string]$CommitMessage = ""
@@ -10,7 +13,7 @@
 
 $ErrorActionPreference = "Stop"
 
-$RepoRoot = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive"
+$RepoRoot = $PSScriptRoot
 $Generator = Join-Path $RepoRoot "Sync-BellWebsitePhotos-v3.8.ps1"
 $VideoGenerator = Join-Path $RepoRoot "Sync-BellWebsiteVideos.ps1"
 $AudioGenerator = Join-Path $RepoRoot "Sync-BellWebsiteAudio.ps1"
@@ -138,6 +141,7 @@ Write-Host "Repository: $RepoRoot"
 Write-Host "Years:      $FromYear through $ToYear"
 Write-Host "Mode:       $(if ($DryRun) {'DRY RUN'} elseif ($Publish) {'UPDATE + PUBLISH'} else {'UPDATE ONLY'})"
 Write-Host "Media:      Photos + Videos + Audio"
+Write-Host "Export:     $(if($FullAudit){'FULL AUDIT'}else{'FAST INCREMENTAL'}) / $PhotoWorkers photo workers"
 Write-Host ""
 
 if (!(Test-Path -LiteralPath $RepoRoot)) { throw "Repository not found: $RepoRoot" }
@@ -168,12 +172,16 @@ if (!$SkipPull) {
 
 Write-Host "[2/9] Refreshing DigiKam Website-tag photo manifest and generating photo derivatives..."
 $syncArgs = @("-ExecutionPolicy","Bypass","-File",$Generator,"-FromYear","$FromYear","-ToYear","$ToYear")
+$syncArgs += @('-Workers',"$PhotoWorkers")
 if (!$SkipManifestRefresh) { $syncArgs += "-RefreshManifest" }
+if ($FullAudit) { $syncArgs += "-FullAudit" }
+if ($ForcePhotoRebuild) { $syncArgs += "-ForceRebuild" }
 if ($DryRun) { $syncArgs += "-DryRun" } else { $syncArgs += "-Live" }
 Invoke-Checked powershell.exe @syncArgs
 
 Write-Host "[3/9] Scanning and syncing Website-tagged videos..."
 $videoArgs = @("-ExecutionPolicy","Bypass","-File",$VideoGenerator,"-FromYear","$FromYear","-ToYear","$ToYear")
+if ($FullAudit) { $videoArgs += "-FullAudit" }
 if ($DryRun) { $videoArgs += "-DryRun" }
 Invoke-Checked powershell.exe @videoArgs
 

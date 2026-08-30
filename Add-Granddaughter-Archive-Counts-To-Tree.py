@@ -2,7 +2,7 @@ from pathlib import Path
 from datetime import datetime
 import json, re, shutil
 
-ROOT = Path(r"C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive")
+ROOT = Path(__file__).resolve().parent
 INDEX = ROOT / "index.html"
 META = ROOT / "photo_metadata.json"
 

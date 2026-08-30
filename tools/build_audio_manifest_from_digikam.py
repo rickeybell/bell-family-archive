@@ -128,34 +128,26 @@ def main():
     if missing: raise SystemExit('DigiKam database is missing expected tables: '+', '.join(missing))
     tpaths=tag_paths(con)
 
-    disk=[]
-    for source_root in source_roots:
-        for p in source_root.rglob('*'):
-            if p.is_file() and p.suffix.lower() in AUDIO_EXTS and '.dtrash' not in {x.lower() for x in p.parts}:
-                disk.append(p)
-    by_name={}
-    for p in disk: by_name.setdefault(p.name.lower(),[]).append(p)
-
     root_ids={str(row[1]).strip().lower():int(row[0]) for row in con.execute('select id,label from AlbumRoots')}
+    configured={}
+    for source_root in source_roots:
+        root_id=root_ids.get(source_root.name.lower())
+        if root_id is None:
+            raise SystemExit(f'No DigiKam album root label matches collection folder {source_root.name!r}')
+        configured[root_id]=source_root
+
     rows=[]; db_matches=0; website=0; date_year_fallbacks=0; destinations={}
-    q='''select i.id imageid,i.name,a.relativePath,a.albumRoot from Images i join Albums a on a.id=i.album where lower(i.name)=lower(?)'''
-    for name,candidates in sorted(by_name.items()):
-        recs=con.execute(q,(candidates[0].name,)).fetchall()
-        for rec in recs:
+    placeholders=','.join('?' for _ in configured)
+    q=f'''select i.id imageid,i.name,a.relativePath,a.albumRoot
+          from Images i join Albums a on a.id=i.album
+          where i.status=1 and a.albumRoot in ({placeholders})
+          order by a.albumRoot,a.relativePath,i.name'''
+    for rec in con.execute(q,tuple(configured)):
+            source_root=configured[int(rec['albumRoot'])]
             rel_album=str(rec['relativePath'] or '').replace('\\','/').strip('/')
-            chosen=None
-            for p in candidates:
-                source_root=owning_root(p,source_roots)
-                expected_root_id=root_ids.get(source_root.name.lower())
-                if expected_root_id is not None and expected_root_id != int(rec['albumRoot']):
-                    continue
-                rel=p.relative_to(source_root).as_posix()
-                parent=pathlib.PurePosixPath(rel).parent.as_posix().strip('.')
-                if not rel_album or parent.lower().endswith(rel_album.lower()):
-                    chosen=p; break
-            if chosen is None:
-                if len(candidates)==1: chosen=candidates[0]
-                else: continue
+            chosen=source_root/pathlib.Path(*pathlib.PurePosixPath(rel_album).parts)/str(rec['name'])
+            if chosen.suffix.lower() not in AUDIO_EXTS or not chosen.is_file():
+                continue
             db_matches+=1
             image_id=int(rec['imageid'])
             tids=[int(r[0]) for r in con.execute('select tagid from ImageTags where imageid=?',(image_id,)).fetchall()]
@@ -209,7 +201,6 @@ def main():
                 'Tags':'; '.join(clean),'GPSLatitude':'','GPSLongitude':'',
                 'Length':chosen.stat().st_size,'LastWriteUtc':chosen.stat().st_mtime_ns
             })
-            break
     con.close()
     fields=['SourcePath','RelativePath','DestinationPath','FileName','Date','People','Title','Description','Tags','GPSLatitude','GPSLongitude','Length','LastWriteUtc']
     out.parent.mkdir(parents=True,exist_ok=True)
@@ -217,7 +208,7 @@ def main():
         w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(sorted(rows,key=lambda r:r['RelativePath'].lower()))
     print('Source collections:')
     for source_root in source_roots: print(f'  {source_root}')
-    print(f'Audio files on disk:              {len(disk)}')
+    print('Audio selection method:           DigiKam database-first')
     print(f'Audio files matched in DigiKam:   {db_matches}')
     print(f'Website-tagged audio selected:    {len(rows)}')
     print(f'DigiKam Website matches total:    {website}')

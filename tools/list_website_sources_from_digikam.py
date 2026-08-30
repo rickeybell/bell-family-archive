@@ -2,10 +2,17 @@
 """Export active digiKam Website-tagged source paths for configured collections."""
 
 import argparse
+import datetime as dt
 import json
 import os
 import pathlib
 import sqlite3
+
+
+def dotnet_utc_timestamp(mtime_ns: int) -> str:
+    seconds, nanoseconds = divmod(mtime_ns, 1_000_000_000)
+    moment = dt.datetime.fromtimestamp(seconds, dt.timezone.utc)
+    return moment.strftime("%Y-%m-%dT%H:%M:%S") + f".{nanoseconds // 100:07d}Z"
 
 
 def find_db(source_roots: list[pathlib.Path]) -> pathlib.Path | None:
@@ -61,6 +68,7 @@ def main() -> int:
     connection.close()
 
     paths = []
+    items = []
     missing = []
     by_collection = {}
     for root_id, relative, name in website_rows:
@@ -68,7 +76,10 @@ def main() -> int:
         source = root / str(relative or "").strip("/\\") / str(name)
         normalized = str(source.resolve())
         if source.is_file():
+            stat = source.stat()
             paths.append(normalized)
+            items.append({"path": normalized, "length": stat.st_size,
+                          "last_write_utc": dotnet_utc_timestamp(stat.st_mtime_ns)})
             by_collection[root.name] = by_collection.get(root.name, 0) + 1
         else:
             missing.append(normalized)
@@ -84,6 +95,7 @@ def main() -> int:
                 "database": str(database),
                 "source_roots": [str(root) for root in roots],
                 "website_sources": paths,
+                "website_items": items,
                 "by_collection": by_collection,
             },
             indent=2,

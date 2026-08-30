@@ -5,11 +5,12 @@
 
 $ScriptVersion = "3.3"
 $SourceRoot = "C:\Users\rbell\OneDrive\Pictures"
-$DestRoot   = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive\images"
+$RepoRoot   = $PSScriptRoot
+$DestRoot   = Join-Path $RepoRoot "images"
 $PublishTag = "Website"
-$ManifestPath = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive\.website-photo-manifest.json"
-$WebsiteManifestCsv = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive\website-photo-manifest.csv"
-$OrphanReportCsv = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive\website-photo-orphans.csv"
+$ManifestPath = Join-Path $RepoRoot ".website-photo-manifest.json"
+$WebsiteManifestCsv = Join-Path $RepoRoot "website-photo-manifest.csv"
+$OrphanReportCsv = Join-Path $RepoRoot "website-photo-orphans.csv"
 
 $ImageExtensions = @(".jpg", ".jpeg", ".png", ".tif", ".tiff")
 $ProgressEvery = 250
