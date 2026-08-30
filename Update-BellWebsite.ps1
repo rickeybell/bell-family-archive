@@ -38,6 +38,10 @@ function Invoke-Checked {
 }
 
 function Get-PythonCommand {
+    if ($env:BELL_PYTHON -and (Test-Path -LiteralPath $env:BELL_PYTHON)) {
+        & $env:BELL_PYTHON --version *> $null
+        if ($LASTEXITCODE -eq 0) { return @{ File = $env:BELL_PYTHON; Prefix = @() } }
+    }
     $python = Get-Command python.exe -ErrorAction SilentlyContinue
     if ($python) {
         & $python.Source --version *> $null
