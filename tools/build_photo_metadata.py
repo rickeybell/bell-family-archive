@@ -1,11 +1,22 @@
 #!/usr/bin/env python3
-import csv, json, pathlib, re, subprocess
+import argparse, csv, hashlib, json, os, pathlib, re, subprocess, tempfile
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 PHOTO_MANIFEST = ROOT / "website-photo-manifest.csv"
 VIDEO_MANIFEST = ROOT / "website-video-manifest.csv"
 AUDIO_MANIFEST = ROOT / "website-audio-manifest.csv"
 OUT = ROOT / "photo_metadata.json"
+CACHE = ROOT / ".website-metadata-cache.json"
+
+parser=argparse.ArgumentParser()
+parser.add_argument('--full-audit',action='store_true')
+args=parser.parse_args()
+
+metadata_cache={}
+cache_existed=CACHE.exists()
+if cache_existed:
+    try: metadata_cache=json.loads(CACHE.read_text(encoding='utf-8-sig')).get('records',{})
+    except (OSError,ValueError,TypeError): metadata_cache={}
 
 previous_by_path={}
 if OUT.exists():
@@ -38,6 +49,26 @@ def eligible_rows(path, media_type):
 rows=(eligible_rows(PHOTO_MANIFEST,"photo") + eligible_rows(VIDEO_MANIFEST,"video") + eligible_rows(AUDIO_MANIFEST,"audio"))
 if not rows: raise SystemExit("No eligible manifest records found")
 
+def public_path(item):
+    prefix={"video":"videos/","audio":"audio/"}.get(item["media_type"],"images/")
+    return prefix+item["rel"]
+
+def item_signature(item):
+    row=item["row"]
+    state={"source":str(item["src"]),"type":item["media_type"],
+           "length":str(row.get("Length") or ""),"mtime":str(row.get("LastWriteUtc") or "")}
+    if item["media_type"]=="audio": state["manifest"]=row
+    return hashlib.sha256(json.dumps(state,sort_keys=True).encode('utf-8')).hexdigest()
+
+for item in rows:
+    item["public_path"]=public_path(item)
+    item["signature"]=item_signature(item)
+    cached=metadata_cache.get(item["public_path"].lower())
+    if not args.full_audit and cached and cached.get("signature")==item["signature"]:
+        item["cached_record"]=cached.get("record")
+    elif not args.full_audit and not cache_existed:
+        item["cached_record"]=previous_by_path.get(item["public_path"].lower())
+
 cmd0=["exiftool","-json","-n","-DateTimeOriginal","-CreateDate","-DateCreated",
       "-Subject","-Keywords","-HierarchicalSubject","-TagsList","-LastKeywordXMP",
       "-Description","-Caption-Abstract","-Title","-PersonInImage","-RegionPersonDisplayName",
@@ -45,7 +76,7 @@ cmd0=["exiftool","-json","-n","-DateTimeOriginal","-CreateDate","-DateCreated",
       "-Province-State","-Country","-Country-PrimaryLocationName"]
 
 meta={}
-sources=[x["src"] for x in rows if x["media_type"]!="audio" and not x.get("previous")]
+sources=[x["src"] for x in rows if x["media_type"]!="audio" and not x.get("previous") and not x.get("cached_record")]
 for i in range(0,len(sources),150):
     batch=sources[i:i+150]
     recs=json.loads(subprocess.check_output(cmd0+[str(p) for p in batch]))
@@ -100,6 +131,10 @@ for item in rows:
         print("WARNING preserved prior metadata for missing master:",src)
         continue
 
+    if item.get("cached_record"):
+        out.append(item["cached_record"])
+        continue
+
     if media_type=="audio":
         tags=split_manifest(manifest.get("Tags"))
         if not any(re.split(r"[|/\\]",t)[-1].strip().lower()=="sound" for t in tags): tags.append("Sound")
@@ -147,5 +182,17 @@ for item in rows:
 
 out.sort(key=lambda x:(x["date"] or "9999",x["path"].lower()))
 OUT.write_text(json.dumps(out,indent=2,ensure_ascii=False),encoding="utf-8")
+out_by_path={str(record.get("path") or "").lower():record for record in out}
+cache_records={}
+for item in rows:
+    key=item["public_path"].lower();record=out_by_path.get(key)
+    if record: cache_records[key]={"signature":item["signature"],"record":record}
+fd,temp_name=tempfile.mkstemp(prefix='.website-metadata-cache-',suffix='.tmp',dir=ROOT);os.close(fd)
+temp=pathlib.Path(temp_name)
+try:
+    temp.write_text(json.dumps({"version":1,"records":cache_records},separators=(',',':')),encoding='utf-8')
+    os.replace(temp,CACHE)
+finally: temp.unlink(missing_ok=True)
 photo_count=sum(1 for x in out if x.get("media_type")=="photo");video_count=sum(1 for x in out if x.get("media_type")=="video");audio_count=sum(1 for x in out if x.get("media_type")=="audio")
 print(f"Wrote {len(out)} records from DigiKam/master metadata ({photo_count} photos, {video_count} videos, {audio_count} audio)")
+print(f"Master metadata reread: {len(sources)}; cached: {len(rows)-len(sources)}")

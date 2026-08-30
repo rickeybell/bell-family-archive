@@ -214,7 +214,9 @@ if (Test-Path -LiteralPath $originalsPath) {
 
 $py = Get-PythonCommand
 Write-Host "[6/9] Rebuilding photo_metadata.json from DigiKam/master photos, videos, and audio..."
-Invoke-Checked $py.File @($py.Prefix + @($BuildMetadata))
+$metadataArgs = @($BuildMetadata)
+if ($FullAudit) { $metadataArgs += '--full-audit' }
+Invoke-Checked $py.File @($py.Prefix + $metadataArgs)
 Write-Host "      Mapping DigiKam Hobbies tags to public archive media..."
 Invoke-Checked $py.File @($py.Prefix + @($BuildHobbyTags))
 Write-Host "[7/9] Rebuilding chronological and person galleries..."

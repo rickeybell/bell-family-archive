@@ -49,6 +49,12 @@
     "images/1948/1948_0021b.png": [
       "Aviation"
     ],
+    "images/1949/1949b.png": [
+      "Aviation"
+    ],
+    "images/1950/02_women_fliers_to_meet_here_next_sunday.jpg": [
+      "Aviation"
+    ],
     "images/1950/05_transcontinental_womens_air_race_to_end_in_state.jpg": [
       "Aviation"
     ],
@@ -85,8 +91,17 @@
     "images/1961/1961_0006_a.jpg": [
       "Shooting"
     ],
+    "images/1967/1960s_0032_a.jpg": [
+      "Aviation"
+    ],
+    "images/1968/Tharp Globe.png": [
+      "Aviation"
+    ],
     "images/1974/Document_20260717_0002.jpg": [
       "Shooting"
+    ],
+    "images/1994/Screenshot 2026-07-22 085844.png": [
+      "Aviation"
     ],
     "images/1995/1995_July_0001_a.jpg": [
       "Boating"
@@ -884,9 +899,6 @@
     "images/2025/20251211_175716.jpg": [
       "Aviation"
     ],
-    "images/2025/20251211_211802.jpg": [
-      "Shooting"
-    ],
     "images/2025/20251225_170331.jpg": [
       "Shooting"
     ],
@@ -977,7 +989,7 @@
     ]
   },
   "taggedCounts": {
-    "Aviation": 922,
+    "Aviation": 927,
     "Scuba": 1144,
     "Shooting": 133,
     "Boating": 450,
@@ -985,9 +997,9 @@
     "Camping": 111
   },
   "publicCounts": {
-    "Aviation": 95,
+    "Aviation": 100,
     "Scuba": 136,
-    "Shooting": 18,
+    "Shooting": 17,
     "Boating": 35,
     "Off-Roading": 21,
     "Camping": 23

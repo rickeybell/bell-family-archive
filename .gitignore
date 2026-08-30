@@ -1,6 +1,7 @@
 .website-photo-manifest.json
 .website-derivative-cache.json
 .website-video-probe-cache.json
+.website-metadata-cache.json
 website-photo-manifest.csv
 website-photo-orphans.csv
 Sync-BellWebsitePhotos-v3.ps1
