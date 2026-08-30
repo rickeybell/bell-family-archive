@@ -52,6 +52,15 @@ function Get-PythonCommand {
         & $py.Source --version *> $null
         if ($LASTEXITCODE -eq 0) { return @{ File = $py.Source; Prefix = @() } }
     }
+    $localPythonRoot = Join-Path $env:LOCALAPPDATA "Python"
+    if (Test-Path -LiteralPath $localPythonRoot) {
+        foreach ($folder in @(Get-ChildItem -LiteralPath $localPythonRoot -Directory -Filter 'pythoncore-*' -ErrorAction SilentlyContinue | Sort-Object Name -Descending)) {
+            $candidate = Join-Path $folder.FullName "python.exe"
+            if (!(Test-Path -LiteralPath $candidate)) { continue }
+            & $candidate --version *> $null
+            if ($LASTEXITCODE -eq 0) { return @{ File = $candidate; Prefix = @() } }
+        }
+    }
     throw "A working Python 3 runtime was not found."
 }
 
@@ -157,6 +166,9 @@ if (!(Test-Path -LiteralPath $BuildHobbyTags)) { throw "Hobby tag builder not fo
 if (!(Test-Path -LiteralPath $BuildGallery)) { throw "Gallery builder not found: $BuildGallery" }
 if (!(Test-Path -LiteralPath $AddAudioPlayers)) { throw "Audio gallery post-processor not found: $AddAudioPlayers" }
 
+$PythonRuntime = Get-PythonCommand
+$env:BELL_PYTHON = $PythonRuntime.File
+
 Invoke-Checked git.exe -C $RepoRoot rev-parse --is-inside-work-tree | Out-Null
 if (!(Test-RepoClean)) {
     Write-Host "Current tracked repository changes:"
@@ -216,7 +228,7 @@ if (Test-Path -LiteralPath $originalsPath) {
     Remove-Item -LiteralPath $originalsPath -Recurse -Force
 }
 
-$py = Get-PythonCommand
+$py = $PythonRuntime
 Write-Host "[6/9] Rebuilding photo_metadata.json from DigiKam/master photos, videos, and audio..."
 $metadataArgs = @($BuildMetadata)
 if ($FullAudit) { $metadataArgs += '--full-audit' }
