@@ -403,7 +403,7 @@ for ($i=0; $i -lt $files.Count; $i += 50) {
         $rows.Add([pscustomobject]@{
             SourcePath=$file.FullName
             RelativePath=$relative
-            DestinationPath=$dest
+            DestinationPath=(Join-Path 'videos' $relative)
             FileName=[System.IO.Path]::GetFileName($relative)
             Date=(Join-MetadataValues $record @('DateTimeOriginal','CreateDate'))
             People=(Join-MetadataValues $record @('PersonInImage','RegionPersonDisplayName'))
