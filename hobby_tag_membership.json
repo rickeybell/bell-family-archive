@@ -202,6 +202,14 @@
     "images/2001/2001_4_30__Image007.jpg": [
       "Scuba"
     ],
+    "images/2001/Image023.jpg": [
+      "Boating",
+      "Scuba"
+    ],
+    "images/2001/Image025.jpg": [
+      "Boating",
+      "Scuba"
+    ],
     "images/2001/Image028.jpg": [
       "Boating",
       "Scuba"
@@ -210,7 +218,8 @@
       "Boating",
       "Scuba"
     ],
-    "images/2002/100-0051_IMG.JPG": [
+    "images/2001/Image044.jpg": [
+      "Boating",
       "Scuba"
     ],
     "images/2002/100-0072_IMG.JPG": [
@@ -327,9 +336,6 @@
     "images/2002/115-1572_IMG.JPG": [
       "Scuba"
     ],
-    "images/2002/115-1573_IMG.JPG": [
-      "Scuba"
-    ],
     "images/2002/115-1589_IMG.JPG": [
       "Scuba"
     ],
@@ -339,7 +345,7 @@
     "images/2002/116-1609_IMG.JPG": [
       "Scuba"
     ],
-    "images/2002/116-1610_IMG.JPG": [
+    "images/2002/116-1618_IMG.JPG": [
       "Scuba"
     ],
     "images/2002/116-1641_IMG.JPG": [
@@ -349,6 +355,9 @@
       "Scuba"
     ],
     "images/2002/117-1729_IMG.JPG": [
+      "Scuba"
+    ],
+    "images/2002/117-1737_IMG.JPG": [
       "Scuba"
     ],
     "images/2002/117-1741_IMG.JPG": [
@@ -516,6 +525,9 @@
     "images/2003/Cozumel Dive 3 007copy.jpg": [
       "Scuba"
     ],
+    "images/2003/Cozumel Dive 3 012copy.jpg": [
+      "Scuba"
+    ],
     "images/2003/Cozumel Dive 4 018copy.jpg": [
       "Scuba"
     ],
@@ -590,6 +602,21 @@
     "images/2005/PC310002.JPG": [
       "Boating"
     ],
+    "images/2008/043.JPG": [
+      "Boating"
+    ],
+    "images/2008/044.JPG": [
+      "Boating"
+    ],
+    "images/2008/051.JPG": [
+      "Boating"
+    ],
+    "images/2010/012-2 (1).jpg": [
+      "Boating"
+    ],
+    "images/2014/20141129_183941954_iOS.jpg": [
+      "Boating"
+    ],
     "images/2015/IMG_2629.JPG": [
       "Boating"
     ],
@@ -601,6 +628,9 @@
     ],
     "images/2019/20190830_152945.jpg": [
       "Shooting"
+    ],
+    "images/2019/20191102_110553.jpg": [
+      "Boating"
     ],
     "images/2019/IMG_4059.JPEG": [
       "Boating"
@@ -714,9 +744,6 @@
       "Camping"
     ],
     "images/2023/20231124_183640.jpg": [
-      "Camping"
-    ],
-    "images/2023/20231124_183647.jpg": [
       "Camping"
     ],
     "images/2023/Screenshot_20230224_185255_Photos~2.jpg": [
@@ -945,6 +972,12 @@
     "videos/2002/115-1595_MVI.mp4": [
       "Scuba"
     ],
+    "videos/2016/20160805_211243000_iOS.mp4": [
+      "Boating"
+    ],
+    "videos/2020/20200320_192039.mp4": [
+      "Shooting"
+    ],
     "videos/2020/20201108_135400.mp4": [
       "Off-Roading"
     ],
@@ -1007,19 +1040,19 @@
     ]
   },
   "taggedCounts": {
-    "Aviation": 927,
-    "Scuba": 1144,
-    "Shooting": 133,
-    "Boating": 450,
+    "Aviation": 1197,
+    "Scuba": 1173,
+    "Shooting": 141,
+    "Boating": 1357,
     "Off-Roading": 313,
-    "Camping": 111
+    "Camping": 181
   },
   "publicCounts": {
     "Aviation": 106,
-    "Scuba": 136,
-    "Shooting": 17,
-    "Boating": 35,
+    "Scuba": 139,
+    "Shooting": 18,
+    "Boating": 45,
     "Off-Roading": 21,
-    "Camping": 23
+    "Camping": 22
   }
 }
