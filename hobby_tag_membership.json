@@ -701,6 +701,9 @@
     "images/2023/20230903_193620.jpg": [
       "Aviation"
     ],
+    "images/2023/20230916_111836.jpg": [
+      "Aviation"
+    ],
     "images/2023/20231020_102913.jpg": [
       "Camping"
     ],
@@ -749,10 +752,10 @@
     "images/2024/20240314_121948.jpg": [
       "Aviation"
     ],
-    "images/2024/20240418_164559.jpg": [
+    "images/2024/20240423_204429.jpg": [
       "Aviation"
     ],
-    "images/2024/20240423_204429.jpg": [
+    "images/2024/20240427_110633.jpg": [
       "Aviation"
     ],
     "images/2024/20240502_135244-edited.jpg": [
@@ -762,6 +765,12 @@
       "Aviation"
     ],
     "images/2024/20240504_114434.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240504_120027.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240504_120033.jpg": [
       "Aviation"
     ],
     "images/2024/20240504_151012-edited.jpg": [
@@ -843,6 +852,9 @@
       "Aviation"
     ],
     "images/2025/20250126_192816.jpg": [
+      "Aviation"
+    ],
+    "images/2025/20250311_191258.jpg": [
       "Aviation"
     ],
     "images/2025/20250322_141239.jpg": [
@@ -972,6 +984,9 @@
     "videos/2025/20250902_154833.mp4": [
       "Shooting"
     ],
+    "videos/2025/20251005_143210.mp4": [
+      "Aviation"
+    ],
     "videos/2025/20251120_085834.mp4": [
       "Shooting"
     ],
@@ -986,6 +1001,9 @@
     ],
     "videos/2025/Coyote 2025.mp4": [
       "Shooting"
+    ],
+    "videos/2025/dji_fly_20250420_182626_248_1745191826390_video.mp4": [
+      "Aviation"
     ]
   },
   "taggedCounts": {
@@ -997,7 +1015,7 @@
     "Camping": 111
   },
   "publicCounts": {
-    "Aviation": 100,
+    "Aviation": 106,
     "Scuba": 136,
     "Shooting": 17,
     "Boating": 35,

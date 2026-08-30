@@ -43555,6 +43555,38 @@
     }
   },
   {
+    "path": "images/2023/20230916_111836.jpg",
+    "media_type": "photo",
+    "file": "20230916_111836.jpg",
+    "folder": "2023",
+    "date": "2023-09-16",
+    "people": [
+      "Mike Morgan",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Avation",
+      "Hobbies/Avation",
+      "Hobbies|Avation",
+      "Mike Morgan",
+      "People/Mike Morgan",
+      "People/Rickey Bell",
+      "People|Mike Morgan",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": {
+      "lat": 35.5399761836111,
+      "lon": -81.3718161833333
+    }
+  },
+  {
     "path": "images/2023/Screenshot_20230928_202417_Facebook-edited.jpg",
     "media_type": "photo",
     "file": "Screenshot_20230928_202417_Facebook-edited.jpg",
@@ -43971,29 +44003,6 @@
     "gps": null
   },
   {
-    "path": "images/2024/20240418_164559.jpg",
-    "media_type": "photo",
-    "file": "20240418_164559.jpg",
-    "folder": "2024",
-    "date": "2024-04-18",
-    "people": [],
-    "tags": [
-      "Avation",
-      "Hobbies/Avation",
-      "Hobbies|Avation"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": {
-      "lat": 33.0228630002778,
-      "lon": -81.1166536002778
-    }
-  },
-  {
     "path": "images/2024/20240423_204429.jpg",
     "media_type": "photo",
     "file": "20240423_204429.jpg",
@@ -44017,6 +44026,29 @@
     "gps": {
       "lat": 34.7146022997222,
       "lon": -80.8208628
+    }
+  },
+  {
+    "path": "images/2024/20240427_110633.jpg",
+    "media_type": "photo",
+    "file": "20240427_110633.jpg",
+    "folder": "2024",
+    "date": "2024-04-27",
+    "people": [],
+    "tags": [
+      "Avation",
+      "Hobbies/Avation",
+      "Hobbies|Avation"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": {
+      "lat": 34.7847118833333,
+      "lon": -79.8427649836111
     }
   },
   {
@@ -44118,6 +44150,58 @@
     "gps": {
       "lat": 26.5530917833333,
       "lon": -78.5019436833333
+    }
+  },
+  {
+    "path": "images/2024/20240504_120027.jpg",
+    "media_type": "photo",
+    "file": "20240504_120027.jpg",
+    "folder": "2024",
+    "date": "2024-05-04",
+    "people": [],
+    "tags": [
+      "Avation",
+      "Bahamas",
+      "Hobbies/Avation",
+      "Hobbies|Avation",
+      "Places/Bahamas",
+      "Places|Bahamas"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Bahamas",
+    "country": "",
+    "gps": {
+      "lat": 26.5397847833333,
+      "lon": -78.0041361833333
+    }
+  },
+  {
+    "path": "images/2024/20240504_120033.jpg",
+    "media_type": "photo",
+    "file": "20240504_120033.jpg",
+    "folder": "2024",
+    "date": "2024-05-04",
+    "people": [],
+    "tags": [
+      "Avation",
+      "Bahamas",
+      "Hobbies/Avation",
+      "Hobbies|Avation",
+      "Places/Bahamas",
+      "Places|Bahamas"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Bahamas",
+    "country": "",
+    "gps": {
+      "lat": 26.5397223833333,
+      "lon": -78.0016224833333
     }
   },
   {
@@ -45046,6 +45130,32 @@
     "gps": null
   },
   {
+    "path": "images/2025/20250311_191258.jpg",
+    "media_type": "photo",
+    "file": "20250311_191258.jpg",
+    "folder": "2025",
+    "date": "2025-03-11",
+    "people": [],
+    "tags": [
+      "Avation",
+      "Hobbies/Avation",
+      "Hobbies|Avation",
+      "Myrtle Beach",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 33.600374,
+      "lon": -78.9756306827778
+    }
+  },
+  {
     "path": "images/2025/20250322_141239.jpg",
     "media_type": "photo",
     "file": "20250322_141239.jpg",
@@ -45134,6 +45244,30 @@
       "lat": 34.7196,
       "lon": -80.7711
     }
+  },
+  {
+    "path": "videos/2025/dji_fly_20250420_182626_248_1745191826390_video.mp4",
+    "media_type": "video",
+    "file": "dji_fly_20250420_182626_248_1745191826390_video.mp4",
+    "folder": "2025",
+    "date": "2025-04-20",
+    "people": [],
+    "tags": [
+      "Airport",
+      "Avation",
+      "Hobbies/Avation",
+      "Hobbies|Avation",
+      "Places/South Carolina/Lancaster County/Airport",
+      "Places|South Carolina|Lancaster County|Airport",
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Airport",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
   },
   {
     "path": "images/2025/20250506_210255.jpg",
@@ -45593,6 +45727,27 @@
     "gps": {
       "lat": 34.6932608838889,
       "lon": -80.8253173997222
+    }
+  },
+  {
+    "path": "videos/2025/20251005_143210.mp4",
+    "media_type": "video",
+    "file": "20251005_143210.mp4",
+    "folder": "2025",
+    "date": "2025-10-05",
+    "people": [],
+    "tags": [
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": {
+      "lat": 34.7963,
+      "lon": -81.4303
     }
   },
   {
