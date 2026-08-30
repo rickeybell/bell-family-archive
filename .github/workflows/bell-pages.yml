@@ -43,15 +43,11 @@ jobs:
               -name '.nojekyll' \
             \) -exec cp -p {} _site/ \;
 
-          # Thumbnails and browser-safe media remain in the Pages artifact.
-          # Full photo views and high-resolution downloads are served directly
-          # from the same GitHub repository to keep the Pages package below 1 GB.
+          # Thumbnails and tiny audio files remain in the Pages artifact.
+          # Full photo views, high-resolution downloads, and browser-safe videos
+          # are served directly from the repository to keep Pages well below 1 GB.
           if [ -d thumbs ]; then
             cp -a thumbs _site/thumbs
-          fi
-
-          if [ -d videos ]; then
-            cp -a videos _site/videos
           fi
 
           if [ -d audio ]; then
@@ -67,8 +63,8 @@ jobs:
             cp -a tree_thumbs _site/tree_thumbs
           fi
 
-          # Rewrite full photo views and high-resolution download links so
-          # deployed pages fetch them directly from the GitHub repository.
+          # Rewrite full photo views, downloads, and video links so deployed
+          # pages fetch them directly from the GitHub repository.
           python3 - <<'PY'
           from pathlib import Path
           import json
@@ -92,7 +88,7 @@ jobs:
 
               # Covers ordinary src/href values plus the inline gallery JSON.
               text = re.sub(
-                  r'(["\'])((?:highres|images)/[^"\']+)\1',
+                  r'(["\'])((?:highres|images|videos)/[^"\']+)\1',
                   repl_repo_media,
                   text,
                   flags=re.IGNORECASE
@@ -104,7 +100,7 @@ jobs:
               records = json.loads(metadata_path.read_text(encoding="utf-8-sig"))
               for record in records:
                   path = str(record.get("path", ""))
-                  if path.lower().startswith("images/"):
+                  if path.lower().startswith(("images/", "videos/")):
                       record["path"] = raw_url(path)
               metadata_path.write_text(
                   json.dumps(records, ensure_ascii=False, separators=(",", ":")),
