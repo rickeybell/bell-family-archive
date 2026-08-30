@@ -50,13 +50,18 @@ function Get-PythonCommand {
 function Get-FFmpegToolPath {
     param([Parameter(Mandatory=$true)][string]$ToolName)
     $exe = "$ToolName.exe"
+    if ($env:BELL_FFMPEG_DIR) {
+        $configured = Join-Path $env:BELL_FFMPEG_DIR $exe
+        if (Test-Path -LiteralPath $configured) { return $configured }
+    }
     $cmd = Get-Command $exe -ErrorAction SilentlyContinue
     if ($cmd) { return $cmd.Source }
 
     $candidates = @(
         "C:\ffmpeg\bin\$exe",
         "C:\Program Files\ffmpeg\bin\$exe",
-        "C:\Program Files (x86)\ffmpeg\bin\$exe"
+        "C:\Program Files (x86)\ffmpeg\bin\$exe",
+        "C:\Program Files\Telemetry Overlay\resources\static\$exe"
     )
     foreach ($candidate in $candidates) {
         if (Test-Path -LiteralPath $candidate) { return $candidate }
