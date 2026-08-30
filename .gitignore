@@ -18,6 +18,9 @@ Sync-BellWebsitePhotos-v3.2.ps1
 # Generated local website test output
 website-test-*/
 
+# Retired full-resolution website copies
+originals/
+
 # Generated Python bytecode
 __pycache__/
 *.pyc
