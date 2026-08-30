@@ -5483,9 +5483,9 @@
     "gps": null
   },
   {
-    "path": "images/1968/Debbie from Facebook.jpg",
+    "path": "images/1968/Debbie from Facebook-Alien.jpg",
     "media_type": "photo",
-    "file": "Debbie from Facebook.jpg",
+    "file": "Debbie from Facebook-Alien.jpg",
     "folder": "1968",
     "date": "1968-01-01",
     "people": [
@@ -5694,6 +5694,28 @@
     "gps": null
   },
   {
+    "path": "images/1968/Debbie from Facebook.jpg",
+    "media_type": "photo",
+    "file": "Debbie from Facebook.jpg",
+    "folder": "1968",
+    "date": "1970-01-01",
+    "people": [
+      "Debbie Phillips"
+    ],
+    "tags": [
+      "Debbie Phillips",
+      "People/Debbie Phillips",
+      "People|Debbie Phillips"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/1970/1112_0023_a.jpg",
     "media_type": "photo",
     "file": "1112_0023_a.jpg",
@@ -5849,6 +5871,28 @@
       "People|Tony Neely",
       "Tim Neely",
       "Tony Neely"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1972/1112_0015_a.jpg",
+    "media_type": "photo",
+    "file": "1112_0015_a.jpg",
+    "folder": "1972",
+    "date": "1970-01-01",
+    "people": [
+      "Spooky Bell"
+    ],
+    "tags": [
+      "People/Spooky Bell",
+      "People|Spooky Bell",
+      "Spooky Bell"
     ],
     "title": "",
     "description": "",
@@ -6253,9 +6297,9 @@
     "gps": null
   },
   {
-    "path": "images/1972/1112_0015_a.jpg",
+    "path": "images/1972/1112_0015_a-Alien.jpg",
     "media_type": "photo",
-    "file": "1112_0015_a.jpg",
+    "file": "1112_0015_a-Alien.jpg",
     "folder": "1972",
     "date": "1972-01-01",
     "people": [
