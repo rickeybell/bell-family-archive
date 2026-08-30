@@ -14,6 +14,7 @@ $RepoRoot = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive"
 $AudioRoot = Join-Path $RepoRoot "audio"
 $ManifestCsv = Join-Path $RepoRoot "website-audio-manifest.csv"
 $DbHelper = Join-Path $RepoRoot "tools\build_audio_manifest_from_digikam.py"
+$GreenSyncHelper = Join-Path $RepoRoot "tools\ensure_website_green_in_digikam.py"
 
 function Get-PythonCommand {
     if ($env:BELL_PYTHON -and (Test-Path -LiteralPath $env:BELL_PYTHON)) { return $env:BELL_PYTHON }
@@ -34,7 +35,12 @@ foreach ($sourceRoot in $SourceRoots) {
     if (!(Test-Path -LiteralPath $sourceRoot)) { throw "Source folder does not exist: $sourceRoot" }
 }
 if (!(Test-Path -LiteralPath $DbHelper)) { throw "DigiKam audio helper not found: $DbHelper" }
+if (!(Test-Path -LiteralPath $GreenSyncHelper)) { throw "digiKam green-label helper not found: $GreenSyncHelper" }
 $python = Get-PythonCommand
+$greenArgs = @($GreenSyncHelper)
+if ($DryRun) { $greenArgs += '--dry-run' }
+& $python @greenArgs
+if ($LASTEXITCODE -ne 0) { throw "Could not synchronize Website tags to digiKam green labels." }
 
 Write-Host ""
 Write-Host "Bell Family Archive Website Audio Sync v$ScriptVersion"
@@ -42,7 +48,7 @@ Write-Host "Sources:"
 foreach ($sourceRoot in $SourceRoots) { Write-Host "  $sourceRoot" }
 Write-Host "Destination: $AudioRoot"
 Write-Host "Metadata source: DigiKam database"
-Write-Host "Publish rule: current digiKam Website tag + Green color label"
+Write-Host "Publish rule: current digiKam Website tag (green label assigned automatically)"
 Write-Host "Archive type: Sound"
 Write-Host "Years: $FromYear through $ToYear"
 Write-Host "Decade placeholders: ignored"
@@ -59,7 +65,7 @@ if ($DryRun) {
 try {
     $helperArgs = @($DbHelper)
     foreach ($sourceRoot in $SourceRoots) { $helperArgs += @('--source-root', $sourceRoot) }
-    $helperArgs += @('--require-green', '--output', $manifestForRun, '--from-year', $FromYear, '--to-year', $ToYear)
+    $helperArgs += @('--output', $manifestForRun, '--from-year', $FromYear, '--to-year', $ToYear)
     & $python @helperArgs
     if ($LASTEXITCODE -ne 0) { throw "DigiKam audio manifest builder failed (exit $LASTEXITCODE)." }
     if (!(Test-Path -LiteralPath $manifestForRun)) { throw "Audio manifest was not created: $manifestForRun" }

@@ -26,7 +26,6 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source-root", action="append", required=True)
     parser.add_argument("--output", required=True)
-    parser.add_argument("--require-green", action="store_true")
     args = parser.parse_args()
 
     roots = [pathlib.Path(value).resolve() for value in args.source_root]
@@ -44,12 +43,6 @@ def main() -> int:
             raise SystemExit(f"No digiKam album root label matches collection folder {root.name!r}")
         configured[root_id] = root
 
-    green_clause = """
-          AND EXISTS (
-              SELECT 1 FROM ImageTags ig JOIN Tags tg ON tg.id=ig.tagid
-              WHERE ig.imageid=i.id AND lower(tg.name)='color label green'
-          )
-    """ if args.require_green else ""
     website_rows = connection.execute(
         """
         SELECT DISTINCT a.albumRoot,a.relativePath,i.name
@@ -61,9 +54,8 @@ def main() -> int:
               SELECT 1 FROM ImageTags it JOIN Tags t ON t.id=it.tagid
               WHERE it.imageid=i.id AND lower(t.name)='website'
           )
-          {}
         ORDER BY a.albumRoot,a.relativePath,i.name
-        """.format(",".join("?" for _ in configured), green_clause),
+        """.format(",".join("?" for _ in configured)),
         tuple(configured),
     ).fetchall()
     connection.close()

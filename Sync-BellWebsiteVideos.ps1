@@ -12,6 +12,7 @@ $ErrorActionPreference = "Stop"
 $ScriptVersion = "2.3"
 $RepoRoot = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive"
 $DbSourceHelper = Join-Path $RepoRoot "tools\list_website_sources_from_digikam.py"
+$GreenSyncHelper = Join-Path $RepoRoot "tools\ensure_website_green_in_digikam.py"
 $VideoRoot = Join-Path $RepoRoot "videos"
 $ManifestCsv = Join-Path $RepoRoot "website-video-manifest.csv"
 $PublishTag = "Website"
@@ -218,11 +219,16 @@ foreach ($sourceRoot in $SourceRoots) {
     if (!(Test-Path -LiteralPath $sourceRoot)) { throw "Source folder does not exist: $sourceRoot" }
 }
 if (!(Test-Path -LiteralPath $DbSourceHelper)) { throw "digiKam Website-source helper not found: $DbSourceHelper" }
+if (!(Test-Path -LiteralPath $GreenSyncHelper)) { throw "digiKam green-label helper not found: $GreenSyncHelper" }
 $python = Get-PythonCommand
+$greenArgs = @($GreenSyncHelper)
+if ($DryRun) { $greenArgs += '--dry-run' }
+& $python @greenArgs
+if ($LASTEXITCODE -ne 0) { throw "Could not synchronize Website tags to digiKam green labels." }
 $websiteSourceJson = Join-Path $env:TEMP ("bell-website-video-sources-" + [guid]::NewGuid().ToString("N") + ".json")
 $helperArgs = @($DbSourceHelper)
 foreach ($sourceRoot in $SourceRoots) { $helperArgs += @('--source-root', $sourceRoot) }
-$helperArgs += @('--require-green', '--output', $websiteSourceJson)
+$helperArgs += @('--output', $websiteSourceJson)
 & $python @helperArgs
 if ($LASTEXITCODE -ne 0 -or !(Test-Path -LiteralPath $websiteSourceJson)) { throw "Could not read current Website tags from digiKam." }
 $sourceData = Get-Content -LiteralPath $websiteSourceJson -Raw | ConvertFrom-Json
@@ -242,7 +248,7 @@ Write-Host "Sources:"
 foreach ($sourceRoot in $SourceRoots) { Write-Host "  $sourceRoot" }
 Write-Host "Destination: $VideoRoot"
 Write-Host "Years: $FromYear through $ToYear"
-Write-Host "Publish rule: current digiKam Website tag + Green color label"
+Write-Host "Publish rule: current digiKam Website tag (green label assigned automatically)"
 Write-Host "Decade placeholders: ignored"
 Write-Host "Website format: MP4 / H.264 / AAC / yuv420p / faststart"
 Write-Host "GitHub file limit guard: website videos at or below $([math]::Round($MaxGitHubVideoBytes/1MB)) MB"

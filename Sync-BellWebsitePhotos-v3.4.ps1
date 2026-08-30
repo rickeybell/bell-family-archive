@@ -229,7 +229,7 @@ $python = Get-PythonCommand
 $websiteSourceJson = Join-Path $env:TEMP ("bell-website-photo-sources-" + [guid]::NewGuid().ToString("N") + ".json")
 $helperArgs = @($DbSourceHelper)
 foreach ($sourceRoot in $SourceRoots) { $helperArgs += @('--source-root', $sourceRoot) }
-$helperArgs += @('--require-green', '--output', $websiteSourceJson)
+$helperArgs += @('--output', $websiteSourceJson)
 & $python @helperArgs
 if ($LASTEXITCODE -ne 0 -or !(Test-Path -LiteralPath $websiteSourceJson)) { throw "Could not read current Website tags from digiKam." }
 $sourceData = Get-Content -LiteralPath $websiteSourceJson -Raw | ConvertFrom-Json
@@ -244,7 +244,7 @@ $PublishedRows=New-Object "System.Collections.Generic.List[object]"
 $PublishedDestinations=New-Object "System.Collections.Generic.HashSet[string]" ([System.StringComparer]::OrdinalIgnoreCase)
 $PublishedSourceByDestination=@{}
 $stats=[ordered]@{Scanned=0;ExcludedFolders=0;MetadataRead=0;UnchangedSkipped=0;PublishedNew=0;PublishedUpdated=0;PublishedAlreadyCurrent=0;Unpublished=0;Orphans=0;OrphansReferenced=0;OrphansUnreferenced=0;Errors=0}
-Write-Host "`nBell Family Archive Website Photo Sync v$ScriptVersion";Write-Host "Sources:";foreach($sourceRoot in $SourceRoots){Write-Host "  $sourceRoot"};Write-Host "Destination: $DestRoot";Write-Host "Publish rule: current digiKam Website tag + Green color label";Write-Host "Non-year masters: metadata year fallback";if($DryRun){Write-Host "*** DRY RUN - NO FILES WILL BE COPIED OR DELETED ***"};Write-Host ""
+Write-Host "`nBell Family Archive Website Photo Sync v$ScriptVersion";Write-Host "Sources:";foreach($sourceRoot in $SourceRoots){Write-Host "  $sourceRoot"};Write-Host "Destination: $DestRoot";Write-Host "Publish rule: current digiKam Website tag (green label assigned automatically)";Write-Host "Non-year masters: metadata year fallback";if($DryRun){Write-Host "*** DRY RUN - NO FILES WILL BE COPIED OR DELETED ***"};Write-Host ""
 $batch=New-Object 'System.Collections.Generic.List[System.IO.FileInfo]'
 $filesToScan = @(
     foreach ($sourcePath in $sourceData.website_sources) {

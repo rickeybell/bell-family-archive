@@ -9,6 +9,7 @@ param(
 $ScriptVersion = "3.9"
 $RepoRoot = "C:\Users\rbell\OneDrive\Documents\GitHub\bell-family-archive"
 $V36 = Join-Path $RepoRoot "Sync-BellWebsitePhotos-v3.6.ps1"
+$GreenSyncHelper = Join-Path $RepoRoot "tools\ensure_website_green_in_digikam.py"
 $ManifestCsv = Join-Path $RepoRoot "website-photo-manifest.csv"
 $OldTestRoot = Join-Path $RepoRoot "website-test-v36"
 $OutputRoot = if ($Live) { $RepoRoot } else { Join-Path $RepoRoot "website-test-v38" }
@@ -28,6 +29,18 @@ function Get-ExifToolPath {
         if (Test-Path -LiteralPath $candidate) { return $candidate }
     }
     throw "ExifTool was not found."
+}
+
+function Get-PythonCommand {
+    if ($env:BELL_PYTHON -and (Test-Path -LiteralPath $env:BELL_PYTHON)) { return $env:BELL_PYTHON }
+    foreach ($name in @("python.exe", "py.exe")) {
+        $command = Get-Command $name -ErrorAction SilentlyContinue
+        if ($command) {
+            & $command.Source --version *> $null
+            if ($LASTEXITCODE -eq 0) { return $command.Source }
+        }
+    }
+    throw "A working Python 3 runtime was not found."
 }
 
 function Test-DecadePlaceholderPath {
@@ -114,12 +127,20 @@ function Copy-GenealogyMetadata {
 }
 
 if (!(Test-Path -LiteralPath $V36)) { throw "v3.6 script not found: $V36" }
+if (!(Test-Path -LiteralPath $GreenSyncHelper)) { throw "digiKam green-label helper not found: $GreenSyncHelper" }
+
+$python = Get-PythonCommand
+$greenArgs = @($GreenSyncHelper)
+if ($DryRun) { $greenArgs += '--dry-run' }
+& $python @greenArgs
+if ($LASTEXITCODE -ne 0) { throw "Could not synchronize Website tags to digiKam green labels." }
 
 Write-Host ""
 Write-Host "Bell Family Archive Website Photo Generator v$ScriptVersion"
 Write-Host "Years: $FromYear through $ToYear"
 Write-Host "Output: $(if($Live){'LIVE'}else{'website-test-v38'})"
 Write-Host "Public derivatives: thumbs + images + highres"
+Write-Host "Publish rule: Website tag only; green label assigned automatically"
 Write-Host "Decade placeholders: ignored"
 Write-Host ""
 

@@ -114,7 +114,6 @@ def main():
     ap.add_argument('--output',required=True)
     ap.add_argument('--from-year',type=int,default=0)
     ap.add_argument('--to-year',type=int,default=9999)
-    ap.add_argument('--require-green',action='store_true')
     args=ap.parse_args()
     source_roots=[pathlib.Path(value).resolve() for value in args.source_root]
     out=pathlib.Path(args.output)
@@ -164,7 +163,6 @@ def main():
             leaves=[p.replace('\\','/').split('/')[-1].strip() for p in paths]
             if not any(x.lower()=='website' for x in leaves): continue
             website+=1
-            if args.require_green and not any(x.lower()=='color label green' for x in leaves): continue
 
             source_root=owning_root(chosen,source_roots)
             source_rel=chosen.relative_to(source_root).as_posix()
