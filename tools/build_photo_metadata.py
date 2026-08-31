@@ -57,7 +57,7 @@ def item_signature(item):
     row=item["row"]
     state={"source":str(item["src"]),"type":item["media_type"],
            "length":str(row.get("Length") or ""),"mtime":str(row.get("LastWriteUtc") or "")}
-    if item["media_type"]=="audio": state["manifest"]=row
+    if item["media_type"] in ("video","audio"): state["manifest"]=row
     return hashlib.sha256(json.dumps(state,sort_keys=True).encode('utf-8')).hexdigest()
 
 for item in rows:
@@ -156,6 +156,9 @@ for item in rows:
         if date: date=str(date).replace(":","-",2).split(" ")[0]
         elif re.fullmatch(r"\d{4}",folder): date=folder
         tags=tags_for(m)
+        if media_type=="video":
+            for tag in split_manifest(manifest.get("Tags")):
+                if tag not in tags: tags.append(tag)
         required_tag={"video":"Video"}.get(media_type)
         if required_tag and not any(re.split(r"[|/\\]",t)[-1].strip().lower()==required_tag.lower() for t in tags): tags.append(required_tag)
         people=[]
@@ -170,6 +173,9 @@ for item in rows:
             for name in v or []:
                 name=str(name).strip()
                 if name and name not in people: people.append(name)
+        if media_type=="video":
+            for name in split_manifest(manifest.get("People")):
+                if name not in people: people.append(name)
         loc=first(m,"Location","Sublocation","Sub-location");city=first(m,"City");state=first(m,"State","Province-State");country=first(m,"Country","Country-PrimaryLocationName")
         tl,tc,ts,tco=place_from_tags(tags);loc=loc or tl;city=city or tc;state=state or ts;country=country or tco
         gps={"lat":m.get("GPSLatitude"),"lon":m.get("GPSLongitude")} if m.get("GPSLatitude") is not None and m.get("GPSLongitude") is not None else None

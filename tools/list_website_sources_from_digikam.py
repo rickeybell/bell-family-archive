@@ -52,7 +52,7 @@ def main() -> int:
 
     website_rows = connection.execute(
         """
-        SELECT DISTINCT a.albumRoot,a.relativePath,i.name
+        SELECT DISTINCT i.id,a.albumRoot,a.relativePath,i.name
         FROM Images i
         JOIN Albums a ON a.id=i.album
         WHERE i.status=1
@@ -65,13 +65,38 @@ def main() -> int:
         """.format(",".join("?" for _ in configured)),
         tuple(configured),
     ).fetchall()
+    tag_rows = connection.execute("SELECT id,pid,name FROM Tags").fetchall()
+    tag_by_id = {int(tag_id): (int(parent_id), str(name)) for tag_id, parent_id, name in tag_rows}
+
+    def tag_path(tag_id: int) -> str:
+        parts = []
+        seen = set()
+        while tag_id in tag_by_id and tag_id not in seen:
+            seen.add(tag_id)
+            parent_id, name = tag_by_id[tag_id]
+            parts.append(name)
+            tag_id = parent_id
+        return "/".join(reversed(parts))
+
+    tags_by_image = {}
+    image_ids = [int(row[0]) for row in website_rows]
+    for offset in range(0, len(image_ids), 500):
+        batch = image_ids[offset : offset + 500]
+        placeholders = ",".join("?" for _ in batch)
+        for image_id, tag_id in connection.execute(
+            f"SELECT imageid,tagid FROM ImageTags WHERE imageid IN ({placeholders})",
+            batch,
+        ):
+            path = tag_path(int(tag_id))
+            if path:
+                tags_by_image.setdefault(int(image_id), []).append(path)
     connection.close()
 
     paths = []
     items = []
     missing = []
     by_collection = {}
-    for root_id, relative, name in website_rows:
+    for image_id, root_id, relative, name in website_rows:
         root = configured[int(root_id)]
         source = root / str(relative or "").strip("/\\") / str(name)
         normalized = str(source.resolve())
@@ -79,7 +104,8 @@ def main() -> int:
             stat = source.stat()
             paths.append(normalized)
             items.append({"path": normalized, "length": stat.st_size,
-                          "last_write_utc": dotnet_utc_timestamp(stat.st_mtime_ns)})
+                          "last_write_utc": dotnet_utc_timestamp(stat.st_mtime_ns),
+                          "tags": sorted(set(tags_by_image.get(int(image_id), [])))})
             by_collection[root.name] = by_collection.get(root.name, 0) + 1
         else:
             missing.append(normalized)

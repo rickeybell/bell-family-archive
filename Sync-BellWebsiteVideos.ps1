@@ -284,9 +284,14 @@ if ($LASTEXITCODE -ne 0 -or !(Test-Path -LiteralPath $websiteSourceJson)) { thro
 $sourceData = Get-Content -LiteralPath $websiteSourceJson -Raw | ConvertFrom-Json
 Remove-Item -LiteralPath $websiteSourceJson -Force -ErrorAction SilentlyContinue
 $WebsiteSourcePaths = New-Object "System.Collections.Generic.HashSet[string]" ([System.StringComparer]::OrdinalIgnoreCase)
+$WebsiteItemsByPath = @{}
 foreach ($sourcePath in $sourceData.website_sources) {
     try { $normalized = [System.IO.Path]::GetFullPath([string]$sourcePath) } catch { $normalized = [string]$sourcePath }
     [void]$WebsiteSourcePaths.Add(($normalized -replace '/', '\').TrimEnd('\'))
+}
+foreach ($item in @($sourceData.website_items)) {
+    try { $normalized = [System.IO.Path]::GetFullPath([string]$item.path) } catch { $normalized = [string]$item.path }
+    $WebsiteItemsByPath[($normalized -replace '/', '\').TrimEnd('\')] = $item
 }
 $ExifTool = Get-ExifToolPath
 $FFmpeg = Get-FFmpegToolPath 'ffmpeg'
@@ -417,12 +422,22 @@ for ($i=0; $i -lt $files.Count; $i += 50) {
         } else { $current++ }
 
         $tags = Join-MetadataValues $record @('Subject','Keywords','HierarchicalSubject')
+        $databaseItem = $WebsiteItemsByPath[$file.FullName.TrimEnd('\')]
+        $tagValues = @($tags -split ';')
+        if ($databaseItem -and $databaseItem.PSObject.Properties.Name -contains 'tags') {
+            $tagValues += @($databaseItem.tags)
+        }
         $cleanTags = @()
-        foreach ($t in ($tags -split ';')) {
+        $people = @((Join-MetadataValues $record @('PersonInImage','RegionPersonDisplayName')) -split ';')
+        foreach ($t in $tagValues) {
             $t=$t.Trim(); if(!$t){continue}
-            $leaf=($t -split '[|/]')[-1].Trim()
+            $normalizedTag = ($t -replace '\\','/' -replace '\|','/').Trim('/')
+            if ($normalizedTag -match '^_Digikam_Internal_Tags_(/|$)') { continue }
+            $parts = @($normalizedTag -split '/')
+            $leaf=$parts[-1].Trim()
             if($t -ieq $PublishTag -or $leaf -ieq $PublishTag){continue}
             $cleanTags += $t
+            if ($parts.Count -ge 2 -and $parts[0] -ieq 'People' -and $leaf) { $people += $leaf }
         }
         $rows.Add([pscustomobject]@{
             SourcePath=$file.FullName
@@ -430,7 +445,7 @@ for ($i=0; $i -lt $files.Count; $i += 50) {
             DestinationPath=(Join-Path 'videos' $relative)
             FileName=[System.IO.Path]::GetFileName($relative)
             Date=(Join-MetadataValues $record @('DateTimeOriginal','CreateDate'))
-            People=(Join-MetadataValues $record @('PersonInImage','RegionPersonDisplayName'))
+            People=(($people | ForEach-Object { $_.Trim() } | Where-Object { $_ } | Select-Object -Unique) -join '; ')
             Title=(Join-MetadataValues $record @('Title'))
             Description=(Join-MetadataValues $record @('Caption-Abstract','Description'))
             Tags=(($cleanTags | Select-Object -Unique) -join '; ')
