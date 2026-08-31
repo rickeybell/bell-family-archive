@@ -12438,9 +12438,14 @@
     "file": "1980s_0106_a.jpg",
     "folder": "1980",
     "date": "1980-01-01",
-    "people": [],
+    "people": [
+      "Heather Bell"
+    ],
     "tags": [
       "109 Fairview Dr",
+      "Heather Bell",
+      "People/Heather Bell",
+      "People|Heather Bell",
       "Places/South Carolina/Lancaster County/109 Fairview Dr",
       "Places|South Carolina|Lancaster County|109 Fairview Dr"
     ],
@@ -13191,13 +13196,17 @@
     "folder": "1980",
     "date": "1980-01-01",
     "people": [
-      "Alma Bell"
+      "Alma Bell",
+      "Barbra Adams"
     ],
     "tags": [
       "Alma Bell",
+      "Barbra Adams",
       "Lancaster County",
       "People/Alma Bell",
+      "People/Barbra Adams",
       "People|Alma Bell",
+      "People|Barbra Adams",
       "Places/South Carolina/Lancaster County",
       "Places|South Carolina|Lancaster County"
     ],
@@ -13764,17 +13773,21 @@
     "folder": "1982",
     "date": "1982-01-01",
     "people": [
-      "Heather Bell"
+      "Heather Bell",
+      "Rickey Bell"
     ],
     "tags": [
       "Heather Bell",
       "Knoxville",
       "People/Heather Bell",
+      "People/Rickey Bell",
       "People|Heather Bell",
+      "People|Rickey Bell",
       "Places/Tennessee",
       "Places/Tennessee/Knoxville",
       "Places|Tennessee",
       "Places|Tennessee|Knoxville",
+      "Rickey Bell",
       "Tennessee"
     ],
     "title": "1982 Worlds Fair",
@@ -29377,10 +29390,15 @@
     "file": "104-0431_MVI.mp4",
     "folder": "2002",
     "date": "2002-05-26",
-    "people": [],
+    "people": [
+      "Gray Taylor",
+      "Mickey Morgan"
+    ],
     "tags": [
       "Hobbies/Boating",
       "Hobbies/Scuba",
+      "People/Gray Taylor",
+      "People/Mickey Morgan",
       "Places/South Carolina/Myrtle Beach",
       "Video"
     ],
@@ -35215,8 +35233,13 @@
     "file": "2003_12_28 028.mp4",
     "folder": "2003",
     "date": "2003-12-25",
-    "people": [],
+    "people": [
+      "Jarred Bell",
+      "Samatha Bell"
+    ],
     "tags": [
+      "People/Jarred Bell",
+      "People/Samatha Bell",
       "Places/South Carolina/Lancaster County/900 Confederate Ave",
       "Video"
     ],
@@ -36863,16 +36886,19 @@
       "Samatha Bell"
     ],
     "tags": [
+      "Crystal River",
       "People/Samatha Bell",
       "People|Samatha Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
       "Samatha Bell"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
     "gps": null
   },
   {
@@ -37379,19 +37405,25 @@
       "Samatha Bell"
     ],
     "tags": [
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
       "Jarred Bell",
+      "Lake Wateree",
       "People/Jarred Bell",
       "People/Samatha Bell",
       "People|Jarred Bell",
       "People|Samatha Bell",
+      "Places/South Carolina/Kershaw/Lake Wateree",
+      "Places|South Carolina|Kershaw|Lake Wateree",
       "Samatha Bell"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "Lake Wateree",
+    "city": "Kershaw",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -37498,18 +37530,26 @@
     "file": "043.JPG",
     "folder": "2008",
     "date": "2008-06-04",
-    "people": [],
+    "people": [
+      "Jarred Bell"
+    ],
     "tags": [
+      "Bear Creek",
       "Boating",
       "Hobbies/Boating",
-      "Hobbies|Boating"
+      "Hobbies|Boating",
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People|Jarred Bell",
+      "Places/South Carolina/Lancaster County/Bear Creek",
+      "Places|South Carolina|Lancaster County|Bear Creek"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "Bear Creek",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -37522,19 +37562,22 @@
       "Samatha Bell"
     ],
     "tags": [
+      "Bear Creek",
       "Boating",
       "Hobbies/Boating",
       "Hobbies|Boating",
       "People/Samatha Bell",
       "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/Bear Creek",
+      "Places|South Carolina|Lancaster County|Bear Creek",
       "Samatha Bell"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "Bear Creek",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -37543,18 +37586,26 @@
     "file": "051.JPG",
     "folder": "2008",
     "date": "2008-06-04",
-    "people": [],
+    "people": [
+      "Samatha Bell"
+    ],
     "tags": [
+      "Bear Creek",
       "Boating",
       "Hobbies/Boating",
-      "Hobbies|Boating"
+      "Hobbies|Boating",
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/Bear Creek",
+      "Places|South Carolina|Lancaster County|Bear Creek",
+      "Samatha Bell"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "Bear Creek",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -37563,18 +37614,26 @@
     "file": "061.JPG",
     "folder": "2008",
     "date": "2008-06-04",
-    "people": [],
+    "people": [
+      "Jarred Bell"
+    ],
     "tags": [
+      "Bear Creek",
       "Boating",
       "Hobbies/Boating",
-      "Hobbies|Boating"
+      "Hobbies|Boating",
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People|Jarred Bell",
+      "Places/South Carolina/Lancaster County/Bear Creek",
+      "Places|South Carolina|Lancaster County|Bear Creek"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "Bear Creek",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -37629,31 +37688,6 @@
     "gps": null
   },
   {
-    "path": "images/2008/FILE0055.JPG",
-    "media_type": "photo",
-    "file": "FILE0055.JPG",
-    "folder": "2008",
-    "date": "2008-09-19",
-    "people": [
-      "Tanisha"
-    ],
-    "tags": [
-      "900 Confederate Ave",
-      "Animal/Tanisha",
-      "Animal|Tanisha",
-      "Places/South Carolina/Lancaster County/900 Confederate Ave",
-      "Places|South Carolina|Lancaster County|900 Confederate Ave",
-      "Tanisha"
-    ],
-    "title": "",
-    "description": "DCIM\\100MEDIA",
-    "location": "900 Confederate Ave",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "videos/2008/FILE0061.mp4",
     "media_type": "video",
     "file": "FILE0061.mp4",
@@ -37703,10 +37737,10 @@
     "gps": null
   },
   {
-    "path": "videos/2008/FILE0102.mp4",
+    "path": "videos/2009/FILE0102.mp4",
     "media_type": "video",
     "file": "FILE0102.mp4",
-    "folder": "2008",
+    "folder": "2009",
     "date": "2008-10-26",
     "people": [
       "Jarred Bell",
@@ -37731,10 +37765,10 @@
     "gps": null
   },
   {
-    "path": "images/2008/FILE0234.JPG",
+    "path": "images/2009/FILE0234.JPG",
     "media_type": "photo",
     "file": "FILE0234.JPG",
-    "folder": "2008",
+    "folder": "2009",
     "date": "2008-12-21",
     "people": [
       "Andrew Morgan"
@@ -37750,6 +37784,31 @@
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2008/FILE0055.JPG",
+    "media_type": "photo",
+    "file": "FILE0055.JPG",
+    "folder": "2008",
+    "date": "2008-12-27",
+    "people": [
+      "Tanisha"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Animal/Tanisha",
+      "Animal|Tanisha",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Tanisha"
+    ],
+    "title": "",
+    "description": "DCIM\\100MEDIA",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -37896,6 +37955,7 @@
       "Rickey Bell"
     ],
     "tags": [
+      "Hobbies/Rescue_Police_EMS",
       "People/Rickey Bell",
       "Video"
     ],
@@ -40214,7 +40274,6 @@
       "Stephanie Bell"
     ],
     "tags": [
-      "900 Confederate Ave",
       "Karen Gaskin",
       "Lancaster County",
       "People/Karen Gaskin",
@@ -40222,14 +40281,12 @@
       "People|Karen Gaskin",
       "People|Stephanie Bell",
       "Places/South Carolina/Lancaster County",
-      "Places/South Carolina/Lancaster County/900 Confederate Ave",
       "Places|South Carolina|Lancaster County",
-      "Places|South Carolina|Lancaster County|900 Confederate Ave",
       "Stephanie Bell"
     ],
     "title": "First 5k Walk",
     "description": "",
-    "location": "900 Confederate Ave",
+    "location": "",
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
@@ -41425,11 +41482,13 @@
     "folder": "2018",
     "date": "2018-03-18",
     "people": [
-      "Jarred Bell"
+      "Jarred Bell",
+      "Rickey Bell"
     ],
     "tags": [
       "Hobbies/Boating",
       "People/Jarred Bell",
+      "People/Rickey Bell",
       "Places/Florida/Crystal River",
       "Video"
     ],
@@ -41451,10 +41510,12 @@
     "folder": "2018",
     "date": "2018-03-18",
     "people": [
+      "Jarred Bell",
       "Rickey Bell"
     ],
     "tags": [
       "Hobbies/Boating",
+      "People/Jarred Bell",
       "People/Rickey Bell",
       "Video"
     ],
@@ -41599,14 +41660,19 @@
     "file": "IMG_3461.JPEG",
     "folder": "2018",
     "date": "2018-12-29",
-    "people": [],
+    "people": [
+      "Rickey Bell"
+    ],
     "tags": [
       "Boating",
       "Crystal River",
       "Hobbies/Boating",
       "Hobbies|Boating",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
       "Places/Florida/Crystal River",
-      "Places|Florida|Crystal River"
+      "Places|Florida|Crystal River",
+      "Rickey Bell"
     ],
     "title": "",
     "description": "",
@@ -41978,14 +42044,23 @@
     "file": "IMG_4065.JPEG",
     "folder": "2019",
     "date": "2019-05-15",
-    "people": [],
+    "people": [
+      "Rickey Bell",
+      "Sophia Bell"
+    ],
     "tags": [
       "Boating",
       "Fishing Creek",
       "Hobbies/Boating",
       "Hobbies|Boating",
+      "People/Rickey Bell",
+      "People/Sophia Bell",
+      "People|Rickey Bell",
+      "People|Sophia Bell",
       "Places/South Carolina/Fishing Creek",
-      "Places|South Carolina|Fishing Creek"
+      "Places|South Carolina|Fishing Creek",
+      "Rickey Bell",
+      "Sophia Bell"
     ],
     "title": "",
     "description": "",
@@ -42055,14 +42130,23 @@
     "file": "IMG_4096.JPEG",
     "folder": "2019",
     "date": "2019-05-18",
-    "people": [],
+    "people": [
+      "Rickey Bell",
+      "Sophia Bell"
+    ],
     "tags": [
       "Boating",
       "Fishing Creek",
       "Hobbies/Boating",
       "Hobbies|Boating",
+      "People/Rickey Bell",
+      "People/Sophia Bell",
+      "People|Rickey Bell",
+      "People|Sophia Bell",
       "Places/South Carolina/Fishing Creek",
-      "Places|South Carolina|Fishing Creek"
+      "Places|South Carolina|Fishing Creek",
+      "Rickey Bell",
+      "Sophia Bell"
     ],
     "title": "",
     "description": "",
@@ -43944,14 +44028,15 @@
       "Hobbies/Boating",
       "People/Rickey Bell",
       "People/Sophia Bell",
+      "Places/South Carolina/Fishing Creek",
       "Video"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Fishing Creek",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -44091,14 +44176,19 @@
     "file": "20210501_123139.jpg",
     "folder": "2021",
     "date": "2021-05-01",
-    "people": [],
+    "people": [
+      "Rickey Bell"
+    ],
     "tags": [
       "Boating",
       "Hobbies/Boating",
       "Hobbies|Boating",
       "Lake Wateree",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
       "Places/South Carolina/Kershaw/Lake Wateree",
-      "Places|South Carolina|Kershaw|Lake Wateree"
+      "Places|South Carolina|Kershaw|Lake Wateree",
+      "Rickey Bell"
     ],
     "title": "",
     "description": "",
@@ -44117,14 +44207,23 @@
     "file": "20210906_142624.jpg",
     "folder": "2021",
     "date": "2021-09-06",
-    "people": [],
+    "people": [
+      "Samatha Bell",
+      "Sophia Bell"
+    ],
     "tags": [
       "Boating",
       "Hobbies/Boating",
       "Hobbies|Boating",
       "Lake Wateree",
+      "People/Samatha Bell",
+      "People/Sophia Bell",
+      "People|Samatha Bell",
+      "People|Sophia Bell",
       "Places/South Carolina/Kershaw/Lake Wateree",
-      "Places|South Carolina|Kershaw|Lake Wateree"
+      "Places|South Carolina|Kershaw|Lake Wateree",
+      "Samatha Bell",
+      "Sophia Bell"
     ],
     "title": "",
     "description": "",
@@ -44143,14 +44242,19 @@
     "file": "20210906_144852.jpg",
     "folder": "2021",
     "date": "2021-09-06",
-    "people": [],
+    "people": [
+      "Samatha Bell"
+    ],
     "tags": [
       "Boating",
       "Hobbies/Boating",
       "Hobbies|Boating",
       "Lake Wateree",
+      "People/Samatha Bell",
+      "People|Samatha Bell",
       "Places/South Carolina/Kershaw/Lake Wateree",
-      "Places|South Carolina|Kershaw|Lake Wateree"
+      "Places|South Carolina|Kershaw|Lake Wateree",
+      "Samatha Bell"
     ],
     "title": "",
     "description": "",
@@ -45084,14 +45188,19 @@
     "file": "20221015_175346.jpg",
     "folder": "2022",
     "date": "2022-10-15",
-    "people": [],
+    "people": [
+      "Sophia Bell"
+    ],
     "tags": [
       "Camping",
       "Hobbies/Camping",
       "Hobbies|Camping",
       "Myrtle Beach",
+      "People/Sophia Bell",
+      "People|Sophia Bell",
       "Places/South Carolina/Myrtle Beach",
-      "Places|South Carolina|Myrtle Beach"
+      "Places|South Carolina|Myrtle Beach",
+      "Sophia Bell"
     ],
     "title": "",
     "description": "",
@@ -45328,8 +45437,8 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.6933444,
-      "lon": -80.8251367
+      "lat": 34.6933444002778,
+      "lon": -80.8251367002778
     }
   },
   {
@@ -45402,12 +45511,21 @@
     "file": "20230630_182611.jpg",
     "folder": "2023",
     "date": "2023-06-30",
-    "people": [],
+    "people": [
+      "April Scott",
+      "Katie Morgan"
+    ],
     "tags": [
+      "April Scott",
       "Boating",
       "Crystal River",
       "Hobbies/Boating",
       "Hobbies|Boating",
+      "Katie Morgan",
+      "People/April Scott",
+      "People/Katie Morgan",
+      "People|April Scott",
+      "People|Katie Morgan",
       "Places/Florida/Crystal River",
       "Places|Florida|Crystal River"
     ],
@@ -45454,12 +45572,25 @@
     "file": "20230701_173124.jpg",
     "folder": "2023",
     "date": "2023-07-01",
-    "people": [],
+    "people": [
+      "Andrew Morgan",
+      "April Scott",
+      "Katie Morgan"
+    ],
     "tags": [
+      "Andrew Morgan",
+      "April Scott",
       "Boating",
       "Crystal River",
       "Hobbies/Boating",
       "Hobbies|Boating",
+      "Katie Morgan",
+      "People/Andrew Morgan",
+      "People/April Scott",
+      "People/Katie Morgan",
+      "People|Andrew Morgan",
+      "People|April Scott",
+      "People|Katie Morgan",
       "Places/Florida/Crystal River",
       "Places|Florida|Crystal River"
     ],
@@ -45480,14 +45611,19 @@
     "file": "20230701_173539.jpg",
     "folder": "2023",
     "date": "2023-07-01",
-    "people": [],
+    "people": [
+      "Stephanie Bell"
+    ],
     "tags": [
       "Boating",
       "Crystal River",
       "Hobbies/Boating",
       "Hobbies|Boating",
+      "People/Stephanie Bell",
+      "People|Stephanie Bell",
       "Places/Florida/Crystal River",
-      "Places|Florida|Crystal River"
+      "Places|Florida|Crystal River",
+      "Stephanie Bell"
     ],
     "title": "",
     "description": "",
@@ -45675,11 +45811,16 @@
     "file": "20230903_174732.jpg",
     "folder": "2023",
     "date": "2023-09-03",
-    "people": [],
+    "people": [
+      "Rickey Bell"
+    ],
     "tags": [
       "Avation",
       "Hobbies/Avation",
-      "Hobbies|Avation"
+      "Hobbies|Avation",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Rickey Bell"
     ],
     "title": "",
     "description": "",
@@ -45817,11 +45958,16 @@
     "file": "Screenshot_20230928_202417_Facebook-edited.jpg",
     "folder": "2023",
     "date": "2023-09-28",
-    "people": [],
+    "people": [
+      "Andrew Morgan"
+    ],
     "tags": [
+      "Andrew Morgan",
       "Boating",
       "Hobbies/Boating",
-      "Hobbies|Boating"
+      "Hobbies|Boating",
+      "People/Andrew Morgan",
+      "People|Andrew Morgan"
     ],
     "title": "",
     "description": "",
@@ -45837,14 +45983,19 @@
     "file": "20231020_102913.jpg",
     "folder": "2023",
     "date": "2023-10-20",
-    "people": [],
+    "people": [
+      "Sophia Bell"
+    ],
     "tags": [
       "Camping",
       "Hobbies/Camping",
       "Hobbies|Camping",
       "Myrtle Beach",
+      "People/Sophia Bell",
+      "People|Sophia Bell",
       "Places/South Carolina/Myrtle Beach",
-      "Places|South Carolina|Myrtle Beach"
+      "Places|South Carolina|Myrtle Beach",
+      "Sophia Bell"
     ],
     "title": "",
     "description": "",
@@ -45863,14 +46014,19 @@
     "file": "20231021_113457.jpg",
     "folder": "2023",
     "date": "2023-10-21",
-    "people": [],
+    "people": [
+      "Sophia Bell"
+    ],
     "tags": [
       "Camping",
       "Hobbies/Camping",
       "Hobbies|Camping",
       "Myrtle Beach",
+      "People/Sophia Bell",
+      "People|Sophia Bell",
       "Places/South Carolina/Myrtle Beach",
-      "Places|South Carolina|Myrtle Beach"
+      "Places|South Carolina|Myrtle Beach",
+      "Sophia Bell"
     ],
     "title": "",
     "description": "",
@@ -46556,6 +46712,76 @@
     }
   },
   {
+    "path": "images/2024/20240506_125533.jpg",
+    "media_type": "photo",
+    "file": "20240506_125533.jpg",
+    "folder": "2024",
+    "date": "2024-05-06",
+    "people": [
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Avation",
+      "Bahamas",
+      "Hobbies/Avation",
+      "Hobbies|Avation",
+      "People/Rickey Bell",
+      "People/Stephanie Bell",
+      "People|Rickey Bell",
+      "People|Stephanie Bell",
+      "Places/Bahamas",
+      "Places|Bahamas",
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Bahamas",
+    "country": "",
+    "gps": {
+      "lat": 23.9647033827778,
+      "lon": -76.3255268833333
+    }
+  },
+  {
+    "path": "images/2024/20240506_125607.jpg",
+    "media_type": "photo",
+    "file": "20240506_125607.jpg",
+    "folder": "2024",
+    "date": "2024-05-06",
+    "people": [
+      "Mike Morgan",
+      "Sabrina Odem"
+    ],
+    "tags": [
+      "Avation",
+      "Bahamas",
+      "Hobbies/Avation",
+      "Hobbies|Avation",
+      "Mike Morgan",
+      "People/Mike Morgan",
+      "People/Sabrina Odem",
+      "People|Mike Morgan",
+      "People|Sabrina Odem",
+      "Places/Bahamas",
+      "Places|Bahamas",
+      "Sabrina Odem"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Bahamas",
+    "country": "",
+    "gps": {
+      "lat": 23.9647729005556,
+      "lon": -76.3255007833333
+    }
+  },
+  {
     "path": "images/2024/20240506_133538-edited.jpg",
     "media_type": "photo",
     "file": "20240506_133538-edited.jpg",
@@ -46752,6 +46978,32 @@
     "gps": {
       "lat": 23.9602,
       "lon": -76.3264
+    }
+  },
+  {
+    "path": "images/2024/20240507_095521.jpg",
+    "media_type": "photo",
+    "file": "20240507_095521.jpg",
+    "folder": "2024",
+    "date": "2024-05-07",
+    "people": [],
+    "tags": [
+      "Avation",
+      "Bahamas",
+      "Hobbies/Avation",
+      "Hobbies|Avation",
+      "Places/Bahamas",
+      "Places|Bahamas"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Bahamas",
+    "country": "",
+    "gps": {
+      "lat": 26.6754998,
+      "lon": -77.2774201838889
     }
   },
   {
@@ -47448,7 +47700,7 @@
     "state": "Florida",
     "country": "United States",
     "gps": {
-      "lat": 26.908328,
+      "lat": 26.9083280002778,
       "lon": -82.3539521833333
     }
   },
@@ -47458,11 +47710,16 @@
     "file": "20250412_132713.jpg",
     "folder": "2025",
     "date": "2025-04-12",
-    "people": [],
+    "people": [
+      "Rickey Bell"
+    ],
     "tags": [
       "Avation",
       "Hobbies/Avation",
-      "Hobbies|Avation"
+      "Hobbies|Avation",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Rickey Bell"
     ],
     "title": "",
     "description": "",
@@ -47585,8 +47842,8 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.693376700025,
-      "lon": -80.8252307999861
+      "lat": 34.6933767,
+      "lon": -80.8252307997222
     }
   },
   {
@@ -47617,8 +47874,8 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.6935291999722,
-      "lon": -80.8255557000056
+      "lat": 34.6935292,
+      "lon": -80.8255556997222
     }
   },
   {
@@ -48371,15 +48628,19 @@
     "folder": "2025",
     "date": "2025-12-23",
     "people": [
-      "Sophia Bell"
+      "Sophia Bell",
+      "Stephanie Bell"
     ],
     "tags": [
       "Avation",
       "Hobbies/Avation",
       "Hobbies|Avation",
       "People/Sophia Bell",
+      "People/Stephanie Bell",
       "People|Sophia Bell",
-      "Sophia Bell"
+      "People|Stephanie Bell",
+      "Sophia Bell",
+      "Stephanie Bell"
     ],
     "title": "",
     "description": "",
@@ -48471,12 +48732,20 @@
     "folder": "2026",
     "date": "2026",
     "people": [
-      "Dominique Burwell"
+      "Dominique Burwell",
+      "Ivy Bell",
+      "Olivia Bell"
     ],
     "tags": [
       "Dominique Burwell",
+      "Ivy Bell",
+      "Olivia Bell",
       "People/Dominique Burwell",
-      "People|Dominique Burwell"
+      "People/Ivy Bell",
+      "People/Olivia Bell",
+      "People|Dominique Burwell",
+      "People|Ivy Bell",
+      "People|Olivia Bell"
     ],
     "title": "",
     "description": "",
@@ -48992,14 +49261,18 @@
     "date": "2026-07-08",
     "people": [
       "Alma Bell",
+      "Dickey Bell",
       "Spooky Bell"
     ],
     "tags": [
       "900 Confederate Ave",
       "Alma Bell",
+      "Dickey Bell",
       "People/Alma Bell",
+      "People/Dickey Bell",
       "People/Spooky Bell",
       "People|Alma Bell",
+      "People|Dickey Bell",
       "People|Spooky Bell",
       "Places/South Carolina/Lancaster County/900 Confederate Ave",
       "Places|South Carolina|Lancaster County|900 Confederate Ave",

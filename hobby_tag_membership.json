@@ -627,6 +627,9 @@
     "images/2008/061.JPG": [
       "Boating"
     ],
+    "images/2008/IMAGE_155.jpg": [
+      "Camping"
+    ],
     "images/2010/012-2 (1).jpg": [
       "Boating"
     ],
@@ -975,10 +978,19 @@
     "images/2024/20240506_102951-edited.jpg": [
       "Aviation"
     ],
+    "images/2024/20240506_125533.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240506_125607.jpg": [
+      "Aviation"
+    ],
     "images/2024/20240506_133538-edited.jpg": [
       "Aviation"
     ],
     "images/2024/20240506_152919000_iOS.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240507_095521.jpg": [
       "Aviation"
     ],
     "images/2024/20240507_150549.jpg": [
@@ -1224,19 +1236,19 @@
     ]
   },
   "taggedCounts": {
-    "Aviation": 1199,
+    "Aviation": 1206,
     "Scuba": 1173,
-    "Shooting": 141,
-    "Boating": 1357,
+    "Shooting": 146,
+    "Boating": 1368,
     "Off-Roading": 313,
-    "Camping": 181
+    "Camping": 282
   },
   "publicCounts": {
-    "Aviation": 106,
+    "Aviation": 109,
     "Scuba": 140,
     "Shooting": 18,
     "Boating": 103,
     "Off-Roading": 24,
-    "Camping": 22
+    "Camping": 23
   }
 }
