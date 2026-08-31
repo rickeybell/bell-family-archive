@@ -774,6 +774,9 @@
     "images/2020/20201107_161234.jpg": [
       "Off-Roading"
     ],
+    "images/2020/20201107_162817.jpg": [
+      "Off-Roading"
+    ],
     "images/2020/20201107_164139.jpg": [
       "Off-Roading"
     ],
@@ -781,6 +784,12 @@
       "Off-Roading"
     ],
     "images/2020/20201108_135216.jpg": [
+      "Off-Roading"
+    ],
+    "images/2020/20201108_142001.jpg": [
+      "Off-Roading"
+    ],
+    "images/2020/20201108_143222.jpg": [
       "Off-Roading"
     ],
     "images/2020/20201108_144225(1).jpg": [
@@ -1227,7 +1236,7 @@
     "Scuba": 140,
     "Shooting": 18,
     "Boating": 103,
-    "Off-Roading": 21,
+    "Off-Roading": 24,
     "Camping": 22
   }
 }
