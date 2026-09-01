@@ -37688,30 +37688,6 @@
     "gps": null
   },
   {
-    "path": "videos/2008/FILE0061.mp4",
-    "media_type": "video",
-    "file": "FILE0061.mp4",
-    "folder": "2008",
-    "date": "2008-09-19",
-    "people": [
-      "Tanisha"
-    ],
-    "tags": [
-      "Animal/Tanisha",
-      "Animal|Tanisha",
-      "Places/South Carolina/Lancaster County/900 Confederate Ave",
-      "Tanisha",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "900 Confederate Ave",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/2008/FILE0060.JPG",
     "media_type": "photo",
     "file": "FILE0060.JPG",
@@ -37730,34 +37706,6 @@
     ],
     "title": "",
     "description": "DCIM\\100MEDIA",
-    "location": "900 Confederate Ave",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
-    "path": "videos/2009/FILE0102.mp4",
-    "media_type": "video",
-    "file": "FILE0102.mp4",
-    "folder": "2009",
-    "date": "2008-10-26",
-    "people": [
-      "Jarred Bell",
-      "Tanisha"
-    ],
-    "tags": [
-      "Animal/Tanisha",
-      "Animal|Tanisha",
-      "Jarred Bell",
-      "People/Jarred Bell",
-      "People|Jarred Bell",
-      "Places/South Carolina/Lancaster County/900 Confederate Ave",
-      "Tanisha",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
     "location": "900 Confederate Ave",
     "city": "Lancaster County",
     "state": "South Carolina",
@@ -37805,6 +37753,30 @@
     ],
     "title": "",
     "description": "DCIM\\100MEDIA",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "videos/2008/FILE0061.mp4",
+    "media_type": "video",
+    "file": "FILE0061.mp4",
+    "folder": "2008",
+    "date": "2008-12-27",
+    "people": [
+      "Tanisha"
+    ],
+    "tags": [
+      "Animal/Tanisha",
+      "Animal|Tanisha",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Tanisha",
+      "Video"
+    ],
+    "title": "",
+    "description": "2008-09-20",
     "location": "900 Confederate Ave",
     "city": "Lancaster County",
     "state": "South Carolina",
@@ -37960,11 +37932,39 @@
       "Video"
     ],
     "title": "",
-    "description": "",
+    "description": "2009-01-20",
     "location": "",
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "videos/2009/FILE0102.mp4",
+    "media_type": "video",
+    "file": "FILE0102.mp4",
+    "folder": "2009",
+    "date": "2009-02-01",
+    "people": [
+      "Jarred Bell",
+      "Tanisha"
+    ],
+    "tags": [
+      "Animal/Tanisha",
+      "Animal|Tanisha",
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People|Jarred Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Tanisha",
+      "Video"
+    ],
+    "title": "",
+    "description": "2008-10-26",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -39721,8 +39721,8 @@
     "state": "Florida",
     "country": "United States",
     "gps": {
-      "lat": 28.9296,
-      "lon": -82.8806
+      "lat": 28.92960000038147,
+      "lon": -82.88059999995761
     }
   },
   {
@@ -40341,7 +40341,7 @@
       "Places/Florida/Crystal River",
       "Video"
     ],
-    "title": "",
+    "title": "48' Motor Yacht",
     "description": "",
     "location": "",
     "city": "Crystal River",
@@ -40800,7 +40800,7 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.6934,
+      "lat": 34.693399983333336,
       "lon": -80.8251
     }
   },
@@ -41166,7 +41166,7 @@
       "Places/South Carolina/Lancaster County",
       "Video"
     ],
-    "title": "",
+    "title": "I am not a fan of binary triggers, but they will run.",
     "description": "",
     "location": "",
     "city": "Lancaster County",
@@ -41347,7 +41347,7 @@
       "Video"
     ],
     "title": "Jason Hoke Funeral Last Call",
-    "description": "Lancaster dispatch couldn't make the last call at the funeral because he had left Lancaster for Chester. Rickey made the call using two handheld radios and Chester's local frequencies so it wouldn't reach the Chester County repeaters. Many on- and off-duty responders attended the funeral with pagers; the plan was for the Chester pagers to go off and broadcast the call. For reasons that can not be explained, EVERY pager at the funeral went off and broadcast the call, regardless of county, frequency, or service. It was really like God himself was sending Jason home!",
+    "description": "Lancaster dispatch couldn't make the last call at the funeral because he had left Lancaster for Chester.  Rickey made the call using two handheld radios and Chester's local frequencies so it wouldn't reach the Chester County repeaters.  Many on- and off-duty responders attended the funeral with pagers; the plan was for the Chester pagers to go off and broadcast the call.  For reasons that can not be explained, EVERY pager at the funeral went off and broadcast the call, regardless of county, frequency, or service.  It was really like God himself was sending Jason home!",
     "location": "",
     "city": "",
     "state": "",
@@ -41519,7 +41519,7 @@
       "Places/Florida/Crystal River",
       "Video"
     ],
-    "title": "",
+    "title": "20180318_163348.mp4",
     "description": "",
     "location": "",
     "city": "Crystal River",
@@ -41527,7 +41527,7 @@
     "country": "United States",
     "gps": {
       "lat": 28.9262,
-      "lon": -82.9183
+      "lon": 82.9183
     }
   },
   {
@@ -41618,7 +41618,7 @@
       "Places/Florida/Crystal River",
       "Video"
     ],
-    "title": "",
+    "title": "20180319_112554.mp4",
     "description": "",
     "location": "",
     "city": "Crystal River",
@@ -41626,7 +41626,7 @@
     "country": "United States",
     "gps": {
       "lat": 28.9039,
-      "lon": -82.5098
+      "lon": 82.5098
     }
   },
   {
@@ -41830,35 +41830,6 @@
     "city": "",
     "state": "",
     "country": "",
-    "gps": null
-  },
-  {
-    "path": "images/2019/received_792143041187439.jpeg",
-    "media_type": "photo",
-    "file": "received_792143041187439.jpeg",
-    "folder": "2019",
-    "date": "2019-01-01",
-    "people": [
-      "Jarred Bell"
-    ],
-    "tags": [
-      "Hobbies/Shooting",
-      "Hobbies|Shooting",
-      "Jarred Bell",
-      "Lancaster County",
-      "Locked",
-      "People/Jarred Bell",
-      "People|Jarred Bell",
-      "Places/South Carolina/Lancaster County",
-      "Places|South Carolina|Lancaster County",
-      "Shooting"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
     "gps": null
   },
   {
@@ -42281,7 +42252,7 @@
     "media_type": "video",
     "file": "20190531_201747.mp4",
     "folder": "2019",
-    "date": "2019-06-01",
+    "date": "2019-05-31",
     "people": [
       "Jarred Bell"
     ],
@@ -42302,7 +42273,7 @@
     "country": "United States",
     "gps": {
       "lat": 34.7313,
-      "lon": -80.7833000002778
+      "lon": -80.7833
     }
   },
   {
@@ -42359,8 +42330,37 @@
     "country": "United States",
     "gps": {
       "lat": 34.7348,
-      "lon": -80.7920999997222
+      "lon": -80.7921
     }
+  },
+  {
+    "path": "images/2019/received_792143041187439.jpeg",
+    "media_type": "photo",
+    "file": "received_792143041187439.jpeg",
+    "folder": "2019",
+    "date": "2019-06-23",
+    "people": [
+      "Jarred Bell"
+    ],
+    "tags": [
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Jarred Bell",
+      "Lancaster County",
+      "Locked",
+      "People/Jarred Bell",
+      "People|Jarred Bell",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County",
+      "Shooting"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
   },
   {
     "path": "videos/2019/20190623_210308.mp4",
@@ -42386,8 +42386,8 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.6933000002778,
-      "lon": -80.8251000002778
+      "lat": 34.6933,
+      "lon": -80.8251
     }
   },
   {
@@ -42447,7 +42447,7 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.9135999997222,
+      "lat": 34.9136,
       "lon": -81.0207
     }
   },
@@ -43206,7 +43206,7 @@
     "country": "United States",
     "gps": {
       "lat": 34.6938,
-      "lon": -80.8252999836111
+      "lon": -80.82529998333334
     }
   },
   {
@@ -43266,8 +43266,8 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.6934999994444,
-      "lon": -80.8251999833333
+      "lat": 34.6935,
+      "lon": -80.82519998333333
     }
   },
   {
@@ -43815,7 +43815,7 @@
       "Places/South Carolina/Chester County/Carolina Adventure World",
       "Video"
     ],
-    "title": "",
+    "title": "Carolina Adventure World",
     "description": "",
     "location": "Carolina Adventure World",
     "city": "Chester County",
@@ -43840,7 +43840,7 @@
       "Places/South Carolina/Chester County/Carolina Adventure World",
       "Video"
     ],
-    "title": "",
+    "title": "Carolina Adventure World",
     "description": "",
     "location": "Carolina Adventure World",
     "city": "Chester County",
@@ -43868,7 +43868,7 @@
       "Places/South Carolina/Chester County/Carolina Adventure World",
       "Video"
     ],
-    "title": "",
+    "title": "Carolina Adventure World",
     "description": "",
     "location": "Carolina Adventure World",
     "city": "Chester County",
@@ -43999,7 +43999,7 @@
       "Stephanie Bell",
       "Video"
     ],
-    "title": "",
+    "title": "Florida Keys",
     "description": "",
     "location": "",
     "city": "Keys",
@@ -45207,7 +45207,7 @@
       "Places/South Carolina/Lancaster County",
       "Video"
     ],
-    "title": "",
+    "title": "Warrior Airplane Working Again",
     "description": "",
     "location": "",
     "city": "Lancaster County",
@@ -45245,6 +45245,32 @@
     }
   },
   {
+    "path": "videos/2022/20221014_205010.mp4",
+    "media_type": "video",
+    "file": "20221014_205010.mp4",
+    "folder": "2022",
+    "date": "2022-10-14",
+    "people": [
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Hobbies/Camping",
+      "People/Sophia Bell",
+      "Places/South Carolina/Myrtle Beach",
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 33.8455,
+      "lon": -78.8417
+    }
+  },
+  {
     "path": "images/2022/20221015_175346.jpg",
     "media_type": "photo",
     "file": "20221015_175346.jpg",
@@ -45273,32 +45299,6 @@
     "gps": {
       "lat": 33.8454572994444,
       "lon": -78.8418466
-    }
-  },
-  {
-    "path": "videos/2022/20221014_205010.mp4",
-    "media_type": "video",
-    "file": "20221014_205010.mp4",
-    "folder": "2022",
-    "date": "2022-10-15",
-    "people": [
-      "Sophia Bell"
-    ],
-    "tags": [
-      "Hobbies/Camping",
-      "People/Sophia Bell",
-      "Places/South Carolina/Myrtle Beach",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "Myrtle Beach",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 33.8455,
-      "lon": -78.8417
     }
   },
   {
@@ -46163,7 +46163,7 @@
     "media_type": "video",
     "file": "20231124_193230.mp4",
     "folder": "2023",
-    "date": "2023-11-25",
+    "date": "2023-11-24",
     "people": [
       "Sophia Bell"
     ],
@@ -46181,7 +46181,7 @@
     "country": "United States",
     "gps": {
       "lat": 34.4363,
-      "lon": -80.8637
+      "lon": -80.86369998333333
     }
   },
   {
@@ -46189,7 +46189,7 @@
     "media_type": "video",
     "file": "20231224_205755.mp4",
     "folder": "2023",
-    "date": "2023-12-25",
+    "date": "2023-12-24",
     "people": [
       "Ivy Bell"
     ],
@@ -46206,8 +46206,8 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 0,
-      "lon": 0
+      "lat": 0.0,
+      "lon": 0.0
     }
   },
   {
@@ -47559,7 +47559,7 @@
     "media_type": "video",
     "file": "20250105_220052.mp4",
     "folder": "2025",
-    "date": "2025-01-06",
+    "date": "2025-01-05",
     "people": [
       "Sophia Bell"
     ],
@@ -47570,7 +47570,7 @@
       "Places/South Carolina/Chester County/State Park",
       "Video"
     ],
-    "title": "",
+    "title": "Chester State Park",
     "description": "",
     "location": "State Park",
     "city": "Chester County",
@@ -47578,7 +47578,7 @@
     "country": "United States",
     "gps": {
       "lat": 34.6796,
-      "lon": -81.243
+      "lon": -81.24299998333333
     }
   },
   {
@@ -48336,7 +48336,7 @@
     "country": "United States",
     "gps": {
       "lat": 34.6933,
-      "lon": -80.8252
+      "lon": -80.82519996666667
     }
   },
   {
@@ -48489,7 +48489,7 @@
       "Places/South Carolina/Chester County",
       "Video"
     ],
-    "title": "",
+    "title": "Instrument Flight Rules",
     "description": "",
     "location": "",
     "city": "Chester County",
@@ -48562,8 +48562,8 @@
       "Places/South Carolina/Lancaster County",
       "Video"
     ],
-    "title": "",
-    "description": "",
+    "title": "Testing the pump action .22",
+    "description": "Threaded by Flat Creek Firearms.",
     "location": "",
     "city": "Lancaster County",
     "state": "South Carolina",
@@ -48586,7 +48586,7 @@
       "Places/South Carolina/Chester County",
       "Video"
     ],
-    "title": "",
+    "title": "Didnt expect that going through the woods!",
     "description": "",
     "location": "",
     "city": "Chester County",
@@ -48610,15 +48610,15 @@
       "Places/South Carolina/Lancaster County",
       "Video"
     ],
-    "title": "",
-    "description": "",
+    "title": "AR-15/22 FRT is fast",
+    "description": "Tuned by Flat Creek Firearms.",
     "location": "",
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
     "gps": {
       "lat": 34.6933,
-      "lon": -80.8252
+      "lon": -80.82519996666667
     }
   },
   {
@@ -49149,15 +49149,15 @@
       "Places/South Carolina/Lancaster County/900 Confederate Ave",
       "Video"
     ],
-    "title": "",
+    "title": "Volcanic Ash",
     "description": "",
     "location": "900 Confederate Ave",
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.6934,
-      "lon": -80.8252
+      "lat": 34.693399983333336,
+      "lon": -80.82519998333333
     }
   },
   {

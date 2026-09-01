@@ -7,6 +7,7 @@ VIDEO_MANIFEST = ROOT / "website-video-manifest.csv"
 AUDIO_MANIFEST = ROOT / "website-audio-manifest.csv"
 OUT = ROOT / "photo_metadata.json"
 CACHE = ROOT / ".website-metadata-cache.json"
+CACHE_VERSION = 3
 
 parser=argparse.ArgumentParser()
 parser.add_argument('--full-audit',action='store_true')
@@ -15,7 +16,14 @@ args=parser.parse_args()
 metadata_cache={}
 cache_existed=CACHE.exists()
 if cache_existed:
-    try: metadata_cache=json.loads(CACHE.read_text(encoding='utf-8-sig')).get('records',{})
+    try:
+        saved_cache=json.loads(CACHE.read_text(encoding='utf-8-sig'))
+        if saved_cache.get('version')==CACHE_VERSION:
+            metadata_cache=saved_cache.get('records',{})
+        else:
+            # Keep cache_existed true so an incompatible cache forces a real
+            # metadata rebuild instead of falling back to the prior output.
+            metadata_cache={}
     except (OSError,ValueError,TypeError): metadata_cache={}
 
 previous_by_path={}
@@ -180,6 +188,22 @@ for item in rows:
         tl,tc,ts,tco=place_from_tags(tags);loc=loc or tl;city=city or tc;state=state or ts;country=country or tco
         gps={"lat":m.get("GPSLatitude"),"lon":m.get("GPSLongitude")} if m.get("GPSLatitude") is not None and m.get("GPSLongitude") is not None else None
         title=first(m,"Title");description=first(m,"Description","Caption-Abstract")
+        if media_type=="video":
+            # Video metadata edited in digiKam may live only in its database,
+            # not inside the media container. The video manifest contains the
+            # current database values and must therefore take precedence.
+            manifest_date=str(manifest.get("Date") or '').strip()
+            if manifest_date:
+                date=manifest_date.replace('T',' ').split(' ')[0].replace(':','-',2)
+            manifest_title=str(manifest.get("Title") or '').strip()
+            manifest_description=str(manifest.get("Description") or '').strip()
+            if manifest_title: title=manifest_title
+            if manifest_description: description=manifest_description
+            manifest_lat=str(manifest.get("GPSLatitude") or '').strip()
+            manifest_lon=str(manifest.get("GPSLongitude") or '').strip()
+            if manifest_lat and manifest_lon:
+                try: gps={"lat":float(manifest_lat),"lon":float(manifest_lon)}
+                except ValueError: pass
 
     prefix={"video":"videos/","audio":"audio/"}.get(media_type,"images/")
     out.append({"path":prefix+rel,"media_type":media_type,"file":pathlib.PurePosixPath(rel).name,"folder":folder,"date":date,
@@ -196,7 +220,7 @@ for item in rows:
 fd,temp_name=tempfile.mkstemp(prefix='.website-metadata-cache-',suffix='.tmp',dir=ROOT);os.close(fd)
 temp=pathlib.Path(temp_name)
 try:
-    temp.write_text(json.dumps({"version":1,"records":cache_records},separators=(',',':')),encoding='utf-8')
+    temp.write_text(json.dumps({"version":CACHE_VERSION,"records":cache_records},separators=(',',':')),encoding='utf-8')
     os.replace(temp,CACHE)
 finally: temp.unlink(missing_ok=True)
 photo_count=sum(1 for x in out if x.get("media_type")=="photo");video_count=sum(1 for x in out if x.get("media_type")=="video");audio_count=sum(1 for x in out if x.get("media_type")=="audio")
