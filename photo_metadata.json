@@ -29855,8 +29855,8 @@
       "Jason Hoke",
       "People/Jason Hoke",
       "People|Jason Hoke",
-      "Places/South Carolina/Lancaster County/Fishing Creek",
-      "Places|South Carolina|Lancaster County|Fishing Creek",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
       "Scuba"
     ],
     "title": "",
@@ -29883,8 +29883,8 @@
       "Jason Hoke",
       "People/Jason Hoke",
       "People|Jason Hoke",
-      "Places/South Carolina/Lancaster County/Fishing Creek",
-      "Places|South Carolina|Lancaster County|Fishing Creek",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
       "Scuba"
     ],
     "title": "",
@@ -29974,8 +29974,8 @@
       "Jason Hoke",
       "People/Jason Hoke",
       "People|Jason Hoke",
-      "Places/South Carolina/Lancaster County/Fishing Creek",
-      "Places|South Carolina|Lancaster County|Fishing Creek",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
       "Scuba"
     ],
     "title": "",
@@ -30006,8 +30006,8 @@
       "People/Jason Hoke",
       "People|Ann Hoke",
       "People|Jason Hoke",
-      "Places/South Carolina/Lancaster County/Fishing Creek",
-      "Places|South Carolina|Lancaster County|Fishing Creek",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
       "Scuba"
     ],
     "title": "",
@@ -30034,8 +30034,8 @@
       "Jason Hoke",
       "People/Jason Hoke",
       "People|Jason Hoke",
-      "Places/South Carolina/Lancaster County/Fishing Creek",
-      "Places|South Carolina|Lancaster County|Fishing Creek",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
       "Scuba"
     ],
     "title": "",
@@ -30062,8 +30062,8 @@
       "Jason Hoke",
       "People/Jason Hoke",
       "People|Jason Hoke",
-      "Places/South Carolina/Lancaster County/Fishing Creek",
-      "Places|South Carolina|Lancaster County|Fishing Creek",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
       "Scuba"
     ],
     "title": "",
@@ -30090,8 +30090,8 @@
       "Jason Hoke",
       "People/Jason Hoke",
       "People|Jason Hoke",
-      "Places/South Carolina/Lancaster County/Fishing Creek",
-      "Places|South Carolina|Lancaster County|Fishing Creek",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
       "Scuba"
     ],
     "title": "",
@@ -30118,8 +30118,8 @@
       "Jason Hoke",
       "People/Jason Hoke",
       "People|Jason Hoke",
-      "Places/South Carolina/Lancaster County/Fishing Creek",
-      "Places|South Carolina|Lancaster County|Fishing Creek",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
       "Scuba"
     ],
     "title": "",
@@ -30146,8 +30146,8 @@
       "Jason Hoke",
       "People/Jason Hoke",
       "People|Jason Hoke",
-      "Places/South Carolina/Lancaster County/Fishing Creek",
-      "Places|South Carolina|Lancaster County|Fishing Creek",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
       "Scuba"
     ],
     "title": "",
@@ -30173,8 +30173,8 @@
       "Hobbies|Scuba",
       "People/Tim Rouse",
       "People|Tim Rouse",
-      "Places/South Carolina/Lancaster County/Fishing Creek",
-      "Places|South Carolina|Lancaster County|Fishing Creek",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
       "Scuba",
       "Tim Rouse"
     ],
@@ -42357,9 +42357,7 @@
       "People/Tony Roberts",
       "People|Tony Roberts",
       "Places/South Carolina/Fishing Creek",
-      "Places/South Carolina/Lancaster County/Fishing Creek",
       "Places|South Carolina|Fishing Creek",
-      "Places|South Carolina|Lancaster County|Fishing Creek",
       "Tony Roberts"
     ],
     "title": "",
@@ -42386,9 +42384,7 @@
       "Hobbies/Boating",
       "Hobbies|Boating",
       "Places/South Carolina/Fishing Creek",
-      "Places/South Carolina/Lancaster County/Fishing Creek",
-      "Places|South Carolina|Fishing Creek",
-      "Places|South Carolina|Lancaster County|Fishing Creek"
+      "Places|South Carolina|Fishing Creek"
     ],
     "title": "",
     "description": "",
@@ -44177,8 +44173,8 @@
       "Hobbies|Boating",
       "People/Stephanie Bell",
       "People|Stephanie Bell",
-      "Places/South Carolina/Lancaster County/Fishing Creek",
-      "Places|South Carolina|Lancaster County|Fishing Creek",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
       "Stephanie Bell"
     ],
     "title": "",
@@ -44213,9 +44209,9 @@
       "People|Rickey Bell",
       "People|Sophia Bell",
       "Places/South Carolina/Chester County",
-      "Places/South Carolina/Lancaster County/Fishing Creek",
+      "Places/South Carolina/Fishing Creek",
       "Places|South Carolina|Chester County",
-      "Places|South Carolina|Lancaster County|Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
       "Rickey Bell",
       "Sophia Bell"
     ],
@@ -48780,6 +48776,29 @@
     "gps": null
   },
   {
+    "path": "images/2025/20250711_205401.jpg",
+    "media_type": "photo",
+    "file": "20250711_205401.jpg",
+    "folder": "2025",
+    "date": "2025-07-11",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation"
+    ],
+    "title": "Getting her done in the Comanche!",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": {
+      "lat": 34.9561210002778,
+      "lon": -80.1829830836111
+    }
+  },
+  {
     "path": "images/2025/20250720_110146.jpg",
     "media_type": "photo",
     "file": "20250720_110146.jpg",
@@ -49129,6 +49148,29 @@
     "gps": {
       "lat": 34.6932608838889,
       "lon": -80.8253173997222
+    }
+  },
+  {
+    "path": "images/2025/20251004_092008.jpg",
+    "media_type": "photo",
+    "file": "20251004_092008.jpg",
+    "folder": "2025",
+    "date": "2025-10-04",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation"
+    ],
+    "title": "NC Mountains",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": {
+      "lat": 35.3453614997222,
+      "lon": -83.1115991994444
     }
   },
   {
@@ -49491,6 +49533,35 @@
     "gps": null
   },
   {
+    "path": "images/2025/20251211_162124.jpg",
+    "media_type": "photo",
+    "file": "20251211_162124.jpg",
+    "folder": "2025",
+    "date": "2025-12-11",
+    "people": [],
+    "tags": [
+      "Airport",
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "Lancaster County",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/Airport",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|Airport"
+    ],
+    "title": "Getting her ready!",
+    "description": "",
+    "location": "Airport",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7177931,
+      "lon": -80.8599602836111
+    }
+  },
+  {
     "path": "images/2025/20251211_175716.jpg",
     "media_type": "photo",
     "file": "20251211_175716.jpg",
@@ -49826,6 +49897,9 @@
     "tags": [
       "Animal/Lady",
       "Animal|Lady",
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
       "Lady"
     ],
     "title": "",
@@ -49920,6 +49994,26 @@
       "Stephanie Bell"
     ],
     "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2026/Screenshot_20260325_184439_Messages.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20260325_184439_Messages.jpg",
+    "folder": "2026",
+    "date": "2026-03-25",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation"
+    ],
+    "title": "Talking about a text I didn'd want to get!",
     "description": "",
     "location": "",
     "city": "",
@@ -50217,14 +50311,17 @@
       "Sophia Bell"
     ],
     "tags": [
+      "Boating",
       "Fishing Creek",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
       "Ivy Bell",
       "People/Ivy Bell",
       "People/Sophia Bell",
       "People|Ivy Bell",
       "People|Sophia Bell",
-      "Places/South Carolina/Lancaster County/Fishing Creek",
-      "Places|South Carolina|Lancaster County|Fishing Creek",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
       "Sophia Bell"
     ],
     "title": "",
@@ -50246,14 +50343,17 @@
       "Sophia Bell"
     ],
     "tags": [
+      "Boating",
       "Fishing Creek",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
       "Ivy Bell",
       "People/Ivy Bell",
       "People/Sophia Bell",
       "People|Ivy Bell",
       "People|Sophia Bell",
-      "Places/South Carolina/Lancaster County/Fishing Creek",
-      "Places|South Carolina|Lancaster County|Fishing Creek",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
       "Sophia Bell"
     ],
     "title": "",

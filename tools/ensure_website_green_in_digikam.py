@@ -89,7 +89,7 @@ def main() -> None:
     database = (args.database or find_database()).resolve()
     backup_dir = (
         args.backup_dir
-        or pathlib.Path.home() / "Documents" / "BellWebsite-DigiKamBackups"
+        or pathlib.Path(r"G:\BellWebsite-DigiKamBackups")
     ).resolve()
 
     db = sqlite3.connect(database, timeout=60)

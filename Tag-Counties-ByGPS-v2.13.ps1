@@ -14,7 +14,7 @@
 
     [string]$DigiKamCollectionRoot = 'C:\Users\rbell\OneDrive\Pictures',
 
-    [string]$BackupBase = 'G:\ChatGPT\Backups\digiKam\GPS Location Tagging',
+    [string]$BackupBase = 'G:\BellWebsite-DigiKamBackups\GPS Location Tagging',
 
     [switch]$SkipDigiKamCatalogSync,
 
@@ -40,6 +40,9 @@ if (-not $PSBoundParameters.ContainsKey('DigiKamCollectionRoot')) {
     }
 }
 
+# v2.31: moves Fishing Creek to Places/South Carolina/Fishing Creek and also
+#        assigns Lancaster County or Chester County from the GPS point. Legacy
+#        Fishing Creek metadata is replaced, and backups use the shared G: path.
 # v2.30: replaces the airborne Vehicle/Plane tag with Hobbies/Aviation and
 #        removes the obsolete Plane and Vehicle/Plane metadata when writing.
 # v2.29: Chester State Park matches require and write both the State Park tag
@@ -138,8 +141,11 @@ $RockHill = @{
 $FishingCreek = @{
     Name = 'Fishing Creek'
     LeafTag = 'Fishing Creek'
-    DigiKamTag = 'Places/South Carolina/Lancaster County/Fishing Creek'
-    HierTag = 'Places|South Carolina|Lancaster County|Fishing Creek'
+    DigiKamTag = 'Places/South Carolina/Fishing Creek'
+    HierTag = 'Places|South Carolina|Fishing Creek'
+    LegacyDigiKamTag = 'Places/South Carolina/Lancaster County/Fishing Creek'
+    LegacyHierTag = 'Places|South Carolina|Lancaster County|Fishing Creek'
+    RequireHierarchy = $true
     ProtectedParents = @()
     CensusOids = @(
         '110229666938',  # Catawba River: Fishing Creek Reservoir to/through Landsford Canal State Park
@@ -781,17 +787,24 @@ function Test-AlreadyHasCountyTag {
 
     $allTags = Get-AllTagsForMedia -MediaPath $MediaPath
 
+    $hasMatch=$false
+    $hasLegacy=$false
     foreach ($tag in $allTags) {
         $t=[string]$tag
 
-        if ($t -ieq $County.LeafTag -or
+        if (($County.LegacyDigiKamTag -and $t -ieq $County.LegacyDigiKamTag) -or
+            ($County.LegacyHierTag -and $t -ieq $County.LegacyHierTag)) {
+            $hasLegacy=$true
+        }
+        if ((-not $County.RequireHierarchy -and $t -ieq $County.LeafTag) -or
             $t -ieq $County.DigiKamTag -or
             $t -ieq $County.HierTag) {
-            return $true
+            $hasMatch=$true
         }
     }
 
-    return $false
+    # Force a rewrite when legacy hierarchy metadata still needs replacement.
+    return ($hasMatch -and -not $hasLegacy)
 }
 
 function Test-HasAviationTag {
@@ -835,6 +848,13 @@ function Add-TagsToTarget {
 
     if ($PreserveTimestamp) {
         $args=@('-P','-overwrite_original')
+    }
+
+    if ($County.LegacyDigiKamTag) {
+        $args += "-XMP-digiKam:TagsList-=$($County.LegacyDigiKamTag)"
+    }
+    if ($County.LegacyHierTag) {
+        $args += "-XMP-lr:HierarchicalSubject-=$($County.LegacyHierTag)"
     }
 
     if ($currentDigiKam -notcontains $County.DigiKamTag) {
@@ -1844,7 +1864,9 @@ foreach ($Item in $Items) {
 
     # Fishing Creek Lake, Fishing Creek Reservoir, and the Catawba River reach
     # through Landsford Canal State Park are checked before county rules. A
-    # 500-foot buffer absorbs phone-GPS drift and shoreline polygon gaps.
+    # 500-foot buffer absorbs phone-GPS drift and shoreline polygon gaps. Each
+    # match receives the shared Fishing Creek tag plus the Lancaster or Chester
+    # County tag selected by the official county boundary containing its GPS.
     $inFishingCreek=$false
     foreach ($fishingCreekGeometry in $FishingCreek.Geometries) {
         if (Test-PointInOrNearGeoJsonGeometry `
@@ -1869,12 +1891,50 @@ foreach ($Item in $Items) {
             DistanceToDouglasFt=[Math]::Round($douglasDistanceFeet,1)
             DistanceToSubFiberFt=[Math]::Round($subFiberDistanceFeet,1)
             ConfederateMatch=''
-            CountyMatch='Lancaster County'
+            CountyMatch='Fishing Creek'
             ProtectedChildLocation=''
             AlreadyCountyTag=if($hasFishingCreekTag){'YES'}else{'NO'}
-            VideoTagNeeded=if($videoTagNeeded){'YES'}else{'NO'}
+            VideoTagNeeded='NO'
             Action=if($hasFishingCreekTag){'SKIP - already Fishing Creek tagged'}else{'TAG Fishing Creek'}
             ProposedTag=if($hasFishingCreekTag){''}else{$FishingCreek.DigiKamTag}
+        }
+
+        $fishingCountyMatches=@()
+        foreach ($FishingCounty in @($Counties | Where-Object {
+            $_.Name -in @('Lancaster County','Chester County')
+        })) {
+            if (Test-PointInGeoJsonGeometry `
+                -Latitude $lat `
+                -Longitude $lon `
+                -Geometry $FishingCounty.Geometry) {
+                $fishingCountyMatches += $FishingCounty
+            }
+        }
+
+        if ($fishingCountyMatches.Count -ne 1) {
+            $Rows += [PSCustomObject]@{
+                FileName=$Item.FileName; FileType=$kind; FullPath=$fullPath; HasGPS='YES'
+                Latitude=[Math]::Round($lat,7); Longitude=[Math]::Round($lon,7)
+                DistanceTo973Ft=[Math]::Round($distanceFeet,1); DistanceToDouglasFt=[Math]::Round($douglasDistanceFeet,1); DistanceToSubFiberFt=[Math]::Round($subFiberDistanceFeet,1)
+                ConfederateMatch=''; CountyMatch=($fishingCountyMatches.Name -join ' | '); ProtectedChildLocation=''
+                AlreadyCountyTag=''; VideoTagNeeded=if($videoTagNeeded){'YES'}else{'NO'}
+                Action=if($fishingCountyMatches.Count -eq 0){'REVIEW - Fishing Creek point outside Lancaster and Chester counties'}else{'REVIEW - Fishing Creek point matches multiple counties'}
+                ProposedTag=''
+            }
+            continue
+        }
+
+        $FishingCounty=$fishingCountyMatches[0]
+        $hasFishingCountyTag=Test-AlreadyHasCountyTag -MediaPath $fullPath -County $FishingCounty
+        $Rows += [PSCustomObject]@{
+            FileName=$Item.FileName; FileType=$kind; FullPath=$fullPath; HasGPS='YES'
+            Latitude=[Math]::Round($lat,7); Longitude=[Math]::Round($lon,7)
+            DistanceTo973Ft=[Math]::Round($distanceFeet,1); DistanceToDouglasFt=[Math]::Round($douglasDistanceFeet,1); DistanceToSubFiberFt=[Math]::Round($subFiberDistanceFeet,1)
+            ConfederateMatch=''; CountyMatch=$FishingCounty.Name; ProtectedChildLocation=''
+            AlreadyCountyTag=if($hasFishingCountyTag){'YES'}else{'NO'}
+            VideoTagNeeded=if($videoTagNeeded){'YES'}else{'NO'}
+            Action=if($hasFishingCountyTag){'SKIP - already county tagged'}else{"TAG $($FishingCounty.Name)"}
+            ProposedTag=if($hasFishingCountyTag){''}else{$FishingCounty.DigiKamTag}
         }
         continue
     }

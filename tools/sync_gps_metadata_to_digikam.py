@@ -13,6 +13,13 @@ import subprocess
 import sys
 
 
+LEGACY_TAG_PATHS = {
+    "places/south carolina/lancaster county/fishing creek": (
+        "Places/South Carolina/Fishing Creek"
+    ),
+}
+
+
 def stop_if_digikam_running():
     if os.name != "nt":
         return
@@ -41,7 +48,10 @@ def values(record, key):
 
 def normalize_tag_path(value):
     text = str(value).strip().replace("\\", "/").replace("|", "/")
-    return "/".join(part.strip() for part in text.split("/") if part.strip())
+    normalized = "/".join(
+        part.strip() for part in text.split("/") if part.strip()
+    )
+    return LEGACY_TAG_PATHS.get(normalized.casefold(), normalized)
 
 
 def run_exiftool(exiftool, paths):

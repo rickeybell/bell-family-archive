@@ -1152,6 +1152,9 @@
     "images/2025/20250607_192649.jpg": [
       "Aviation"
     ],
+    "images/2025/20250711_205401.jpg": [
+      "Aviation"
+    ],
     "images/2025/20250720_110146.jpg": [
       "Aviation"
     ],
@@ -1185,6 +1188,9 @@
     "images/2025/20250917_184207.jpg": [
       "Shooting"
     ],
+    "images/2025/20251004_092008.jpg": [
+      "Aviation"
+    ],
     "images/2025/20251010_174606.jpg": [
       "Shooting"
     ],
@@ -1196,6 +1202,9 @@
     ],
     "images/2025/20251204_154810.jpg": [
       "Shooting"
+    ],
+    "images/2025/20251211_162124.jpg": [
+      "Aviation"
     ],
     "images/2025/20251211_175716.jpg": [
       "Aviation"
@@ -1215,6 +1224,9 @@
     "images/2025/Screenshot_20251223_205225_Photos~3.jpg": [
       "Aviation"
     ],
+    "images/2026/20260217_215409.jpg": [
+      "Camping"
+    ],
     "images/2026/20260218_082856.jpg": [
       "Camping"
     ],
@@ -1223,6 +1235,15 @@
     ],
     "images/2026/20260403_154258.jpg": [
       "Boating"
+    ],
+    "images/2026/20260607_114315.jpg": [
+      "Boating"
+    ],
+    "images/2026/20260607_114316.jpg": [
+      "Boating"
+    ],
+    "images/2026/Screenshot_20260325_184439_Messages.jpg": [
+      "Aviation"
     ],
     "images/2026/Screenshot_20260325_185337_Messenger.jpg": [
       "Aviation"
@@ -1359,19 +1380,19 @@
     ]
   },
   "taggedCounts": {
-    "Aviation": 1225,
+    "Aviation": 1286,
     "Scuba": 1173,
-    "Shooting": 162,
-    "Boating": 1371,
+    "Shooting": 213,
+    "Boating": 1415,
     "Off-Roading": 313,
-    "Camping": 284
+    "Camping": 306
   },
   "publicCounts": {
-    "Aviation": 127,
+    "Aviation": 131,
     "Scuba": 140,
     "Shooting": 32,
-    "Boating": 107,
+    "Boating": 109,
     "Off-Roading": 24,
-    "Camping": 28
+    "Camping": 29
   }
 }

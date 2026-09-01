@@ -100,7 +100,14 @@ def first(m,*keys):
     return ""
 
 def normalize_tag_spelling(value):
-    return re.sub(r'(?i)(?<![A-Za-z])avation(?![A-Za-z])','Aviation',str(value or '').strip())
+    text=re.sub(r'(?i)(?<![A-Za-z])avation(?![A-Za-z])','Aviation',str(value or '').strip())
+    comparable=text.replace(chr(92),'/').replace('|','/').casefold()
+    legacy='places/south carolina/lancaster county/fishing creek'
+    if comparable==legacy:
+        if '|' in text: return 'Places|South Carolina|Fishing Creek'
+        if chr(92) in text: return 'Places\\South Carolina\\Fishing Creek'
+        return 'Places/South Carolina/Fishing Creek'
+    return text
 
 def normalize_record_tags(record):
     updated=dict(record)
