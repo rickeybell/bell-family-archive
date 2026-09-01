@@ -205,9 +205,17 @@ function Write-WebVideoDerivative {
             Invoke-FFmpeg @('-hide_banner','-loglevel','error','-y','-i',$Source.FullName,'-map','0:v:0','-map','0:a?','-c','copy','-movflags','+faststart',$temp)
         } else {
             $crfValues = if ($ForceSizeReduction) { @(23,26,29,32) } else { @(20,23,26,29,32) }
+            # Very large 4K/high-frame-rate masters may remain above GitHub's
+            # file limit even at a high CRF. For website-only size reduction,
+            # cap the derivative at 1080p and 30 fps; the master is untouched.
+            $videoFilterArgs = if ($ForceSizeReduction) {
+                @('-vf','scale=1920:1920:force_original_aspect_ratio=decrease,fps=30')
+            } else {
+                @()
+            }
             foreach ($crf in $crfValues) {
                 Write-Host "TRANSCODE $($Source.FullName) [$($SourceCompatibility.VideoCodec)/$($SourceCompatibility.AudioCodec), CRF $crf]"
-                Invoke-FFmpeg @('-hide_banner','-loglevel','error','-y','-i',$Source.FullName,'-map','0:v:0','-map','0:a?','-c:v','libx264','-preset','medium','-crf',"$crf",'-pix_fmt','yuv420p','-c:a','aac','-b:a','128k','-movflags','+faststart',$temp)
+                Invoke-FFmpeg (@('-hide_banner','-loglevel','error','-y','-i',$Source.FullName,'-map','0:v:0','-map','0:a?') + $videoFilterArgs + @('-c:v','libx264','-preset','medium','-crf',"$crf",'-pix_fmt','yuv420p','-c:a','aac','-b:a','128k','-movflags','+faststart',$temp))
                 if ((Get-Item -LiteralPath $temp).Length -le $MaxGitHubVideoBytes) { break }
                 Remove-Item -LiteralPath $temp -Force
             }
