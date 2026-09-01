@@ -79,6 +79,9 @@ def main() -> int:
         return "/".join(reversed(parts))
 
     tags_by_image = {}
+    comments_by_image = {}
+    dates_by_image = {}
+    positions_by_image = {}
     image_ids = [int(row[0]) for row in website_rows]
     for offset in range(0, len(image_ids), 500):
         batch = image_ids[offset : offset + 500]
@@ -90,6 +93,47 @@ def main() -> int:
             path = tag_path(int(tag_id))
             if path:
                 tags_by_image.setdefault(int(image_id), []).append(path)
+        # digiKam comment types used here are 1=comment/description and 3=title.
+        # Prefer the x-default language, then the newest remaining row.
+        for image_id, comment_type, language, comment in connection.execute(
+            f"""
+            SELECT imageid,type,language,comment
+            FROM ImageComments
+            WHERE imageid IN ({placeholders}) AND type IN (1,3)
+            ORDER BY imageid,type,
+                     CASE WHEN language='x-default' THEN 0 ELSE 1 END,
+                     id DESC
+            """,
+            batch,
+        ):
+            text = str(comment or "").strip()
+            if text:
+                comments_by_image.setdefault(int(image_id), {}).setdefault(
+                    int(comment_type), text
+                )
+        for image_id, creation_date in connection.execute(
+            f"""
+            SELECT imageid,creationDate
+            FROM ImageInformation
+            WHERE imageid IN ({placeholders})
+            """,
+            batch,
+        ):
+            if creation_date:
+                dates_by_image[int(image_id)] = str(creation_date)
+        for image_id, latitude, longitude in connection.execute(
+            f"""
+            SELECT imageid,latitudeNumber,longitudeNumber
+            FROM ImagePositions
+            WHERE imageid IN ({placeholders})
+            """,
+            batch,
+        ):
+            if latitude is not None and longitude is not None:
+                positions_by_image[int(image_id)] = {
+                    "latitude": float(latitude),
+                    "longitude": float(longitude),
+                }
     connection.close()
 
     paths = []
@@ -102,10 +146,17 @@ def main() -> int:
         normalized = str(source.resolve())
         if source.is_file():
             stat = source.stat()
+            comments = comments_by_image.get(int(image_id), {})
+            position = positions_by_image.get(int(image_id), {})
             paths.append(normalized)
             items.append({"path": normalized, "length": stat.st_size,
                           "last_write_utc": dotnet_utc_timestamp(stat.st_mtime_ns),
-                          "tags": sorted(set(tags_by_image.get(int(image_id), [])))})
+                          "tags": sorted(set(tags_by_image.get(int(image_id), []))),
+                          "title": comments.get(3, ""),
+                          "description": comments.get(1, ""),
+                          "creation_date": dates_by_image.get(int(image_id), ""),
+                          "gps_latitude": position.get("latitude"),
+                          "gps_longitude": position.get("longitude")})
             by_collection[root.name] = by_collection.get(root.name, 0) + 1
         else:
             missing.append(normalized)

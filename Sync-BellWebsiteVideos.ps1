@@ -10,7 +10,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-$ScriptVersion = "2.3"
+$ScriptVersion = "2.4"
 $RepoRoot = $PSScriptRoot
 $DbSourceHelper = Join-Path $RepoRoot "tools\list_website_sources_from_digikam.py"
 $GreenSyncHelper = Join-Path $RepoRoot "tools\ensure_website_green_in_digikam.py"
@@ -439,18 +439,28 @@ for ($i=0; $i -lt $files.Count; $i += 50) {
             $cleanTags += $t
             if ($parts.Count -ge 2 -and $parts[0] -ieq 'People' -and $leaf) { $people += $leaf }
         }
+        $databaseTitle = if ($databaseItem -and $databaseItem.PSObject.Properties.Name -contains 'title') { [string]$databaseItem.title } else { '' }
+        $databaseDescription = if ($databaseItem -and $databaseItem.PSObject.Properties.Name -contains 'description') { [string]$databaseItem.description } else { '' }
+        $databaseDate = if ($databaseItem -and $databaseItem.PSObject.Properties.Name -contains 'creation_date') { [string]$databaseItem.creation_date } else { '' }
+        $databaseLatitude = if ($databaseItem -and $databaseItem.PSObject.Properties.Name -contains 'gps_latitude' -and $null -ne $databaseItem.gps_latitude) { [string]$databaseItem.gps_latitude } else { '' }
+        $databaseLongitude = if ($databaseItem -and $databaseItem.PSObject.Properties.Name -contains 'gps_longitude' -and $null -ne $databaseItem.gps_longitude) { [string]$databaseItem.gps_longitude } else { '' }
+        $metadataTitle = if (![string]::IsNullOrWhiteSpace($databaseTitle)) { $databaseTitle } else { Join-MetadataValues $record @('Title') }
+        $metadataDescription = if (![string]::IsNullOrWhiteSpace($databaseDescription)) { $databaseDescription } else { Join-MetadataValues $record @('Caption-Abstract','Description') }
+        $metadataDate = if (![string]::IsNullOrWhiteSpace($databaseDate)) { $databaseDate } else { Join-MetadataValues $record @('DateTimeOriginal','CreateDate') }
+        $metadataLatitude = if (![string]::IsNullOrWhiteSpace($databaseLatitude)) { $databaseLatitude } else { Join-MetadataValues $record @('GPSLatitude') }
+        $metadataLongitude = if (![string]::IsNullOrWhiteSpace($databaseLongitude)) { $databaseLongitude } else { Join-MetadataValues $record @('GPSLongitude') }
         $rows.Add([pscustomobject]@{
             SourcePath=$file.FullName
             RelativePath=$relative
             DestinationPath=(Join-Path 'videos' $relative)
             FileName=[System.IO.Path]::GetFileName($relative)
-            Date=(Join-MetadataValues $record @('DateTimeOriginal','CreateDate'))
+            Date=$metadataDate
             People=(($people | ForEach-Object { $_.Trim() } | Where-Object { $_ } | Select-Object -Unique) -join '; ')
-            Title=(Join-MetadataValues $record @('Title'))
-            Description=(Join-MetadataValues $record @('Caption-Abstract','Description'))
+            Title=$metadataTitle
+            Description=$metadataDescription
             Tags=(($cleanTags | Select-Object -Unique) -join '; ')
-            GPSLatitude=(Join-MetadataValues $record @('GPSLatitude'))
-            GPSLongitude=(Join-MetadataValues $record @('GPSLongitude'))
+            GPSLatitude=$metadataLatitude
+            GPSLongitude=$metadataLongitude
             Length=$file.Length
             LastWriteUtc=$file.LastWriteTimeUtc.ToString('o')
         })
