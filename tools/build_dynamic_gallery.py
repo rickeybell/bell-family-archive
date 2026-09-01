@@ -29,11 +29,21 @@ def date_sort_key(x):
     return(2,'9999-12-31',name)
 
 def display_people(values):return ', '.join(re.sub(r'\s+Bell$',' B',str(p),flags=re.I) for p in(values or []))
+HOUSE_NUMBER_RE=re.compile(r'^\s*\d+[A-Za-z]?(?:\s*[-/]\s*\d+[A-Za-z]?)?\s+(?=.*\b(?:Ave(?:nue)?|St(?:reet)?|Rd|Road|Ln|Lane|Dr|Drive|Blvd|Boulevard|Ct|Court|Way|Hwy|Highway|Pkwy|Parkway|Cir|Circle|Ter|Terrace)\b)',re.I)
+def strip_house_number(value):return HOUSE_NUMBER_RE.sub('',str(value or '').strip())
 def clean_location_label(value):
-    v=str(value or '').strip()
+    v=strip_house_number(value)
     return {'Mason St Orig Bell Family Home':'Mason St','Mason St Original Bell Family Home':'Mason St','Mason Street Orig Bell Family Home':'Mason St','Mason Street Original Bell Family Home':'Mason St'}.get(v,v)
+def clean_tag_label(value):
+    parts=[]
+    for part in re.split(r'([/|\\])',str(value or '')):
+        if part in {'/','|','\\'}: parts.append(part)
+        else:
+            label=strip_house_number(part)
+            parts.append('Xavier Lear' if label.casefold()=='xavier charles lear' else label)
+    return ''.join(parts)
 def display_location(x):
-    parts=[];loc=clean_location_label(x.get('location'));city=str(x.get('city') or '').strip();state=str(x.get('state') or '').strip();country=str(x.get('country') or '').strip()
+    parts=[];loc=clean_location_label(x.get('location'));city=clean_location_label(x.get('city'));state=str(x.get('state') or '').strip();country=str(x.get('country') or '').strip()
     if state in STATE_ABBR:state=STATE_ABBR[state]
     elif re.fullmatch(r'[A-Za-z]{2}',state):state=state.upper()
     for p in(loc,city,state):
@@ -82,7 +92,7 @@ def page(title,subtitle,items,filename,empty_html=''):
                 actions=f'<div class="archive-actions"><button data-view-i="{idx}">View</button><a href="{esc(url(o))}" download>Download high resolution</a></div>'
             card_class='archive-card archive-card-wide' if len(desc) >= 240 else 'archive-card'
             cards.append(f'''<article class="{card_class}" data-i="{idx}">{media}<div class="archive-copy">{th}<div class="archive-meta">{''.join(lines)}</div>{f'<p>{esc(desc)}</p>' if desc else ''}<div class="archive-file">{esc(fn)}</div>{actions}</div></article>''')
-            viewer.append({'view':url(v),'orig':url(o),'title':ttl,'date':date,'location':loc,'people':ppl,'people_raw':x.get('people') or [],'categories':x.get('categories') or [],'tags':x.get('tags') or [],'description':desc,'name':fn,'media_type':'video' if is_video else ('audio' if is_audio else 'photo')})
+            viewer.append({'view':url(v),'orig':url(o),'title':ttl,'date':date,'location':loc,'people':ppl,'people_raw':x.get('people') or [],'categories':x.get('categories') or [],'tags':[clean_tag_label(tag) for tag in x.get('tags') or []],'description':desc,'name':fn,'media_type':'video' if is_video else ('audio' if is_audio else 'photo')})
             idx+=1
         sections.append(f'<section class="archive-year"><h2>{esc(y)}</h2><div class="archive-grid">{"".join(cards)}</div></section>')
 

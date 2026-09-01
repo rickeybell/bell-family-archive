@@ -92,6 +92,7 @@ for i in range(0,len(sources),150):
     print(f"Read master metadata {min(i+150,len(sources))}/{len(sources)}")
 
 STATE_ABBR={'South Carolina':'SC','North Carolina':'NC','Florida':'FL','Georgia':'GA','Virginia':'VA','Tennessee':'TN','New York':'NY','Pennsylvania':'PA','Maryland':'MD','Alabama':'AL','Mississippi':'MS','Texas':'TX','California':'CA','Ohio':'OH','West Virginia':'WV'}
+PERSON_ALIASES={'xavier charles lear':'Xavier Lear'}
 
 def first(m,*keys):
     for k in keys:
@@ -109,9 +110,20 @@ def normalize_tag_spelling(value):
         return 'Places/South Carolina/Fishing Creek'
     return text
 
-def normalize_record_tags(record):
+def normalize_person_name(value):
+    name=str(value or '').strip()
+    return PERSON_ALIASES.get(name.casefold(),name)
+
+def split_people(value):
+    return [normalize_person_name(x) for x in str(value or '').split(';') if x.strip()]
+
+def normalize_record_tags(record,manifest=None):
     updated=dict(record)
     updated['tags']=sorted(set(normalize_tag_spelling(tag) for tag in record.get('tags',[]) if str(tag).strip()))
+    people=[normalize_person_name(name) for name in record.get('people',[]) if str(name).strip()]
+    for name in split_people((manifest or {}).get('People')):
+        if name not in people: people.append(name)
+    updated['people']=sorted(set(people))
     return updated
 
 def split_manifest(value):
@@ -150,18 +162,18 @@ for item in rows:
     folder=pathlib.PurePosixPath(rel).parent.name
 
     if item.get("previous"):
-        out.append(normalize_record_tags(item["previous"]))
+        out.append(normalize_record_tags(item["previous"],manifest))
         print("WARNING preserved prior metadata for missing master:",src)
         continue
 
     if item.get("cached_record"):
-        out.append(normalize_record_tags(item["cached_record"]))
+        out.append(normalize_record_tags(item["cached_record"],manifest))
         continue
 
     if media_type=="audio":
         tags=split_manifest(manifest.get("Tags"))
         if not any(re.split(r"[|/\\]",t)[-1].strip().lower()=="sound" for t in tags): tags.append("Sound")
-        people=split_manifest(manifest.get("People"))
+        people=split_people(manifest.get("People"))
         date=str(manifest.get("Date") or '').strip()
         if date: date=date.replace('T',' ').split(' ')[0].replace(':','-',2)
         elif re.fullmatch(r"\d{4}",folder): date=folder
@@ -189,16 +201,16 @@ for item in rows:
             n=tag.replace(chr(92),"/").replace("|","/")
             if n.lower().startswith("people/"):
                 name=n.split("/")[-1].strip()
+                name=normalize_person_name(name)
                 if name and name not in people: people.append(name)
         for key in ("PersonInImage","RegionPersonDisplayName"):
             v=m.get(key,[])
             if isinstance(v,str): v=[v]
             for name in v or []:
-                name=str(name).strip()
+                name=normalize_person_name(name)
                 if name and name not in people: people.append(name)
-        if media_type=="video":
-            for name in split_manifest(manifest.get("People")):
-                if name not in people: people.append(name)
+        for name in split_people(manifest.get("People")):
+            if name not in people: people.append(name)
         loc=first(m,"Location","Sublocation","Sub-location");city=first(m,"City");state=first(m,"State","Province-State");country=first(m,"Country","Country-PrimaryLocationName")
         tl,tc,ts,tco=place_from_tags(tags);loc=loc or tl;city=city or tc;state=state or ts;country=country or tco
         gps={"lat":m.get("GPSLatitude"),"lon":m.get("GPSLongitude")} if m.get("GPSLatitude") is not None and m.get("GPSLongitude") is not None else None

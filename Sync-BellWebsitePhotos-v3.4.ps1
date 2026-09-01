@@ -131,6 +131,19 @@ function Join-MetadataValues {
     return (($all | ForEach-Object { [string]$_ } | Where-Object { ![string]::IsNullOrWhiteSpace($_) } | Select-Object -Unique) -join "; ")
 }
 
+function Get-CatalogPeople {
+    param($SourceItem)
+    $people=@()
+    foreach ($rawTag in @($SourceItem.tags)) {
+        $tag=([string]$rawTag).Trim().Replace('\','/').Replace('|','/')
+        if ($tag -imatch '^People/(.+)$') {
+            $name=($Matches[1] -split '/')[-1].Trim()
+            if ($name) { $people += $name }
+        }
+    }
+    return (($people | Select-Object -Unique) -join '; ')
+}
+
 function Add-PublishedFromManifest {
     param([string]$SourcePath, $Old)
     if (!$Old -or ![bool]$Old.Published) { return }
@@ -187,7 +200,12 @@ function Process-Batch {
                 foreach ($t in ($tags -split ';')) { $t=$t.Trim(); if(!$t){continue}; $leaf=($t -split '[|/]')[-1].Trim(); if($t -ieq $PublishTag -or $leaf -ieq $PublishTag){continue}; $clean += $t }
                 $tags = (($clean | Select-Object -Unique) -join "; ")
             }
-            $script:PublishedRows.Add([pscustomobject]@{SourcePath=$file.FullName;RelativePath=$destRelative;DestinationPath=$destPath;FileName=$file.Name;Date=(Join-MetadataValues $record @("DateTimeOriginal","CreateDate"));People=(Join-MetadataValues $record @("PersonInImage","RegionPersonDisplayName"));Title=(Join-MetadataValues $record @("Title"));Description=(Join-MetadataValues $record @("Caption-Abstract","Description","ImageDescription"));Tags=$tags;GPSLatitude=(Join-MetadataValues $record @("GPSLatitude"));GPSLongitude=(Join-MetadataValues $record @("GPSLongitude"));Length=$file.Length;LastWriteUtc=$file.LastWriteTimeUtc.ToString("o")})
+            $embeddedPeople=Join-MetadataValues $record @("PersonInImage","RegionPersonDisplayName")
+            $catalogItem=$script:CatalogItemBySource[(Get-NormalizedPathKey $file.FullName)]
+            $catalogPeople=Get-CatalogPeople -SourceItem $catalogItem
+            $people=(($embeddedPeople,$catalogPeople | Where-Object { $_ }) -join '; ')
+            $people=(($people -split ';' | ForEach-Object { $_.Trim() } | Where-Object { $_ } | Select-Object -Unique) -join '; ')
+            $script:PublishedRows.Add([pscustomobject]@{SourcePath=$file.FullName;RelativePath=$destRelative;DestinationPath=$destPath;FileName=$file.Name;Date=(Join-MetadataValues $record @("DateTimeOriginal","CreateDate"));People=$people;Title=(Join-MetadataValues $record @("Title"));Description=(Join-MetadataValues $record @("Caption-Abstract","Description","ImageDescription"));Tags=$tags;GPSLatitude=(Join-MetadataValues $record @("GPSLatitude"));GPSLongitude=(Join-MetadataValues $record @("GPSLongitude"));Length=$file.Length;LastWriteUtc=$file.LastWriteTimeUtc.ToString("o")})
             $destExists = Test-Path -LiteralPath $destPath
             $shouldCopy = !$destExists
             if ($destExists) { $destFile=Get-Item -LiteralPath $destPath; $shouldCopy=($destFile.Length -ne $file.Length) -or ($destFile.LastWriteTimeUtc -lt $file.LastWriteTimeUtc) }
@@ -242,6 +260,10 @@ $sourceData = Get-Content -LiteralPath $websiteSourceJson -Raw | ConvertFrom-Jso
 Remove-Item -LiteralPath $websiteSourceJson -Force -ErrorAction SilentlyContinue
 $WebsiteSourcePaths = New-Object "System.Collections.Generic.HashSet[string]" ([System.StringComparer]::OrdinalIgnoreCase)
 foreach ($sourcePath in $sourceData.website_sources) { [void]$WebsiteSourcePaths.Add((Get-NormalizedPathKey ([string]$sourcePath))) }
+$CatalogItemBySource=@{}
+foreach ($sourceItem in @($sourceData.website_items)) {
+    $CatalogItemBySource[(Get-NormalizedPathKey ([string]$sourceItem.path))]=$sourceItem
+}
 if(!(Test-Path -LiteralPath $DestRoot)-and !$DryRun){New-Item -ItemType Directory -Path $DestRoot -Force|Out-Null}
 $Manifest=@{}
 if((Test-Path -LiteralPath $ManifestPath)-and !$ForceFullScan){try{$saved=Get-Content -LiteralPath $ManifestPath -Raw|ConvertFrom-Json;foreach($item in $saved.files){$Manifest[[string]$item.source]=@{LastWriteUtc=[string]$item.lastWriteUtc;Length=[int64]$item.length;Published=[bool]$item.published;Destination=[string]$item.destination}}}catch{Write-Warning "Manifest unreadable; performing a full scan.";$Manifest=@{}}}
@@ -278,6 +300,9 @@ foreach ($sourceItem in $sourceItems) {
     }
     $catalogPublished=$WebsiteSourcePaths.Contains((Get-NormalizedPathKey $sourceKey))
     $priorRow=$PriorPublishedRows[(Get-NormalizedPathKey $sourceKey)]
+    if ($priorRow) {
+        $priorRow.People=Get-CatalogPeople -SourceItem $sourceItem
+    }
     $needsMetadata=$ForceFullScan -or !$old -or !$priorRow -or $old.LastWriteUtc -ne $lastWriteUtc -or [int64]$old.Length -ne $sourceLength -or [bool]$old.Published -ne $catalogPublished
     if(!$needsMetadata){
         $NewManifest[$sourceKey]=@{LastWriteUtc=$lastWriteUtc;Length=$sourceLength;Published=[bool]$old.Published;Destination=[string]$old.Destination}

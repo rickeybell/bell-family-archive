@@ -1473,8 +1473,8 @@
       "Places/South Carolina/Charleston",
       "Places|South Carolina|Charleston"
     ],
-    "title": "Sisterly Advice Newspaper",
-    "description": "",
+    "title": "John J. Tharp Jr. Earns Pilot’s License at 17",
+    "description": "March 1, 1950 newspaper article featuring 17-year-old John J. Tharp Jr. of Folly Beach after earning his pilot’s license. The photograph shows his sister, aviatrix Alma Tharp, giving him some last-minute advice before he takes off in the family airplane. The article describes John as the youngest member of the Breakfast Club and notes the family’s strong connection to aviation.",
     "location": "",
     "city": "Charleston",
     "state": "South Carolina",
@@ -1502,8 +1502,8 @@
       "Places/South Carolina/Charleston",
       "Places|South Carolina|Charleston"
     ],
-    "title": "",
-    "description": "",
+    "title": "Alma Tharp Represents Folly Beach in the Azalea Festival Parade",
+    "description": "Newspaper coverage of Charleston’s Azalea Festival parade notes Alma Tharp as “Miss Folly Beach,” riding aboard the Folly Beach float with other local representatives. The article is another glimpse into Alma’s life beyond aviation, showing her involvement in Charleston-area social and community events during the early 1950s.",
     "location": "",
     "city": "Charleston",
     "state": "South Carolina",
@@ -1589,8 +1589,8 @@
       "Places/South Carolina/Charleston",
       "Places|South Carolina|Charleston"
     ],
-    "title": "Ninety-Nines' Hostess Newspaper",
-    "description": "",
+    "title": "Alma Tharp – Ninety-Nines Hostess",
+    "description": "Newspaper clipping featuring Alma Tharp of Folly Beach, South Carolina, an aviatrix and member of the Ninety-Nines, the international organization of women pilots. The article notes that Alma was selected as one of the hostesses for the organization’s national convention and was employed by Kerrison’s department store as an assistant buyer in lingerie.",
     "location": "",
     "city": "Charleston",
     "state": "South Carolina",
@@ -1656,8 +1656,8 @@
       "Places/South Carolina/Lancaster County/Parris Island",
       "Places|South Carolina|Lancaster County|Parris Island"
     ],
-    "title": "Marine Core Newspaper",
-    "description": "Graham Eli Tharp on the left\nAlma Center\nJohnny on the right",
+    "title": "Alma Tharp Plans to Follow Brother into the Marines – 1950",
+    "description": "July 9, 1950 newspaper article about Alma E. Tharp of Folly Beach and her brother, Private John J. Tharp. Both were young pilots—John soloed at 18, while Alma made her first solo flight at 17 and earned her private pilot’s license that same year. The article describes their friendly rivalry and Alma’s plans to follow her brother into the U.S. Marine Corps. They are pictured with their father, Graham E. Tharp, at the “Iron Mike” monument at Parris Island, South Carolina.",
     "location": "Parris Island",
     "city": "Lancaster County",
     "state": "South Carolina",
@@ -1711,8 +1711,8 @@
       "Places/South Carolina/Charleston",
       "Places|South Carolina|Charleston"
     ],
-    "title": "",
-    "description": "",
+    "title": "Alma Tharp – Only Female Member of Charleston Civil Air Patrol – 1950",
+    "description": "November 18, 1950 Charleston Evening Post article featuring Alma Tharp of Folly Beach, South Carolina. The article identifies her as the newest and only female member of the local Civil Air Patrol chapter. A licensed pilot and member of the Ninety-Nines, Alma is pictured beside an airplane and was noted for owning a four-seat Ercoupe.",
     "location": "",
     "city": "Charleston",
     "state": "South Carolina",
@@ -2056,6 +2056,38 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": null
+  },
+  {
+    "path": "images/1955/20260708_060552.jpg",
+    "media_type": "photo",
+    "file": "20260708_060552.jpg",
+    "folder": "1955",
+    "date": "1955-05-01",
+    "people": [
+      "Alma Bell",
+      "Spooky Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Alma Bell",
+      "People/Alma Bell",
+      "People/Spooky Bell",
+      "People|Alma Bell",
+      "People|Spooky Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Spooky Bell"
+    ],
+    "title": "Alma Bell in Civil Air Patrol Uniform with Spooky – 1955",
+    "description": "Alma Tharp Bell, wearing her Civil Air Patrol uniform, with her 18-month-old son James Stewart “Spooky” Bell III, circa May 1955. Alma had been an active pilot since her teenage years and joined the Civil Air Patrol in 1950. The photograph provides a rare view of Alma in uniform during her years of involvement in aviation and the Civil Air Patrol.",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6933731005556,
+      "lon": -80.8252587
+    }
   },
   {
     "path": "images/1955/1950s_0002_a.jpg",
@@ -5418,8 +5450,8 @@
       "Places|South Carolina|Lancaster County|Erwin Elementary School",
       "South Carolina"
     ],
-    "title": "",
-    "description": "",
+    "title": "Dickey Bell’s Fourth Grade Class – 1967",
+    "description": "School class photograph dated May 10, 1967, belonging to William “Dickey” Bell, age 10. The photograph preserves Dickey’s handwritten list identifying his classmates and teachers. Dickey is listed in the third row along with the other members of his class, making the photograph an especially valuable record of his elementary school years in Lancaster.",
     "location": "Erwin Elementary School",
     "city": "Lancaster County",
     "state": "South Carolina",
@@ -5568,8 +5600,8 @@
       "Places|South Carolina|Lancaster County",
       "Spooky Bell"
     ],
-    "title": "",
-    "description": "Spooky makes Honor Role",
+    "title": "James \"Spooky\" Bell Named to North Junior High Honor Roll – 1968",
+    "description": "Newspaper clipping announcing the honor roll for North Junior High School in Lancaster, South Carolina. James Bell is listed among the ninth-grade students recognized for academic achievement during the fourth six-week grading period.",
     "location": "",
     "city": "Lancaster County",
     "state": "South Carolina",
@@ -6023,8 +6055,8 @@
       "People|Spooky Bell",
       "Spooky Bell"
     ],
-    "title": "",
-    "description": "",
+    "title": "Lancaster High JROTC Cadets Receive Army Awards",
+    "description": "Lancaster High School JROTC Awards Day photograph showing four cadets receiving the Army’s top student award for outstanding achievement in ROTC. The cadets pictured are being recognized during ceremonies at Lancaster High School.\nSpooky 2nd from the left.",
     "location": "",
     "city": "",
     "state": "",
@@ -6286,8 +6318,8 @@
       "Places|South Carolina|Lancaster County",
       "Spooky Bell"
     ],
-    "title": "",
-    "description": "Spooky was accepted into the Counter-Guerrilla Platoon at Clemson",
+    "title": "James \"Spooky\" Bell III Earns Clemson ROTC Black Beret – 1971",
+    "description": "October 28, 1971 Lancaster News article featuring Clemson University freshman James S. Bell III of Lancaster receiving the symbolic black beret signifying his initiation into Clemson Army ROTC’s elite Counter-Guerrilla Platoon. Bell, the son of Mr. and Mrs. Buster Bell of Fairview Drive, was one of 36 cadets selected for the platoon after completing a rigorous training program. He is pictured receiving his beret from Lt. Col. George K. Maertens.",
     "location": "",
     "city": "Lancaster County",
     "state": "South Carolina",
@@ -6449,8 +6481,8 @@
       "Places/South Carolina/Lancaster County",
       "Places|South Carolina|Lancaster County"
     ],
-    "title": "",
-    "description": "",
+    "title": "Lancaster High JROTC “Crack Drill Team” – Dickey Bell – 1972",
+    "description": "Newspaper article featuring Lancaster High School’s Junior ROTC precision drill team. Dickey Bell is pictured in the front row and identified as the team’s only freshman. The article describes the team’s precision marching and rifle-handling demonstration and notes the cadets’ dedication, cooperation, and after-school practice. The team was advised by Sgt. Bob West and performed for schools and community organizations throughout the Lancaster area.",
     "location": "",
     "city": "Lancaster County",
     "state": "South Carolina",
@@ -6503,38 +6535,12 @@
       "People/Dickey Bell",
       "People|Dickey Bell"
     ],
-    "title": "",
-    "description": "",
+    "title": "Lancaster High JROTC Drill Team – March 1972",
+    "description": "March 2, 1972 Lancaster News photograph showing members of Lancaster High School’s Junior ROTC “crack” drill team during a match. The caption praises the team’s performance under adviser Sgt. Bob West, noting that the unit had done an outstanding job during the year. Dickey Bell was a member of the Lancaster High JROTC drill team during this period.",
     "location": "",
     "city": "",
     "state": "",
     "country": "",
-    "gps": null
-  },
-  {
-    "path": "images/1972/1972_Dickey_Bell_0001.jpg",
-    "media_type": "photo",
-    "file": "1972_Dickey_Bell_0001.jpg",
-    "folder": "1972",
-    "date": "1972-03-29",
-    "people": [
-      "Dickey Bell"
-    ],
-    "tags": [
-      "Dickey Bell",
-      "Lancaster County",
-      "Newspaper",
-      "People/Dickey Bell",
-      "People|Dickey Bell",
-      "Places/South Carolina/Lancaster County",
-      "Places|South Carolina|Lancaster County"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
     "gps": null
   },
   {
@@ -6682,8 +6688,8 @@
       "Places/South Carolina/Lancaster County",
       "Places|South Carolina|Lancaster County"
     ],
-    "title": "",
-    "description": "Dickey never could drive.",
+    "title": "Dickey Bell’s South Carolina Highway Patrol Summons – 1972",
+    "description": "South Carolina State Highway Patrol summons issued to William Richard “Dickey” Bell on December 16, 1972, while he was a student in Lancaster. The citation lists the offense as failure to yield right of way on S.C. Highway 521 in Lancaster County. The vehicle, a 1972 Dodge, was owned by his father, James S. Bell. The document provides a small glimpse into Dickey’s teenage years and was preserved among his personal papers.",
     "location": "",
     "city": "Lancaster County",
     "state": "South Carolina",
@@ -6736,8 +6742,8 @@
       "People/Dickey Bell",
       "People|Dickey Bell"
     ],
-    "title": "",
-    "description": "June 22, 1973 — Dickey received a Lancaster, South Carolina summons for excessive noise while driving his 1970 Chevrolet. The case was scheduled for July 3, 1973.",
+    "title": "Dickey Bell’s Excessive Noise Summons – 1973",
+    "description": "City of Lancaster summons issued to William Richard “Dickey” Bell on June 22, 1973, for excessive noise while driving on Highway 521 in Lancaster. Dickey was a student at the time, and the 1970 Ford he was driving was owned by his father, James S. Bell. The citation is a fun surviving piece of Dickey’s teenage years—and suggests that quiet driving may not have been one of his priorities.",
     "location": "",
     "city": "",
     "state": "",
@@ -6861,8 +6867,8 @@
       "Places|South Carolina|Lancaster County|Lancaster High School",
       "South Carolina"
     ],
-    "title": "",
-    "description": "His first Superior Cadet Award",
+    "title": "Dickey Bell Receives Superior Junior Cadet Decoration – 1973",
+    "description": "U.S. Department of the Army citation awarded to Cadet First Sergeant William Richard “Dickey” Bell of Lancaster High School JROTC for the 1972–73 academic year. Dickey received the Superior Junior Cadet Decoration Award in recognition of being the outstanding cadet in his class. The citation was issued by direction of the Secretary of the Army and signed by Lt. Gen. Melvin Zais, Commander of the Third United States Army.",
     "location": "Lancaster High School",
     "city": "Lancaster County",
     "state": "South Carolina",
@@ -7054,8 +7060,8 @@
       "Places/South Carolina/Lancaster County",
       "Places|South Carolina|Lancaster County"
     ],
-    "title": "image.png",
-    "description": "Dickey takes 6th place in the individual drill. The team took second place in the state.",
+    "title": "Dickey Bell and Lancaster High JROTC Drill Team Take Second in Southeast – 1972",
+    "description": "1972 Lancaster News article celebrating Lancaster High School’s Junior ROTC Drill Team after winning second place among 32 teams at the Ninth Annual Regional Drill Meet in Atlanta, Georgia. Cadet First Sergeant William “Dickey” Bell also earned sixth place in basic individual drill. Bell is pictured with his fellow drill team members following the strong regional showing.",
     "location": "",
     "city": "Lancaster County",
     "state": "South Carolina",
@@ -7077,8 +7083,8 @@
       "People/Dickey Bell",
       "People|Dickey Bell"
     ],
-    "title": "",
-    "description": "",
+    "title": "Lancaster High JROTC Earns Army Honor Unit Award – 1973",
+    "description": "May 9, 1973 issue of Lancaster High School’s The Spotlight reports that the JROTC Department received the Army Honor Unit Award with Distinction for the third consecutive year. The article also highlights the “Golden Knights” drill team’s success at the Southeastern Drill Meet in Atlanta, where the team earned several trophies. Dickey Bell won sixth place in individual basic drill, competing against 60 other cadets.",
     "location": "",
     "city": "",
     "state": "",
@@ -7178,8 +7184,8 @@
       "Places|South Carolina|Lancaster County|Lancaster High School",
       "South Carolina"
     ],
-    "title": "",
-    "description": "Dickey's second Superior Cadet Award.",
+    "title": "Dickey Bell Receives Second Superior Junior Cadet Decoration – 1974",
+    "description": "U.S. Department of the Army citation awarded to Cadet Lieutenant Colonel William Richard “Dickey” Bell for the 1973–74 academic year. This was Dickey’s second consecutive Superior Junior Cadet Decoration, recognizing him as the outstanding cadet in his Military Training class. The award capped his senior year in Lancaster High School JROTC, where he served as Cadet Battalion Commander and was a leader of the school’s drill team.",
     "location": "Lancaster High School",
     "city": "Lancaster County",
     "state": "South Carolina",
@@ -7201,8 +7207,8 @@
       "People/Dickey Bell",
       "People|Dickey Bell"
     ],
-    "title": "",
-    "description": "Letter from U.S. Representative Tom S. Gettys to Carl F. Horten of Springs Mills confirming Gettys’s nomination of Dickey as his principal appointee to the U.S. Military Academy at West Point. Gettys wrote that he hoped Dickey would qualify physically and scholastically for admission that July.",
+    "title": "Congressman Tom S. Gettys Nominates Dickey Bell to West Point – 1974",
+    "description": "January 25, 1974 letter from U.S. Congressman Tom S. Gettys confirming that he had nominated William Richard “Dickey” Bell as a principal appointee to the United States Military Academy at West Point. Gettys was responding to Carl F. Horten of Springs Mills, who had written in support of Dickey. The letter expresses Gettys’ hope that Dickey would qualify physically and academically for admission later that year. A handwritten note adds a personal endorsement of Dickey as a “fine young man from an equally fine family.”",
     "location": "",
     "city": "",
     "state": "",
@@ -7326,32 +7332,6 @@
     "gps": null
   },
   {
-    "path": "images/1974/1974_0003.jpg",
-    "media_type": "photo",
-    "file": "1974_0003.jpg",
-    "folder": "1974",
-    "date": "1974-04-22",
-    "people": [
-      "Dickey Bell"
-    ],
-    "tags": [
-      "Dickey Bell",
-      "Lancaster County",
-      "Newspaper",
-      "People/Dickey Bell",
-      "People|Dickey Bell",
-      "Places/South Carolina/Lancaster County",
-      "Places|South Carolina|Lancaster County"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/1974/Dickey Bell, The LA News 4-22-74.png",
     "media_type": "photo",
     "file": "Dickey Bell, The LA News 4-22-74.png",
@@ -7368,8 +7348,8 @@
       "Places/South Carolina/Lancaster County",
       "Places|South Carolina|Lancaster County"
     ],
-    "title": "image.png",
-    "description": "",
+    "title": "Dickey Bell Wins Fourth Place at Southeastern JROTC Drill Meet – 1974",
+    "description": "April 22, 1974 Lancaster News photograph showing Cadet Lt. Col. Dickey Bell of Lancaster High School receiving his trophy after placing fourth at the Tenth Annual Southeastern Drill Meet at Atlanta’s Grady Stadium. Thirty teams from across the Southeast competed for team and individual honors. Bell is pictured being congratulated by Capt. Regis W. Davis as Lt. Col. P. P. Terrell Jr. looks on.",
     "location": "",
     "city": "Lancaster County",
     "state": "South Carolina",
@@ -7521,8 +7501,8 @@
       "Places/South Carolina/Lancaster County",
       "Places|South Carolina|Lancaster County"
     ],
-    "title": "image.png",
-    "description": "Bell was nominated for three service academies. West Point, the Naval Academy, and the Air Force Academy.",
+    "title": "Dickey Bell Nominated to Three U.S. Service Academies – 1974",
+    "description": "June 25, 1974 Lancaster News article announcing that William “Dickey” Bell, a recent Lancaster High School graduate, had received nominations to the U.S. Military Academy at West Point, U.S. Naval Academy, and U.S. Air Force Academy. The article highlights his 12 years of perfect school attendance, four years in JROTC, service as Cadet Battalion Commander and co-captain of the drill team, and numerous ROTC honors. Despite the three service academy nominations, the article notes that Dickey was partial to attending The Citadel.",
     "location": "",
     "city": "Lancaster County",
     "state": "South Carolina",
@@ -7544,8 +7524,8 @@
       "People/Dickey Bell",
       "People|Dickey Bell"
     ],
-    "title": "",
-    "description": "1974 — The Citadel admission record for Dickey, Class of 1978. Dickey was admitted but did not attend.",
+    "title": "William Richard “Dickey” Bell Admitted to The Citadel – Class of 1978",
+    "description": "Official admission certificate from The Citadel, The Military College of South Carolina, granting William Richard “Dickey” Bell admission to the South Carolina Corps of Cadets as a member of the Class of 1978. After graduating from Lancaster High School and receiving nominations to three U.S. service academies, Dickey chose The Citadel in Charleston to continue his education and military training.",
     "location": "",
     "city": "",
     "state": "",
@@ -7574,8 +7554,8 @@
       "Places/South Carolina/Lancaster County",
       "Places|South Carolina|Lancaster County"
     ],
-    "title": "",
-    "description": "Dickey and Deborah Lynne Faulkenberry — marriage certificate, Lancaster County, South Carolina.",
+    "title": "William Richard Bell and Deborah Lynne Faulkenberry Marriage Certificate – 1974",
+    "description": "Official Lancaster County, South Carolina, marriage certificate for William Richard “Dickey” Bell and Deborah Lynne Faulkenberry. Both were 18 years old when they applied for their marriage license on August 15, 1974, and were married by Clyde Runion on August 16, 1974. This certified copy was issued by the Lancaster County Probate Court on August 7, 2026.",
     "location": "",
     "city": "Lancaster County",
     "state": "South Carolina",
@@ -7623,8 +7603,8 @@
       "Places/South Carolina/Lancaster County",
       "Places|South Carolina|Lancaster County"
     ],
-    "title": "",
-    "description": "",
+    "title": "Alma Bell Contributes to Lancaster Christmas Basket Fund – 1974",
+    "description": "December 2, 1974 Lancaster News photograph showing Alma Bell contributing canned food to the annual Christmas Basket Fund at her Fairview Drive home. Lancaster High School Junior ROTC volunteers, working with the Police Youth Patrol, collected donations for families in need. Pictured accepting Alma’s contribution are Vic Burgess, Tommy Peay, and Brenda Morgan.",
     "location": "",
     "city": "Lancaster County",
     "state": "South Carolina",
@@ -7817,8 +7797,8 @@
       "People/Dickey Bell",
       "People|Dickey Bell"
     ],
-    "title": "Speeding Warning",
-    "description": "",
+    "title": "Dickey Bell South Carolina Highway Patrol Warning – 1976",
+    "description": "South Carolina State Highway Patrol warning issued to William Richard “Dickey” Bell on September 3, 1976, in Lancaster County. Dickey was driving a 1971 Ford on Highway 521 when he received a warning for driving too fast for conditions or speeding. The document is another surviving piece from Dickey’s early driving years.",
     "location": "",
     "city": "",
     "state": "",
@@ -10965,8 +10945,8 @@
       "People|Sonja Bell",
       "Sonja Bell"
     ],
-    "title": "Christmas Card",
-    "description": "",
+    "title": "Handmade Card from Sonja to Dickey Bell",
+    "description": "Hand-drawn card made by Sonja for Dickey Bell, decorated with a large heart, the words “I Love You!”, and Christmas bells with “Merry Christmas.” A personal keepsake from their relationship, preserved among Dickey’s papers.",
     "location": "",
     "city": "",
     "state": "",
@@ -13779,8 +13759,8 @@
       "People/Dickey Bell",
       "People|Dickey Bell"
     ],
-    "title": "",
-    "description": "April 10, 1982 — South Carolina State Highway Patrol warning issued to Dickey in Lancaster; family record for Dickey.",
+    "title": "Dickey Bell South Carolina Highway Patrol Speeding Warning – 1982",
+    "description": "South Carolina State Highway Patrol warning issued to William Richard “Dickey” Bell on April 10, 1982, in Lancaster County. Dickey was driving a 1979 Dodge on Highway 9 when he received a warning for speeding or driving too fast for conditions. The warning was issued by Patrolman M. E. Johnson and is another surviving piece documenting Dickey’s driving history.",
     "location": "",
     "city": "",
     "state": "",
@@ -14660,8 +14640,8 @@
       "People/Dickey Bell",
       "People|Dickey Bell"
     ],
-    "title": "",
-    "description": "",
+    "title": "Dickey Bell – Limestone College Grade Point Record – 1985",
+    "description": "Limestone College grade point computation record for William Richard “Dickey” Bell, completed through the final semester of Spring 1985. The record shows 120 total credit hours and a cumulative grade point ratio of approximately 3.65. It also documents 26 transfer hours from the University of South Carolina, reflecting Dickey’s continued college education and academic achievement.",
     "location": "",
     "city": "",
     "state": "",
@@ -14727,8 +14707,8 @@
       "People/Dickey Bell",
       "People|Dickey Bell"
     ],
-    "title": "image.png",
-    "description": "",
+    "title": "William Richard “Dickey” Bell Earns Bachelor of Science from Limestone College – 1985",
+    "description": "Limestone College diploma awarded to William Richard “Dickey” Bell on May 4, 1985, conferring the degree of Bachelor of Science. Dickey graduated Cum Laude, recognizing his academic achievement while completing his degree at Limestone College in Gaffney, South Carolina.",
     "location": "",
     "city": "",
     "state": "",
@@ -14750,8 +14730,8 @@
       "People/Dickey Bell",
       "People|Dickey Bell"
     ],
-    "title": "",
-    "description": "",
+    "title": "William Richard “Dickey” Bell Graduates Cum Laude from Limestone College – 1985",
+    "description": "Limestone College commencement honors listing recognizing William Richard “Dickey” Bell as a Cum Laude graduate. The honor reflects Dickey’s strong academic performance while completing his college degree, following earlier studies at the University of South Carolina.",
     "location": "",
     "city": "",
     "state": "",
@@ -15083,8 +15063,8 @@
       "People/Dickey Bell",
       "People|Dickey Bell"
     ],
-    "title": "image.png",
-    "description": "",
+    "title": "Dickey Bell Completes Wall Street Seminar in New York City – 1987",
+    "description": "Certificate awarded to William “Dickey” Bell by the Washington Workshops Foundation on June 13, 1987, recognizing his completion of the Wall Street Seminar on the American Free Enterprise System in New York City. The program provided participants with an educational look at Wall Street, business, finance, and the American free enterprise system.",
     "location": "",
     "city": "",
     "state": "",
@@ -15602,7 +15582,9 @@
     "file": "1990s_0050.jpg",
     "folder": "1990",
     "date": "1990-01-01",
-    "people": [],
+    "people": [
+      "Dickey Bell"
+    ],
     "tags": [],
     "title": "",
     "description": "",
@@ -16355,8 +16337,8 @@
       "People/Dickey Bell",
       "People|Dickey Bell"
     ],
-    "title": "image.png",
-    "description": "",
+    "title": "Dickey Bell Inducted into Beta Gamma Sigma – 1990",
+    "description": "Certificate recognizing William Richard “Dickey” Bell for his selection into Beta Gamma Sigma, the honor society for collegiate schools of business, in recognition of high scholastic achievement. Dickey was inducted through the Winthrop College Chapter on December 4, 1990, marking another significant academic achievement in his continuing education.",
     "location": "",
     "city": "",
     "state": "",
@@ -16378,8 +16360,8 @@
       "People/Dickey Bell",
       "People|Dickey Bell"
     ],
-    "title": "image.png",
-    "description": "",
+    "title": "William Richard “Dickey” Bell Earns MBA from Winthrop College – 1990",
+    "description": "Winthrop College diploma awarded to William Richard “Dickey” Bell on December 15, 1990, conferring the degree of Master of Business Administration (MBA). The graduate degree marked another major academic achievement for Dickey, following his Bachelor of Science degree from Limestone College and his induction into Beta Gamma Sigma, the collegiate business honor society.",
     "location": "",
     "city": "",
     "state": "",
@@ -20240,32 +20222,6 @@
     "gps": null
   },
   {
-    "path": "images/1994/Alma4.jpg",
-    "media_type": "photo",
-    "file": "Alma4.jpg",
-    "folder": "1994",
-    "date": "1994-05-01",
-    "people": [
-      "Alma Bell"
-    ],
-    "tags": [
-      "Alma Bell",
-      "Lancaster County",
-      "Newspaper",
-      "People/Alma Bell",
-      "People|Alma Bell",
-      "Places/South Carolina/Lancaster County",
-      "Places|South Carolina|Lancaster County"
-    ],
-    "title": "Alma turned love of flying into daring hobby",
-    "description": "",
-    "location": "",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/1994/Alma Tharp Bell Death.jpg",
     "media_type": "photo",
     "file": "Alma Tharp Bell Death.jpg",
@@ -20312,7 +20268,7 @@
       "Places/South Carolina/Lancaster County",
       "Places|South Carolina|Lancaster County"
     ],
-    "title": "Alma Tharp Turned Love of Flying Into Daring Hobby and Set Record",
+    "title": "Alma Tharp Bell – A Lifetime of Aviation and a Record-Setting Legacy",
     "description": "Retrospective newspaper article by J. Douglas Donehue recounting the aviation career of Alma Edythe Tharp Bell. Alma made her first solo flight at age 16 and became one of the relatively few licensed women pilots active in South Carolina during the late 1940s and early 1950s. She frequently flew with fellow aviator and close friend Jewell Bailey in Alma's airplane, named “Rebel” after Charleston's South Atlantic League baseball team.\n\nThe article describes Alma and Jewell's involvement with The Ninety-Nines, the organization founded by Amelia Earhart and other women pilots. In 1949, Jewell Bailey set a light-airplane altitude record at the Azalea Festival, flying a Piper Cub to 26,875 feet, 1,112 feet above the previous record.\n\nIn 1947, Alma flew her father, Graham Tharp, to Atlanta to see a new Ercoupe. He liked the airplane so much that he purchased it for Alma. Alma later taught her father to fly and also taught her 14-year-old brother Johnny Tharp. In 1950, she served as an official hostess for the national Ninety-Nines convention in Greenville and was described as the organization's youngest member.\n\nAs Alma's reputation grew, she and Jewell Bailey became well known in regional aviation circles, flying to air shows throughout the Carolinas and Southeast. Alma grew up at Folly Beach, later married James Stewart “Buster” Bell Jr. in 1952, and moved to Lancaster. The article states that Alma was 67 years old when she died on May 19.",
     "location": "",
     "city": "Lancaster County",
@@ -20745,8 +20701,8 @@
       "People/Alma Bell",
       "People|Alma Bell"
     ],
-    "title": "",
-    "description": "",
+    "title": "Alma Tharp Bell Memorial Obituary – 1994",
+    "description": "Memorial obituary for Alma Tharp Bell, published in The Enterprise of High Point, North Carolina, on May 20, 1994. Alma died May 18, 1994, at age 67. Born in Charleston to Graham E. and Ethel Fike Tharp, she later lived in Lancaster, worked for Springs Industries, and was a member of Christ Episcopal Church. She was the widow of James Stewart Bell Jr. and was survived by her sons James S. Bell III and William R. “Dickey” Bell, along with her siblings and two grandchildren. Alma was buried at Lancaster Memorial Park.",
     "location": "",
     "city": "",
     "state": "",
@@ -20768,8 +20724,8 @@
       "People/Alma Bell",
       "People|Alma Bell"
     ],
-    "title": "",
-    "description": "",
+    "title": "Alma Tharp Bell Memorial – Twenty-Third Psalm – 1994",
+    "description": "Memorial keepsake from the funeral of Alma Tharp Bell, who died May 18, 1994. The card features the Twenty-Third Psalm, surrounded by a floral border, with the words “Rest In Peace.” It was preserved with Alma’s obituary and funeral records as a remembrance of her life.",
     "location": "",
     "city": "",
     "state": "",
@@ -20794,8 +20750,8 @@
       "Places/South Carolina/Lancaster County",
       "Places|South Carolina|Lancaster County"
     ],
-    "title": "",
-    "description": "",
+    "title": "Alma Tharp Bell Obituary – May 1994",
+    "description": "Newspaper obituary for Alma Tharp Bell, 67, of Lancaster, South Carolina, who died May 18, 1994. The notice identifies her as a Charleston County native, former Springs Industries employee, member of Christ Episcopal Church, and widow of James Stewart Bell Jr. It lists her sons James Bell III and William “Dickey” Bell, her brother Johnny Tharp, sisters Marion Brown and Rachel Bell, and two grandchildren. Funeral services were held at Mahaffey Funeral Home, with burial at Lancaster Memorial Park.",
     "location": "",
     "city": "Lancaster County",
     "state": "South Carolina",
@@ -21681,8 +21637,8 @@
       "People|Sonja Bell",
       "Sonja Bell"
     ],
-    "title": "",
-    "description": "",
+    "title": "William Richard “Dickey” Bell and Sonja Lynn Barnett Marriage Certificate – 1994",
+    "description": "Official Lancaster County, South Carolina, marriage certificate for William Richard “Dickey” Bell and Sonja Lynn Barnett. The couple applied for their marriage license on July 25, 1994, and were married on August 7, 1994, by William A. Dysard Jr. The document records the marriage of Dickey and Sonja after many years together and was certified by the Lancaster County Probate Court in 2026.",
     "location": "",
     "city": "",
     "state": "",
@@ -26275,8 +26231,8 @@
       "Rickey Bell",
       "Stephanie Bell"
     ],
-    "title": "",
-    "description": "",
+    "title": "Technical Solutions – Bell Family Business – 1998",
+    "description": "July 26, 1998 Lancaster News feature on Technical Solutions, a Lancaster business equipment and computer company founded October 14, 1996, by Ricky Bell, Stephanie Bell, and Dickey Bell. The company sold and serviced Sharp copiers and fax machines and provided custom-built computers, networking, upgrades, and computer repair. The article also lists Ricky Bell as a service technician and Debbie Phillips as a member of the sales staff.",
     "location": "",
     "city": "",
     "state": "",
@@ -26302,8 +26258,8 @@
       "Rickey Bell",
       "Stephanie Bell"
     ],
-    "title": "",
-    "description": "",
+    "title": "Rickey and Stephanie Bell at Technical Solutions – 1998",
+    "description": "September 23, 1998 newspaper business feature showing Ricky and Stephanie Bell, owners of Technical Solutions in Lancaster, South Carolina, searching for Sharp copier parts on a computer. Technical Solutions sold, leased, rented, and serviced Sharp copiers and fax machines while also providing custom-built computers, computer networking, and technical service.",
     "location": "",
     "city": "",
     "state": "",
@@ -27414,7 +27370,9 @@
     "file": "07EK5138.JPG",
     "folder": "2000",
     "date": "2000-07-01",
-    "people": [],
+    "people": [
+      "Samatha Bell"
+    ],
     "tags": [],
     "title": "",
     "description": "",
@@ -27452,7 +27410,9 @@
     "file": "07EK5223.JPG",
     "folder": "2000",
     "date": "2000-07-01",
-    "people": [],
+    "people": [
+      "Samatha Bell"
+    ],
     "tags": [],
     "title": "",
     "description": "",
@@ -29021,8 +28981,8 @@
       "People/Dickey Bell",
       "People|Dickey Bell"
     ],
-    "title": "",
-    "description": "",
+    "title": "Dickey Bell – Carolina Sportsman Gun Range Membership – 2001",
+    "description": "Carolina Sportsman Gun Range family membership card for William Richard “Dickey” Bell. The range was located on Highway 274 in Rock Hill, South Carolina. The card, which expired December 30, 2001, is a surviving keepsake documenting one of Dickey’s recreational interests.",
     "location": "",
     "city": "",
     "state": "",
@@ -31735,6 +31695,72 @@
     "gps": null
   },
   {
+    "path": "images/2002/100-0012_IMG.JPG",
+    "media_type": "photo",
+    "file": "100-0012_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-08-20",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "People/Dickey Bell",
+      "People|Dickey Bell"
+    ],
+    "title": "Dickey Bell’s Work Cubicle at Springs Industries – Early 2000s",
+    "description": "Photographs of William Richard “Dickey” Bell’s work cubicle at Springs Industries, where he worked in information systems and customer service. His workspace was filled with family photographs, academic and professional mementos, and awards collected over the years. Prominently displayed was his Springs Industries Twenty-Five Year Club certificate honoring his service since 1977. The photographs provide a personal look at Dickey’s workplace and the long career he built with Springs.",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2002/100-0016_IMG.JPG",
+    "media_type": "photo",
+    "file": "100-0016_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-08-20",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "People/Dickey Bell",
+      "People|Dickey Bell"
+    ],
+    "title": "Dickey Bell’s Work Cubicle at Springs Industries – Early 2000s",
+    "description": "Photographs of William Richard “Dickey” Bell’s work cubicle at Springs Industries, where he worked in information systems and customer service. His workspace was filled with family photographs, academic and professional mementos, and awards collected over the years. Prominently displayed was his Springs Industries Twenty-Five Year Club certificate honoring his service since 1977. The photographs provide a personal look at Dickey’s workplace and the long career he built with Springs.",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2002/100-0017_IMG.JPG",
+    "media_type": "photo",
+    "file": "100-0017_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-08-20",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "People/Dickey Bell",
+      "People|Dickey Bell"
+    ],
+    "title": "Dickey Bell’s Work Cubicle at Springs Industries – Early 2000s",
+    "description": "Photographs of William Richard “Dickey” Bell’s work cubicle at Springs Industries, where he worked in information systems and customer service. His workspace was filled with family photographs, academic and professional mementos, and awards collected over the years. Prominently displayed was his Springs Industries Twenty-Five Year Club certificate honoring his service since 1977. The photographs provide a personal look at Dickey’s workplace and the long career he built with Springs.",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2002/117-1729_IMG.JPG",
     "media_type": "photo",
     "file": "117-1729_IMG.JPG",
@@ -32643,7 +32669,10 @@
     "file": "125-2548_IMG.JPG",
     "folder": "2002",
     "date": "2002-11-10",
-    "people": [],
+    "people": [
+      "Dickey Bell",
+      "Rickey Bell"
+    ],
     "tags": [
       "900 Confederate Ave",
       "Lancaster County",
@@ -32669,7 +32698,10 @@
     "file": "125-2549_IMG.JPG",
     "folder": "2002",
     "date": "2002-11-10",
-    "people": [],
+    "people": [
+      "Dickey Bell",
+      "Rickey Bell"
+    ],
     "tags": [
       "900 Confederate Ave",
       "Lancaster County",
@@ -37971,6 +38003,8 @@
     "date": "2009-01-01",
     "people": [
       "Andrew Morgan",
+      "Joey Morgan",
+      "Karen Gaskin",
       "Mickey Morgan"
     ],
     "tags": [
@@ -37997,7 +38031,8 @@
     "date": "2009-01-01",
     "people": [
       "Adam Lear",
-      "Dickey Bell"
+      "Dickey Bell",
+      "Sonja Bell"
     ],
     "tags": [
       "Adam Lear",
@@ -38321,7 +38356,8 @@
     "folder": "2010",
     "date": "2010-02-01",
     "people": [
-      "Jarred Bell"
+      "Jarred Bell",
+      "Rickey Bell"
     ],
     "tags": [
       "Jarred Bell",
@@ -38374,7 +38410,8 @@
     "people": [
       "Anna Lear",
       "Charlie Brown",
-      "Donna Brown"
+      "Donna Brown",
+      "Samatha Bell"
     ],
     "tags": [
       "Anna Lear",
@@ -38951,6 +38988,31 @@
       "Places/South Carolina/Lancaster County/900 Confederate Ave",
       "Places|South Carolina|Lancaster County|900 Confederate Ave",
       "Tanisha"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2011/103_0998.JPG",
+    "media_type": "photo",
+    "file": "103_0998.JPG",
+    "folder": "2011",
+    "date": "2011-03-11",
+    "people": [
+      "Anna Lear"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Anna Lear",
+      "People/Anna Lear",
+      "People|Anna Lear",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
     ],
     "title": "",
     "description": "",
@@ -40383,6 +40445,28 @@
       "People/Dickey Bell",
       "People|Dickey Bell"
     ],
+    "title": "Dickey Bell Named ArrowPointe Support Staff of the Year – 2016",
+    "description": "Spring 2016 issue of ArrowPointe Federal Credit Union’s To the Pointe newsletter recognizing William “Dickey” Bell, Systems Operator, as Support Staff of the Year. The award was presented during the credit union’s 2015 Annual Meeting and recognized Dickey’s work and contributions to ArrowPointe. He is featured prominently in the newsletter alongside the other annual award recipients.",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2016/IMG_2792.JPG",
+    "media_type": "photo",
+    "file": "IMG_2792.JPG",
+    "folder": "2016",
+    "date": "2016-03-29",
+    "people": [
+      "Xavier Lear"
+    ],
+    "tags": [
+      "People/Xavier Charles Lear",
+      "People|Xavier Charles Lear",
+      "Xavier Charles Lear"
+    ],
     "title": "",
     "description": "",
     "location": "",
@@ -40415,6 +40499,103 @@
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2016/IMG_3185.JPG",
+    "media_type": "photo",
+    "file": "IMG_3185.JPG",
+    "folder": "2016",
+    "date": "2016-05-30",
+    "people": [
+      "Anna Lear",
+      "Charlie Brown",
+      "Donna Brown",
+      "Jarred Bell",
+      "Xavier Lear"
+    ],
+    "tags": [
+      "Anna Lear",
+      "Charlie Brown",
+      "Donna Brown",
+      "Fountain of Youth",
+      "Jarred Bell",
+      "People/Anna Lear",
+      "People/Charlie Brown",
+      "People/Donna Brown",
+      "People/Jarred Bell",
+      "People/Xavier Charles Lear",
+      "People|Anna Lear",
+      "People|Charlie Brown",
+      "People|Donna Brown",
+      "People|Jarred Bell",
+      "People|Xavier Charles Lear",
+      "Places/Florida/St Augustine",
+      "Places/Florida/St Augustine/Fountain of Youth",
+      "Places|Florida|St Augustine",
+      "Places|Florida|St Augustine|Fountain of Youth",
+      "St Augustine",
+      "Xavier Charles Lear"
+    ],
+    "title": "Brown Family Vacation First Day in Florida",
+    "description": "",
+    "location": "Fountain of Youth",
+    "city": "St Augustine",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2016/IMG_3224.JPG",
+    "media_type": "photo",
+    "file": "IMG_3224.JPG",
+    "folder": "2016",
+    "date": "2016-05-30",
+    "people": [
+      "Xavier Lear"
+    ],
+    "tags": [
+      "Fountain of Youth",
+      "People/Xavier Charles Lear",
+      "People|Xavier Charles Lear",
+      "Places/Florida/St Augustine",
+      "Places/Florida/St Augustine/Fountain of Youth",
+      "Places|Florida|St Augustine",
+      "Places|Florida|St Augustine|Fountain of Youth",
+      "St Augustine",
+      "Xavier Charles Lear"
+    ],
+    "title": "Brown Family Vacation First Day in Florida",
+    "description": "",
+    "location": "Fountain of Youth",
+    "city": "St Augustine",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2016/IMG_3237.JPG",
+    "media_type": "photo",
+    "file": "IMG_3237.JPG",
+    "folder": "2016",
+    "date": "2016-05-31",
+    "people": [
+      "Anna Lear"
+    ],
+    "tags": [
+      "Anna Lear",
+      "Disney World",
+      "People/Anna Lear",
+      "People|Anna Lear",
+      "Places/Florida/Orlando/Disney World",
+      "Places|Florida|Orlando|Disney World"
+    ],
+    "title": "Brown Family Vacation Day 2 Walt Disney World",
+    "description": "",
+    "location": "Disney World",
+    "city": "Orlando",
+    "state": "Florida",
+    "country": "United States",
     "gps": null
   },
   {
@@ -40959,6 +41140,32 @@
     }
   },
   {
+    "path": "images/2016/IMG_4329.JPG",
+    "media_type": "photo",
+    "file": "IMG_4329.JPG",
+    "folder": "2016",
+    "date": "2016-11-27",
+    "people": [
+      "Anna Lear",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Anna Lear",
+      "People/Anna Lear",
+      "People/Sophia Bell",
+      "People|Anna Lear",
+      "People|Sophia Bell",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2016/20161201_020409478_iOS.jpg",
     "media_type": "photo",
     "file": "20161201_020409478_iOS.jpg",
@@ -41030,8 +41237,8 @@
       "People|Rickey Bell",
       "Rickey Bell"
     ],
-    "title": "image.png",
-    "description": "",
+    "title": "Dickey and Rickey Bell Win Credit Union Magic Minute Shopping Spree – 2016",
+    "description": "December 7, 2016 Lancaster News feature about William “Dickey” Bell, one of seven winners nationwide in the Credit Union Magic Minute sweepstakes. Dickey and his shopping partner, Rickey Bell, traveled to Chicago for a 60-second shopping spree, racing to fill an oversized cart with merchandise including laptops, tablets, HDTVs, and home appliances. The photograph shows Rickey, left, and Dickey, right, with their winnings after the event.",
     "location": "",
     "city": "",
     "state": "",
@@ -41303,6 +41510,61 @@
       "lat": 34.6933860830556,
       "lon": -80.8252638833333
     }
+  },
+  {
+    "path": "videos/2017/IMG_0936.mp4",
+    "media_type": "video",
+    "file": "IMG_0936.mp4",
+    "folder": "2017",
+    "date": "2017-07-14",
+    "people": [
+      "Anna Lear",
+      "Samatha Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "People/Anna Lear",
+      "People/Samatha Bell",
+      "People/Sophia Bell",
+      "Places/South Carolina/Myrtle Beach",
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2017/IMG_0969.JPG",
+    "media_type": "photo",
+    "file": "IMG_0969.JPG",
+    "folder": "2017",
+    "date": "2017-07-16",
+    "people": [
+      "Anna Lear",
+      "Xavier Lear"
+    ],
+    "tags": [
+      "Anna Lear",
+      "Myrtle Beach",
+      "People/Anna Lear",
+      "People/Xavier Charles Lear",
+      "People|Anna Lear",
+      "People|Xavier Charles Lear",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach",
+      "Xavier Charles Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
   },
   {
     "path": "videos/2017/20170807_225752000_iOS.mp4",
@@ -41800,6 +42062,28 @@
       "People|Sophia Bell",
       "Sophia Bell",
       "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2018/IMG_3322.JPEG",
+    "media_type": "photo",
+    "file": "IMG_3322.JPEG",
+    "folder": "2018",
+    "date": "2018-11-17",
+    "people": [
+      "Xavier Lear"
+    ],
+    "tags": [
+      "People/Xavier Charles Lear",
+      "People|Xavier Charles Lear",
+      "Xavier Charles Lear"
     ],
     "title": "",
     "description": "",
@@ -42472,8 +42756,8 @@
       "Places|South Carolina|Lancaster County",
       "Video"
     ],
-    "title": "",
-    "description": "",
+    "title": "Dickey Bell Drives His New Lawn Mower Home from Home Depot – 2019",
+    "description": "June 17, 2019 video of William “Dickey” Bell picking up his new riding lawn mower from Home Depot. Rather than hauling it home on a trailer, Dickey chose a more memorable solution—he simply climbed aboard and drove the lawn mower home himself. A fun moment that captures Dickey’s personality and his practical approach to getting things done.",
     "location": "",
     "city": "Lancaster County",
     "state": "South Carolina",
@@ -43300,37 +43584,6 @@
     }
   },
   {
-    "path": "images/2019/20191224_153220.jpg",
-    "media_type": "photo",
-    "file": "20191224_153220.jpg",
-    "folder": "2019",
-    "date": "2019-12-24",
-    "people": [
-      "Anna Lear"
-    ],
-    "tags": [
-      "2044 Douglas Rd",
-      "Anna Lear",
-      "Lancaster County",
-      "People/Anna Lear",
-      "People|Anna Lear",
-      "Places/South Carolina/Lancaster County",
-      "Places/South Carolina/Lancaster County/2044 Douglas Rd",
-      "Places|South Carolina|Lancaster County",
-      "Places|South Carolina|Lancaster County|2044 Douglas Rd"
-    ],
-    "title": "",
-    "description": "",
-    "location": "2044 Douglas Rd",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.661420445,
-      "lon": -80.7817458333333
-    }
-  },
-  {
     "path": "videos/2019/20191225_130351.mp4",
     "media_type": "video",
     "file": "20191225_130351.mp4",
@@ -43655,6 +43908,58 @@
       "lat": 34.6933958838889,
       "lon": -80.8252511836111
     }
+  },
+  {
+    "path": "images/2020/IMG_0014.JPG",
+    "media_type": "photo",
+    "file": "IMG_0014.JPG",
+    "folder": "2020",
+    "date": "2020-10-31",
+    "people": [
+      "Dickey Bell",
+      "Jarred Bell",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Jarred Bell",
+      "People/Dickey Bell",
+      "People/Jarred Bell",
+      "People/Rickey Bell",
+      "People|Dickey Bell",
+      "People|Jarred Bell",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2020/IMG_4372.JPG",
+    "media_type": "photo",
+    "file": "IMG_4372.JPG",
+    "folder": "2020",
+    "date": "2020-10-31",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "People/Dickey Bell",
+      "People|Dickey Bell"
+    ],
+    "title": "Dickey Bell Digging the Hair",
+    "description": "A lighthearted photo of William “Dickey” Bell at work, having a little fun while wearing a long black wig. Dickey appears to be thoroughly “digging the hair,” capturing the sense of humor and playful personality he brought to the workplace.",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
   },
   {
     "path": "images/2020/20201107_161212.jpg",
@@ -44158,6 +44463,32 @@
     "gps": null
   },
   {
+    "path": "images/2021/IMG_2155.jpg",
+    "media_type": "photo",
+    "file": "IMG_2155.jpg",
+    "folder": "2021",
+    "date": "2021-01-05",
+    "people": [
+      "Sophia Bell",
+      "Xavier Lear"
+    ],
+    "tags": [
+      "People/Sophia Bell",
+      "People/Xavier Charles Lear",
+      "People|Sophia Bell",
+      "People|Xavier Charles Lear",
+      "Sophia Bell",
+      "Xavier Charles Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2021/20210313_150458.jpg",
     "media_type": "photo",
     "file": "20210313_150458.jpg",
@@ -44414,6 +44745,110 @@
     }
   },
   {
+    "path": "images/2021/20210704_121027.jpg",
+    "media_type": "photo",
+    "file": "20210704_121027.jpg",
+    "folder": "2021",
+    "date": "2021-07-04",
+    "people": [
+      "Donna Brown",
+      "Sophia Bell",
+      "Xavier Lear"
+    ],
+    "tags": [
+      "Donna Brown",
+      "People/Donna Brown",
+      "People/Sophia Bell",
+      "People/Xavier Charles Lear",
+      "People|Donna Brown",
+      "People|Sophia Bell",
+      "People|Xavier Charles Lear",
+      "Places/Tennessee",
+      "Places|Tennessee",
+      "Sophia Bell",
+      "Tennessee",
+      "Xavier Charles Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Tennessee",
+    "country": "United States",
+    "gps": {
+      "lat": 35.7930322997222,
+      "lon": -83.5350638
+    }
+  },
+  {
+    "path": "images/2021/20210704_132835.jpg",
+    "media_type": "photo",
+    "file": "20210704_132835.jpg",
+    "folder": "2021",
+    "date": "2021-07-04",
+    "people": [
+      "Anna Lear",
+      "Sophia Bell",
+      "Xavier Lear"
+    ],
+    "tags": [
+      "Anna Lear",
+      "People/Anna Lear",
+      "People/Sophia Bell",
+      "People/Xavier Charles Lear",
+      "People|Anna Lear",
+      "People|Sophia Bell",
+      "People|Xavier Charles Lear",
+      "Places/Tennessee",
+      "Places|Tennessee",
+      "Sophia Bell",
+      "Tennessee",
+      "Xavier Charles Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Tennessee",
+    "country": "United States",
+    "gps": {
+      "lat": 35.7918197,
+      "lon": -83.5353691
+    }
+  },
+  {
+    "path": "images/2021/20210704_163610.jpg",
+    "media_type": "photo",
+    "file": "20210704_163610.jpg",
+    "folder": "2021",
+    "date": "2021-07-04",
+    "people": [
+      "Sophia Bell",
+      "Xavier Lear"
+    ],
+    "tags": [
+      "People/Sophia Bell",
+      "People/Xavier Charles Lear",
+      "People|Sophia Bell",
+      "People|Xavier Charles Lear",
+      "Places/Tennessee",
+      "Places|Tennessee",
+      "Sophia Bell",
+      "Tennessee",
+      "Xavier Charles Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Tennessee",
+    "country": "United States",
+    "gps": {
+      "lat": 35.7933719994444,
+      "lon": -83.5331844997222
+    }
+  },
+  {
     "path": "images/2021/20210906_142624.jpg",
     "media_type": "photo",
     "file": "20210906_142624.jpg",
@@ -44526,6 +44961,76 @@
     }
   },
   {
+    "path": "images/2021/20211023_123108.jpg",
+    "media_type": "photo",
+    "file": "20211023_123108.jpg",
+    "folder": "2021",
+    "date": "2021-10-23",
+    "people": [
+      "Charlie Brown",
+      "Donna Brown",
+      "Rickii Lear",
+      "Sophia Bell",
+      "Xavier Lear"
+    ],
+    "tags": [
+      "Charlie Brown",
+      "Donna Brown",
+      "People/Charlie Brown",
+      "People/Donna Brown",
+      "People/Rickii Lear",
+      "People/Sophia Bell",
+      "People/Xavier Charles Lear",
+      "People|Charlie Brown",
+      "People|Donna Brown",
+      "People|Rickii Lear",
+      "People|Sophia Bell",
+      "People|Xavier Charles Lear",
+      "Rickii Lear",
+      "Sophia Bell",
+      "Xavier Charles Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": {
+      "lat": 34.3214881997222,
+      "lon": -81.0919947
+    }
+  },
+  {
+    "path": "images/2021/20211023_130716.jpg",
+    "media_type": "photo",
+    "file": "20211023_130716.jpg",
+    "folder": "2021",
+    "date": "2021-10-23",
+    "people": [
+      "Sophia Bell",
+      "Xavier Lear"
+    ],
+    "tags": [
+      "People/Sophia Bell",
+      "People/Xavier Charles Lear",
+      "People|Sophia Bell",
+      "People|Xavier Charles Lear",
+      "Sophia Bell",
+      "Xavier Charles Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": {
+      "lat": 34.3119987997222,
+      "lon": -81.1096350997222
+    }
+  },
+  {
     "path": "images/2021/20211124_182542.jpg",
     "media_type": "photo",
     "file": "20211124_182542.jpg",
@@ -44602,6 +45107,32 @@
       "lat": 33.9814634005556,
       "lon": -78.7094842836111
     }
+  },
+  {
+    "path": "images/2021/Screenshot_20211213-202748_Facebook-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20211213-202748_Facebook-edited.jpg",
+    "folder": "2021",
+    "date": "2021-12-13",
+    "people": [
+      "Donna Brown",
+      "Xavier Lear"
+    ],
+    "tags": [
+      "Donna Brown",
+      "People/Donna Brown",
+      "People/Xavier Charles Lear",
+      "People|Donna Brown",
+      "People|Xavier Charles Lear",
+      "Xavier Charles Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
   },
   {
     "path": "images/2022/Warrior Purchase.png",
@@ -45297,6 +45828,42 @@
     }
   },
   {
+    "path": "images/2022/20220806_160722.jpg",
+    "media_type": "photo",
+    "file": "20220806_160722.jpg",
+    "folder": "2022",
+    "date": "2022-08-06",
+    "people": [
+      "Ivy Bell",
+      "Sophia Bell",
+      "Xavier Lear"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People/Sophia Bell",
+      "People/Xavier Charles Lear",
+      "People|Ivy Bell",
+      "People|Sophia Bell",
+      "People|Xavier Charles Lear",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Sophia Bell",
+      "Xavier Charles Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6934028,
+      "lon": -80.8252288002778
+    }
+  },
+  {
     "path": "images/2022/20220917_171438.jpg",
     "media_type": "photo",
     "file": "20220917_171438.jpg",
@@ -45501,6 +46068,38 @@
     "gps": {
       "lat": 34.6934592002778,
       "lon": -80.8253376002778
+    }
+  },
+  {
+    "path": "images/2022/20221120_151807.jpg",
+    "media_type": "photo",
+    "file": "20221120_151807.jpg",
+    "folder": "2022",
+    "date": "2022-11-20",
+    "people": [
+      "Sophia Bell",
+      "Xavier Lear"
+    ],
+    "tags": [
+      "Lancaster County",
+      "People/Sophia Bell",
+      "People/Xavier Charles Lear",
+      "People|Sophia Bell",
+      "People|Xavier Charles Lear",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County",
+      "Sophia Bell",
+      "Xavier Charles Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7029268,
+      "lon": -80.7665654002778
     }
   },
   {
@@ -47711,6 +48310,28 @@
     }
   },
   {
+    "path": "images/2024/original_c6c33bf1-f8a3-4024-9499-c0747466ef49_Screenshot_20240530_205409_Photos-edited.jpg",
+    "media_type": "photo",
+    "file": "original_c6c33bf1-f8a3-4024-9499-c0747466ef49_Screenshot_20240530_205409_Photos-edited.jpg",
+    "folder": "2024",
+    "date": "2024-05-30",
+    "people": [
+      "Anna Lear"
+    ],
+    "tags": [
+      "Anna Lear",
+      "People/Anna Lear",
+      "People|Anna Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2024/20240706_090226.jpg",
     "media_type": "photo",
     "file": "20240706_090226.jpg",
@@ -48536,6 +49157,32 @@
     "gps": null
   },
   {
+    "path": "images/2025/Screenshot_20250503_191033_Messenger.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20250503_191033_Messenger.jpg",
+    "folder": "2025",
+    "date": "2025-05-03",
+    "people": [
+      "Anna Lear",
+      "Ivy Bell"
+    ],
+    "tags": [
+      "Anna Lear",
+      "Ivy Bell",
+      "People/Anna Lear",
+      "People/Ivy Bell",
+      "People|Anna Lear",
+      "People|Ivy Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2025/20250506_210255.jpg",
     "media_type": "photo",
     "file": "20250506_210255.jpg",
@@ -48825,6 +49472,34 @@
     }
   },
   {
+    "path": "images/2025/20250801_132510~2.jpg",
+    "media_type": "photo",
+    "file": "20250801_132510~2.jpg",
+    "folder": "2025",
+    "date": "2025-08-01",
+    "people": [
+      "Xavier Lear"
+    ],
+    "tags": [
+      "People/Xavier Charles Lear",
+      "People|Xavier Charles Lear",
+      "Places/Tennessee",
+      "Places|Tennessee",
+      "Tennessee",
+      "Xavier Charles Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Tennessee",
+    "country": "United States",
+    "gps": {
+      "lat": 35.8401924,
+      "lon": -83.5669609
+    }
+  },
+  {
     "path": "audio/2025/Voicemail_from_Dickey Bell_2025_09_11_14_39_06.mp3",
     "media_type": "audio",
     "file": "Voicemail_from_Dickey Bell_2025_09_11_14_39_06.mp3",
@@ -48836,10 +49511,11 @@
     "tags": [
       "People/Dickey Bell",
       "Sound",
-      "_Digikam_Internal_Tags_/Color Label Green"
+      "_Digikam_Internal_Tags_/Color Label Green",
+      "_Digikam_Internal_Tags_/Pick Label None"
     ],
     "title": "",
-    "description": "Voice Mail from Dickey",
+    "description": "A saved voicemail from William Richard “Dickey” Bell from September 11, 2025. More than just an everyday phone message, the recording preserves something photographs cannot—Dickey’s voice, personality, and the familiar way he spoke. A special piece of the family archive.",
     "location": "",
     "city": "",
     "state": "",
@@ -49732,6 +50408,94 @@
     "gps": null
   },
   {
+    "path": "images/2025/20251224_123649.jpg",
+    "media_type": "photo",
+    "file": "20251224_123649.jpg",
+    "folder": "2025",
+    "date": "2025-12-24",
+    "people": [
+      "Olivia Bell",
+      "Xavier Lear"
+    ],
+    "tags": [
+      "2044 Douglas Rd",
+      "Olivia Bell",
+      "People/Olivia Bell",
+      "People/Xavier Charles Lear",
+      "People|Olivia Bell",
+      "People|Xavier Charles Lear",
+      "Places/South Carolina/Lancaster County/2044 Douglas Rd",
+      "Places|South Carolina|Lancaster County|2044 Douglas Rd",
+      "Xavier Charles Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "2044 Douglas Rd",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6613704002778,
+      "lon": -80.78169
+    }
+  },
+  {
+    "path": "images/2025/20251224_132811.jpg",
+    "media_type": "photo",
+    "file": "20251224_132811.jpg",
+    "folder": "2025",
+    "date": "2025-12-24",
+    "people": [
+      "Anna Lear",
+      "Dominique Burwell",
+      "Ivy Bell",
+      "Jarred Bell",
+      "Olivia Bell",
+      "Rickey Bell",
+      "Samatha Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "2044 Douglas Rd",
+      "Anna Lear",
+      "Dominique Burwell",
+      "Ivy Bell",
+      "Jarred Bell",
+      "Olivia Bell",
+      "People/Anna Lear",
+      "People/Dominique Burwell",
+      "People/Ivy Bell",
+      "People/Jarred Bell",
+      "People/Olivia Bell",
+      "People/Rickey Bell",
+      "People/Samatha Bell",
+      "People/Sophia Bell",
+      "People|Anna Lear",
+      "People|Dominique Burwell",
+      "People|Ivy Bell",
+      "People|Jarred Bell",
+      "People|Olivia Bell",
+      "People|Rickey Bell",
+      "People|Samatha Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Lancaster County/2044 Douglas Rd",
+      "Places|South Carolina|Lancaster County|2044 Douglas Rd",
+      "Rickey Bell",
+      "Samatha Bell",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "2044 Douglas Rd",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6614751997222,
+      "lon": -80.7817088
+    }
+  },
+  {
     "path": "images/2025/20251225_170331.jpg",
     "media_type": "photo",
     "file": "20251225_170331.jpg",
@@ -50379,49 +51143,13 @@
       "People/Dickey Bell",
       "People|Dickey Bell"
     ],
-    "title": "",
-    "description": "",
+    "title": "William Richard “Dickey” Bell Sr. Death Certificate – 2026",
+    "description": "Official State of South Carolina death certification for William Richard “Dickey” Bell Sr., who died at his home in Lancaster on July 1, 2026, at age 69. The certificate records his birth on August 15, 1956, identifies his parents as James Stewart Bell Jr. and Alma Tharp, and lists his wife, Sonja Barnett Bell, as the informant. The document serves as the official vital record of Dickey’s death and was issued by the South Carolina Department of Public Health on July 20, 2026.",
     "location": "",
     "city": "",
     "state": "",
     "country": "",
     "gps": null
-  },
-  {
-    "path": "images/2026/20260708_060552.jpg",
-    "media_type": "photo",
-    "file": "20260708_060552.jpg",
-    "folder": "2026",
-    "date": "2026-07-08",
-    "people": [
-      "Alma Bell",
-      "Dickey Bell",
-      "Spooky Bell"
-    ],
-    "tags": [
-      "900 Confederate Ave",
-      "Alma Bell",
-      "Dickey Bell",
-      "People/Alma Bell",
-      "People/Dickey Bell",
-      "People/Spooky Bell",
-      "People|Alma Bell",
-      "People|Dickey Bell",
-      "People|Spooky Bell",
-      "Places/South Carolina/Lancaster County/900 Confederate Ave",
-      "Places|South Carolina|Lancaster County|900 Confederate Ave",
-      "Spooky Bell"
-    ],
-    "title": "",
-    "description": "",
-    "location": "900 Confederate Ave",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.6933731005556,
-      "lon": -80.8252587
-    }
   },
   {
     "path": "images/2026/Dickey Obit.png",
@@ -50438,8 +51166,8 @@
       "People/Dickey Bell",
       "People|Dickey Bell"
     ],
-    "title": "image.png",
-    "description": "",
+    "title": "William Richard “Dickey” Bell Sr. Obituary – 2026",
+    "description": "July 8, 2026 Lancaster News obituary for William Richard “Dickey” Bell Sr., 69, of Lancaster, South Carolina, who died July 1, 2026. Born August 15, 1956, Dickey was the son of James Stewart “Buster” Bell Jr. and Alma Tharp Bell and brother of James Stewart “Spooky” Bell III. He was a member of the Church of the Good Shepherd and was survived by his wife, Sonja Barnett Bell, his son Rickey Bell and wife Stephanie, two grandchildren, and three great-grandchildren.",
     "location": "",
     "city": "",
     "state": "",
@@ -50461,8 +51189,8 @@
       "People/Dickey Bell",
       "People|Dickey Bell"
     ],
-    "title": "",
-    "description": "",
+    "title": "William Richard “Dickey” Bell Sr. Obituary – 2026",
+    "description": "July 8, 2026 Lancaster News obituary for William Richard “Dickey” Bell Sr., 69, of Lancaster, South Carolina, who died July 1, 2026. Born August 15, 1956, Dickey was the son of James Stewart “Buster” Bell Jr. and Alma Tharp Bell and brother of James Stewart “Spooky” Bell III. He was a member of the Church of the Good Shepherd and was survived by his wife, Sonja Barnett Bell, his son Rickey Bell and wife Stephanie, two grandchildren, and three great-grandchildren.",
     "location": "",
     "city": "",
     "state": "",
