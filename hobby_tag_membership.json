@@ -1083,8 +1083,17 @@
     "images/2025/20250816_131704.jpg": [
       "Aviation"
     ],
+    "images/2025/20250817_103910.jpg": [
+      "Shooting"
+    ],
+    "images/2025/20250818_080749.jpg": [
+      "Shooting"
+    ],
     "images/2025/20250824_075430.jpg": [
       "Aviation"
+    ],
+    "images/2025/20250825_093937.jpg": [
+      "Shooting"
     ],
     "images/2025/20250914_131919~2.jpg": [
       "Aviation"
@@ -1092,10 +1101,16 @@
     "images/2025/20250914_192358.jpg": [
       "Aviation"
     ],
+    "images/2025/20250916_131122.jpg": [
+      "Shooting"
+    ],
     "images/2025/20250917_174603.jpg": [
       "Shooting"
     ],
     "images/2025/20250917_184207.jpg": [
+      "Shooting"
+    ],
+    "images/2025/20251010_174606.jpg": [
       "Shooting"
     ],
     "images/2025/20251128_092341.jpg": [
@@ -1150,6 +1165,9 @@
     "videos/2016/20160805_211243000_iOS.mp4": [
       "Boating"
     ],
+    "videos/2017/20170807_225752000_iOS.mp4": [
+      "Shooting"
+    ],
     "videos/2017/20170901_155333000_iOS.mp4": [
       "Boating"
     ],
@@ -1164,6 +1182,9 @@
     ],
     "videos/2018/IMG_2143.mp4": [
       "Boating"
+    ],
+    "videos/2019/20190623_210308.mp4": [
+      "Shooting"
     ],
     "videos/2020/20200320_192039.mp4": [
       "Shooting"
@@ -1246,7 +1267,7 @@
   "publicCounts": {
     "Aviation": 109,
     "Scuba": 140,
-    "Shooting": 18,
+    "Shooting": 25,
     "Boating": 103,
     "Off-Roading": 24,
     "Camping": 23

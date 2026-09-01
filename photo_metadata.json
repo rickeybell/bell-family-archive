@@ -41151,6 +41151,32 @@
     }
   },
   {
+    "path": "videos/2017/20170807_225752000_iOS.mp4",
+    "media_type": "video",
+    "file": "20170807_225752000_iOS.mp4",
+    "folder": "2017",
+    "date": "2017-08-07",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Hobbies/Shooting",
+      "People/Rickey Bell",
+      "Places/South Carolina/Lancaster County",
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.695,
+      "lon": -80.8256
+    }
+  },
+  {
     "path": "images/2017/20170901_064941000_iOS.jpg",
     "media_type": "photo",
     "file": "20170901_064941000_iOS.jpg",
@@ -42329,6 +42355,33 @@
     "gps": {
       "lat": 34.7348,
       "lon": -80.7920999997222
+    }
+  },
+  {
+    "path": "videos/2019/20190623_210308.mp4",
+    "media_type": "video",
+    "file": "20190623_210308.mp4",
+    "folder": "2019",
+    "date": "2019-06-23",
+    "people": [],
+    "tags": [
+      "900 Confederate Ave",
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Shooting",
+      "Video"
+    ],
+    "title": "Robin Hood?",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6933000002778,
+      "lon": -80.8251000002778
     }
   },
   {
@@ -48097,6 +48150,58 @@
     }
   },
   {
+    "path": "images/2025/20250817_103910.jpg",
+    "media_type": "photo",
+    "file": "20250817_103910.jpg",
+    "folder": "2025",
+    "date": "2025-08-17",
+    "people": [],
+    "tags": [
+      "900 Confederate Ave",
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Shooting"
+    ],
+    "title": "3d printed magazine holders",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6933963827778,
+      "lon": -80.8252396833333
+    }
+  },
+  {
+    "path": "images/2025/20250818_080749.jpg",
+    "media_type": "photo",
+    "file": "20250818_080749.jpg",
+    "folder": "2025",
+    "date": "2025-08-18",
+    "people": [],
+    "tags": [
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Lancaster County",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County",
+      "Shooting"
+    ],
+    "title": "3d printed magazine holders",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7157702997222,
+      "lon": -80.8369138
+    }
+  },
+  {
     "path": "images/2025/20250824_075430.jpg",
     "media_type": "photo",
     "file": "20250824_075430.jpg",
@@ -48120,6 +48225,32 @@
     "gps": {
       "lat": 34.7189784833333,
       "lon": -80.8592644002778
+    }
+  },
+  {
+    "path": "images/2025/20250825_093937.jpg",
+    "media_type": "photo",
+    "file": "20250825_093937.jpg",
+    "folder": "2025",
+    "date": "2025-08-25",
+    "people": [],
+    "tags": [
+      "900 Confederate Ave",
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Shooting"
+    ],
+    "title": "3d printed case.",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6933966997222,
+      "lon": -80.8252329
     }
   },
   {
@@ -48203,6 +48334,32 @@
     }
   },
   {
+    "path": "images/2025/20250916_131122.jpg",
+    "media_type": "photo",
+    "file": "20250916_131122.jpg",
+    "folder": "2025",
+    "date": "2025-09-16",
+    "people": [],
+    "tags": [
+      "900 Confederate Ave",
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Shooting"
+    ],
+    "title": "The best attachment made for a Ruger MK IV!",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6933902836111,
+      "lon": -80.8252245002778
+    }
+  },
+  {
     "path": "images/2025/20250917_174603.jpg",
     "media_type": "photo",
     "file": "20250917_174603.jpg",
@@ -48278,6 +48435,32 @@
     }
   },
   {
+    "path": "images/2025/20251010_174606.jpg",
+    "media_type": "photo",
+    "file": "20251010_174606.jpg",
+    "folder": "2025",
+    "date": "2025-10-10",
+    "people": [],
+    "tags": [
+      "900 Confederate Ave",
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Shooting"
+    ],
+    "title": "3d Printed Case",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6933904838889,
+      "lon": -80.8252106830556
+    }
+  },
+  {
     "path": "videos/2025/ATNX0024.mp4",
     "media_type": "video",
     "file": "ATNX0024.mp4",
@@ -48290,7 +48473,7 @@
       "Shooting",
       "Video"
     ],
-    "title": "",
+    "title": "Testing out a .350 Legend. ",
     "description": "",
     "location": "",
     "city": "",
@@ -48499,7 +48682,7 @@
       "Places|South Carolina|Lancaster County|900 Confederate Ave",
       "Shooting"
     ],
-    "title": "",
+    "title": "Oculas and Ace XR VR Shooting",
     "description": "",
     "location": "900 Confederate Ave",
     "city": "Lancaster County",
@@ -48522,7 +48705,7 @@
       "Hobbies|Shooting",
       "Shooting"
     ],
-    "title": "",
+    "title": "Oculas and Ace XR VR Shooting",
     "description": "",
     "location": "",
     "city": "",
@@ -48569,7 +48752,7 @@
       "Shooting",
       "Video"
     ],
-    "title": "",
+    "title": "I wasnt sure it was not a dog until too late.",
     "description": "",
     "location": "",
     "city": "",
