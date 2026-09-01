@@ -99,8 +99,16 @@ def first(m,*keys):
         if v not in (None,"",[]): return v
     return ""
 
+def normalize_tag_spelling(value):
+    return re.sub(r'(?i)(?<![A-Za-z])avation(?![A-Za-z])','Aviation',str(value or '').strip())
+
+def normalize_record_tags(record):
+    updated=dict(record)
+    updated['tags']=sorted(set(normalize_tag_spelling(tag) for tag in record.get('tags',[]) if str(tag).strip()))
+    return updated
+
 def split_manifest(value):
-    return [x.strip() for x in str(value or '').split(';') if x.strip()]
+    return [normalize_tag_spelling(x) for x in str(value or '').split(';') if x.strip()]
 
 def tags_for(m):
     vals=[]
@@ -110,7 +118,7 @@ def tags_for(m):
         vals.extend(v or [])
     out=[]
     for v in vals:
-        s=str(v).strip()
+        s=normalize_tag_spelling(v)
         if not s: continue
         leaf=re.split(r"[|/\\]",s)[-1].strip()
         if s.lower()=="website" or leaf.lower()=="website": continue
@@ -135,12 +143,12 @@ for item in rows:
     folder=pathlib.PurePosixPath(rel).parent.name
 
     if item.get("previous"):
-        out.append(item["previous"])
+        out.append(normalize_record_tags(item["previous"]))
         print("WARNING preserved prior metadata for missing master:",src)
         continue
 
     if item.get("cached_record"):
-        out.append(item["cached_record"])
+        out.append(normalize_record_tags(item["cached_record"]))
         continue
 
     if media_type=="audio":

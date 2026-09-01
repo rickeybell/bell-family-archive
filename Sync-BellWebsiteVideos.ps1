@@ -431,6 +431,7 @@ for ($i=0; $i -lt $files.Count; $i += 50) {
         $people = @((Join-MetadataValues $record @('PersonInImage','RegionPersonDisplayName')) -split ';')
         foreach ($t in $tagValues) {
             $t=$t.Trim(); if(!$t){continue}
+            $t=$t -replace '(?i)(?<![A-Za-z])Avation(?![A-Za-z])','Aviation'
             $normalizedTag = ($t -replace '\\','/' -replace '\|','/').Trim('/')
             if ($normalizedTag -match '^_Digikam_Internal_Tags_(/|$)') { continue }
             $parts = @($normalizedTag -split '/')
@@ -441,7 +442,15 @@ for ($i=0; $i -lt $files.Count; $i += 50) {
         }
         $databaseTitle = if ($databaseItem -and $databaseItem.PSObject.Properties.Name -contains 'title') { [string]$databaseItem.title } else { '' }
         $databaseDescription = if ($databaseItem -and $databaseItem.PSObject.Properties.Name -contains 'description') { [string]$databaseItem.description } else { '' }
-        $databaseDate = if ($databaseItem -and $databaseItem.PSObject.Properties.Name -contains 'creation_date') { [string]$databaseItem.creation_date } else { '' }
+        $databaseDate = ''
+        if ($databaseItem -and $databaseItem.PSObject.Properties.Name -contains 'creation_date') {
+            $databaseDateValue = $databaseItem.creation_date
+            $databaseDate = if ($databaseDateValue -is [datetime]) {
+                $databaseDateValue.ToString('yyyy-MM-ddTHH:mm:ss.fff',[Globalization.CultureInfo]::InvariantCulture)
+            } else {
+                [string]$databaseDateValue
+            }
+        }
         $databaseLatitude = if ($databaseItem -and $databaseItem.PSObject.Properties.Name -contains 'gps_latitude' -and $null -ne $databaseItem.gps_latitude) { [string]$databaseItem.gps_latitude } else { '' }
         $databaseLongitude = if ($databaseItem -and $databaseItem.PSObject.Properties.Name -contains 'gps_longitude' -and $null -ne $databaseItem.gps_longitude) { [string]$databaseItem.gps_longitude } else { '' }
         $metadataTitle = if (![string]::IsNullOrWhiteSpace($databaseTitle)) { $databaseTitle } else { Join-MetadataValues $record @('Title') }

@@ -10,6 +10,9 @@
     "images/1946/Alma3.jpg": [
       "Aviation"
     ],
+    "images/1946/Ercoupe Air Worthiness.png": [
+      "Aviation"
+    ],
     "images/1947/1111_0019_a.jpg": [
       "Aviation"
     ],
@@ -1293,7 +1296,7 @@
     ]
   },
   "taggedCounts": {
-    "Aviation": 1206,
+    "Aviation": 1207,
     "Scuba": 1173,
     "Shooting": 162,
     "Boating": 1368,
@@ -1301,7 +1304,7 @@
     "Camping": 282
   },
   "publicCounts": {
-    "Aviation": 109,
+    "Aviation": 110,
     "Scuba": 140,
     "Shooting": 32,
     "Boating": 103,

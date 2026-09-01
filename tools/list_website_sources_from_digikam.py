@@ -15,6 +15,21 @@ def dotnet_utc_timestamp(mtime_ns: int) -> str:
     return moment.strftime("%Y-%m-%dT%H:%M:%S") + f".{nanoseconds // 100:07d}Z"
 
 
+def normalize_creation_date(value: object) -> str:
+    text = str(value or "").strip()
+    if not text:
+        return ""
+    if len(text) >= 19 and text[4:5] == "-" and text[7:8] == "-":
+        return text.replace(" ", "T", 1)
+    for pattern in ("%m/%d/%Y %H:%M:%S", "%m/%d/%Y"):
+        try:
+            parsed = dt.datetime.strptime(text, pattern)
+            return parsed.strftime("%Y-%m-%dT%H:%M:%S.000")
+        except ValueError:
+            pass
+    return text
+
+
 def find_db(source_roots: list[pathlib.Path]) -> pathlib.Path | None:
     configured = os.environ.get("DIGIKAM_DB")
     candidates = [pathlib.Path(configured)] if configured else []
@@ -120,7 +135,7 @@ def main() -> int:
             batch,
         ):
             if creation_date:
-                dates_by_image[int(image_id)] = str(creation_date)
+                dates_by_image[int(image_id)] = normalize_creation_date(creation_date)
         for image_id, latitude, longitude in connection.execute(
             f"""
             SELECT imageid,latitudeNumber,longitudeNumber
@@ -131,8 +146,8 @@ def main() -> int:
         ):
             if latitude is not None and longitude is not None:
                 positions_by_image[int(image_id)] = {
-                    "latitude": float(latitude),
-                    "longitude": float(longitude),
+                    "latitude": format(float(latitude), ".17g"),
+                    "longitude": format(float(longitude), ".17g"),
                 }
     connection.close()
 

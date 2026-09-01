@@ -2154,6 +2154,13 @@ a.archive-community-card:hover,a.archive-community-card:focus-visible{transform:
   }
 }
 
+/* Mobile family tree: keep the cards, but remove the connector overlay. */
+@media(max-width:700px){
+  #familyTreeLineLayer{
+    display:none !important;
+  }
+}
+
 /* Final tree-page status colors. Keep this block last in the stylesheet. */
 .tree-page .tree-person,
 .tree-page .archive-community-card.archive-community-person,
