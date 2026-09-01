@@ -57,6 +57,28 @@ def missing_image_ids(
     ]
 
 
+def competing_color_label_pairs(
+    db: sqlite3.Connection, website_tag_id: int, green_tag_id: int
+) -> list[tuple[int, int]]:
+    """Return Website-tagged items carrying a non-green color label."""
+    return [
+        (int(row[0]), int(row[1]))
+        for row in db.execute(
+            """
+            SELECT DISTINCT website.imageid, color.tagid
+            FROM ImageTags AS website
+            JOIN ImageTags AS color ON color.imageid=website.imageid
+            JOIN Tags AS color_tag ON color_tag.id=color.tagid
+            WHERE website.tagid=?
+              AND color.tagid<>?
+              AND lower(color_tag.name) LIKE 'color label %'
+            ORDER BY website.imageid, color.tagid
+            """,
+            (website_tag_id, green_tag_id),
+        )
+    ]
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--database", type=pathlib.Path)
@@ -76,12 +98,18 @@ def main() -> None:
         website_tag_id = tag_id(db, "Website")
         green_tag_id = tag_id(db, "Color Label Green")
         missing = missing_image_ids(db, website_tag_id, green_tag_id)
+        competing = competing_color_label_pairs(db, website_tag_id, green_tag_id)
+        affected = sorted(set(missing) | {image_id for image_id, _ in competing})
 
         print(f"digiKam Website-tagged items missing green: {len(missing)}")
-        if not missing:
+        print(
+            "digiKam Website-tagged items with another color label: "
+            f"{len({image_id for image_id, _ in competing})}"
+        )
+        if not affected:
             return
         if args.dry_run:
-            print("Dry run: green labels were not changed.")
+            print("Dry run: color labels were not changed.")
             return
 
         backup_dir.mkdir(parents=True, exist_ok=True)
@@ -96,15 +124,31 @@ def main() -> None:
         db.execute("BEGIN IMMEDIATE")
         try:
             # Recheck under the write lock in case digiKam changed a label.
+            # Locked is deliberately ignored: it protects place/GPS automation,
+            # not the independent Website publishing color label.
             missing = missing_image_ids(db, website_tag_id, green_tag_id)
+            competing = competing_color_label_pairs(
+                db, website_tag_id, green_tag_id
+            )
+            db.executemany(
+                "DELETE FROM ImageTags WHERE imageid=? AND tagid=?",
+                competing,
+            )
             db.executemany(
                 "INSERT OR IGNORE INTO ImageTags(imageid,tagid) VALUES(?,?)",
                 ((image_id, green_tag_id) for image_id in missing),
             )
-            remaining = missing_image_ids(db, website_tag_id, green_tag_id)
-            if remaining:
+            remaining_missing = missing_image_ids(
+                db, website_tag_id, green_tag_id
+            )
+            remaining_competing = competing_color_label_pairs(
+                db, website_tag_id, green_tag_id
+            )
+            if remaining_missing or remaining_competing:
                 raise RuntimeError(
-                    f"Green-label verification failed for {len(remaining)} items."
+                    "Green-label verification failed: "
+                    f"{len(remaining_missing)} missing green; "
+                    f"{len(remaining_competing)} competing color labels remain."
                 )
             db.commit()
         except Exception:
@@ -112,6 +156,7 @@ def main() -> None:
             raise
 
         print(f"digiKam green labels assigned: {len(missing)}")
+        print(f"digiKam competing color labels removed: {len(competing)}")
         print(f"digiKam backup: {backup_path}")
     finally:
         db.close()
