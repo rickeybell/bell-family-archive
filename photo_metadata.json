@@ -1,55 +1,5 @@
 [
   {
-    "path": "videos/2025/Messenger_creation_B1540B18-1D4D-4A99-A4BA-5EC722EF9888.mp4",
-    "media_type": "video",
-    "file": "Messenger_creation_B1540B18-1D4D-4A99-A4BA-5EC722EF9888.mp4",
-    "folder": "2025",
-    "date": "0000-00-00",
-    "people": [],
-    "tags": [
-      "Chester County",
-      "Hobbies/Shooting",
-      "Hobbies|Shooting",
-      "Locked",
-      "Places/South Carolina/Chester County",
-      "Places|South Carolina|Chester County",
-      "Shooting",
-      "Video"
-    ],
-    "title": "Someone needs practice!",
-    "description": "",
-    "location": "",
-    "city": "Chester County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
-    "path": "videos/2025/Messenger_creation_C0A6067C-40D2-4E27-B5B7-4616618A0821.mp4",
-    "media_type": "video",
-    "file": "Messenger_creation_C0A6067C-40D2-4E27-B5B7-4616618A0821.mp4",
-    "folder": "2025",
-    "date": "0000-00-00",
-    "people": [],
-    "tags": [
-      "Chester County",
-      "Hobbies/Shooting",
-      "Hobbies|Shooting",
-      "Locked",
-      "Places/South Carolina/Chester County",
-      "Places|South Carolina|Chester County",
-      "Shooting",
-      "Video"
-    ],
-    "title": ".22 wouldnt take them down, had to use frt.",
-    "description": "",
-    "location": "",
-    "city": "Chester County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/1934/1930s_0001.jpg",
     "media_type": "photo",
     "file": "1930s_0001.jpg",
@@ -47463,6 +47413,56 @@
     "gps": null
   },
   {
+    "path": "videos/2025/Messenger_creation_B1540B18-1D4D-4A99-A4BA-5EC722EF9888.mp4",
+    "media_type": "video",
+    "file": "Messenger_creation_B1540B18-1D4D-4A99-A4BA-5EC722EF9888.mp4",
+    "folder": "2025",
+    "date": "2025-01-01",
+    "people": [],
+    "tags": [
+      "Chester County",
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Locked",
+      "Places/South Carolina/Chester County",
+      "Places|South Carolina|Chester County",
+      "Shooting",
+      "Video"
+    ],
+    "title": "Someone needs practice!",
+    "description": "",
+    "location": "",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "videos/2025/Messenger_creation_C0A6067C-40D2-4E27-B5B7-4616618A0821.mp4",
+    "media_type": "video",
+    "file": "Messenger_creation_C0A6067C-40D2-4E27-B5B7-4616618A0821.mp4",
+    "folder": "2025",
+    "date": "2025-01-01",
+    "people": [],
+    "tags": [
+      "Chester County",
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Locked",
+      "Places/South Carolina/Chester County",
+      "Places|South Carolina|Chester County",
+      "Shooting",
+      "Video"
+    ],
+    "title": ".22 wouldnt take them down, had to use frt.",
+    "description": "",
+    "location": "",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2025/20250103_150308.jpg",
     "media_type": "photo",
     "file": "20250103_150308.jpg",
@@ -49071,7 +49071,7 @@
       "Places|South Carolina|Chester County",
       "Shooting"
     ],
-    "title": "",
+    "title": "The .400 Legend may need a little more head spacing.",
     "description": "",
     "location": "",
     "city": "Chester County",
