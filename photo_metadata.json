@@ -814,7 +814,7 @@
       "Places|South Carolina|Charleston"
     ],
     "title": "Alma Edythe Tharp and William Burnett McDowell Jr.",
-    "description": "Engagement announcement for Alma Edythe Tharp, daughter of Mr. and Mrs. Graham E. Tharp of Folly Beach, South Carolina, and William Burnett McDowell Jr., son of Mr. and Mrs. W. B. McDowell of Shelton, South Carolina. The article notes that both Alma and William were devoted to flying, held private pilot licenses, and were working toward commercial and instructor licenses. The wedding date was to be announced later.\n\nShe did not show up to the wedding. Her family and everyone else were there. She ran off to Annie Bell's home and hid out there.",
+    "description": "Engagement announcement for Alma Edythe Tharp, and William Burnett McDowell Jr., of Shelton, South Carolina. The article notes that both Alma and William were devoted to flying, held private pilot licenses, and were working toward commercial and instructor licenses. \n\nShe did not show up to the wedding. Her family and everyone else were there. She ran off to Annie Bell's home and hid out there.",
     "location": "",
     "city": "Charleston",
     "state": "South Carolina",
@@ -843,7 +843,7 @@
       "Places|South Carolina|Charleston"
     ],
     "title": "Alma Tharp Flies to Carolina Ninety-Nines Annual Convention",
-    "description": "Alma Tharp flies to Carolinas Ninety-Nines convention, Spartanburg, S.C., circa 1948. Newspaper report on the two-day annual convention of the Carolinas Chapter of the Ninety-Nines. Alma Tharp flew from Charleston to Spartanburg in her nearly new Ercoupe. Other attendees included Jewell Bailey, Lucille Greenwood, Louise Smith, Bird Eaton, Emalie Stone and Edna Hartness. Exact publication date remains under investigation.",
+    "description": "Alma Tharp flies to Carolinas Ninety-Nines convention, Spartanburg, S.C, for a two-day annual convention of the Carolinas Chapter of the Ninety-Nines. Alma Tharp flew from Charleston to Spartanburg in her nearly new Ercoupe. ",
     "location": "",
     "city": "Charleston",
     "state": "South Carolina",
@@ -872,7 +872,7 @@
       "Places|South Carolina|Charleston"
     ],
     "title": "Carolina Ninety-Nines Annual Meeting in Spartanburg",
-    "description": "Circa 1948 — Spartanburg, South Carolina. Newspaper announcement of the annual meeting of the Carolinas Chapter of the Ninety-Nines, the international organization of women pilots. Members were scheduled to gather in Spartanburg for a weekend meeting, including a buffet supper and the chapter's annual business meeting at the Cleveland Hotel. The article lists “Alma Thorpe” of Charleston, apparently a newspaper misspelling of Alma Tharp, along with fellow Charleston pilot Jewell Bailey. ",
+    "description": "Spartanburg, South Carolina. Newspaper announcement of the annual meeting of the Carolinas Chapter of the Ninety-Nines, the international organization of women pilots. Members were scheduled to gather in Spartanburg for a weekend meeting, including a buffet supper and the chapter's annual business meeting at the Cleveland Hotel. The article lists “Alma Thorpe” of Charleston, apparently a newspaper misspelling of Alma Tharp, along with fellow Charleston pilot Jewell Bailey. ",
     "location": "",
     "city": "Charleston",
     "state": "South Carolina",
@@ -1280,7 +1280,7 @@
       "Places|South Carolina|Charleston"
     ],
     "title": "Alma Tharp and The Ninety-Nines — Carolina Women Pilots and Air Race, 1949",
-    "description": "Collection of May 1949 newspaper clippings documenting Alma Tharp's aviation activities and involvement with the Carolinas Chapter of The Ninety-Nines, the international organization of licensed women pilots.\n\nA May 21, 1949 News and Courier article records Alma receiving her private pilot license at Carolina Skyways Airport. That same weekend, Alma flew her trim Ercoupe from Charleston to Spartanburg for the Carolinas Chapter's annual meeting. Other clippings identify her alongside fellow women pilots including Jewell Bailey, Kathleen O'Brien, Amalie Stone, Anne Fishburne, Vera Self, and Louise Smith.\n\nThe chapter meetings included planning for the upcoming All-Woman Transcontinental Air Race, scheduled to begin in San Diego on June 11 and finish in Greenville, South Carolina. Charleston was selected as the race's eastern continental marker, requiring competitors to fly through Charleston before proceeding to Greenville.\n\nThe clippings also document the rapid growth of The Ninety-Nines, founded in 1929 with Amelia Earhart as its first president, and Alma's participation in the organization during an important period in the development of women's civilian aviation.\n\nDates represented: May 21 and May 25, 1949.",
+    "description": "Collection of May 1949 newspaper clippings documenting Alma Tharp's aviation activities and involvement with the Carolinas Chapter of The Ninety-Nines, the international organization of licensed women pilots.\nA May 21, 1949 News and Courier article records Alma receiving her private pilot license at Carolina Skyways Airport. That same weekend, Alma flew her trim Ercoupe from Charleston to Spartanburg for the Carolinas Chapter's annual meeting. Other clippings identify her alongside fellow women pilots including Jewell Bailey.\nThe chapter meetings included planning for the upcoming All-Woman Transcontinental Air Race, scheduled to begin in San Diego on June 11 and finish in Greenville, South Carolina. Charleston was selected as the race's eastern continental marker, requiring competitors to fly through Charleston before proceeding to Greenville.\n\nDates represented: May 21 and May 25, 1949.",
     "location": "",
     "city": "Charleston",
     "state": "South Carolina",
@@ -37395,6 +37395,38 @@
     "gps": null
   },
   {
+    "path": "images/2008/IMAGE_153.jpg",
+    "media_type": "photo",
+    "file": "IMAGE_153.jpg",
+    "folder": "2008",
+    "date": "2008-03-23",
+    "people": [
+      "Jarred Bell",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Jarred Bell",
+      "Lake Wateree",
+      "People/Jarred Bell",
+      "People/Samatha Bell",
+      "People|Jarred Bell",
+      "People|Samatha Bell",
+      "Places/South Carolina/Kershaw/Lake Wateree",
+      "Places|South Carolina|Kershaw|Lake Wateree",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Lake Wateree",
+    "city": "Kershaw",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2008/IMAGE_155.jpg",
     "media_type": "photo",
     "file": "IMAGE_155.jpg",
@@ -37417,6 +37449,107 @@
       "Places/South Carolina/Kershaw/Lake Wateree",
       "Places|South Carolina|Kershaw|Lake Wateree",
       "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Lake Wateree",
+    "city": "Kershaw",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2008/IMAGE_158.jpg",
+    "media_type": "photo",
+    "file": "IMAGE_158.jpg",
+    "folder": "2008",
+    "date": "2008-03-23",
+    "people": [],
+    "tags": [
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Lake Wateree",
+      "Places/South Carolina/Kershaw/Lake Wateree",
+      "Places|South Carolina|Kershaw|Lake Wateree"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Lake Wateree",
+    "city": "Kershaw",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2008/IMAGE_161.jpg",
+    "media_type": "photo",
+    "file": "IMAGE_161.jpg",
+    "folder": "2008",
+    "date": "2008-03-23",
+    "people": [
+      "Samatha Bell",
+      "Tanisha"
+    ],
+    "tags": [
+      "Animal/Tanisha",
+      "Animal|Tanisha",
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Lake Wateree",
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Places/South Carolina/Kershaw/Lake Wateree",
+      "Places|South Carolina|Kershaw|Lake Wateree",
+      "Samatha Bell",
+      "Tanisha"
+    ],
+    "title": "Never could keep Tanisha out of the water",
+    "description": "",
+    "location": "Lake Wateree",
+    "city": "Kershaw",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2008/IMAGE_172.jpg",
+    "media_type": "photo",
+    "file": "IMAGE_172.jpg",
+    "folder": "2008",
+    "date": "2008-03-23",
+    "people": [],
+    "tags": [
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Lake Wateree",
+      "Places/South Carolina/Kershaw/Lake Wateree",
+      "Places|South Carolina|Kershaw|Lake Wateree"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Lake Wateree",
+    "city": "Kershaw",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2008/IMAGE_191.jpg",
+    "media_type": "photo",
+    "file": "IMAGE_191.jpg",
+    "folder": "2008",
+    "date": "2008-03-23",
+    "people": [],
+    "tags": [
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Lake Wateree",
+      "Places/South Carolina/Kershaw/Lake Wateree",
+      "Places|South Carolina|Kershaw|Lake Wateree"
     ],
     "title": "",
     "description": "",

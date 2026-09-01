@@ -627,7 +627,22 @@
     "images/2008/061.JPG": [
       "Boating"
     ],
+    "images/2008/IMAGE_153.jpg": [
+      "Camping"
+    ],
     "images/2008/IMAGE_155.jpg": [
+      "Camping"
+    ],
+    "images/2008/IMAGE_158.jpg": [
+      "Camping"
+    ],
+    "images/2008/IMAGE_161.jpg": [
+      "Camping"
+    ],
+    "images/2008/IMAGE_172.jpg": [
+      "Camping"
+    ],
+    "images/2008/IMAGE_191.jpg": [
       "Camping"
     ],
     "images/2010/012-2 (1).jpg": [
@@ -1291,6 +1306,6 @@
     "Shooting": 32,
     "Boating": 103,
     "Off-Roading": 24,
-    "Camping": 23
+    "Camping": 28
   }
 }
