@@ -1,5 +1,43 @@
 [
   {
+    "path": "videos/2025/Messenger_creation_B1540B18-1D4D-4A99-A4BA-5EC722EF9888.mp4",
+    "media_type": "video",
+    "file": "Messenger_creation_B1540B18-1D4D-4A99-A4BA-5EC722EF9888.mp4",
+    "folder": "2025",
+    "date": "0000-00-00",
+    "people": [],
+    "tags": [
+      "Places/South Carolina/Chester County",
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "videos/2025/Messenger_creation_C0A6067C-40D2-4E27-B5B7-4616618A0821.mp4",
+    "media_type": "video",
+    "file": "Messenger_creation_C0A6067C-40D2-4E27-B5B7-4616618A0821.mp4",
+    "folder": "2025",
+    "date": "0000-00-00",
+    "people": [],
+    "tags": [
+      "Places/South Carolina/Chester County",
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/1934/1930s_0001.jpg",
     "media_type": "photo",
     "file": "1930s_0001.jpg",
@@ -48714,6 +48752,48 @@
     "gps": null
   },
   {
+    "path": "videos/2025/1765113598_TNC_20251207_081954.mp4",
+    "media_type": "video",
+    "file": "1765113598_TNC_20251207_081954.mp4",
+    "folder": "2025",
+    "date": "2025-12-07",
+    "people": [],
+    "tags": [
+      "Chester County",
+      "Places/South Carolina/Chester County",
+      "Places|South Carolina|Chester County",
+      "Video"
+    ],
+    "title": "Just bird/squirrel watching waiting on deer.",
+    "description": "",
+    "location": "",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "videos/2025/1765113694_TNC_20251207_082105.mp4",
+    "media_type": "video",
+    "file": "1765113694_TNC_20251207_082105.mp4",
+    "folder": "2025",
+    "date": "2025-12-07",
+    "people": [],
+    "tags": [
+      "Chester County",
+      "Places/South Carolina/Chester County",
+      "Places|South Carolina|Chester County",
+      "Video"
+    ],
+    "title": "Just bird/squirrel watching waiting on deer.",
+    "description": "",
+    "location": "",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2025/20251211_175716.jpg",
     "media_type": "photo",
     "file": "20251211_175716.jpg",
@@ -48758,6 +48838,27 @@
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "videos/2025/1765586346_TNC_20251212_193818.mp4",
+    "media_type": "video",
+    "file": "1765586346_TNC_20251212_193818.mp4",
+    "folder": "2025",
+    "date": "2025-12-12",
+    "people": [],
+    "tags": [
+      "Crystal River",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Video"
+    ],
+    "title": "Always have deer when hog hunting.",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
     "gps": null
   },
   {
@@ -48858,6 +48959,24 @@
       "lat": 34.6411116833333,
       "lon": -80.9134035005556
     }
+  },
+  {
+    "path": "videos/2025/1766702278_TNC_20251225_173737.mp4",
+    "media_type": "video",
+    "file": "1766702278_TNC_20251225_173737.mp4",
+    "folder": "2025",
+    "date": "2025-12-25",
+    "people": [],
+    "tags": [
+      "Video"
+    ],
+    "title": "Just bird/squirrel watching waiting on deer.",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
   },
   {
     "path": "images/2025/20251228_171824.jpg",
