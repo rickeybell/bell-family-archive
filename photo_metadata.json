@@ -44608,6 +44608,26 @@
     }
   },
   {
+    "path": "images/2022/Warrior Purchase.png",
+    "media_type": "photo",
+    "file": "Warrior Purchase.png",
+    "folder": "2022",
+    "date": "2022",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation"
+    ],
+    "title": "Purchase of \"Edythe\" the '74 Piper Warrior",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2022/20220123_172405.jpg",
     "media_type": "photo",
     "file": "20220123_172405.jpg",
@@ -45626,6 +45646,91 @@
     "gps": null
   },
   {
+    "path": "images/2023/20230309_132552.jpg",
+    "media_type": "photo",
+    "file": "20230309_132552.jpg",
+    "folder": "2023",
+    "date": "2023-03-09",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation"
+    ],
+    "title": "BQ1 – Gilliam-McConnell Airfield",
+    "description": "BQ1 is one of those airports that makes a great excuse to go flying. Located in Carthage, North Carolina, the real attraction is that you can land, park the airplane, and walk right over to the BBQ restaurant on the field.\n\nIt’s a perfect fly-in destination: grab some barbecue, watch airplanes come and go, and then head back home. Sometimes the best reason for a flight is simply BBQ at the end of the runway.\n\nBQ1 – Fly in. Eat BBQ. Fly home.",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": {
+      "lat": 35.3404379833333,
+      "lon": -79.4356259833333
+    }
+  },
+  {
+    "path": "images/2023/20230404_133149.jpg",
+    "media_type": "photo",
+    "file": "20230404_133149.jpg",
+    "folder": "2023",
+    "date": "2023-04-03",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Rickey Bell"
+    ],
+    "title": "The First Solo – Cutting the Shirt Tail",
+    "description": "One of aviation’s oldest traditions happens after a student pilot completes their first solo flight.\n\nIn the early days of flying, instructors often sat behind their students in tandem aircraft. With no radios or intercoms, the instructor would sometimes get the student’s attention by tugging on the back of their shirt. Once the student successfully flew alone, they no longer needed the instructor pulling on their shirttail.\n\nSo after that first solo, the instructor cuts the tail off the student pilot’s shirt.\n\nThe shirttail is usually dated and marked with the aircraft, airport, or other details from the flight and kept as a reminder of the accomplishment.\n\nFor a pilot, that cut shirt represents something much bigger than an old piece of fabric—it marks the first time you took an airplane up, flew it, and brought it safely back down completely on your own.\n\nYour first solo is a flight you never forget.",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6934003002778,
+      "lon": -80.8252683836111
+    }
+  },
+  {
+    "path": "images/2023/20230404_173759.jpg",
+    "media_type": "photo",
+    "file": "20230404_173759.jpg",
+    "folder": "2023",
+    "date": "2023-04-03",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "Lancaster County",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County",
+      "Rickey Bell"
+    ],
+    "title": "First Solo Flight!",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6684466,
+      "lon": -80.6978111827778
+    }
+  },
+  {
     "path": "images/2023/20230611_144847.jpg",
     "media_type": "photo",
     "file": "20230611_144847.jpg",
@@ -45853,6 +45958,35 @@
     }
   },
   {
+    "path": "videos/2023/20230703_145129000_iOS.mp4",
+    "media_type": "video",
+    "file": "20230703_145129000_iOS.mp4",
+    "folder": "2023",
+    "date": "2023-07-03",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Rickey Bell",
+      "Video"
+    ],
+    "title": "Snorkeling for Scallops",
+    "description": "Scalloping is part treasure hunt, part fishing trip, and part underwater adventure. With a mask, snorkel, fins, and a mesh bag, you head into the clear, shallow water searching through the seagrass for bay scallops.\n\nOnce you spot one, you dive down and pick it up by hand—but watch your fingers, because they can snap their shells shut!\n\nIt’s a great way to spend a summer day on the water, and there’s nothing quite like bringing the day’s catch back to the boat and later enjoying fresh scallops that you collected yourself.\n\nSwim. Search. Dive. Dinner.",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "videos/2023/20230729_194137.mp4",
     "media_type": "video",
     "file": "20230729_194137.mp4",
@@ -45993,6 +46127,74 @@
     "gps": {
       "lat": 34.7272,
       "lon": -80.846
+    }
+  },
+  {
+    "path": "images/2023/20230902_170520.jpg",
+    "media_type": "photo",
+    "file": "20230902_170520.jpg",
+    "folder": "2023",
+    "date": "2023-09-01",
+    "people": [
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Fishing Creek",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Lancaster County",
+      "People/Sophia Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Fishing Creek",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Fishing Creek",
+      "Places|South Carolina|Lancaster County",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6092494,
+      "lon": -80.8818612830556
+    }
+  },
+  {
+    "path": "images/2023/20230902_193313.jpg",
+    "media_type": "photo",
+    "file": "20230902_193313.jpg",
+    "folder": "2023",
+    "date": "2023-09-01",
+    "people": [
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Chester County",
+      "Fishing Creek",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Sophia Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Chester County",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Chester County",
+      "Places|South Carolina|Fishing Creek",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Fishing Creek",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6793878005556,
+      "lon": -80.8794268002778
     }
   },
   {
@@ -46194,6 +46396,32 @@
     "gps": null
   },
   {
+    "path": "images/2023/20231015_164344.jpg",
+    "media_type": "photo",
+    "file": "20231015_164344.jpg",
+    "folder": "2023",
+    "date": "2023-10-14",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "Lancaster County",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County"
+    ],
+    "title": "T73 Kirk Airbase",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6743892833333,
+      "lon": -80.6828684002778
+    }
+  },
+  {
     "path": "images/2023/20231020_102913.jpg",
     "media_type": "photo",
     "file": "20231020_102913.jpg",
@@ -46365,6 +46593,66 @@
     }
   },
   {
+    "path": "images/2024/414130801_1382872189101592_6193182833076880355_n.jpg",
+    "media_type": "photo",
+    "file": "414130801_1382872189101592_6193182833076880355_n.jpg",
+    "folder": "2024",
+    "date": "2024",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation"
+    ],
+    "title": "Aviation upgrades in \"Edythe\" the Warrior",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2024/419461831_344820808398059_3900534953746476970_n.jpg",
+    "media_type": "photo",
+    "file": "419461831_344820808398059_3900534953746476970_n.jpg",
+    "folder": "2024",
+    "date": "2024",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation"
+    ],
+    "title": "Aviation upgrades in \"Edythe\" the Warrior",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2024/IMG_3292.jpg",
+    "media_type": "photo",
+    "file": "IMG_3292.jpg",
+    "folder": "2024",
+    "date": "2024",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation"
+    ],
+    "title": "Aviation upgrades in \"Edythe\" the Warrior",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2024/20240131_191515.jpg",
     "media_type": "photo",
     "file": "20240131_191515.jpg",
@@ -46494,8 +46782,8 @@
       "Places/Florida",
       "Places|Florida"
     ],
-    "title": "",
-    "description": "",
+    "title": "Cedar Key, Florida – Fly-In Adventure",
+    "description": "Flying into Cedar Key, Florida is an adventure all by itself. The small island airport sits right along the Gulf, giving you beautiful views of the water and islands as you come in to land.\n\nAfter tying down the airplane, you can head into town for fresh seafood, cold drinks, and that laid-back Old Florida atmosphere Cedar Key is known for.\n\nIt’s not about getting somewhere fast—it’s about enjoying the flight, the scenery, and arriving somewhere you probably wouldn't experience the same way by car.\n\nFly in. Eat seafood. Enjoy the island. Fly home.",
     "location": "",
     "city": "",
     "state": "Florida",
@@ -46713,6 +47001,9 @@
       "Sabrina Odem"
     ],
     "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
       "Mike Morgan",
       "People/Mike Morgan",
       "People/Sabrina Odem",
@@ -46720,8 +47011,8 @@
       "People|Sabrina Odem",
       "Sabrina Odem"
     ],
-    "title": "",
-    "description": "",
+    "title": "KSSI – Fly-In BBQ",
+    "description": "KSSI – Fly-In BBQ\n\nSometimes the best flying destinations are the simple ones: an airplane, a runway, and good BBQ.\n\nA flight into KSSI – St. Simons Island Airport combines the fun of flying with one of aviation’s favorite traditions—going somewhere just because there’s something good to eat when you get there.\n\nLand the airplane, tie it down, grab some BBQ, enjoy St. Simons Island for a while, and then climb back in for the flight home.\n\nBecause pilots will fly a long way for good BBQ.",
     "location": "",
     "city": "",
     "state": "",
@@ -46856,6 +47147,58 @@
     "gps": {
       "lat": 26.6659902997222,
       "lon": -77.2745507002778
+    }
+  },
+  {
+    "path": "images/2024/20240504_193729.jpg",
+    "media_type": "photo",
+    "file": "20240504_193729.jpg",
+    "folder": "2024",
+    "date": "2024-05-04",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Bahamas",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "Places/Bahamas",
+      "Places|Bahamas"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Bahamas",
+    "country": "",
+    "gps": {
+      "lat": 26.6766409005556,
+      "lon": -77.2776861836111
+    }
+  },
+  {
+    "path": "images/2024/20240505_123727.jpg",
+    "media_type": "photo",
+    "file": "20240505_123727.jpg",
+    "folder": "2024",
+    "date": "2024-05-05",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Bahamas",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "Places/Bahamas",
+      "Places|Bahamas"
+    ],
+    "title": "Sure is a long way to go for pizza!",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Bahamas",
+    "country": "",
+    "gps": {
+      "lat": 26.6940778,
+      "lon": -77.3071066836111
     }
   },
   {
@@ -47372,6 +47715,37 @@
     }
   },
   {
+    "path": "images/2024/20240706_090226.jpg",
+    "media_type": "photo",
+    "file": "20240706_090226.jpg",
+    "folder": "2024",
+    "date": "2024-07-05",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Georgia",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/Georgia",
+      "Places|Georgia",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Georgia",
+    "country": "United States",
+    "gps": {
+      "lat": 31.5646495830556,
+      "lon": -81.3606707838889
+    }
+  },
+  {
     "path": "images/2024/20241020_140748.jpg",
     "media_type": "photo",
     "file": "20241020_140748.jpg",
@@ -47398,6 +47772,32 @@
     }
   },
   {
+    "path": "images/2024/20241026_181634.jpg",
+    "media_type": "photo",
+    "file": "20241026_181634.jpg",
+    "folder": "2024",
+    "date": "2024-10-25",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "Myrtle Beach",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 33.674036,
+      "lon": -78.9325481002778
+    }
+  },
+  {
     "path": "images/2024/20241129_130824~2.jpg",
     "media_type": "photo",
     "file": "20241129_130824~2.jpg",
@@ -47421,6 +47821,32 @@
     "gps": {
       "lat": 36.6221068833333,
       "lon": -79.9981766997222
+    }
+  },
+  {
+    "path": "images/2024/20241222_175849.jpg",
+    "media_type": "photo",
+    "file": "20241222_175849.jpg",
+    "folder": "2024",
+    "date": "2024-12-22",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Columbia",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "Places/South Carolina/Columbia",
+      "Places|South Carolina|Columbia"
+    ],
+    "title": "Columbia at Dusk",
+    "description": "",
+    "location": "",
+    "city": "Columbia",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 33.9384840833333,
+      "lon": -80.9636478836111
     }
   },
   {
@@ -47775,16 +48201,22 @@
       "Mike Morgan"
     ],
     "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
       "Mike Morgan",
       "People/Mike Morgan",
-      "People|Mike Morgan"
+      "People|Mike Morgan",
+      "Places/Georgia/Savannah",
+      "Places|Georgia|Savannah",
+      "Savannah"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Savannah",
+    "state": "Georgia",
+    "country": "United States",
     "gps": null
   },
   {
@@ -47833,7 +48265,7 @@
       "Places|Florida",
       "Stephanie Bell"
     ],
-    "title": "",
+    "title": "Stephanie Filling Her Up!",
     "description": "",
     "location": "",
     "city": "",
@@ -47902,11 +48334,60 @@
     "people": [],
     "tags": [
       "Aviation",
+      "Columbia",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "Places/South Carolina/Columbia",
+      "Places|South Carolina|Columbia"
+    ],
+    "title": "Columbia at night",
+    "description": "",
+    "location": "",
+    "city": "Columbia",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2025/20250214_101155.jpg",
+    "media_type": "photo",
+    "file": "20250214_101155.jpg",
+    "folder": "2025",
+    "date": "2025-02-14",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "Places/South Carolina/York County",
+      "Places|South Carolina|York County",
+      "York County"
+    ],
+    "title": "Found the next airplane!",
+    "description": "",
+    "location": "",
+    "city": "York County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 35.0999174997222,
+      "lon": -80.934179
+    }
+  },
+  {
+    "path": "images/2025/20250214_153218000_iOS.png",
+    "media_type": "photo",
+    "file": "20250214_153218000_iOS.png",
+    "folder": "2025",
+    "date": "2025-02-14",
+    "people": [],
+    "tags": [
+      "Aviation",
       "Hobbies/Aviation",
       "Hobbies|Aviation"
     ],
-    "title": "",
-    "description": "",
+    "title": "Found the next airplane!",
+    "description": "Screenshot",
     "location": "",
     "city": "",
     "state": "",
@@ -48278,6 +48759,25 @@
       "lat": 34.7176643833333,
       "lon": -80.8599173
     }
+  },
+  {
+    "path": "videos/2025/Screen_Recording_20250609_210333_Bixby Vision.mp4",
+    "media_type": "video",
+    "file": "Screen_Recording_20250609_210333_Bixby Vision.mp4",
+    "folder": "2025",
+    "date": "2025-06-09",
+    "people": [],
+    "tags": [
+      "Hobbies/Aviation",
+      "Video"
+    ],
+    "title": "AI way has a way to go before taking over the world!",
+    "description": "Bixby going crazy.",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
   },
   {
     "path": "images/2025/20250720_110146.jpg",
