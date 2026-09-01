@@ -48439,7 +48439,7 @@
       "Places|South Carolina|Lancaster County",
       "Shooting"
     ],
-    "title": "",
+    "title": ".44 Mag Bullet Trap",
     "description": "",
     "location": "",
     "city": "Lancaster County",
@@ -48466,7 +48466,7 @@
       "Places|South Carolina|Lancaster County",
       "Shooting"
     ],
-    "title": "",
+    "title": ".44 Mag Bullet Trap",
     "description": "",
     "location": "",
     "city": "Lancaster County",
@@ -48541,8 +48541,8 @@
       "Shooting",
       "Video"
     ],
-    "title": "Testing out a .350 Legend. ",
-    "description": "",
+    "title": "Testing out a .350 Legend at 300 yds.",
+    "description": "Heavy Winds!",
     "location": "",
     "city": "",
     "state": "",
@@ -48902,6 +48902,30 @@
       "Video"
     ],
     "title": "Always have deer when hog hunting.",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "videos/2025/1765668604_TNC_20251213.mp4",
+    "media_type": "video",
+    "file": "1765668604_TNC_20251213.mp4",
+    "folder": "2025",
+    "date": "2025-12-13",
+    "people": [],
+    "tags": [
+      "Crystal River",
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Shooting",
+      "Video"
+    ],
+    "title": "Deer are always in the way when looking for hogs!",
     "description": "",
     "location": "",
     "city": "Crystal River",

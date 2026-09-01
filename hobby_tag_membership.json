@@ -1237,6 +1237,9 @@
     "videos/2025/1765586346_TNC_20251212_193818.mp4": [
       "Shooting"
     ],
+    "videos/2025/1765668604_TNC_20251213.mp4": [
+      "Shooting"
+    ],
     "videos/2025/1766702278_TNC_20251225_173737.mp4": [
       "Shooting"
     ],
@@ -1277,7 +1280,7 @@
   "taggedCounts": {
     "Aviation": 1206,
     "Scuba": 1173,
-    "Shooting": 161,
+    "Shooting": 162,
     "Boating": 1368,
     "Off-Roading": 313,
     "Camping": 282
@@ -1285,7 +1288,7 @@
   "publicCounts": {
     "Aviation": 109,
     "Scuba": 140,
-    "Shooting": 31,
+    "Shooting": 32,
     "Boating": 103,
     "Off-Roading": 24,
     "Camping": 23
