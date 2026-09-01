@@ -1228,6 +1228,18 @@
     "videos/2024/20240506_132353.mp4": [
       "Aviation"
     ],
+    "videos/2025/1765113598_TNC_20251207_081954.mp4": [
+      "Shooting"
+    ],
+    "videos/2025/1765113694_TNC_20251207_082105.mp4": [
+      "Shooting"
+    ],
+    "videos/2025/1765586346_TNC_20251212_193818.mp4": [
+      "Shooting"
+    ],
+    "videos/2025/1766702278_TNC_20251225_173737.mp4": [
+      "Shooting"
+    ],
     "videos/2025/20250105_220052.mp4": [
       "Camping"
     ],
@@ -1252,6 +1264,12 @@
     "videos/2025/Coyote 2025.mp4": [
       "Shooting"
     ],
+    "videos/2025/Messenger_creation_B1540B18-1D4D-4A99-A4BA-5EC722EF9888.mp4": [
+      "Shooting"
+    ],
+    "videos/2025/Messenger_creation_C0A6067C-40D2-4E27-B5B7-4616618A0821.mp4": [
+      "Shooting"
+    ],
     "videos/2025/dji_fly_20250420_182626_248_1745191826390_video.mp4": [
       "Aviation"
     ]
@@ -1259,7 +1277,7 @@
   "taggedCounts": {
     "Aviation": 1206,
     "Scuba": 1173,
-    "Shooting": 146,
+    "Shooting": 161,
     "Boating": 1368,
     "Off-Roading": 313,
     "Camping": 282
@@ -1267,7 +1285,7 @@
   "publicCounts": {
     "Aviation": 109,
     "Scuba": 140,
-    "Shooting": 25,
+    "Shooting": 31,
     "Boating": 103,
     "Off-Roading": 24,
     "Camping": 23
