@@ -34301,6 +34301,39 @@
     "gps": null
   },
   {
+    "path": "images/2003/129-2953_IMG.JPG",
+    "media_type": "photo",
+    "file": "129-2953_IMG.JPG",
+    "folder": "2003",
+    "date": "2003-02-02",
+    "people": [
+      "Mike Morgan",
+      "Mikey Morgan",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Crystal River",
+      "Mike Morgan",
+      "Mikey Morgan",
+      "People/Mike Morgan",
+      "People/Mikey Morgan",
+      "People/Rickey Bell",
+      "People|Mike Morgan",
+      "People|Mikey Morgan",
+      "People|Rickey Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2003/130-3014_IMG.JPG",
     "media_type": "photo",
     "file": "130-3014_IMG.JPG",
@@ -35910,6 +35943,35 @@
     "gps": null
   },
   {
+    "path": "images/2004/pics3 (295).JPG",
+    "media_type": "photo",
+    "file": "pics3 (295).JPG",
+    "folder": "2004",
+    "date": "2004-04-11",
+    "people": [
+      "Mike Morgan",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Florida",
+      "Mike Morgan",
+      "People/Mike Morgan",
+      "People/Rickey Bell",
+      "People|Mike Morgan",
+      "People|Rickey Bell",
+      "Places/Florida",
+      "Places|Florida",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2004/Picture 0842.jpg",
     "media_type": "photo",
     "file": "Picture 0842.jpg",
@@ -36636,6 +36698,42 @@
     "gps": null
   },
   {
+    "path": "images/2004/2004_11_21__3 041.jpg",
+    "media_type": "photo",
+    "file": "2004_11_21__3 041.jpg",
+    "folder": "2004",
+    "date": "2004-11-28",
+    "people": [
+      "Mike Morgan",
+      "Mikey Morgan",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Crystal River",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Mike Morgan",
+      "Mikey Morgan",
+      "People/Mike Morgan",
+      "People/Mikey Morgan",
+      "People/Samatha Bell",
+      "People|Mike Morgan",
+      "People|Mikey Morgan",
+      "People|Samatha Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2004/2004_11_21__3 057.jpg",
     "media_type": "photo",
     "file": "2004_11_21__3 057.jpg",
@@ -36782,6 +36880,56 @@
     "gps": null
   },
   {
+    "path": "images/2005/2005_5_16_Bike_Week__1 010.jpg",
+    "media_type": "photo",
+    "file": "2005_5_16_Bike_Week__1 010.jpg",
+    "folder": "2005",
+    "date": "2005-05-14",
+    "people": [
+      "Mike Morgan"
+    ],
+    "tags": [
+      "Mike Morgan",
+      "Myrtle Beach",
+      "People/Mike Morgan",
+      "People|Mike Morgan",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach"
+    ],
+    "title": "Bike Week",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2005/1 085.jpg",
+    "media_type": "photo",
+    "file": "1 085.jpg",
+    "folder": "2005",
+    "date": "2005-05-16",
+    "people": [
+      "Mike Morgan"
+    ],
+    "tags": [
+      "Mike Morgan",
+      "Myrtle Beach",
+      "People/Mike Morgan",
+      "People|Mike Morgan",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach"
+    ],
+    "title": "Bike Week",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2005/2006_0001_a.jpg",
     "media_type": "photo",
     "file": "2006_0001_a.jpg",
@@ -36879,6 +37027,31 @@
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2005/2005_06_03__028_28.JPG",
+    "media_type": "photo",
+    "file": "2005_06_03__028_28.JPG",
+    "folder": "2005",
+    "date": "2005-06-02",
+    "people": [
+      "Mike Morgan"
+    ],
+    "tags": [
+      "Florida",
+      "Mike Morgan",
+      "People/Mike Morgan",
+      "People|Mike Morgan",
+      "Places/Florida",
+      "Places|Florida"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Florida",
+    "country": "United States",
     "gps": null
   },
   {
@@ -45263,26 +45436,6 @@
     "gps": null
   },
   {
-    "path": "images/2022/Warrior Purchase.png",
-    "media_type": "photo",
-    "file": "Warrior Purchase.png",
-    "folder": "2022",
-    "date": "2022",
-    "people": [],
-    "tags": [
-      "Aviation",
-      "Hobbies/Aviation",
-      "Hobbies|Aviation"
-    ],
-    "title": "Purchase of \"Edythe\" the '74 Piper Warrior",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
     "path": "images/2022/Screenshot_20220115-134137_Messenger.jpg",
     "media_type": "photo",
     "file": "Screenshot_20220115-134137_Messenger.jpg",
@@ -46108,6 +46261,26 @@
       "lat": 34.6123902830556,
       "lon": -80.8038517833333
     }
+  },
+  {
+    "path": "images/2022/Warrior Purchase.png",
+    "media_type": "photo",
+    "file": "Warrior Purchase.png",
+    "folder": "2022",
+    "date": "2022-10-08",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation"
+    ],
+    "title": "Purchase of \"Edythe\" the '74 Piper Warrior",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
   },
   {
     "path": "images/2022/20221014_194549.jpg",
@@ -47446,6 +47619,26 @@
     }
   },
   {
+    "path": "images/2024/IMG_3292.jpg",
+    "media_type": "photo",
+    "file": "IMG_3292.jpg",
+    "folder": "2024",
+    "date": "2023-11-08",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation"
+    ],
+    "title": "Aviation upgrades in \"Edythe\" the Warrior",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2023/20231124_183640.jpg",
     "media_type": "photo",
     "file": "20231124_183640.jpg",
@@ -47533,7 +47726,7 @@
     "media_type": "photo",
     "file": "414130801_1382872189101592_6193182833076880355_n.jpg",
     "folder": "2024",
-    "date": "2024",
+    "date": "2024-01-17",
     "people": [],
     "tags": [
       "Aviation",
@@ -47553,27 +47746,7 @@
     "media_type": "photo",
     "file": "419461831_344820808398059_3900534953746476970_n.jpg",
     "folder": "2024",
-    "date": "2024",
-    "people": [],
-    "tags": [
-      "Aviation",
-      "Hobbies/Aviation",
-      "Hobbies|Aviation"
-    ],
-    "title": "Aviation upgrades in \"Edythe\" the Warrior",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
-    "path": "images/2024/IMG_3292.jpg",
-    "media_type": "photo",
-    "file": "IMG_3292.jpg",
-    "folder": "2024",
-    "date": "2024",
+    "date": "2024-01-17",
     "people": [],
     "tags": [
       "Aviation",
@@ -47597,15 +47770,18 @@
     "people": [],
     "tags": [
       "Aviation",
+      "Charlotte",
       "Hobbies/Aviation",
-      "Hobbies|Aviation"
+      "Hobbies|Aviation",
+      "Places/North Carolina/Charlotte",
+      "Places|North Carolina|Charlotte"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Charlotte",
+    "state": "North Carolina",
+    "country": "United States",
     "gps": {
       "lat": 35.1687924,
       "lon": -80.8027873833333
@@ -47620,15 +47796,18 @@
     "people": [],
     "tags": [
       "Aviation",
+      "Charlotte",
       "Hobbies/Aviation",
-      "Hobbies|Aviation"
+      "Hobbies|Aviation",
+      "Places/North Carolina/Charlotte",
+      "Places|North Carolina|Charlotte"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Charlotte",
+    "state": "North Carolina",
+    "country": "United States",
     "gps": {
       "lat": 35.1960703002778,
       "lon": -80.8424166
@@ -47643,15 +47822,18 @@
     "people": [],
     "tags": [
       "Aviation",
+      "Charlotte",
       "Hobbies/Aviation",
-      "Hobbies|Aviation"
+      "Hobbies|Aviation",
+      "Places/North Carolina/Charlotte",
+      "Places|North Carolina|Charlotte"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Charlotte",
+    "state": "North Carolina",
+    "country": "United States",
     "gps": {
       "lat": 35.1960703002778,
       "lon": -80.8424166
@@ -47666,15 +47848,18 @@
     "people": [],
     "tags": [
       "Aviation",
+      "Charlotte",
       "Hobbies/Aviation",
-      "Hobbies|Aviation"
+      "Hobbies|Aviation",
+      "Places/North Carolina/Charlotte",
+      "Places|North Carolina|Charlotte"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Charlotte",
+    "state": "North Carolina",
+    "country": "United States",
     "gps": {
       "lat": 35.2243404833333,
       "lon": -80.8642233997222
@@ -47689,15 +47874,18 @@
     "people": [],
     "tags": [
       "Aviation",
+      "Charlotte",
       "Hobbies/Aviation",
-      "Hobbies|Aviation"
+      "Hobbies|Aviation",
+      "Places/North Carolina/Charlotte",
+      "Places|North Carolina|Charlotte"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Charlotte",
+    "state": "North Carolina",
+    "country": "United States",
     "gps": {
       "lat": 35.2302668836111,
       "lon": -80.8292338997222
@@ -48510,15 +48698,18 @@
     "people": [],
     "tags": [
       "Aviation",
+      "Columbia",
       "Hobbies/Aviation",
-      "Hobbies|Aviation"
+      "Hobbies|Aviation",
+      "Places/South Carolina/Columbia",
+      "Places|South Carolina|Columbia"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Columbia",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": {
       "lat": 33.9627969997222,
       "lon": -81.0167251
@@ -48533,15 +48724,18 @@
     "people": [],
     "tags": [
       "Aviation",
+      "Columbia",
       "Hobbies/Aviation",
-      "Hobbies|Aviation"
+      "Hobbies|Aviation",
+      "Places/South Carolina/Columbia",
+      "Places|South Carolina|Columbia"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Columbia",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": {
       "lat": 33.9640152994444,
       "lon": -81.0186413
@@ -48556,15 +48750,18 @@
     "people": [],
     "tags": [
       "Aviation",
+      "Columbia",
       "Hobbies/Aviation",
-      "Hobbies|Aviation"
+      "Hobbies|Aviation",
+      "Places/South Carolina/Columbia",
+      "Places|South Carolina|Columbia"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Columbia",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": {
       "lat": 33.9778491,
       "lon": -81.0077539
@@ -49269,15 +49466,18 @@
     "people": [],
     "tags": [
       "Aviation",
+      "Columbia",
       "Hobbies/Aviation",
-      "Hobbies|Aviation"
+      "Hobbies|Aviation",
+      "Places/South Carolina/Columbia",
+      "Places|South Carolina|Columbia"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Columbia",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": {
       "lat": 33.9249375830556,
       "lon": -81.2212643836111
@@ -50299,8 +50499,8 @@
       "Places/South Carolina/Chester County",
       "Video"
     ],
-    "title": "Instrument Flight Rules",
-    "description": "",
+    "title": "True Instrument Flight Rules",
+    "description": "IFR Flight plan from Nashville back to Lancaster. I think it is a hybrid of the Jools Three Arrivial.",
     "location": "",
     "city": "Chester County",
     "state": "South Carolina",

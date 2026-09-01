@@ -565,6 +565,9 @@
     "images/2004/2004_11_21__3 039.jpg": [
       "Boating"
     ],
+    "images/2004/2004_11_21__3 041.jpg": [
+      "Boating"
+    ],
     "images/2004/2004_11_21__3 057.jpg": [
       "Boating"
     ],
@@ -1391,7 +1394,7 @@
     "Aviation": 131,
     "Scuba": 140,
     "Shooting": 32,
-    "Boating": 109,
+    "Boating": 110,
     "Off-Roading": 24,
     "Camping": 29
   }
