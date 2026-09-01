@@ -36798,6 +36798,31 @@
     }
   },
   {
+    "path": "images/2004/016_010.JPG",
+    "media_type": "photo",
+    "file": "016_010.JPG",
+    "folder": "2004",
+    "date": "2004-12-25",
+    "people": [
+      "Donna Brown"
+    ],
+    "tags": [
+      "2044 Douglas Rd",
+      "Donna Brown",
+      "People/Donna Brown",
+      "People|Donna Brown",
+      "Places/South Carolina/Lancaster County/2044 Douglas Rd",
+      "Places|South Carolina|Lancaster County|2044 Douglas Rd"
+    ],
+    "title": "",
+    "description": "",
+    "location": "2044 Douglas Rd",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2005/PC310001.JPG",
     "media_type": "photo",
     "file": "PC310001.JPG",
@@ -36880,6 +36905,35 @@
     "gps": null
   },
   {
+    "path": "images/2005/2005_5_16_Bike_Week__1 009.jpg",
+    "media_type": "photo",
+    "file": "2005_5_16_Bike_Week__1 009.jpg",
+    "folder": "2005",
+    "date": "2005-05-14",
+    "people": [
+      "Mike Morgan",
+      "Rona Reed"
+    ],
+    "tags": [
+      "Mike Morgan",
+      "Myrtle Beach",
+      "People/Mike Morgan",
+      "People/Rona Reed",
+      "People|Mike Morgan",
+      "People|Rona Reed",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach",
+      "Rona Reed"
+    ],
+    "title": "Bike Week",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2005/2005_5_16_Bike_Week__1 010.jpg",
     "media_type": "photo",
     "file": "2005_5_16_Bike_Week__1 010.jpg",
@@ -36930,6 +36984,35 @@
     "gps": null
   },
   {
+    "path": "images/2005/2005_5_16_Bike_Week__1 106.jpg",
+    "media_type": "photo",
+    "file": "2005_5_16_Bike_Week__1 106.jpg",
+    "folder": "2005",
+    "date": "2005-05-16",
+    "people": [
+      "Mike Morgan",
+      "Rona Reed"
+    ],
+    "tags": [
+      "Mike Morgan",
+      "Myrtle Beach",
+      "People/Mike Morgan",
+      "People/Rona Reed",
+      "People|Mike Morgan",
+      "People|Rona Reed",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach",
+      "Rona Reed"
+    ],
+    "title": "Bike Week",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2005/2006_0001_a.jpg",
     "media_type": "photo",
     "file": "2006_0001_a.jpg",
@@ -36969,20 +37052,23 @@
     "tags": [
       "Dickey Bell",
       "Jarred Bell",
+      "Lancaster County",
       "People/Dickey Bell",
       "People/Jarred Bell",
       "People/Rickey Bell",
       "People|Dickey Bell",
       "People|Jarred Bell",
       "People|Rickey Bell",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County",
       "Rickey Bell"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -36995,16 +37081,19 @@
       "Rickii Lear"
     ],
     "tags": [
+      "Disney World",
       "People/Rickii Lear",
       "People|Rickii Lear",
+      "Places/Florida/Orlando/Disney World",
+      "Places|Florida|Orlando|Disney World",
       "Rickii Lear"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "Disney World",
+    "city": "Orlando",
+    "state": "Florida",
+    "country": "United States",
     "gps": null
   },
   {
@@ -37017,16 +37106,19 @@
       "Donna Brown"
     ],
     "tags": [
+      "Disney World",
       "Donna Brown",
       "People/Donna Brown",
-      "People|Donna Brown"
+      "People|Donna Brown",
+      "Places/Florida/Orlando/Disney World",
+      "Places|Florida|Orlando|Disney World"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "Disney World",
+    "city": "Orlando",
+    "state": "Florida",
+    "country": "United States",
     "gps": null
   },
   {
@@ -37052,28 +37144,6 @@
     "city": "",
     "state": "Florida",
     "country": "United States",
-    "gps": null
-  },
-  {
-    "path": "images/2005/016_010.JPG",
-    "media_type": "photo",
-    "file": "016_010.JPG",
-    "folder": "2005",
-    "date": "2005-06-03",
-    "people": [
-      "Donna Brown"
-    ],
-    "tags": [
-      "Donna Brown",
-      "People/Donna Brown",
-      "People|Donna Brown"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
     "gps": null
   },
   {
@@ -41134,6 +41204,35 @@
     "location": "",
     "city": "Crystal River",
     "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2016/IMG_3971.JPG",
+    "media_type": "photo",
+    "file": "IMG_3971.JPG",
+    "folder": "2016",
+    "date": "2016-09-24",
+    "people": [
+      "Mike Morgan",
+      "Teresa Spinks"
+    ],
+    "tags": [
+      "Chimney Rock",
+      "Mike Morgan",
+      "People/Mike Morgan",
+      "People/Teresa Spinks",
+      "People|Mike Morgan",
+      "People|Teresa Spinks",
+      "Places/North Carolina/Chimney Rock",
+      "Places|North Carolina|Chimney Rock",
+      "Teresa Spinks"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Chimney Rock",
+    "state": "North Carolina",
     "country": "United States",
     "gps": null
   },
