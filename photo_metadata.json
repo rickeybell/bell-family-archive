@@ -38770,6 +38770,89 @@
     "gps": null
   },
   {
+    "path": "images/2006/PIC_0021.JPG",
+    "media_type": "photo",
+    "file": "PIC_0021.JPG",
+    "folder": "2006",
+    "date": "2006-07-02",
+    "people": [
+      "Mike Morgan"
+    ],
+    "tags": [
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Mike Morgan",
+      "People/Mike Morgan",
+      "People|Mike Morgan"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2006/PIC_0030.JPG",
+    "media_type": "photo",
+    "file": "PIC_0030.JPG",
+    "folder": "2006",
+    "date": "2006-07-02",
+    "people": [
+      "Jarred Bell",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People/Rickey Bell",
+      "People|Jarred Bell",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2006/PIC_0040.JPG",
+    "media_type": "photo",
+    "file": "PIC_0040.JPG",
+    "folder": "2006",
+    "date": "2006-07-02",
+    "people": [
+      "Jarred Bell",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People/Rickey Bell",
+      "People|Jarred Bell",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2006/PIC_0044.JPG",
     "media_type": "photo",
     "file": "PIC_0044.JPG",
@@ -38785,6 +38868,31 @@
       "People/Rona Reed",
       "People|Rona Reed",
       "Rona Reed"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2006/PIC_0052.JPG",
+    "media_type": "photo",
+    "file": "PIC_0052.JPG",
+    "folder": "2006",
+    "date": "2006-07-02",
+    "people": [
+      "Jarred Bell"
+    ],
+    "tags": [
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Jarred Bell",
+      "People/Jarred Bell",
+      "People|Jarred Bell"
     ],
     "title": "",
     "description": "",
@@ -39330,6 +39438,138 @@
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2008/306.jpg",
+    "media_type": "photo",
+    "file": "306.jpg",
+    "folder": "2008",
+    "date": "2008-05-03",
+    "people": [
+      "Brea Morgan",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Brea Morgan",
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Kings Mountain",
+      "People/Brea Morgan",
+      "People/Samatha Bell",
+      "People|Brea Morgan",
+      "People|Samatha Bell",
+      "Places/South Carolina/Kings Mountain",
+      "Places|South Carolina|Kings Mountain",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Kings Mountain",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2008/IMAGE_259.jpg",
+    "media_type": "photo",
+    "file": "IMAGE_259.jpg",
+    "folder": "2008",
+    "date": "2008-05-03",
+    "people": [
+      "Brea Morgan",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Brea Morgan",
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Kings Mountain",
+      "People/Brea Morgan",
+      "People/Samatha Bell",
+      "People|Brea Morgan",
+      "People|Samatha Bell",
+      "Places/South Carolina/Kings Mountain",
+      "Places|South Carolina|Kings Mountain",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Kings Mountain",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2008/IMAGE_269.jpg",
+    "media_type": "photo",
+    "file": "IMAGE_269.jpg",
+    "folder": "2008",
+    "date": "2008-05-03",
+    "people": [
+      "Brea Morgan",
+      "Rickey Bell",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Brea Morgan",
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Kings Mountain",
+      "People/Brea Morgan",
+      "People/Rickey Bell",
+      "People/Samatha Bell",
+      "People|Brea Morgan",
+      "People|Rickey Bell",
+      "People|Samatha Bell",
+      "Places/South Carolina/Kings Mountain",
+      "Places|South Carolina|Kings Mountain",
+      "Rickey Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Kings Mountain",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2008/IMAGE_283.jpg",
+    "media_type": "photo",
+    "file": "IMAGE_283.jpg",
+    "folder": "2008",
+    "date": "2008-05-04",
+    "people": [
+      "Brea Morgan",
+      "Jarred Bell"
+    ],
+    "tags": [
+      "Brea Morgan",
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Jarred Bell",
+      "Kings Mountain",
+      "People/Brea Morgan",
+      "People/Jarred Bell",
+      "People|Brea Morgan",
+      "People|Jarred Bell",
+      "Places/South Carolina/Kings Mountain",
+      "Places|South Carolina|Kings Mountain"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Kings Mountain",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -46210,6 +46450,29 @@
     "gps": null
   },
   {
+    "path": "videos/2020/IMG_6442.mp4",
+    "media_type": "video",
+    "file": "IMG_6442.mp4",
+    "folder": "2020",
+    "date": "2020-10-07",
+    "people": [
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Animal/Gabby",
+      "Animal/Lady",
+      "People/Stephanie Bell",
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2020/NRA.jpg",
     "media_type": "photo",
     "file": "NRA.jpg",
@@ -47550,6 +47813,26 @@
     }
   },
   {
+    "path": "images/2021/20211124_185310.jpg",
+    "media_type": "photo",
+    "file": "20211124_185310.jpg",
+    "folder": "2021",
+    "date": "2021-11-24",
+    "people": [],
+    "tags": [
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2021/20211124_185537.jpg",
     "media_type": "photo",
     "file": "20211124_185537.jpg",
@@ -47573,6 +47856,58 @@
     "gps": {
       "lat": 34.4351138833333,
       "lon": -80.8698532833333
+    }
+  },
+  {
+    "path": "images/2021/20211125_153132.jpg",
+    "media_type": "photo",
+    "file": "20211125_153132.jpg",
+    "folder": "2021",
+    "date": "2021-11-25",
+    "people": [],
+    "tags": [
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Lake Wateree",
+      "Places/South Carolina/Kershaw/Lake Wateree",
+      "Places|South Carolina|Kershaw|Lake Wateree"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Lake Wateree",
+    "city": "Kershaw",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.4353509833333,
+      "lon": -80.8697679833333
+    }
+  },
+  {
+    "path": "images/2021/20211204_182722.jpg",
+    "media_type": "photo",
+    "file": "20211204_182722.jpg",
+    "folder": "2021",
+    "date": "2021-12-04",
+    "people": [],
+    "tags": [
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Myrtle Beach",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 33.9814805994444,
+      "lon": -78.7095060994444
     }
   },
   {
@@ -47626,6 +47961,29 @@
     "state": "",
     "country": "",
     "gps": null
+  },
+  {
+    "path": "images/2021/20211231_163834.jpg",
+    "media_type": "photo",
+    "file": "20211231_163834.jpg",
+    "folder": "2021",
+    "date": "2021-12-31",
+    "people": [],
+    "tags": [
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": {
+      "lat": 32.8079668833333,
+      "lon": -80.1093131827778
+    }
   },
   {
     "path": "images/2022/Screenshot_20220115-134137_Messenger.jpg",
@@ -47780,6 +48138,173 @@
     "gps": {
       "lat": 34.6793411,
       "lon": -81.2428044
+    }
+  },
+  {
+    "path": "images/2022/20220215_104226.jpg",
+    "media_type": "photo",
+    "file": "20220215_104226.jpg",
+    "folder": "2022",
+    "date": "2022-02-15",
+    "people": [
+      "Gabby",
+      "Lady"
+    ],
+    "tags": [
+      "Animal/Gabby",
+      "Animal/Lady",
+      "Animal|Gabby",
+      "Animal|Lady",
+      "Gabby",
+      "Lady",
+      "Lancaster County",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6917521,
+      "lon": -80.7871657
+    }
+  },
+  {
+    "path": "images/2022/20220401_200941.jpg",
+    "media_type": "photo",
+    "file": "20220401_200941.jpg",
+    "folder": "2022",
+    "date": "2022-04-01",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Camping",
+      "Croft State Park",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina/Croft State Park",
+      "Places|South Carolina|Croft State Park",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Croft State Park",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.8662623002778,
+      "lon": -81.8380213
+    }
+  },
+  {
+    "path": "images/2022/20220402_115350.jpg",
+    "media_type": "photo",
+    "file": "20220402_115350.jpg",
+    "folder": "2022",
+    "date": "2022-04-02",
+    "people": [],
+    "tags": [
+      "Camping",
+      "Croft State Park",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Places/South Carolina/Croft State Park",
+      "Places|South Carolina|Croft State Park"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Croft State Park",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.8595412,
+      "lon": -81.8399096002778
+    }
+  },
+  {
+    "path": "images/2022/20220402_132040.jpg",
+    "media_type": "photo",
+    "file": "20220402_132040.jpg",
+    "folder": "2022",
+    "date": "2022-04-02",
+    "people": [],
+    "tags": [
+      "Camping",
+      "Croft State Park",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Places/South Carolina/Croft State Park",
+      "Places|South Carolina|Croft State Park"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Croft State Park",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.8815076997222,
+      "lon": -81.8712212
+    }
+  },
+  {
+    "path": "images/2022/20220402_132525.jpg",
+    "media_type": "photo",
+    "file": "20220402_132525.jpg",
+    "folder": "2022",
+    "date": "2022-04-02",
+    "people": [],
+    "tags": [
+      "Camping",
+      "Croft State Park",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Places/South Carolina/Croft State Park",
+      "Places|South Carolina|Croft State Park"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Croft State Park",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.8818663002778,
+      "lon": -81.8705761
+    }
+  },
+  {
+    "path": "images/2022/20220402_155957.jpg",
+    "media_type": "photo",
+    "file": "20220402_155957.jpg",
+    "folder": "2022",
+    "date": "2022-04-02",
+    "people": [],
+    "tags": [
+      "Camping",
+      "Croft State Park",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Places/South Carolina/Croft State Park",
+      "Places|South Carolina|Croft State Park"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Croft State Park",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.8663487997222,
+      "lon": -81.8379519997222
     }
   },
   {
@@ -48535,6 +49060,32 @@
     }
   },
   {
+    "path": "images/2022/20221014_205043.jpg",
+    "media_type": "photo",
+    "file": "20221014_205043.jpg",
+    "folder": "2022",
+    "date": "2022-10-14",
+    "people": [],
+    "tags": [
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Myrtle Beach",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 33.8455279997222,
+      "lon": -78.8418219713889
+    }
+  },
+  {
     "path": "images/2022/20221015_183743.jpg",
     "media_type": "photo",
     "file": "20221015_183743.jpg",
@@ -48584,6 +49135,68 @@
     "gps": {
       "lat": 33.8455,
       "lon": -78.8417
+    }
+  },
+  {
+    "path": "images/2022/20221015_115655.jpg",
+    "media_type": "photo",
+    "file": "20221015_115655.jpg",
+    "folder": "2022",
+    "date": "2022-10-15",
+    "people": [
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Myrtle Beach",
+      "People/Sophia Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 33.8439947997222,
+      "lon": -78.8435978994444
+    }
+  },
+  {
+    "path": "images/2022/20221015_162404.jpg",
+    "media_type": "photo",
+    "file": "20221015_162404.jpg",
+    "folder": "2022",
+    "date": "2022-10-15",
+    "people": [
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Myrtle Beach",
+      "People/Sophia Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 33.8428323002778,
+      "lon": -78.8415392997222
     }
   },
   {
@@ -48772,6 +49385,32 @@
     }
   },
   {
+    "path": "images/2022/FB_IMG_1672424436615.jpg",
+    "media_type": "photo",
+    "file": "FB_IMG_1672424436615.jpg",
+    "folder": "2022",
+    "date": "2022-12-30",
+    "people": [
+      "Andrew Morgan",
+      "Katie Morgan"
+    ],
+    "tags": [
+      "Andrew Morgan",
+      "Katie Morgan",
+      "People/Andrew Morgan",
+      "People/Katie Morgan",
+      "People|Andrew Morgan",
+      "People|Katie Morgan"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2023/20230107_153901.jpg",
     "media_type": "photo",
     "file": "20230107_153901.jpg",
@@ -48826,6 +49465,46 @@
     "gps": {
       "lat": 34.6934170827778,
       "lon": -80.8252398836111
+    }
+  },
+  {
+    "path": "images/2023/20230217_223840.jpg",
+    "media_type": "photo",
+    "file": "20230217_223840.jpg",
+    "folder": "2023",
+    "date": "2023-02-17",
+    "people": [
+      "April Scott",
+      "Karen Gaskin",
+      "Katie Morgan",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "April Scott",
+      "Karen Gaskin",
+      "Katie Morgan",
+      "Myrtle Beach",
+      "People/April Scott",
+      "People/Karen Gaskin",
+      "People/Katie Morgan",
+      "People/Stephanie Bell",
+      "People|April Scott",
+      "People|Karen Gaskin",
+      "People|Katie Morgan",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 33.559109,
+      "lon": -79.0306558005556
     }
   },
   {
@@ -48964,6 +49643,38 @@
     }
   },
   {
+    "path": "images/2023/20230504_183936.jpg",
+    "media_type": "photo",
+    "file": "20230504_183936.jpg",
+    "folder": "2023",
+    "date": "2023-05-04",
+    "people": [
+      "Andrew Morgan",
+      "Katie Morgan"
+    ],
+    "tags": [
+      "Andrew Morgan",
+      "Cozumel",
+      "Katie Morgan",
+      "People/Andrew Morgan",
+      "People/Katie Morgan",
+      "People|Andrew Morgan",
+      "People|Katie Morgan",
+      "Places/Mexico/Cozumel",
+      "Places|Mexico|Cozumel"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Cozumel",
+    "state": "Mexico",
+    "country": "",
+    "gps": {
+      "lat": 20.5053751002778,
+      "lon": -86.9577415
+    }
+  },
+  {
     "path": "images/2023/20230611_144847.jpg",
     "media_type": "photo",
     "file": "20230611_144847.jpg",
@@ -49025,6 +49736,29 @@
     "gps": {
       "lat": 34.6938427002778,
       "lon": -80.8248968002778
+    }
+  },
+  {
+    "path": "videos/2023/20230623_164533.mp4",
+    "media_type": "video",
+    "file": "20230623_164533.mp4",
+    "folder": "2023",
+    "date": "2023-06-23",
+    "people": [],
+    "tags": [
+      "Animal/Aria",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.693399983333336,
+      "lon": -80.8251
     }
   },
   {
@@ -49220,6 +49954,42 @@
     "gps": null
   },
   {
+    "path": "images/2023/20230730_174304.jpg",
+    "media_type": "photo",
+    "file": "20230730_174304.jpg",
+    "folder": "2023",
+    "date": "2023-07-29",
+    "people": [
+      "Aria",
+      "Gabby",
+      "Lady"
+    ],
+    "tags": [
+      "Animal/Aria",
+      "Animal/Gabby",
+      "Animal/Lady",
+      "Animal|Aria",
+      "Animal|Gabby",
+      "Animal|Lady",
+      "Aria",
+      "Gabby",
+      "Lady",
+      "Lancaster County",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6601310836111,
+      "lon": -80.8306857002778
+    }
+  },
+  {
     "path": "videos/2023/20230729_194137.mp4",
     "media_type": "video",
     "file": "20230729_194137.mp4",
@@ -49269,6 +50039,38 @@
     "gps": {
       "lat": 34.6934971,
       "lon": -80.8250524833333
+    }
+  },
+  {
+    "path": "images/2023/20230804_194453.jpg",
+    "media_type": "photo",
+    "file": "20230804_194453.jpg",
+    "folder": "2023",
+    "date": "2023-08-04",
+    "people": [
+      "Katie Morgan",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Katie Morgan",
+      "Myrtle Beach",
+      "People/Katie Morgan",
+      "People/Stephanie Bell",
+      "People|Katie Morgan",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 33.8147668,
+      "lon": -78.6968691994444
     }
   },
   {
@@ -49754,6 +50556,63 @@
     }
   },
   {
+    "path": "images/2023/20231020_103813.jpg",
+    "media_type": "photo",
+    "file": "20231020_103813.jpg",
+    "folder": "2023",
+    "date": "2023-10-20",
+    "people": [
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Myrtle Beach",
+      "People/Sophia Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 33.9809097002778,
+      "lon": -78.7114329
+    }
+  },
+  {
+    "path": "images/2023/20231020_121248.jpg",
+    "media_type": "photo",
+    "file": "20231020_121248.jpg",
+    "folder": "2023",
+    "date": "2023-10-20",
+    "people": [],
+    "tags": [
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Myrtle Beach",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 33.8293855,
+      "lon": -78.6718073002778
+    }
+  },
+  {
     "path": "images/2023/20231021_113457.jpg",
     "media_type": "photo",
     "file": "20231021_113457.jpg",
@@ -49823,6 +50682,40 @@
       "Hobbies|Aviation"
     ],
     "title": "Aviation upgrades in \"Edythe\" the Warrior",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2023/FB_IMG_1700142133038.jpg",
+    "media_type": "photo",
+    "file": "FB_IMG_1700142133038.jpg",
+    "folder": "2023",
+    "date": "2023-11-16",
+    "people": [
+      "April Scott",
+      "Karen Gaskin",
+      "Katie Morgan",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "April Scott",
+      "Karen Gaskin",
+      "Katie Morgan",
+      "People/April Scott",
+      "People/Karen Gaskin",
+      "People/Katie Morgan",
+      "People/Stephanie Bell",
+      "People|April Scott",
+      "People|Karen Gaskin",
+      "People|Katie Morgan",
+      "People|Stephanie Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
     "description": "",
     "location": "",
     "city": "",
@@ -51062,6 +51955,63 @@
     "gps": null
   },
   {
+    "path": "images/2024/20240703_202202.jpg",
+    "media_type": "photo",
+    "file": "20240703_202202.jpg",
+    "folder": "2024",
+    "date": "2024-07-02",
+    "people": [],
+    "tags": [
+      "Camping",
+      "Georgia",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Places/Georgia",
+      "Places|Georgia"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Georgia",
+    "country": "United States",
+    "gps": {
+      "lat": 31.5643370830556,
+      "lon": -81.3615765836111
+    }
+  },
+  {
+    "path": "images/2024/20240703_202222.jpg",
+    "media_type": "photo",
+    "file": "20240703_202222.jpg",
+    "folder": "2024",
+    "date": "2024-07-02",
+    "people": [
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Camping",
+      "Georgia",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "People/Stephanie Bell",
+      "People|Stephanie Bell",
+      "Places/Georgia",
+      "Places|Georgia",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Georgia",
+    "country": "United States",
+    "gps": {
+      "lat": 31.5643227005556,
+      "lon": -81.3615778
+    }
+  },
+  {
     "path": "images/2024/20240706_090226.jpg",
     "media_type": "photo",
     "file": "20240706_090226.jpg",
@@ -51072,9 +52022,12 @@
     ],
     "tags": [
       "Boating",
+      "Camping",
       "Georgia",
       "Hobbies/Boating",
+      "Hobbies/Camping",
       "Hobbies|Boating",
+      "Hobbies|Camping",
       "People/Rickey Bell",
       "People|Rickey Bell",
       "Places/Georgia",
@@ -51090,6 +52043,32 @@
     "gps": {
       "lat": 31.5646495830556,
       "lon": -81.3606707838889
+    }
+  },
+  {
+    "path": "images/2024/20240707_111521.jpg",
+    "media_type": "photo",
+    "file": "20240707_111521.jpg",
+    "folder": "2024",
+    "date": "2024-07-07",
+    "people": [],
+    "tags": [
+      "Camping",
+      "Georgia",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Places/Georgia",
+      "Places|Georgia"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Georgia",
+    "country": "United States",
+    "gps": {
+      "lat": 31.5644556002778,
+      "lon": -81.3613156997222
     }
   },
   {
@@ -51827,6 +52806,36 @@
     }
   },
   {
+    "path": "images/2025/Screenshot_20250324_113607_Messenger-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20250324_113607_Messenger-edited.jpg",
+    "folder": "2025",
+    "date": "2025-03-24",
+    "people": [
+      "April Scott",
+      "Katie Morgan",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "April Scott",
+      "Katie Morgan",
+      "People/April Scott",
+      "People/Katie Morgan",
+      "People/Stephanie Bell",
+      "People|April Scott",
+      "People|Katie Morgan",
+      "People|Stephanie Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2025/20250412_132713.jpg",
     "media_type": "photo",
     "file": "20250412_132713.jpg",
@@ -51853,6 +52862,32 @@
       "lat": 35.2535998833333,
       "lon": -81.6004393833333
     }
+  },
+  {
+    "path": "images/2025/Screenshot_20250418_092204_Photos.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20250418_092204_Photos.jpg",
+    "folder": "2025",
+    "date": "2025-04-18",
+    "people": [
+      "Andrew Morgan",
+      "Katie Morgan"
+    ],
+    "tags": [
+      "Andrew Morgan",
+      "Katie Morgan",
+      "People/Andrew Morgan",
+      "People/Katie Morgan",
+      "People|Andrew Morgan",
+      "People|Katie Morgan"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
   },
   {
     "path": "images/2025/20250419_181922.jpg",
@@ -51913,6 +52948,72 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": null
+  },
+  {
+    "path": "images/2025/Screenshot_20250423_124525_Messenger-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20250423_124525_Messenger-edited.jpg",
+    "folder": "2025",
+    "date": "2025-04-23",
+    "people": [
+      "Andrew Morgan",
+      "Katie Morgan"
+    ],
+    "tags": [
+      "Andrew Morgan",
+      "Katie Morgan",
+      "People/Andrew Morgan",
+      "People/Katie Morgan",
+      "People|Andrew Morgan",
+      "People|Katie Morgan"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2025/20250426_204428.jpg",
+    "media_type": "photo",
+    "file": "20250426_204428.jpg",
+    "folder": "2025",
+    "date": "2025-04-26",
+    "people": [
+      "April Scott",
+      "Karen Gaskin",
+      "Katie Morgan",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "April Scott",
+      "Karen Gaskin",
+      "Katie Morgan",
+      "Lancaster County",
+      "People/April Scott",
+      "People/Karen Gaskin",
+      "People/Katie Morgan",
+      "People/Stephanie Bell",
+      "People|April Scott",
+      "People|Karen Gaskin",
+      "People|Katie Morgan",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.5256683,
+      "lon": -80.5540856
+    }
   },
   {
     "path": "images/2025/20250426_204430~2.jpg",
@@ -53028,6 +54129,46 @@
     }
   },
   {
+    "path": "images/2025/20251202_190839(1).jpg",
+    "media_type": "photo",
+    "file": "20251202_190839(1).jpg",
+    "folder": "2025",
+    "date": "2025-12-02",
+    "people": [
+      "April Scott",
+      "Karen Gaskin",
+      "Katie Morgan",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "April Scott",
+      "Karen Gaskin",
+      "Katie Morgan",
+      "Lancaster High School",
+      "People/April Scott",
+      "People/Karen Gaskin",
+      "People/Katie Morgan",
+      "People/Stephanie Bell",
+      "People|April Scott",
+      "People|Karen Gaskin",
+      "People|Katie Morgan",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County/Lancaster High School",
+      "Places|South Carolina|Lancaster County|Lancaster High School",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Lancaster High School",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7259154997222,
+      "lon": -80.7811776997222
+    }
+  },
+  {
     "path": "images/2025/20251204_154810.jpg",
     "media_type": "photo",
     "file": "20251204_154810.jpg",
@@ -53814,6 +54955,26 @@
     }
   },
   {
+    "path": "images/2026/20260217_164308.jpg",
+    "media_type": "photo",
+    "file": "20260217_164308.jpg",
+    "folder": "2026",
+    "date": "2026-02-17",
+    "people": [],
+    "tags": [
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2026/20260217_215409.jpg",
     "media_type": "photo",
     "file": "20260217_215409.jpg",
@@ -53866,6 +55027,51 @@
       "lat": 34.6796219,
       "lon": -81.243242
     }
+  },
+  {
+    "path": "images/2026/20260220_191932.jpg",
+    "media_type": "photo",
+    "file": "20260220_191932.jpg",
+    "folder": "2026",
+    "date": "2026-02-20",
+    "people": [
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "People/Sophia Bell",
+      "People|Sophia Bell",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2026/20260221_162153.jpg",
+    "media_type": "photo",
+    "file": "20260221_162153.jpg",
+    "folder": "2026",
+    "date": "2026-02-21",
+    "people": [],
+    "tags": [
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
   },
   {
     "path": "images/2026/20260221_214130.jpg",
@@ -53928,6 +55134,32 @@
     "state": "",
     "country": "",
     "gps": null
+  },
+  {
+    "path": "videos/2026/20260221_171309.mp4",
+    "media_type": "video",
+    "file": "20260221_171309.mp4",
+    "folder": "2026",
+    "date": "2026-02-21",
+    "people": [
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Hobbies/Camping",
+      "People/Sophia Bell",
+      "Places/South Carolina/Chester County",
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6777,
+      "lon": -81.2353
+    }
   },
   {
     "path": "images/2026/Screenshot_20260325_184439_Messages.jpg",

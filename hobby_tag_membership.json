@@ -618,7 +618,19 @@
     "images/2005/PC310002.JPG": [
       "Boating"
     ],
+    "images/2006/PIC_0021.JPG": [
+      "Camping"
+    ],
+    "images/2006/PIC_0030.JPG": [
+      "Camping"
+    ],
+    "images/2006/PIC_0040.JPG": [
+      "Camping"
+    ],
     "images/2006/PIC_0044.JPG": [
+      "Camping"
+    ],
+    "images/2006/PIC_0052.JPG": [
       "Camping"
     ],
     "images/2008/01-09-08_1142.jpg": [
@@ -636,6 +648,9 @@
     "images/2008/061.JPG": [
       "Boating"
     ],
+    "images/2008/306.jpg": [
+      "Camping"
+    ],
     "images/2008/IMAGE_153.jpg": [
       "Camping"
     ],
@@ -652,6 +667,15 @@
       "Camping"
     ],
     "images/2008/IMAGE_191.jpg": [
+      "Camping"
+    ],
+    "images/2008/IMAGE_259.jpg": [
+      "Camping"
+    ],
+    "images/2008/IMAGE_269.jpg": [
+      "Camping"
+    ],
+    "images/2008/IMAGE_283.jpg": [
       "Camping"
     ],
     "images/2010/012-2 (1).jpg": [
@@ -864,10 +888,22 @@
     "images/2021/20211124_182542.jpg": [
       "Camping"
     ],
+    "images/2021/20211124_185310.jpg": [
+      "Camping"
+    ],
     "images/2021/20211124_185537.jpg": [
       "Camping"
     ],
+    "images/2021/20211125_153132.jpg": [
+      "Camping"
+    ],
+    "images/2021/20211204_182722.jpg": [
+      "Camping"
+    ],
     "images/2021/20211205_173132.jpg": [
+      "Camping"
+    ],
+    "images/2021/20211231_163834.jpg": [
       "Camping"
     ],
     "images/2022/20220123_172405.jpg": [
@@ -882,7 +918,31 @@
     "images/2022/20220130_113615.jpg": [
       "Camping"
     ],
+    "images/2022/20220401_200941.jpg": [
+      "Camping"
+    ],
+    "images/2022/20220402_115350.jpg": [
+      "Camping"
+    ],
+    "images/2022/20220402_132040.jpg": [
+      "Camping"
+    ],
+    "images/2022/20220402_132525.jpg": [
+      "Camping"
+    ],
+    "images/2022/20220402_155957.jpg": [
+      "Camping"
+    ],
     "images/2022/20221014_194549.jpg": [
+      "Camping"
+    ],
+    "images/2022/20221014_205043.jpg": [
+      "Camping"
+    ],
+    "images/2022/20221015_115655.jpg": [
+      "Camping"
+    ],
+    "images/2022/20221015_162404.jpg": [
       "Camping"
     ],
     "images/2022/20221015_175346.jpg": [
@@ -943,6 +1003,12 @@
       "Aviation"
     ],
     "images/2023/20231020_102913.jpg": [
+      "Camping"
+    ],
+    "images/2023/20231020_103813.jpg": [
+      "Camping"
+    ],
+    "images/2023/20231020_121248.jpg": [
       "Camping"
     ],
     "images/2023/20231021_113457.jpg": [
@@ -1077,8 +1143,18 @@
     "images/2024/20240531_213954.jpg": [
       "Aviation"
     ],
+    "images/2024/20240703_202202.jpg": [
+      "Camping"
+    ],
+    "images/2024/20240703_202222.jpg": [
+      "Camping"
+    ],
     "images/2024/20240706_090226.jpg": [
-      "Boating"
+      "Boating",
+      "Camping"
+    ],
+    "images/2024/20240707_111521.jpg": [
+      "Camping"
     ],
     "images/2024/20241020_140748.jpg": [
       "Aviation"
@@ -1230,10 +1306,19 @@
     "images/2025/Screenshot_20251223_205225_Photos~3.jpg": [
       "Aviation"
     ],
+    "images/2026/20260217_164308.jpg": [
+      "Camping"
+    ],
     "images/2026/20260217_215409.jpg": [
       "Camping"
     ],
     "images/2026/20260218_082856.jpg": [
+      "Camping"
+    ],
+    "images/2026/20260220_191932.jpg": [
+      "Camping"
+    ],
+    "images/2026/20260221_162153.jpg": [
       "Camping"
     ],
     "images/2026/20260403_150405.jpg": [
@@ -1383,6 +1468,9 @@
     ],
     "videos/2025/dji_fly_20250420_182626_248_1745191826390_video.mp4": [
       "Aviation"
+    ],
+    "videos/2026/20260221_171309.mp4": [
+      "Camping"
     ]
   },
   "taggedCounts": {
@@ -1391,7 +1479,7 @@
     "Shooting": 214,
     "Boating": 1415,
     "Off-Roading": 313,
-    "Camping": 375
+    "Camping": 381
   },
   "publicCounts": {
     "Aviation": 131,
@@ -1399,6 +1487,6 @@
     "Shooting": 32,
     "Boating": 110,
     "Off-Roading": 24,
-    "Camping": 30
+    "Camping": 60
   }
 }
