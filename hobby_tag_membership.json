@@ -618,6 +618,9 @@
     "images/2005/PC310002.JPG": [
       "Boating"
     ],
+    "images/2006/PIC_0044.JPG": [
+      "Camping"
+    ],
     "images/2008/01-09-08_1142.jpg": [
       "Boating"
     ],
@@ -1396,6 +1399,6 @@
     "Shooting": 32,
     "Boating": 110,
     "Off-Roading": 24,
-    "Camping": 29
+    "Camping": 30
   }
 }
