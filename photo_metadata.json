@@ -35572,15 +35572,19 @@
     "folder": "2004",
     "date": "2004-01-18",
     "people": [
-      "Rickey Bell"
+      "Rickey Bell",
+      "Scott Carter"
     ],
     "tags": [
       "Hobbies/Off-Roading",
       "Hobbies|Off-Roading",
       "Off-Roading",
       "People/Rickey Bell",
+      "People/Scott Carter",
       "People|Rickey Bell",
-      "Rickey Bell"
+      "People|Scott Carter",
+      "Rickey Bell",
+      "Scott Carter"
     ],
     "title": "",
     "description": "",
@@ -35978,15 +35982,27 @@
     "folder": "2004",
     "date": "2004-05-23",
     "people": [
-      "Carl Whitcomb"
+      "Carl Whitcomb",
+      "Debbie Rowell",
+      "Earnie Rowell",
+      "Jacquilin Robinsong"
     ],
     "tags": [
       "Blue Stone Quarry",
       "Carl Whitcomb",
+      "Debbie Rowell",
+      "Earnie Rowell",
       "Hobbies/Scuba",
       "Hobbies|Scuba",
+      "Jacquilin Robinsong",
       "People/Carl Whitcomb",
+      "People/Debbie Rowell",
+      "People/Earnie Rowell",
+      "People/Jacquilin Robinsong",
       "People|Carl Whitcomb",
+      "People|Debbie Rowell",
+      "People|Earnie Rowell",
+      "People|Jacquilin Robinsong",
       "Places/North Carolina/Blue Stone Quarry",
       "Places|North Carolina|Blue Stone Quarry",
       "Scuba"
@@ -36108,6 +36124,28 @@
     "city": "Wilmington",
     "state": "North Carolina",
     "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2004/2004_8_23__Picture 030.jpg",
+    "media_type": "photo",
+    "file": "2004_8_23__Picture 030.jpg",
+    "folder": "2004",
+    "date": "2004-08-21",
+    "people": [
+      "Wanda Moser"
+    ],
+    "tags": [
+      "People/Wanda Moser",
+      "People|Wanda Moser",
+      "Wanda Moser"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
     "gps": null
   },
   {
@@ -36235,7 +36273,8 @@
     "people": [
       "Ann Hoke",
       "Dustin Fletcher 'Freak'",
-      "Jason Hoke"
+      "Jason Hoke",
+      "Stephen Rouse"
     ],
     "tags": [
       "212 S Main St QDS Office",
@@ -36245,11 +36284,14 @@
       "People/Ann Hoke",
       "People/Dustin Fletcher 'Freak'",
       "People/Jason Hoke",
+      "People/Stephen Rouse",
       "People|Ann Hoke",
       "People|Dustin Fletcher 'Freak'",
       "People|Jason Hoke",
+      "People|Stephen Rouse",
       "Places/South Carolina/Lancaster County/212 S Main St QDS Office",
-      "Places|South Carolina|Lancaster County|212 S Main St QDS Office"
+      "Places|South Carolina|Lancaster County|212 S Main St QDS Office",
+      "Stephen Rouse"
     ],
     "title": "The Great Twizzler Fight of 2004",
     "description": "",
@@ -36258,8 +36300,8 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.7183502998369,
-      "lon": -80.7700319663195
+      "lat": 34.7183503,
+      "lon": -80.7700319666667
     }
   },
   {
@@ -36581,8 +36623,8 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.7183502998369,
-      "lon": -80.7700319663195
+      "lat": 34.7183503,
+      "lon": -80.7700319663889
     }
   },
   {
@@ -36620,12 +36662,21 @@
     "file": "2004_11_21__3 030.jpg",
     "folder": "2004",
     "date": "2004-11-27",
-    "people": [],
+    "people": [
+      "Mike Morgan",
+      "Mikey Morgan"
+    ],
     "tags": [
       "Boating",
       "Crystal River",
       "Hobbies/Boating",
       "Hobbies|Boating",
+      "Mike Morgan",
+      "Mikey Morgan",
+      "People/Mike Morgan",
+      "People/Mikey Morgan",
+      "People|Mike Morgan",
+      "People|Mikey Morgan",
       "Places/Florida/Crystal River",
       "Places|Florida|Crystal River"
     ],
@@ -36672,6 +36723,7 @@
     "folder": "2004",
     "date": "2004-11-28",
     "people": [
+      "Mike Morgan",
       "Mikey Morgan",
       "Samatha Bell"
     ],
@@ -36680,9 +36732,12 @@
       "Crystal River",
       "Hobbies/Boating",
       "Hobbies|Boating",
+      "Mike Morgan",
       "Mikey Morgan",
+      "People/Mike Morgan",
       "People/Mikey Morgan",
       "People/Samatha Bell",
+      "People|Mike Morgan",
       "People|Mikey Morgan",
       "People|Samatha Bell",
       "Places/Florida/Crystal River",
@@ -36776,12 +36831,20 @@
     "folder": "2004",
     "date": "2004-12-18",
     "people": [
+      "Ann Hoke",
+      "Chris Small",
       "Jason Hoke"
     ],
     "tags": [
+      "Ann Hoke",
+      "Chris Small",
       "Jason Hoke",
       "Lancaster Rescue Squad",
+      "People/Ann Hoke",
+      "People/Chris Small",
       "People/Jason Hoke",
+      "People|Ann Hoke",
+      "People|Chris Small",
       "People|Jason Hoke",
       "Places/South Carolina/Lancaster County/Lancaster Rescue Squad",
       "Places|South Carolina|Lancaster County|Lancaster Rescue Squad"
@@ -36793,8 +36856,8 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.7028199271222,
-      "lon": -80.7713706096417
+      "lat": 34.7028199266667,
+      "lon": -80.77137061
     }
   },
   {
@@ -37427,10 +37490,13 @@
     ],
     "tags": [
       "Dickey Bell",
+      "Hobbies/Rescue_Police_EMS",
+      "Hobbies|Rescue_Police_EMS",
       "People/Dickey Bell",
       "People/Rickey Bell",
       "People|Dickey Bell",
       "People|Rickey Bell",
+      "Rescue_Police_EMS",
       "Rickey Bell"
     ],
     "title": "",
