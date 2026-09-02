@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   // Keep current ages accurate for living relatives as birthdays pass.
   const today=new Date();
   document.querySelectorAll(".tree-person[data-birthdate], .archive-community-card[data-birthdate]").forEach(card=>{
+    if(card.classList.contains("not-living"))return;
     const vitals=card.querySelector(".tree-vitals");
     if(!vitals || vitals.querySelector(".current-age"))return;
     const [year,month,day]=card.dataset.birthdate.split("-").map(Number);
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     vitals.appendChild(line);
   });
   document.querySelectorAll(".tree-person[data-birth-year], .archive-community-card[data-birth-year]").forEach(card=>{
+    if(card.classList.contains("not-living"))return;
     const vitals=card.querySelector(".tree-vitals");
     if(!vitals || vitals.querySelector(".current-age"))return;
     const age=today.getFullYear()-Number(card.dataset.birthYear);

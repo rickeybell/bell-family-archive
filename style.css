@@ -265,10 +265,13 @@ footer{
 .archive-community-heading{margin-bottom:18px}
 .archive-community-heading h2{margin:3px 0 6px;color:var(--green);font-size:30px}
 .archive-community-heading p{margin:0;max-width:850px;color:var(--muted)}
+.archive-community-rows{display:grid;gap:18px}
 .archive-community-grid{display:grid;gap:12px}
 .archive-community-grid-eight{grid-template-columns:repeat(8,minmax(0,1fr))}
 .archive-community-grid-five{grid-template-columns:repeat(5,minmax(0,1fr))}
 .archive-community-grid-six{grid-template-columns:repeat(3,minmax(0,1fr))}
+.archive-community-grid-six-people{grid-template-columns:repeat(6,minmax(0,1fr))}
+.archive-community-grid-seven{grid-template-columns:repeat(7,minmax(0,1fr))}
 .archive-community-couple{grid-column:span 2;display:grid;grid-template-columns:minmax(0,1fr) 22px minmax(0,1fr);gap:4px;align-items:stretch}
 .archive-community-marriage{display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--green);font-size:10px;line-height:1.1;text-align:center}
 .archive-community-marriage span{font-size:21px;color:#9b4047}
@@ -285,7 +288,22 @@ a.archive-community-card:hover,a.archive-community-card:focus-visible{transform:
 .archive-community-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 28%}
 .archive-community-photo-andrew img{object-position:12% 28%}
 .archive-community-photo-katie img{object-position:center 24%}
+.archive-community-photo-alice img{object-position:50% 24%;transform:scale(1.91);transform-origin:50% 11%}
+.archive-community-photo-cindy img{object-position:50% 25%}
+.archive-community-photo-dick img{object-position:center 18%}
+.archive-community-photo-everate img{object-position:50% 32%;transform:scale(1.3);transform-origin:50% 34%}
+.archive-community-photo-johnny img{object-position:center 30%}
+.archive-community-photo-kathleen img{object-position:55% 30%;transform:scale(1.4);transform-origin:55% 30%}
+.archive-community-photo-ken img{object-position:center 35%}
+.archive-community-photo-lisa img{object-position:center 14%}
+.archive-community-photo-tim img{object-position:center 30%;transform:scale(1.2);transform-origin:50% 30%}
+.archive-community-photo-tony img{object-position:center 8%}
+.archive-community-photo-mary img{object-position:center 28%}
+.archive-community-photo-peggy img{object-position:center 18%}
+.archive-community-photo-rachel img{object-position:center 16%}
 .archive-community-photo-contain img{object-fit:contain;object-position:center}
+.archive-community-photo-placeholder{display:grid;place-items:center;background:linear-gradient(145deg,#eee9dd,#dcd4c4)}
+.archive-community-initials{display:grid;place-items:center;width:66px;height:66px;border-radius:50%;background:var(--sage);color:var(--green);font-family:Georgia,serif;font-size:24px;font-weight:700;letter-spacing:.04em}
 .archive-community-photo-will img{object-position:center 6%}
 .archive-community-photo-tammy img{object-position:76% 24%}
 .archive-community-photo-patsy img{object-position:30% 35%}
@@ -303,10 +321,10 @@ a.archive-community-card:hover,a.archive-community-card:focus-visible{transform:
 .archive-community-count-link{text-decoration:underline;text-underline-offset:2px}
 .archive-community-pet{min-height:300px}
 .archive-hobby-card{min-height:215px}
-@media(max-width:1150px){.archive-community-grid-eight{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:1150px){.archive-community-grid-eight,.archive-community-grid-six-people,.archive-community-grid-seven{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:1150px){.archive-community-grid-five{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:720px){.archive-community-grid-eight,.archive-community-grid-five,.archive-community-grid-six{grid-template-columns:repeat(2,minmax(0,1fr))}.archive-community-section{padding:18px}.archive-community-card{min-height:235px}.archive-community-pet{min-height:270px}.archive-hobby-card{min-height:215px}}
-@media(max-width:440px){.archive-community-grid-eight,.archive-community-grid-five,.archive-community-grid-six{grid-template-columns:1fr}.archive-community-couple{grid-column:span 1}.archive-community-marriage{padding:0}}
+@media(max-width:720px){.archive-community-grid-eight,.archive-community-grid-five,.archive-community-grid-six,.archive-community-grid-six-people,.archive-community-grid-seven{grid-template-columns:repeat(2,minmax(0,1fr))}.archive-community-section{padding:18px}.archive-community-card{min-height:235px}.archive-community-pet{min-height:270px}.archive-hobby-card{min-height:215px}}
+@media(max-width:440px){.archive-community-grid-eight,.archive-community-grid-five,.archive-community-grid-six,.archive-community-grid-six-people,.archive-community-grid-seven{grid-template-columns:1fr}.archive-community-couple{grid-column:span 1}.archive-community-marriage{padding:0}}
 .tree-intro{text-align:center;max-width:800px;margin:0 auto 34px}
 .tree-intro h1{font-size:48px;color:var(--green);margin:5px 0 6px}
 .family-tree{position:relative;display:flex;flex-direction:column;align-items:center;gap:12px}
