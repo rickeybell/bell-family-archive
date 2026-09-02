@@ -42192,6 +42192,28 @@
     "gps": null
   },
   {
+    "path": "images/2016/IMG_2682.JPG",
+    "media_type": "photo",
+    "file": "IMG_2682.JPG",
+    "folder": "2016",
+    "date": "2016-02-28",
+    "people": [
+      "Gabby"
+    ],
+    "tags": [
+      "Animal/Gabby",
+      "Animal|Gabby",
+      "Gabby"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2016/Document_20260731_0001.jpg",
     "media_type": "photo",
     "file": "Document_20260731_0001.jpg",
@@ -43145,6 +43167,31 @@
     }
   },
   {
+    "path": "images/2016/IMG_0013.JPG",
+    "media_type": "photo",
+    "file": "IMG_0013.JPG",
+    "folder": "2016",
+    "date": "2016-12-25",
+    "people": [
+      "Gabby"
+    ],
+    "tags": [
+      "Animal/Gabby",
+      "Animal|Gabby",
+      "Gabby",
+      "Lancaster County",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2016/20161227_023031180_iOS.jpg",
     "media_type": "photo",
     "file": "20161227_023031180_iOS.jpg",
@@ -43313,6 +43360,28 @@
       "lat": 34.6934444163889,
       "lon": -80.8251499833333
     }
+  },
+  {
+    "path": "images/2017/IMG_0042.JPG",
+    "media_type": "photo",
+    "file": "IMG_0042.JPG",
+    "folder": "2017",
+    "date": "2017-01-02",
+    "people": [
+      "Gabby"
+    ],
+    "tags": [
+      "Animal/Gabby",
+      "Animal|Gabby",
+      "Gabby"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
   },
   {
     "path": "images/2017/IMG_0356.JPG",
@@ -46108,6 +46177,36 @@
     "city": "Fishing Creek",
     "state": "South Carolina",
     "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2020/IMG_6441.JPEG",
+    "media_type": "photo",
+    "file": "IMG_6441.JPEG",
+    "folder": "2020",
+    "date": "2020-10-07",
+    "people": [
+      "Gabby",
+      "Lady",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Animal/Gabby",
+      "Animal/Lady",
+      "Animal|Gabby",
+      "Animal|Lady",
+      "Gabby",
+      "Lady",
+      "People/Stephanie Bell",
+      "People|Stephanie Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
     "gps": null
   },
   {
