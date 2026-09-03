@@ -3098,35 +3098,6 @@
     "gps": null
   },
   {
-    "path": "images/1957/1958_0006_a.jpg",
-    "media_type": "photo",
-    "file": "1958_0006_a.jpg",
-    "folder": "1957",
-    "date": "1957-12-01",
-    "people": [
-      "Dickey Bell",
-      "Spooky Bell"
-    ],
-    "tags": [
-      "Dickey Bell",
-      "Mason St Orig Bell Family Home",
-      "People/Dickey Bell",
-      "People/Spooky Bell",
-      "People|Dickey Bell",
-      "People|Spooky Bell",
-      "Places/South Carolina/Lancaster County/Mason St Orig Bell Family Home",
-      "Places|South Carolina|Lancaster County|Mason St Orig Bell Family Home",
-      "Spooky Bell"
-    ],
-    "title": "Christmas",
-    "description": "Spooky 4 years 2 months\nDickey 1 year 4.5 months",
-    "location": "Mason St Orig Bell Family Home",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/1957/1958_0008_a.jpg",
     "media_type": "photo",
     "file": "1958_0008_a.jpg",
@@ -3192,7 +3163,7 @@
       "Places/South Carolina/Lancaster County/Mason St Orig Bell Family Home",
       "Places|South Carolina|Lancaster County|Mason St Orig Bell Family Home"
     ],
-    "title": "Christmas",
+    "title": "Christmas 1957",
     "description": "",
     "location": "Mason St Orig Bell Family Home",
     "city": "Lancaster County",
@@ -3221,7 +3192,7 @@
       "Places|South Carolina|Lancaster County|Mason St Orig Bell Family Home",
       "Spooky Bell"
     ],
-    "title": "Christmas",
+    "title": "Christmas 1957",
     "description": "Spooky 4 years 1.5 months\nDickey 1 year 4 months",
     "location": "Mason St Orig Bell Family Home",
     "city": "Lancaster County",
@@ -3233,6 +3204,35 @@
     "path": "images/1957/1957_0035_a.jpg",
     "media_type": "photo",
     "file": "1957_0035_a.jpg",
+    "folder": "1957",
+    "date": "1957-12-25",
+    "people": [
+      "Dickey Bell",
+      "Spooky Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Mason St Orig Bell Family Home",
+      "People/Dickey Bell",
+      "People/Spooky Bell",
+      "People|Dickey Bell",
+      "People|Spooky Bell",
+      "Places/South Carolina/Lancaster County/Mason St Orig Bell Family Home",
+      "Places|South Carolina|Lancaster County|Mason St Orig Bell Family Home",
+      "Spooky Bell"
+    ],
+    "title": "Christmas 1957",
+    "description": "Spooky 4 years 2 months\nDickey 1 year 4.5 months",
+    "location": "Mason St Orig Bell Family Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1957/1958_0006_a.jpg",
+    "media_type": "photo",
+    "file": "1958_0006_a.jpg",
     "folder": "1957",
     "date": "1957-12-25",
     "people": [
@@ -3720,35 +3720,6 @@
     "gps": null
   },
   {
-    "path": "images/1959/1959_0012_a.jpg",
-    "media_type": "photo",
-    "file": "1959_0012_a.jpg",
-    "folder": "1959",
-    "date": "1959-01-01",
-    "people": [
-      "Dickey Bell",
-      "Spooky Bell"
-    ],
-    "tags": [
-      "Dickey Bell",
-      "Mason St Orig Bell Family Home",
-      "People/Dickey Bell",
-      "People/Spooky Bell",
-      "People|Dickey Bell",
-      "People|Spooky Bell",
-      "Places/South Carolina/Lancaster County/Mason St Orig Bell Family Home",
-      "Places|South Carolina|Lancaster County|Mason St Orig Bell Family Home",
-      "Spooky Bell"
-    ],
-    "title": "Christmas 1959",
-    "description": "Spooky 6 years 2 months\nDickey 3 years 4.5 months",
-    "location": "Mason St Orig Bell Family Home",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/1959/Spooky_school_portrait_1959_restored.jpg",
     "media_type": "photo",
     "file": "Spooky_school_portrait_1959_restored.jpg",
@@ -3763,7 +3734,7 @@
       "Spooky Bell",
       "spooky"
     ],
-    "title": "Spooky school portrait, estimated 1959",
+    "title": "Spooky school portrait, probably first grade, estimated 1959",
     "description": "Spooky school portrait, estimated 1959. Date is estimated from the subject age, school-year sequence, and existing dated family photographs.",
     "location": "",
     "city": "",
@@ -4231,7 +4202,7 @@
       "South Carolina",
       "Spooky Bell"
     ],
-    "title": "Christmas",
+    "title": "Christmas 1959",
     "description": "Spooky Left: 6 years 2 months\nDickey Right: 3 years 4-1/2 months",
     "location": "Mason St Orig Bell Family Home",
     "city": "Lancaster County",
@@ -4240,11 +4211,11 @@
     "gps": null
   },
   {
-    "path": "images/1960/1960_0033_a.jpg",
+    "path": "images/1959/1959_0012_a.jpg",
     "media_type": "photo",
-    "file": "1960_0033_a.jpg",
-    "folder": "1960",
-    "date": "1960-01-01",
+    "file": "1959_0012_a.jpg",
+    "folder": "1959",
+    "date": "1959-12-25",
     "people": [
       "Dickey Bell",
       "Spooky Bell"
@@ -4260,8 +4231,8 @@
       "Places|South Carolina|Lancaster County|Mason St Orig Bell Family Home",
       "Spooky Bell"
     ],
-    "title": "Christmas 1960",
-    "description": "Spooky 7 years 2 months\nDickey 4 years 4.5 months",
+    "title": "Christmas 1959",
+    "description": "Spooky 6 years 2 months\nDickey 3 years 4.5 months",
     "location": "Mason St Orig Bell Family Home",
     "city": "Lancaster County",
     "state": "South Carolina",
@@ -4282,7 +4253,7 @@
       "People|Spooky Bell",
       "Spooky Bell"
     ],
-    "title": "Spooky school portrait, estimated 1960",
+    "title": "Spooky school portrait, probably second grade, estimated 1960",
     "description": "Spooky school portrait, estimated 1960. Date is estimated from the subject age, school-year sequence, and existing dated family photographs.",
     "location": "",
     "city": "",
@@ -4452,6 +4423,35 @@
     "gps": null
   },
   {
+    "path": "images/1960/1960_0033_a.jpg",
+    "media_type": "photo",
+    "file": "1960_0033_a.jpg",
+    "folder": "1960",
+    "date": "1960-12-25",
+    "people": [
+      "Dickey Bell",
+      "Spooky Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Mason St Orig Bell Family Home",
+      "People/Dickey Bell",
+      "People/Spooky Bell",
+      "People|Dickey Bell",
+      "People|Spooky Bell",
+      "Places/South Carolina/Lancaster County/Mason St Orig Bell Family Home",
+      "Places|South Carolina|Lancaster County|Mason St Orig Bell Family Home",
+      "Spooky Bell"
+    ],
+    "title": "Christmas 1960",
+    "description": "Spooky 7 years 2 months\nDickey 4 years 4.5 months",
+    "location": "Mason St Orig Bell Family Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/1960/1960s_0014_a_Restored.jpg",
     "media_type": "photo",
     "file": "1960s_0014_a_Restored.jpg",
@@ -4501,7 +4501,7 @@
       "Spooky Bell",
       "spooky"
     ],
-    "title": "Spooky school portrait, estimated 1961",
+    "title": "Spooky school portrait, probably third grade, estimated 1961",
     "description": "Spooky school portrait, estimated 1961. Date is estimated from the subject age, school-year sequence, and existing dated family photographs.",
     "location": "",
     "city": "",
@@ -4903,7 +4903,7 @@
       "Spooky Bell",
       "spooky"
     ],
-    "title": "Spooky school portrait, estimated 1962",
+    "title": "Spooky school portrait, probably forth grade, estimated 1962",
     "description": "Spooky school portrait, estimated 1962. Date is estimated from the subject age, school-year sequence, and existing dated family photographs.",
     "location": "",
     "city": "",
@@ -5286,7 +5286,7 @@
       "Spooky Bell",
       "spooky"
     ],
-    "title": "Spooky school portrait, estimated 1963",
+    "title": "Spooky school portrait, probably fifth grade, estimated 1963",
     "description": "Spooky school portrait, estimated 1963. Date is estimated from the subject age, school-year sequence, and existing dated family photographs.",
     "location": "",
     "city": "",
@@ -5548,6 +5548,22 @@
     "gps": null
   },
   {
+    "path": "images/1964/1964_0004_a.jpg",
+    "media_type": "photo",
+    "file": "1964_0004_a.jpg",
+    "folder": "1964",
+    "date": "1964-05-01",
+    "people": [],
+    "tags": [],
+    "title": "Dickey 2nd Grade",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/1964/1964_0001.jpg",
     "media_type": "photo",
     "file": "1964_0001.jpg",
@@ -5593,7 +5609,7 @@
       "South Carolina",
       "Spooky Bell"
     ],
-    "title": "Spooky School Pic",
+    "title": "Spooky formal school portrait, probably sixth grade — circa 1964",
     "description": "",
     "location": "",
     "city": "Lancaster County",
@@ -5644,7 +5660,7 @@
       "Spooky Bell",
       "spooky"
     ],
-    "title": "Spooky school portrait, estimated 1965",
+    "title": "Spooky school portrait, probably seventh grade, estimated 1965",
     "description": "Spooky school portrait, estimated 1965. Date is estimated from the subject age, school-year sequence, and existing dated family photographs.",
     "location": "",
     "city": "",
@@ -5864,7 +5880,7 @@
       "Spooky Bell",
       "spooky"
     ],
-    "title": "Spooky school portrait, estimated 1966",
+    "title": "Spooky school portrait, probably eighth grade, estimated 1966",
     "description": "Spooky school portrait, estimated 1966. Date is estimated from the subject age, school-year sequence, and existing dated family photographs.",
     "location": "",
     "city": "",
@@ -6035,7 +6051,7 @@
       "Spooky Bell",
       "spooky"
     ],
-    "title": "Spooky school portrait, estimated 1967",
+    "title": "Spooky school portrait, probably ninth grade, estimated 1967",
     "description": "Spooky school portrait, estimated 1967. Date is estimated from the subject age, school-year sequence, and existing dated family photographs.",
     "location": "",
     "city": "",
@@ -6166,7 +6182,7 @@
       "Spooky Bell",
       "spooky"
     ],
-    "title": "Spooky school portrait, estimated 1968",
+    "title": "Spooky school portrait, probably tenth grade, estimated 1968",
     "description": "Spooky school portrait, estimated 1968. Date is estimated from the subject age, school-year sequence, and existing dated family photographs.",
     "location": "",
     "city": "",
@@ -6223,6 +6239,28 @@
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1968/1968_0003_a.jpg",
+    "media_type": "photo",
+    "file": "1968_0003_a.jpg",
+    "folder": "1968",
+    "date": "1968-03-21",
+    "people": [
+      "Dickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "People/Dickey Bell",
+      "People|Dickey Bell"
+    ],
+    "title": "Dickey receives check for the Soil & Water Conservation Essay Contest",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
     "gps": null
   },
   {
@@ -6511,7 +6549,7 @@
       "Spooky Bell",
       "spooky"
     ],
-    "title": "Spooky formal portrait, 1970",
+    "title": "Spooky formal portrait, probably eleventh grade, 1970",
     "description": "Spooky formal portrait, 1970. Date is estimated from the subject age, school-year sequence, and existing dated family photographs.",
     "location": "",
     "city": "",
@@ -6634,29 +6672,6 @@
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
-    "gps": null
-  },
-  {
-    "path": "images/1971/Spooky_graduation_1971_restored.jpg",
-    "media_type": "photo",
-    "file": "Spooky_graduation_1971_restored.jpg",
-    "folder": "1971",
-    "date": "1971-01-01",
-    "people": [
-      "Spooky Bell"
-    ],
-    "tags": [
-      "People/Spooky Bell",
-      "People|Spooky Bell",
-      "Spooky Bell",
-      "spooky"
-    ],
-    "title": "Spooky graduation portrait, 1971",
-    "description": "Spooky graduation portrait, 1971. Date is estimated from the subject age, school-year sequence, and existing dated family photographs.",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
     "gps": null
   },
   {
@@ -6859,37 +6874,6 @@
     "title": "",
     "description": "Spooky Graduation Congress Congratulations",
     "location": "",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
-    "path": "images/1971/1971_0003_a.jpg",
-    "media_type": "photo",
-    "file": "1971_0003_a.jpg",
-    "folder": "1971",
-    "date": "1971-05-28",
-    "people": [
-      "Spooky Bell"
-    ],
-    "tags": [
-      "Lancaster County",
-      "Lancaster High School",
-      "People/Spooky Bell",
-      "People|Spooky Bell",
-      "Places/South Carolina",
-      "Places/South Carolina/Lancaster County",
-      "Places/South Carolina/Lancaster County/Lancaster High School",
-      "Places|South Carolina",
-      "Places|South Carolina|Lancaster County",
-      "Places|South Carolina|Lancaster County|Lancaster High School",
-      "South Carolina",
-      "Spooky Bell"
-    ],
-    "title": "",
-    "description": "",
-    "location": "Lancaster High School",
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
@@ -11125,12 +11109,12 @@
     "folder": "1980",
     "date": "1980-01-01",
     "people": [
-      "Buster Bell"
+      "Heather Bell"
     ],
     "tags": [
-      "Buster Bell",
-      "People/Buster Bell",
-      "People|Buster Bell"
+      "Heather Bell",
+      "People/Heather Bell",
+      "People|Heather Bell"
     ],
     "title": "",
     "description": "",
@@ -11147,12 +11131,12 @@
     "folder": "1980",
     "date": "1980-01-01",
     "people": [
-      "Heather Bell"
+      "Buster Bell"
     ],
     "tags": [
-      "Heather Bell",
-      "People/Heather Bell",
-      "People|Heather Bell"
+      "Buster Bell",
+      "People/Buster Bell",
+      "People|Buster Bell"
     ],
     "title": "",
     "description": "",
