@@ -24,6 +24,7 @@ $BuildMetadata = Join-Path $RepoRoot "tools\build_photo_metadata.py"
 $BuildHobbyTags = Join-Path $RepoRoot "tools\build_hobby_tag_membership.py"
 $BuildGallery = Join-Path $RepoRoot "tools\build_dynamic_gallery.py"
 $AddAudioPlayers = Join-Path $RepoRoot "tools\add_audio_players.py"
+$UploadR2Media = Join-Path $RepoRoot "tools\upload_r2_media.mjs"
 $ReportRoot = Join-Path ([Environment]::GetFolderPath("MyDocuments")) "BellWebsite-SizeReports"
 
 function Invoke-Checked {
@@ -62,6 +63,15 @@ function Get-PythonCommand {
         }
     }
     throw "A working Python 3 runtime was not found."
+}
+
+function Get-NodeCommand {
+    $node = Get-Command node.exe -ErrorAction SilentlyContinue
+    if ($node) {
+        & $node.Source --version *> $null
+        if ($LASTEXITCODE -eq 0) { return $node.Source }
+    }
+    throw "A working Node.js runtime was not found."
 }
 
 function Test-RepoClean {
@@ -165,8 +175,10 @@ if (!(Test-Path -LiteralPath $BuildMetadata)) { throw "Metadata builder not foun
 if (!(Test-Path -LiteralPath $BuildHobbyTags)) { throw "Hobby tag builder not found: $BuildHobbyTags" }
 if (!(Test-Path -LiteralPath $BuildGallery)) { throw "Gallery builder not found: $BuildGallery" }
 if (!(Test-Path -LiteralPath $AddAudioPlayers)) { throw "Audio gallery post-processor not found: $AddAudioPlayers" }
+if (!(Test-Path -LiteralPath $UploadR2Media)) { throw "Cloudflare media uploader not found: $UploadR2Media" }
 
 $PythonRuntime = Get-PythonCommand
+$NodeRuntime = Get-NodeCommand
 $env:BELL_PYTHON = $PythonRuntime.File
 
 Invoke-Checked git.exe -C $RepoRoot rev-parse --is-inside-work-tree | Out-Null
@@ -239,6 +251,9 @@ Write-Host "[7/9] Rebuilding chronological and person galleries..."
 Invoke-Checked $py.File @($py.Prefix + @($BuildGallery))
 Invoke-Checked $py.File @($py.Prefix + @($AddAudioPlayers))
 
+Write-Host "[8/10] Uploading and verifying Cloudflare R2 media..."
+Invoke-Checked $NodeRuntime $UploadR2Media
+
 $after = @(
     Get-FolderStat "thumbs"; Get-FolderStat "images"; Get-FolderStat "highres"; Get-FolderStat "videos"; Get-FolderStat "audio"; Get-FolderStat "originals"
 )
@@ -246,7 +261,7 @@ Write-Host ""; Write-Host "BEFORE:"; $before | Format-Table -AutoSize
 Write-Host "AFTER:"; $after | Format-Table -AutoSize
 Save-SizeReport $before $after
 
-Write-Host "[8/9] Reviewing changed files..."
+Write-Host "[9/10] Reviewing changed files..."
 $status = git -C $RepoRoot status --short --untracked-files=no
 if ([string]::IsNullOrWhiteSpace(($status -join "`n"))) { Write-Host "No website changes detected."; exit 0 }
 $status | ForEach-Object { Write-Host $_ }
@@ -259,7 +274,7 @@ if (!$Publish) {
     exit 0
 }
 
-Write-Host "[9/9] Committing and pushing approved website changes..."
+Write-Host "[10/10] Committing and pushing approved website changes..."
 if ([string]::IsNullOrWhiteSpace($CommitMessage)) { $CommitMessage = "Update website photos, videos, audio, metadata, and galleries" }
 
 git -C $RepoRoot add -A -- .

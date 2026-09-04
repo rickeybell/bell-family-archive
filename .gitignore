@@ -24,6 +24,12 @@ website-test-*/
 # Retired full-resolution website copies
 originals/
 
+# Cloudflare R2 media. These stay on this computer for gallery generation but
+# are uploaded to R2 instead of being stored in the Git repository.
+/images/
+/highres/
+/videos/
+
 # Generated Python bytecode
 __pycache__/
 *.pyc
