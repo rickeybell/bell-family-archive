@@ -45,7 +45,8 @@ jobs:
 
           # Thumbnails and tiny audio files remain in the Pages artifact.
           # Full photo views, high-resolution downloads, and browser-safe videos
-          # are served directly from the repository to keep Pages well below 1 GB.
+          # are served from Cloudflare R2 to keep the Git repository and Pages
+          # deployment lightweight.
           if [ -d thumbs ]; then
             cp -a thumbs _site/thumbs
           fi
@@ -72,19 +73,19 @@ jobs:
           from urllib.parse import quote, unquote
 
           root = Path("_site")
-          raw_base = "https://raw.githubusercontent.com/rickeybell/bell-family-archive/main/"
+          media_base = "https://bell-family-media.rbell.workers.dev/"
 
-          def raw_url(path):
+          def media_url(path):
               path = unquote(path.replace("\\\\", "/").replace("\\", "/"))
               encoded = "/".join(quote(part, safe="") for part in path.split("/"))
-              return raw_base + encoded
+              return media_base + encoded
 
           for page in root.glob("*.html"):
               text = page.read_text(encoding="utf-8")
 
               def repl_repo_media(match):
                   quote_char = match.group(1)
-                  return quote_char + raw_url(match.group(2)) + quote_char
+                  return quote_char + media_url(match.group(2)) + quote_char
 
               # Covers ordinary src/href values plus the inline gallery JSON.
               text = re.sub(
@@ -101,7 +102,7 @@ jobs:
               for record in records:
                   path = str(record.get("path", ""))
                   if path.lower().startswith(("images/", "videos/")):
-                      record["path"] = raw_url(path)
+                      record["path"] = media_url(path)
               metadata_path.write_text(
                   json.dumps(records, ensure_ascii=False, separators=(",", ":")),
                   encoding="utf-8"
