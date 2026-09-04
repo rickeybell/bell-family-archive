@@ -48286,6 +48286,32 @@
     }
   },
   {
+    "path": "images/2021/IMG_2413.jpg",
+    "media_type": "photo",
+    "file": "IMG_2413.jpg",
+    "folder": "2021",
+    "date": "2021-04-04",
+    "people": [
+      "Sophia Bell",
+      "Xavier Lear"
+    ],
+    "tags": [
+      "People/Sophia Bell",
+      "People/Xavier Charles Lear",
+      "People|Sophia Bell",
+      "People|Xavier Charles Lear",
+      "Sophia Bell",
+      "Xavier Charles Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2021/IMG_7881.jpg",
     "media_type": "photo",
     "file": "IMG_7881.jpg",
@@ -48565,6 +48591,34 @@
     "gps": {
       "lat": 35.7933719994444,
       "lon": -83.5331844997222
+    }
+  },
+  {
+    "path": "images/2021/20210705_170429.jpg",
+    "media_type": "photo",
+    "file": "20210705_170429.jpg",
+    "folder": "2021",
+    "date": "2021-07-05",
+    "people": [
+      "Xavier Lear"
+    ],
+    "tags": [
+      "People/Xavier Charles Lear",
+      "People|Xavier Charles Lear",
+      "Places/Tennessee",
+      "Places|Tennessee",
+      "Tennessee",
+      "Xavier Charles Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Tennessee",
+    "country": "United States",
+    "gps": {
+      "lat": 35.8110237005556,
+      "lon": -83.5337618
     }
   },
   {
@@ -49355,6 +49409,98 @@
     }
   },
   {
+    "path": "images/2022/20220503_213233.jpg",
+    "media_type": "photo",
+    "file": "20220503_213233.jpg",
+    "folder": "2022",
+    "date": "2022-05-03",
+    "people": [
+      "Ivy Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "Lancaster County",
+      "People/Ivy Bell",
+      "People|Ivy Bell",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7176642,
+      "lon": -80.7879554997222
+    }
+  },
+  {
+    "path": "images/2022/20220503_215016.jpg",
+    "media_type": "photo",
+    "file": "20220503_215016.jpg",
+    "folder": "2022",
+    "date": "2022-05-03",
+    "people": [
+      "Ivy Bell",
+      "Jarred Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "Jarred Bell",
+      "Lancaster County",
+      "People/Ivy Bell",
+      "People/Jarred Bell",
+      "People|Ivy Bell",
+      "People|Jarred Bell",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7175384,
+      "lon": -80.7878179
+    }
+  },
+  {
+    "path": "images/2022/20220508_200544.jpg",
+    "media_type": "photo",
+    "file": "20220508_200544.jpg",
+    "folder": "2022",
+    "date": "2022-05-08",
+    "people": [
+      "Ivy Bell",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People/Rickey Bell",
+      "People|Ivy Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6934162002778,
+      "lon": -80.8252145
+    }
+  },
+  {
     "path": "images/2022/20220511_152518.jpg",
     "media_type": "photo",
     "file": "20220511_152518.jpg",
@@ -49380,6 +49526,38 @@
     "gps": {
       "lat": 34.9783592666667,
       "lon": -80.9893365
+    }
+  },
+  {
+    "path": "images/2022/20220513_174011.jpg",
+    "media_type": "photo",
+    "file": "20220513_174011.jpg",
+    "folder": "2022",
+    "date": "2022-05-13",
+    "people": [
+      "Ivy Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People/Sophia Bell",
+      "People|Ivy Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Lancaster County/973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Places|South Carolina|Lancaster County|973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "973 Community Lane Deb_Irvin_Rickey_Jarred Home",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6987063005556,
+      "lon": -80.7071914
     }
   },
   {
@@ -49875,6 +50053,38 @@
     "gps": null
   },
   {
+    "path": "images/2022/20220705_185544.jpg",
+    "media_type": "photo",
+    "file": "20220705_185544.jpg",
+    "folder": "2022",
+    "date": "2022-07-05",
+    "people": [
+      "Ivy Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People/Stephanie Bell",
+      "People|Ivy Bell",
+      "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6934337,
+      "lon": -80.8252677
+    }
+  },
+  {
     "path": "images/2022/20220730_173218.jpg",
     "media_type": "photo",
     "file": "20220730_173218.jpg",
@@ -49936,6 +50146,35 @@
     "gps": {
       "lat": 34.6934028,
       "lon": -80.8252288002778
+    }
+  },
+  {
+    "path": "images/2022/20220905_140248.jpg",
+    "media_type": "photo",
+    "file": "20220905_140248.jpg",
+    "folder": "2022",
+    "date": "2022-09-05",
+    "people": [
+      "Ivy Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People/Sophia Bell",
+      "People|Ivy Bell",
+      "People|Sophia Bell",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": {
+      "lat": 34.0096611002778,
+      "lon": -81.0718393002778
     }
   },
   {
@@ -50222,6 +50461,88 @@
     }
   },
   {
+    "path": "images/2022/20221030_182249.jpg",
+    "media_type": "photo",
+    "file": "20221030_182249.jpg",
+    "folder": "2022",
+    "date": "2022-10-30",
+    "people": [
+      "Ivy Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People|Ivy Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6934254,
+      "lon": -80.8252216
+    }
+  },
+  {
+    "path": "images/2022/Screenshot_20221107-195753_Messenger-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20221107-195753_Messenger-edited.jpg",
+    "folder": "2022",
+    "date": "2022-11-07",
+    "people": [
+      "Ivy Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People|Ivy Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2022/20221118_180512.jpg",
+    "media_type": "photo",
+    "file": "20221118_180512.jpg",
+    "folder": "2022",
+    "date": "2022-11-17",
+    "people": [
+      "Ivy Bell",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People/Rickey Bell",
+      "People|Ivy Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6934592002778,
+      "lon": -80.8253376002778
+    }
+  },
+  {
     "path": "images/2022/20221118_180520.jpg",
     "media_type": "photo",
     "file": "20221118_180520.jpg",
@@ -50284,6 +50605,32 @@
       "lat": 34.7029268,
       "lon": -80.7665654002778
     }
+  },
+  {
+    "path": "images/2022/Screenshot_20221126-100351_Gallery-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20221126-100351_Gallery-edited.jpg",
+    "folder": "2022",
+    "date": "2022-11-26",
+    "people": [
+      "Ivy Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People/Sophia Bell",
+      "People|Ivy Bell",
+      "People|Sophia Bell",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
   },
   {
     "path": "images/2022/20221205_174000.jpg",
@@ -50373,6 +50720,38 @@
     "gps": {
       "lat": 34.6934144833333,
       "lon": -80.8252209
+    }
+  },
+  {
+    "path": "images/2022/20221221_164824.jpg",
+    "media_type": "photo",
+    "file": "20221221_164824.jpg",
+    "folder": "2022",
+    "date": "2022-12-21",
+    "people": [
+      "Ivy Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People/Sophia Bell",
+      "People|Ivy Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6934710005556,
+      "lon": -80.8254113997222
     }
   },
   {
@@ -50524,6 +50903,34 @@
     }
   },
   {
+    "path": "images/2023/20230222_174044.jpg",
+    "media_type": "photo",
+    "file": "20230222_174044.jpg",
+    "folder": "2023",
+    "date": "2023-02-22",
+    "people": [
+      "Ivy Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People|Ivy Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6933917002778,
+      "lon": -80.8252350002778
+    }
+  },
+  {
     "path": "images/2023/Screenshot_20230224_185255_Photos~2.jpg",
     "media_type": "photo",
     "file": "Screenshot_20230224_185255_Photos~2.jpg",
@@ -50634,6 +51041,28 @@
     }
   },
   {
+    "path": "images/2023/Screenshot_20230409_195710_Messenger~2.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20230409_195710_Messenger~2.jpg",
+    "folder": "2023",
+    "date": "2023-04-09",
+    "people": [
+      "Ivy Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People|Ivy Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2023/20230504_183936.jpg",
     "media_type": "photo",
     "file": "20230504_183936.jpg",
@@ -50663,6 +51092,34 @@
     "gps": {
       "lat": 20.5053751002778,
       "lon": -86.9577415
+    }
+  },
+  {
+    "path": "images/2023/20230507_151239.jpg",
+    "media_type": "photo",
+    "file": "20230507_151239.jpg",
+    "folder": "2023",
+    "date": "2023-05-07",
+    "people": [
+      "Ivy Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "Lancaster County",
+      "People/Ivy Bell",
+      "People|Ivy Bell",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.8404160002778,
+      "lon": -80.8058688
     }
   },
   {
@@ -51433,6 +51890,32 @@
     }
   },
   {
+    "path": "images/2023/FB_IMG_1695691041420.jpg",
+    "media_type": "photo",
+    "file": "FB_IMG_1695691041420.jpg",
+    "folder": "2023",
+    "date": "2023-09-26",
+    "people": [
+      "Dominique Burwell",
+      "Ivy Bell"
+    ],
+    "tags": [
+      "Dominique Burwell",
+      "Ivy Bell",
+      "People/Dominique Burwell",
+      "People/Ivy Bell",
+      "People|Dominique Burwell",
+      "People|Ivy Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2023/20230927_200453.jpg",
     "media_type": "photo",
     "file": "20230927_200453.jpg",
@@ -51772,6 +52255,32 @@
     }
   },
   {
+    "path": "images/2023/Screenshot_20231201_140006_Messenger.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20231201_140006_Messenger.jpg",
+    "folder": "2023",
+    "date": "2023-12-01",
+    "people": [
+      "Ivy Bell",
+      "Jarred Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "Jarred Bell",
+      "People/Ivy Bell",
+      "People/Jarred Bell",
+      "People|Ivy Bell",
+      "People|Jarred Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "videos/2023/20231224_205755.mp4",
     "media_type": "video",
     "file": "20231224_205755.mp4",
@@ -51795,6 +52304,38 @@
     "gps": {
       "lat": 0.0,
       "lon": 0.0
+    }
+  },
+  {
+    "path": "images/2023/20231225_135100.jpg",
+    "media_type": "photo",
+    "file": "20231225_135100.jpg",
+    "folder": "2023",
+    "date": "2023-12-25",
+    "people": [
+      "Ivy Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People/Sophia Bell",
+      "People|Ivy Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6936185994444,
+      "lon": -80.8250531
     }
   },
   {
@@ -53669,6 +54210,36 @@
     "gps": null
   },
   {
+    "path": "images/2025/Screenshot_20250208_204815_Messenger.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20250208_204815_Messenger.jpg",
+    "folder": "2025",
+    "date": "2025-02-08",
+    "people": [
+      "Dominique Burwell",
+      "Ivy Bell",
+      "Jarred Bell"
+    ],
+    "tags": [
+      "Dominique Burwell",
+      "Ivy Bell",
+      "Jarred Bell",
+      "People/Dominique Burwell",
+      "People/Ivy Bell",
+      "People/Jarred Bell",
+      "People|Dominique Burwell",
+      "People|Ivy Bell",
+      "People|Jarred Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2025/20250214_101155.jpg",
     "media_type": "photo",
     "file": "20250214_101155.jpg",
@@ -53881,6 +54452,28 @@
     "gps": null
   },
   {
+    "path": "images/2025/Screenshot_20250418_203853_Messenger-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20250418_203853_Messenger-edited.jpg",
+    "folder": "2025",
+    "date": "2025-04-18",
+    "people": [
+      "Ivy Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People|Ivy Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2025/20250419_181922.jpg",
     "media_type": "photo",
     "file": "20250419_181922.jpg",
@@ -54073,6 +54666,28 @@
     "gps": null
   },
   {
+    "path": "images/2025/Screenshot_20250503_191052_Messenger-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20250503_191052_Messenger-edited.jpg",
+    "folder": "2025",
+    "date": "2025-05-03",
+    "people": [
+      "Ivy Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People|Ivy Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2025/20250506_210255.jpg",
     "media_type": "photo",
     "file": "20250506_210255.jpg",
@@ -54127,6 +54742,98 @@
     }
   },
   {
+    "path": "images/2025/20250521_165915.jpg",
+    "media_type": "photo",
+    "file": "20250521_165915.jpg",
+    "folder": "2025",
+    "date": "2025-05-21",
+    "people": [
+      "Ivy Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People/Sophia Bell",
+      "People|Ivy Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6933143997222,
+      "lon": -80.8253148
+    }
+  },
+  {
+    "path": "images/2025/20250522_134433.jpg",
+    "media_type": "photo",
+    "file": "20250522_134433.jpg",
+    "folder": "2025",
+    "date": "2025-05-22",
+    "people": [
+      "Olivia Bell"
+    ],
+    "tags": [
+      "Lancaster County",
+      "Olivia Bell",
+      "People/Olivia Bell",
+      "People|Olivia Bell",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7175153,
+      "lon": -80.7877709
+    }
+  },
+  {
+    "path": "images/2025/20250522_142238.jpg",
+    "media_type": "photo",
+    "file": "20250522_142238.jpg",
+    "folder": "2025",
+    "date": "2025-05-22",
+    "people": [
+      "Jarred Bell",
+      "Olivia Bell"
+    ],
+    "tags": [
+      "Jarred Bell",
+      "Lancaster County",
+      "Olivia Bell",
+      "People/Jarred Bell",
+      "People/Olivia Bell",
+      "People|Jarred Bell",
+      "People|Olivia Bell",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7175705,
+      "lon": -80.787758
+    }
+  },
+  {
     "path": "images/2025/20250523_113515.jpg",
     "media_type": "photo",
     "file": "20250523_113515.jpg",
@@ -54156,6 +54863,70 @@
     "gps": {
       "lat": 34.6935292,
       "lon": -80.8255556997222
+    }
+  },
+  {
+    "path": "images/2025/20250523_122822.jpg",
+    "media_type": "photo",
+    "file": "20250523_122822.jpg",
+    "folder": "2025",
+    "date": "2025-05-23",
+    "people": [
+      "Ivy Bell",
+      "Olivia Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "Lancaster County",
+      "Olivia Bell",
+      "People/Ivy Bell",
+      "People/Olivia Bell",
+      "People|Ivy Bell",
+      "People|Olivia Bell",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7174187,
+      "lon": -80.7875507
+    }
+  },
+  {
+    "path": "images/2025/20250523_122824.jpg",
+    "media_type": "photo",
+    "file": "20250523_122824.jpg",
+    "folder": "2025",
+    "date": "2025-05-23",
+    "people": [
+      "Ivy Bell",
+      "Olivia Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "Lancaster County",
+      "Olivia Bell",
+      "People/Ivy Bell",
+      "People/Olivia Bell",
+      "People|Ivy Bell",
+      "People|Olivia Bell",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7174187,
+      "lon": -80.7875507
     }
   },
   {
@@ -54313,6 +55084,82 @@
     "gps": null
   },
   {
+    "path": "images/2025/Screenshot_20250616_202443_Messenger-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20250616_202443_Messenger-edited.jpg",
+    "folder": "2025",
+    "date": "2025-06-16",
+    "people": [
+      "Olivia Bell"
+    ],
+    "tags": [
+      "Olivia Bell",
+      "People/Olivia Bell",
+      "People|Olivia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2025/Screenshot_20250623_142212_Messenger-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20250623_142212_Messenger-edited.jpg",
+    "folder": "2025",
+    "date": "2025-06-23",
+    "people": [
+      "Ivy Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People|Ivy Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2025/20250711_160444~2.jpg",
+    "media_type": "photo",
+    "file": "20250711_160444~2.jpg",
+    "folder": "2025",
+    "date": "2025-07-11",
+    "people": [
+      "Ivy Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People/Sophia Bell",
+      "People|Ivy Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6932054,
+      "lon": -80.8254006
+    }
+  },
+  {
     "path": "images/2025/20250711_205401.jpg",
     "media_type": "photo",
     "file": "20250711_205401.jpg",
@@ -54391,6 +55238,38 @@
     "gps": {
       "lat": 33.5778009002778,
       "lon": -79.0001773
+    }
+  },
+  {
+    "path": "images/2025/20250731_130810.jpg",
+    "media_type": "photo",
+    "file": "20250731_130810.jpg",
+    "folder": "2025",
+    "date": "2025-07-31",
+    "people": [
+      "Ivy Bell",
+      "Jarred Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "Jarred Bell",
+      "People/Ivy Bell",
+      "People/Jarred Bell",
+      "People|Ivy Bell",
+      "People|Jarred Bell",
+      "Places/Tennessee",
+      "Places|Tennessee",
+      "Tennessee"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Tennessee",
+    "country": "United States",
+    "gps": {
+      "lat": 35.7972081005556,
+      "lon": -83.5299357
     }
   },
   {
@@ -54507,6 +55386,28 @@
     }
   },
   {
+    "path": "images/2025/Screenshot_20250817_213824_Messenger.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20250817_213824_Messenger.jpg",
+    "folder": "2025",
+    "date": "2025-08-17",
+    "people": [
+      "Olivia Bell"
+    ],
+    "tags": [
+      "Olivia Bell",
+      "People/Olivia Bell",
+      "People|Olivia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2025/20250818_080749.jpg",
     "media_type": "photo",
     "file": "20250818_080749.jpg",
@@ -54584,6 +55485,38 @@
     "gps": {
       "lat": 34.6933966997222,
       "lon": -80.8252329
+    }
+  },
+  {
+    "path": "images/2025/20250829_145515~2.jpg",
+    "media_type": "photo",
+    "file": "20250829_145515~2.jpg",
+    "folder": "2025",
+    "date": "2025-08-29",
+    "people": [
+      "Ivy Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "695 Lancaster Bypass E TSI_QDS Office",
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People/Sophia Bell",
+      "People|Ivy Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Lancaster County/695 Lancaster Bypass E TSI_QDS Office",
+      "Places|South Carolina|Lancaster County|695 Lancaster Bypass E TSI_QDS Office",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "695 Lancaster Bypass E TSI_QDS Office",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7289011002778,
+      "lon": -80.7552486
     }
   },
   {
@@ -54820,6 +55753,64 @@
       "lat": 34.6933904838889,
       "lon": -80.8252106830556
     }
+  },
+  {
+    "path": "images/2025/20251030_183918~2.jpg",
+    "media_type": "photo",
+    "file": "20251030_183918~2.jpg",
+    "folder": "2025",
+    "date": "2025-10-30",
+    "people": [
+      "Donna Brown",
+      "Olivia Bell"
+    ],
+    "tags": [
+      "695 Lancaster Bypass E TSI_QDS Office",
+      "Donna Brown",
+      "Olivia Bell",
+      "People/Donna Brown",
+      "People/Olivia Bell",
+      "People|Donna Brown",
+      "People|Olivia Bell",
+      "Places/South Carolina/Lancaster County/695 Lancaster Bypass E TSI_QDS Office",
+      "Places|South Carolina|Lancaster County|695 Lancaster Bypass E TSI_QDS Office"
+    ],
+    "title": "",
+    "description": "",
+    "location": "695 Lancaster Bypass E TSI_QDS Office",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7284856002778,
+      "lon": -80.7545328997222
+    }
+  },
+  {
+    "path": "images/2025/Screenshot_20251030_191520_Messenger~2.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20251030_191520_Messenger~2.jpg",
+    "folder": "2025",
+    "date": "2025-10-30",
+    "people": [
+      "Ivy Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People/Sophia Bell",
+      "People|Ivy Bell",
+      "People|Sophia Bell",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
   },
   {
     "path": "videos/2025/ATNX0024.mp4",
@@ -55192,6 +56183,32 @@
     }
   },
   {
+    "path": "images/2025/Screenshot_20251205_205059_Messenger~2.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20251205_205059_Messenger~2.jpg",
+    "folder": "2025",
+    "date": "2025-12-05",
+    "people": [
+      "Ivy Bell",
+      "Olivia Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "Olivia Bell",
+      "People/Ivy Bell",
+      "People/Olivia Bell",
+      "People|Ivy Bell",
+      "People|Olivia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2025/Messenger_creation_B04CB034-2F44-464E-927F-8C1B63DA9BA5.jpg",
     "media_type": "photo",
     "file": "Messenger_creation_B04CB034-2F44-464E-927F-8C1B63DA9BA5.jpg",
@@ -55428,6 +56445,32 @@
     "city": "Crystal River",
     "state": "Florida",
     "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2025/Screenshot_20251213_213050_Messenger-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20251213_213050_Messenger-edited.jpg",
+    "folder": "2025",
+    "date": "2025-12-13",
+    "people": [
+      "Ivy Bell",
+      "Olivia Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "Olivia Bell",
+      "People/Ivy Bell",
+      "People/Olivia Bell",
+      "People|Ivy Bell",
+      "People|Olivia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
     "gps": null
   },
   {
@@ -55946,6 +56989,34 @@
     }
   },
   {
+    "path": "images/2026/20260207_191338.jpg",
+    "media_type": "photo",
+    "file": "20260207_191338.jpg",
+    "folder": "2026",
+    "date": "2026-02-07",
+    "people": [
+      "Olivia Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Olivia Bell",
+      "People/Olivia Bell",
+      "People|Olivia Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6933906002778,
+      "lon": -80.8252916002778
+    }
+  },
+  {
     "path": "images/2026/20260217_164308.jpg",
     "media_type": "photo",
     "file": "20260217_164308.jpg",
@@ -56153,6 +57224,50 @@
     }
   },
   {
+    "path": "images/2026/Screenshot_20260305_165333_Gallery-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20260305_165333_Gallery-edited.jpg",
+    "folder": "2026",
+    "date": "2026-03-05",
+    "people": [
+      "Olivia Bell"
+    ],
+    "tags": [
+      "Olivia Bell",
+      "People/Olivia Bell",
+      "People|Olivia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2026/20260315_093548-IMG_STYLE.jpg",
+    "media_type": "photo",
+    "file": "20260315_093548-IMG_STYLE.jpg",
+    "folder": "2026",
+    "date": "2026-03-15",
+    "people": [
+      "Ivy Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People|Ivy Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2026/Screenshot_20260325_184439_Messages.jpg",
     "media_type": "photo",
     "file": "Screenshot_20260325_184439_Messages.jpg",
@@ -56183,6 +57298,28 @@
       "Aviation",
       "Hobbies/Aviation",
       "Hobbies|Aviation"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2026/Screenshot_20260326_125239_Gallery-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20260326_125239_Gallery-edited.jpg",
+    "folder": "2026",
+    "date": "2026-03-26",
+    "people": [
+      "Olivia Bell"
+    ],
+    "tags": [
+      "Olivia Bell",
+      "People/Olivia Bell",
+      "People|Olivia Bell"
     ],
     "title": "",
     "description": "",
@@ -56292,6 +57429,32 @@
       "lat": 27.7708199,
       "lon": -82.7706937
     }
+  },
+  {
+    "path": "images/2026/Screenshot_20260420_142927_Messenger-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20260420_142927_Messenger-edited.jpg",
+    "folder": "2026",
+    "date": "2026-04-20",
+    "people": [
+      "Ivy Bell",
+      "Olivia Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "Olivia Bell",
+      "People/Ivy Bell",
+      "People/Olivia Bell",
+      "People|Ivy Bell",
+      "People|Olivia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
   },
   {
     "path": "images/2026/20260516_115834.jpg",
@@ -56422,6 +57585,59 @@
     }
   },
   {
+    "path": "images/2026/20260523_120030.jpg",
+    "media_type": "photo",
+    "file": "20260523_120030.jpg",
+    "folder": "2026",
+    "date": "2026-05-23",
+    "people": [
+      "Olivia Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Olivia Bell",
+      "People/Olivia Bell",
+      "People|Olivia Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
+    ],
+    "title": "Olivia 1st Birthday",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6933945994444,
+      "lon": -80.8252611997222
+    }
+  },
+  {
+    "path": "images/2026/Screenshot_20260523_184910_Messenger-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20260523_184910_Messenger-edited.jpg",
+    "folder": "2026",
+    "date": "2026-05-23",
+    "people": [
+      "Olivia Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Olivia Bell",
+      "People/Olivia Bell",
+      "People|Olivia Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
+    ],
+    "title": "Olivia 1st Birthday",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2026/20260530_173242.jpg",
     "media_type": "photo",
     "file": "20260530_173242.jpg",
@@ -56486,6 +57702,42 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": null
+  },
+  {
+    "path": "images/2026/20260530_173502.jpg",
+    "media_type": "photo",
+    "file": "20260530_173502.jpg",
+    "folder": "2026",
+    "date": "2026-05-30",
+    "people": [
+      "Ivy Bell",
+      "Olivia Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Ivy Bell",
+      "Olivia Bell",
+      "People/Ivy Bell",
+      "People/Olivia Bell",
+      "People/Sophia Bell",
+      "People|Ivy Bell",
+      "People|Olivia Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6933850997222,
+      "lon": -80.8253813002778
+    }
   },
   {
     "path": "images/2026/20260607_114315.jpg",
@@ -56575,6 +57827,28 @@
     "gps": null
   },
   {
+    "path": "images/2026/Screenshot_20260704_165209_Messages-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20260704_165209_Messages-edited.jpg",
+    "folder": "2026",
+    "date": "2026-07-04",
+    "people": [
+      "Olivia Bell"
+    ],
+    "tags": [
+      "Olivia Bell",
+      "People/Olivia Bell",
+      "People|Olivia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2026/Dickey Obit.png",
     "media_type": "photo",
     "file": "Dickey Obit.png",
@@ -56635,6 +57909,36 @@
       "Sarah Elizabeth Howze Bell"
     ],
     "title": "image.png",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2026/Screenshot_20260822_144828_Gallery-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20260822_144828_Gallery-edited.jpg",
+    "folder": "2026",
+    "date": "2026-08-22",
+    "people": [
+      "Ivy Bell",
+      "Olivia Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "Olivia Bell",
+      "People/Ivy Bell",
+      "People/Olivia Bell",
+      "People/Sophia Bell",
+      "People|Ivy Bell",
+      "People|Olivia Bell",
+      "People|Sophia Bell",
+      "Sophia Bell"
+    ],
+    "title": "",
     "description": "",
     "location": "",
     "city": "",
