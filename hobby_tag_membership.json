@@ -966,6 +966,9 @@
     "images/2023/20230404_173759.jpg": [
       "Aviation"
     ],
+    "images/2023/20230416_193652.jpg": [
+      "Aviation"
+    ],
     "images/2023/20230630_182611.jpg": [
       "Boating"
     ],
@@ -977,6 +980,9 @@
     ],
     "images/2023/20230701_173539.jpg": [
       "Boating"
+    ],
+    "images/2023/20230816_201654.jpg": [
+      "Aviation"
     ],
     "images/2023/20230819_164319.jpg": [
       "Aviation"
@@ -1048,6 +1054,9 @@
       "Aviation"
     ],
     "images/2024/20240224_113433.jpg": [
+      "Aviation"
+    ],
+    "images/2024/20240314_121806.jpg": [
       "Aviation"
     ],
     "images/2024/20240314_121948.jpg": [
@@ -1219,6 +1228,9 @@
     "images/2025/20250412_132713.jpg": [
       "Aviation"
     ],
+    "images/2025/20250421_200236.jpg": [
+      "Aviation"
+    ],
     "images/2025/20250506_210255.jpg": [
       "Aviation"
     ],
@@ -1332,6 +1344,9 @@
     ],
     "images/2026/20260607_114316.jpg": [
       "Boating"
+    ],
+    "images/2026/20260707_133623.jpg": [
+      "Aviation"
     ],
     "images/2026/Screenshot_20260325_184439_Messages.jpg": [
       "Aviation"
@@ -1469,6 +1484,9 @@
     "videos/2025/dji_fly_20250420_182626_248_1745191826390_video.mp4": [
       "Aviation"
     ],
+    "videos/2025/dji_fly_20250420_190258_253_1745191385588_video.mp4": [
+      "Aviation"
+    ],
     "videos/2026/20260221_171309.mp4": [
       "Camping"
     ]
@@ -1482,7 +1500,7 @@
     "Camping": 381
   },
   "publicCounts": {
-    "Aviation": 131,
+    "Aviation": 137,
     "Scuba": 140,
     "Shooting": 32,
     "Boating": 110,

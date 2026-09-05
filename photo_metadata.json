@@ -11103,9 +11103,9 @@
     "gps": null
   },
   {
-    "path": "images/1980/1980s_0002_a.jpg",
+    "path": "images/1980/1980s_0002_a-heather-bell.jpg",
     "media_type": "photo",
-    "file": "1980s_0002_a.jpg",
+    "file": "1980s_0002_a-heather-bell.jpg",
     "folder": "1980",
     "date": "1980-01-01",
     "people": [
@@ -31098,8 +31098,8 @@
     ],
     "title": "",
     "description": "",
-    "location": "Fishing Creek",
-    "city": "Lancaster County",
+    "location": "",
+    "city": "Fishing Creek",
     "state": "South Carolina",
     "country": "United States",
     "gps": null
@@ -31126,8 +31126,8 @@
     ],
     "title": "",
     "description": "",
-    "location": "Fishing Creek",
-    "city": "Lancaster County",
+    "location": "",
+    "city": "Fishing Creek",
     "state": "South Carolina",
     "country": "United States",
     "gps": null
@@ -31217,8 +31217,8 @@
     ],
     "title": "",
     "description": "",
-    "location": "Fishing Creek",
-    "city": "Lancaster County",
+    "location": "",
+    "city": "Fishing Creek",
     "state": "South Carolina",
     "country": "United States",
     "gps": null
@@ -31249,8 +31249,8 @@
     ],
     "title": "",
     "description": "",
-    "location": "Fishing Creek",
-    "city": "Lancaster County",
+    "location": "",
+    "city": "Fishing Creek",
     "state": "South Carolina",
     "country": "United States",
     "gps": null
@@ -31277,8 +31277,8 @@
     ],
     "title": "",
     "description": "",
-    "location": "Fishing Creek",
-    "city": "Lancaster County",
+    "location": "",
+    "city": "Fishing Creek",
     "state": "South Carolina",
     "country": "United States",
     "gps": null
@@ -31305,8 +31305,8 @@
     ],
     "title": "",
     "description": "",
-    "location": "Fishing Creek",
-    "city": "Lancaster County",
+    "location": "",
+    "city": "Fishing Creek",
     "state": "South Carolina",
     "country": "United States",
     "gps": null
@@ -31333,8 +31333,8 @@
     ],
     "title": "",
     "description": "",
-    "location": "Fishing Creek",
-    "city": "Lancaster County",
+    "location": "",
+    "city": "Fishing Creek",
     "state": "South Carolina",
     "country": "United States",
     "gps": null
@@ -31361,8 +31361,8 @@
     ],
     "title": "",
     "description": "",
-    "location": "Fishing Creek",
-    "city": "Lancaster County",
+    "location": "",
+    "city": "Fishing Creek",
     "state": "South Carolina",
     "country": "United States",
     "gps": null
@@ -31389,8 +31389,8 @@
     ],
     "title": "",
     "description": "",
-    "location": "Fishing Creek",
-    "city": "Lancaster County",
+    "location": "",
+    "city": "Fishing Creek",
     "state": "South Carolina",
     "country": "United States",
     "gps": null
@@ -31417,8 +31417,8 @@
     ],
     "title": "",
     "description": "",
-    "location": "Fishing Creek",
-    "city": "Lancaster County",
+    "location": "",
+    "city": "Fishing Creek",
     "state": "South Carolina",
     "country": "United States",
     "gps": null
@@ -46193,8 +46193,8 @@
     ],
     "title": "",
     "description": "",
-    "location": "Fishing Creek",
-    "city": "Lancaster County",
+    "location": "",
+    "city": "Fishing Creek",
     "state": "South Carolina",
     "country": "United States",
     "gps": {
@@ -46219,8 +46219,8 @@
     ],
     "title": "",
     "description": "",
-    "location": "Fishing Creek",
-    "city": "Lancaster County",
+    "location": "",
+    "city": "Fishing Creek",
     "state": "South Carolina",
     "country": "United States",
     "gps": {
@@ -48262,8 +48262,8 @@
     ],
     "title": "",
     "description": "",
-    "location": "Fishing Creek",
-    "city": "Lancaster County",
+    "location": "",
+    "city": "Fishing Creek",
     "state": "South Carolina",
     "country": "United States",
     "gps": {
@@ -48300,8 +48300,8 @@
     ],
     "title": "",
     "description": "",
-    "location": "Fishing Creek",
-    "city": "Lancaster County",
+    "location": "",
+    "city": "Chester County",
     "state": "South Carolina",
     "country": "United States",
     "gps": {
@@ -51032,7 +51032,7 @@
       "People|Sophia Bell",
       "Sophia Bell"
     ],
-    "title": "",
+    "title": "Sophia did not look happy!",
     "description": "",
     "location": "",
     "city": "",
@@ -51146,6 +51146,32 @@
     "state": "",
     "country": "",
     "gps": null
+  },
+  {
+    "path": "images/2023/20230416_193652.jpg",
+    "media_type": "photo",
+    "file": "20230416_193652.jpg",
+    "folder": "2023",
+    "date": "2023-04-15",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "Lancaster County",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7189982833333,
+      "lon": -80.8590143827778
+    }
   },
   {
     "path": "images/2023/20230504_183936.jpg",
@@ -51700,6 +51726,37 @@
     "gps": {
       "lat": 34.6934011,
       "lon": -80.8252367833333
+    }
+  },
+  {
+    "path": "images/2023/20230816_201654.jpg",
+    "media_type": "photo",
+    "file": "20230816_201654.jpg",
+    "folder": "2023",
+    "date": "2023-08-16",
+    "people": [
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Airport",
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "People/Sophia Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Lancaster County/Airport",
+      "Places|South Carolina|Lancaster County|Airport",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Airport",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7190784,
+      "lon": -80.8588992002778
     }
   },
   {
@@ -52598,7 +52655,7 @@
     "media_type": "photo",
     "file": "20240207_174208.jpg",
     "folder": "2024",
-    "date": "2024-02-06",
+    "date": "2024-02-07",
     "people": [],
     "tags": [
       "Aviation",
@@ -52615,7 +52672,7 @@
     "state": "Florida",
     "country": "United States",
     "gps": {
-      "lat": 29.1321516005556,
+      "lat": 29.1321516,
       "lon": -83.0525915
     }
   },
@@ -52625,14 +52682,19 @@
     "file": "20240224_113433.jpg",
     "folder": "2024",
     "date": "2024-02-24",
-    "people": [],
+    "people": [
+      "Sophia Bell"
+    ],
     "tags": [
       "Aviation",
       "Chester County",
       "Hobbies/Aviation",
       "Hobbies|Aviation",
+      "People/Sophia Bell",
+      "People|Sophia Bell",
       "Places/South Carolina/Chester County",
-      "Places|South Carolina|Chester County"
+      "Places|South Carolina|Chester County",
+      "Sophia Bell"
     ],
     "title": "",
     "description": "",
@@ -52646,11 +52708,11 @@
     }
   },
   {
-    "path": "images/2024/20240314_121948.jpg",
+    "path": "images/2024/20240314_121806.jpg",
     "media_type": "photo",
-    "file": "20240314_121948.jpg",
+    "file": "20240314_121806.jpg",
     "folder": "2024",
-    "date": "2024-03-13",
+    "date": "2024-03-14",
     "people": [],
     "tags": [
       "900 Confederate Ave",
@@ -52660,14 +52722,40 @@
       "Places/South Carolina/Lancaster County/900 Confederate Ave",
       "Places|South Carolina|Lancaster County|900 Confederate Ave"
     ],
-    "title": "",
+    "title": "New pistons and cylinders.",
     "description": "",
     "location": "900 Confederate Ave",
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.6934170827778,
+      "lat": 34.6934143002778,
+      "lon": -80.8252037
+    }
+  },
+  {
+    "path": "images/2024/20240314_121948.jpg",
+    "media_type": "photo",
+    "file": "20240314_121948.jpg",
+    "folder": "2024",
+    "date": "2024-03-14",
+    "people": [],
+    "tags": [
+      "900 Confederate Ave",
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
+    ],
+    "title": "New pistons and cylinders.",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6934170666667,
       "lon": -80.8252089833333
     }
   },
@@ -54216,7 +54304,7 @@
     "country": "United States",
     "gps": {
       "lat": 29.3592115,
-      "lon": -82.4732225830556
+      "lon": -82.4732225833333
     }
   },
   {
@@ -54610,13 +54698,68 @@
       "Places|South Carolina|Lancaster County|Airport",
       "Video"
     ],
+    "title": "Drone footage of Mike's plane",
+    "description": "Cessna 150, nicknamed \"Bug\"",
+    "location": "Airport",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "videos/2025/dji_fly_20250420_190258_253_1745191385588_video.mp4",
+    "media_type": "video",
+    "file": "dji_fly_20250420_190258_253_1745191385588_video.mp4",
+    "folder": "2025",
+    "date": "2025-04-20",
+    "people": [
+      "Mike Morgan"
+    ],
+    "tags": [
+      "Airport",
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "Mike Morgan",
+      "People/Mike Morgan",
+      "People|Mike Morgan",
+      "Places/South Carolina/Lancaster County/Airport",
+      "Places|South Carolina|Lancaster County|Airport",
+      "Video"
+    ],
+    "title": "Mike Morgan Touch and Gos",
+    "description": "In his Cessna 150",
+    "location": "Airport",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2025/20250421_200236.jpg",
+    "media_type": "photo",
+    "file": "20250421_200236.jpg",
+    "folder": "2025",
+    "date": "2025-04-21",
+    "people": [],
+    "tags": [
+      "Airport",
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "Places/South Carolina/Lancaster County/Airport",
+      "Places|South Carolina|Lancaster County|Airport"
+    ],
     "title": "",
     "description": "",
     "location": "Airport",
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
-    "gps": null
+    "gps": {
+      "lat": 34.719,
+      "lon": -80.8589000002778
+    }
   },
   {
     "path": "images/2025/Screenshot_20250423_124525_Messenger-edited.jpg",
@@ -57850,8 +57993,8 @@
     ],
     "title": "",
     "description": "",
-    "location": "Fishing Creek",
-    "city": "Lancaster County",
+    "location": "",
+    "city": "Fishing Creek",
     "state": "South Carolina",
     "country": "United States",
     "gps": null
@@ -57882,8 +58025,8 @@
     ],
     "title": "",
     "description": "",
-    "location": "Fishing Creek",
-    "city": "Lancaster County",
+    "location": "",
+    "city": "Fishing Creek",
     "state": "South Carolina",
     "country": "United States",
     "gps": null
@@ -57932,6 +58075,32 @@
     "state": "",
     "country": "",
     "gps": null
+  },
+  {
+    "path": "images/2026/20260707_133623.jpg",
+    "media_type": "photo",
+    "file": "20260707_133623.jpg",
+    "folder": "2026",
+    "date": "2026-07-06",
+    "people": [],
+    "tags": [
+      "900 Confederate Ave",
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
+    ],
+    "title": "New for me turbo!",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6933651827778,
+      "lon": -80.8253094
+    }
   },
   {
     "path": "images/2026/Dickey Obit.png",
