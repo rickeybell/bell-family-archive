@@ -1,0 +1,27 @@
+[
+  {
+    "path": "youtube/p62MCBZKUw8",
+    "media_type": "youtube",
+    "youtube_id": "p62MCBZKUw8",
+    "start_seconds": 177,
+    "file": "YouTube video",
+    "folder": "2023",
+    "date": "2023-10-01",
+    "date_precision": "day",
+    "title": "Lancaster go-arounds with Mike to dry off plane",
+    "description": "",
+    "people": [
+      "Mike Morgan",
+      "Rickey Bell"
+    ],
+    "categories": [],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation"
+    ],
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": ""
+  }
+]

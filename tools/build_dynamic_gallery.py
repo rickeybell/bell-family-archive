@@ -4,19 +4,22 @@ from datetime import datetime
 
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 DATA=json.loads((ROOT/'photo_metadata.json').read_text(encoding='utf-8'))
+YOUTUBE_PATH=ROOT/'youtube_videos.json'
+if YOUTUBE_PATH.exists():
+    DATA.extend(json.loads(YOUTUBE_PATH.read_text(encoding='utf-8')))
 HOBBY_MEMBERSHIP_PATH=ROOT/'hobby_tag_membership.json'
 HOBBY_SNAPSHOT=json.loads(HOBBY_MEMBERSHIP_PATH.read_text(encoding='utf-8')) if HOBBY_MEMBERSHIP_PATH.exists() else {'memberships':{},'taggedCounts':{},'publicCounts':{}}
 STATE_ABBR={'Florida':'FL','Georgia':'GA','North Carolina':'NC','South Carolina':'SC','Virginia':'VA','Tennessee':'TN','New York':'NY','Pennsylvania':'PA','Maryland':'MD','Alabama':'AL','Mississippi':'MS','Texas':'TX','California':'CA','Ohio':'OH','West Virginia':'WV'}
 
 def esc(v): return html.escape(str(v or ''),quote=True)
 def url(v): return urllib.parse.quote(str(v or ''),safe='/')
-def nice_date(v):
+def nice_date(v, exact=False):
     if not v:return 'Date unknown'
     if re.fullmatch(r'\d{4}',v):return f'Circa {v}'
     try:
         dt=datetime.strptime(v,'%Y-%m-%d')
-        if dt.month==1 and dt.day==1:return f'Circa {dt.year}'
-        if dt.day==1:return f"Circa {dt.strftime('%B %Y')}"
+        if not exact and dt.month==1 and dt.day==1:return f'Circa {dt.year}'
+        if not exact and dt.day==1:return f"Circa {dt.strftime('%B %Y')}"
         return dt.strftime('%B %d, %Y').replace(' 0',' ')
     except Exception:return v
 
@@ -71,17 +74,28 @@ def page(title,subtitle,items,filename,empty_html=''):
     for y in sorted(years,key=lambda z:(z=='Unknown',z)):
         cards=[]
         for x in years[y]:
-            t,v,o=media_paths(x)
+            is_youtube=x.get('media_type')=='youtube'
+            if is_youtube:
+                youtube_id=str(x.get('youtube_id') or '')
+                start=max(0,int(x.get('start_seconds') or 0))
+                t=f'https://i.ytimg.com/vi/{youtube_id}/hqdefault.jpg'
+                v=f'https://www.youtube-nocookie.com/embed/{youtube_id}?start={start}&playsinline=1&rel=0'
+                o=f'https://www.youtube.com/watch?v={youtube_id}&t={start}s'
+            else:
+                t,v,o=media_paths(x)
             is_video=(x.get('media_type')=='video' or str(x.get('path') or '').startswith('videos/'))
             is_audio=(x.get('media_type')=='audio' or str(x.get('path') or '').startswith('audio/'))
             ttl=str(x.get('title') or '').strip();desc='\n'.join(line.rstrip() for line in str(x.get('description') or '').strip().splitlines())
-            date=nice_date(str(x.get('date') or ''));loc=display_location(x);ppl=display_people(x.get('people'))
+            date=nice_date(str(x.get('date') or ''),x.get('date_precision')=='day');loc=display_location(x);ppl=display_people(x.get('people'))
             fn=str(x.get('file') or pathlib.PurePosixPath(str(x.get('path') or '')).name)
             lines=[f'<div class="archive-meta-line">{esc(date)}</div>']
             if loc:lines.append(f'<div class="archive-meta-line">{esc(loc)}</div>')
             if ppl:lines.append(f'<div class="archive-meta-line">{esc(ppl)}</div>')
             th=f'<h3>{esc(ttl)}</h3>' if ttl else ''
-            if is_video:
+            if is_youtube:
+                media=f'<div class="archive-video-wrap"><iframe loading="lazy" src="{esc(v)}" title="{esc(ttl or "YouTube video")}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><div class="archive-video-label">YouTube video</div></div>'
+                actions=f'<div class="archive-actions"><a href="{esc(o)}" target="_blank" rel="noopener">Watch on YouTube</a></div>'
+            elif is_video:
                 media=f'<div class="archive-video-wrap"><video controls preload="metadata" playsinline src="{esc(url(v))}">Your browser does not support this video.</video><div class="archive-video-label">Video</div></div>'
                 actions=f'<div class="archive-actions"><a href="{esc(url(o))}" download>Download video</a></div>'
             elif is_audio:
@@ -92,7 +106,7 @@ def page(title,subtitle,items,filename,empty_html=''):
                 actions=f'<div class="archive-actions"><button data-view-i="{idx}">View</button><a href="{esc(url(o))}" download>Download high resolution</a></div>'
             card_class='archive-card archive-card-wide' if len(desc) >= 240 else 'archive-card'
             cards.append(f'''<article class="{card_class}" data-i="{idx}">{media}<div class="archive-copy">{th}<div class="archive-meta">{''.join(lines)}</div>{f'<p>{esc(desc)}</p>' if desc else ''}<div class="archive-file">{esc(fn)}</div>{actions}</div></article>''')
-            viewer.append({'view':url(v),'orig':url(o),'title':ttl,'date':date,'location':loc,'people':ppl,'people_raw':x.get('people') or [],'categories':x.get('categories') or [],'tags':[clean_tag_label(tag) for tag in x.get('tags') or []],'description':desc,'name':fn,'media_type':'video' if is_video else ('audio' if is_audio else 'photo')})
+            viewer.append({'view':v if is_youtube else url(v),'orig':o if is_youtube else url(o),'title':ttl,'date':date,'location':loc,'people':ppl,'people_raw':x.get('people') or [],'categories':x.get('categories') or [],'tags':[clean_tag_label(tag) for tag in x.get('tags') or []],'description':desc,'name':fn,'media_type':'video' if (is_video or is_youtube) else ('audio' if is_audio else 'photo')})
             idx+=1
         sections.append(f'<section class="archive-year"><h2>{esc(y)}</h2><div class="archive-grid">{"".join(cards)}</div></section>')
 
@@ -109,7 +123,7 @@ def page(title,subtitle,items,filename,empty_html=''):
 
     results=empty_html if empty_html else f'<div class="archive-shell">{sidebar}<div class="archive-results">{"".join(sections)}</div></div>'
     body=f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(title)} &mdash; The Bell Family</title><link rel="stylesheet" href="style.css"><style>
-.archive-main{{max-width:1600px;margin:auto;padding:28px}}.archive-shell{{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;align-items:start}}.archive-sidebar{{position:sticky;top:14px;max-height:calc(100vh - 28px);overflow:auto;background:#fff;border:1px solid #ddd;border-radius:10px;padding:14px;box-shadow:0 2px 10px #0001}}.archive-sidebar label{{display:block;font-size:.86rem;font-weight:600;margin:10px 0}}.archive-sidebar input,.archive-sidebar select{{display:block;width:100%;box-sizing:border-box;margin-top:4px;padding:7px;border:1px solid #bbb;border-radius:6px;background:#fff}}.archive-sidebar button{{width:100%;padding:8px;margin-top:8px;border:1px solid #999;border-radius:6px;background:#f7f7f7;cursor:pointer}}.archive-filter-title,.archive-year-title{{font-weight:700;margin-bottom:6px}}.archive-filter-context{{font-size:.82rem;line-height:1.35;padding:8px 9px;margin:6px 0 10px;background:#f5f5f5;border-radius:6px}}.archive-type-filter{{margin:10px 0}}.archive-type-label{{font-size:.86rem;font-weight:600;margin-bottom:5px}}.archive-type-checks{{display:grid;gap:4px}}.archive-type-checks label{{display:flex;align-items:center;gap:3px;margin:0;font-size:.86rem;font-weight:400;cursor:pointer}}.archive-type-checks input{{width:auto;margin:0}}.archive-year-title{{margin-top:16px}}.archive-filter-count{{font-size:.85rem;opacity:.7;margin-top:8px}}.archive-year-nav{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 8px}}.archive-year-nav a{{text-decoration:none;padding:3px 0}}.archive-results{{min-width:0}}.archive-grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}}.archive-card[hidden],.archive-year[hidden]{{display:none!important}}.archive-card{{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px #0002}}.archive-card-wide{{grid-column:span 3;display:grid;grid-template-columns:minmax(240px,1fr) minmax(0,2fr)}}.archive-card-wide>.archive-pic,.archive-card-wide>.archive-video-wrap,.archive-card-wide>.archive-audio-wrap{{height:100%;min-height:240px}}.archive-card-wide>.archive-pic img,.archive-card-wide>.archive-video-wrap video{{height:100%;min-height:240px;max-height:460px}}.archive-pic{{width:100%;padding:0;border:0;background:#eee;cursor:pointer}}.archive-pic img{{width:100%;height:240px;object-fit:contain;display:block}}.archive-video-wrap{{position:relative;background:#111}}.archive-video-wrap video{{width:100%;height:240px;display:block;background:#000;object-fit:contain}}.archive-video-label{{position:absolute;left:9px;top:9px;background:#000b;color:#fff;padding:4px 7px;border-radius:5px;font-size:.78rem}}.archive-audio-wrap{{min-height:150px;background:#eee;display:flex;flex-direction:column;justify-content:center;gap:18px;padding:22px;box-sizing:border-box}}.archive-audio-wrap audio{{width:100%}}.archive-audio-label{{font-weight:700}}.archive-copy{{padding:12px}}.archive-copy h3{{margin:0 0 6px;font-size:1rem}}.archive-meta{{font-size:.88rem;opacity:.78;line-height:1.4}}.archive-meta-line{{display:block}}.archive-file{{font-size:.82rem;opacity:.65;margin-top:8px}}.archive-copy p{{white-space:pre-line}}.archive-year{{margin:32px 0}}.archive-year>h2{{border-bottom:1px solid #ccc;padding-bottom:6px}}.archive-actions{{display:flex;gap:12px;align-items:center;margin-top:9px}}.archive-actions button{{border:0;padding:0;background:none;color:#06c;text-decoration:underline;cursor:pointer}}.archive-actions a{{color:#06c}}
+.archive-main{{max-width:1600px;margin:auto;padding:28px}}.archive-shell{{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;align-items:start}}.archive-sidebar{{position:sticky;top:14px;max-height:calc(100vh - 28px);overflow:auto;background:#fff;border:1px solid #ddd;border-radius:10px;padding:14px;box-shadow:0 2px 10px #0001}}.archive-sidebar label{{display:block;font-size:.86rem;font-weight:600;margin:10px 0}}.archive-sidebar input,.archive-sidebar select{{display:block;width:100%;box-sizing:border-box;margin-top:4px;padding:7px;border:1px solid #bbb;border-radius:6px;background:#fff}}.archive-sidebar button{{width:100%;padding:8px;margin-top:8px;border:1px solid #999;border-radius:6px;background:#f7f7f7;cursor:pointer}}.archive-filter-title,.archive-year-title{{font-weight:700;margin-bottom:6px}}.archive-filter-context{{font-size:.82rem;line-height:1.35;padding:8px 9px;margin:6px 0 10px;background:#f5f5f5;border-radius:6px}}.archive-type-filter{{margin:10px 0}}.archive-type-label{{font-size:.86rem;font-weight:600;margin-bottom:5px}}.archive-type-checks{{display:grid;gap:4px}}.archive-type-checks label{{display:flex;align-items:center;gap:3px;margin:0;font-size:.86rem;font-weight:400;cursor:pointer}}.archive-type-checks input{{width:auto;margin:0}}.archive-year-title{{margin-top:16px}}.archive-filter-count{{font-size:.85rem;opacity:.7;margin-top:8px}}.archive-year-nav{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 8px}}.archive-year-nav a{{text-decoration:none;padding:3px 0}}.archive-results{{min-width:0}}.archive-grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}}.archive-card[hidden],.archive-year[hidden]{{display:none!important}}.archive-card{{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px #0002}}.archive-card-wide{{grid-column:span 3;display:grid;grid-template-columns:minmax(240px,1fr) minmax(0,2fr)}}.archive-card-wide>.archive-pic,.archive-card-wide>.archive-video-wrap,.archive-card-wide>.archive-audio-wrap{{height:100%;min-height:240px}}.archive-card-wide>.archive-pic img,.archive-card-wide>.archive-video-wrap video,.archive-card-wide>.archive-video-wrap iframe{{height:100%;min-height:240px;max-height:460px}}.archive-pic{{width:100%;padding:0;border:0;background:#eee;cursor:pointer}}.archive-pic img{{width:100%;height:240px;object-fit:contain;display:block}}.archive-video-wrap{{position:relative;background:#111}}.archive-video-wrap video,.archive-video-wrap iframe{{width:100%;height:240px;display:block;background:#000;object-fit:contain;border:0}}.archive-video-label{{position:absolute;left:9px;top:9px;background:#000b;color:#fff;padding:4px 7px;border-radius:5px;font-size:.78rem}}.archive-audio-wrap{{min-height:150px;background:#eee;display:flex;flex-direction:column;justify-content:center;gap:18px;padding:22px;box-sizing:border-box}}.archive-audio-wrap audio{{width:100%}}.archive-audio-label{{font-weight:700}}.archive-copy{{padding:12px}}.archive-copy h3{{margin:0 0 6px;font-size:1rem}}.archive-meta{{font-size:.88rem;opacity:.78;line-height:1.4}}.archive-meta-line{{display:block}}.archive-file{{font-size:.82rem;opacity:.65;margin-top:8px}}.archive-copy p{{white-space:pre-line}}.archive-year{{margin:32px 0}}.archive-year>h2{{border-bottom:1px solid #ccc;padding-bottom:6px}}.archive-actions{{display:flex;gap:12px;align-items:center;margin-top:9px}}.archive-actions button{{border:0;padding:0;background:none;color:#06c;text-decoration:underline;cursor:pointer}}.archive-actions a{{color:#06c}}
 .viewer{{position:fixed;inset:0;background:#000e;display:none;z-index:9999;color:#fff}}.viewer.open{{display:grid;grid-template-rows:minmax(0,1fr) auto}}.viewer-stage{{position:relative;overflow:auto;display:block;min-width:0;min-height:0;padding:0;box-sizing:border-box;cursor:default;scrollbar-gutter:stable both-edges;overscroll-behavior:contain}}.viewer-stage.pannable{{cursor:grab;touch-action:none}}.viewer-stage.dragging{{cursor:grabbing;user-select:none}}.viewer-canvas{{position:relative;min-width:100%;min-height:100%;box-sizing:border-box}}.viewer-stage img{{position:absolute;display:block;max-width:none;max-height:none;user-select:none;-webkit-user-drag:none}}.viewer-nav,.viewer-close{{position:fixed;border:0;border-radius:50%;background:#0009;color:#fff;cursor:pointer;z-index:10001}}.viewer-nav{{top:50%;transform:translateY(-50%);font-size:38px;width:54px;height:54px}}.viewer-prev{{left:12px}}.viewer-next{{right:12px}}.viewer-close{{right:14px;top:14px;font-size:28px;width:46px;height:46px}}.viewer-controls{{position:fixed;top:14px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10001}}.viewer-controls button{{border:0;border-radius:6px;padding:8px 13px;font-size:18px;cursor:pointer}}.viewer-info{{text-align:center;padding:8px 70px 14px;background:#0008}}.viewer-info h3{{margin:0 0 5px}}.viewer-line{{margin:2px 0}}@media(max-width:900px){{.archive-shell{{grid-template-columns:1fr}}.archive-sidebar{{position:relative;top:auto;max-height:none}}}}@media(max-width:650px){{.archive-card-wide{{grid-column:span 1;display:block}}.archive-card-wide>.archive-pic,.archive-card-wide>.archive-video-wrap,.archive-card-wide>.archive-audio-wrap{{height:auto;min-height:0}}.archive-card-wide>.archive-pic img,.archive-card-wide>.archive-video-wrap video{{height:240px;min-height:0;max-height:none}}.viewer-info{{padding-left:12px;padding-right:12px}}}}
 @media(max-width:780px){{.archive-card-wide{{grid-column:span 1;display:block}}.archive-card-wide>.archive-pic,.archive-card-wide>.archive-video-wrap,.archive-card-wide>.archive-audio-wrap{{height:auto;min-height:0}}.archive-card-wide>.archive-pic img,.archive-card-wide>.archive-video-wrap video{{height:240px;min-height:0;max-height:none}}}}
 </style></head><body><header class="site-header"><a class="brand brand-home" href="index.html" aria-label="Bell Family home"><div class="tree-mark" aria-hidden="true"><svg class="tree-logo" viewBox="0 0 72 72" aria-hidden="true"><path d="M13 31C7 25 12 15 22 17C24 8 37 7 42 14C51 9 61 17 58 26C66 31 60 43 51 42H20C10 44 5 36 13 31Z" fill="currentColor" opacity=".95"/><path d="M34 62C34 53 35 45 31 37M38 62C38 53 37 45 43 37M36 46L25 35M37 44L49 32M36 62L24 68M36 62L48 68M36 61L31 69M37 61L42 69" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="brand-title">The Bell Family</div><div class="brand-tagline">Generations of Love, Memories &amp; Legacy</div></div></a><nav class="top-nav"><a href="index.html">Family Tree</a><a href="gallery.html">Photo Gallery</a></nav></header><main class="archive-main"><span class="eyebrow">Bell Family Archive</span><h1>{esc(title)}</h1><p>{esc(subtitle)}</p><p><strong>{len(items)} archive items</strong></p>{results}</main><footer>&copy; 2026 The Bell Family Archive &middot; Preserving Our Legacy for Future Generations</footer>
@@ -160,7 +174,9 @@ for slug,(name,description) in hobbies.items():
     items=[]
     for item in DATA:
         path=str(item.get('path') or '').replace('\\','/')
-        if name not in HOBBY_SNAPSHOT.get('memberships',{}).get(path,[]):continue
+        external_tags={clean_tag_label(tag).casefold() for tag in item.get('tags') or []}
+        external_match=item.get('media_type')=='youtube' and ({name.casefold(),f'hobbies/{name}'.casefold()} & external_tags)
+        if name not in HOBBY_SNAPSHOT.get('memberships',{}).get(path,[]) and not external_match:continue
         hobby_item=dict(item)
         hobby_item['tags']=list(item.get('tags') or [])+[tag]
         items.append(hobby_item)
