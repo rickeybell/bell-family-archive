@@ -79,8 +79,9 @@ def page(title,subtitle,items,filename,empty_html=''):
                 youtube_id=str(x.get('youtube_id') or '')
                 start=max(0,int(x.get('start_seconds') or 0))
                 t=f'https://i.ytimg.com/vi/{youtube_id}/hqdefault.jpg'
-                v=f'https://www.youtube-nocookie.com/embed/{youtube_id}?start={start}&playsinline=1&rel=0'
-                o=f'https://www.youtube.com/watch?v={youtube_id}&t={start}s'
+                start_param=f'start={start}&' if start else ''
+                v=f'https://www.youtube-nocookie.com/embed/{youtube_id}?{start_param}playsinline=1&rel=0'
+                o=f'https://www.youtube.com/watch?v={youtube_id}' + (f'&t={start}s' if start else '')
             else:
                 t,v,o=media_paths(x)
             is_video=(x.get('media_type')=='video' or str(x.get('path') or '').startswith('videos/'))
