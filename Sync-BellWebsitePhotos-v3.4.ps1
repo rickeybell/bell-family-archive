@@ -17,10 +17,20 @@ $PublishTag = "Website"
 $ManifestPath = Join-Path $RepoRoot ".website-photo-manifest.json"
 $WebsiteManifestCsv = Join-Path $RepoRoot "website-photo-manifest.csv"
 $OrphanReportCsv = Join-Path $RepoRoot "website-photo-orphans.csv"
+$PathOverrideFile = Join-Path $RepoRoot "website-photo-path-overrides.json"
 
 $ImageExtensions = @(".jpg", ".jpeg", ".png", ".tif", ".tiff")
 $ProgressEvery = 250
 $BatchSize = 50
+
+$WebsitePathOverrides = @{}
+if (Test-Path -LiteralPath $PathOverrideFile) {
+    foreach ($override in @(Get-Content -LiteralPath $PathOverrideFile -Raw | ConvertFrom-Json)) {
+        if ([string]::IsNullOrWhiteSpace([string]$override.SourcePath) -or
+            [string]::IsNullOrWhiteSpace([string]$override.RelativePath)) { continue }
+        $WebsitePathOverrides[([string]$override.SourcePath -replace '/', '\').ToLowerInvariant()] = [string]$override.RelativePath
+    }
+}
 
 function Get-ExifToolPath {
     $cmd = Get-Command exiftool.exe -ErrorAction SilentlyContinue
@@ -70,6 +80,10 @@ function Get-YearFromMetadataRecord {
 
 function Get-DestinationRelativePath {
     param([System.IO.FileInfo]$File, $Record = $null)
+    $overrideKey = ($File.FullName -replace '/', '\').ToLowerInvariant()
+    if ($WebsitePathOverrides.ContainsKey($overrideKey)) {
+        return ($WebsitePathOverrides[$overrideKey] -replace '/', '\')
+    }
     $sourceRoot = $SourceRoots | Where-Object {
         $File.FullName.StartsWith(($_.TrimEnd('\') + '\'), [System.StringComparison]::OrdinalIgnoreCase)
     } | Select-Object -First 1
