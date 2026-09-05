@@ -23,5 +23,29 @@
     "city": "",
     "state": "",
     "country": ""
+  },
+  {
+    "path": "youtube/yn8K9PpZVxY",
+    "media_type": "youtube",
+    "youtube_id": "yn8K9PpZVxY",
+    "start_seconds": 0,
+    "file": "YouTube video",
+    "folder": "2026",
+    "date": "2026-04-25",
+    "date_precision": "day",
+    "title": "Flying the RNAV 06 Approach into Lancaster (KLKR) | Piper Warrior",
+    "description": "",
+    "people": [
+      "Rickey Bell"
+    ],
+    "categories": [],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation"
+    ],
+    "location": "Lancaster",
+    "city": "",
+    "state": "SC",
+    "country": ""
   }
 ]
