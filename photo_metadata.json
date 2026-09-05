@@ -11109,12 +11109,12 @@
     "folder": "1980",
     "date": "1980-01-01",
     "people": [
-      "Heather Bell"
+      "Buster Bell"
     ],
     "tags": [
-      "Heather Bell",
-      "People/Heather Bell",
-      "People|Heather Bell"
+      "Buster Bell",
+      "People/Buster Bell",
+      "People|Buster Bell"
     ],
     "title": "",
     "description": "",
@@ -11131,12 +11131,12 @@
     "folder": "1980",
     "date": "1980-01-01",
     "people": [
-      "Buster Bell"
+      "Heather Bell"
     ],
     "tags": [
-      "Buster Bell",
-      "People/Buster Bell",
-      "People|Buster Bell"
+      "Heather Bell",
+      "People/Heather Bell",
+      "People|Heather Bell"
     ],
     "title": "",
     "description": "",
@@ -14096,6 +14096,32 @@
     "gps": null
   },
   {
+    "path": "images/1980/20150109_005122000_iOS.jpg",
+    "media_type": "photo",
+    "file": "20150109_005122000_iOS.jpg",
+    "folder": "1980",
+    "date": "1980-01-01",
+    "people": [
+      "Mike Morgan",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Mike Morgan",
+      "People/Mike Morgan",
+      "People/Rickey Bell",
+      "People|Mike Morgan",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/1980/20150206_035037000_iOS.jpg",
     "media_type": "photo",
     "file": "20150206_035037000_iOS.jpg",
@@ -14116,6 +14142,65 @@
       "People|Debbie Phillips",
       "People|Everate Faulkenberry",
       "People|Lisa Steen"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1980/eF_rL5zj.jpg",
+    "media_type": "photo",
+    "file": "eF_rL5zj.jpg",
+    "folder": "1980",
+    "date": "1980-01-01",
+    "people": [
+      "Heather Bell",
+      "Mike Morgan",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "109 Fairview Dr",
+      "Heather Bell",
+      "Mike Morgan",
+      "People/Heather Bell",
+      "People/Mike Morgan",
+      "People/Rickey Bell",
+      "People|Heather Bell",
+      "People|Mike Morgan",
+      "People|Rickey Bell",
+      "Places/South Carolina/Lancaster County/109 Fairview Dr",
+      "Places|South Carolina|Lancaster County|109 Fairview Dr",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "109 Fairview Dr",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1980/sc-9yjCd.jpg",
+    "media_type": "photo",
+    "file": "sc-9yjCd.jpg",
+    "folder": "1980",
+    "date": "1980-01-01",
+    "people": [
+      "Mike Morgan",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Mike Morgan",
+      "People/Mike Morgan",
+      "People/Rickey Bell",
+      "People|Mike Morgan",
+      "People|Rickey Bell",
+      "Rickey Bell"
     ],
     "title": "",
     "description": "",
@@ -30558,32 +30643,6 @@
     "gps": null
   },
   {
-    "path": "videos/2002/104-0431_MVI.mp4",
-    "media_type": "video",
-    "file": "104-0431_MVI.mp4",
-    "folder": "2002",
-    "date": "2002-05-26",
-    "people": [
-      "Gray Taylor",
-      "Mickey Morgan"
-    ],
-    "tags": [
-      "Hobbies/Boating",
-      "Hobbies/Scuba",
-      "People/Gray Taylor",
-      "People/Mickey Morgan",
-      "Places/South Carolina/Myrtle Beach",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "Myrtle Beach",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/2002/104-0492_IMG.JPG",
     "media_type": "photo",
     "file": "104-0492_IMG.JPG",
@@ -31842,28 +31901,6 @@
     "gps": null
   },
   {
-    "path": "videos/2002/112-1283_MVI.mp4",
-    "media_type": "video",
-    "file": "112-1283_MVI.mp4",
-    "folder": "2002",
-    "date": "2002-07-04",
-    "people": [
-      "Andrew Morgan"
-    ],
-    "tags": [
-      "People/Andrew Morgan",
-      "Places/South Carolina/Kershaw",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "Kershaw",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/2002/113-1317_IMG.JPG",
     "media_type": "photo",
     "file": "113-1317_IMG.JPG",
@@ -32481,29 +32518,6 @@
     "description": "",
     "location": "",
     "city": "Jim Hollis River Rendezvous",
-    "state": "Florida",
-    "country": "United States",
-    "gps": null
-  },
-  {
-    "path": "videos/2002/115-1595_MVI.mp4",
-    "media_type": "video",
-    "file": "115-1595_MVI.mp4",
-    "folder": "2002",
-    "date": "2002-07-20",
-    "people": [
-      "Stacy Baker"
-    ],
-    "tags": [
-      "Hobbies/Scuba",
-      "People/Stacy Baker",
-      "Places/Florida",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "",
     "state": "Florida",
     "country": "United States",
     "gps": null
@@ -36656,29 +36670,6 @@
     "gps": null
   },
   {
-    "path": "videos/2003/Picture 080.mp4",
-    "media_type": "video",
-    "file": "Picture 080.mp4",
-    "folder": "2003",
-    "date": "2003-09-13",
-    "people": [
-      "Samatha Bell"
-    ],
-    "tags": [
-      "People/Samatha Bell",
-      "Places/South Carolina/Lancaster County/900 Confederate Ave",
-      "Vehicle/Cars_Trucks",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "900 Confederate Ave",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/2003/2003_117.jpg",
     "media_type": "photo",
     "file": "2003_117.jpg",
@@ -36888,30 +36879,6 @@
     "city": "",
     "state": "",
     "country": "",
-    "gps": null
-  },
-  {
-    "path": "videos/2003/2003_12_28 028.mp4",
-    "media_type": "video",
-    "file": "2003_12_28 028.mp4",
-    "folder": "2003",
-    "date": "2003-12-25",
-    "people": [
-      "Jarred Bell",
-      "Samatha Bell"
-    ],
-    "tags": [
-      "People/Jarred Bell",
-      "People/Samatha Bell",
-      "Places/South Carolina/Lancaster County/900 Confederate Ave",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "900 Confederate Ave",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
     "gps": null
   },
   {
@@ -40818,30 +40785,6 @@
     "gps": null
   },
   {
-    "path": "videos/2008/FILE0061.mp4",
-    "media_type": "video",
-    "file": "FILE0061.mp4",
-    "folder": "2008",
-    "date": "2008-12-27",
-    "people": [
-      "Tanisha"
-    ],
-    "tags": [
-      "Animal/Tanisha",
-      "Animal|Tanisha",
-      "Places/South Carolina/Lancaster County/900 Confederate Ave",
-      "Tanisha",
-      "Video"
-    ],
-    "title": "",
-    "description": "2008-09-20",
-    "location": "900 Confederate Ave",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/2010/103_0643.JPG",
     "media_type": "photo",
     "file": "103_0643.JPG",
@@ -40979,56 +40922,6 @@
     "gps": null
   },
   {
-    "path": "videos/2009/2008_5 026.mp4",
-    "media_type": "video",
-    "file": "2008_5 026.mp4",
-    "folder": "2009",
-    "date": "2009-01-20",
-    "people": [
-      "Rickey Bell"
-    ],
-    "tags": [
-      "Hobbies/Rescue_Police_EMS",
-      "People/Rickey Bell",
-      "Video"
-    ],
-    "title": "",
-    "description": "2009-01-20",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
-    "path": "videos/2009/FILE0102.mp4",
-    "media_type": "video",
-    "file": "FILE0102.mp4",
-    "folder": "2009",
-    "date": "2009-02-01",
-    "people": [
-      "Jarred Bell",
-      "Tanisha"
-    ],
-    "tags": [
-      "Animal/Tanisha",
-      "Animal|Tanisha",
-      "Jarred Bell",
-      "People/Jarred Bell",
-      "People|Jarred Bell",
-      "Places/South Carolina/Lancaster County/900 Confederate Ave",
-      "Tanisha",
-      "Video"
-    ],
-    "title": "",
-    "description": "2008-10-26",
-    "location": "900 Confederate Ave",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/2009/IMAGE_147.jpg",
     "media_type": "photo",
     "file": "IMAGE_147.jpg",
@@ -41048,30 +40941,6 @@
     "title": "",
     "description": "",
     "location": "900 Confederate Ave",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
-    "path": "videos/2009/FILE0194.mp4",
-    "media_type": "video",
-    "file": "FILE0194.mp4",
-    "folder": "2009",
-    "date": "2009-03-12",
-    "people": [
-      "Anna Lear",
-      "Jarred Bell"
-    ],
-    "tags": [
-      "People/Anna Lear",
-      "People/Jarred Bell",
-      "Places/South Carolina/Lancaster County",
-      "Video"
-    ],
-    "title": "",
-    "description": "2008-12-04",
-    "location": "",
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
@@ -42854,32 +42723,6 @@
     }
   },
   {
-    "path": "videos/2014/2014-11-29 17.22.03.mp4",
-    "media_type": "video",
-    "file": "2014-11-29 17.22.03.mp4",
-    "folder": "2014",
-    "date": "2014-11-29",
-    "people": [
-      "Mike Morgan"
-    ],
-    "tags": [
-      "Hobbies/Boating",
-      "People/Mike Morgan",
-      "Places/Florida/Crystal River",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "Crystal River",
-    "state": "Florida",
-    "country": "United States",
-    "gps": {
-      "lat": 28.92960000038147,
-      "lon": -82.88059999995761
-    }
-  },
-  {
     "path": "images/2014/20141223_013214618_iOS.jpg",
     "media_type": "photo",
     "file": "20141223_013214618_iOS.jpg",
@@ -43034,30 +42877,6 @@
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
-    "gps": null
-  },
-  {
-    "path": "audio/2015/Irvin VM to Derrick Joyner.mp3",
-    "media_type": "audio",
-    "file": "Irvin VM to Derrick Joyner.mp3",
-    "folder": "2015",
-    "date": "2015-04-30",
-    "people": [
-      "Charles Joner",
-      "Irvin Phillips"
-    ],
-    "tags": [
-      "People/Charles Joner",
-      "People/Irvin Phillips",
-      "Sound",
-      "_Digikam_Internal_Tags_/Color Label Green"
-    ],
-    "title": "",
-    "description": "30 minutes later was the last time Derrick spoke to Irvin prior to his death",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
     "gps": null
   },
   {
@@ -43681,32 +43500,6 @@
     }
   },
   {
-    "path": "videos/2016/20160805_211243000_iOS.mp4",
-    "media_type": "video",
-    "file": "20160805_211243000_iOS.mp4",
-    "folder": "2016",
-    "date": "2016-08-05",
-    "people": [
-      "Jarred Bell"
-    ],
-    "tags": [
-      "Hobbies/Boating",
-      "People/Jarred Bell",
-      "Places/Florida/Crystal River",
-      "Video"
-    ],
-    "title": "48' Motor Yacht",
-    "description": "",
-    "location": "",
-    "city": "Crystal River",
-    "state": "Florida",
-    "country": "United States",
-    "gps": {
-      "lat": 28.8951,
-      "lon": -82.6074
-    }
-  },
-  {
     "path": "images/2016/20160809_184355000_iOS.jpg",
     "media_type": "photo",
     "file": "20160809_184355000_iOS.jpg",
@@ -44161,33 +43954,6 @@
     }
   },
   {
-    "path": "videos/2016/20161122_214917000_iOS.mp4",
-    "media_type": "video",
-    "file": "20161122_214917000_iOS.mp4",
-    "folder": "2016",
-    "date": "2016-11-22",
-    "people": [
-      "Sophia Bell"
-    ],
-    "tags": [
-      "Animal/Gabby",
-      "Animal/Lady",
-      "People/Sophia Bell",
-      "Places/South Carolina/Lancaster County/900 Confederate Ave",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "900 Confederate Ave",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.693399983333336,
-      "lon": -80.8251
-    }
-  },
-  {
     "path": "images/2016/IMG_4329.JPG",
     "media_type": "photo",
     "file": "IMG_4329.JPG",
@@ -44283,31 +44049,6 @@
     "gps": {
       "lat": 41.8731833166667,
       "lon": -87.6244972166667
-    }
-  },
-  {
-    "path": "videos/2016/20161201_020837000_iOS.mp4",
-    "media_type": "video",
-    "file": "20161201_020837000_iOS.mp4",
-    "folder": "2016",
-    "date": "2016-11-30",
-    "people": [
-      "Dickey Bell"
-    ],
-    "tags": [
-      "People/Dickey Bell",
-      "Places/Chicago",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "Chicago",
-    "country": "",
-    "gps": {
-      "lat": 41.8732,
-      "lon": -87.6245
     }
   },
   {
@@ -44761,32 +44502,6 @@
     }
   },
   {
-    "path": "videos/2017/IMG_0936.mp4",
-    "media_type": "video",
-    "file": "IMG_0936.mp4",
-    "folder": "2017",
-    "date": "2017-07-14",
-    "people": [
-      "Anna Lear",
-      "Samatha Bell",
-      "Sophia Bell"
-    ],
-    "tags": [
-      "People/Anna Lear",
-      "People/Samatha Bell",
-      "People/Sophia Bell",
-      "Places/South Carolina/Myrtle Beach",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "Myrtle Beach",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/2017/IMG_0969.JPG",
     "media_type": "photo",
     "file": "IMG_0969.JPG",
@@ -44814,33 +44529,6 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": null
-  },
-  {
-    "path": "videos/2017/20170807_225752000_iOS.mp4",
-    "media_type": "video",
-    "file": "20170807_225752000_iOS.mp4",
-    "folder": "2017",
-    "date": "2017-08-07",
-    "people": [
-      "Rickey Bell"
-    ],
-    "tags": [
-      "Hobbies/Shooting",
-      "Locked",
-      "People/Rickey Bell",
-      "Places/South Carolina/Lancaster County",
-      "Video"
-    ],
-    "title": "I am not a fan of binary triggers, but they will run.",
-    "description": "",
-    "location": "",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.695,
-      "lon": -80.8256
-    }
   },
   {
     "path": "images/2017/IMG_1129.JPG",
@@ -44901,32 +44589,6 @@
     "state": "Florida",
     "country": "United States",
     "gps": null
-  },
-  {
-    "path": "videos/2017/20170901_155333000_iOS.mp4",
-    "media_type": "video",
-    "file": "20170901_155333000_iOS.mp4",
-    "folder": "2017",
-    "date": "2017-09-01",
-    "people": [
-      "Mike Morgan"
-    ],
-    "tags": [
-      "Hobbies/Boating",
-      "People/Mike Morgan",
-      "Places/Florida/Crystal River",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "Crystal River",
-    "state": "Florida",
-    "country": "United States",
-    "gps": {
-      "lat": 28.8427,
-      "lon": -82.7766
-    }
   },
   {
     "path": "images/2017/IMG_1152.JPG",
@@ -45044,29 +44706,6 @@
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
-    "path": "videos/2017/Medic Hoke Last Call.mp4",
-    "media_type": "video",
-    "file": "Medic Hoke Last Call.mp4",
-    "folder": "2017",
-    "date": "2017-10-03",
-    "people": [
-      "Jason Hoke"
-    ],
-    "tags": [
-      "Jason Hoke",
-      "People/Jason Hoke",
-      "People|Jason Hoke",
-      "Video"
-    ],
-    "title": "Jason Hoke Funeral Last Call",
-    "description": "Lancaster dispatch couldn't make the last call at the funeral because he had left Lancaster for Chester.  Rickey made the call using two handheld radios and Chester's local frequencies so it wouldn't reach the Chester County repeaters.  Many on- and off-duty responders attended the funeral with pagers; the plan was for the Chester pagers to go off and broadcast the call.  For reasons that can not be explained, EVERY pager at the funeral went off and broadcast the call, regardless of county, frequency, or service.  It was really like God himself was sending Jason home!",
     "location": "",
     "city": "",
     "state": "",
@@ -45250,58 +44889,6 @@
     "gps": null
   },
   {
-    "path": "videos/2018/20180318_163348.mp4",
-    "media_type": "video",
-    "file": "20180318_163348.mp4",
-    "folder": "2018",
-    "date": "2018-03-18",
-    "people": [
-      "Jarred Bell",
-      "Rickey Bell"
-    ],
-    "tags": [
-      "Hobbies/Boating",
-      "People/Jarred Bell",
-      "People/Rickey Bell",
-      "Places/Florida/Crystal River",
-      "Video"
-    ],
-    "title": "20180318_163348.mp4",
-    "description": "",
-    "location": "",
-    "city": "Crystal River",
-    "state": "Florida",
-    "country": "United States",
-    "gps": {
-      "lat": 28.9262,
-      "lon": 82.9183
-    }
-  },
-  {
-    "path": "videos/2018/IMG_1851.mp4",
-    "media_type": "video",
-    "file": "IMG_1851.mp4",
-    "folder": "2018",
-    "date": "2018-03-18",
-    "people": [
-      "Jarred Bell",
-      "Rickey Bell"
-    ],
-    "tags": [
-      "Hobbies/Boating",
-      "People/Jarred Bell",
-      "People/Rickey Bell",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
     "path": "images/2018/20180319_102918.jpg",
     "media_type": "photo",
     "file": "20180319_102918.jpg",
@@ -45354,29 +44941,6 @@
     }
   },
   {
-    "path": "videos/2018/20180319_112554.mp4",
-    "media_type": "video",
-    "file": "20180319_112554.mp4",
-    "folder": "2018",
-    "date": "2018-03-19",
-    "people": [],
-    "tags": [
-      "Hobbies/Boating",
-      "Places/Florida/Crystal River",
-      "Video"
-    ],
-    "title": "20180319_112554.mp4",
-    "description": "",
-    "location": "",
-    "city": "Crystal River",
-    "state": "Florida",
-    "country": "United States",
-    "gps": {
-      "lat": 28.9039,
-      "lon": 82.5098
-    }
-  },
-  {
     "path": "images/2018/IMG_1921.JPEG",
     "media_type": "photo",
     "file": "IMG_1921.JPEG",
@@ -45393,55 +44957,6 @@
       "People|Peggy Faulkenberry",
       "People|Sophia Bell",
       "Sophia Bell"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
-    "path": "videos/2018/IMG_1920.mp4",
-    "media_type": "video",
-    "file": "IMG_1920.mp4",
-    "folder": "2018",
-    "date": "2018-04-01",
-    "people": [
-      "Peggy Faulkenberry",
-      "Sophia Bell"
-    ],
-    "tags": [
-      "People/Peggy Faulkenberry",
-      "People/Sophia Bell",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
-    "path": "videos/2018/IMG_2143.mp4",
-    "media_type": "video",
-    "file": "IMG_2143.mp4",
-    "folder": "2018",
-    "date": "2018-05-05",
-    "people": [
-      "Sophia Bell"
-    ],
-    "tags": [
-      "Boating",
-      "Hobbies/Boating",
-      "Hobbies|Boating",
-      "People/Sophia Bell",
-      "People|Sophia Bell",
-      "Sophia Bell",
-      "Video"
     ],
     "title": "",
     "description": "",
@@ -46144,35 +45659,6 @@
     }
   },
   {
-    "path": "videos/2019/20190531_201747.mp4",
-    "media_type": "video",
-    "file": "20190531_201747.mp4",
-    "folder": "2019",
-    "date": "2019-05-31",
-    "people": [
-      "Jarred Bell"
-    ],
-    "tags": [
-      "Jarred Bell",
-      "Lancaster County",
-      "People/Jarred Bell",
-      "People|Jarred Bell",
-      "Places/South Carolina/Lancaster County",
-      "Places|South Carolina|Lancaster County",
-      "Video"
-    ],
-    "title": "Graduation",
-    "description": "",
-    "location": "",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.7313,
-      "lon": -80.7833
-    }
-  },
-  {
     "path": "images/2019/20190603_203150.jpg",
     "media_type": "photo",
     "file": "20190603_203150.jpg",
@@ -46198,35 +45684,6 @@
     "gps": {
       "lat": 34.6932557666667,
       "lon": -80.8251711836111
-    }
-  },
-  {
-    "path": "videos/2019/20190617_193259.mp4",
-    "media_type": "video",
-    "file": "20190617_193259.mp4",
-    "folder": "2019",
-    "date": "2019-06-17",
-    "people": [
-      "Dickey Bell"
-    ],
-    "tags": [
-      "Dickey Bell",
-      "Lancaster County",
-      "People/Dickey Bell",
-      "People|Dickey Bell",
-      "Places/South Carolina/Lancaster County",
-      "Places|South Carolina|Lancaster County",
-      "Video"
-    ],
-    "title": "Dickey Bell Drives His New Lawn Mower Home from Home Depot – 2019",
-    "description": "June 17, 2019 video of William “Dickey” Bell picking up his new riding lawn mower from Home Depot. Rather than hauling it home on a trailer, Dickey chose a more memorable solution—he simply climbed aboard and drove the lawn mower home himself. A fun moment that captures Dickey’s personality and his practical approach to getting things done.",
-    "location": "",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.7348,
-      "lon": -80.7921
     }
   },
   {
@@ -46259,34 +45716,6 @@
     "gps": null
   },
   {
-    "path": "videos/2019/20190623_210308.mp4",
-    "media_type": "video",
-    "file": "20190623_210308.mp4",
-    "folder": "2019",
-    "date": "2019-06-23",
-    "people": [],
-    "tags": [
-      "Hobbies/Shooting",
-      "Hobbies|Shooting",
-      "Lancaster County",
-      "Locked",
-      "Places/South Carolina/Lancaster County",
-      "Places|South Carolina|Lancaster County",
-      "Shooting",
-      "Video"
-    ],
-    "title": "Robin Hood?",
-    "description": "",
-    "location": "",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.6933,
-      "lon": -80.8251
-    }
-  },
-  {
     "path": "images/2019/20190627_104726.jpg",
     "media_type": "photo",
     "file": "20190627_104726.jpg",
@@ -46316,35 +45745,6 @@
     "gps": {
       "lat": 34.9137323888889,
       "lon": -81.0206668883333
-    }
-  },
-  {
-    "path": "videos/2019/20190627_084950.mp4",
-    "media_type": "video",
-    "file": "20190627_084950.mp4",
-    "folder": "2019",
-    "date": "2019-06-27",
-    "people": [
-      "Jarred Bell"
-    ],
-    "tags": [
-      "Jarred Bell",
-      "People/Jarred Bell",
-      "People|Jarred Bell",
-      "Places/South Carolina/York County",
-      "Places|South Carolina|York County",
-      "Video",
-      "York County"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "York County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.9136,
-      "lon": -81.0207
     }
   },
   {
@@ -46935,30 +46335,6 @@
     }
   },
   {
-    "path": "videos/2019/20191128_115255.mp4",
-    "media_type": "video",
-    "file": "20191128_115255.mp4",
-    "folder": "2019",
-    "date": "2019-11-28",
-    "people": [],
-    "tags": [
-      "Niagara Falls",
-      "Places/Canada/Niagara Falls",
-      "Places|Canada|Niagara Falls",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "Niagara Falls",
-    "state": "Canada",
-    "country": "",
-    "gps": {
-      "lat": 43.0831,
-      "lon": -79.0709
-    }
-  },
-  {
     "path": "images/2019/20191202_140731.jpg",
     "media_type": "photo",
     "file": "20191202_140731.jpg",
@@ -47046,35 +46422,6 @@
     }
   },
   {
-    "path": "videos/2019/20191225_130351.mp4",
-    "media_type": "video",
-    "file": "20191225_130351.mp4",
-    "folder": "2019",
-    "date": "2019-12-25",
-    "people": [
-      "Jarred Bell"
-    ],
-    "tags": [
-      "900 Confederate Ave",
-      "Jarred Bell",
-      "People/Jarred Bell",
-      "People|Jarred Bell",
-      "Places/South Carolina/Lancaster County/900 Confederate Ave",
-      "Places|South Carolina|Lancaster County|900 Confederate Ave",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "900 Confederate Ave",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.6938,
-      "lon": -80.82529998333334
-    }
-  },
-  {
     "path": "images/2020/20200211_132405.jpg",
     "media_type": "photo",
     "file": "20200211_132405.jpg",
@@ -47100,39 +46447,6 @@
     "gps": {
       "lat": 34.6443979666667,
       "lon": -81.1271063497222
-    }
-  },
-  {
-    "path": "videos/2020/20200320_192039.mp4",
-    "media_type": "video",
-    "file": "20200320_192039.mp4",
-    "folder": "2020",
-    "date": "2020-03-20",
-    "people": [
-      "Andrew Morgan"
-    ],
-    "tags": [
-      "Andrew Morgan",
-      "Hobbies/Shooting",
-      "Hobbies|Shooting",
-      "Lancaster County",
-      "Locked",
-      "People/Andrew Morgan",
-      "People|Andrew Morgan",
-      "Places/South Carolina/Lancaster County",
-      "Places|South Carolina|Lancaster County",
-      "Shooting",
-      "Video"
-    ],
-    "title": "It is a BB Gun!",
-    "description": "",
-    "location": "",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.6935,
-      "lon": -80.82519998333333
     }
   },
   {
@@ -47251,43 +46565,6 @@
     "city": "",
     "state": "",
     "country": "",
-    "gps": null
-  },
-  {
-    "path": "videos/2020/IMG_5939.mp4",
-    "media_type": "video",
-    "file": "IMG_5939.mp4",
-    "folder": "2020",
-    "date": "2020-07-05",
-    "people": [
-      "Rickey Bell",
-      "Samatha Bell",
-      "Sophia Bell"
-    ],
-    "tags": [
-      "Boating",
-      "Fishing Creek",
-      "Hobbies/Boating",
-      "Hobbies|Boating",
-      "People/Rickey Bell",
-      "People/Samatha Bell",
-      "People/Sophia Bell",
-      "People|Rickey Bell",
-      "People|Samatha Bell",
-      "People|Sophia Bell",
-      "Places/South Carolina/Fishing Creek",
-      "Places|South Carolina|Fishing Creek",
-      "Rickey Bell",
-      "Samatha Bell",
-      "Sophia Bell",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "Fishing Creek",
-    "state": "South Carolina",
-    "country": "United States",
     "gps": null
   },
   {
@@ -47431,29 +46708,6 @@
       "People/Stephanie Bell",
       "People|Stephanie Bell",
       "Stephanie Bell"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
-    "path": "videos/2020/IMG_6442.mp4",
-    "media_type": "video",
-    "file": "IMG_6442.mp4",
-    "folder": "2020",
-    "date": "2020-10-07",
-    "people": [
-      "Stephanie Bell"
-    ],
-    "tags": [
-      "Animal/Gabby",
-      "Animal/Lady",
-      "People/Stephanie Bell",
-      "Video"
     ],
     "title": "",
     "description": "",
@@ -47861,85 +47115,6 @@
     }
   },
   {
-    "path": "videos/2020/20201108_135400.mp4",
-    "media_type": "video",
-    "file": "20201108_135400.mp4",
-    "folder": "2020",
-    "date": "2020-11-08",
-    "people": [
-      "Mike Morgan"
-    ],
-    "tags": [
-      "Hobbies/Off-Roading",
-      "People/Mike Morgan",
-      "Places/South Carolina/Chester County/Carolina Adventure World",
-      "Video"
-    ],
-    "title": "Carolina Adventure World",
-    "description": "",
-    "location": "Carolina Adventure World",
-    "city": "Chester County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
-    "path": "videos/2020/20201108_142550.mp4",
-    "media_type": "video",
-    "file": "20201108_142550.mp4",
-    "folder": "2020",
-    "date": "2020-11-08",
-    "people": [
-      "Mike Morgan",
-      "Sabrina Odem"
-    ],
-    "tags": [
-      "Hobbies/Off-Roading",
-      "People/Mike Morgan",
-      "People/Sabrina Odem",
-      "Places/South Carolina/Chester County/Carolina Adventure World",
-      "Video"
-    ],
-    "title": "Carolina Adventure World",
-    "description": "",
-    "location": "Carolina Adventure World",
-    "city": "Chester County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.4774,
-      "lon": -80.9607
-    }
-  },
-  {
-    "path": "videos/2020/20201108_143701.mp4",
-    "media_type": "video",
-    "file": "20201108_143701.mp4",
-    "folder": "2020",
-    "date": "2020-11-08",
-    "people": [
-      "Mike Morgan",
-      "Sabrina Odem"
-    ],
-    "tags": [
-      "Hobbies/Off-Roading",
-      "People/Mike Morgan",
-      "People/Sabrina Odem",
-      "Places/South Carolina/Chester County/Carolina Adventure World",
-      "Video"
-    ],
-    "title": "Carolina Adventure World",
-    "description": "",
-    "location": "Carolina Adventure World",
-    "city": "Chester County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.4771,
-      "lon": -80.9607
-    }
-  },
-  {
     "path": "images/2020/20201126_135724.jpg",
     "media_type": "photo",
     "file": "20201126_135724.jpg",
@@ -48036,36 +47211,6 @@
       "lat": 24.7111408838889,
       "lon": -81.1047248836111
     }
-  },
-  {
-    "path": "videos/2020/MOVIE.mp4",
-    "media_type": "video",
-    "file": "MOVIE.mp4",
-    "folder": "2020",
-    "date": "2020-11-29",
-    "people": [
-      "Rickey Bell",
-      "Stephanie Bell"
-    ],
-    "tags": [
-      "Keys",
-      "People/Rickey Bell",
-      "People/Stephanie Bell",
-      "People|Rickey Bell",
-      "People|Stephanie Bell",
-      "Places/Florida/Keys",
-      "Places|Florida|Keys",
-      "Rickey Bell",
-      "Stephanie Bell",
-      "Video"
-    ],
-    "title": "Florida Keys",
-    "description": "",
-    "location": "",
-    "city": "Keys",
-    "state": "Florida",
-    "country": "United States",
-    "gps": null
   },
   {
     "path": "images/2020/20201225_140804.jpg",
@@ -48223,31 +47368,6 @@
       "lat": 34.6939795980556,
       "lon": -80.8637460994444
     }
-  },
-  {
-    "path": "videos/2021/20210313_160617.mp4",
-    "media_type": "video",
-    "file": "20210313_160617.mp4",
-    "folder": "2021",
-    "date": "2021-03-13",
-    "people": [
-      "Rickey Bell",
-      "Sophia Bell"
-    ],
-    "tags": [
-      "Hobbies/Boating",
-      "People/Rickey Bell",
-      "People/Sophia Bell",
-      "Places/South Carolina/Fishing Creek",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "Fishing Creek",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
   },
   {
     "path": "images/2021/20210404_170354.jpg",
@@ -48434,29 +47554,6 @@
     "state": "",
     "country": "",
     "gps": null
-  },
-  {
-    "path": "videos/2021/20210426_160908.mp4",
-    "media_type": "video",
-    "file": "20210426_160908.mp4",
-    "folder": "2021",
-    "date": "2021-04-26",
-    "people": [],
-    "tags": [
-      "Hobbies/Boating",
-      "Places/South Carolina/Kershaw/Lake Wateree",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "Lake Wateree",
-    "city": "Kershaw",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.3744,
-      "lon": -80.7348
-    }
   },
   {
     "path": "images/2021/20210501_123139.jpg",
@@ -48714,26 +47811,6 @@
       "lat": 34.4914109663889,
       "lon": -80.8979130002778
     }
-  },
-  {
-    "path": "videos/2021/20210906_125908.mp4",
-    "media_type": "video",
-    "file": "20210906_125908.mp4",
-    "folder": "2021",
-    "date": "2021-09-06",
-    "people": [],
-    "tags": [
-      "Hobbies/Boating",
-      "Places/South Carolina/Kershaw/Lake Wateree",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "Lake Wateree",
-    "city": "Kershaw",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
   },
   {
     "path": "images/2021/20210912_150328.jpg",
@@ -50265,31 +49342,6 @@
     }
   },
   {
-    "path": "videos/2022/20221013_171831.mp4",
-    "media_type": "video",
-    "file": "20221013_171831.mp4",
-    "folder": "2022",
-    "date": "2022-10-13",
-    "people": [
-      "Rickey Bell"
-    ],
-    "tags": [
-      "People/Rickey Bell",
-      "Places/South Carolina/Lancaster County",
-      "Video"
-    ],
-    "title": "Warrior Airplane Working Again",
-    "description": "",
-    "location": "",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.7178,
-      "lon": -80.8597
-    }
-  },
-  {
     "path": "images/2022/20221014_205043.jpg",
     "media_type": "photo",
     "file": "20221014_205043.jpg",
@@ -50339,32 +49391,6 @@
     "gps": {
       "lat": 33.8454233836111,
       "lon": -78.8418919833333
-    }
-  },
-  {
-    "path": "videos/2022/20221014_205010.mp4",
-    "media_type": "video",
-    "file": "20221014_205010.mp4",
-    "folder": "2022",
-    "date": "2022-10-14",
-    "people": [
-      "Sophia Bell"
-    ],
-    "tags": [
-      "Hobbies/Camping",
-      "People/Sophia Bell",
-      "Places/South Carolina/Myrtle Beach",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "Myrtle Beach",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 33.8455,
-      "lon": -78.8417
     }
   },
   {
@@ -51187,29 +50213,6 @@
     }
   },
   {
-    "path": "videos/2023/20230623_164533.mp4",
-    "media_type": "video",
-    "file": "20230623_164533.mp4",
-    "folder": "2023",
-    "date": "2023-06-23",
-    "people": [],
-    "tags": [
-      "Animal/Aria",
-      "Places/South Carolina/Lancaster County/900 Confederate Ave",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "900 Confederate Ave",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.693399983333336,
-      "lon": -80.8251
-    }
-  },
-  {
     "path": "images/2023/20230630_204745.jpg",
     "media_type": "photo",
     "file": "20230630_204745.jpg",
@@ -51373,35 +50376,6 @@
     }
   },
   {
-    "path": "videos/2023/20230703_145129000_iOS.mp4",
-    "media_type": "video",
-    "file": "20230703_145129000_iOS.mp4",
-    "folder": "2023",
-    "date": "2023-07-03",
-    "people": [
-      "Rickey Bell"
-    ],
-    "tags": [
-      "Boating",
-      "Crystal River",
-      "Hobbies/Boating",
-      "Hobbies|Boating",
-      "People/Rickey Bell",
-      "People|Rickey Bell",
-      "Places/Florida/Crystal River",
-      "Places|Florida|Crystal River",
-      "Rickey Bell",
-      "Video"
-    ],
-    "title": "Snorkeling for Scallops",
-    "description": "Scalloping is part treasure hunt, part fishing trip, and part underwater adventure. With a mask, snorkel, fins, and a mesh bag, you head into the clear, shallow water searching through the seagrass for bay scallops.\n\nOnce you spot one, you dive down and pick it up by hand—but watch your fingers, because they can snap their shells shut!\n\nIt’s a great way to spend a summer day on the water, and there’s nothing quite like bringing the day’s catch back to the boat and later enjoying fresh scallops that you collected yourself.\n\nSwim. Search. Dive. Dinner.",
-    "location": "",
-    "city": "Crystal River",
-    "state": "Florida",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/2023/20230730_174304.jpg",
     "media_type": "photo",
     "file": "20230730_174304.jpg",
@@ -51435,30 +50409,6 @@
     "gps": {
       "lat": 34.6601310836111,
       "lon": -80.8306857002778
-    }
-  },
-  {
-    "path": "videos/2023/20230729_194137.mp4",
-    "media_type": "video",
-    "file": "20230729_194137.mp4",
-    "folder": "2023",
-    "date": "2023-07-29",
-    "people": [],
-    "tags": [
-      "Animal/Aria",
-      "Animal/Lady",
-      "Places/South Carolina/Lancaster County",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.7124,
-      "lon": -80.8465
     }
   },
   {
@@ -51650,34 +50600,6 @@
     "gps": {
       "lat": 34.7177387833333,
       "lon": -80.8598800827778
-    }
-  },
-  {
-    "path": "videos/2023/20230819_165251.mp4",
-    "media_type": "video",
-    "file": "20230819_165251.mp4",
-    "folder": "2023",
-    "date": "2023-08-19",
-    "people": [
-      "Mike Morgan",
-      "Rickey Bell"
-    ],
-    "tags": [
-      "Hobbies/Aviation",
-      "People/Mike Morgan",
-      "People/Rickey Bell",
-      "Places/South Carolina/Lancaster County",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.7272,
-      "lon": -80.846
     }
   },
   {
@@ -52229,32 +51151,6 @@
     }
   },
   {
-    "path": "videos/2023/20231124_193230.mp4",
-    "media_type": "video",
-    "file": "20231124_193230.mp4",
-    "folder": "2023",
-    "date": "2023-11-24",
-    "people": [
-      "Sophia Bell"
-    ],
-    "tags": [
-      "Hobbies/Camping",
-      "People/Sophia Bell",
-      "Places/South Carolina/Kershaw/Lake Wateree",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "Lake Wateree",
-    "city": "Kershaw",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.4363,
-      "lon": -80.86369998333333
-    }
-  },
-  {
     "path": "images/2023/Screenshot_20231201_140006_Messenger.jpg",
     "media_type": "photo",
     "file": "Screenshot_20231201_140006_Messenger.jpg",
@@ -52279,32 +51175,6 @@
     "state": "",
     "country": "",
     "gps": null
-  },
-  {
-    "path": "videos/2023/20231224_205755.mp4",
-    "media_type": "video",
-    "file": "20231224_205755.mp4",
-    "folder": "2023",
-    "date": "2023-12-24",
-    "people": [
-      "Ivy Bell"
-    ],
-    "tags": [
-      "Animal/Aria",
-      "People/Ivy Bell",
-      "Places/South Carolina/Lancaster County/900 Confederate Ave",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "900 Confederate Ave",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 0.0,
-      "lon": 0.0
-    }
   },
   {
     "path": "images/2023/20231225_135100.jpg",
@@ -52585,27 +51455,6 @@
       "lat": 34.6934170827778,
       "lon": -80.8252089833333
     }
-  },
-  {
-    "path": "videos/2024/20240414_121540000_iOS.mp4",
-    "media_type": "video",
-    "file": "20240414_121540000_iOS.mp4",
-    "folder": "2024",
-    "date": "2024-04-14",
-    "people": [],
-    "tags": [
-      "Aviation",
-      "Hobbies/Aviation",
-      "Hobbies|Aviation",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
   },
   {
     "path": "images/2024/20240423_204429.jpg",
@@ -53235,52 +52084,6 @@
     }
   },
   {
-    "path": "videos/2024/20240506_113710.mp4",
-    "media_type": "video",
-    "file": "20240506_113710.mp4",
-    "folder": "2024",
-    "date": "2024-05-06",
-    "people": [],
-    "tags": [
-      "Hobbies/Aviation",
-      "Places/Bahamas",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "Bahamas",
-    "country": "",
-    "gps": {
-      "lat": 23.7736,
-      "lon": -76.0999
-    }
-  },
-  {
-    "path": "videos/2024/20240506_132353.mp4",
-    "media_type": "video",
-    "file": "20240506_132353.mp4",
-    "folder": "2024",
-    "date": "2024-05-06",
-    "people": [],
-    "tags": [
-      "Hobbies/Aviation",
-      "Places/Bahamas",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "Bahamas",
-    "country": "",
-    "gps": {
-      "lat": 23.9602,
-      "lon": -76.3264
-    }
-  },
-  {
     "path": "images/2024/20240507_095521.jpg",
     "media_type": "photo",
     "file": "20240507_095521.jpg",
@@ -53851,56 +52654,6 @@
     "gps": null
   },
   {
-    "path": "videos/2025/Messenger_creation_B1540B18-1D4D-4A99-A4BA-5EC722EF9888.mp4",
-    "media_type": "video",
-    "file": "Messenger_creation_B1540B18-1D4D-4A99-A4BA-5EC722EF9888.mp4",
-    "folder": "2025",
-    "date": "2025-01-01",
-    "people": [],
-    "tags": [
-      "Chester County",
-      "Hobbies/Shooting",
-      "Hobbies|Shooting",
-      "Locked",
-      "Places/South Carolina/Chester County",
-      "Places|South Carolina|Chester County",
-      "Shooting",
-      "Video"
-    ],
-    "title": "Someone needs practice!",
-    "description": "",
-    "location": "",
-    "city": "Chester County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
-    "path": "videos/2025/Messenger_creation_C0A6067C-40D2-4E27-B5B7-4616618A0821.mp4",
-    "media_type": "video",
-    "file": "Messenger_creation_C0A6067C-40D2-4E27-B5B7-4616618A0821.mp4",
-    "folder": "2025",
-    "date": "2025-01-01",
-    "people": [],
-    "tags": [
-      "Chester County",
-      "Hobbies/Shooting",
-      "Hobbies|Shooting",
-      "Locked",
-      "Places/South Carolina/Chester County",
-      "Places|South Carolina|Chester County",
-      "Shooting",
-      "Video"
-    ],
-    "title": ".22 wouldnt take them down, had to use frt.",
-    "description": "",
-    "location": "",
-    "city": "Chester County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/2025/20250103_150308.jpg",
     "media_type": "photo",
     "file": "20250103_150308.jpg",
@@ -53991,33 +52744,6 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": null
-  },
-  {
-    "path": "videos/2025/20250105_220052.mp4",
-    "media_type": "video",
-    "file": "20250105_220052.mp4",
-    "folder": "2025",
-    "date": "2025-01-05",
-    "people": [
-      "Sophia Bell"
-    ],
-    "tags": [
-      "Hobbies/Camping",
-      "People/Sophia Bell",
-      "Places/South Carolina/Chester County",
-      "Places/South Carolina/Chester County/State Park",
-      "Video"
-    ],
-    "title": "Chester State Park",
-    "description": "",
-    "location": "State Park",
-    "city": "Chester County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.6796,
-      "lon": -81.24299998333333
-    }
   },
   {
     "path": "images/2024/20241223_004120210_iOS.jpg",
@@ -54343,31 +53069,6 @@
     }
   },
   {
-    "path": "videos/2025/20250323_001114.mp4",
-    "media_type": "video",
-    "file": "20250323_001114.mp4",
-    "folder": "2025",
-    "date": "2025-03-23",
-    "people": [
-      "Karen Gaskin"
-    ],
-    "tags": [
-      "People/Karen Gaskin",
-      "Places/South Carolina/Myrtle Beach",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "Myrtle Beach",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 33.5778,
-      "lon": -79.0
-    }
-  },
-  {
     "path": "images/2025/Screenshot_20250324_113607_Messenger-edited.jpg",
     "media_type": "photo",
     "file": "Screenshot_20250324_113607_Messenger-edited.jpg",
@@ -54508,30 +53209,6 @@
       "lat": 34.7196,
       "lon": -80.7711
     }
-  },
-  {
-    "path": "videos/2025/dji_fly_20250420_182626_248_1745191826390_video.mp4",
-    "media_type": "video",
-    "file": "dji_fly_20250420_182626_248_1745191826390_video.mp4",
-    "folder": "2025",
-    "date": "2025-04-20",
-    "people": [],
-    "tags": [
-      "Airport",
-      "Aviation",
-      "Hobbies/Aviation",
-      "Hobbies|Aviation",
-      "Places/South Carolina/Lancaster County/Airport",
-      "Places|South Carolina|Lancaster County|Airport",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "Airport",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
   },
   {
     "path": "images/2025/Screenshot_20250423_124525_Messenger-edited.jpg",
@@ -55065,25 +53742,6 @@
     }
   },
   {
-    "path": "videos/2025/Screen_Recording_20250609_210333_Bixby Vision.mp4",
-    "media_type": "video",
-    "file": "Screen_Recording_20250609_210333_Bixby Vision.mp4",
-    "folder": "2025",
-    "date": "2025-06-09",
-    "people": [],
-    "tags": [
-      "Hobbies/Aviation",
-      "Video"
-    ],
-    "title": "AI way has a way to go before taking over the world!",
-    "description": "Bixby going crazy.",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
     "path": "images/2025/Screenshot_20250616_202443_Messenger-edited.jpg",
     "media_type": "photo",
     "file": "Screenshot_20250616_202443_Messenger-edited.jpg",
@@ -55301,29 +53959,6 @@
     }
   },
   {
-    "path": "audio/2025/Voicemail_from_Dickey Bell_2025_09_11_14_39_06.mp3",
-    "media_type": "audio",
-    "file": "Voicemail_from_Dickey Bell_2025_09_11_14_39_06.mp3",
-    "folder": "2025",
-    "date": "2025-08-10",
-    "people": [
-      "Dickey Bell"
-    ],
-    "tags": [
-      "People/Dickey Bell",
-      "Sound",
-      "_Digikam_Internal_Tags_/Color Label Green",
-      "_Digikam_Internal_Tags_/Pick Label None"
-    ],
-    "title": "",
-    "description": "A saved voicemail from William Richard “Dickey” Bell from September 11, 2025. More than just an everyday phone message, the recording preserves something photographs cannot—Dickey’s voice, personality, and the familiar way he spoke. A special piece of the family archive.",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
     "path": "images/2025/20250816_131704.jpg",
     "media_type": "photo",
     "file": "20250816_131704.jpg",
@@ -55520,30 +54155,6 @@
     }
   },
   {
-    "path": "videos/2025/20250902_154833.mp4",
-    "media_type": "video",
-    "file": "20250902_154833.mp4",
-    "folder": "2025",
-    "date": "2025-09-02",
-    "people": [],
-    "tags": [
-      "Hobbies/Shooting",
-      "Locked",
-      "Places/South Carolina/Lancaster County",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.6933,
-      "lon": -80.82519996666667
-    }
-  },
-  {
     "path": "images/2025/20250914_131919~2.jpg",
     "media_type": "photo",
     "file": "20250914_131919~2.jpg",
@@ -55705,29 +54316,6 @@
     }
   },
   {
-    "path": "videos/2025/20251005_143210.mp4",
-    "media_type": "video",
-    "file": "20251005_143210.mp4",
-    "folder": "2025",
-    "date": "2025-10-05",
-    "people": [],
-    "tags": [
-      "Hobbies/Aviation",
-      "Places/South Carolina/Chester County",
-      "Video"
-    ],
-    "title": "True Instrument Flight Rules",
-    "description": "IFR Flight plan from Nashville back to Lancaster. I think it is a hybrid of the Jools Three Arrivial.",
-    "location": "",
-    "city": "Chester County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.7963,
-      "lon": -81.4303
-    }
-  },
-  {
     "path": "images/2025/20251010_174606.jpg",
     "media_type": "photo",
     "file": "20251010_174606.jpg",
@@ -55806,28 +54394,6 @@
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
-    "path": "videos/2025/ATNX0024.mp4",
-    "media_type": "video",
-    "file": "ATNX0024.mp4",
-    "folder": "2025",
-    "date": "2025-10-30",
-    "people": [],
-    "tags": [
-      "Hobbies/Shooting",
-      "Hobbies|Shooting",
-      "Locked",
-      "Shooting",
-      "Video"
-    ],
-    "title": "Testing out a .350 Legend at 300 yds.",
-    "description": "Heavy Winds!",
     "location": "",
     "city": "",
     "state": "",
@@ -55925,78 +54491,6 @@
     "state": "",
     "country": "",
     "gps": null
-  },
-  {
-    "path": "videos/2025/20251120_085834.mp4",
-    "media_type": "video",
-    "file": "20251120_085834.mp4",
-    "folder": "2025",
-    "date": "2025-11-20",
-    "people": [],
-    "tags": [
-      "Hobbies/Shooting",
-      "Locked",
-      "Places/South Carolina/Lancaster County",
-      "Video"
-    ],
-    "title": "Testing the pump action .22",
-    "description": "Threaded by Flat Creek Firearms.",
-    "location": "",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.6933,
-      "lon": -80.8251
-    }
-  },
-  {
-    "path": "videos/2025/20251125_173121.mp4",
-    "media_type": "video",
-    "file": "20251125_173121.mp4",
-    "folder": "2025",
-    "date": "2025-11-25",
-    "people": [],
-    "tags": [
-      "Hobbies/Shooting",
-      "Locked",
-      "Places/South Carolina/Chester County",
-      "Video"
-    ],
-    "title": "Didnt expect that going through the woods!",
-    "description": "",
-    "location": "",
-    "city": "Chester County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.6401,
-      "lon": -80.9125
-    }
-  },
-  {
-    "path": "videos/2025/20251126_135615.mp4",
-    "media_type": "video",
-    "file": "20251126_135615.mp4",
-    "folder": "2025",
-    "date": "2025-11-26",
-    "people": [],
-    "tags": [
-      "Hobbies/Shooting",
-      "Locked",
-      "Places/South Carolina/Lancaster County",
-      "Video"
-    ],
-    "title": "AR-15/22 FRT is fast",
-    "description": "Tuned by Flat Creek Firearms.",
-    "location": "",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.6933,
-      "lon": -80.82519996666667
-    }
   },
   {
     "path": "images/2025/20251128_092341.jpg",
@@ -56230,56 +54724,6 @@
     "gps": null
   },
   {
-    "path": "videos/2025/1765113598_TNC_20251207_081954.mp4",
-    "media_type": "video",
-    "file": "1765113598_TNC_20251207_081954.mp4",
-    "folder": "2025",
-    "date": "2025-12-07",
-    "people": [],
-    "tags": [
-      "Chester County",
-      "Hobbies/Shooting",
-      "Hobbies|Shooting",
-      "Locked",
-      "Places/South Carolina/Chester County",
-      "Places|South Carolina|Chester County",
-      "Shooting",
-      "Video"
-    ],
-    "title": "Just bird/squirrel watching waiting on deer.",
-    "description": "",
-    "location": "",
-    "city": "Chester County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
-    "path": "videos/2025/1765113694_TNC_20251207_082105.mp4",
-    "media_type": "video",
-    "file": "1765113694_TNC_20251207_082105.mp4",
-    "folder": "2025",
-    "date": "2025-12-07",
-    "people": [],
-    "tags": [
-      "Chester County",
-      "Hobbies/Shooting",
-      "Hobbies|Shooting",
-      "Locked",
-      "Places/South Carolina/Chester County",
-      "Places|South Carolina|Chester County",
-      "Shooting",
-      "Video"
-    ],
-    "title": "Just bird/squirrel watching waiting on deer.",
-    "description": "",
-    "location": "",
-    "city": "Chester County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/2025/20251211_162124.jpg",
     "media_type": "photo",
     "file": "20251211_162124.jpg",
@@ -56361,28 +54805,6 @@
     "gps": null
   },
   {
-    "path": "videos/2025/Coyote 2025.mp4",
-    "media_type": "video",
-    "file": "Coyote 2025.mp4",
-    "folder": "2025",
-    "date": "2025-12-11",
-    "people": [],
-    "tags": [
-      "Hobbies/Shooting",
-      "Hobbies|Shooting",
-      "Locked",
-      "Shooting",
-      "Video"
-    ],
-    "title": "I wasnt sure it was not a dog until too late.",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
     "path": "images/2025/20251212_203810-edited.jpg",
     "media_type": "photo",
     "file": "20251212_203810-edited.jpg",
@@ -56423,31 +54845,6 @@
     }
   },
   {
-    "path": "videos/2025/1765586346_TNC_20251212_193818.mp4",
-    "media_type": "video",
-    "file": "1765586346_TNC_20251212_193818.mp4",
-    "folder": "2025",
-    "date": "2025-12-12",
-    "people": [],
-    "tags": [
-      "Crystal River",
-      "Hobbies/Shooting",
-      "Hobbies|Shooting",
-      "Locked",
-      "Places/Florida/Crystal River",
-      "Places|Florida|Crystal River",
-      "Shooting",
-      "Video"
-    ],
-    "title": "Always have deer when hog hunting.",
-    "description": "",
-    "location": "",
-    "city": "Crystal River",
-    "state": "Florida",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/2025/Screenshot_20251213_213050_Messenger-edited.jpg",
     "media_type": "photo",
     "file": "Screenshot_20251213_213050_Messenger-edited.jpg",
@@ -56471,30 +54868,6 @@
     "city": "",
     "state": "",
     "country": "",
-    "gps": null
-  },
-  {
-    "path": "videos/2025/1765668604_TNC_20251213.mp4",
-    "media_type": "video",
-    "file": "1765668604_TNC_20251213.mp4",
-    "folder": "2025",
-    "date": "2025-12-13",
-    "people": [],
-    "tags": [
-      "Crystal River",
-      "Hobbies/Shooting",
-      "Hobbies|Shooting",
-      "Places/Florida/Crystal River",
-      "Places|Florida|Crystal River",
-      "Shooting",
-      "Video"
-    ],
-    "title": "Deer are always in the way when looking for hogs!",
-    "description": "",
-    "location": "",
-    "city": "Crystal River",
-    "state": "Florida",
-    "country": "United States",
     "gps": null
   },
   {
@@ -56862,28 +55235,6 @@
     }
   },
   {
-    "path": "videos/2025/1766702278_TNC_20251225_173737.mp4",
-    "media_type": "video",
-    "file": "1766702278_TNC_20251225_173737.mp4",
-    "folder": "2025",
-    "date": "2025-12-25",
-    "people": [],
-    "tags": [
-      "Hobbies/Shooting",
-      "Hobbies|Shooting",
-      "Locked",
-      "Shooting",
-      "Video"
-    ],
-    "title": "Just bird/squirrel watching waiting on deer.",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
     "path": "images/2025/20251228_171824.jpg",
     "media_type": "photo",
     "file": "20251228_171824.jpg",
@@ -56962,31 +55313,6 @@
     "state": "",
     "country": "",
     "gps": null
-  },
-  {
-    "path": "videos/2026/20260131_162358.mp4",
-    "media_type": "video",
-    "file": "20260131_162358.mp4",
-    "folder": "2026",
-    "date": "2026-01-31",
-    "people": [
-      "Rickey Bell"
-    ],
-    "tags": [
-      "People/Rickey Bell",
-      "Places/South Carolina/Lancaster County/900 Confederate Ave",
-      "Video"
-    ],
-    "title": "Volcanic Ash",
-    "description": "",
-    "location": "900 Confederate Ave",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.693399983333336,
-      "lon": -80.82519998333333
-    }
   },
   {
     "path": "images/2026/20260207_191338.jpg",
@@ -57196,32 +55522,6 @@
     "state": "",
     "country": "",
     "gps": null
-  },
-  {
-    "path": "videos/2026/20260221_171309.mp4",
-    "media_type": "video",
-    "file": "20260221_171309.mp4",
-    "folder": "2026",
-    "date": "2026-02-21",
-    "people": [
-      "Sophia Bell"
-    ],
-    "tags": [
-      "Hobbies/Camping",
-      "People/Sophia Bell",
-      "Places/South Carolina/Chester County",
-      "Video"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "Chester County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.6777,
-      "lon": -81.2353
-    }
   },
   {
     "path": "images/2026/Screenshot_20260305_165333_Gallery-edited.jpg",

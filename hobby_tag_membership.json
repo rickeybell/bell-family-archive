@@ -1338,139 +1338,6 @@
     ],
     "images/2026/Screenshot_20260325_185337_Messenger.jpg": [
       "Aviation"
-    ],
-    "videos/2002/104-0431_MVI.mp4": [
-      "Boating",
-      "Scuba"
-    ],
-    "videos/2002/115-1595_MVI.mp4": [
-      "Scuba"
-    ],
-    "videos/2014/2014-11-29 17.22.03.mp4": [
-      "Boating"
-    ],
-    "videos/2016/20160805_211243000_iOS.mp4": [
-      "Boating"
-    ],
-    "videos/2017/20170807_225752000_iOS.mp4": [
-      "Shooting"
-    ],
-    "videos/2017/20170901_155333000_iOS.mp4": [
-      "Boating"
-    ],
-    "videos/2018/20180318_163348.mp4": [
-      "Boating"
-    ],
-    "videos/2018/20180319_112554.mp4": [
-      "Boating"
-    ],
-    "videos/2018/IMG_1851.mp4": [
-      "Boating"
-    ],
-    "videos/2018/IMG_2143.mp4": [
-      "Boating"
-    ],
-    "videos/2019/20190623_210308.mp4": [
-      "Shooting"
-    ],
-    "videos/2020/20200320_192039.mp4": [
-      "Shooting"
-    ],
-    "videos/2020/20201108_135400.mp4": [
-      "Off-Roading"
-    ],
-    "videos/2020/20201108_142550.mp4": [
-      "Off-Roading"
-    ],
-    "videos/2020/20201108_143701.mp4": [
-      "Off-Roading"
-    ],
-    "videos/2020/IMG_5939.mp4": [
-      "Boating"
-    ],
-    "videos/2021/20210313_160617.mp4": [
-      "Boating"
-    ],
-    "videos/2021/20210426_160908.mp4": [
-      "Boating"
-    ],
-    "videos/2021/20210906_125908.mp4": [
-      "Boating"
-    ],
-    "videos/2022/20221014_205010.mp4": [
-      "Camping"
-    ],
-    "videos/2023/20230703_145129000_iOS.mp4": [
-      "Boating"
-    ],
-    "videos/2023/20230819_165251.mp4": [
-      "Aviation"
-    ],
-    "videos/2023/20231124_193230.mp4": [
-      "Camping"
-    ],
-    "videos/2024/20240414_121540000_iOS.mp4": [
-      "Aviation"
-    ],
-    "videos/2024/20240506_113710.mp4": [
-      "Aviation"
-    ],
-    "videos/2024/20240506_132353.mp4": [
-      "Aviation"
-    ],
-    "videos/2025/1765113598_TNC_20251207_081954.mp4": [
-      "Shooting"
-    ],
-    "videos/2025/1765113694_TNC_20251207_082105.mp4": [
-      "Shooting"
-    ],
-    "videos/2025/1765586346_TNC_20251212_193818.mp4": [
-      "Shooting"
-    ],
-    "videos/2025/1765668604_TNC_20251213.mp4": [
-      "Shooting"
-    ],
-    "videos/2025/1766702278_TNC_20251225_173737.mp4": [
-      "Shooting"
-    ],
-    "videos/2025/20250105_220052.mp4": [
-      "Camping"
-    ],
-    "videos/2025/20250902_154833.mp4": [
-      "Shooting"
-    ],
-    "videos/2025/20251005_143210.mp4": [
-      "Aviation"
-    ],
-    "videos/2025/20251120_085834.mp4": [
-      "Shooting"
-    ],
-    "videos/2025/20251125_173121.mp4": [
-      "Shooting"
-    ],
-    "videos/2025/20251126_135615.mp4": [
-      "Shooting"
-    ],
-    "videos/2025/ATNX0024.mp4": [
-      "Shooting"
-    ],
-    "videos/2025/Coyote 2025.mp4": [
-      "Shooting"
-    ],
-    "videos/2025/Messenger_creation_B1540B18-1D4D-4A99-A4BA-5EC722EF9888.mp4": [
-      "Shooting"
-    ],
-    "videos/2025/Messenger_creation_C0A6067C-40D2-4E27-B5B7-4616618A0821.mp4": [
-      "Shooting"
-    ],
-    "videos/2025/Screen_Recording_20250609_210333_Bixby Vision.mp4": [
-      "Aviation"
-    ],
-    "videos/2025/dji_fly_20250420_182626_248_1745191826390_video.mp4": [
-      "Aviation"
-    ],
-    "videos/2026/20260221_171309.mp4": [
-      "Camping"
     ]
   },
   "taggedCounts": {
@@ -1482,11 +1349,11 @@
     "Camping": 381
   },
   "publicCounts": {
-    "Aviation": 131,
-    "Scuba": 140,
-    "Shooting": 32,
-    "Boating": 110,
-    "Off-Roading": 24,
-    "Camping": 60
+    "Aviation": 124,
+    "Scuba": 138,
+    "Shooting": 16,
+    "Boating": 97,
+    "Off-Roading": 21,
+    "Camping": 56
   }
 }
