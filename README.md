@@ -40,4 +40,14 @@ Force every selected photo derivative to be regenerated only when export setting
 .\Update-BellWebsite.ps1 -FullAudit -ForcePhotoRebuild
 ```
 
+Publish already-prepared website changes with:
+
+```powershell
+.\Publish-BellWebsite.ps1 -CommitMessage "Describe the website update"
+```
+
+Both publishing paths update and verify digiKam's green color labels for every
+Website-tagged item before committing or pushing. If the digiKam update fails,
+the website publish stops.
+
 Local derivative and video-probe caches are ignored by Git. Deleting either cache is safe; the next run rebuilds it. The scripts derive the repository location from their own files, so the checkout can live outside OneDrive without path changes.

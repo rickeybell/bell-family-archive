@@ -25,6 +25,7 @@ $BuildHobbyTags = Join-Path $RepoRoot "tools\build_hobby_tag_membership.py"
 $BuildGallery = Join-Path $RepoRoot "tools\build_dynamic_gallery.py"
 $AddAudioPlayers = Join-Path $RepoRoot "tools\add_audio_players.py"
 $UploadR2Media = Join-Path $RepoRoot "tools\upload_r2_media.mjs"
+$PublishHelper = Join-Path $RepoRoot "Publish-BellWebsite.ps1"
 $ReportRoot = Join-Path ([Environment]::GetFolderPath("MyDocuments")) "BellWebsite-SizeReports"
 
 function Invoke-Checked {
@@ -176,12 +177,13 @@ if (!(Test-Path -LiteralPath $BuildHobbyTags)) { throw "Hobby tag builder not fo
 if (!(Test-Path -LiteralPath $BuildGallery)) { throw "Gallery builder not found: $BuildGallery" }
 if (!(Test-Path -LiteralPath $AddAudioPlayers)) { throw "Audio gallery post-processor not found: $AddAudioPlayers" }
 if (!(Test-Path -LiteralPath $UploadR2Media)) { throw "Cloudflare media uploader not found: $UploadR2Media" }
+if (!(Test-Path -LiteralPath $PublishHelper)) { throw "Website publishing helper not found: $PublishHelper" }
 
 $PythonRuntime = Get-PythonCommand
 $NodeRuntime = Get-NodeCommand
 $env:BELL_PYTHON = $PythonRuntime.File
 
-Invoke-Checked git.exe -C $RepoRoot rev-parse --is-inside-work-tree | Out-Null
+Invoke-Checked -FilePath git.exe -Arguments @('-C',$RepoRoot,'rev-parse','--is-inside-work-tree') | Out-Null
 if (!(Test-RepoClean)) {
     Write-Host "Current tracked repository changes:"
     git -C $RepoRoot status --short --untracked-files=no
@@ -194,8 +196,8 @@ $before = @(
 
 if (!$SkipPull) {
     Write-Host "[1/9] Updating local main branch..."
-    Invoke-Checked git.exe -C $RepoRoot checkout main
-    Invoke-Checked git.exe -C $RepoRoot pull --ff-only origin main
+    Invoke-Checked -FilePath git.exe -Arguments @('-C',$RepoRoot,'checkout','main')
+    Invoke-Checked -FilePath git.exe -Arguments @('-C',$RepoRoot,'pull','--ff-only','origin','main')
 } else { Write-Host "[1/9] Git pull skipped." }
 
 Write-Host "[2/9] Refreshing DigiKam Website-tag photo manifest and generating photo derivatives..."
@@ -276,14 +278,5 @@ if (!$Publish) {
 
 Write-Host "[10/10] Committing and pushing approved website changes..."
 if ([string]::IsNullOrWhiteSpace($CommitMessage)) { $CommitMessage = "Update website photos, videos, audio, metadata, and galleries" }
-
-git -C $RepoRoot add -A -- .
-if ($LASTEXITCODE -ne 0) { throw "Failed to stage all repository changes" }
-$staged = git -C $RepoRoot diff --cached --name-only
-if ([string]::IsNullOrWhiteSpace(($staged -join "`n"))) { Write-Host "Nothing staged; no commit needed."; exit 0 }
-Write-Host ""; Write-Host "Files to commit:"; $staged | ForEach-Object { Write-Host "  $_" }
-Invoke-Checked git.exe -C $RepoRoot commit -m $CommitMessage
-Invoke-Checked git.exe -C $RepoRoot push origin main
-Write-Host ""; Write-Host "Published successfully."
-git -C $RepoRoot log -1 --oneline
-Write-Host "https://bellfamilyarchive.us/"
+$publishArgs = @('-NoProfile','-ExecutionPolicy','Bypass','-File',$PublishHelper,'-CommitMessage',$CommitMessage)
+Invoke-Checked powershell.exe @publishArgs
