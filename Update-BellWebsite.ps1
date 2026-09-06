@@ -246,12 +246,12 @@ $py = $PythonRuntime
 Write-Host "[6/9] Rebuilding photo_metadata.json from DigiKam/master photos, videos, and audio..."
 $metadataArgs = @($BuildMetadata)
 if ($FullAudit) { $metadataArgs += '--full-audit' }
-Invoke-Checked $py.File @($py.Prefix + $metadataArgs)
+Invoke-Checked -FilePath $py.File -Arguments ($py.Prefix + $metadataArgs)
 Write-Host "      Mapping DigiKam Hobbies tags to public archive media..."
-Invoke-Checked $py.File @($py.Prefix + @($BuildHobbyTags))
+Invoke-Checked -FilePath $py.File -Arguments ($py.Prefix + @($BuildHobbyTags))
 Write-Host "[7/9] Rebuilding chronological and person galleries..."
-Invoke-Checked $py.File @($py.Prefix + @($BuildGallery))
-Invoke-Checked $py.File @($py.Prefix + @($AddAudioPlayers))
+Invoke-Checked -FilePath $py.File -Arguments ($py.Prefix + @($BuildGallery))
+Invoke-Checked -FilePath $py.File -Arguments ($py.Prefix + @($AddAudioPlayers))
 
 Write-Host "[8/10] Uploading and verifying Cloudflare R2 media..."
 Invoke-Checked $NodeRuntime $UploadR2Media

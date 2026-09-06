@@ -177,28 +177,6 @@
     "gps": null
   },
   {
-    "path": "images/1944/Document_20260903_0001.jpg",
-    "media_type": "photo",
-    "file": "Document_20260903_0001.jpg",
-    "folder": "1944",
-    "date": "1944",
-    "people": [
-      "Buster Bell"
-    ],
-    "tags": [
-      "Buster Bell",
-      "People/Buster Bell",
-      "People|Buster Bell"
-    ],
-    "title": "Buster in the Pacific War",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
     "path": "images/1944/1944_0001.jpg",
     "media_type": "photo",
     "file": "1944_0001.jpg",
@@ -399,6 +377,28 @@
     "city": "Charleston",
     "state": "South Carolina",
     "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1944/Document_20260903_0001.jpg",
+    "media_type": "photo",
+    "file": "Document_20260903_0001.jpg",
+    "folder": "1944",
+    "date": "1945-01-01",
+    "people": [
+      "Buster Bell"
+    ],
+    "tags": [
+      "Buster Bell",
+      "People/Buster Bell",
+      "People|Buster Bell"
+    ],
+    "title": "Buster in the Pacific War",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
     "gps": null
   },
   {
@@ -19759,6 +19759,35 @@
     "gps": null
   },
   {
+    "path": "images/1993/Untitled-16 copy.jpg",
+    "media_type": "photo",
+    "file": "Untitled-16 copy.jpg",
+    "folder": "1993",
+    "date": "1993-10-01",
+    "people": [
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
+      "People/Rickey Bell",
+      "People/Stephanie Bell",
+      "People|Rickey Bell",
+      "People|Stephanie Bell",
+      "Rickey Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/1993/93 H & Alma Thanksgiving.jpg",
     "media_type": "photo",
     "file": "93 H & Alma Thanksgiving.jpg",
@@ -19798,6 +19827,9 @@
     ],
     "tags": [
       "Ft Jackson",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
       "People/Rickey Bell",
       "People|Rickey Bell",
       "Places/South Carolina",
@@ -21694,6 +21726,9 @@
     ],
     "tags": [
       "Dickey Bell",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
       "People/Dickey Bell",
       "People/Rickey Bell",
       "People|Dickey Bell",
@@ -23423,6 +23458,9 @@
       "Rickey Bell"
     ],
     "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
       "People/Rickey Bell",
       "People|Rickey Bell",
       "Rickey Bell"
@@ -23445,12 +23483,15 @@
       "Rickey Bell"
     ],
     "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
       "People/Rickey Bell",
       "People|Rickey Bell",
       "Rickey Bell"
     ],
-    "title": "Look at that baby sporting the M60",
-    "description": "",
+    "title": "At Training at Ft Jackson. Date is an Estimate.",
+    "description": "Look at that baby with the Pig/M60",
     "location": "",
     "city": "",
     "state": "",
@@ -28700,13 +28741,17 @@
     "date": "2000-01-01",
     "people": [
       "Carla Pittman",
+      "Karen Gaskin",
       "Teri Wallace"
     ],
     "tags": [
       "Carla Pittman",
+      "Karen Gaskin",
       "People/Carla Pittman",
+      "People/Karen Gaskin",
       "People/Teri Wallace",
       "People|Carla Pittman",
+      "People|Karen Gaskin",
       "People|Teri Wallace",
       "Teri Wallace"
     ],
@@ -30241,6 +30286,84 @@
     "gps": null
   },
   {
+    "path": "images/2001/Flight Service 008.jpg",
+    "media_type": "photo",
+    "file": "Flight Service 008.jpg",
+    "folder": "2001",
+    "date": "2001-11-27",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2001/STAR Team Training - October 2004 005.jpg",
+    "media_type": "photo",
+    "file": "STAR Team Training - October 2004 005.jpg",
+    "folder": "2001",
+    "date": "2001-11-27",
+    "people": [
+      "Chuck Payne",
+      "Greg Brasington",
+      "Greg Robinson"
+    ],
+    "tags": [
+      "Chuck Payne",
+      "Greg Brasington",
+      "Greg Robinson",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
+      "People/Chuck Payne",
+      "People/Greg Brasington",
+      "People/Greg Robinson",
+      "People|Chuck Payne",
+      "People|Greg Brasington",
+      "People|Greg Robinson"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2001/TMP1.JPG",
+    "media_type": "photo",
+    "file": "TMP1.JPG",
+    "folder": "2001",
+    "date": "2001-11-27",
+    "people": [
+      "David Camp"
+    ],
+    "tags": [
+      "David Camp",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
+      "People/David Camp",
+      "People|David Camp"
+    ],
+    "title": "",
+    "description": "UMAX Data System Inc.",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2001/Dash_L.JPG",
     "media_type": "photo",
     "file": "Dash_L.JPG",
@@ -31164,9 +31287,12 @@
     ],
     "tags": [
       "Fishing Creek",
+      "Hobbies/Military_Rescue_Police_EMS",
       "Hobbies/Scuba",
+      "Hobbies|Military_Rescue_Police_EMS",
       "Hobbies|Scuba",
       "Jason Hoke",
+      "Military_Rescue_Police_EMS",
       "People/Jason Hoke",
       "People|Jason Hoke",
       "Places/South Carolina/Fishing Creek",
@@ -31192,9 +31318,12 @@
     ],
     "tags": [
       "Fishing Creek",
+      "Hobbies/Military_Rescue_Police_EMS",
       "Hobbies/Scuba",
+      "Hobbies|Military_Rescue_Police_EMS",
       "Hobbies|Scuba",
       "Jason Hoke",
+      "Military_Rescue_Police_EMS",
       "People/Jason Hoke",
       "People|Jason Hoke",
       "Places/South Carolina/Fishing Creek",
@@ -31283,9 +31412,12 @@
     ],
     "tags": [
       "Fishing Creek",
+      "Hobbies/Military_Rescue_Police_EMS",
       "Hobbies/Scuba",
+      "Hobbies|Military_Rescue_Police_EMS",
       "Hobbies|Scuba",
       "Jason Hoke",
+      "Military_Rescue_Police_EMS",
       "People/Jason Hoke",
       "People|Jason Hoke",
       "Places/South Carolina/Fishing Creek",
@@ -31313,9 +31445,12 @@
     "tags": [
       "Ann Hoke",
       "Fishing Creek",
+      "Hobbies/Military_Rescue_Police_EMS",
       "Hobbies/Scuba",
+      "Hobbies|Military_Rescue_Police_EMS",
       "Hobbies|Scuba",
       "Jason Hoke",
+      "Military_Rescue_Police_EMS",
       "People/Ann Hoke",
       "People/Jason Hoke",
       "People|Ann Hoke",
@@ -31343,9 +31478,12 @@
     ],
     "tags": [
       "Fishing Creek",
+      "Hobbies/Military_Rescue_Police_EMS",
       "Hobbies/Scuba",
+      "Hobbies|Military_Rescue_Police_EMS",
       "Hobbies|Scuba",
       "Jason Hoke",
+      "Military_Rescue_Police_EMS",
       "People/Jason Hoke",
       "People|Jason Hoke",
       "Places/South Carolina/Fishing Creek",
@@ -31371,9 +31509,12 @@
     ],
     "tags": [
       "Fishing Creek",
+      "Hobbies/Military_Rescue_Police_EMS",
       "Hobbies/Scuba",
+      "Hobbies|Military_Rescue_Police_EMS",
       "Hobbies|Scuba",
       "Jason Hoke",
+      "Military_Rescue_Police_EMS",
       "People/Jason Hoke",
       "People|Jason Hoke",
       "Places/South Carolina/Fishing Creek",
@@ -31399,9 +31540,12 @@
     ],
     "tags": [
       "Fishing Creek",
+      "Hobbies/Military_Rescue_Police_EMS",
       "Hobbies/Scuba",
+      "Hobbies|Military_Rescue_Police_EMS",
       "Hobbies|Scuba",
       "Jason Hoke",
+      "Military_Rescue_Police_EMS",
       "People/Jason Hoke",
       "People|Jason Hoke",
       "Places/South Carolina/Fishing Creek",
@@ -31427,9 +31571,12 @@
     ],
     "tags": [
       "Fishing Creek",
+      "Hobbies/Military_Rescue_Police_EMS",
       "Hobbies/Scuba",
+      "Hobbies|Military_Rescue_Police_EMS",
       "Hobbies|Scuba",
       "Jason Hoke",
+      "Military_Rescue_Police_EMS",
       "People/Jason Hoke",
       "People|Jason Hoke",
       "Places/South Carolina/Fishing Creek",
@@ -31455,9 +31602,12 @@
     ],
     "tags": [
       "Fishing Creek",
+      "Hobbies/Military_Rescue_Police_EMS",
       "Hobbies/Scuba",
+      "Hobbies|Military_Rescue_Police_EMS",
       "Hobbies|Scuba",
       "Jason Hoke",
+      "Military_Rescue_Police_EMS",
       "People/Jason Hoke",
       "People|Jason Hoke",
       "Places/South Carolina/Fishing Creek",
@@ -37940,6 +38090,35 @@
     "gps": null
   },
   {
+    "path": "images/2004/2004_8_23__Picture 008.jpg",
+    "media_type": "photo",
+    "file": "2004_8_23__Picture 008.jpg",
+    "folder": "2004",
+    "date": "2004-08-07",
+    "people": [
+      "Clayton Rouse",
+      "Mickey Morgan"
+    ],
+    "tags": [
+      "Clayton Rouse",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Mickey Morgan",
+      "Military_Rescue_Police_EMS",
+      "People/Clayton Rouse",
+      "People/Mickey Morgan",
+      "People|Clayton Rouse",
+      "People|Mickey Morgan"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2004/2004_8_23__Picture 030.jpg",
     "media_type": "photo",
     "file": "2004_8_23__Picture 030.jpg",
@@ -37993,9 +38172,12 @@
       "Jason Hoke"
     ],
     "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
       "Hobbies/Scuba",
+      "Hobbies|Military_Rescue_Police_EMS",
       "Hobbies|Scuba",
       "Jason Hoke",
+      "Military_Rescue_Police_EMS",
       "People/Jason Hoke",
       "People|Jason Hoke",
       "Places/South Carolina/York County/Rock Hill",
@@ -38025,9 +38207,12 @@
     "tags": [
       "Ann Hoke",
       "Carl Whitcomb",
+      "Hobbies/Military_Rescue_Police_EMS",
       "Hobbies/Scuba",
+      "Hobbies|Military_Rescue_Police_EMS",
       "Hobbies|Scuba",
       "Jason Hoke",
+      "Military_Rescue_Police_EMS",
       "People/Ann Hoke",
       "People/Carl Whitcomb",
       "People/Jason Hoke",
@@ -38068,6 +38253,64 @@
       "People|Jarred Bell",
       "People|Samatha Bell",
       "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/Rescue Training 021.jpg",
+    "media_type": "photo",
+    "file": "Rescue Training 021.jpg",
+    "folder": "2004",
+    "date": "2004-10-09",
+    "people": [
+      "Carl Whitcomb",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Carl Whitcomb",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
+      "People/Carl Whitcomb",
+      "People/Rickey Bell",
+      "People|Carl Whitcomb",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/Rescue Training 076.jpg",
+    "media_type": "photo",
+    "file": "Rescue Training 076.jpg",
+    "folder": "2004",
+    "date": "2004-10-10",
+    "people": [
+      "Carl Whitcomb",
+      "Mike Cole"
+    ],
+    "tags": [
+      "Carl Whitcomb",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Mike Cole",
+      "Military_Rescue_Police_EMS",
+      "People/Carl Whitcomb",
+      "People/Mike Cole",
+      "People|Carl Whitcomb",
+      "People|Mike Cole"
     ],
     "title": "",
     "description": "",
@@ -38121,7 +38364,10 @@
     ],
     "tags": [
       "Ann Hoke",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
       "Jason Hoke",
+      "Military_Rescue_Police_EMS",
       "People/Ann Hoke",
       "People/Jason Hoke",
       "People/Stephen Rouse",
@@ -38400,6 +38646,31 @@
       "Everate Faulkenberry",
       "People/Everate Faulkenberry",
       "People|Everate Faulkenberry"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/2004_11_13__1 108.jpg",
+    "media_type": "photo",
+    "file": "2004_11_13__1 108.jpg",
+    "folder": "2004",
+    "date": "2004-11-14",
+    "people": [
+      "Clayton Rouse"
+    ],
+    "tags": [
+      "Clayton Rouse",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
+      "People/Clayton Rouse",
+      "People|Clayton Rouse"
     ],
     "title": "",
     "description": "",
@@ -38832,6 +39103,76 @@
     "city": "Crystal River",
     "state": "Florida",
     "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2004/2004_12_6_Large_Truck__3 035.jpg",
+    "media_type": "photo",
+    "file": "2004_12_6_Large_Truck__3 035.jpg",
+    "folder": "2004",
+    "date": "2004-12-05",
+    "people": [
+      "James Moser"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "James Moser",
+      "Military_Rescue_Police_EMS",
+      "People/James Moser",
+      "People|James Moser"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/2004_12_6_Large_Truck__3 057.jpg",
+    "media_type": "photo",
+    "file": "2004_12_6_Large_Truck__3 057.jpg",
+    "folder": "2004",
+    "date": "2004-12-05",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/3 087.jpg",
+    "media_type": "photo",
+    "file": "3 087.jpg",
+    "folder": "2004",
+    "date": "2004-12-05",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
     "gps": null
   },
   {
@@ -39333,6 +39674,31 @@
     "gps": null
   },
   {
+    "path": "images/2005/1 074_face_blurred.jpg",
+    "media_type": "photo",
+    "file": "1 074_face_blurred.jpg",
+    "folder": "2005",
+    "date": "2005-03-31",
+    "people": [
+      "Tim Rouse"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
+      "People/Tim Rouse",
+      "People|Tim Rouse",
+      "Tim Rouse"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2005/2005_4_22_MsRelay__1 004.jpg",
     "media_type": "photo",
     "file": "2005_4_22_MsRelay__1 004.jpg",
@@ -39342,9 +39708,37 @@
       "Mickey Morgan"
     ],
     "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
       "Mickey Morgan",
+      "Military_Rescue_Police_EMS",
       "People/Mickey Morgan",
       "People|Mickey Morgan"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2005/2005_5_7_Riverside_Wreck__1 003_plate_blurred.jpg",
+    "media_type": "photo",
+    "file": "2005_5_7_Riverside_Wreck__1 003_plate_blurred.jpg",
+    "folder": "2005",
+    "date": "2005-05-06",
+    "people": [
+      "Mike Cole"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Mike Cole",
+      "Military_Rescue_Police_EMS",
+      "People/Mike Cole",
+      "People|Mike Cole"
     ],
     "title": "",
     "description": "",
@@ -39622,6 +40016,31 @@
     "gps": null
   },
   {
+    "path": "images/2005/2005_7_14_Camp911__1 004.jpg",
+    "media_type": "photo",
+    "file": "2005_7_14_Camp911__1 004.jpg",
+    "folder": "2005",
+    "date": "2005-07-14",
+    "people": [
+      "Carl Whitcomb"
+    ],
+    "tags": [
+      "Carl Whitcomb",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
+      "People/Carl Whitcomb",
+      "People|Carl Whitcomb"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2005/2005_8_15_Grace_Wreck__1 001.jpg",
     "media_type": "photo",
     "file": "2005_8_15_Grace_Wreck__1 001.jpg",
@@ -39633,7 +40052,10 @@
     ],
     "tags": [
       "Debbie Phillips",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
       "Irvin Phillips",
+      "Military_Rescue_Police_EMS",
       "People/Debbie Phillips",
       "People/Irvin Phillips",
       "People|Debbie Phillips",
@@ -39658,11 +40080,14 @@
     ],
     "tags": [
       "Crystal River",
+      "Hobbies/Scuba",
+      "Hobbies|Scuba",
       "People/Samatha Bell",
       "People|Samatha Bell",
       "Places/Florida/Crystal River",
       "Places|Florida|Crystal River",
-      "Samatha Bell"
+      "Samatha Bell",
+      "Scuba"
     ],
     "title": "",
     "description": "",
@@ -39685,6 +40110,31 @@
       "Mickey Morgan",
       "People/Mickey Morgan",
       "People|Mickey Morgan"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2005/12-04-05_1141.jpg",
+    "media_type": "photo",
+    "file": "12-04-05_1141.jpg",
+    "folder": "2005",
+    "date": "2005-12-04",
+    "people": [
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
+      "People/Stephanie Bell",
+      "People|Stephanie Bell",
+      "Stephanie Bell"
     ],
     "title": "",
     "description": "",
@@ -39733,6 +40183,31 @@
       "Karen Gaskin",
       "People/Karen Gaskin",
       "People|Karen Gaskin"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2005/12-22-05_0953.jpg",
+    "media_type": "photo",
+    "file": "12-22-05_0953.jpg",
+    "folder": "2005",
+    "date": "2005-12-22",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Rickey Bell"
     ],
     "title": "",
     "description": "",
@@ -39809,6 +40284,71 @@
     "gps": null
   },
   {
+    "path": "images/2006/01-13-06_0805.jpg",
+    "media_type": "photo",
+    "file": "01-13-06_0805.jpg",
+    "folder": "2006",
+    "date": "2006-01-13",
+    "people": [
+      "Frankie Matthews"
+    ],
+    "tags": [
+      "Frankie Matthews",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
+      "People/Frankie Matthews",
+      "People|Frankie Matthews"
+    ],
+    "title": "RIP Frankie!!",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2006/03-19-06_1205.jpg",
+    "media_type": "photo",
+    "file": "03-19-06_1205.jpg",
+    "folder": "2006",
+    "date": "2006-03-19",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2006/04-07-06_1024.jpg",
+    "media_type": "photo",
+    "file": "04-07-06_1024.jpg",
+    "folder": "2006",
+    "date": "2006-04-07",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2006/04-16-06_1419.jpg",
     "media_type": "photo",
     "file": "04-16-06_1419.jpg",
@@ -39840,7 +40380,10 @@
       "Jason Hoke"
     ],
     "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
       "Jason Hoke",
+      "Military_Rescue_Police_EMS",
       "People/Jason Hoke",
       "People|Jason Hoke"
     ],
@@ -40024,6 +40567,51 @@
     "gps": null
   },
   {
+    "path": "images/2006/07-21-06_1327.jpg",
+    "media_type": "photo",
+    "file": "07-21-06_1327.jpg",
+    "folder": "2006",
+    "date": "2006-07-21",
+    "people": [
+      "Dustin Roberts"
+    ],
+    "tags": [
+      "Dustin Roberts",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
+      "People/Dustin Roberts",
+      "People|Dustin Roberts"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2006/07-31-06_1848.jpg",
+    "media_type": "photo",
+    "file": "07-31-06_1848.jpg",
+    "folder": "2006",
+    "date": "2006-07-31",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2006/010.JPG",
     "media_type": "photo",
     "file": "010.JPG",
@@ -40035,14 +40623,99 @@
     ],
     "tags": [
       "Dickey Bell",
-      "Hobbies/Rescue_Police_EMS",
-      "Hobbies|Rescue_Police_EMS",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
       "People/Dickey Bell",
       "People/Rickey Bell",
       "People|Dickey Bell",
       "People|Rickey Bell",
-      "Rescue_Police_EMS",
       "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2006/08-13-06_1145.jpg",
+    "media_type": "photo",
+    "file": "08-13-06_1145.jpg",
+    "folder": "2006",
+    "date": "2006-08-13",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2006/08-14-06_1954.jpg",
+    "media_type": "photo",
+    "file": "08-14-06_1954.jpg",
+    "folder": "2006",
+    "date": "2006-08-14",
+    "people": [
+      "Jarred Bell"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies/Shooting",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Hobbies|Shooting",
+      "Jarred Bell",
+      "Military_Rescue_Police_EMS",
+      "People/Jarred Bell",
+      "People|Jarred Bell",
+      "Shooting"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2006/08-14-06_1956.jpg",
+    "media_type": "photo",
+    "file": "08-14-06_1956.jpg",
+    "folder": "2006",
+    "date": "2006-08-14",
+    "people": [
+      "Jarred Bell",
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies/Shooting",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Hobbies|Shooting",
+      "Jarred Bell",
+      "Military_Rescue_Police_EMS",
+      "People/Jarred Bell",
+      "People/Stephanie Bell",
+      "People|Jarred Bell",
+      "People|Stephanie Bell",
+      "Shooting",
+      "Stephanie Bell"
     ],
     "title": "",
     "description": "",
@@ -40128,6 +40801,26 @@
     "gps": null
   },
   {
+    "path": "images/2006/12-04-06_0926.jpg",
+    "media_type": "photo",
+    "file": "12-04-06_0926.jpg",
+    "folder": "2006",
+    "date": "2006-12-04",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2007/0409062128.jpg",
     "media_type": "photo",
     "file": "0409062128.jpg",
@@ -40148,6 +40841,35 @@
       "People|Mickey Morgan",
       "People|Rickey Bell",
       "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2007/0901061023a.jpg",
+    "media_type": "photo",
+    "file": "0901061023a.jpg",
+    "folder": "2007",
+    "date": "2007-01-01",
+    "people": [
+      "Rickey Bell",
+      "Will Fersner"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
+      "People/Rickey Bell",
+      "People/Will Fersner",
+      "People|Rickey Bell",
+      "People|Will Fersner",
+      "Rickey Bell",
+      "Will Fersner"
     ],
     "title": "",
     "description": "",
@@ -40212,6 +40934,46 @@
       "People|Stephanie Bell",
       "Samatha Bell",
       "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2007/04-06-07_1059.jpg",
+    "media_type": "photo",
+    "file": "04-06-07_1059.jpg",
+    "folder": "2007",
+    "date": "2007-04-06",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2007/04-06-07_1100.jpg",
+    "media_type": "photo",
+    "file": "04-06-07_1100.jpg",
+    "folder": "2007",
+    "date": "2007-04-06",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS"
     ],
     "title": "",
     "description": "",
@@ -40294,6 +41056,54 @@
       "People|Jarred Bell",
       "People|Samatha Bell",
       "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2007/DSCI0172.JPG",
+    "media_type": "photo",
+    "file": "DSCI0172.JPG",
+    "folder": "2007",
+    "date": "2007-12-21",
+    "people": [
+      "Macey Steen",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Macey Steen",
+      "People/Macey Steen",
+      "People/Samatha Bell",
+      "People|Macey Steen",
+      "People|Samatha Bell",
+      "Samatha Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2007/DSCI0173.JPG",
+    "media_type": "photo",
+    "file": "DSCI0173.JPG",
+    "folder": "2007",
+    "date": "2007-12-21",
+    "people": [
+      "Macey Steen"
+    ],
+    "tags": [
+      "Macey Steen",
+      "People/Macey Steen",
+      "People|Macey Steen"
     ],
     "title": "",
     "description": "",
@@ -40511,6 +41321,80 @@
     "gps": null
   },
   {
+    "path": "images/2008/re.JPG",
+    "media_type": "photo",
+    "file": "re.JPG",
+    "folder": "2008",
+    "date": "2008-03-30",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2008/SUNP0157.JPG",
+    "media_type": "photo",
+    "file": "SUNP0157.JPG",
+    "folder": "2008",
+    "date": "2008-03-30",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "Sunplus Corp. ",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2008/SUNP0175.JPG",
+    "media_type": "photo",
+    "file": "SUNP0175.JPG",
+    "folder": "2008",
+    "date": "2008-03-30",
+    "people": [
+      "Jason Hoke",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Jason Hoke",
+      "Military_Rescue_Police_EMS",
+      "People/Jason Hoke",
+      "People/Rickey Bell",
+      "People|Jason Hoke",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "Sunplus Corp. ",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2008/DSCI0056.JPG",
     "media_type": "photo",
     "file": "DSCI0056.JPG",
@@ -40536,6 +41420,31 @@
     "gps": null
   },
   {
+    "path": "images/2008/191_face_blurred.jpg",
+    "media_type": "photo",
+    "file": "191_face_blurred.jpg",
+    "folder": "2008",
+    "date": "2008-04-03",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2008/209.jpg",
     "media_type": "photo",
     "file": "209.jpg",
@@ -40552,6 +41461,84 @@
       "People|Jarred Bell",
       "People|Rickey Bell",
       "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2008/IMAGE_254.jpg",
+    "media_type": "photo",
+    "file": "IMAGE_254.jpg",
+    "folder": "2008",
+    "date": "2008-04-27",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2008/DSC00261.JPG",
+    "media_type": "photo",
+    "file": "DSC00261.JPG",
+    "folder": "2008",
+    "date": "2008-04-29",
+    "people": [
+      "Frankie Matthews",
+      "Keith Snipes",
+      "Mike Cole"
+    ],
+    "tags": [
+      "Frankie Matthews",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Keith Snipes",
+      "Mike Cole",
+      "Military_Rescue_Police_EMS",
+      "People/Frankie Matthews",
+      "People/Keith Snipes",
+      "People/Mike Cole",
+      "People|Frankie Matthews",
+      "People|Keith Snipes",
+      "People|Mike Cole"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2008/DSC00263.JPG",
+    "media_type": "photo",
+    "file": "DSC00263.JPG",
+    "folder": "2008",
+    "date": "2008-04-29",
+    "people": [
+      "Barton Glenn"
+    ],
+    "tags": [
+      "Barton Glenn",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
+      "People/Barton Glenn",
+      "People|Barton Glenn"
     ],
     "title": "",
     "description": "",
@@ -40691,6 +41678,130 @@
     "city": "Kings Mountain",
     "state": "South Carolina",
     "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2008/DSC00617.jpg",
+    "media_type": "photo",
+    "file": "DSC00617.jpg",
+    "folder": "2008",
+    "date": "2008-05-30",
+    "people": [
+      "Marty Brown"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Marty Brown",
+      "Military_Rescue_Police_EMS",
+      "People/Marty Brown",
+      "People|Marty Brown"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2008/DSC00620.jpg",
+    "media_type": "photo",
+    "file": "DSC00620.jpg",
+    "folder": "2008",
+    "date": "2008-05-30",
+    "people": [
+      "Chuck Payne",
+      "Greg Brasington",
+      "Jason Humphries",
+      "Phil Polston",
+      "Rickey Bell",
+      "Sol Garcia"
+    ],
+    "tags": [
+      "Chuck Payne",
+      "Greg Brasington",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Jason Humphries",
+      "Military_Rescue_Police_EMS",
+      "People/Chuck Payne",
+      "People/Greg Brasington",
+      "People/Jason Humphries",
+      "People/Phil Polston",
+      "People/Rickey Bell",
+      "People/Sol Garcia",
+      "People|Chuck Payne",
+      "People|Greg Brasington",
+      "People|Jason Humphries",
+      "People|Phil Polston",
+      "People|Rickey Bell",
+      "People|Sol Garcia",
+      "Phil Polston",
+      "Rickey Bell",
+      "Sol Garcia"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2008/DSC00637.jpg",
+    "media_type": "photo",
+    "file": "DSC00637.jpg",
+    "folder": "2008",
+    "date": "2008-05-30",
+    "people": [
+      "Chuck Payne",
+      "Sol Garcia"
+    ],
+    "tags": [
+      "Chuck Payne",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
+      "People/Chuck Payne",
+      "People/Sol Garcia",
+      "People|Chuck Payne",
+      "People|Sol Garcia",
+      "Sol Garcia"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2008/DSC00733a.jpg",
+    "media_type": "photo",
+    "file": "DSC00733a.jpg",
+    "folder": "2008",
+    "date": "2008-05-30",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
     "gps": null
   },
   {
@@ -40933,6 +42044,91 @@
     "gps": null
   },
   {
+    "path": "videos/2008/FILE0049.mp4",
+    "media_type": "video",
+    "file": "FILE0049.mp4",
+    "folder": "2008",
+    "date": "2008-12-05",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Places/South Carolina/Chester County/Great Falls",
+      "Video"
+    ],
+    "title": "",
+    "description": "2008-08-29",
+    "location": "Great Falls",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "videos/2008/FILE0050.mp4",
+    "media_type": "video",
+    "file": "FILE0050.mp4",
+    "folder": "2008",
+    "date": "2008-12-05",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Places/South Carolina/Chester County/Great Falls",
+      "Video"
+    ],
+    "title": "",
+    "description": "2008-08-29",
+    "location": "Great Falls",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "videos/2008/FILE0056.mp4",
+    "media_type": "video",
+    "file": "FILE0056.mp4",
+    "folder": "2008",
+    "date": "2008-12-05",
+    "people": [
+      "Wendy Wheeler"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "People/Wendy Wheeler",
+      "People|Wendy Wheeler",
+      "Places/South Carolina/Chester County/Great Falls",
+      "Video",
+      "Wendy Wheeler"
+    ],
+    "title": "",
+    "description": "2008-08-29",
+    "location": "Great Falls",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "videos/2008/FILE0068.mp4",
+    "media_type": "video",
+    "file": "FILE0068.mp4",
+    "folder": "2008",
+    "date": "2008-12-05",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Places/South Carolina/Chester County/Great Falls",
+      "Video"
+    ],
+    "title": "",
+    "description": "2008-08-29",
+    "location": "Great Falls",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2009/FILE0234.JPG",
     "media_type": "photo",
     "file": "FILE0234.JPG",
@@ -41150,7 +42346,7 @@
       "Rickey Bell"
     ],
     "tags": [
-      "Hobbies/Rescue_Police_EMS",
+      "Hobbies/Military_Rescue_Police_EMS",
       "People/Rickey Bell",
       "Video"
     ],
@@ -41240,6 +42436,29 @@
     "gps": null
   },
   {
+    "path": "images/2009/IMAGE_162.jpg",
+    "media_type": "photo",
+    "file": "IMAGE_162.jpg",
+    "folder": "2009",
+    "date": "2009-03-22",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Hobbies/Boating",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Boating",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2009/IMAGE_182.jpg",
     "media_type": "photo",
     "file": "IMAGE_182.jpg",
@@ -41266,13 +42485,43 @@
     "gps": null
   },
   {
+    "path": "images/2009/IMAGE_195.jpg",
+    "media_type": "photo",
+    "file": "IMAGE_195.jpg",
+    "folder": "2009",
+    "date": "2009-04-05",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2009/518329165_10163331326685907_3621366299995287460_n.jpg",
     "media_type": "photo",
     "file": "518329165_10163331326685907_3621366299995287460_n.jpg",
     "folder": "2009",
     "date": "2009-05-04",
-    "people": [],
-    "tags": [],
+    "people": [
+      "Brandy Hoke",
+      "Jason Hoke"
+    ],
+    "tags": [
+      "Brandy Hoke",
+      "Jason Hoke",
+      "People/Brandy Hoke",
+      "People/Jason Hoke",
+      "People|Brandy Hoke",
+      "People|Jason Hoke"
+    ],
     "title": "",
     "description": "",
     "location": "",
@@ -41287,8 +42536,17 @@
     "file": "518349465_10163331330870907_699826374149744219_n.jpg",
     "folder": "2009",
     "date": "2009-05-04",
-    "people": [],
-    "tags": [],
+    "people": [
+      "Jason Hoke"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Jason Hoke",
+      "Military_Rescue_Police_EMS",
+      "People/Jason Hoke",
+      "People|Jason Hoke"
+    ],
     "title": "",
     "description": "",
     "location": "",
@@ -41716,6 +42974,31 @@
     "gps": null
   },
   {
+    "path": "images/2010/103_0567.JPG",
+    "media_type": "photo",
+    "file": "103_0567.JPG",
+    "folder": "2010",
+    "date": "2010-06-04",
+    "people": [
+      "Wendy Wheeler"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
+      "People/Wendy Wheeler",
+      "People|Wendy Wheeler",
+      "Wendy Wheeler"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2010/103_0595.JPG",
     "media_type": "photo",
     "file": "103_0595.JPG",
@@ -41932,6 +43215,26 @@
     "gps": null
   },
   {
+    "path": "images/2010/035.jpg",
+    "media_type": "photo",
+    "file": "035.jpg",
+    "folder": "2010",
+    "date": "2010-08-09",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2010/050.jpg",
     "media_type": "photo",
     "file": "050.jpg",
@@ -41941,7 +43244,10 @@
       "Rickey Bell"
     ],
     "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
       "Lancaster County",
+      "Military_Rescue_Police_EMS",
       "People/Rickey Bell",
       "People|Rickey Bell",
       "Places/South Carolina/Lancaster County",
@@ -42376,6 +43682,32 @@
     }
   },
   {
+    "path": "images/2012/Great Falls-20120315-00522.jpg",
+    "media_type": "photo",
+    "file": "Great Falls-20120315-00522.jpg",
+    "folder": "2012",
+    "date": "2012-03-15",
+    "people": [],
+    "tags": [
+      "Chester County",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
+      "Places/South Carolina/Chester County",
+      "Places|South Carolina|Chester County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6916999669444,
+      "lon": -80.9599333327778
+    }
+  },
+  {
     "path": "images/2012/514360053_10238373361895507_1030664625273209674_n.jpg",
     "media_type": "photo",
     "file": "514360053_10238373361895507_1030664625273209674_n.jpg",
@@ -42423,8 +43755,14 @@
     "file": "504865242_23981251511525179_1340636950249587489_n.jpg",
     "folder": "2012",
     "date": "2012-05-31",
-    "people": [],
-    "tags": [],
+    "people": [
+      "Jason Hoke"
+    ],
+    "tags": [
+      "Jason Hoke",
+      "People/Jason Hoke",
+      "People|Jason Hoke"
+    ],
     "title": "",
     "description": "",
     "location": "",
@@ -42741,6 +44079,32 @@
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "videos/2013/Larry.mp4",
+    "media_type": "video",
+    "file": "Larry.mp4",
+    "folder": "2013",
+    "date": "2013-09-05",
+    "people": [
+      "Larry Shuler"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Larry Shuler",
+      "Military_Rescue_Police_EMS",
+      "People/Larry Shuler",
+      "People|Larry Shuler",
+      "Video"
+    ],
+    "title": "Farwell Larry!",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
     "gps": null
   },
   {
@@ -43316,14 +44680,18 @@
     "folder": "2015",
     "date": "2015-05-08",
     "people": [
+      "Debbie Phillips",
       "Irvin Phillips",
       "Rickey Bell"
     ],
     "tags": [
+      "Debbie Phillips",
       "Irvin Phillips",
       "Lancaster County",
+      "People/Debbie Phillips",
       "People/Irvin Phillips",
       "People/Rickey Bell",
+      "People|Debbie Phillips",
       "People|Irvin Phillips",
       "People|Rickey Bell",
       "Places/South Carolina/Lancaster County",
@@ -44645,11 +46013,15 @@
     "folder": "2017",
     "date": "2017-01-01",
     "people": [
+      "Brandy Hoke",
       "Jason Hoke"
     ],
     "tags": [
+      "Brandy Hoke",
       "Jason Hoke",
+      "People/Brandy Hoke",
       "People/Jason Hoke",
+      "People|Brandy Hoke",
       "People|Jason Hoke"
     ],
     "title": "",
@@ -44667,12 +46039,19 @@
     "folder": "2017",
     "date": "2017-01-01",
     "people": [
-      "Jason Hoke"
+      "Jason Hoke",
+      "Terri Faulkenberry"
     ],
     "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
       "Jason Hoke",
+      "Military_Rescue_Police_EMS",
       "People/Jason Hoke",
-      "People|Jason Hoke"
+      "People/Terri Faulkenberry",
+      "People|Jason Hoke",
+      "People|Terri Faulkenberry",
+      "Terri Faulkenberry"
     ],
     "title": "",
     "description": "",
@@ -44689,11 +46068,15 @@
     "folder": "2017",
     "date": "2017-01-01",
     "people": [
+      "David Williams",
       "Jason Hoke"
     ],
     "tags": [
+      "David Williams",
       "Jason Hoke",
+      "People/David Williams",
       "People/Jason Hoke",
+      "People|David Williams",
       "People|Jason Hoke"
     ],
     "title": "",
@@ -44711,12 +46094,20 @@
     "folder": "2017",
     "date": "2017-01-01",
     "people": [
-      "Jason Hoke"
+      "David Williams",
+      "Jason Hoke",
+      "Jason Hoke Jr."
     ],
     "tags": [
+      "David Williams",
       "Jason Hoke",
+      "Jason Hoke Jr.",
+      "People/David Williams",
       "People/Jason Hoke",
-      "People|Jason Hoke"
+      "People/Jason Hoke Jr.",
+      "People|David Williams",
+      "People|Jason Hoke",
+      "People|Jason Hoke Jr."
     ],
     "title": "",
     "description": "",
@@ -44775,6 +46166,29 @@
     "state": "",
     "country": "",
     "gps": null
+  },
+  {
+    "path": "videos/2017/20170302_155353000_iOS.mp4",
+    "media_type": "video",
+    "file": "20170302_155353000_iOS.mp4",
+    "folder": "2017",
+    "date": "2017-03-02",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Places/South Carolina/Chester County",
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7491,
+      "lon": -81.0339
+    }
   },
   {
     "path": "images/2017/IMG_0356.JPG",
@@ -45012,14 +46426,18 @@
     "date": "2017-08-26",
     "people": [
       "Alice Neely",
+      "Cindy Green",
       "Tony Neely"
     ],
     "tags": [
       "2044 Douglas Rd",
       "Alice Neely",
+      "Cindy Green",
       "People/Alice Neely",
+      "People/Cindy Green",
       "People/Tony Neely",
       "People|Alice Neely",
+      "People|Cindy Green",
       "People|Tony Neely",
       "Places/South Carolina/Lancaster County/2044 Douglas Rd",
       "Places|South Carolina|Lancaster County|2044 Douglas Rd",
@@ -45268,11 +46686,15 @@
     "folder": "2017",
     "date": "2017-12-25",
     "people": [
+      "Alice Neely",
       "Tony Neely"
     ],
     "tags": [
       "2044 Douglas Rd",
+      "Alice Neely",
+      "People/Alice Neely",
       "People/Tony Neely",
+      "People|Alice Neely",
       "People|Tony Neely",
       "Places/South Carolina/Lancaster County/2044 Douglas Rd",
       "Places|South Carolina|Lancaster County|2044 Douglas Rd",
@@ -45849,10 +47271,14 @@
     "folder": "2019",
     "date": "2019",
     "people": [
+      "Jarred Bell",
       "Tony Roberts"
     ],
     "tags": [
+      "Jarred Bell",
+      "People/Jarred Bell",
       "People/Tony Roberts",
+      "People|Jarred Bell",
       "People|Tony Roberts",
       "Tony Roberts"
     ],
@@ -47051,9 +48477,14 @@
     "file": "20191128_115309.jpg",
     "folder": "2019",
     "date": "2019-11-28",
-    "people": [],
+    "people": [
+      "Jarred Bell"
+    ],
     "tags": [
+      "Jarred Bell",
       "Niagara Falls",
+      "People/Jarred Bell",
+      "People|Jarred Bell",
       "Places/Canada/Niagara Falls",
       "Places|Canada|Niagara Falls"
     ],
@@ -49686,8 +51117,8 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.9783592666667,
-      "lon": -80.9893365
+      "lat": 34.9783592669444,
+      "lon": -80.9893365002778
     }
   },
   {
@@ -54604,16 +56035,20 @@
     "date": "2025-03-24",
     "people": [
       "April Scott",
+      "Karen Gaskin",
       "Katie Morgan",
       "Stephanie Bell"
     ],
     "tags": [
       "April Scott",
+      "Karen Gaskin",
       "Katie Morgan",
       "People/April Scott",
+      "People/Karen Gaskin",
       "People/Katie Morgan",
       "People/Stephanie Bell",
       "People|April Scott",
+      "People|Karen Gaskin",
       "People|Katie Morgan",
       "People|Stephanie Bell",
       "Stephanie Bell"
@@ -56738,14 +58173,18 @@
     "folder": "2025",
     "date": "2025-12-13",
     "people": [
+      "Emma Wilkerson",
       "Ivy Bell",
       "Olivia Bell"
     ],
     "tags": [
+      "Emma Wilkerson",
       "Ivy Bell",
       "Olivia Bell",
+      "People/Emma Wilkerson",
       "People/Ivy Bell",
       "People/Olivia Bell",
+      "People|Emma Wilkerson",
       "People|Ivy Bell",
       "People|Olivia Bell"
     ],
