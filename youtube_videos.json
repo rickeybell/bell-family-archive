@@ -281,5 +281,53 @@
     "city": "",
     "state": "",
     "country": ""
+  },
+  {
+    "path": "youtube/HzoLLqmQEhw",
+    "media_type": "youtube",
+    "youtube_id": "HzoLLqmQEhw",
+    "start_seconds": 0,
+    "file": "YouTube video",
+    "folder": "2026",
+    "date": "2026-07-10",
+    "date_precision": "day",
+    "title": "Fusion Firearms XP Comp and Ported Custom Shop Edition",
+    "description": "A Flat Creek Firearms YouTube Short featuring a Fusion Firearms XP Comp and ported Custom Shop Edition pistol.",
+    "people": [],
+    "categories": [],
+    "tags": [
+      "Shooting",
+      "Hobbies/Shooting",
+      "Video",
+      "Flat Creek Firearms"
+    ],
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": ""
+  },
+  {
+    "path": "youtube/DGEqoEBK2qg",
+    "media_type": "youtube",
+    "youtube_id": "DGEqoEBK2qg",
+    "start_seconds": 0,
+    "file": "YouTube video",
+    "folder": "2025",
+    "date": "2025-11-20",
+    "date_precision": "day",
+    "title": "Rossi Gallery .22 LR Pump Action | Suppressor on a Tube-Fed Gun",
+    "description": "A Flat Creek Firearms YouTube Short featuring a Rossi Gallery .22 LR pump-action rifle and explaining that a suppressor can be used on a tube-fed firearm.",
+    "people": [],
+    "categories": [],
+    "tags": [
+      "Shooting",
+      "Hobbies/Shooting",
+      "Video",
+      "Flat Creek Firearms"
+    ],
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": ""
   }
 ]
