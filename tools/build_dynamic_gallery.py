@@ -184,7 +184,7 @@ for slug,(name,description) in hobbies.items():
         hobby_item['tags']=list(item.get('tags') or [])+[tag]
         items.append(hobby_item)
     tagged=HOBBY_SNAPSHOT.get('taggedCounts',{}).get(name,len(items))
-    subtitle=f'{description} Collected from the family archive\'s {tag} category.'
+    subtitle=description if slug=='military-rescue-police-ems' else f'{description} Collected from the family archive\'s {tag} category.'
     empty=(f'<section style="max-width:760px;background:#fff;border:1px solid #ddd;border-radius:12px;padding:18px;box-shadow:0 2px 12px #0002">'
            f'<img src="tree_thumbs/hobby_camping_2025.jpg" alt="Camper and campfire at a wooded lakeside campsite" style="display:block;width:100%;max-height:430px;object-fit:cover;border-radius:9px">'
            f'<h2>Camping in the family catalog</h2><p>{tagged} media items are cataloged under Camping. Public gallery items will appear here as they are added to the website archive.</p></section>') if name=='Camping' and not items else ''
