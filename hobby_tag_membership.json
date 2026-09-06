@@ -1545,6 +1545,12 @@
     "images/2026/20260707_133623.jpg": [
       "Aviation"
     ],
+    "images/2026/784226620_1000948432972754_8357374407785207827_n.jpg": [
+      "Shooting"
+    ],
+    "images/2026/784254923_1001001006300830_4769511192738293737_n.jpg": [
+      "Shooting"
+    ],
     "images/2026/Screenshot_20260325_184439_Messages.jpg": [
       "Aviation"
     ],
@@ -1712,7 +1718,7 @@
   "taggedCounts": {
     "Aviation": 1287,
     "Scuba": 1290,
-    "Shooting": 228,
+    "Shooting": 230,
     "Boating": 1424,
     "Off-Roading": 313,
     "Camping": 381,
@@ -1721,7 +1727,7 @@
   "publicCounts": {
     "Aviation": 136,
     "Scuba": 141,
-    "Shooting": 34,
+    "Shooting": 36,
     "Boating": 111,
     "Off-Roading": 24,
     "Camping": 60,
