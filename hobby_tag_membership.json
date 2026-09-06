@@ -251,30 +251,39 @@
       "Scuba"
     ],
     "images/2002/109-0967_IMG.JPG": [
+      "Military / Police / Rescue / EMS",
       "Scuba"
     ],
     "images/2002/110-1001_IMG.JPG": [
+      "Military / Police / Rescue / EMS",
       "Scuba"
     ],
     "images/2002/110-1055_IMG.JPG": [
+      "Military / Police / Rescue / EMS",
       "Scuba"
     ],
     "images/2002/110-1057_IMG.JPG": [
+      "Military / Police / Rescue / EMS",
       "Scuba"
     ],
     "images/2002/110-1061_IMG.JPG": [
+      "Military / Police / Rescue / EMS",
       "Scuba"
     ],
     "images/2002/110-1062_IMG.JPG": [
+      "Military / Police / Rescue / EMS",
       "Scuba"
     ],
     "images/2002/110-1065_IMG.JPG": [
+      "Military / Police / Rescue / EMS",
       "Scuba"
     ],
     "images/2002/110-1074_IMG.JPG": [
+      "Military / Police / Rescue / EMS",
       "Scuba"
     ],
     "images/2002/110-1078_IMG.JPG": [
+      "Military / Police / Rescue / EMS",
       "Scuba"
     ],
     "images/2002/110-1099_IMG.JPG": [
@@ -556,6 +565,9 @@
     "images/2004/1 0301.jpg": [
       "Scuba"
     ],
+    "images/2004/2003_10_20 075.jpg": [
+      "Military / Police / Rescue / EMS"
+    ],
     "images/2004/2004_11_21__3 030.jpg": [
       "Boating"
     ],
@@ -604,19 +616,36 @@
       "Scuba"
     ],
     "images/2004/Rescue Drysuit 9-23-04 001.jpg": [
+      "Military / Police / Rescue / EMS",
       "Scuba"
     ],
     "images/2004/Rescue Drysuit 9-23-04 002.jpg": [
+      "Military / Police / Rescue / EMS",
       "Scuba"
     ],
     "images/2004/c copy.jpg": [
       "Off-Roading"
+    ],
+    "images/2005/2005_4_22_MsRelay__1 004.jpg": [
+      "Military / Police / Rescue / EMS"
+    ],
+    "images/2005/2005_8_15_Grace_Wreck__1 001.jpg": [
+      "Military / Police / Rescue / EMS"
     ],
     "images/2005/PC310001.JPG": [
       "Boating"
     ],
     "images/2005/PC310002.JPG": [
       "Boating"
+    ],
+    "images/2005/PIX_#62.jpg": [
+      "Scuba"
+    ],
+    "images/2006/010.JPG": [
+      "Military / Police / Rescue / EMS"
+    ],
+    "images/2006/05-06-06_1457.jpg": [
+      "Military / Police / Rescue / EMS"
     ],
     "images/2006/PIC_0021.JPG": [
       "Camping"
@@ -678,6 +707,9 @@
     "images/2008/IMAGE_283.jpg": [
       "Camping"
     ],
+    "images/2009/518349465_10163331330870907_699826374149744219_n.jpg": [
+      "Military / Police / Rescue / EMS"
+    ],
     "images/2010/012-2 (1).jpg": [
       "Boating"
     ],
@@ -686,6 +718,9 @@
     ],
     "images/2010/020-2.jpg": [
       "Boating"
+    ],
+    "images/2010/050.jpg": [
+      "Military / Police / Rescue / EMS"
     ],
     "images/2010/103_0595.JPG": [
       "Boating"
@@ -746,6 +781,9 @@
     ],
     "images/2017/20170901_064941000_iOS.jpg": [
       "Boating"
+    ],
+    "images/2017/468543829_10162304518174456_3941061009983554318_n.jpg": [
+      "Military / Police / Rescue / EMS"
     ],
     "images/2017/IMG_1152.JPG": [
       "Boating"
@@ -1361,6 +1399,9 @@
     "videos/2002/115-1595_MVI.mp4": [
       "Scuba"
     ],
+    "videos/2009/2008_5 026.mp4": [
+      "Military / Police / Rescue / EMS"
+    ],
     "videos/2014/2014-11-29 17.22.03.mp4": [
       "Boating"
     ],
@@ -1490,18 +1531,20 @@
   },
   "taggedCounts": {
     "Aviation": 1287,
-    "Scuba": 1282,
-    "Shooting": 214,
-    "Boating": 1415,
+    "Scuba": 1290,
+    "Shooting": 228,
+    "Boating": 1423,
     "Off-Roading": 313,
-    "Camping": 381
+    "Camping": 381,
+    "Military / Police / Rescue / EMS": 713
   },
   "publicCounts": {
     "Aviation": 136,
-    "Scuba": 140,
+    "Scuba": 141,
     "Shooting": 32,
     "Boating": 110,
     "Off-Roading": 24,
-    "Camping": 60
+    "Camping": 60,
+    "Military / Police / Rescue / EMS": 20
   }
 }

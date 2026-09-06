@@ -18,6 +18,7 @@ HOBBIES = {
     "boating": "Boating",
     "off-roading": "Off-Roading",
     "camping": "Camping",
+    "military_rescue_police_ems": "Military / Police / Rescue / EMS",
 }
 
 

@@ -169,14 +169,16 @@ hobbies={
     'boating':('Boating','Boat trips, days on the water, and shoreline memories.'),
     'off-roading':('Off-Roading','Dirt bikes, trail rides, and adventures beyond the pavement.'),
     'camping':('Camping','Campgrounds, campfires, and time together in the outdoors.'),
+    'military-rescue-police-ems':('Military / Police / Rescue / EMS','Military service, law enforcement, technical rescue, emergency response, and patient care across the family and close friends.'),
 }
 for slug,(name,description) in hobbies.items():
-    tag=f'Hobbies/{name}'
+    tag_name='Military_Rescue_Police_EMS' if slug=='military-rescue-police-ems' else name
+    tag=f'Hobbies/{tag_name}'
     items=[]
     for item in DATA:
         path=str(item.get('path') or '').replace('\\','/')
         external_tags={clean_tag_label(tag).casefold() for tag in item.get('tags') or []}
-        external_match=item.get('media_type')=='youtube' and ({name.casefold(),f'hobbies/{name}'.casefold()} & external_tags)
+        external_match=item.get('media_type')=='youtube' and ({tag_name.casefold(),f'hobbies/{tag_name}'.casefold()} & external_tags)
         if name not in HOBBY_SNAPSHOT.get('memberships',{}).get(path,[]) and not external_match:continue
         hobby_item=dict(item)
         hobby_item['tags']=list(item.get('tags') or [])+[tag]
@@ -186,5 +188,6 @@ for slug,(name,description) in hobbies.items():
     empty=(f'<section style="max-width:760px;background:#fff;border:1px solid #ddd;border-radius:12px;padding:18px;box-shadow:0 2px 12px #0002">'
            f'<img src="tree_thumbs/hobby_camping_2025.jpg" alt="Camper and campfire at a wooded lakeside campsite" style="display:block;width:100%;max-height:430px;object-fit:cover;border-radius:9px">'
            f'<h2>Camping in the family catalog</h2><p>{tagged} media items are cataloged under Camping. Public gallery items will appear here as they are added to the website archive.</p></section>') if name=='Camping' and not items else ''
-    page(f'{name} - Hobbies',subtitle,items,f'hobby-{slug}.html',empty)
+    section_name='Service & Public Safety' if slug=='military-rescue-police-ems' else 'Hobbies'
+    page(f'{name} - {section_name}',subtitle,items,f'hobby-{slug}.html',empty)
 print('Generated gallery,',len(people),'person galleries,',len(pets),'pet galleries, and',len(hobbies),'hobby galleries from',len(DATA),'metadata records including video and audio support')
