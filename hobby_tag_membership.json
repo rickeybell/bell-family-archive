@@ -1424,9 +1424,6 @@
     "videos/2023/20231124_193230.mp4": [
       "Camping"
     ],
-    "videos/2024/20240414_121540000_iOS.mp4": [
-      "Aviation"
-    ],
     "videos/2024/20240506_113710.mp4": [
       "Aviation"
     ],
@@ -1492,7 +1489,7 @@
     ]
   },
   "taggedCounts": {
-    "Aviation": 1286,
+    "Aviation": 1287,
     "Scuba": 1282,
     "Shooting": 214,
     "Boating": 1415,
@@ -1500,7 +1497,7 @@
     "Camping": 381
   },
   "publicCounts": {
-    "Aviation": 137,
+    "Aviation": 136,
     "Scuba": 140,
     "Shooting": 32,
     "Boating": 110,
