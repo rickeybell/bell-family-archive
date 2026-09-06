@@ -7,6 +7,23 @@ document.addEventListener("DOMContentLoaded",()=>{
     card.classList.toggle("not-living",isMemorial);
   });
 
+  // Protect living relatives' full birthdays on the public page. Keep the exact
+  // date in data-birthdate so the age calculation below still changes on the
+  // correct birthday, but display only the month and year.
+  document.querySelectorAll(".tree-person[data-birthdate], .archive-community-card[data-birthdate]").forEach(card=>{
+    if(card.classList.contains("not-living"))return;
+    const [year,month]=card.dataset.birthdate.split("-").map(Number);
+    if(!year || !month)return;
+    const bornLabel=[...card.querySelectorAll(".tree-vitals strong")]
+      .find(label=>/^Born:\s*$/i.test(label.textContent||""));
+    const bornLine=bornLabel?.closest("span");
+    if(bornLine){
+      const monthName=new Intl.DateTimeFormat("en-US",{month:"long",timeZone:"UTC"})
+        .format(new Date(Date.UTC(year,month-1,1)));
+      bornLine.innerHTML=`<strong>Born:</strong> ${monthName} ${year}`;
+    }
+  });
+
   // Keep current ages accurate for living relatives as birthdays pass.
   const today=new Date();
   document.querySelectorAll(".tree-person[data-birthdate], .archive-community-card[data-birthdate]").forEach(card=>{

@@ -3,8 +3,16 @@ document.addEventListener("DOMContentLoaded",()=>{
  // Keep current ages accurate on living relatives' profile pages.
  const today=new Date();
  document.querySelectorAll(".person-page-vitals[data-birthdate]").forEach(vitals=>{
-   if(vitals.querySelector(".current-age"))return;
    const [year,month,day]=vitals.dataset.birthdate.split("-").map(Number);
+   const bornLabel=[...vitals.querySelectorAll("strong")]
+     .find(label=>/^Born:\s*$/i.test(label.textContent||""));
+   const bornLine=bornLabel?.closest("span");
+   if(bornLine && year && month){
+     const monthName=new Intl.DateTimeFormat("en-US",{month:"long",timeZone:"UTC"})
+       .format(new Date(Date.UTC(year,month-1,1)));
+     bornLine.innerHTML=`<strong>Born:</strong> ${monthName} ${year}`;
+   }
+   if(vitals.querySelector(".current-age"))return;
    let age=today.getFullYear()-year;
    const monthNow=today.getMonth()+1;
    if(monthNow<month || (monthNow===month && today.getDate()<day))age--;
