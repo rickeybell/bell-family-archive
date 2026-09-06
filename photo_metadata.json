@@ -1,5 +1,30 @@
 [
   {
+    "path": "images/1920/Henry William Bell.png",
+    "media_type": "photo",
+    "file": "Henry William Bell.png",
+    "folder": "1920",
+    "date": "1920-01-01",
+    "people": [
+      "Henry William Bell"
+    ],
+    "tags": [
+      "Henry William Bell",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
+      "People/Henry William Bell",
+      "People|Henry William Bell"
+    ],
+    "title": "WW1 Vet and Police Chief of Lancaster PD.",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/1934/1930s_0001.jpg",
     "media_type": "photo",
     "file": "1930s_0001.jpg",
@@ -390,6 +415,9 @@
     ],
     "tags": [
       "Buster Bell",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS",
       "People/Buster Bell",
       "People|Buster Bell"
     ],
@@ -31299,7 +31327,7 @@
       "Places|South Carolina|Fishing Creek",
       "Scuba"
     ],
-    "title": "",
+    "title": "Water rescue training.",
     "description": "",
     "location": "",
     "city": "Fishing Creek",
@@ -31330,7 +31358,7 @@
       "Places|South Carolina|Fishing Creek",
       "Scuba"
     ],
-    "title": "",
+    "title": "Water rescue training.",
     "description": "",
     "location": "",
     "city": "Fishing Creek",
@@ -31424,7 +31452,7 @@
       "Places|South Carolina|Fishing Creek",
       "Scuba"
     ],
-    "title": "",
+    "title": "Water rescue training.",
     "description": "",
     "location": "",
     "city": "Fishing Creek",
@@ -31459,7 +31487,7 @@
       "Places|South Carolina|Fishing Creek",
       "Scuba"
     ],
-    "title": "",
+    "title": "Water rescue training.",
     "description": "",
     "location": "",
     "city": "Fishing Creek",
@@ -31490,7 +31518,7 @@
       "Places|South Carolina|Fishing Creek",
       "Scuba"
     ],
-    "title": "",
+    "title": "Water rescue training.",
     "description": "",
     "location": "",
     "city": "Fishing Creek",
@@ -31521,7 +31549,7 @@
       "Places|South Carolina|Fishing Creek",
       "Scuba"
     ],
-    "title": "",
+    "title": "Water rescue training.",
     "description": "",
     "location": "",
     "city": "Fishing Creek",
@@ -31552,7 +31580,7 @@
       "Places|South Carolina|Fishing Creek",
       "Scuba"
     ],
-    "title": "",
+    "title": "Water rescue training.",
     "description": "",
     "location": "",
     "city": "Fishing Creek",
@@ -31583,7 +31611,7 @@
       "Places|South Carolina|Fishing Creek",
       "Scuba"
     ],
-    "title": "",
+    "title": "Water rescue training.",
     "description": "",
     "location": "",
     "city": "Fishing Creek",
@@ -31614,7 +31642,7 @@
       "Places|South Carolina|Fishing Creek",
       "Scuba"
     ],
-    "title": "",
+    "title": "Water rescue training.",
     "description": "",
     "location": "",
     "city": "Fishing Creek",
@@ -38185,7 +38213,7 @@
       "Rock Hill",
       "Scuba"
     ],
-    "title": "",
+    "title": "Drysuit training.",
     "description": "",
     "location": "Rock Hill",
     "city": "York County",
@@ -38224,7 +38252,7 @@
       "Rock Hill",
       "Scuba"
     ],
-    "title": "",
+    "title": "Drysuit training.",
     "description": "",
     "location": "Rock Hill",
     "city": "York County",
@@ -40052,14 +40080,36 @@
     ],
     "tags": [
       "Debbie Phillips",
-      "Hobbies/Military_Rescue_Police_EMS",
-      "Hobbies|Military_Rescue_Police_EMS",
       "Irvin Phillips",
-      "Military_Rescue_Police_EMS",
       "People/Debbie Phillips",
       "People/Irvin Phillips",
       "People|Debbie Phillips",
       "People|Irvin Phillips"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2005/2005_9_7_Tractor_Wreck__1 005.jpg",
+    "media_type": "photo",
+    "file": "2005_9_7_Tractor_Wreck__1 005.jpg",
+    "folder": "2005",
+    "date": "2005-09-06",
+    "people": [
+      "Mike Cole"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Mike Cole",
+      "Military_Rescue_Police_EMS",
+      "People/Mike Cole",
+      "People|Mike Cole"
     ],
     "title": "",
     "description": "",
@@ -40125,16 +40175,11 @@
     "file": "12-04-05_1141.jpg",
     "folder": "2005",
     "date": "2005-12-04",
-    "people": [
-      "Stephanie Bell"
-    ],
+    "people": [],
     "tags": [
       "Hobbies/Military_Rescue_Police_EMS",
       "Hobbies|Military_Rescue_Police_EMS",
-      "Military_Rescue_Police_EMS",
-      "People/Stephanie Bell",
-      "People|Stephanie Bell",
-      "Stephanie Bell"
+      "Military_Rescue_Police_EMS"
     ],
     "title": "",
     "description": "",
@@ -40603,7 +40648,7 @@
       "Hobbies|Military_Rescue_Police_EMS",
       "Military_Rescue_Police_EMS"
     ],
-    "title": "",
+    "title": "Hmmmm, maybe that's why the car is upside down.",
     "description": "",
     "location": "",
     "city": "",
@@ -40623,9 +40668,6 @@
     ],
     "tags": [
       "Dickey Bell",
-      "Hobbies/Military_Rescue_Police_EMS",
-      "Hobbies|Military_Rescue_Police_EMS",
-      "Military_Rescue_Police_EMS",
       "People/Dickey Bell",
       "People/Rickey Bell",
       "People|Dickey Bell",
@@ -40656,6 +40698,26 @@
       "People/Rickey Bell",
       "People|Rickey Bell",
       "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2006/08-13-06_1146.jpg",
+    "media_type": "photo",
+    "file": "08-13-06_1146.jpg",
+    "folder": "2006",
+    "date": "2006-08-13",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS"
     ],
     "title": "",
     "description": "",
@@ -40717,7 +40779,7 @@
       "Shooting",
       "Stephanie Bell"
     ],
-    "title": "",
+    "title": "Not quite the correct weapon, but it was readily available.",
     "description": "",
     "location": "",
     "city": "",
@@ -40812,7 +40874,7 @@
       "Hobbies|Military_Rescue_Police_EMS",
       "Military_Rescue_Police_EMS"
     ],
-    "title": "",
+    "title": "Got to love the Chevrolets!",
     "description": "",
     "location": "",
     "city": "",
@@ -40975,7 +41037,7 @@
       "Hobbies|Military_Rescue_Police_EMS",
       "Military_Rescue_Police_EMS"
     ],
-    "title": "",
+    "title": "You would never know how out of shape you were until you ran with bloodhounds!",
     "description": "",
     "location": "",
     "city": "",
@@ -41332,7 +41394,7 @@
       "Hobbies|Military_Rescue_Police_EMS",
       "Military_Rescue_Police_EMS"
     ],
-    "title": "",
+    "title": "Yes, we did leave him up there during lunch.",
     "description": "",
     "location": "",
     "city": "",
@@ -41742,7 +41804,7 @@
       "Rickey Bell",
       "Sol Garcia"
     ],
-    "title": "",
+    "title": "Adv Rope Rescue Team.",
     "description": "",
     "location": "",
     "city": "",
@@ -41771,7 +41833,7 @@
       "People|Sol Garcia",
       "Sol Garcia"
     ],
-    "title": "",
+    "title": "Rescue the Rescuer",
     "description": "",
     "location": "",
     "city": "",
@@ -41796,7 +41858,7 @@
       "People|Rickey Bell",
       "Rickey Bell"
     ],
-    "title": "",
+    "title": "Rickey needed more light!",
     "description": "",
     "location": "",
     "city": "",
@@ -42055,8 +42117,8 @@
       "Places/South Carolina/Chester County/Great Falls",
       "Video"
     ],
-    "title": "",
-    "description": "2008-08-29",
+    "title": "Practice those knots!",
+    "description": "",
     "location": "Great Falls",
     "city": "Chester County",
     "state": "South Carolina",
@@ -42100,7 +42162,7 @@
       "Video",
       "Wendy Wheeler"
     ],
-    "title": "",
+    "title": "Wendy's first time.",
     "description": "2008-08-29",
     "location": "Great Falls",
     "city": "Chester County",
@@ -42350,8 +42412,8 @@
       "People/Rickey Bell",
       "Video"
     ],
-    "title": "",
-    "description": "2009-01-20",
+    "title": "Tazer, Tazer, Tazer!!!",
+    "description": "",
     "location": "",
     "city": "",
     "state": "",
@@ -44099,7 +44161,7 @@
       "People|Larry Shuler",
       "Video"
     ],
-    "title": "Farwell Larry!",
+    "title": "Farewell Larry!",
     "description": "",
     "location": "",
     "city": "",
@@ -44158,6 +44220,35 @@
     "city": "Lancaster County",
     "state": "South Carolina",
     "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2017/468543829_10162304518174456_3941061009983554318_n.jpg",
+    "media_type": "photo",
+    "file": "468543829_10162304518174456_3941061009983554318_n.jpg",
+    "folder": "2017",
+    "date": "2014-01-01",
+    "people": [
+      "Jason Hoke",
+      "Terri Faulkenberry"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Jason Hoke",
+      "Military_Rescue_Police_EMS",
+      "People/Jason Hoke",
+      "People/Terri Faulkenberry",
+      "People|Jason Hoke",
+      "People|Terri Faulkenberry",
+      "Terri Faulkenberry"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
     "gps": null
   },
   {
@@ -46033,35 +46124,6 @@
     "gps": null
   },
   {
-    "path": "images/2017/468543829_10162304518174456_3941061009983554318_n.jpg",
-    "media_type": "photo",
-    "file": "468543829_10162304518174456_3941061009983554318_n.jpg",
-    "folder": "2017",
-    "date": "2017-01-01",
-    "people": [
-      "Jason Hoke",
-      "Terri Faulkenberry"
-    ],
-    "tags": [
-      "Hobbies/Military_Rescue_Police_EMS",
-      "Hobbies|Military_Rescue_Police_EMS",
-      "Jason Hoke",
-      "Military_Rescue_Police_EMS",
-      "People/Jason Hoke",
-      "People/Terri Faulkenberry",
-      "People|Jason Hoke",
-      "People|Terri Faulkenberry",
-      "Terri Faulkenberry"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
     "path": "images/2017/506353102_3031705583671710_2119485921027383882_n.jpg",
     "media_type": "photo",
     "file": "506353102_3031705583671710_2119485921027383882_n.jpg",
@@ -46596,7 +46658,10 @@
       "Jason Hoke"
     ],
     "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
       "Jason Hoke",
+      "Military_Rescue_Police_EMS",
       "People/Jason Hoke",
       "People|Jason Hoke"
     ],
@@ -46618,7 +46683,10 @@
       "Jason Hoke"
     ],
     "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
       "Jason Hoke",
+      "Military_Rescue_Police_EMS",
       "People/Jason Hoke",
       "People|Jason Hoke"
     ],
@@ -46640,7 +46708,10 @@
       "Jason Hoke"
     ],
     "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
       "Jason Hoke",
+      "Military_Rescue_Police_EMS",
       "People/Jason Hoke",
       "People|Jason Hoke",
       "Video"

@@ -1,6 +1,12 @@
 {
   "tagRoot": "Hobbies",
   "memberships": {
+    "images/1920/Henry William Bell.png": [
+      "Military / Police / Rescue / EMS"
+    ],
+    "images/1944/Document_20260903_0001.jpg": [
+      "Military / Police / Rescue / EMS"
+    ],
     "images/1946/01_pilot_and_student_licenses_received.jpg": [
       "Aviation"
     ],
@@ -689,7 +695,7 @@
     "images/2005/2005_7_14_Camp911__1 004.jpg": [
       "Military / Police / Rescue / EMS"
     ],
-    "images/2005/2005_8_15_Grace_Wreck__1 001.jpg": [
+    "images/2005/2005_9_7_Tractor_Wreck__1 005.jpg": [
       "Military / Police / Rescue / EMS"
     ],
     "images/2005/PC310001.JPG": [
@@ -702,9 +708,6 @@
       "Scuba"
     ],
     "images/2006/01-13-06_0805.jpg": [
-      "Military / Police / Rescue / EMS"
-    ],
-    "images/2006/010.JPG": [
       "Military / Police / Rescue / EMS"
     ],
     "images/2006/03-19-06_1205.jpg": [
@@ -723,6 +726,9 @@
       "Military / Police / Rescue / EMS"
     ],
     "images/2006/08-13-06_1145.jpg": [
+      "Military / Police / Rescue / EMS"
+    ],
+    "images/2006/08-13-06_1146.jpg": [
       "Military / Police / Rescue / EMS"
     ],
     "images/2006/08-14-06_1954.jpg": [
@@ -937,6 +943,12 @@
     ],
     "images/2017/IMG_1157.JPG": [
       "Boating"
+    ],
+    "images/2017/hoke 2.png": [
+      "Military / Police / Rescue / EMS"
+    ],
+    "images/2017/hoke_2.png": [
+      "Military / Police / Rescue / EMS"
     ],
     "images/2018/20180318_144816.jpg": [
       "Boating"
@@ -1579,6 +1591,9 @@
     "videos/2017/20170901_155333000_iOS.mp4": [
       "Boating"
     ],
+    "videos/2017/Medic Hoke Last Call.mp4": [
+      "Military / Police / Rescue / EMS"
+    ],
     "videos/2018/20180318_163348.mp4": [
       "Boating"
     ],
@@ -1701,7 +1716,7 @@
     "Boating": 1424,
     "Off-Roading": 313,
     "Camping": 381,
-    "Military / Police / Rescue / EMS": 801
+    "Military / Police / Rescue / EMS": 804
   },
   "publicCounts": {
     "Aviation": 136,
@@ -1710,6 +1725,6 @@
     "Boating": 111,
     "Off-Roading": 24,
     "Camping": 60,
-    "Military / Police / Rescue / EMS": 74
+    "Military / Police / Rescue / EMS": 79
   }
 }
