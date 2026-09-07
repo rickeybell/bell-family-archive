@@ -10,7 +10,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-$ScriptVersion = "2.4"
+$ScriptVersion = "2.5"
 $RepoRoot = $PSScriptRoot
 $DbSourceHelper = Join-Path $RepoRoot "tools\list_website_sources_from_digikam.py"
 $GreenSyncHelper = Join-Path $RepoRoot "tools\ensure_website_green_in_digikam.py"
@@ -181,6 +181,19 @@ function Get-VideoCompatibility {
     }
 }
 
+function Get-OrientationVideoFilter {
+    param([string]$Orientation)
+    if ([string]::IsNullOrWhiteSpace($Orientation)) { return '' }
+    switch -Regex ($Orientation.Trim()) {
+        '^Rotate 90 CW$'      { return 'transpose=1' }
+        '^Rotate 180$'        { return 'hflip,vflip' }
+        '^Rotate 270 CW$'     { return 'transpose=2' }
+        '^Mirror horizontal$' { return 'hflip' }
+        '^Mirror vertical$'   { return 'vflip' }
+        default               { return '' }
+    }
+}
+
 function Invoke-FFmpeg {
     param([string[]]$Arguments)
     & $FFmpeg @Arguments
@@ -192,6 +205,7 @@ function Write-WebVideoDerivative {
         [Parameter(Mandatory=$true)][System.IO.FileInfo]$Source,
         [Parameter(Mandatory=$true)][string]$Destination,
         [Parameter(Mandatory=$true)]$SourceCompatibility,
+        [string]$OrientationFilter = '',
         [switch]$ForceSizeReduction
     )
     $folder = Split-Path -Parent $Destination
@@ -200,7 +214,7 @@ function Write-WebVideoDerivative {
     if (Test-Path -LiteralPath $temp) { Remove-Item -LiteralPath $temp -Force }
 
     try {
-        if ($SourceCompatibility.WebCodecs -and !$ForceSizeReduction) {
+        if ($SourceCompatibility.WebCodecs -and !$ForceSizeReduction -and !$OrientationFilter) {
             Write-Host "REMUX   $($Source.FullName)"
             Invoke-FFmpeg @('-hide_banner','-loglevel','error','-y','-i',$Source.FullName,'-map','0:v:0','-map','0:a?','-c','copy','-movflags','+faststart',$temp)
         } else {
@@ -208,14 +222,16 @@ function Write-WebVideoDerivative {
             # Very large 4K/high-frame-rate masters may remain above GitHub's
             # file limit even at a high CRF. For website-only size reduction,
             # cap the derivative at 1080p and 30 fps; the master is untouched.
-            $videoFilterArgs = if ($ForceSizeReduction) {
-                @('-vf','scale=1920:1920:force_original_aspect_ratio=decrease,fps=30')
-            } else {
-                @()
+            $filters = @()
+            if ($OrientationFilter) { $filters += $OrientationFilter }
+            if ($ForceSizeReduction) {
+                $filters += 'scale=1920:1920:force_original_aspect_ratio=decrease'
+                $filters += 'fps=30'
             }
+            $videoFilterArgs = if ($filters.Count) { @('-vf',($filters -join ',')) } else { @() }
             foreach ($crf in $crfValues) {
                 Write-Host "TRANSCODE $($Source.FullName) [$($SourceCompatibility.VideoCodec)/$($SourceCompatibility.AudioCodec), CRF $crf]"
-                Invoke-FFmpeg (@('-hide_banner','-loglevel','error','-y','-i',$Source.FullName,'-map','0:v:0','-map','0:a?') + $videoFilterArgs + @('-c:v','libx264','-preset','medium','-crf',"$crf",'-pix_fmt','yuv420p','-c:a','aac','-b:a','128k','-movflags','+faststart',$temp))
+                Invoke-FFmpeg (@('-hide_banner','-loglevel','error','-y','-i',$Source.FullName,'-map','0:v:0','-map','0:a?') + $videoFilterArgs + @('-c:v','libx264','-preset','medium','-crf',"$crf",'-pix_fmt','yuv420p','-c:a','aac','-b:a','128k','-metadata:s:v:0','rotate=0','-movflags','+faststart',$temp))
                 if ((Get-Item -LiteralPath $temp).Length -le $MaxGitHubVideoBytes) { break }
                 Remove-Item -LiteralPath $temp -Force
             }
@@ -342,7 +358,7 @@ $destinationSources = @{}
 for ($i=0; $i -lt $files.Count; $i += 50) {
     $batch = @($files[$i..([Math]::Min($i+49,$files.Count-1))])
     if ($batch.Count -eq 0) { continue }
-    $args = @('-q','-q','-json','-Subject','-Keywords','-HierarchicalSubject','-PersonInImage','-RegionPersonDisplayName','-Title','-Description','-Caption-Abstract','-DateTimeOriginal','-CreateDate','-GPSLatitude','-GPSLongitude')
+    $args = @('-q','-q','-json','-Subject','-Keywords','-HierarchicalSubject','-PersonInImage','-RegionPersonDisplayName','-Title','-Description','-Caption-Abstract','-DateTimeOriginal','-CreateDate','-GPSLatitude','-GPSLongitude','-Orientation')
     foreach ($file in $batch) { $args += $file.FullName }
     # Windows PowerShell promotes harmless native stderr text (including ExifTool's
     # Perl locale warning) to an error when the script uses ErrorActionPreference=Stop.
@@ -380,6 +396,7 @@ for ($i=0; $i -lt $files.Count; $i += 50) {
         }
         $destinationSources[$destinationKey] = $file.FullName
         $dest = Join-Path $VideoRoot $relative
+        $orientationFilter = Get-OrientationVideoFilter ([string]$record.Orientation)
         $sourceCompat = Get-VideoCompatibilityCached $file.FullName
         if (!$sourceCompat.Readable) {
             Write-Warning "FFprobe could not read video: $($file.FullName)"
@@ -403,11 +420,14 @@ for ($i=0; $i -lt $files.Count; $i += 50) {
                 ($previousTime.ToUniversalTime().Ticks -eq $file.LastWriteTimeUtc.Ticks) -and
                 ([string]$previous.SourcePath -ieq $file.FullName)
         }
-        $needsWrite = !($destWebSafe -and ($timestampCurrent -or $manifestCurrent))
+        $transformCurrent = if ($orientationFilter) {
+            $previous -and ([string]$previous.WebsiteTransform -eq $orientationFilter)
+        } else { $true }
+        $needsWrite = !($destWebSafe -and ($timestampCurrent -or $manifestCurrent) -and $transformCurrent)
 
         if ($needsWrite) {
             $sourceTooLarge = $file.Length -gt $MaxGitHubVideoBytes
-            $mode = if ($sourceTooLarge) { 'TRANSCODE-SIZE' } elseif ($sourceCompat.WebCodecs -and $file.Extension -ieq '.mp4') { 'COPY' } elseif ($sourceCompat.WebCodecs) { 'REMUX' } else { 'TRANSCODE' }
+            $mode = if ($orientationFilter) { 'TRANSCODE-ORIENT' } elseif ($sourceTooLarge) { 'TRANSCODE-SIZE' } elseif ($sourceCompat.WebCodecs -and $file.Extension -ieq '.mp4') { 'COPY' } elseif ($sourceCompat.WebCodecs) { 'REMUX' } else { 'TRANSCODE' }
             Write-Host "$mode  videos\$relative"
             if (!$DryRun) {
                 $folder = Split-Path -Parent $dest
@@ -417,7 +437,7 @@ for ($i=0; $i -lt $files.Count; $i += 50) {
                     (Get-Item -LiteralPath $dest).LastWriteTimeUtc = $file.LastWriteTimeUtc
                     $copied++
                 } else {
-                    Write-WebVideoDerivative -Source $file -Destination $dest -SourceCompatibility $sourceCompat -ForceSizeReduction:($mode -eq 'TRANSCODE-SIZE')
+                    Write-WebVideoDerivative -Source $file -Destination $dest -SourceCompatibility $sourceCompat -OrientationFilter $orientationFilter -ForceSizeReduction:$sourceTooLarge
                     if ($mode -eq 'REMUX') { $remuxed++ } else { $transcoded++ }
                 }
                 $verify = Get-VideoCompatibilityCached $dest -Refresh
@@ -478,6 +498,7 @@ for ($i=0; $i -lt $files.Count; $i += 50) {
             Tags=(($cleanTags | Select-Object -Unique) -join '; ')
             GPSLatitude=$metadataLatitude
             GPSLongitude=$metadataLongitude
+            WebsiteTransform=$orientationFilter
             Length=$file.Length
             LastWriteUtc=$file.LastWriteTimeUtc.ToString('o')
         })
