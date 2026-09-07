@@ -252,6 +252,9 @@
       "Boating",
       "Scuba"
     ],
+    "images/2001/Inservice September 2004 012.jpg": [
+      "Military / Police / Rescue / EMS"
+    ],
     "images/2001/STAR Team Training - October 2004 005.jpg": [
       "Military / Police / Rescue / EMS"
     ],
@@ -595,7 +598,13 @@
     "images/2004/1 0301.jpg": [
       "Scuba"
     ],
+    "images/2004/2003_10_20 056.jpg": [
+      "Military / Police / Rescue / EMS"
+    ],
     "images/2004/2003_10_20 075.jpg": [
+      "Military / Police / Rescue / EMS"
+    ],
+    "images/2004/2004_11_13__1 059.jpg": [
       "Military / Police / Rescue / EMS"
     ],
     "images/2004/2004_11_13__1 108.jpg": [
@@ -616,10 +625,16 @@
     "images/2004/2004_11_21__3 057.jpg": [
       "Boating"
     ],
+    "images/2004/2004_12_6_Large_Truck__3 016.jpg": [
+      "Military / Police / Rescue / EMS"
+    ],
     "images/2004/2004_12_6_Large_Truck__3 035.jpg": [
       "Military / Police / Rescue / EMS"
     ],
     "images/2004/2004_12_6_Large_Truck__3 057.jpg": [
+      "Military / Police / Rescue / EMS"
+    ],
+    "images/2004/2004_12_6_Large_Truck__3 076.jpg": [
       "Military / Police / Rescue / EMS"
     ],
     "images/2004/2004_3_14_Crystal_River__1 003.jpg": [
@@ -680,19 +695,37 @@
     "images/2005/1 074_face_blurred.jpg": [
       "Military / Police / Rescue / EMS"
     ],
+    "images/2005/1 147.jpg": [
+      "Military / Police / Rescue / EMS"
+    ],
     "images/2005/12-04-05_1141.jpg": [
+      "Military / Police / Rescue / EMS"
+    ],
+    "images/2005/12-20-05_1455.jpg": [
       "Military / Police / Rescue / EMS"
     ],
     "images/2005/12-22-05_0953.jpg": [
       "Military / Police / Rescue / EMS"
     ],
+    "images/2005/2005_2_10_Tower__3 004.jpg": [
+      "Military / Police / Rescue / EMS"
+    ],
     "images/2005/2005_4_22_MsRelay__1 004.jpg": [
+      "Military / Police / Rescue / EMS"
+    ],
+    "images/2005/2005_4_22_MsRelay__1 022.jpg": [
       "Military / Police / Rescue / EMS"
     ],
     "images/2005/2005_5_7_Riverside_Wreck__1 003_plate_blurred.jpg": [
       "Military / Police / Rescue / EMS"
     ],
     "images/2005/2005_7_14_Camp911__1 004.jpg": [
+      "Military / Police / Rescue / EMS"
+    ],
+    "images/2005/2005_7_14_Camp911__1 009.jpg": [
+      "Military / Police / Rescue / EMS"
+    ],
+    "images/2005/2005_8_15_Grace_Wreck__1 002.jpg": [
       "Military / Police / Rescue / EMS"
     ],
     "images/2005/2005_9_7_Tractor_Wreck__1 005.jpg": [
@@ -756,6 +789,9 @@
     ],
     "images/2006/PIC_0052.JPG": [
       "Camping"
+    ],
+    "images/2007/01-30-07_1737.jpg": [
+      "Military / Police / Rescue / EMS"
     ],
     "images/2007/04-06-07_1059.jpg": [
       "Military / Police / Rescue / EMS"
@@ -1564,6 +1600,9 @@
     "videos/2002/115-1595_MVI.mp4": [
       "Scuba"
     ],
+    "videos/2005/12-15-05_1058.mp4": [
+      "Military / Police / Rescue / EMS"
+    ],
     "videos/2008/FILE0049.mp4": [
       "Military / Police / Rescue / EMS"
     ],
@@ -1722,7 +1761,7 @@
     "Boating": 1424,
     "Off-Roading": 313,
     "Camping": 381,
-    "Military / Police / Rescue / EMS": 804
+    "Military / Police / Rescue / EMS": 803
   },
   "publicCounts": {
     "Aviation": 136,
@@ -1731,6 +1770,6 @@
     "Boating": 111,
     "Off-Roading": 24,
     "Camping": 60,
-    "Military / Police / Rescue / EMS": 79
+    "Military / Police / Rescue / EMS": 92
   }
 }
