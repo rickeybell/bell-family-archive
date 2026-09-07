@@ -43355,6 +43355,26 @@
     "gps": null
   },
   {
+    "path": "images/2010/103_0564.JPG",
+    "media_type": "photo",
+    "file": "103_0564.JPG",
+    "folder": "2010",
+    "date": "2010-06-04",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS"
+    ],
+    "title": "Swiftwater diamond drill.",
+    "description": "The swiftwater rescue diamond formation (often practiced interchangeably with or alongside the wedge/pyramid formation) is a highly specialized shallow-water wading technique. It allows a team of rescuers to safely cross fast-moving, shallow water or retrieve a victim by working together to break the river's force",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2010/103_0567.JPG",
     "media_type": "photo",
     "file": "103_0567.JPG",
@@ -43607,7 +43627,7 @@
       "Hobbies|Military_Rescue_Police_EMS",
       "Military_Rescue_Police_EMS"
     ],
-    "title": "",
+    "title": "Whitesides had a boo-boo.",
     "description": "",
     "location": "",
     "city": "",
@@ -48228,7 +48248,7 @@
       "Places|South Carolina|Lancaster County",
       "Shooting"
     ],
-    "title": "",
+    "title": "That will be a keeper!",
     "description": "",
     "location": "",
     "city": "Lancaster County",
@@ -57791,6 +57811,60 @@
     }
   },
   {
+    "path": "images/2025/20250928_154012.jpg",
+    "media_type": "photo",
+    "file": "20250928_154012.jpg",
+    "folder": "2025",
+    "date": "2025-09-28",
+    "people": [],
+    "tags": [
+      "Chester County",
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Locked",
+      "Places/South Carolina/Chester County",
+      "Places|South Carolina|Chester County",
+      "Shooting"
+    ],
+    "title": "Some dualing trees fall apart with a .41 Mag.",
+    "description": "",
+    "location": "",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6414518669444,
+      "lon": -80.9125077002778
+    }
+  },
+  {
+    "path": "images/2025/20250930_165925.jpg",
+    "media_type": "photo",
+    "file": "20250930_165925.jpg",
+    "folder": "2025",
+    "date": "2025-09-30",
+    "people": [],
+    "tags": [
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Lancaster County",
+      "Locked",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County",
+      "Shooting"
+    ],
+    "title": "Custom 3D-printed stands make safes much more organized.",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6933823830556,
+      "lon": -80.8252353833333
+    }
+  },
+  {
     "path": "images/2025/20251004_092008.jpg",
     "media_type": "photo",
     "file": "20251004_092008.jpg",
@@ -57941,6 +58015,31 @@
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "videos/2025/ATNX0036.mp4",
+    "media_type": "video",
+    "file": "ATNX0036.mp4",
+    "folder": "2025",
+    "date": "2025-11-02",
+    "people": [],
+    "tags": [
+      "Chester County",
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Locked",
+      "Places/South Carolina/Chester County",
+      "Places|South Carolina|Chester County",
+      "Shooting",
+      "Video"
+    ],
+    "title": "Testing the ATN laser range finder and BDC on a .350 Legend",
+    "description": "",
+    "location": "",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {

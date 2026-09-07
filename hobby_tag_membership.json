@@ -905,6 +905,9 @@
     "images/2010/050.jpg": [
       "Military / Police / Rescue / EMS"
     ],
+    "images/2010/103_0564.JPG": [
+      "Military / Police / Rescue / EMS"
+    ],
     "images/2010/103_0567.JPG": [
       "Military / Police / Rescue / EMS"
     ],
@@ -1515,6 +1518,12 @@
     "images/2025/20250917_184207.jpg": [
       "Shooting"
     ],
+    "images/2025/20250928_154012.jpg": [
+      "Shooting"
+    ],
+    "images/2025/20250930_165925.jpg": [
+      "Shooting"
+    ],
     "images/2025/20251004_092008.jpg": [
       "Aviation"
     ],
@@ -1732,6 +1741,9 @@
     "videos/2025/ATNX0024.mp4": [
       "Shooting"
     ],
+    "videos/2025/ATNX0036.mp4": [
+      "Shooting"
+    ],
     "videos/2025/Coyote 2025.mp4": [
       "Shooting"
     ],
@@ -1766,10 +1778,10 @@
   "publicCounts": {
     "Aviation": 136,
     "Scuba": 141,
-    "Shooting": 36,
+    "Shooting": 39,
     "Boating": 111,
     "Off-Roading": 24,
     "Camping": 60,
-    "Military / Police / Rescue / EMS": 92
+    "Military / Police / Rescue / EMS": 93
   }
 }
