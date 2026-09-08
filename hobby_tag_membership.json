@@ -1581,6 +1581,9 @@
     "images/2026/20260403_154258.jpg": [
       "Boating"
     ],
+    "images/2026/20260509_132526.jpg": [
+      "Shooting"
+    ],
     "images/2026/20260607_114315.jpg": [
       "Boating"
     ],
@@ -1589,6 +1592,9 @@
     ],
     "images/2026/20260707_133623.jpg": [
       "Aviation"
+    ],
+    "images/2026/20260728_170205.jpg": [
+      "Shooting"
     ],
     "images/2026/784226620_1000948432972754_8357374407785207827_n.jpg": [
       "Shooting"
@@ -1773,12 +1779,12 @@
     "Boating": 1424,
     "Off-Roading": 313,
     "Camping": 381,
-    "Military / Police / Rescue / EMS": 803
+    "Military / Police / Rescue / EMS": 804
   },
   "publicCounts": {
     "Aviation": 136,
     "Scuba": 141,
-    "Shooting": 39,
+    "Shooting": 41,
     "Boating": 111,
     "Off-Roading": 24,
     "Camping": 60,

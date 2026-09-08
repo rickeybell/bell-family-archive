@@ -27789,15 +27789,19 @@
     "folder": "1999",
     "date": "1999-07-31",
     "people": [
-      "Dick Bell"
+      "Dick Bell",
+      "Stephanie Bell"
     ],
     "tags": [
       "Dick Bell",
       "People/Dick Bell",
+      "People/Stephanie Bell",
       "People|Dick Bell",
+      "People|Stephanie Bell",
       "Pizza Inn",
       "Places/South Carolina/Lancaster County/Pizza Inn",
-      "Places|South Carolina|Lancaster County|Pizza Inn"
+      "Places|South Carolina|Lancaster County|Pizza Inn",
+      "Stephanie Bell"
     ],
     "title": "Samatha's 4th Birthday Party",
     "description": "",
@@ -28162,8 +28166,14 @@
     "file": "2000s_0002_a.jpg",
     "folder": "2000",
     "date": "2000-01-01",
-    "people": [],
-    "tags": [],
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Samatha Bell"
+    ],
     "title": "",
     "description": "",
     "location": "",
@@ -28205,10 +28215,14 @@
     "folder": "2000",
     "date": "2000-01-01",
     "people": [
+      "Jarred Bell",
       "Samatha Bell"
     ],
     "tags": [
+      "Jarred Bell",
+      "People/Jarred Bell",
       "People/Samatha Bell",
+      "People|Jarred Bell",
       "People|Samatha Bell",
       "Samatha Bell"
     ],
@@ -30413,7 +30427,7 @@
       "People|David Camp"
     ],
     "title": "",
-    "description": "UMAX Data System Inc.",
+    "description": "",
     "location": "",
     "city": "",
     "state": "",
@@ -31562,7 +31576,8 @@
     "folder": "2002",
     "date": "2002-06-23",
     "people": [
-      "Jason Hoke"
+      "Jason Hoke",
+      "John Cooper"
     ],
     "tags": [
       "Fishing Creek",
@@ -31571,9 +31586,12 @@
       "Hobbies|Military_Rescue_Police_EMS",
       "Hobbies|Scuba",
       "Jason Hoke",
+      "John Cooper",
       "Military_Rescue_Police_EMS",
       "People/Jason Hoke",
+      "People/John Cooper",
       "People|Jason Hoke",
+      "People|John Cooper",
       "Places/South Carolina/Fishing Creek",
       "Places|South Carolina|Fishing Creek",
       "Scuba"
@@ -31593,7 +31611,8 @@
     "folder": "2002",
     "date": "2002-06-23",
     "people": [
-      "Jason Hoke"
+      "Jason Hoke",
+      "John Cooper"
     ],
     "tags": [
       "Fishing Creek",
@@ -31602,9 +31621,12 @@
       "Hobbies|Military_Rescue_Police_EMS",
       "Hobbies|Scuba",
       "Jason Hoke",
+      "John Cooper",
       "Military_Rescue_Police_EMS",
       "People/Jason Hoke",
+      "People/John Cooper",
       "People|Jason Hoke",
+      "People|John Cooper",
       "Places/South Carolina/Fishing Creek",
       "Places|South Carolina|Fishing Creek",
       "Scuba"
@@ -31827,7 +31849,6 @@
       "Donna Brown"
     ],
     "tags": [
-      "2044 DOUGLAS RD",
       "2044 Douglas Rd",
       "Donna Brown",
       "Lancaster County",
@@ -31835,7 +31856,6 @@
       "People|Donna Brown",
       "Places/South Carolina",
       "Places/South Carolina/Lancaster County",
-      "Places/South Carolina/Lancaster County/2044 DOUGLAS RD",
       "Places/South Carolina/Lancaster County/2044 Douglas Rd",
       "Places|South Carolina",
       "Places|South Carolina|Lancaster County",
@@ -31849,8 +31869,8 @@
     "state": "South Carolina",
     "country": "United States",
     "gps": {
-      "lat": 34.6614305067361,
-      "lon": -80.7817025841972
+      "lat": 34.6614305061111,
+      "lon": -80.7817025841667
     }
   },
   {
@@ -32043,14 +32063,18 @@
     "folder": "2002",
     "date": "2002-06-30",
     "people": [
-      "Gray Taylor"
+      "Gray Taylor",
+      "Ken Blackman"
     ],
     "tags": [
       "Gray Taylor",
       "Hobbies/Scuba",
       "Hobbies|Scuba",
+      "Ken Blackman",
       "People/Gray Taylor",
+      "People/Ken Blackman",
       "People|Gray Taylor",
+      "People|Ken Blackman",
       "Places/South Carolina",
       "Places/South Carolina/York County/Rock Hill",
       "Places|South Carolina",
@@ -32398,7 +32422,8 @@
     "folder": "2002",
     "date": "2002-07-12",
     "people": [
-      "Joey Catoe"
+      "Joey Catoe",
+      "Trippy Catoe"
     ],
     "tags": [
       "Florida",
@@ -32407,12 +32432,15 @@
       "Joey Catoe",
       "Manatee Springs",
       "People/Joey Catoe",
+      "People/Trippy Catoe",
       "People|Joey Catoe",
+      "People|Trippy Catoe",
       "Places/Florida",
       "Places/Florida/Manatee Springs",
       "Places|Florida",
       "Places|Florida|Manatee Springs",
-      "Scuba"
+      "Scuba",
+      "Trippy Catoe"
     ],
     "title": "",
     "description": "",
@@ -32965,14 +32993,19 @@
     "file": "116-1641_IMG.JPG",
     "folder": "2002",
     "date": "2002-07-28",
-    "people": [],
+    "people": [
+      "Rickey Bell"
+    ],
     "tags": [
       "Hobbies/Scuba",
       "Hobbies|Scuba",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
       "Places/South Carolina",
       "Places/South Carolina/York County/Rock Hill",
       "Places|South Carolina",
       "Places|South Carolina|York County|Rock Hill",
+      "Rickey Bell",
       "Rock Hill",
       "Scuba",
       "South Carolina"
@@ -34521,14 +34554,22 @@
     "folder": "2002",
     "date": "2002-12-22",
     "people": [
-      "Alice Neely"
+      "Alice Neely",
+      "Cindy Green",
+      "Donna Brown"
     ],
     "tags": [
       "2044 Douglas Rd",
       "Alice Neely",
+      "Cindy Green",
+      "Donna Brown",
       "Lancaster County",
       "People/Alice Neely",
+      "People/Cindy Green",
+      "People/Donna Brown",
       "People|Alice Neely",
+      "People|Cindy Green",
+      "People|Donna Brown",
       "Places/South Carolina",
       "Places/South Carolina/Lancaster County",
       "Places/South Carolina/Lancaster County/2044 Douglas Rd",
@@ -34545,7 +34586,7 @@
     "country": "United States",
     "gps": {
       "lat": 34.6614305061111,
-      "lon": -80.7817025841667
+      "lon": -80.7817025852778
     }
   },
   {
@@ -35526,16 +35567,20 @@
     "folder": "2002",
     "date": "2002-12-25",
     "people": [
+      "Clyde Phillips",
       "Debbie Phillips",
       "Jacob Starnes"
     ],
     "tags": [
       "2346 FLAT CREEK RD Phillips Family Home",
+      "Clyde Phillips",
       "Debbie Phillips",
       "Jacob Starnes",
       "Lancaster County",
+      "People/Clyde Phillips",
       "People/Debbie Phillips",
       "People/Jacob Starnes",
+      "People|Clyde Phillips",
       "People|Debbie Phillips",
       "People|Jacob Starnes",
       "Places/South Carolina",
@@ -41457,13 +41502,17 @@
     "folder": "2007",
     "date": "2007-12-21",
     "people": [
+      "Jarred Bell",
       "Macey Steen",
       "Samatha Bell"
     ],
     "tags": [
+      "Jarred Bell",
       "Macey Steen",
+      "People/Jarred Bell",
       "People/Macey Steen",
       "People/Samatha Bell",
+      "People|Jarred Bell",
       "People|Macey Steen",
       "People|Samatha Bell",
       "Samatha Bell"
@@ -41483,12 +41532,16 @@
     "folder": "2007",
     "date": "2007-12-21",
     "people": [
-      "Macey Steen"
+      "Macey Steen",
+      "Samatha Bell"
     ],
     "tags": [
       "Macey Steen",
       "People/Macey Steen",
-      "People|Macey Steen"
+      "People/Samatha Bell",
+      "People|Macey Steen",
+      "People|Samatha Bell",
+      "Samatha Bell"
     ],
     "title": "",
     "description": "",
@@ -41588,14 +41641,19 @@
     "file": "IMAGE_158.jpg",
     "folder": "2008",
     "date": "2008-03-23",
-    "people": [],
+    "people": [
+      "Samatha Bell"
+    ],
     "tags": [
       "Camping",
       "Hobbies/Camping",
       "Hobbies|Camping",
       "Lake Wateree",
+      "People/Samatha Bell",
+      "People|Samatha Bell",
       "Places/South Carolina/Kershaw/Lake Wateree",
-      "Places|South Carolina|Kershaw|Lake Wateree"
+      "Places|South Carolina|Kershaw|Lake Wateree",
+      "Samatha Bell"
     ],
     "title": "",
     "description": "",
@@ -41643,14 +41701,19 @@
     "file": "IMAGE_172.jpg",
     "folder": "2008",
     "date": "2008-03-23",
-    "people": [],
+    "people": [
+      "Rickey Bell"
+    ],
     "tags": [
       "Camping",
       "Hobbies/Camping",
       "Hobbies|Camping",
       "Lake Wateree",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
       "Places/South Carolina/Kershaw/Lake Wateree",
-      "Places|South Carolina|Kershaw|Lake Wateree"
+      "Places|South Carolina|Kershaw|Lake Wateree",
+      "Rickey Bell"
     ],
     "title": "",
     "description": "",
@@ -41768,7 +41831,7 @@
       "Rickey Bell"
     ],
     "title": "",
-    "description": "Sunplus Corp. ",
+    "description": "\n",
     "location": "",
     "city": "",
     "state": "",
@@ -42245,6 +42308,7 @@
     "folder": "2008",
     "date": "2008-06-04",
     "people": [
+      "Rickey Bell",
       "Samatha Bell"
     ],
     "tags": [
@@ -42252,10 +42316,13 @@
       "Boating",
       "Hobbies/Boating",
       "Hobbies|Boating",
+      "People/Rickey Bell",
       "People/Samatha Bell",
+      "People|Rickey Bell",
       "People|Samatha Bell",
       "Places/South Carolina/Lancaster County/Bear Creek",
       "Places|South Carolina|Lancaster County|Bear Creek",
+      "Rickey Bell",
       "Samatha Bell"
     ],
     "title": "",
@@ -42510,28 +42577,6 @@
     "gps": null
   },
   {
-    "path": "images/2009/FILE0234.JPG",
-    "media_type": "photo",
-    "file": "FILE0234.JPG",
-    "folder": "2009",
-    "date": "2008-12-21",
-    "people": [
-      "Andrew Morgan"
-    ],
-    "tags": [
-      "Andrew Morgan",
-      "People/Andrew Morgan",
-      "People|Andrew Morgan"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": null
-  },
-  {
     "path": "images/2008/FILE0055.JPG",
     "media_type": "photo",
     "file": "FILE0055.JPG",
@@ -42620,18 +42665,30 @@
     ],
     "tags": [
       "Andrew Morgan",
+      "Joey Morgan",
+      "Karen Gaskin",
+      "Lancaster County",
       "Mickey Morgan",
       "People/Andrew Morgan",
+      "People/Joey Morgan",
+      "People/Karen Gaskin",
       "People/Mickey Morgan",
       "People|Andrew Morgan",
-      "People|Mickey Morgan"
+      "People|Joey Morgan",
+      "People|Karen Gaskin",
+      "People|Mickey Morgan",
+      "Pizza Inn",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/Pizza Inn",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|Pizza Inn"
     ],
-    "title": "",
+    "title": "Jarred's 9th Birthday Party at Pizza Inn",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "Pizza Inn",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -42830,6 +42887,32 @@
       "Hobbies|Boating",
       "Hobbies|Military_Rescue_Police_EMS",
       "Military_Rescue_Police_EMS"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2009/FILE0234.JPG",
+    "media_type": "photo",
+    "file": "FILE0234.JPG",
+    "folder": "2009",
+    "date": "2009-03-29",
+    "people": [
+      "Andrew Morgan",
+      "Jarred Bell"
+    ],
+    "tags": [
+      "Andrew Morgan",
+      "Jarred Bell",
+      "People/Andrew Morgan",
+      "People/Jarred Bell",
+      "People|Andrew Morgan",
+      "People|Jarred Bell"
     ],
     "title": "",
     "description": "",
@@ -43057,16 +43140,22 @@
       "Rickey Bell"
     ],
     "tags": [
+      "900 Confederate Ave",
       "Jarred Bell",
       "People/Jarred Bell",
-      "People|Jarred Bell"
+      "People/Rickey Bell",
+      "People|Jarred Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Rickey Bell"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -43339,11 +43428,15 @@
     "folder": "2010",
     "date": "2010-06-03",
     "people": [
+      "Brandy Hoke",
       "Jason Hoke"
     ],
     "tags": [
+      "Brandy Hoke",
       "Jason Hoke",
+      "People/Brandy Hoke",
       "People/Jason Hoke",
+      "People|Brandy Hoke",
       "People|Jason Hoke"
     ],
     "title": "",
@@ -43360,11 +43453,16 @@
     "file": "103_0564.JPG",
     "folder": "2010",
     "date": "2010-06-04",
-    "people": [],
+    "people": [
+      "Chuck Payne"
+    ],
     "tags": [
+      "Chuck Payne",
       "Hobbies/Military_Rescue_Police_EMS",
       "Hobbies|Military_Rescue_Police_EMS",
-      "Military_Rescue_Police_EMS"
+      "Military_Rescue_Police_EMS",
+      "People/Chuck Payne",
+      "People|Chuck Payne"
     ],
     "title": "Swiftwater diamond drill.",
     "description": "The swiftwater rescue diamond formation (often practiced interchangeably with or alongside the wedge/pyramid formation) is a highly specialized shallow-water wading technique. It allows a team of rescuers to safely cross fast-moving, shallow water or retrieve a victim by working together to break the river's force",
@@ -43621,11 +43719,16 @@
     "file": "035.jpg",
     "folder": "2010",
     "date": "2010-08-09",
-    "people": [],
+    "people": [
+      "JD Whitesides"
+    ],
     "tags": [
       "Hobbies/Military_Rescue_Police_EMS",
       "Hobbies|Military_Rescue_Police_EMS",
-      "Military_Rescue_Police_EMS"
+      "JD Whitesides",
+      "Military_Rescue_Police_EMS",
+      "People/JD Whitesides",
+      "People|JD Whitesides"
     ],
     "title": "Whitesides had a boo-boo.",
     "description": "",
@@ -59669,6 +59772,29 @@
     "gps": null
   },
   {
+    "path": "images/2026/20260509_132526.jpg",
+    "media_type": "photo",
+    "file": "20260509_132526.jpg",
+    "folder": "2026",
+    "date": "2026-05-09",
+    "people": [],
+    "tags": [
+      "Chester County",
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Places/South Carolina/Chester County",
+      "Places|South Carolina|Chester County",
+      "Shooting"
+    ],
+    "title": "CWP class, letting students use different weapons. ",
+    "description": "",
+    "location": "",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2026/20260516_115834.jpg",
     "media_type": "photo",
     "file": "20260516_115834.jpg",
@@ -60133,6 +60259,32 @@
     "gps": null
   },
   {
+    "path": "images/2026/20260728_170205.jpg",
+    "media_type": "photo",
+    "file": "20260728_170205.jpg",
+    "folder": "2026",
+    "date": "2026-07-27",
+    "people": [],
+    "tags": [
+      "900 Confederate Ave",
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Shooting"
+    ],
+    "title": "Get a brand new expensive pistol, of course, you need to take it apart for trigger work!",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6933786,
+      "lon": -80.8252635833333
+    }
+  },
+  {
     "path": "images/1800/Sara Elizabeth Howze Bell.png",
     "media_type": "photo",
     "file": "Sara Elizabeth Howze Bell.png",
@@ -60218,6 +60370,33 @@
     ],
     "title": "Flat Creek Firearms",
     "description": "Derya TM22 LA-20. One of a kind \nSerial # AdamDontHave1 😂 \nWe cut the barrel to 10.75 inches, crowned and threaded it 1/2x28, and relocated the front sight farther back. We also shortened the magazine tube and added a removable end cap for a clean, functional finish",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/1992/ROTC Newspaper.jpg",
+    "media_type": "photo",
+    "file": "ROTC Newspaper.jpg",
+    "folder": "1992",
+    "date": "2026-09-08",
+    "people": [
+      "Dickey Bell",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Dickey Bell",
+      "Newspaper",
+      "People/Dickey Bell",
+      "People/Rickey Bell",
+      "People|Dickey Bell",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "Like Father, Like Son — Dickey and Rickey Bell",
+    "description": "A November 12, 1992 Lancaster News article featuring William “Dickey” Bell and his son, William “Rickey” Bell, who served as Lancaster High School JROTC Battalion Commanders in 1974 and 1992. ",
     "location": "",
     "city": "",
     "state": "",
