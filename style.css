@@ -1870,6 +1870,87 @@ a.archive-community-card:hover,a.archive-community-card:focus-visible{transform:
 .tree-page .archive-community-card:has([data-archive-person="Johnny Tharp"]){
   background:#fef3f3 !important;
 }
+
+/* Grouped media cards: portrait beside the details, wide photo below. */
+body .archive-card-group{
+  grid-template-rows:auto auto;
+  row-gap:2px;
+  background:#ddd;
+}
+
+body .archive-card-group>.archive-multi-pic{
+  display:contents;
+}
+
+body .archive-card-group>.archive-multi-pic>.archive-pic{
+  height:auto;
+  min-height:0;
+}
+
+body .archive-card-group>.archive-multi-pic>.archive-pic img{
+  width:100%;
+  min-height:0;
+  object-fit:contain;
+}
+
+body .archive-card-group>.archive-multi-pic>.archive-pic:nth-child(2){
+  grid-column:1;
+  grid-row:1;
+  height:350px;
+}
+
+body .archive-card-group>.archive-multi-pic>.archive-pic:nth-child(2) img{
+  height:350px;
+}
+
+body .archive-card-group>.archive-copy{
+  grid-column:2;
+  grid-row:1;
+  background:#fff;
+}
+
+body .archive-card-group>.archive-multi-pic>.archive-pic:first-child{
+  grid-column:1/-1;
+  grid-row:2;
+  height:280px;
+}
+
+body .archive-card-group>.archive-multi-pic>.archive-pic:first-child img{
+  height:280px;
+}
+
+@media(max-width:780px){
+  body .archive-card-wide.archive-card-group{
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:auto auto auto;
+  }
+
+  body .archive-card-group>.archive-multi-pic>.archive-pic:nth-child(2){
+    grid-column:1;
+    grid-row:1;
+    height:240px;
+  }
+
+  body .archive-card-group>.archive-multi-pic>.archive-pic:nth-child(2) img{
+    height:240px;
+  }
+
+  body .archive-card-group>.archive-copy{
+    grid-column:1;
+    grid-row:2;
+  }
+
+  body .archive-card-group>.archive-multi-pic>.archive-pic:first-child{
+    grid-column:1;
+    grid-row:3;
+    height:240px;
+  }
+
+  body .archive-card-group>.archive-multi-pic>.archive-pic:first-child img{
+    height:240px;
+  }
+}
 /* BELL TREE UPRIGHT FIX - END */
 
 /* Debbie Phillips and Irvin Phillips couple */
