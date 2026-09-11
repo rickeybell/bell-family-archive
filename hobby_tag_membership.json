@@ -1690,6 +1690,9 @@
     "videos/2013/Larry.mp4": [
       "Military / Police / Rescue / EMS"
     ],
+    "videos/2013/Under_Fire_Full_Video.mp4": [
+      "Shooting"
+    ],
     "videos/2014/2014-11-29 17.22.03.mp4": [
       "Boating"
     ],
@@ -1851,7 +1854,7 @@
   "publicCounts": {
     "Aviation": 145,
     "Scuba": 142,
-    "Shooting": 42,
+    "Shooting": 43,
     "Boating": 111,
     "Off-Roading": 24,
     "Camping": 62,

@@ -44898,6 +44898,70 @@
     "gps": null
   },
   {
+    "path": "images/2013/IMG_0175.JPG (2).JPG",
+    "media_type": "photo",
+    "file": "IMG_0175.JPG (2).JPG",
+    "folder": "2013",
+    "date": "2013-11-04",
+    "people": [],
+    "tags": [
+      "Chester County",
+      "Places/South Carolina/Chester County",
+      "Places|South Carolina|Chester County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6984166494444,
+      "lon": -81.2105166669444
+    }
+  },
+  {
+    "path": "videos/2013/Under_Fire_Full_Video.mp4",
+    "media_type": "video",
+    "file": "Under_Fire_Full_Video.mp4",
+    "folder": "2013",
+    "date": "2013-11-28",
+    "people": [
+      "Brea Morgan",
+      "Mike Morgan",
+      "Rickey Bell",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Brea Morgan",
+      "Crystal River",
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Mike Morgan",
+      "People/Brea Morgan",
+      "People/Mike Morgan",
+      "People/Rickey Bell",
+      "People/Samatha Bell",
+      "People|Brea Morgan",
+      "People|Mike Morgan",
+      "People|Rickey Bell",
+      "People|Samatha Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Rickey Bell",
+      "Samatha Bell",
+      "Shooting",
+      "Video"
+    ],
+    "title": "Sam tore me up with airsoft!",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2013/IrvinChristmas.jpg",
     "media_type": "photo",
     "file": "IrvinChristmas.jpg",
