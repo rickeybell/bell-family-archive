@@ -607,7 +607,19 @@
     "images/2004/2004_11_13__1 059.jpg": [
       "Military / Police / Rescue / EMS"
     ],
+    "images/2004/2004_11_13__1 093.jpg": [
+      "Military / Police / Rescue / EMS"
+    ],
     "images/2004/2004_11_13__1 108.jpg": [
+      "Military / Police / Rescue / EMS"
+    ],
+    "images/2004/2004_11_13__1 120.jpg": [
+      "Military / Police / Rescue / EMS"
+    ],
+    "images/2004/2004_11_13__1 121.jpg": [
+      "Military / Police / Rescue / EMS"
+    ],
+    "images/2004/2004_11_13__2 016.jpg": [
       "Military / Police / Rescue / EMS"
     ],
     "images/2004/2004_11_21__3 030.jpg": [
@@ -651,6 +663,9 @@
     "images/2004/2004_3_14_Crystal_River__1 027.jpg": [
       "Scuba"
     ],
+    "images/2004/2004_4_24_Rescue_Diving__Picture 008.jpg": [
+      "Scuba"
+    ],
     "images/2004/2004_8_23__Picture 008.jpg": [
       "Military / Police / Rescue / EMS"
     ],
@@ -672,6 +687,9 @@
     "images/2004/HighRes_WF31C04192623616.jpg": [
       "Off-Roading"
     ],
+    "images/2004/Picture 014.jpg": [
+      "Military / Police / Rescue / EMS"
+    ],
     "images/2004/Picture 0842.jpg": [
       "Scuba"
     ],
@@ -684,6 +702,9 @@
       "Scuba"
     ],
     "images/2004/Rescue Training 021.jpg": [
+      "Military / Police / Rescue / EMS"
+    ],
+    "images/2004/Rescue Training 045.jpg": [
       "Military / Police / Rescue / EMS"
     ],
     "images/2004/Rescue Training 076.jpg": [
@@ -1232,6 +1253,15 @@
     "images/2023/20230902_193313.jpg": [
       "Boating"
     ],
+    "images/2023/20230903_164355.jpg": [
+      "Aviation"
+    ],
+    "images/2023/20230903_165631.jpg": [
+      "Aviation"
+    ],
+    "images/2023/20230903_171223.jpg": [
+      "Aviation"
+    ],
     "images/2023/20230903_174732.jpg": [
       "Aviation"
     ],
@@ -1239,6 +1269,18 @@
       "Aviation"
     ],
     "images/2023/20230916_111836.jpg": [
+      "Aviation"
+    ],
+    "images/2023/20231008_115819.jpg": [
+      "Aviation"
+    ],
+    "images/2023/20231008_115940.jpg": [
+      "Aviation"
+    ],
+    "images/2023/20231008_120525.jpg": [
+      "Aviation"
+    ],
+    "images/2023/20231008_123721.jpg": [
       "Aviation"
     ],
     "images/2023/20231015_164344.jpg": [
@@ -1253,14 +1295,23 @@
     "images/2023/20231020_121248.jpg": [
       "Camping"
     ],
+    "images/2023/20231020_131511.jpg": [
+      "Camping"
+    ],
     "images/2023/20231021_113457.jpg": [
       "Camping"
     ],
     "images/2023/20231021_193951.jpg": [
       "Camping"
     ],
+    "images/2023/20231022_182327.jpg": [
+      "Aviation"
+    ],
     "images/2023/20231124_183640.jpg": [
       "Camping"
+    ],
+    "images/2023/IMG_3292.jpg": [
+      "Aviation"
     ],
     "images/2023/Screenshot_20230224_185255_Photos~2.jpg": [
       "Aviation"
@@ -1419,9 +1470,6 @@
     "images/2024/419461831_344820808398059_3900534953746476970_n.jpg": [
       "Aviation"
     ],
-    "images/2024/IMG_3292.jpg": [
-      "Aviation"
-    ],
     "images/2025/20250102_171257049_iOS.jpg": [
       "Aviation"
     ],
@@ -1530,9 +1578,6 @@
     "images/2025/20251010_174606.jpg": [
       "Shooting"
     ],
-    "images/2025/20251128_092341.jpg": [
-      "Aviation"
-    ],
     "images/2025/20251130_121448.jpg": [
       "Aviation"
     ],
@@ -1614,6 +1659,9 @@
     ],
     "videos/2002/115-1595_MVI.mp4": [
       "Scuba"
+    ],
+    "videos/2004/Rescue Training 106.mp4": [
+      "Military / Police / Rescue / EMS"
     ],
     "videos/2005/12-15-05_1058.mp4": [
       "Military / Police / Rescue / EMS"
@@ -1779,15 +1827,15 @@
     "Boating": 1424,
     "Off-Roading": 313,
     "Camping": 381,
-    "Military / Police / Rescue / EMS": 804
+    "Military / Police / Rescue / EMS": 990
   },
   "publicCounts": {
-    "Aviation": 136,
-    "Scuba": 141,
+    "Aviation": 143,
+    "Scuba": 142,
     "Shooting": 41,
     "Boating": 111,
     "Off-Roading": 24,
-    "Camping": 60,
-    "Military / Police / Rescue / EMS": 93
+    "Camping": 61,
+    "Military / Police / Rescue / EMS": 100
   }
 }

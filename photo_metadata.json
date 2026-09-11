@@ -19797,6 +19797,7 @@
       "Stephanie Bell"
     ],
     "tags": [
+      "Ft Jackson",
       "Hobbies/Military_Rescue_Police_EMS",
       "Hobbies|Military_Rescue_Police_EMS",
       "Military_Rescue_Police_EMS",
@@ -19804,15 +19805,17 @@
       "People/Stephanie Bell",
       "People|Rickey Bell",
       "People|Stephanie Bell",
+      "Places/South Carolina/Ft Jackson",
+      "Places|South Carolina|Ft Jackson",
       "Rickey Bell",
       "Stephanie Bell"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Ft Jackson",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -19867,7 +19870,7 @@
       "Rickey Bell",
       "South Carolina"
     ],
-    "title": "",
+    "title": "Rickey Front Row, Holding the 28th Inf Flag",
     "description": "",
     "location": "",
     "city": "Ft Jackson",
@@ -23493,7 +23496,7 @@
       "People|Rickey Bell",
       "Rickey Bell"
     ],
-    "title": "At Training at Ft Jackson. Date is an Estimate.",
+    "title": "Annual Training at Ft Jackson. Date is an Estimate.",
     "description": "Look at that baby with the Pig/M60",
     "location": "",
     "city": "",
@@ -23518,7 +23521,7 @@
       "People|Rickey Bell",
       "Rickey Bell"
     ],
-    "title": "At Training at Ft Jackson. Date is an Estimate.",
+    "title": "Annual Training at Ft Jackson. Date is an Estimate.",
     "description": "Look at that baby with the Pig/M60",
     "location": "",
     "city": "",
@@ -38022,6 +38025,7 @@
       "Rickey Bell"
     ],
     "tags": [
+      "Crystal River",
       "Florida",
       "Mike Morgan",
       "People/Mike Morgan",
@@ -38029,14 +38033,76 @@
       "People|Mike Morgan",
       "People|Rickey Bell",
       "Places/Florida",
+      "Places/Florida/Crystal River",
       "Places|Florida",
+      "Places|Florida|Crystal River",
       "Rickey Bell"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
+    "city": "Crystal River",
     "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2004/Picture 014.jpg",
+    "media_type": "photo",
+    "file": "Picture 014.jpg",
+    "folder": "2004",
+    "date": "2004-04-22",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS"
+    ],
+    "title": "Swat entry team",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/2004_4_24_Rescue_Diving__Picture 008.jpg",
+    "media_type": "photo",
+    "file": "2004_4_24_Rescue_Diving__Picture 008.jpg",
+    "folder": "2004",
+    "date": "2004-04-24",
+    "people": [
+      "Angela Staehr",
+      "Carl Whitcomb",
+      "Chris Small",
+      "Tim Rouse"
+    ],
+    "tags": [
+      "Angela Staehr",
+      "Carl Whitcomb",
+      "Chris Small",
+      "Hobbies/Scuba",
+      "Hobbies|Scuba",
+      "Lancaster County",
+      "People/Angela Staehr",
+      "People/Carl Whitcomb",
+      "People/Chris Small",
+      "People/Tim Rouse",
+      "People|Angela Staehr",
+      "People|Carl Whitcomb",
+      "People|Chris Small",
+      "People|Tim Rouse",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County",
+      "Scuba",
+      "Tim Rouse"
+    ],
+    "title": "Rescue Dive Team, AJ State Park",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
     "country": "United States",
     "gps": null
   },
@@ -38205,19 +38271,22 @@
       "Clayton Rouse",
       "Hobbies/Military_Rescue_Police_EMS",
       "Hobbies|Military_Rescue_Police_EMS",
+      "Lancaster Rescue Squad",
       "Mickey Morgan",
       "Military_Rescue_Police_EMS",
       "People/Clayton Rouse",
       "People/Mickey Morgan",
       "People|Clayton Rouse",
-      "People|Mickey Morgan"
+      "People|Mickey Morgan",
+      "Places/South Carolina/Lancaster County/Lancaster Rescue Squad",
+      "Places|South Carolina|Lancaster County|Lancaster Rescue Squad"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "Lancaster Rescue Squad",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -38394,6 +38463,35 @@
     "gps": null
   },
   {
+    "path": "images/2004/Rescue Training 045.jpg",
+    "media_type": "photo",
+    "file": "Rescue Training 045.jpg",
+    "folder": "2004",
+    "date": "2004-10-09",
+    "people": [
+      "Carl Whitcomb",
+      "Larry Crooks"
+    ],
+    "tags": [
+      "Carl Whitcomb",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Larry Crooks",
+      "Military_Rescue_Police_EMS",
+      "People/Carl Whitcomb",
+      "People/Larry Crooks",
+      "People|Carl Whitcomb",
+      "People|Larry Crooks"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2004/Rescue Training 076.jpg",
     "media_type": "photo",
     "file": "Rescue Training 076.jpg",
@@ -38423,6 +38521,28 @@
     "gps": null
   },
   {
+    "path": "videos/2004/Rescue Training 106.mp4",
+    "media_type": "video",
+    "file": "Rescue Training 106.mp4",
+    "folder": "2004",
+    "date": "2004-10-10",
+    "people": [
+      "Larry Crooks"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "People/Larry Crooks",
+      "Video"
+    ],
+    "title": "Airbag Demo",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2004/2003_10_20 010.jpg",
     "media_type": "photo",
     "file": "2003_10_20 010.jpg",
@@ -38434,6 +38554,7 @@
       "Stephanie Bell"
     ],
     "tags": [
+      "212 S Main St QDS Office",
       "Carl Whitcomb",
       "Carla Pittman",
       "People/Carl Whitcomb",
@@ -38442,14 +38563,16 @@
       "People|Carl Whitcomb",
       "People|Carla Pittman",
       "People|Stephanie Bell",
+      "Places/South Carolina/Lancaster County/212 S Main St QDS Office",
+      "Places|South Carolina|Lancaster County|212 S Main St QDS Office",
       "Stephanie Bell"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "212 S Main St QDS Office",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -38644,16 +38767,19 @@
       "Jason Hoke"
     ],
     "tags": [
+      "695 Lancaster Bypass E TSI_QDS Office",
       "Jason Hoke",
       "People/Jason Hoke",
-      "People|Jason Hoke"
+      "People|Jason Hoke",
+      "Places/South Carolina/Lancaster County/695 Lancaster Bypass E TSI_QDS Office",
+      "Places|South Carolina|Lancaster County|695 Lancaster Bypass E TSI_QDS Office"
     ],
     "title": "",
     "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "location": "695 Lancaster Bypass E TSI_QDS Office",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -38820,6 +38946,46 @@
     "gps": null
   },
   {
+    "path": "images/2004/2004_11_13__2 016.jpg",
+    "media_type": "photo",
+    "file": "2004_11_13__2 016.jpg",
+    "folder": "2004",
+    "date": "2004-11-13",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS"
+    ],
+    "title": "Impalement training, take the seat too.",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/2004_11_13__1 093.jpg",
+    "media_type": "photo",
+    "file": "2004_11_13__1 093.jpg",
+    "folder": "2004",
+    "date": "2004-11-14",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2004/2004_11_13__1 108.jpg",
     "media_type": "photo",
     "file": "2004_11_13__1 108.jpg",
@@ -38835,6 +39001,46 @@
       "Military_Rescue_Police_EMS",
       "People/Clayton Rouse",
       "People|Clayton Rouse"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/2004_11_13__1 120.jpg",
+    "media_type": "photo",
+    "file": "2004_11_13__1 120.jpg",
+    "folder": "2004",
+    "date": "2004-11-14",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/2004_11_13__1 121.jpg",
+    "media_type": "photo",
+    "file": "2004_11_13__1 121.jpg",
+    "folder": "2004",
+    "date": "2004-11-14",
+    "people": [],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Military_Rescue_Police_EMS"
     ],
     "title": "",
     "description": "",
@@ -53938,6 +54144,93 @@
     }
   },
   {
+    "path": "images/2023/20230903_164355.jpg",
+    "media_type": "photo",
+    "file": "20230903_164355.jpg",
+    "folder": "2023",
+    "date": "2023-09-03",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "Kitty Hawk",
+      "Places/North Carolina/Kitty Hawk",
+      "Places|North Carolina|Kitty Hawk"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Kitty Hawk",
+    "state": "North Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 36.0207276,
+      "lon": -75.6676691
+    }
+  },
+  {
+    "path": "images/2023/20230903_165631.jpg",
+    "media_type": "photo",
+    "file": "20230903_165631.jpg",
+    "folder": "2023",
+    "date": "2023-09-03",
+    "people": [
+      "Mike Morgan",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "Kitty Hawk",
+      "Mike Morgan",
+      "People/Mike Morgan",
+      "People/Rickey Bell",
+      "People|Mike Morgan",
+      "People|Rickey Bell",
+      "Places/North Carolina/Kitty Hawk",
+      "Places|North Carolina|Kitty Hawk",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Kitty Hawk",
+    "state": "North Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 36.020436,
+      "lon": -75.6677495
+    }
+  },
+  {
+    "path": "images/2023/20230903_171223.jpg",
+    "media_type": "photo",
+    "file": "20230903_171223.jpg",
+    "folder": "2023",
+    "date": "2023-09-03",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "Kitty Hawk",
+      "Places/North Carolina/Kitty Hawk",
+      "Places|North Carolina|Kitty Hawk"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Kitty Hawk",
+    "state": "North Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 36.0141614002778,
+      "lon": -75.6679814
+    }
+  },
+  {
     "path": "images/2023/20230903_174732.jpg",
     "media_type": "photo",
     "file": "20230903_174732.jpg",
@@ -53950,18 +54243,21 @@
       "Aviation",
       "Hobbies/Aviation",
       "Hobbies|Aviation",
+      "Kitty Hawk",
       "People/Rickey Bell",
       "People|Rickey Bell",
+      "Places/North Carolina/Kitty Hawk",
+      "Places|North Carolina|Kitty Hawk",
       "Rickey Bell"
     ],
-    "title": "",
+    "title": "Wright Brothers National Memorial ",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Kitty Hawk",
+    "state": "North Carolina",
+    "country": "United States",
     "gps": {
-      "lat": 36.0146205997222,
+      "lat": 36.0146206,
       "lon": -75.6714472833333
     }
   },
@@ -54136,6 +54432,107 @@
     "gps": null
   },
   {
+    "path": "images/2023/20231008_115819.jpg",
+    "media_type": "photo",
+    "file": "20231008_115819.jpg",
+    "folder": "2023",
+    "date": "2023-10-08",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "Johnstone Airport KJNX",
+      "Places/North Carolina/Johnstone Airport KJNX",
+      "Places|North Carolina|Johnstone Airport KJNX"
+    ],
+    "title": "Low and Slow Smokehouse",
+    "description": "",
+    "location": "",
+    "city": "Johnstone Airport KJNX",
+    "state": "North Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2023/20231008_115940.jpg",
+    "media_type": "photo",
+    "file": "20231008_115940.jpg",
+    "folder": "2023",
+    "date": "2023-10-08",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "Johnstone Airport KJNX",
+      "Places/North Carolina/Johnstone Airport KJNX",
+      "Places|North Carolina|Johnstone Airport KJNX"
+    ],
+    "title": "Low and Slow Smokehouse",
+    "description": "",
+    "location": "",
+    "city": "Johnstone Airport KJNX",
+    "state": "North Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 35.5478853830556,
+      "lon": -78.3893723
+    }
+  },
+  {
+    "path": "images/2023/20231008_120525.jpg",
+    "media_type": "photo",
+    "file": "20231008_120525.jpg",
+    "folder": "2023",
+    "date": "2023-10-08",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "Johnstone Airport KJNX",
+      "Places/North Carolina/Johnstone Airport KJNX",
+      "Places|North Carolina|Johnstone Airport KJNX"
+    ],
+    "title": "Low and Slow Smokehouse",
+    "description": "",
+    "location": "",
+    "city": "Johnstone Airport KJNX",
+    "state": "North Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 35.5478991997222,
+      "lon": -78.3893412997222
+    }
+  },
+  {
+    "path": "images/2023/20231008_123721.jpg",
+    "media_type": "photo",
+    "file": "20231008_123721.jpg",
+    "folder": "2023",
+    "date": "2023-10-08",
+    "people": [],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "Johnstone Airport KJNX",
+      "Places/North Carolina/Johnstone Airport KJNX",
+      "Places|North Carolina|Johnstone Airport KJNX"
+    ],
+    "title": "Low and Slow Smokehouse",
+    "description": "",
+    "location": "",
+    "city": "Johnstone Airport KJNX",
+    "state": "North Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 35.5470274002778,
+      "lon": -78.3897704002778
+    }
+  },
+  {
     "path": "images/2023/20231015_164344.jpg",
     "media_type": "photo",
     "file": "20231015_164344.jpg",
@@ -54250,6 +54647,41 @@
     }
   },
   {
+    "path": "images/2023/20231020_131511.jpg",
+    "media_type": "photo",
+    "file": "20231020_131511.jpg",
+    "folder": "2023",
+    "date": "2023-10-20",
+    "people": [
+      "Rickey Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Camping",
+      "Hobbies/Camping",
+      "Hobbies|Camping",
+      "Myrtle Beach",
+      "People/Rickey Bell",
+      "People/Sophia Bell",
+      "People|Rickey Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach",
+      "Rickey Bell",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 33.8852816,
+      "lon": -78.5666187997222
+    }
+  },
+  {
     "path": "images/2023/20231021_113457.jpg",
     "media_type": "photo",
     "file": "20231021_113457.jpg",
@@ -54307,10 +54739,41 @@
     }
   },
   {
-    "path": "images/2024/IMG_3292.jpg",
+    "path": "images/2023/20231022_182327.jpg",
+    "media_type": "photo",
+    "file": "20231022_182327.jpg",
+    "folder": "2023",
+    "date": "2023-10-22",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Aviation",
+      "Hobbies/Aviation",
+      "Hobbies|Aviation",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina/Spartanburg Downtown Airport KGMU",
+      "Places|South Carolina|Spartanburg Downtown Airport KGMU",
+      "Rickey Bell",
+      "Spartanburg Downtown Airport KGMU"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Spartanburg Downtown Airport KGMU",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.9188451,
+      "lon": -81.9569465997222
+    }
+  },
+  {
+    "path": "images/2023/IMG_3292.jpg",
     "media_type": "photo",
     "file": "IMG_3292.jpg",
-    "folder": "2024",
+    "folder": "2023",
     "date": "2023-11-08",
     "people": [],
     "tags": [
@@ -58310,46 +58773,6 @@
     }
   },
   {
-    "path": "images/2025/20251128_092341.jpg",
-    "media_type": "photo",
-    "file": "20251128_092341.jpg",
-    "folder": "2025",
-    "date": "2025-11-28",
-    "people": [
-      "Rickey Bell",
-      "Samatha Bell",
-      "Sophia Bell",
-      "Stephanie Bell"
-    ],
-    "tags": [
-      "Aviation",
-      "Hobbies/Aviation",
-      "Hobbies|Aviation",
-      "People/Rickey Bell",
-      "People/Samatha Bell",
-      "People/Sophia Bell",
-      "People/Stephanie Bell",
-      "People|Rickey Bell",
-      "People|Samatha Bell",
-      "People|Sophia Bell",
-      "People|Stephanie Bell",
-      "Rickey Bell",
-      "Samatha Bell",
-      "Sophia Bell",
-      "Stephanie Bell"
-    ],
-    "title": "",
-    "description": "",
-    "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
-    "gps": {
-      "lat": 33.5887499836111,
-      "lon": -81.2105616833333
-    }
-  },
-  {
     "path": "images/2025/20251128_122003.jpg",
     "media_type": "photo",
     "file": "20251128_122003.jpg",
@@ -58404,18 +58827,21 @@
     ],
     "tags": [
       "Aviation",
+      "Columbia",
       "Hobbies/Aviation",
       "Hobbies|Aviation",
       "People/Stephanie Bell",
       "People|Stephanie Bell",
+      "Places/South Carolina/Columbia",
+      "Places|South Carolina|Columbia",
       "Stephanie Bell"
     ],
     "title": "",
     "description": "",
     "location": "",
-    "city": "",
-    "state": "",
-    "country": "",
+    "city": "Columbia",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": {
       "lat": 34.3113499833333,
       "lon": -81.0020868833333
