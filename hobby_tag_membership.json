@@ -1632,6 +1632,9 @@
     "images/2026/20260509_132526.jpg": [
       "Shooting"
     ],
+    "images/2026/20260603_181119.jpg": [
+      "Shooting"
+    ],
     "images/2026/20260607_114315.jpg": [
       "Boating"
     ],
@@ -1853,14 +1856,20 @@
     "videos/2025/dji_fly_20250420_190258_253_1745191385588_video.mp4": [
       "Aviation"
     ],
+    "videos/2026/1781144832_TNC_20260610_222642.mp4": [
+      "Shooting"
+    ],
     "videos/2026/20260221_171309.mp4": [
       "Camping"
+    ],
+    "videos/2026/20260606_165946.mp4": [
+      "Shooting"
     ]
   },
   "taggedCounts": {
     "Aviation": 1297,
     "Scuba": 1290,
-    "Shooting": 234,
+    "Shooting": 237,
     "Boating": 1432,
     "Off-Roading": 313,
     "Camping": 381,
@@ -1869,7 +1878,7 @@
   "publicCounts": {
     "Aviation": 144,
     "Scuba": 142,
-    "Shooting": 45,
+    "Shooting": 48,
     "Boating": 115,
     "Off-Roading": 24,
     "Camping": 62,

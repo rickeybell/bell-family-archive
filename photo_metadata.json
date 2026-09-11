@@ -58822,7 +58822,7 @@
     "media_type": "video",
     "file": "ATNX0036.mp4",
     "folder": "2025",
-    "date": "2025-11-02",
+    "date": "2025-11-01",
     "people": [],
     "tags": [
       "Chester County",
@@ -58834,8 +58834,8 @@
       "Shooting",
       "Video"
     ],
-    "title": "Testing the ATN laser range finder and BDC on a .350 Legend",
-    "description": "",
+    "title": "Sited in at 100 yds, lasered at 40 yds.",
+    "description": "Close enough. Testing the ATN laser rangefinder and BDC on a .350 Legend",
     "location": "",
     "city": "Chester County",
     "state": "South Carolina",
@@ -60760,6 +60760,117 @@
     }
   },
   {
+    "path": "images/2026/20260603_181119.jpg",
+    "media_type": "photo",
+    "file": "20260603_181119.jpg",
+    "folder": "2026",
+    "date": "2026-06-03",
+    "people": [],
+    "tags": [
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Shooting"
+    ],
+    "title": "3d Print Deer Stand",
+    "description": "When planning a deer stand, why not 3d print it!",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2026/20260603_190250.jpg",
+    "media_type": "photo",
+    "file": "20260603_190250.jpg",
+    "folder": "2026",
+    "date": "2026-06-03",
+    "people": [
+      "Lady"
+    ],
+    "tags": [
+      "Animal/Lady",
+      "Animal|Lady",
+      "Lady",
+      "Lancaster County",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6935706997222,
+      "lon": -80.8257661002778
+    }
+  },
+  {
+    "path": "videos/2026/20260606_165946.mp4",
+    "media_type": "video",
+    "file": "20260606_165946.mp4",
+    "folder": "2026",
+    "date": "2026-06-06",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Hobbies/Shooting",
+      "Locked",
+      "People/Rickey Bell",
+      "Places/South Carolina/Chester County",
+      "Video"
+    ],
+    "title": "Sighting in a .17hmr at 50 yards",
+    "description": "",
+    "location": "",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.641,
+      "lon": -80.9122
+    }
+  },
+  {
+    "path": "images/2026/20260607_113014~2.jpg",
+    "media_type": "photo",
+    "file": "20260607_113014~2.jpg",
+    "folder": "2026",
+    "date": "2026-06-07",
+    "people": [
+      "Ivy Bell",
+      "Rickey Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Fishing Creek",
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People/Rickey Bell",
+      "People/Sophia Bell",
+      "People|Ivy Bell",
+      "People|Rickey Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
+      "Rickey Bell",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Fishing Creek",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6933990002778,
+      "lon": -80.8644602997222
+    }
+  },
+  {
     "path": "images/2026/20260607_114315.jpg",
     "media_type": "photo",
     "file": "20260607_114315.jpg",
@@ -60821,6 +60932,27 @@
     "city": "Fishing Creek",
     "state": "South Carolina",
     "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "videos/2026/1781144832_TNC_20260610_222642.mp4",
+    "media_type": "video",
+    "file": "1781144832_TNC_20260610_222642.mp4",
+    "folder": "2026",
+    "date": "2026-06-10",
+    "people": [],
+    "tags": [
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Shooting",
+      "Video"
+    ],
+    "title": "Found the owl, no did not shoot it!",
+    "description": "The owls were screeching at each other",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
     "gps": null
   },
   {
