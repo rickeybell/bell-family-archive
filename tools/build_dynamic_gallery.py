@@ -19,6 +19,7 @@ PHOTO_GROUPS=[
 
 def esc(v): return html.escape(str(v or ''),quote=True)
 def url(v): return urllib.parse.quote(str(v or ''),safe='/')
+def display_file_name(value): return re.sub(r'(?i)(?:^|(?<=_))(?:Riverside|Grace)_','',str(value or ''))
 def nice_date(v, exact=False):
     if not v:return 'Date unknown'
     if re.fullmatch(r'\d{4}',v):return f'Circa {v}'
@@ -107,7 +108,7 @@ def page(title,subtitle,items,filename,empty_html='',after_html=''):
                 media_parts=[];download_parts=[]
                 for offset,member in enumerate(grouped_photos):
                     mt,mv,mo=media_paths(member);member_index=idx+offset
-                    member_name=str(member.get('file') or pathlib.PurePosixPath(str(member.get('path') or '')).name)
+                    member_name=display_file_name(member.get('file') or pathlib.PurePosixPath(str(member.get('path') or '')).name)
                     media_parts.append(f'<button class="archive-pic" data-view-i="{member_index}"><img src="{esc(url(mt))}" alt="{esc(ttl or "Archive photo")}, photo {offset+1} of {len(grouped_photos)}" loading="lazy"></button>')
                     download_parts.append(f'<a href="{esc(url(mo))}" download>Download photo {offset+1}</a>')
                     viewer.append({'view':url(mv),'orig':url(mo),'title':ttl,'date':date,'location':loc,'people':ppl,'people_raw':member.get('people') or [],'categories':member.get('categories') or [],'tags':[clean_tag_label(tag) for tag in member.get('tags') or []],'description':desc,'name':member_name,'media_type':'photo'})
@@ -132,7 +133,7 @@ def page(title,subtitle,items,filename,empty_html='',after_html=''):
             ttl=str(x.get('title') or '').strip();desc='\n'.join(line.rstrip() for line in str(x.get('description') or '').strip().splitlines())
             is_360=is_youtube and bool(re.search(r'(?:360\s*°|360[- ]degree)',f'{ttl} {desc}',re.I))
             date=nice_date(str(x.get('date') or ''),x.get('date_precision')=='day');loc=display_location(x);ppl=display_people(x.get('people'))
-            fn=str(x.get('file') or pathlib.PurePosixPath(str(x.get('path') or '')).name)
+            fn=display_file_name(x.get('file') or pathlib.PurePosixPath(str(x.get('path') or '')).name)
             lines=[f'<div class="archive-meta-line">{esc(date)}</div>']
             if loc:lines.append(f'<div class="archive-meta-line">{esc(loc)}</div>')
             if ppl:lines.append(f'<div class="archive-meta-line">{esc(ppl)}</div>')
