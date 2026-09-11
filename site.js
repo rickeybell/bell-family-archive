@@ -7,12 +7,10 @@ document.addEventListener("DOMContentLoaded",()=>{
     card.classList.toggle("not-living",isMemorial);
   });
 
-  // Protect living relatives' full birthdays on the public page. Keep the exact
-  // date in data-birthdate so the age calculation below still changes on the
-  // correct birthday, but display only the month and year.
-  document.querySelectorAll(".tree-person[data-birthdate], .archive-community-card[data-birthdate]").forEach(card=>{
+  // Living relatives' public birth information contains only month and year.
+  document.querySelectorAll(".tree-person[data-birthmonth], .archive-community-card[data-birthmonth]").forEach(card=>{
     if(card.classList.contains("not-living"))return;
-    const [year,month]=card.dataset.birthdate.split("-").map(Number);
+    const [year,month]=card.dataset.birthmonth.split("-").map(Number);
     if(!year || !month)return;
     const bornLabel=[...card.querySelectorAll(".tree-vitals strong")]
       .find(label=>/^Born:\s*$/i.test(label.textContent||""));
@@ -26,17 +24,17 @@ document.addEventListener("DOMContentLoaded",()=>{
 
   // Keep current ages accurate for living relatives as birthdays pass.
   const today=new Date();
-  document.querySelectorAll(".tree-person[data-birthdate], .archive-community-card[data-birthdate]").forEach(card=>{
+  document.querySelectorAll(".tree-person[data-birthmonth], .archive-community-card[data-birthmonth]").forEach(card=>{
     if(card.classList.contains("not-living"))return;
     const vitals=card.querySelector(".tree-vitals");
     if(!vitals || vitals.querySelector(".current-age"))return;
-    const [year,month,day]=card.dataset.birthdate.split("-").map(Number);
+    const [year,month]=card.dataset.birthmonth.split("-").map(Number);
     let age=today.getFullYear()-year;
     const monthNow=today.getMonth()+1;
-    if(monthNow<month || (monthNow===month && today.getDate()<day))age--;
+    if(monthNow<month)age--;
     const line=document.createElement("span");
     line.className="current-age";
-    line.innerHTML=`<strong>Current age:</strong> ${age}`;
+    line.innerHTML=`<strong>Current age:</strong> about ${age}`;
     vitals.appendChild(line);
   });
   document.querySelectorAll(".tree-person[data-birth-year], .archive-community-card[data-birth-year]").forEach(card=>{

@@ -7,9 +7,9 @@ META = ROOT / "photo_metadata.json"
 BUILDER = ROOT / "tools" / "build_dynamic_gallery.py"
 
 people = {
-    "sophia": {"old": "Sophia", "name": "Sophia Bell", "born": "November 21, 2016"},
-    "olivia": {"old": "Olivia", "name": "Olivia Bell", "born": "May 22, 2025"},
-    "ivy": {"old": "Ivy", "name": "Ivy Bell", "born": "May 3, 2022"},
+    "sophia": {"old": "Sophia", "name": "Sophia Bell", "born": "November 2016"},
+    "olivia": {"old": "Olivia", "name": "Olivia Bell", "born": "May 2025"},
+    "ivy": {"old": "Ivy", "name": "Ivy Bell", "born": "May 2022"},
 }
 
 if not META.exists():

@@ -2,8 +2,8 @@
 document.addEventListener("DOMContentLoaded",()=>{
  // Keep current ages accurate on living relatives' profile pages.
  const today=new Date();
- document.querySelectorAll(".person-page-vitals[data-birthdate]").forEach(vitals=>{
-   const [year,month,day]=vitals.dataset.birthdate.split("-").map(Number);
+ document.querySelectorAll(".person-page-vitals[data-birthmonth]").forEach(vitals=>{
+   const [year,month]=vitals.dataset.birthmonth.split("-").map(Number);
    const bornLabel=[...vitals.querySelectorAll("strong")]
      .find(label=>/^Born:\s*$/i.test(label.textContent||""));
    const bornLine=bornLabel?.closest("span");
@@ -15,10 +15,10 @@ document.addEventListener("DOMContentLoaded",()=>{
    if(vitals.querySelector(".current-age"))return;
    let age=today.getFullYear()-year;
    const monthNow=today.getMonth()+1;
-   if(monthNow<month || (monthNow===month && today.getDate()<day))age--;
+   if(monthNow<month)age--;
    const line=document.createElement("span");
    line.className="current-age";
-   line.innerHTML=`<strong>Current age:</strong> ${age}`;
+   line.innerHTML=`<strong>Current age:</strong> about ${age}`;
    vitals.appendChild(line);
  });
 
