@@ -1687,9 +1687,6 @@
     "videos/2009/2008_5 026.mp4": [
       "Military / Police / Rescue / EMS"
     ],
-    "videos/2013/AQPsFtX0XGqgxIomslNrC9Ka-a5uOyK9CF6wxsid3svp7s4F1TnN4M4Z2Z6ngNB_IGprRVDu5gsoYMfv8Xyw9TXTyVdjSVqy3Fzk_b2llA.mp4": [
-      "Shooting"
-    ],
     "videos/2013/Larry.mp4": [
       "Military / Police / Rescue / EMS"
     ],
@@ -1845,7 +1842,7 @@
   "taggedCounts": {
     "Aviation": 1298,
     "Scuba": 1290,
-    "Shooting": 232,
+    "Shooting": 233,
     "Boating": 1424,
     "Off-Roading": 313,
     "Camping": 381,
@@ -1854,7 +1851,7 @@
   "publicCounts": {
     "Aviation": 145,
     "Scuba": 142,
-    "Shooting": 43,
+    "Shooting": 42,
     "Boating": 111,
     "Off-Roading": 24,
     "Camping": 62,
