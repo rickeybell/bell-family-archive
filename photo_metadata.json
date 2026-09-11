@@ -49464,34 +49464,6 @@
     }
   },
   {
-    "path": "images/2019/20191210_183625.jpg",
-    "media_type": "photo",
-    "file": "20191210_183625.jpg",
-    "folder": "2019",
-    "date": "2019-12-10",
-    "people": [
-      "Sophia Bell"
-    ],
-    "tags": [
-      "900 Confederate Ave",
-      "People/Sophia Bell",
-      "People|Sophia Bell",
-      "Places/South Carolina/Lancaster County/900 Confederate Ave",
-      "Places|South Carolina|Lancaster County|900 Confederate Ave",
-      "Sophia Bell"
-    ],
-    "title": "",
-    "description": "",
-    "location": "900 Confederate Ave",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": {
-      "lat": 34.6936585669444,
-      "lon": -80.8251877669444
-    }
-  },
-  {
     "path": "images/2019/20191224_153217.jpg",
     "media_type": "photo",
     "file": "20191224_153217.jpg",
@@ -49641,6 +49613,72 @@
     "gps": null
   },
   {
+    "path": "images/2020/IMG_5680.JPEG",
+    "media_type": "photo",
+    "file": "IMG_5680.JPEG",
+    "folder": "2020",
+    "date": "2020-04-11",
+    "people": [
+      "Sophia Bell"
+    ],
+    "tags": [
+      "People/Sophia Bell",
+      "People|Sophia Bell",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2020/IMG_5693.JPEG",
+    "media_type": "photo",
+    "file": "IMG_5693.JPEG",
+    "folder": "2020",
+    "date": "2020-04-12",
+    "people": [
+      "Sophia Bell"
+    ],
+    "tags": [
+      "People/Sophia Bell",
+      "People|Sophia Bell",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2020/IMG_5785.JPEG",
+    "media_type": "photo",
+    "file": "IMG_5785.JPEG",
+    "folder": "2020",
+    "date": "2020-05-10",
+    "people": [
+      "Sophia Bell"
+    ],
+    "tags": [
+      "People/Sophia Bell",
+      "People|Sophia Bell",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2020/IMG_5864.JPEG",
     "media_type": "photo",
     "file": "IMG_5864.JPEG",
@@ -49653,6 +49691,28 @@
       "Karen Gaskin",
       "People/Karen Gaskin",
       "People|Karen Gaskin"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2020/IMG_5873.JPEG",
+    "media_type": "photo",
+    "file": "IMG_5873.JPEG",
+    "folder": "2020",
+    "date": "2020-06-12",
+    "people": [
+      "Sophia Bell"
+    ],
+    "tags": [
+      "People/Sophia Bell",
+      "People|Sophia Bell",
+      "Sophia Bell"
     ],
     "title": "",
     "description": "",
@@ -49856,6 +49916,38 @@
     "gps": null
   },
   {
+    "path": "images/2020/IMG_6302.JPEG",
+    "media_type": "photo",
+    "file": "IMG_6302.JPEG",
+    "folder": "2020",
+    "date": "2020-09-07",
+    "people": [
+      "Sophia Bell",
+      "Tony Roberts"
+    ],
+    "tags": [
+      "Boating",
+      "Fishing Creek",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Sophia Bell",
+      "People/Tony Roberts",
+      "People|Sophia Bell",
+      "People|Tony Roberts",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
+      "Sophia Bell",
+      "Tony Roberts"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Fishing Creek",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2020/IMG_6307.JPEG",
     "media_type": "photo",
     "file": "IMG_6307.JPEG",
@@ -49941,6 +50033,28 @@
     "gps": null
   },
   {
+    "path": "images/2020/IMG_6465.JPEG",
+    "media_type": "photo",
+    "file": "IMG_6465.JPEG",
+    "folder": "2020",
+    "date": "2020-10-16",
+    "people": [
+      "Sophia Bell"
+    ],
+    "tags": [
+      "People/Sophia Bell",
+      "People|Sophia Bell",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2020/NRA.jpg",
     "media_type": "photo",
     "file": "NRA.jpg",
@@ -50012,6 +50126,50 @@
       "People|Jarred Bell",
       "People|Rickey Bell",
       "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2020/IMG_1442.JPEG",
+    "media_type": "photo",
+    "file": "IMG_1442.JPEG",
+    "folder": "2020",
+    "date": "2020-10-31",
+    "people": [
+      "Sophia Bell"
+    ],
+    "tags": [
+      "People/Sophia Bell",
+      "People|Sophia Bell",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2020/IMG_3641.JPG",
+    "media_type": "photo",
+    "file": "IMG_3641.JPG",
+    "folder": "2020",
+    "date": "2020-10-31",
+    "people": [
+      "Sophia Bell"
+    ],
+    "tags": [
+      "People/Sophia Bell",
+      "People|Sophia Bell",
+      "Sophia Bell"
     ],
     "title": "",
     "description": "",
@@ -50543,6 +50701,34 @@
     "state": "Florida",
     "country": "United States",
     "gps": null
+  },
+  {
+    "path": "images/2020/20201212_115918.jpg",
+    "media_type": "photo",
+    "file": "20201212_115918.jpg",
+    "folder": "2020",
+    "date": "2020-12-12",
+    "people": [
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Lancaster County",
+      "People/Sophia Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7518634,
+      "lon": -80.5442518
+    }
   },
   {
     "path": "images/2020/20201225_140804.jpg",
