@@ -850,6 +850,12 @@
     "images/2008/DSC00263.JPG": [
       "Military / Police / Rescue / EMS"
     ],
+    "images/2008/DSC00265.JPG": [
+      "Military / Police / Rescue / EMS"
+    ],
+    "images/2008/DSC00266.JPG": [
+      "Military / Police / Rescue / EMS"
+    ],
     "images/2008/DSC00617.jpg": [
       "Military / Police / Rescue / EMS"
     ],
@@ -1681,6 +1687,9 @@
     "videos/2009/2008_5 026.mp4": [
       "Military / Police / Rescue / EMS"
     ],
+    "videos/2013/AQPsFtX0XGqgxIomslNrC9Ka-a5uOyK9CF6wxsid3svp7s4F1TnN4M4Z2Z6ngNB_IGprRVDu5gsoYMfv8Xyw9TXTyVdjSVqy3Fzk_b2llA.mp4": [
+      "Shooting"
+    ],
     "videos/2013/Larry.mp4": [
       "Military / Police / Rescue / EMS"
     ],
@@ -1836,7 +1845,7 @@
   "taggedCounts": {
     "Aviation": 1298,
     "Scuba": 1290,
-    "Shooting": 231,
+    "Shooting": 232,
     "Boating": 1424,
     "Off-Roading": 313,
     "Camping": 381,
@@ -1845,10 +1854,10 @@
   "publicCounts": {
     "Aviation": 145,
     "Scuba": 142,
-    "Shooting": 42,
+    "Shooting": 43,
     "Boating": 111,
     "Off-Roading": 24,
     "Camping": 62,
-    "Military / Police / Rescue / EMS": 101
+    "Military / Police / Rescue / EMS": 103
   }
 }

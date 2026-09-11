@@ -42199,6 +42199,60 @@
     "gps": null
   },
   {
+    "path": "images/2008/DSC00265.JPG",
+    "media_type": "photo",
+    "file": "DSC00265.JPG",
+    "folder": "2008",
+    "date": "2008-04-29",
+    "people": [
+      "Josh Faulkenberry",
+      "Josh Morris"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Josh Faulkenberry",
+      "Josh Morris",
+      "Military_Rescue_Police_EMS",
+      "People/Josh Faulkenberry",
+      "People/Josh Morris",
+      "People|Josh Faulkenberry",
+      "People|Josh Morris"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2008/DSC00266.JPG",
+    "media_type": "photo",
+    "file": "DSC00266.JPG",
+    "folder": "2008",
+    "date": "2008-04-29",
+    "people": [
+      "Josh Faulkenberry"
+    ],
+    "tags": [
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Hobbies|Military_Rescue_Police_EMS",
+      "Josh Faulkenberry",
+      "Military_Rescue_Police_EMS",
+      "People/Josh Faulkenberry",
+      "People|Josh Faulkenberry"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2008/306.jpg",
     "media_type": "photo",
     "file": "306.jpg",
@@ -44841,6 +44895,47 @@
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "videos/2013/AQPsFtX0XGqgxIomslNrC9Ka-a5uOyK9CF6wxsid3svp7s4F1TnN4M4Z2Z6ngNB_IGprRVDu5gsoYMfv8Xyw9TXTyVdjSVqy3Fzk_b2llA.mp4",
+    "media_type": "video",
+    "file": "AQPsFtX0XGqgxIomslNrC9Ka-a5uOyK9CF6wxsid3svp7s4F1TnN4M4Z2Z6ngNB_IGprRVDu5gsoYMfv8Xyw9TXTyVdjSVqy3Fzk_b2llA.mp4",
+    "folder": "2013",
+    "date": "2013-11-28",
+    "people": [
+      "Brea Morgan",
+      "Mike Morgan",
+      "Rickey Bell",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Brea Morgan",
+      "Crystal River",
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Mike Morgan",
+      "People/Brea Morgan",
+      "People/Mike Morgan",
+      "People/Rickey Bell",
+      "People/Samatha Bell",
+      "People|Brea Morgan",
+      "People|Mike Morgan",
+      "People|Rickey Bell",
+      "People|Samatha Bell",
+      "Places/Florida/Crystal River",
+      "Places|Florida|Crystal River",
+      "Rickey Bell",
+      "Samatha Bell",
+      "Shooting",
+      "Video"
+    ],
+    "title": "Sam tore me up with airsoft!",
+    "description": "",
+    "location": "",
+    "city": "Crystal River",
+    "state": "Florida",
+    "country": "United States",
     "gps": null
   },
   {
