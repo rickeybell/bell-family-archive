@@ -118,9 +118,6 @@
     "images/1994/1994_May_0003.png": [
       "Military / Police / Rescue / EMS"
     ],
-    "images/1994/Screenshot 2026-07-22 085844.png": [
-      "Aviation"
-    ],
     "images/1995/1995_July_0001_a.jpg": [
       "Boating"
     ],
@@ -1641,10 +1638,28 @@
     "images/2026/20260607_114316.jpg": [
       "Boating"
     ],
+    "images/2026/20260704_192252-edited.jpg": [
+      "Boating"
+    ],
+    "images/2026/20260705_112333.jpg": [
+      "Boating"
+    ],
     "images/2026/20260707_133623.jpg": [
       "Aviation"
     ],
+    "images/2026/20260727_193617.jpg": [
+      "Shooting"
+    ],
     "images/2026/20260728_170205.jpg": [
+      "Shooting"
+    ],
+    "images/2026/20260809_131325.jpg": [
+      "Boating"
+    ],
+    "images/2026/20260809_131344.jpg": [
+      "Boating"
+    ],
+    "images/2026/20260911_130439.jpg": [
       "Shooting"
     ],
     "images/2026/784226620_1000948432972754_8357374407785207827_n.jpg": [
@@ -1843,19 +1858,19 @@
     ]
   },
   "taggedCounts": {
-    "Aviation": 1298,
+    "Aviation": 1297,
     "Scuba": 1290,
-    "Shooting": 233,
-    "Boating": 1424,
+    "Shooting": 234,
+    "Boating": 1432,
     "Off-Roading": 313,
     "Camping": 381,
     "Military / Police / Rescue / EMS": 991
   },
   "publicCounts": {
-    "Aviation": 145,
+    "Aviation": 144,
     "Scuba": 142,
-    "Shooting": 43,
-    "Boating": 111,
+    "Shooting": 45,
+    "Boating": 115,
     "Off-Roading": 24,
     "Camping": 62,
     "Military / Police / Rescue / EMS": 103

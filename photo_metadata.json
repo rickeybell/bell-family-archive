@@ -21458,35 +21458,6 @@
     "gps": null
   },
   {
-    "path": "images/1994/Screenshot 2026-07-22 085844.png",
-    "media_type": "photo",
-    "file": "Screenshot 2026-07-22 085844.png",
-    "folder": "1994",
-    "date": "1994-05-19",
-    "people": [
-      "Alma Bell"
-    ],
-    "tags": [
-      "Alma Bell",
-      "Aviation",
-      "Hobbies/Aviation",
-      "Hobbies|Aviation",
-      "Lancaster County",
-      "Newspaper",
-      "People/Alma Bell",
-      "People|Alma Bell",
-      "Places/South Carolina/Lancaster County",
-      "Places|South Carolina|Lancaster County"
-    ],
-    "title": "Alma Tharp Bell – A Lifetime of Aviation and a Record-Setting Legacy",
-    "description": "Retrospective newspaper article by J. Douglas Donehue recounting the aviation career of Alma Edythe Tharp Bell. Alma made her first solo flight at age 16 and became one of the relatively few licensed women pilots active in South Carolina during the late 1940s and early 1950s. She frequently flew with fellow aviator and close friend Jewell Bailey in Alma's airplane, named “Rebel” after Charleston's South Atlantic League baseball team.\n\nThe article describes Alma and Jewell's involvement with The Ninety-Nines, the organization founded by Amelia Earhart and other women pilots. In 1949, Jewell Bailey set a light-airplane altitude record at the Azalea Festival, flying a Piper Cub to 26,875 feet, 1,112 feet above the previous record.\n\nIn 1947, Alma flew her father, Graham Tharp, to Atlanta to see a new Ercoupe. He liked the airplane so much that he purchased it for Alma. Alma later taught her father to fly and also taught her 14-year-old brother Johnny Tharp. In 1950, she served as an official hostess for the national Ninety-Nines convention in Greenville and was described as the organization's youngest member.\n\nAs Alma's reputation grew, she and Jewell Bailey became well known in regional aviation circles, flying to air shows throughout the Carolinas and Southeast. Alma grew up at Folly Beach, later married James Stewart “Buster” Bell Jr. in 1952, and moved to Lancaster. The article states that Alma was 67 years old when she died on May 19.",
-    "location": "",
-    "city": "Lancaster County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/1994/1993_0001_a.jpg",
     "media_type": "photo",
     "file": "1993_0001_a.jpg",
@@ -56750,56 +56721,6 @@
     "gps": null
   },
   {
-    "path": "videos/2025/Messenger_creation_B1540B18-1D4D-4A99-A4BA-5EC722EF9888.mp4",
-    "media_type": "video",
-    "file": "Messenger_creation_B1540B18-1D4D-4A99-A4BA-5EC722EF9888.mp4",
-    "folder": "2025",
-    "date": "2025-01-01",
-    "people": [],
-    "tags": [
-      "Chester County",
-      "Hobbies/Shooting",
-      "Hobbies|Shooting",
-      "Locked",
-      "Places/South Carolina/Chester County",
-      "Places|South Carolina|Chester County",
-      "Shooting",
-      "Video"
-    ],
-    "title": "Someone needs practice!",
-    "description": "",
-    "location": "",
-    "city": "Chester County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
-    "path": "videos/2025/Messenger_creation_C0A6067C-40D2-4E27-B5B7-4616618A0821.mp4",
-    "media_type": "video",
-    "file": "Messenger_creation_C0A6067C-40D2-4E27-B5B7-4616618A0821.mp4",
-    "folder": "2025",
-    "date": "2025-01-01",
-    "people": [],
-    "tags": [
-      "Chester County",
-      "Hobbies/Shooting",
-      "Hobbies|Shooting",
-      "Locked",
-      "Places/South Carolina/Chester County",
-      "Places|South Carolina|Chester County",
-      "Shooting",
-      "Video"
-    ],
-    "title": ".22 wouldnt take them down, had to use frt.",
-    "description": "",
-    "location": "",
-    "city": "Chester County",
-    "state": "South Carolina",
-    "country": "United States",
-    "gps": null
-  },
-  {
     "path": "images/2025/20250103_150308.jpg",
     "media_type": "photo",
     "file": "20250103_150308.jpg",
@@ -58478,6 +58399,56 @@
     }
   },
   {
+    "path": "videos/2025/Messenger_creation_B1540B18-1D4D-4A99-A4BA-5EC722EF9888.mp4",
+    "media_type": "video",
+    "file": "Messenger_creation_B1540B18-1D4D-4A99-A4BA-5EC722EF9888.mp4",
+    "folder": "2025",
+    "date": "2025-09-01",
+    "people": [],
+    "tags": [
+      "Chester County",
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Locked",
+      "Places/South Carolina/Chester County",
+      "Places|South Carolina|Chester County",
+      "Shooting",
+      "Video"
+    ],
+    "title": "Someone needs practice!",
+    "description": "",
+    "location": "",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "videos/2025/Messenger_creation_C0A6067C-40D2-4E27-B5B7-4616618A0821.mp4",
+    "media_type": "video",
+    "file": "Messenger_creation_C0A6067C-40D2-4E27-B5B7-4616618A0821.mp4",
+    "folder": "2025",
+    "date": "2025-09-01",
+    "people": [],
+    "tags": [
+      "Chester County",
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Locked",
+      "Places/South Carolina/Chester County",
+      "Places|South Carolina|Chester County",
+      "Shooting",
+      "Video"
+    ],
+    "title": ".22 wouldnt take them down, had to use frt.",
+    "description": "",
+    "location": "",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "videos/2025/20250902_154833.mp4",
     "media_type": "video",
     "file": "20250902_154833.mp4",
@@ -59968,6 +59939,28 @@
     "gps": null
   },
   {
+    "path": "images/2026/Snapchat-322740386-edited.jpg",
+    "media_type": "photo",
+    "file": "Snapchat-322740386-edited.jpg",
+    "folder": "2026",
+    "date": "2026",
+    "people": [
+      "Stephanie Bell"
+    ],
+    "tags": [
+      "People/Stephanie Bell",
+      "People|Stephanie Bell",
+      "Stephanie Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "videos/2026/20260131_162358.mp4",
     "media_type": "video",
     "file": "20260131_162358.mp4",
@@ -60854,6 +60847,65 @@
     "gps": null
   },
   {
+    "path": "images/2026/20260704_174020.jpg",
+    "media_type": "photo",
+    "file": "20260704_174020.jpg",
+    "folder": "2026",
+    "date": "2026-07-04",
+    "people": [
+      "Ivy Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People|Ivy Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6932572005556,
+      "lon": -80.8253583997222
+    }
+  },
+  {
+    "path": "images/2026/20260704_192252-edited.jpg",
+    "media_type": "photo",
+    "file": "20260704_192252-edited.jpg",
+    "folder": "2026",
+    "date": "2026-07-04",
+    "people": [
+      "Rickey Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Boating",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "People/Rickey Bell",
+      "People|Rickey Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Rickey Bell"
+    ],
+    "title": "Merica!",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6932619994444,
+      "lon": -80.8252903
+    }
+  },
+  {
     "path": "images/2026/Screenshot_20260704_165209_Messages-edited.jpg",
     "media_type": "photo",
     "file": "Screenshot_20260704_165209_Messages-edited.jpg",
@@ -60874,6 +60926,54 @@
     "state": "",
     "country": "",
     "gps": null
+  },
+  {
+    "path": "images/2026/20260705_112333.jpg",
+    "media_type": "photo",
+    "file": "20260705_112333.jpg",
+    "folder": "2026",
+    "date": "2026-07-05",
+    "people": [],
+    "tags": [
+      "Boating",
+      "Hobbies/Boating",
+      "Hobbies|Boating"
+    ],
+    "title": "Ready to go!",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2026/20260705_134745-edited.jpg",
+    "media_type": "photo",
+    "file": "20260705_134745-edited.jpg",
+    "folder": "2026",
+    "date": "2026-07-05",
+    "people": [
+      "Ivy Bell"
+    ],
+    "tags": [
+      "Fishing Creek",
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People|Ivy Bell",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Fishing Creek",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6939210002778,
+      "lon": -80.8638473002778
+    }
   },
   {
     "path": "images/2026/20260707_133623.jpg",
@@ -60948,6 +61048,32 @@
     "gps": null
   },
   {
+    "path": "images/2026/20260727_193617.jpg",
+    "media_type": "photo",
+    "file": "20260727_193617.jpg",
+    "folder": "2026",
+    "date": "2026-07-26",
+    "people": [],
+    "tags": [
+      "900 Confederate Ave",
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Shooting"
+    ],
+    "title": "Ported and Comped",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6933893002778,
+      "lon": -80.8252833
+    }
+  },
+  {
     "path": "images/2026/20260728_170205.jpg",
     "media_type": "photo",
     "file": "20260728_170205.jpg",
@@ -60971,6 +61097,222 @@
     "gps": {
       "lat": 34.6933786,
       "lon": -80.8252635833333
+    }
+  },
+  {
+    "path": "images/2026/20260729_200828.jpg",
+    "media_type": "photo",
+    "file": "20260729_200828.jpg",
+    "folder": "2026",
+    "date": "2026-07-29",
+    "people": [
+      "Olivia Bell"
+    ],
+    "tags": [
+      "Myrtle Beach",
+      "Olivia Bell",
+      "People/Olivia Bell",
+      "People|Olivia Bell",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 33.6069,
+      "lon": -78.9716102997222
+    }
+  },
+  {
+    "path": "images/2026/20260731_165924.jpg",
+    "media_type": "photo",
+    "file": "20260731_165924.jpg",
+    "folder": "2026",
+    "date": "2026-07-31",
+    "people": [
+      "Ivy Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "Myrtle Beach",
+      "People/Ivy Bell",
+      "People|Ivy Bell",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 33.6057301002778,
+      "lon": -78.9700842
+    }
+  },
+  {
+    "path": "images/2026/20260731_173530.jpg",
+    "media_type": "photo",
+    "file": "20260731_173530.jpg",
+    "folder": "2026",
+    "date": "2026-07-31",
+    "people": [
+      "Ivy Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "Myrtle Beach",
+      "People/Ivy Bell",
+      "People/Sophia Bell",
+      "People|Ivy Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 33.6057745,
+      "lon": -78.9701381
+    }
+  },
+  {
+    "path": "images/2026/20260731_202047.jpg",
+    "media_type": "photo",
+    "file": "20260731_202047.jpg",
+    "folder": "2026",
+    "date": "2026-07-31",
+    "people": [
+      "Ivy Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "Myrtle Beach",
+      "People/Ivy Bell",
+      "People|Ivy Bell",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 33.6068993997222,
+      "lon": -78.9715282
+    }
+  },
+  {
+    "path": "images/2026/Screenshot_20260806_102958_Messenger-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20260806_102958_Messenger-edited.jpg",
+    "folder": "2026",
+    "date": "2026-08-06",
+    "people": [
+      "Ivy Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People|Ivy Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2026/20260809_131325.jpg",
+    "media_type": "photo",
+    "file": "20260809_131325.jpg",
+    "folder": "2026",
+    "date": "2026-08-09",
+    "people": [
+      "Ivy Bell",
+      "Rickey Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Fishing Creek",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People/Rickey Bell",
+      "People/Sophia Bell",
+      "People|Ivy Bell",
+      "People|Rickey Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
+      "Rickey Bell",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Fishing Creek",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7224532,
+      "lon": -80.8680411
+    }
+  },
+  {
+    "path": "images/2026/20260809_131344.jpg",
+    "media_type": "photo",
+    "file": "20260809_131344.jpg",
+    "folder": "2026",
+    "date": "2026-08-09",
+    "people": [
+      "Ivy Bell",
+      "Rickey Bell",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Boating",
+      "Fishing Creek",
+      "Hobbies/Boating",
+      "Hobbies|Boating",
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People/Rickey Bell",
+      "People/Sophia Bell",
+      "People|Ivy Bell",
+      "People|Rickey Bell",
+      "People|Sophia Bell",
+      "Places/South Carolina/Fishing Creek",
+      "Places|South Carolina|Fishing Creek",
+      "Rickey Bell",
+      "Sophia Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Fishing Creek",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7224631002778,
+      "lon": -80.8680466
     }
   },
   {
@@ -61091,5 +61433,28 @@
     "state": "",
     "country": "",
     "gps": null
+  },
+  {
+    "path": "images/2026/20260911_130439.jpg",
+    "media_type": "photo",
+    "file": "20260911_130439.jpg",
+    "folder": "2026",
+    "date": "2026-09-11",
+    "people": [],
+    "tags": [
+      "Hobbies/Shooting",
+      "Hobbies|Shooting",
+      "Shooting"
+    ],
+    "title": "If you know, then you know!",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": {
+      "lat": 34.6933802,
+      "lon": -80.8252512
+    }
   }
 ]
