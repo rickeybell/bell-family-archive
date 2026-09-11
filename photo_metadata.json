@@ -19132,6 +19132,31 @@
     "gps": null
   },
   {
+    "path": "images/1993/1990s_0107_a.jpg",
+    "media_type": "photo",
+    "file": "1990s_0107_a.jpg",
+    "folder": "1993",
+    "date": "1993-01-01",
+    "people": [
+      "Rickii Lear"
+    ],
+    "tags": [
+      "Douglas Heights",
+      "People/Rickii Lear",
+      "People|Rickii Lear",
+      "Places/South Carolina/Lancaster County/Douglas Heights",
+      "Places|South Carolina|Lancaster County|Douglas Heights",
+      "Rickii Lear"
+    ],
+    "title": "At Stephanie's House",
+    "description": "",
+    "location": "Douglas Heights",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/1993/1990s_0110_a.jpg",
     "media_type": "photo",
     "file": "1990s_0110_a.jpg",
@@ -19635,6 +19660,31 @@
     "gps": null
   },
   {
+    "path": "images/1993/1993_0078_a.jpg",
+    "media_type": "photo",
+    "file": "1993_0078_a.jpg",
+    "folder": "1993",
+    "date": "1993-07-01",
+    "people": [
+      "Rickii Lear"
+    ],
+    "tags": [
+      "Disney World",
+      "People/Rickii Lear",
+      "People|Rickii Lear",
+      "Places/Florida/Orlando/Disney World",
+      "Places|Florida|Orlando|Disney World",
+      "Rickii Lear"
+    ],
+    "title": "Disney Trip with the Brown/Catoe Family",
+    "description": "",
+    "location": "Disney World",
+    "city": "Orlando",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/1993/1993_0083_a.jpg",
     "media_type": "photo",
     "file": "1993_0083_a.jpg",
@@ -19654,6 +19704,85 @@
       "Places|Florida|Orlando|Disney World",
       "Rickey Bell",
       "Stephanie Bell"
+    ],
+    "title": "Disney Trip with the Brown/Catoe Family",
+    "description": "",
+    "location": "Disney World",
+    "city": "Orlando",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1993/1993_0091_a.jpg",
+    "media_type": "photo",
+    "file": "1993_0091_a.jpg",
+    "folder": "1993",
+    "date": "1993-07-01",
+    "people": [
+      "Rickii Lear"
+    ],
+    "tags": [
+      "Disney World",
+      "People/Rickii Lear",
+      "People|Rickii Lear",
+      "Places/Florida/Orlando/Disney World",
+      "Places|Florida|Orlando|Disney World",
+      "Rickii Lear"
+    ],
+    "title": "Disney Trip with the Brown/Catoe Family",
+    "description": "",
+    "location": "Disney World",
+    "city": "Orlando",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1993/1993_0105_a.jpg",
+    "media_type": "photo",
+    "file": "1993_0105_a.jpg",
+    "folder": "1993",
+    "date": "1993-07-01",
+    "people": [
+      "Charlie Brown"
+    ],
+    "tags": [
+      "Charlie Brown",
+      "Disney World",
+      "People/Charlie Brown",
+      "People|Charlie Brown",
+      "Places/Florida/Orlando/Disney World",
+      "Places|Florida|Orlando|Disney World"
+    ],
+    "title": "Disney Trip with the Brown/Catoe Family",
+    "description": "",
+    "location": "Disney World",
+    "city": "Orlando",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/1993/1993_0134_a.jpg",
+    "media_type": "photo",
+    "file": "1993_0134_a.jpg",
+    "folder": "1993",
+    "date": "1993-07-01",
+    "people": [
+      "Donna Brown",
+      "Rickii Lear"
+    ],
+    "tags": [
+      "Disney World",
+      "Donna Brown",
+      "People/Donna Brown",
+      "People/Rickii Lear",
+      "People|Donna Brown",
+      "People|Rickii Lear",
+      "Places/Florida/Orlando/Disney World",
+      "Places|Florida|Orlando|Disney World",
+      "Rickii Lear"
     ],
     "title": "Disney Trip with the Brown/Catoe Family",
     "description": "",
@@ -31742,6 +31871,48 @@
     }
   },
   {
+    "path": "images/2002/111-1117_IMG.JPG",
+    "media_type": "photo",
+    "file": "111-1117_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-06-23",
+    "people": [
+      "Jarred Bell",
+      "Rickii Lear",
+      "Tony Neely"
+    ],
+    "tags": [
+      "2044 Douglas Rd",
+      "Jarred Bell",
+      "Lancaster County",
+      "People/Jarred Bell",
+      "People/Rickii Lear",
+      "People/Tony Neely",
+      "People|Jarred Bell",
+      "People|Rickii Lear",
+      "People|Tony Neely",
+      "Places/South Carolina",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/2044 Douglas Rd",
+      "Places|South Carolina",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|2044 Douglas Rd",
+      "Rickii Lear",
+      "South Carolina",
+      "Tony Neely"
+    ],
+    "title": "",
+    "description": "",
+    "location": "2044 Douglas Rd",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6614305061111,
+      "lon": -80.7817025841667
+    }
+  },
+  {
     "path": "images/2002/111-1120_IMG.JPG",
     "media_type": "photo",
     "file": "111-1120_IMG.JPG",
@@ -33862,6 +34033,35 @@
       "People|Jarred Bell",
       "Places/Florida",
       "Places|Florida"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2002/122-2248_IMG.JPG",
+    "media_type": "photo",
+    "file": "122-2248_IMG.JPG",
+    "folder": "2002",
+    "date": "2002-10-20",
+    "people": [
+      "Charlie Brown",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Charlie Brown",
+      "Florida",
+      "People/Charlie Brown",
+      "People/Samatha Bell",
+      "People|Charlie Brown",
+      "People|Samatha Bell",
+      "Places/Florida",
+      "Places|Florida",
+      "Samatha Bell"
     ],
     "title": "",
     "description": "",
@@ -37257,6 +37457,32 @@
     "gps": null
   },
   {
+    "path": "images/2003/2003_12_28 031.jpg",
+    "media_type": "photo",
+    "file": "2003_12_28 031.jpg",
+    "folder": "2003",
+    "date": "2003-12-25",
+    "people": [
+      "Charlie Brown",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Charlie Brown",
+      "People/Charlie Brown",
+      "People/Rickey Bell",
+      "People|Charlie Brown",
+      "People|Rickey Bell",
+      "Rickey Bell"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2003/2003_12_28 037.jpg",
     "media_type": "photo",
     "file": "2003_12_28 037.jpg",
@@ -37628,6 +37854,32 @@
       "People|Adam Lear",
       "People|Rickii Lear",
       "Rickii Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/2004_2_10 008.jpg",
+    "media_type": "photo",
+    "file": "2004_2_10 008.jpg",
+    "folder": "2004",
+    "date": "2004-01-24",
+    "people": [
+      "Charlie Brown",
+      "Rickey Bell"
+    ],
+    "tags": [
+      "Charlie Brown",
+      "People/Charlie Brown",
+      "People/Rickey Bell",
+      "People|Charlie Brown",
+      "People|Rickey Bell",
+      "Rickey Bell"
     ],
     "title": "",
     "description": "",
@@ -38511,6 +38763,31 @@
     "city": "",
     "state": "",
     "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2004/2003_10_20 009.jpg",
+    "media_type": "photo",
+    "file": "2003_10_20 009.jpg",
+    "folder": "2004",
+    "date": "2004-10-16",
+    "people": [
+      "Rickii Lear"
+    ],
+    "tags": [
+      "212 S Main St QDS Office",
+      "People/Rickii Lear",
+      "People|Rickii Lear",
+      "Places/South Carolina/Lancaster County/212 S Main St QDS Office",
+      "Places|South Carolina|Lancaster County|212 S Main St QDS Office",
+      "Rickii Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "212 S Main St QDS Office",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
     "gps": null
   },
   {
@@ -40421,6 +40698,81 @@
     "gps": null
   },
   {
+    "path": "images/2005/054_54.JPG",
+    "media_type": "photo",
+    "file": "054_54.JPG",
+    "folder": "2005",
+    "date": "2005-06-02",
+    "people": [
+      "Rickii Lear"
+    ],
+    "tags": [
+      "Disney World",
+      "People/Rickii Lear",
+      "People|Rickii Lear",
+      "Places/Florida/Orlando/Disney World",
+      "Places|Florida|Orlando|Disney World",
+      "Rickii Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Disney World",
+    "city": "Orlando",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2005/055_55.JPG",
+    "media_type": "photo",
+    "file": "055_55.JPG",
+    "folder": "2005",
+    "date": "2005-06-02",
+    "people": [
+      "Rickii Lear"
+    ],
+    "tags": [
+      "Disney World",
+      "People/Rickii Lear",
+      "People|Rickii Lear",
+      "Places/Florida/Orlando/Disney World",
+      "Places|Florida|Orlando|Disney World",
+      "Rickii Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Disney World",
+    "city": "Orlando",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2005/066_66.JPG",
+    "media_type": "photo",
+    "file": "066_66.JPG",
+    "folder": "2005",
+    "date": "2005-06-02",
+    "people": [
+      "Rickii Lear"
+    ],
+    "tags": [
+      "Disney World",
+      "People/Rickii Lear",
+      "People|Rickii Lear",
+      "Places/Florida/Orlando/Disney World",
+      "Places|Florida|Orlando|Disney World",
+      "Rickii Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Disney World",
+    "city": "Orlando",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2005/2005_05_31__023_23.JPG",
     "media_type": "photo",
     "file": "2005_05_31__023_23.JPG",
@@ -40436,6 +40788,31 @@
       "People|Donna Brown",
       "Places/Florida/Orlando/Disney World",
       "Places|Florida|Orlando|Disney World"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Disney World",
+    "city": "Orlando",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2005/2005_05_31__049_49.JPG",
+    "media_type": "photo",
+    "file": "2005_05_31__049_49.JPG",
+    "folder": "2005",
+    "date": "2005-06-02",
+    "people": [
+      "Rickii Lear"
+    ],
+    "tags": [
+      "Disney World",
+      "People/Rickii Lear",
+      "People|Rickii Lear",
+      "Places/Florida/Orlando/Disney World",
+      "Places|Florida|Orlando|Disney World",
+      "Rickii Lear"
     ],
     "title": "",
     "description": "",
@@ -40719,6 +41096,28 @@
     "gps": null
   },
   {
+    "path": "images/2005/12-10-05_2356.jpg",
+    "media_type": "photo",
+    "file": "12-10-05_2356.jpg",
+    "folder": "2005",
+    "date": "2005-12-11",
+    "people": [
+      "Rickii Lear"
+    ],
+    "tags": [
+      "People/Rickii Lear",
+      "People|Rickii Lear",
+      "Rickii Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "videos/2005/12-15-05_1058.mp4",
     "media_type": "video",
     "file": "12-15-05_1058.mp4",
@@ -40931,6 +41330,28 @@
       "People/Rickii Lear",
       "People|Rickii Lear",
       "Rickii Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2006/04-16-06_1421.jpg",
+    "media_type": "photo",
+    "file": "04-16-06_1421.jpg",
+    "folder": "2006",
+    "date": "2006-04-16",
+    "people": [
+      "Charlie Brown"
+    ],
+    "tags": [
+      "Charlie Brown",
+      "People/Charlie Brown",
+      "People|Charlie Brown"
     ],
     "title": "",
     "description": "",
@@ -41591,6 +42012,28 @@
     "gps": null
   },
   {
+    "path": "images/2007/DSCI0134.JPG",
+    "media_type": "photo",
+    "file": "DSCI0134.JPG",
+    "folder": "2007",
+    "date": "2007-12-19",
+    "people": [
+      "Kathleen Brown"
+    ],
+    "tags": [
+      "Kathleen Brown",
+      "People/Kathleen Brown",
+      "People|Kathleen Brown"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2007/DSCI0136.JPG",
     "media_type": "photo",
     "file": "DSCI0136.JPG",
@@ -41603,6 +42046,32 @@
       "Anna Lear",
       "People/Anna Lear",
       "People|Anna Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2007/DSCI0139.JPG",
+    "media_type": "photo",
+    "file": "DSCI0139.JPG",
+    "folder": "2007",
+    "date": "2007-12-19",
+    "people": [
+      "Charlie Brown",
+      "Kathleen Brown"
+    ],
+    "tags": [
+      "Charlie Brown",
+      "Kathleen Brown",
+      "People/Charlie Brown",
+      "People/Kathleen Brown",
+      "People|Charlie Brown",
+      "People|Kathleen Brown"
     ],
     "title": "",
     "description": "",
@@ -43273,6 +43742,28 @@
     "gps": null
   },
   {
+    "path": "images/2009/pics 004.jpg",
+    "media_type": "photo",
+    "file": "pics 004.jpg",
+    "folder": "2009",
+    "date": "2009-12-25",
+    "people": [
+      "Tony Neely"
+    ],
+    "tags": [
+      "People/Tony Neely",
+      "People|Tony Neely",
+      "Tony Neely"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2010/2010s_0001_a.jpg",
     "media_type": "photo",
     "file": "2010s_0001_a.jpg",
@@ -43606,9 +44097,75 @@
     "gps": null
   },
   {
+    "path": "images/2010/103_0421.JPG",
+    "media_type": "photo",
+    "file": "103_0421.JPG",
+    "folder": "2010",
+    "date": "2010-04-05",
+    "people": [
+      "Charlie Brown"
+    ],
+    "tags": [
+      "Charlie Brown",
+      "People/Charlie Brown",
+      "People|Charlie Brown"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2010/103_0446.JPG",
+    "media_type": "photo",
+    "file": "103_0446.JPG",
+    "folder": "2010",
+    "date": "2010-04-06",
+    "people": [
+      "Anna Lear"
+    ],
+    "tags": [
+      "Anna Lear",
+      "People/Anna Lear",
+      "People|Anna Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2010/103_0466.JPG",
     "media_type": "photo",
     "file": "103_0466.JPG",
+    "folder": "2010",
+    "date": "2010-04-07",
+    "people": [
+      "Anna Lear"
+    ],
+    "tags": [
+      "Anna Lear",
+      "People/Anna Lear",
+      "People|Anna Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2010/103_0469.JPG",
+    "media_type": "photo",
+    "file": "103_0469.JPG",
     "folder": "2010",
     "date": "2010-04-07",
     "people": [
@@ -44843,6 +45400,37 @@
     "gps": null
   },
   {
+    "path": "images/2013/IMG_0010.JPG",
+    "media_type": "photo",
+    "file": "IMG_0010.JPG",
+    "folder": "2013",
+    "date": "2013-08-31",
+    "people": [
+      "Charlie Brown"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Charlie Brown",
+      "Lancaster County",
+      "People/Charlie Brown",
+      "People|Charlie Brown",
+      "Places/South Carolina/Lancaster County",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.725,
+      "lon": -80.7893333333333
+    }
+  },
+  {
     "path": "videos/2013/Larry.mp4",
     "media_type": "video",
     "file": "Larry.mp4",
@@ -45868,6 +46456,38 @@
     "gps": null
   },
   {
+    "path": "images/2016/IMG_3176.JPEG",
+    "media_type": "photo",
+    "file": "IMG_3176.JPEG",
+    "folder": "2016",
+    "date": "2016-05-30",
+    "people": [
+      "Charlie Brown",
+      "Jarred Bell"
+    ],
+    "tags": [
+      "Charlie Brown",
+      "Fountain of Youth",
+      "Jarred Bell",
+      "People/Charlie Brown",
+      "People/Jarred Bell",
+      "People|Charlie Brown",
+      "People|Jarred Bell",
+      "Places/Florida/St Augustine",
+      "Places/Florida/St Augustine/Fountain of Youth",
+      "Places|Florida|St Augustine",
+      "Places|Florida|St Augustine|Fountain of Youth",
+      "St Augustine"
+    ],
+    "title": "Brown Family Vacation First Day in Florida",
+    "description": "",
+    "location": "Fountain of Youth",
+    "city": "St Augustine",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2016/IMG_3185.JPG",
     "media_type": "photo",
     "file": "IMG_3185.JPG",
@@ -45965,6 +46585,31 @@
     "gps": null
   },
   {
+    "path": "images/2016/IMG_3240.JPG",
+    "media_type": "photo",
+    "file": "IMG_3240.JPG",
+    "folder": "2016",
+    "date": "2016-05-31",
+    "people": [
+      "Anna Lear"
+    ],
+    "tags": [
+      "Anna Lear",
+      "Disney World",
+      "People/Anna Lear",
+      "People|Anna Lear",
+      "Places/Florida/Orlando/Disney World",
+      "Places|Florida|Orlando|Disney World"
+    ],
+    "title": "Brown Family Vacation Day 2 Walt Disney World",
+    "description": "",
+    "location": "Disney World",
+    "city": "Orlando",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2016/IMG_3433.JPG",
     "media_type": "photo",
     "file": "IMG_3433.JPG",
@@ -45992,6 +46637,31 @@
       "Tony Neely",
       "Universal Studios",
       "Yates Bradley"
+    ],
+    "title": "Brown Family Vacation Day 3: Universal Studios (took Kristie's son Yates with me)",
+    "description": "",
+    "location": "Universal Studios",
+    "city": "Orlando",
+    "state": "Florida",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2016/IMG_3486.JPG",
+    "media_type": "photo",
+    "file": "IMG_3486.JPG",
+    "folder": "2016",
+    "date": "2016-06-02",
+    "people": [
+      "Charlie Brown"
+    ],
+    "tags": [
+      "Charlie Brown",
+      "People/Charlie Brown",
+      "People|Charlie Brown",
+      "Places/Florida/Orlando/Universal Studios",
+      "Places|Florida|Orlando|Universal Studios",
+      "Universal Studios"
     ],
     "title": "Brown Family Vacation Day 3: Universal Studios (took Kristie's son Yates with me)",
     "description": "",
@@ -46807,6 +47477,31 @@
     "gps": null
   },
   {
+    "path": "videos/2016/IMG_0011.mp4",
+    "media_type": "video",
+    "file": "IMG_0011.mp4",
+    "folder": "2016",
+    "date": "2016-12-25",
+    "people": [
+      "Xavier Lear"
+    ],
+    "tags": [
+      "People/Xavier Charles Lear",
+      "Places/South Carolina/Lancaster County/2044 Douglas Rd",
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "2044 Douglas Rd",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.66143050666667,
+      "lon": -80.781702585
+    }
+  },
+  {
     "path": "images/2016/20161227_023031180_iOS.jpg",
     "media_type": "photo",
     "file": "20161227_023031180_iOS.jpg",
@@ -47016,6 +47711,36 @@
     }
   },
   {
+    "path": "images/2017/IMG_0343.JPG",
+    "media_type": "photo",
+    "file": "IMG_0343.JPG",
+    "folder": "2017",
+    "date": "2017-03-25",
+    "people": [
+      "Anna Lear",
+      "Rickii Lear",
+      "Tabitha Green"
+    ],
+    "tags": [
+      "Anna Lear",
+      "People/Anna Lear",
+      "People/Rickii Lear",
+      "People/Tabitha Green",
+      "People|Anna Lear",
+      "People|Rickii Lear",
+      "People|Tabitha Green",
+      "Rickii Lear",
+      "Tabitha Green"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2017/IMG_0356.JPG",
     "media_type": "photo",
     "file": "IMG_0356.JPG",
@@ -47084,6 +47809,29 @@
       "People|Alice Neely",
       "People|Tim Neely",
       "Tim Neely"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "videos/2017/IMG_0393.mp4",
+    "media_type": "video",
+    "file": "IMG_0393.mp4",
+    "folder": "2017",
+    "date": "2017-04-06",
+    "people": [
+      "Alice Neely",
+      "Tim Neely"
+    ],
+    "tags": [
+      "People/Alice Neely",
+      "People/Tim Neely",
+      "Video"
     ],
     "title": "",
     "description": "",
@@ -47229,6 +47977,56 @@
       "People/Anna Lear",
       "People/Xavier Charles Lear",
       "People|Anna Lear",
+      "People|Xavier Charles Lear",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach",
+      "Xavier Charles Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2017/IMG_0991.JPG",
+    "media_type": "photo",
+    "file": "IMG_0991.JPG",
+    "folder": "2017",
+    "date": "2017-07-17",
+    "people": [
+      "Anna Lear"
+    ],
+    "tags": [
+      "Anna Lear",
+      "Myrtle Beach",
+      "People/Anna Lear",
+      "People|Anna Lear",
+      "Places/South Carolina/Myrtle Beach",
+      "Places|South Carolina|Myrtle Beach"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2017/IMG_0999.JPG",
+    "media_type": "photo",
+    "file": "IMG_0999.JPG",
+    "folder": "2017",
+    "date": "2017-07-17",
+    "people": [
+      "Xavier Lear"
+    ],
+    "tags": [
+      "Myrtle Beach",
+      "People/Xavier Charles Lear",
       "People|Xavier Charles Lear",
       "Places/South Carolina/Myrtle Beach",
       "Places|South Carolina|Myrtle Beach",
@@ -47413,6 +48211,36 @@
     "city": "Crystal River",
     "state": "Florida",
     "country": "United States",
+    "gps": null
+  },
+  {
+    "path": "images/2017/646614578_10230678649420863_2513328793838908327_n.jpg",
+    "media_type": "photo",
+    "file": "646614578_10230678649420863_2513328793838908327_n.jpg",
+    "folder": "2017",
+    "date": "2017-09-06",
+    "people": [
+      "Alice Neely",
+      "Anna Lear",
+      "Tony Neely"
+    ],
+    "tags": [
+      "Alice Neely",
+      "Anna Lear",
+      "People/Alice Neely",
+      "People/Anna Lear",
+      "People/Tony Neely",
+      "People|Alice Neely",
+      "People|Anna Lear",
+      "People|Tony Neely",
+      "Tony Neely"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
     "gps": null
   },
   {
@@ -47886,6 +48714,28 @@
       "People|Sophia Bell",
       "Sophia Bell",
       "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2018/35071167_10156514405288629_2126558734837612544_n.jpg",
+    "media_type": "photo",
+    "file": "35071167_10156514405288629_2126558734837612544_n.jpg",
+    "folder": "2018",
+    "date": "2018-06-10",
+    "people": [
+      "Tony Neely"
+    ],
+    "tags": [
+      "People/Tony Neely",
+      "People|Tony Neely",
+      "Tony Neely"
     ],
     "title": "",
     "description": "",
@@ -49723,6 +50573,28 @@
     "gps": null
   },
   {
+    "path": "images/2020/IMG_5893.JPEG",
+    "media_type": "photo",
+    "file": "IMG_5893.JPEG",
+    "folder": "2020",
+    "date": "2020-06-21",
+    "people": [
+      "Charlie Brown"
+    ],
+    "tags": [
+      "Charlie Brown",
+      "People/Charlie Brown",
+      "People|Charlie Brown"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2020/IMG_5922.JPEG",
     "media_type": "photo",
     "file": "IMG_5922.JPEG",
@@ -51189,6 +52061,38 @@
     }
   },
   {
+    "path": "images/2021/20210704_121036.jpg",
+    "media_type": "photo",
+    "file": "20210704_121036.jpg",
+    "folder": "2021",
+    "date": "2021-07-04",
+    "people": [
+      "Anna Lear",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Anna Lear",
+      "People/Anna Lear",
+      "People/Sophia Bell",
+      "People|Anna Lear",
+      "People|Sophia Bell",
+      "Places/Tennessee",
+      "Places|Tennessee",
+      "Sophia Bell",
+      "Tennessee"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Tennessee",
+    "country": "United States",
+    "gps": {
+      "lat": 35.7930322997222,
+      "lon": -83.5350638
+    }
+  },
+  {
     "path": "images/2021/20210704_132835.jpg",
     "media_type": "photo",
     "file": "20210704_132835.jpg",
@@ -51313,6 +52217,66 @@
     }
   },
   {
+    "path": "images/2021/20210706_222453.jpg",
+    "media_type": "photo",
+    "file": "20210706_222453.jpg",
+    "folder": "2021",
+    "date": "2021-07-06",
+    "people": [
+      "Tony Neely"
+    ],
+    "tags": [
+      "People/Tony Neely",
+      "People|Tony Neely",
+      "Places/Tennessee",
+      "Places|Tennessee",
+      "Tennessee",
+      "Tony Neely"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Tennessee",
+    "country": "United States",
+    "gps": {
+      "lat": 35.7103243,
+      "lon": -83.5192972
+    }
+  },
+  {
+    "path": "images/2021/20210706_223840.jpg",
+    "media_type": "photo",
+    "file": "20210706_223840.jpg",
+    "folder": "2021",
+    "date": "2021-07-06",
+    "people": [
+      "Anna Lear",
+      "Samatha Bell"
+    ],
+    "tags": [
+      "Anna Lear",
+      "People/Anna Lear",
+      "People/Samatha Bell",
+      "People|Anna Lear",
+      "People|Samatha Bell",
+      "Places/Tennessee",
+      "Places|Tennessee",
+      "Samatha Bell",
+      "Tennessee"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Tennessee",
+    "country": "United States",
+    "gps": {
+      "lat": 35.7108286994444,
+      "lon": -83.519274
+    }
+  },
+  {
     "path": "images/2021/20210906_142624.jpg",
     "media_type": "photo",
     "file": "20210906_142624.jpg",
@@ -51422,6 +52386,35 @@
     "gps": {
       "lat": 34.4540399666667,
       "lon": -80.8732999833333
+    }
+  },
+  {
+    "path": "images/2021/20211023_114353.jpg",
+    "media_type": "photo",
+    "file": "20211023_114353.jpg",
+    "folder": "2021",
+    "date": "2021-10-23",
+    "people": [
+      "Sophia Bell",
+      "Xavier Lear"
+    ],
+    "tags": [
+      "People/Sophia Bell",
+      "People/Xavier Charles Lear",
+      "People|Sophia Bell",
+      "People|Xavier Charles Lear",
+      "Sophia Bell",
+      "Xavier Charles Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": {
+      "lat": 34.3399568997222,
+      "lon": -81.0801651997222
     }
   },
   {
@@ -51924,6 +52917,34 @@
     "gps": {
       "lat": 34.6917521,
       "lon": -80.7871657
+    }
+  },
+  {
+    "path": "images/2022/20220319_154807.jpg",
+    "media_type": "photo",
+    "file": "20220319_154807.jpg",
+    "folder": "2022",
+    "date": "2022-03-19",
+    "people": [
+      "Tony Neely"
+    ],
+    "tags": [
+      "Lancaster County",
+      "People/Tony Neely",
+      "People|Tony Neely",
+      "Places/South Carolina/Lancaster County",
+      "Places|South Carolina|Lancaster County",
+      "Tony Neely"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.5941568002778,
+      "lon": -80.6751046
     }
   },
   {
@@ -56712,6 +57733,190 @@
     }
   },
   {
+    "path": "images/2024/Screenshot_20241118_100434_Messages-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20241118_100434_Messages-edited.jpg",
+    "folder": "2024",
+    "date": "2024-11-18",
+    "people": [
+      "Xavier Lear"
+    ],
+    "tags": [
+      "People/Xavier Charles Lear",
+      "People|Xavier Charles Lear",
+      "Xavier Charles Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2024/Screenshot_20241118_100502_Messages-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20241118_100502_Messages-edited.jpg",
+    "folder": "2024",
+    "date": "2024-11-18",
+    "people": [
+      "Anna Lear",
+      "Xavier Lear"
+    ],
+    "tags": [
+      "Anna Lear",
+      "People/Anna Lear",
+      "People/Xavier Charles Lear",
+      "People|Anna Lear",
+      "People|Xavier Charles Lear",
+      "Xavier Charles Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2024/Screenshot_20241118_100515_Messages-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20241118_100515_Messages-edited.jpg",
+    "folder": "2024",
+    "date": "2024-11-18",
+    "people": [
+      "Anna Lear"
+    ],
+    "tags": [
+      "Anna Lear",
+      "People/Anna Lear",
+      "People|Anna Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2024/Screenshot_20241118_100546_Messages~2.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20241118_100546_Messages~2.jpg",
+    "folder": "2024",
+    "date": "2024-11-18",
+    "people": [
+      "Anna Lear"
+    ],
+    "tags": [
+      "Anna Lear",
+      "People/Anna Lear",
+      "People|Anna Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2024/Screenshot_20241118_100605_Messages-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20241118_100605_Messages-edited.jpg",
+    "folder": "2024",
+    "date": "2024-11-18",
+    "people": [
+      "Xavier Lear"
+    ],
+    "tags": [
+      "People/Xavier Charles Lear",
+      "People|Xavier Charles Lear",
+      "Xavier Charles Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2024/Screenshot_20241118_100617_Messages-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20241118_100617_Messages-edited.jpg",
+    "folder": "2024",
+    "date": "2024-11-18",
+    "people": [
+      "Anna Lear",
+      "Xavier Lear"
+    ],
+    "tags": [
+      "Anna Lear",
+      "People/Anna Lear",
+      "People/Xavier Charles Lear",
+      "People|Anna Lear",
+      "People|Xavier Charles Lear",
+      "Xavier Charles Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2024/Screenshot_20241118_100628_Messages-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20241118_100628_Messages-edited.jpg",
+    "folder": "2024",
+    "date": "2024-11-18",
+    "people": [
+      "Xavier Lear"
+    ],
+    "tags": [
+      "People/Xavier Charles Lear",
+      "People|Xavier Charles Lear",
+      "Xavier Charles Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
+    "path": "images/2024/Screenshot_20241118_100650_Messages-edited.jpg",
+    "media_type": "photo",
+    "file": "Screenshot_20241118_100650_Messages-edited.jpg",
+    "folder": "2024",
+    "date": "2024-11-18",
+    "people": [
+      "Anna Lear"
+    ],
+    "tags": [
+      "Anna Lear",
+      "People/Anna Lear",
+      "People|Anna Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "gps": null
+  },
+  {
     "path": "images/2024/20241129_130824~2.jpg",
     "media_type": "photo",
     "file": "20241129_130824~2.jpg",
@@ -57517,6 +58722,42 @@
     "gps": {
       "lat": 34.7196,
       "lon": -80.7711
+    }
+  },
+  {
+    "path": "images/2025/20250420_132706.jpg",
+    "media_type": "photo",
+    "file": "20250420_132706.jpg",
+    "folder": "2025",
+    "date": "2025-04-20",
+    "people": [
+      "Anna Lear",
+      "Rickey Bell",
+      "Xavier Lear"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "Anna Lear",
+      "People/Anna Lear",
+      "People/Rickey Bell",
+      "People/Xavier Charles Lear",
+      "People|Anna Lear",
+      "People|Rickey Bell",
+      "People|Xavier Charles Lear",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Rickey Bell",
+      "Xavier Charles Lear"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6933618005556,
+      "lon": -80.8250969997222
     }
   },
   {
@@ -58366,6 +59607,42 @@
     }
   },
   {
+    "path": "images/2025/20250801_140406.jpg",
+    "media_type": "photo",
+    "file": "20250801_140406.jpg",
+    "folder": "2025",
+    "date": "2025-08-01",
+    "people": [
+      "Ivy Bell",
+      "Rickii Lear",
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Ivy Bell",
+      "People/Ivy Bell",
+      "People/Rickii Lear",
+      "People/Sophia Bell",
+      "People|Ivy Bell",
+      "People|Rickii Lear",
+      "People|Sophia Bell",
+      "Places/Tennessee",
+      "Places|Tennessee",
+      "Rickii Lear",
+      "Sophia Bell",
+      "Tennessee"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "",
+    "state": "Tennessee",
+    "country": "United States",
+    "gps": {
+      "lat": 35.8404472997222,
+      "lon": -83.5668386
+    }
+  },
+  {
     "path": "audio/2025/Voicemail_from_Dickey Bell_2025_09_11_14_39_06.mp3",
     "media_type": "audio",
     "file": "Voicemail_from_Dickey Bell_2025_09_11_14_39_06.mp3",
@@ -58921,6 +60198,34 @@
     "gps": {
       "lat": 34.6933904838889,
       "lon": -80.8252106830556
+    }
+  },
+  {
+    "path": "images/2025/20251030_181230~2.jpg",
+    "media_type": "photo",
+    "file": "20251030_181230~2.jpg",
+    "folder": "2025",
+    "date": "2025-10-30",
+    "people": [
+      "Charlie Brown"
+    ],
+    "tags": [
+      "695 Lancaster Bypass E TSI_QDS Office",
+      "Charlie Brown",
+      "People/Charlie Brown",
+      "People|Charlie Brown",
+      "Places/South Carolina/Lancaster County/695 Lancaster Bypass E TSI_QDS Office",
+      "Places|South Carolina|Lancaster County|695 Lancaster Bypass E TSI_QDS Office"
+    ],
+    "title": "",
+    "description": "",
+    "location": "695 Lancaster Bypass E TSI_QDS Office",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7282716,
+      "lon": -80.7546079
     }
   },
   {
