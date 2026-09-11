@@ -1693,6 +1693,9 @@
     "videos/2017/20170302_155353000_iOS.mp4": [
       "Military / Police / Rescue / EMS"
     ],
+    "videos/2017/20170623_005425000_iOS.mp4": [
+      "Shooting"
+    ],
     "videos/2017/20170807_225752000_iOS.mp4": [
       "Shooting"
     ],
@@ -1700,6 +1703,10 @@
       "Boating"
     ],
     "videos/2017/Medic Hoke Last Call.mp4": [
+      "Military / Police / Rescue / EMS"
+    ],
+    "videos/2018/2018-06-19 09.54.29.mp4": [
+      "Aviation",
       "Military / Police / Rescue / EMS"
     ],
     "videos/2018/20180318_163348.mp4": [
@@ -1741,8 +1748,14 @@
     "videos/2021/20210906_125908.mp4": [
       "Boating"
     ],
+    "videos/2021/20211122_200819.mp4": [
+      "Camping"
+    ],
     "videos/2022/20221014_205010.mp4": [
       "Camping"
+    ],
+    "videos/2023/20230411_214510.mp4": [
+      "Aviation"
     ],
     "videos/2023/20230703_145129000_iOS.mp4": [
       "Boating"
@@ -1821,21 +1834,21 @@
     ]
   },
   "taggedCounts": {
-    "Aviation": 1287,
+    "Aviation": 1298,
     "Scuba": 1290,
-    "Shooting": 230,
+    "Shooting": 231,
     "Boating": 1424,
     "Off-Roading": 313,
     "Camping": 381,
-    "Military / Police / Rescue / EMS": 990
+    "Military / Police / Rescue / EMS": 991
   },
   "publicCounts": {
-    "Aviation": 143,
+    "Aviation": 145,
     "Scuba": 142,
-    "Shooting": 41,
+    "Shooting": 42,
     "Boating": 111,
     "Off-Roading": 24,
-    "Camping": 61,
-    "Military / Police / Rescue / EMS": 100
+    "Camping": 62,
+    "Military / Police / Rescue / EMS": 101
   }
 }

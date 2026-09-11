@@ -43628,6 +43628,32 @@
     "gps": null
   },
   {
+    "path": "videos/2010/103_0550.mp4",
+    "media_type": "video",
+    "file": "103_0550.mp4",
+    "folder": "2010",
+    "date": "2010-05-16",
+    "people": [
+      "Samatha Bell"
+    ],
+    "tags": [
+      "900 Confederate Ave",
+      "People/Samatha Bell",
+      "People|Samatha Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Places|South Carolina|Lancaster County|900 Confederate Ave",
+      "Samatha Bell",
+      "Video"
+    ],
+    "title": "Sam's Bathroom Demo",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
+  },
+  {
     "path": "images/2010/506148369_3031705520338383_354332108135005363_n.jpg",
     "media_type": "photo",
     "file": "506148369_3031705520338383_354332108135005363_n.jpg",
@@ -47011,6 +47037,32 @@
     }
   },
   {
+    "path": "videos/2017/20170623_005425000_iOS.mp4",
+    "media_type": "video",
+    "file": "20170623_005425000_iOS.mp4",
+    "folder": "2017",
+    "date": "2017-06-22",
+    "people": [
+      "Mickey Morgan"
+    ],
+    "tags": [
+      "Hobbies/Shooting",
+      "People/Mickey Morgan",
+      "Places/South Carolina/Lancaster County",
+      "Video"
+    ],
+    "title": "What a worthless AK!!!!!",
+    "description": "",
+    "location": "",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.6125,
+      "lon": -80.8038
+    }
+  },
+  {
     "path": "images/2017/20170708_155011027_iOS.jpg",
     "media_type": "photo",
     "file": "20170708_155011027_iOS.jpg",
@@ -47753,6 +47805,30 @@
     "state": "",
     "country": "",
     "gps": null
+  },
+  {
+    "path": "videos/2018/2018-06-19 09.54.29.mp4",
+    "media_type": "video",
+    "file": "2018-06-19 09.54.29.mp4",
+    "folder": "2018",
+    "date": "2018-06-19",
+    "people": [],
+    "tags": [
+      "Hobbies/Aviation",
+      "Hobbies/Military_Rescue_Police_EMS",
+      "Places/South Carolina/Chester County/Sub Fiber",
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "Sub Fiber",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.7538,
+      "lon": -81.0447
+    }
   },
   {
     "path": "images/2018/IMG_3041.JPEG",
@@ -51144,6 +51220,32 @@
     }
   },
   {
+    "path": "videos/2021/20211122_200819.mp4",
+    "media_type": "video",
+    "file": "20211122_200819.mp4",
+    "folder": "2021",
+    "date": "2021-11-22",
+    "people": [
+      "Sophia Bell"
+    ],
+    "tags": [
+      "Hobbies/Camping",
+      "People/Sophia Bell",
+      "Places/South Carolina/Lancaster County/900 Confederate Ave",
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "900 Confederate Ave",
+    "city": "Lancaster County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 34.693399983333336,
+      "lon": -80.8251
+    }
+  },
+  {
     "path": "images/2021/20211124_182542.jpg",
     "media_type": "photo",
     "file": "20211124_182542.jpg",
@@ -51496,6 +51598,26 @@
       "lat": 34.6793411,
       "lon": -81.2428044
     }
+  },
+  {
+    "path": "videos/2022/dji_export_1643563157699.mp4",
+    "media_type": "video",
+    "file": "dji_export_1643563157699.mp4",
+    "folder": "2022",
+    "date": "2022-01-30",
+    "people": [],
+    "tags": [
+      "Places/South Carolina/Chester County",
+      "Places/South Carolina/Chester County/State Park",
+      "Video"
+    ],
+    "title": "Chester County State Park",
+    "description": "",
+    "location": "State Park",
+    "city": "Chester County",
+    "state": "South Carolina",
+    "country": "United States",
+    "gps": null
   },
   {
     "path": "images/2022/20220215_104226.jpg",
@@ -53373,6 +53495,29 @@
     "state": "",
     "country": "",
     "gps": null
+  },
+  {
+    "path": "videos/2023/20230411_214510.mp4",
+    "media_type": "video",
+    "file": "20230411_214510.mp4",
+    "folder": "2023",
+    "date": "2023-04-11",
+    "people": [],
+    "tags": [
+      "Hobbies/Aviation",
+      "Places/North Carolina/Charlotte",
+      "Video"
+    ],
+    "title": "",
+    "description": "",
+    "location": "",
+    "city": "Charlotte",
+    "state": "North Carolina",
+    "country": "United States",
+    "gps": {
+      "lat": 35.2211,
+      "lon": -80.8588
+    }
   },
   {
     "path": "images/2023/20230416_193652.jpg",
