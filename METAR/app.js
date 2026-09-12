@@ -1,10 +1,11 @@
-import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,compactWind,windDisplayLevel,shouldDisplayWind,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,gairmetExpiresAt} from './weather.mjs?v=20260912-terrain1';
+import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,compactWind,windDisplayLevel,shouldDisplayWind,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,gairmetExpiresAt} from './weather.mjs?v=20260912-regional1';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 const defaultPan=[80,30];
-const map=$('map');let stations=[],states=[],airspaces=[],airmets=[],sigmets=[],reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],feed=null,loading=false,timer,terrainOn=true,radarOn=true,lightningOn=false,windOn=true,airmetOn=false,sigmetOn=true,hazardsLoaded=false,hazardsLoading=false;
+const map=$('map');let stations=[],states=[],airspaces=[],airmets=[],sigmets=[],reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],feed=null,loading=false,timer,terrainOn=true,radarOn=true,lightningOn=false,windOn=true,airmetOn=false,sigmetOn=true,hazardsLoaded=false,hazardsLoading=false,displayedIds=new Set();
 const nodes=new Map();
-const radarBounds={west:-86,east:-76,south:31,north:36};
+const radarBounds={west:-91,east:-75,south:24,north:40};
 const terrainBounds={west:-91,east:-75,south:24,north:40};
+const regionView={west:-91,east:-75,south:24,north:40};
 const serviceBase='https://bell-family-metar.rbell.workers.dev';
 const merc=lat=>Math.log(Math.tan(Math.PI/4+lat*Math.PI/360))*180/Math.PI;
 const unmerc=value=>(Math.atan(Math.exp(value*Math.PI/180))-Math.PI/4)*360/Math.PI;
@@ -13,7 +14,20 @@ const fixedView={west:-83.36,east:-78.07223,south:32.03,north:35.43179};
 const center=[(fixedView.west+fixedView.east)/2,(merc(fixedView.south)+merc(fixedView.north))/2];
 const extent=[fixedView.east-fixedView.west,merc(fixedView.north)-merc(fixedView.south)];
 function xy(lon,lat){return [(lon-center[0])*baseScale*zoom+width/2+pan[0],(center[1]-merc(lat))*baseScale*zoom+mapCenterY+pan[1]];}
-function visibleBounds(){const west=(0-width/2-pan[0])/(baseScale*zoom)+center[0],east=(width-width/2-pan[0])/(baseScale*zoom)+center[0],north=unmerc(center[1]-(0-mapCenterY-pan[1])/(baseScale*zoom)),south=unmerc(center[1]-(height-mapCenterY-pan[1])/(baseScale*zoom));return {west:Math.min(west,east),east:Math.max(west,east),south:Math.min(south,north),north:Math.max(south,north)};}
+function visibleBounds(padding=0){const west=(-padding-width/2-pan[0])/(baseScale*zoom)+center[0],east=(width+padding-width/2-pan[0])/(baseScale*zoom)+center[0],north=unmerc(center[1]-(-padding-mapCenterY-pan[1])/(baseScale*zoom)),south=unmerc(center[1]-(height+padding-mapCenterY-pan[1])/(baseScale*zoom));return {west:Math.min(west,east),east:Math.max(west,east),south:Math.min(south,north),north:Math.max(south,north)};}
+const isControlled=station=>station.airspaceClasses?.some(value=>['B','C','D'].includes(value));
+function significantWeather(station){const report=reports.get(station.id),status=statusOf(report),windLevel=windDisplayLevel(report);return ['IFR','LIFR'].includes(status)||hasRainOrMist(report)||hasFog(report)||hasThunderstorm(report)||windLevel==='wind-yellow'||windLevel==='wind-red';}
+function displayStations(){
+ const bounds=visibleBounds(90),wide=zoom<.58,candidates=stations.filter(station=>station.lon>=bounds.west&&station.lon<=bounds.east&&station.lat>=bounds.south&&station.lat<=bounds.north&&(!wide||isControlled(station)||significantWeather(station)));
+ // Weather hazards, the selected airport, and KLKR stay visible. The remaining
+ // regularly reporting airports are revealed progressively so regional planning
+ // views do not turn into a solid block of identifiers and wind barbs.
+ candidates.sort((a,b)=>Number(significantWeather(b))-Number(significantWeather(a))||Number(b.id===selected)-Number(a.id===selected)||Number(b.id==='KLKR')-Number(a.id==='KLKR')||Number(isControlled(b))-Number(isControlled(a))||(a.priority??9)-(b.priority??9)||(b.maxRunway??0)-(a.maxRunway??0)||a.id.localeCompare(b.id));
+ if(zoom>=2.5)return candidates;
+ const kept=[],points=[],xGap=zoom<.58?74:zoom<1.2?82:62,yGap=zoom<.58?36:zoom<1.2?42:34;
+ for(const station of candidates){const point=xy(station.lon,station.lat),mustShow=station.id===selected||station.id==='KLKR';if(!mustShow&&points.some(other=>Math.abs(point[0]-other[0])<xGap&&Math.abs(point[1]-other[1])<yGap))continue;kept.push(station);points.push(point);}
+ return kept;
+}
 function el(tag,attrs={},parent){const e=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));if(parent)parent.append(e);return e;}
 function textAt(parent,lon,lat,text,cls){const p=xy(lon,lat),t=el('text',{x:p[0],y:p[1],class:cls},parent);t.textContent=text;}
 function geometryPath(geometry){
@@ -80,18 +94,18 @@ function draw(){
  for(let lon=-88;lon<=-74;lon++){const a=xy(lon,28),b=xy(lon,39);el('path',{d:`M${a}L${b}`,class:'grid'},geo);}
  for(let lat=29;lat<=38;lat++){const a=xy(-88,lat),b=xy(-74,lat);el('path',{d:`M${a}L${b}`,class:'grid'},geo);}
  const landClip=$('land-clip');landClip.replaceChildren();for(const f of states){const polygons=f.geometry.type==='Polygon'?[f.geometry.coordinates]:f.geometry.coordinates;const d=polygons.map(p=>p.map(r=>r.map((c,i)=>`${i?'L':'M'}${xy(...c).map(n=>n.toFixed(2)).join(',')}`).join('')+'Z').join('')).join('');el('path',{d,class:`state ${f.id==='45'?'sc':''}`,'fill-rule':'evenodd'},geo);el('path',{d,'fill-rule':'evenodd'},landClip);}
- const airspaceLayer=$('airspaces');airspaceLayer.replaceChildren();
+ const airspaceLayer=$('airspaces');airspaceLayer.replaceChildren();const viewBounds=visibleBounds(60);
  // Draw FAA shelves below labels and weather markers. Extremely light fills
  // preserve the airspace footprint without dimming the map beneath it.
- for(const f of airspaces){const polygons=f.geometry.type==='Polygon'?[f.geometry.coordinates]:f.geometry.coordinates;const d=polygons.map(p=>p.map(r=>r.map((c,i)=>`${i?'L':'M'}${xy(...c).map(n=>n.toFixed(2)).join(',')}`).join('')+'Z').join('')).join('');el('path',{d,class:`airspace class-${f.properties.class.toLowerCase()}`,'fill-rule':'evenodd'},airspaceLayer);}
+ for(const f of airspaces){if(!intersectsBounds(f,viewBounds))continue;const polygons=f.geometry.type==='Polygon'?[f.geometry.coordinates]:f.geometry.coordinates;const d=polygons.map(p=>p.map(r=>r.map((c,i)=>`${i?'L':'M'}${xy(...c).map(n=>n.toFixed(2)).join(',')}`).join('')+'Z').join('')).join('');el('path',{d,class:`airspace class-${f.properties.class.toLowerCase()}`,'fill-rule':'evenodd'},airspaceLayer);}
  drawHazards();
  const places=$('places');places.replaceChildren();
  textAt(places,-80.9,35.43,'NORTH CAROLINA','region-label');textAt(places,-83.25,33.05,'GEORGIA','region-label');textAt(places,-78.85,32.36,'Atlantic Ocean','ocean-label');
  // Place labels around each station, leaving marker positions geographically exact.
- const positions=new Map(stations.map(s=>[s.id,xy(s.lon,s.lat)]));
+ const shown=displayStations();displayedIds=new Set(shown.map(s=>s.id));for(const s of stations)nodes.get(s.id).g.style.display=displayedIds.has(s.id)?'':'none';const positions=new Map(shown.map(s=>[s.id,xy(s.lon,s.lat)]));
  const boxes=[];const labelWidth=width>1600?52:46;
  const overlap=(a,b)=>a[0]<b[2]&&a[2]>b[0]&&a[1]<b[3]&&a[3]>b[1];
- for(const s of stations){
+ for(const s of shown){
  const n=nodes.get(s.id),[x,y]=positions.get(s.id);n.g.setAttribute('transform',`translate(${x},${y})`);
   let best=null,bestScore=Infinity;const alwaysConditions=s.id==='KLKR',showConditions=alwaysConditions||['MVFR','IFR','LIFR'].includes(statusOf(reports.get(s.id))),conditionData=conditions(reports.get(s.id),alwaysConditions),showVisibility=showConditions&&Boolean(conditionData.visibility),conditionWidth=alwaysConditions?112:55;
   const choices=[[15,5],[-15-labelWidth,5],[-labelWidth/2,-16],[-labelWidth/2,28],[18,-16],[-18-labelWidth,-16],[18,28],[-18-labelWidth,28],[24,46],[-24-labelWidth,46],[20,-34],[-20-labelWidth,-34]];
@@ -116,7 +130,7 @@ function createMarkers(){
 }
 function updateMarkers(){
  const counts={VFR:0,MVFR:0,IFR:0,LIFR:0,UNKNOWN:0};
- for(const s of stations){const report=reports.get(s.id),status=statusOf(report),n=nodes.get(s.id);counts[CATEGORIES.includes(status)?status:'UNKNOWN']++;
+ for(const s of stations){const report=reports.get(s.id),status=statusOf(report),n=nodes.get(s.id);if(displayedIds.has(s.id))counts[CATEGORIES.includes(status)?status:'UNKNOWN']++;
   const wetWeather=CATEGORIES.includes(status)&&hasRainOrMist(report);n.weatherHalo.classList.toggle('active',wetWeather);
   const fog=CATEGORIES.includes(status)&&hasFog(report);n.fogHalo.classList.toggle('active',fog);
   const lightning=CATEGORIES.includes(status)&&hasThunderstorm(report);n.lightning.classList.toggle('active',lightning);
@@ -145,12 +159,12 @@ function updateClock(){
 function updateRadar(){
  if(!radarOn)return;
  const image=$('radar-image'),bucket=Math.floor(Date.now()/300000);
- image.classList.remove('unavailable');image.setAttribute('href',`${serviceBase}/radar?v=${bucket}`);
+ image.classList.remove('unavailable');image.setAttribute('href',`${serviceBase}/radar?v=regional1-${bucket}`);
 }
 function updateTerrain(){if(terrainOn)$('terrain-image').setAttribute('href',`${serviceBase}/terrain?v=mercator2`);}
 function updateLightning(){
  if(!lightningOn)return;
- const bucket=Math.floor(Date.now()/300000);for(const image of document.querySelectorAll('.lightning-density-image')){image.classList.remove('unavailable');image.setAttribute('href',`${serviceBase}/lightning?frame=${image.dataset.frame}&v=${bucket}`);}
+ const bucket=Math.floor(Date.now()/300000);for(const image of document.querySelectorAll('.lightning-density-image')){image.classList.remove('unavailable');image.setAttribute('href',`${serviceBase}/lightning?frame=${image.dataset.frame}&v=regional1-${bucket}`);}
 }
 async function loadHazards(force=false,silent=false){
  if(hazardsLoading||hazardsLoaded&&!force)return;hazardsLoading=true;
@@ -161,15 +175,16 @@ async function loadHazards(force=false,silent=false){
 async function toggleHazard(type){const isAirmet=type==='airmet';if(isAirmet)airmetOn=!airmetOn;else sigmetOn=!sigmetOn;const on=isAirmet?airmetOn:sigmetOn,button=$(isAirmet?'airmet-toggle':'sigmet-toggle');button.classList.toggle('active',on);button.setAttribute('aria-pressed',String(on));if(on)await loadHazards();drawHazards();}
 async function refresh(){
  if(loading)return;loading=true;$('refresh').disabled=true;clearTimeout(timer);
- try{const weatherUrl=new URL(`${serviceBase}/weather`);weatherUrl.searchParams.set('ids',stations.map(s=>s.id).join(','));const r=await fetch(weatherUrl,{cache:'no-store',signal:AbortSignal.timeout(23000)});if(!r.ok)throw Error('Weather connection unavailable');const data=await r.json();if(!Array.isArray(data))throw Error('Unexpected weather response');feed={fetchedAt:new Date().toISOString(),reports:selectLatest(data,stations.map(s=>s.id)),nextCheckAt:new Date(Date.now()+300000).toISOString()};
+ try{const ids=stations.map(s=>s.id),batches=[];for(let index=0;index<ids.length;index+=100)batches.push(ids.slice(index,index+100));const responses=await Promise.all(batches.map(async batch=>{const weatherUrl=new URL(`${serviceBase}/weather`);weatherUrl.searchParams.set('ids',batch.join(','));const response=await fetch(weatherUrl,{cache:'no-store',signal:AbortSignal.timeout(23000)});if(!response.ok)throw Error('Weather connection unavailable');const data=await response.json();if(!Array.isArray(data))throw Error('Unexpected weather response');return data;}));feed={fetchedAt:new Date().toISOString(),reports:selectLatest(responses.flat(),ids),nextCheckAt:new Date(Date.now()+300000).toISOString()};
   reports=new Map(feed.reports.map(r=>[r.icaoId,r]));draw();
   notify(!feed.reports.length?'No recent METAR reports returned. Checking again shortly.':'');
   updateMarkers();updateClock();
  }catch{if(feed)feed.error='Connection lost';notify('Weather connection unavailable. Last observations remain visible; retrying shortly.',true);updateClock();}
  finally{loading=false;$('refresh').disabled=false;const next=feed?.nextCheckAt?Date.parse(feed.nextCheckAt)-Date.now():60000;timer=setTimeout(refresh,Math.max(10000,Math.min(300000,next)));}
 }
-function changeZoom(factor){zoom=Math.max(.7,Math.min(5,zoom*factor));draw();}
-$('zoom-in').onclick=()=>changeZoom(1.25);$('zoom-out').onclick=()=>changeZoom(.8);$('reset').onclick=()=>{zoom=1;pan=[...defaultPan];draw();};
+function changeZoom(factor){zoom=Math.max(.16,Math.min(5,zoom*factor));draw();updateMarkers();}
+function fitBounds(bounds){const targetScale=Math.min((width-110)/(bounds.east-bounds.west),(height-165)/(merc(bounds.north)-merc(bounds.south))),midLon=(bounds.west+bounds.east)/2,midY=(merc(bounds.south)+merc(bounds.north))/2;zoom=Math.max(.16,targetScale/baseScale);pan=[-(midLon-center[0])*baseScale*zoom,-(center[1]-midY)*baseScale*zoom];draw();updateMarkers();}
+$('zoom-in').onclick=()=>changeZoom(1.25);$('zoom-out').onclick=()=>changeZoom(.8);$('reset').onclick=()=>{zoom=1;pan=[...defaultPan];draw();updateMarkers();};$('fit-region').onclick=()=>fitBounds(regionView);
 $('terrain-toggle').onclick=()=>{terrainOn=!terrainOn;const button=$('terrain-toggle'),image=$('terrain-image');button.classList.toggle('active',terrainOn);button.setAttribute('aria-pressed',String(terrainOn));image.classList.toggle('off',!terrainOn);if(terrainOn)updateTerrain();};
 $('radar-toggle').onclick=()=>{radarOn=!radarOn;const button=$('radar-toggle'),image=$('radar-image');button.classList.toggle('active',radarOn);button.setAttribute('aria-pressed',String(radarOn));image.classList.toggle('off',!radarOn);if(radarOn)updateRadar();};
 $('lightning-toggle').onclick=()=>{lightningOn=!lightningOn;const button=$('lightning-toggle'),layer=$('lightning-density');button.classList.toggle('active',lightningOn);button.setAttribute('aria-pressed',String(lightningOn));layer.classList.toggle('off',!lightningOn);$('lightning-age-key').hidden=!lightningOn;if(lightningOn)updateLightning();};
@@ -187,19 +202,19 @@ $('fullscreen').onclick=fullscreen;document.addEventListener('fullscreenchange',
 document.addEventListener('keydown',e=>{if(e.ctrlKey||e.altKey||e.metaKey)return;if(e.key.toLowerCase()==='f')fullscreen();if(e.key==='+'||e.key==='=')changeZoom(1.25);if(e.key==='-')changeZoom(.8);if(e.key==='Home'){e.preventDefault();$('reset').click();}if(e.key==='Escape'&&selected)$('close-detail').click();});
 let drag=null;
 map.addEventListener('pointerdown',e=>{if(e.target.closest('.airport'))return;drag={x:e.clientX,y:e.clientY,pan:[...pan]};map.setPointerCapture(e.pointerId);map.classList.add('dragging');});
-map.addEventListener('pointermove',e=>{if(!drag)return;pan=[drag.pan[0]+e.clientX-drag.x,drag.pan[1]+e.clientY-drag.y];draw();});
+map.addEventListener('pointermove',e=>{if(!drag)return;pan=[drag.pan[0]+e.clientX-drag.x,drag.pan[1]+e.clientY-drag.y];draw();updateMarkers();});
 map.addEventListener('pointermove',updateHazardTooltip);map.addEventListener('pointerleave',()=>{$('hazard-tooltip').hidden=true;});
 for(const type of ['pointerup','pointercancel'])map.addEventListener(type,()=>{drag=null;map.classList.remove('dragging');});
 map.addEventListener('wheel',e=>{e.preventDefault();changeZoom(e.deltaY<0?1.1:1/1.1);},{passive:false});
-new ResizeObserver(()=>{if(stations.length)draw();}).observe(map);
+new ResizeObserver(()=>{if(stations.length){draw();updateMarkers();}}).observe(map);
 try{
- const results=await Promise.all(['stations.json','states.json','airspaces.json'].map(async url=>{const r=await fetch(url);if(!r.ok)throw Error('Map asset unavailable');return r.json();}));
+ const results=await Promise.all(['stations.json?v=regional1','states.json?v=regional1','airspaces.json?v=regional1'].map(async url=>{const r=await fetch(url);if(!r.ok)throw Error('Map asset unavailable');return r.json();}));
  stations=results[0].sort((a,b)=>a.priority-b.priority||a.id.localeCompare(b.id));states=results[1].features;airspaces=results[2].features;
  createMarkers();draw();updateMarkers();await refresh();select('KLKR');
  updateTerrain();
  updateRadar();
  loadHazards(false,true);
-}catch{notify('Unable to load the map. Check that the local map server is running, then reload.',true);}
+}catch(error){console.error(error);notify('Unable to load the map. Reload the page to try again.',true);}
 updateClock();setInterval(()=>{updateMarkers();updateClock();},30000);setInterval(updateRadar,300000);setInterval(updateLightning,300000);
 setInterval(()=>loadHazards(true,true),300000);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden){updateMarkers();refresh();updateTerrain();updateRadar();updateLightning();loadHazards(true,true);}});
