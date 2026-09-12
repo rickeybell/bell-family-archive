@@ -1,5 +1,6 @@
-import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,compactWind,windDisplayLevel,shouldDisplayWind,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,gairmetExpiresAt} from './weather.mjs?v=20260912-regional1';
+import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,compactWind,windDisplayLevel,shouldDisplayWind,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,gairmetExpiresAt} from './weather.mjs?v=20260912-regional2';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
+window.METAR_STARTED=true;
 const defaultPan=[80,30];
 const map=$('map');let stations=[],states=[],airspaces=[],airmets=[],sigmets=[],reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],feed=null,loading=false,timer,terrainOn=true,radarOn=true,lightningOn=false,windOn=true,airmetOn=false,sigmetOn=true,hazardsLoaded=false,hazardsLoading=false,displayedIds=new Set();
 const nodes=new Map();
@@ -207,7 +208,7 @@ map.addEventListener('pointermove',updateHazardTooltip);map.addEventListener('po
 for(const type of ['pointerup','pointercancel'])map.addEventListener(type,()=>{drag=null;map.classList.remove('dragging');});
 map.addEventListener('wheel',e=>{e.preventDefault();changeZoom(e.deltaY<0?1.1:1/1.1);},{passive:false});
 new ResizeObserver(()=>{if(stations.length){draw();updateMarkers();}}).observe(map);
-try{
+async function initialize(){try{
  const results=await Promise.all(['stations.json?v=regional1','states.json?v=regional1','airspaces.json?v=regional1'].map(async url=>{const r=await fetch(url);if(!r.ok)throw Error('Map asset unavailable');return r.json();}));
  stations=results[0].sort((a,b)=>a.priority-b.priority||a.id.localeCompare(b.id));states=results[1].features;airspaces=results[2].features;
  createMarkers();draw();updateMarkers();await refresh();select('KLKR');
@@ -217,4 +218,5 @@ try{
 }catch(error){console.error(error);notify('Unable to load the map. Reload the page to try again.',true);}
 updateClock();setInterval(()=>{updateMarkers();updateClock();},30000);setInterval(updateRadar,300000);setInterval(updateLightning,300000);
 setInterval(()=>loadHazards(true,true),300000);
-document.addEventListener('visibilitychange',()=>{if(!document.hidden){updateMarkers();refresh();updateTerrain();updateRadar();updateLightning();loadHazards(true,true);}});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){updateMarkers();refresh();updateTerrain();updateRadar();updateLightning();loadHazards(true,true);}});}
+initialize();

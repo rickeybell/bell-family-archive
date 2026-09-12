@@ -1,6 +1,6 @@
 :root{color-scheme:dark;font-family:Inter,Segoe UI,Arial,sans-serif;color:#eaf0f3;background:#091720;font-synthesis:none;--muted:#98abb8;--border:#ffffff1f}
 *{box-sizing:border-box}body{margin:0}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid #b9e6ff;outline-offset:4px}button:hover{background:#263d4c}button:disabled{opacity:.45;cursor:wait}[hidden]{display:none!important}
-#display{height:100dvh;min-height:420px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 82% 62%,#12364a 0,#0a2637 42%,#081a26 100%)}
+#display{height:100vh;height:100dvh;min-height:420px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 82% 62%,#12364a 0,#0a2637 42%,#081a26 100%)}
 #map{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab}#map.dragging{cursor:grabbing}
 .radar-image{opacity:.48;mix-blend-mode:screen;pointer-events:none;transition:opacity .2s}.radar-image.off,.radar-image.unavailable{opacity:0}
 .terrain-image{opacity:.30;filter:invert(1) brightness(2.2) sepia(.18) hue-rotate(155deg);mix-blend-mode:screen;clip-path:url(#land-clip);pointer-events:none;transition:opacity .2s}.terrain-image.off,.terrain-image.unavailable{opacity:0}
