@@ -1,4 +1,4 @@
-import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,hasRainOrMist,hasThunderstorm} from './weather.mjs?v=20260912-klkr1';
+import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,hasRainOrMist,hasThunderstorm} from './weather.mjs?v=20260912-ifr1';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 const defaultPan=[80,30];
 const map=$('map');let stations=[],states=[],airspaces=[],reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],feed=null,loading=false,timer,radarOn=true;

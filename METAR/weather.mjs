@@ -1,5 +1,5 @@
 export const CATEGORIES=['VFR','MVFR','IFR','LIFR'];
-export const COLORS={VFR:'#5ee3a2',MVFR:'#69adff',IFR:'#ff686d',LIFR:'#df88fa',UNKNOWN:'#ffd75f',STALE:'#ffd75f'};
+export const COLORS={VFR:'#5ee3a2',MVFR:'#69adff',IFR:'#FF3B4D',LIFR:'#df88fa',UNKNOWN:'#ffd75f',STALE:'#ffd75f'};
 export function observationTime(report){
  if(!report)return NaN;
  if(typeof report.obsTime==='number')return report.obsTime*1000;
