@@ -64,6 +64,11 @@ jobs:
             cp -a tree_thumbs _site/tree_thumbs
           fi
 
+          # Live airport weather map and its bundled geography.
+          if [ -d METAR ]; then
+            cp -a METAR _site/METAR
+          fi
+
           # Rewrite full photo views, downloads, and video links so deployed
           # pages fetch them directly from the GitHub repository.
           python3 - <<'PY'
