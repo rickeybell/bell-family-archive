@@ -1,9 +1,10 @@
-import {CATEGORIES,COLORS,statusOf,observationTime,ceiling,conditions,wind,compactWind,windDisplayLevel,shouldDisplayWind,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,gairmetExpiresAt} from './weather.mjs';
+import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,compactWind,windDisplayLevel,shouldDisplayWind,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,gairmetExpiresAt} from './weather.mjs?v=20260912-legend2';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 const defaultPan=[80,30];
 const map=$('map');let stations=[],states=[],airspaces=[],airmets=[],sigmets=[],reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],feed=null,loading=false,timer,radarOn=true,windOn=true,airmetOn=false,sigmetOn=true,hazardsLoaded=false,hazardsLoading=false;
 const nodes=new Map();
 const radarBounds={west:-86,east:-76,south:31,north:36};
+const serviceBase='https://bell-family-metar.rbell.workers.dev';
 const merc=lat=>Math.log(Math.tan(Math.PI/4+lat*Math.PI/360))*180/Math.PI;
 const unmerc=value=>(Math.atan(Math.exp(value*Math.PI/180))-Math.PI/4)*360/Math.PI;
 // Keep the user-selected regional view stable as airports are added or removed.
@@ -132,20 +133,20 @@ function updateClock(){
 function updateRadar(){
  if(!radarOn)return;
  const image=$('radar-image'),bucket=Math.floor(Date.now()/300000);
- image.classList.remove('unavailable');image.setAttribute('href',`/api/radar?v=${bucket}`);
+ image.classList.remove('unavailable');image.setAttribute('href',`${serviceBase}/radar?v=${bucket}`);
 }
 async function loadHazards(force=false,silent=false){
  if(hazardsLoading||hazardsLoaded&&!force)return;hazardsLoading=true;
- try{const r=await fetch('/api/hazards',{cache:'no-store',signal:AbortSignal.timeout(23000)}),data=await r.json();if(!r.ok)throw Error('Hazard service unavailable');airmets=data.airmets?.features||[];sigmets=data.sigmets?.features||[];hazardsLoaded=true;$('airmet-toggle').classList.remove('hazard-error');$('sigmet-toggle').classList.remove('hazard-error');renderKlkrHazards();draw();}
+ try{const r=await fetch(`${serviceBase}/hazards`,{cache:'no-store',signal:AbortSignal.timeout(23000)}),data=await r.json();if(!r.ok)throw Error('Hazard service unavailable');airmets=data.airmets?.features||[];sigmets=data.sigmets?.features||[];hazardsLoaded=true;$('airmet-toggle').classList.remove('hazard-error');$('sigmet-toggle').classList.remove('hazard-error');renderKlkrHazards();draw();}
  catch{$('airmet-toggle').classList.add('hazard-error');$('sigmet-toggle').classList.add('hazard-error');if(!silent)notify('AIRMET and SIGMET overlays are temporarily unavailable.',true);}
  finally{hazardsLoading=false;}
 }
 async function toggleHazard(type){const isAirmet=type==='airmet';if(isAirmet)airmetOn=!airmetOn;else sigmetOn=!sigmetOn;const on=isAirmet?airmetOn:sigmetOn,button=$(isAirmet?'airmet-toggle':'sigmet-toggle');button.classList.toggle('active',on);button.setAttribute('aria-pressed',String(on));if(on)await loadHazards();drawHazards();}
 async function refresh(){
  if(loading)return;loading=true;$('refresh').disabled=true;clearTimeout(timer);
- try{const r=await fetch('/api/weather',{cache:'no-store',signal:AbortSignal.timeout(23000)});const data=await r.json();if(!r.ok&&!data.reports)throw Error('Weather connection unavailable');feed=data;
-  if(data.fetchedAt){reports=new Map(data.reports.map(r=>[r.icaoId,r]));draw();}
-  notify(data.error||(!data.reports.length?'No recent METAR reports returned. Checking again shortly.':''),Boolean(data.error));
+ try{const weatherUrl=new URL(`${serviceBase}/weather`);weatherUrl.searchParams.set('ids',stations.map(s=>s.id).join(','));const r=await fetch(weatherUrl,{cache:'no-store',signal:AbortSignal.timeout(23000)});if(!r.ok)throw Error('Weather connection unavailable');const data=await r.json();if(!Array.isArray(data))throw Error('Unexpected weather response');feed={fetchedAt:new Date().toISOString(),reports:selectLatest(data,stations.map(s=>s.id)),nextCheckAt:new Date(Date.now()+300000).toISOString()};
+  reports=new Map(feed.reports.map(r=>[r.icaoId,r]));draw();
+  notify(!feed.reports.length?'No recent METAR reports returned. Checking again shortly.':'');
   updateMarkers();updateClock();
  }catch{if(feed)feed.error='Connection lost';notify('Weather connection unavailable. Last observations remain visible; retrying shortly.',true);updateClock();}
  finally{loading=false;$('refresh').disabled=false;const next=feed?.nextCheckAt?Date.parse(feed.nextCheckAt)-Date.now():60000;timer=setTimeout(refresh,Math.max(10000,Math.min(300000,next)));}
@@ -169,7 +170,7 @@ for(const type of ['pointerup','pointercancel'])map.addEventListener(type,()=>{d
 map.addEventListener('wheel',e=>{e.preventDefault();changeZoom(e.deltaY<0?1.1:1/1.1);},{passive:false});
 new ResizeObserver(()=>{if(stations.length)draw();}).observe(map);
 try{
- const results=await Promise.all(['/stations.json','/states.json','/airspaces.json'].map(async url=>{const r=await fetch(url);if(!r.ok)throw Error('Map asset unavailable');return r.json();}));
+ const results=await Promise.all(['stations.json','states.json','airspaces.json'].map(async url=>{const r=await fetch(url);if(!r.ok)throw Error('Map asset unavailable');return r.json();}));
  stations=results[0].sort((a,b)=>a.priority-b.priority||a.id.localeCompare(b.id));states=results[1].features;airspaces=results[2].features;
  createMarkers();draw();updateMarkers();await refresh();
  updateRadar();
