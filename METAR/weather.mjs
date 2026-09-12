@@ -38,6 +38,13 @@ export function wind(report){
  const dir=Number.isFinite(report.wdir)?`${String(report.wdir).padStart(3,'0')}°`:report.wdir==='VRB'?'Variable':'Direction unavailable';
  return `${dir} · ${report.wspd}${Number.isFinite(report.wgst)?` G${report.wgst}`:''} kt`;
 }
+export function compactWind(report){
+ if(!report||!Number.isFinite(report.wspd))return 'W-Unavailable';
+ if(report.wspd<3)return 'W-Calm';
+ const direction=Number.isFinite(report.wdir)?`${String(report.wdir).padStart(3,'0')}°`:report.wdir==='VRB'?'VRB':null;
+ if(!direction)return 'W-Unavailable';
+ return `W-${direction}/${report.wspd}${Number.isFinite(report.wgst)?`G${report.wgst}`:''} kt`;
+}
 export function hasRainOrMist(report){
  const weather=String(report?.wxString||report?.rawOb||'').toUpperCase();
  return weather.split(/\s+/).some(token=>{

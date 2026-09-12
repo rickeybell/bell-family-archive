@@ -1,4 +1,4 @@
-import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,hasRainOrMist,hasThunderstorm} from './weather.mjs?v=20260912-ifr1';
+import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,compactWind,hasRainOrMist,hasThunderstorm} from './weather.mjs?v=20260912-klkrwind1';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 const defaultPan=[80,30];
 const map=$('map');let stations=[],states=[],airspaces=[],reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],feed=null,loading=false,timer,radarOn=true;
@@ -56,12 +56,12 @@ function draw(){
  const overlap=(a,b)=>a[0]<b[2]&&a[2]>b[0]&&a[1]<b[3]&&a[3]>b[1];
  for(const s of stations){
  const n=nodes.get(s.id),[x,y]=positions.get(s.id);n.g.setAttribute('transform',`translate(${x},${y})`);
-  let best=null,bestScore=Infinity;const alwaysConditions=s.id==='KLKR',showConditions=alwaysConditions||['MVFR','IFR','LIFR'].includes(statusOf(reports.get(s.id))),conditionData=conditions(reports.get(s.id),alwaysConditions),showVisibility=showConditions&&Boolean(conditionData.visibility),conditionWidth=alwaysConditions?92:55;
+  let best=null,bestScore=Infinity;const alwaysConditions=s.id==='KLKR',showConditions=alwaysConditions||['MVFR','IFR','LIFR'].includes(statusOf(reports.get(s.id))),conditionData=conditions(reports.get(s.id),alwaysConditions),showVisibility=showConditions&&Boolean(conditionData.visibility),conditionWidth=alwaysConditions?112:55;
   const choices=[[15,5],[-15-labelWidth,5],[-labelWidth/2,-16],[-labelWidth/2,28],[18,-16],[-18-labelWidth,-16],[18,28],[-18-labelWidth,28],[24,46],[-24-labelWidth,46],[20,-34],[-20-labelWidth,-34]];
   for(const radius of [50,70,90])for(let step=0;step<12;step++){const angle=step*Math.PI/6,dx=Math.cos(angle)*radius,dy=Math.sin(angle)*radius;choices.push([dx-(dx<0?labelWidth:0),dy+5]);}
-  for(const [dx,dy] of choices){const left=showConditions&&dx<0?x+dx+labelWidth-conditionWidth-3:x+dx-3,right=showConditions&&dx>=0?x+dx+conditionWidth+3:x+dx+labelWidth+3,b=[left,y+dy-13,right,y+dy+(showConditions?(showVisibility?30:18):4)];let score=boxes.reduce((v,p)=>v+(overlap(b,p)?1000:0),0);for(const [id,p] of positions){if(id!==s.id&&overlap(b,[p[0]-10,p[1]-10,p[0]+10,p[1]+10]))score+=500;}score+=Math.abs(dx)*.1+Math.abs(dy)*.15;if(score<bestScore){bestScore=score;best={dx,dy,b};}}
+  for(const [dx,dy] of choices){const left=showConditions&&dx<0?x+dx+labelWidth-conditionWidth-3:x+dx-3,right=showConditions&&dx>=0?x+dx+conditionWidth+3:x+dx+labelWidth+3,b=[left,y+dy-13,right,y+dy+(alwaysConditions?42:showConditions?(showVisibility?30:18):4)];let score=boxes.reduce((v,p)=>v+(overlap(b,p)?1000:0),0);for(const [id,p] of positions){if(id!==s.id&&overlap(b,[p[0]-10,p[1]-10,p[0]+10,p[1]+10]))score+=500;}score+=Math.abs(dx)*.1+Math.abs(dy)*.15;if(score<bestScore){bestScore=score;best={dx,dy,b};}}
   boxes.push(best.b);n.label.setAttribute('x',best.dx);n.label.setAttribute('y',best.dy);
-  for(const line of [n.ceilingLabel,n.visibilityLabel]){line.setAttribute('x',best.dx<0?best.dx+labelWidth:best.dx);line.setAttribute('text-anchor',best.dx<0?'end':'start');}n.ceilingLabel.setAttribute('y',best.dy+14);n.visibilityLabel.setAttribute('y',best.dy+26);
+  for(const line of [n.ceilingLabel,n.visibilityLabel,n.windLabel]){line.setAttribute('x',best.dx<0?best.dx+labelWidth:best.dx);line.setAttribute('text-anchor',best.dx<0?'end':'start');}n.ceilingLabel.setAttribute('y',best.dy+14);n.visibilityLabel.setAttribute('y',best.dy+26);n.windLabel.setAttribute('y',best.dy+38);
   const lx=best.dx>0?best.dx-4:best.dx+labelWidth+4,ly=best.dy-5;
   n.leader.setAttribute('d',`M0,0L${lx},${ly}`);n.leader.style.display=Math.hypot(lx,ly)>27?'':'none';
  }
@@ -71,9 +71,9 @@ function createMarkers(){
   const weatherHalo=el('circle',{r:21,class:'weather-halo','aria-hidden':'true'},g);
   const lightning=el('path',{d:'M5,-27L-1,-15H5L1,-5L14,-19H8L13,-27Z',class:'lightning','aria-hidden':'true'},g);
   let barb=null,barbPath=null,barbCalm=null,gustLabel=null;if(windBarbStations.has(s.id)){barb=el('g',{class:'wind-barb','aria-hidden':'true'},g);barbPath=el('path',{},barb);gustLabel=el('text',{class:'gust-label',visibility:'hidden','text-anchor':'middle','aria-hidden':'true'},g);}
-  const leader=el('path',{class:'leader'},g);const halo=el('circle',{r:17,class:'halo'},g);const ring=el('circle',{r:12,class:'ring'},g);const dot=el('circle',{r:7,class:'dot'},g);el('circle',{r:15,class:'hit'},g);const label=el('text',{},g);label.textContent=s.id;const ceilingLabel=el('text',{class:'conditions',visibility:'hidden','aria-hidden':'true'},g),visibilityLabel=el('text',{class:'conditions',visibility:'hidden','aria-hidden':'true'},g);
+  const leader=el('path',{class:'leader'},g);const halo=el('circle',{r:17,class:'halo'},g);const ring=el('circle',{r:12,class:'ring'},g);const dot=el('circle',{r:7,class:'dot'},g);el('circle',{r:15,class:'hit'},g);const label=el('text',{},g);label.textContent=s.id;const ceilingLabel=el('text',{class:'conditions',visibility:'hidden','aria-hidden':'true'},g),visibilityLabel=el('text',{class:'conditions',visibility:'hidden','aria-hidden':'true'},g),windLabel=el('text',{class:'conditions',visibility:'hidden','aria-hidden':'true'},g);
   if(windBarbStations.has(s.id))barbCalm=el('circle',{r:2,class:'calm-wind','aria-hidden':'true'},g);
-  nodes.set(s.id,{g,halo,ring,dot,label,ceilingLabel,visibilityLabel,leader,weatherHalo,lightning,barb,barbPath,barbCalm,gustLabel});g.addEventListener('click',()=>select(s.id));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(s.id);}});
+  nodes.set(s.id,{g,halo,ring,dot,label,ceilingLabel,visibilityLabel,windLabel,leader,weatherHalo,lightning,barb,barbPath,barbCalm,gustLabel});g.addEventListener('click',()=>select(s.id));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(s.id);}});
  }
 }
 function updateMarkers(){
@@ -82,6 +82,7 @@ function updateMarkers(){
   const wetWeather=CATEGORIES.includes(status)&&hasRainOrMist(report);n.weatherHalo.classList.toggle('active',wetWeather);
   const lightning=CATEGORIES.includes(status)&&hasThunderstorm(report);n.lightning.classList.toggle('active',lightning);
   const alwaysConditions=s.id==='KLKR',showConditions=alwaysConditions||['MVFR','IFR','LIFR'].includes(status),conditionData=conditions(report,alwaysConditions);n.ceilingLabel.textContent=conditionData.ceiling;n.ceilingLabel.setAttribute('visibility',showConditions?'visible':'hidden');n.visibilityLabel.textContent=conditionData.visibility;n.visibilityLabel.setAttribute('visibility',showConditions&&conditionData.visibility?'visible':'hidden');
+  n.windLabel.textContent=alwaysConditions?compactWind(report):'';n.windLabel.setAttribute('visibility',alwaysConditions?'visible':'hidden');
   n.g.setAttribute('class',`airport ${status==='STALE'?'stale unknown':status==='UNKNOWN'?'unknown':''} ${selected===s.id?'selected':''}`);
   n.dot.setAttribute('fill',COLORS[status]);n.halo.setAttribute('fill',COLORS[status]);
  n.g.setAttribute('aria-label',`${s.id}, ${s.name}, ${status==='UNKNOWN'?'no current data':status==='STALE'?'stale observation':status}${wetWeather?', rain or mist reported':''}${lightning?', thunderstorm or lightning reported':''}. Show weather details.`);
