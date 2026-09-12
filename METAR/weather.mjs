@@ -45,12 +45,21 @@ export function compactWind(report){
  if(!direction)return 'W-Unavailable';
  return `W-${direction}/${report.wspd}${Number.isFinite(report.wgst)?`G${report.wgst}`:''} kt`;
 }
+export function windDisplayLevel(report){
+ const speed=Number(report?.wspd);if(!Number.isFinite(speed))return null;
+ return Number.isFinite(report?.wgst)||speed>15?'wind-red':speed>=10?'wind-yellow':'wind-white';
+}
+export function shouldDisplayWind(report,windEnabled=true){const level=windDisplayLevel(report);return Boolean(level)&&(windEnabled||level==='wind-yellow'||level==='wind-red');}
 export function hasRainOrMist(report){
  const weather=String(report?.wxString||report?.rawOb||'').toUpperCase();
  return weather.split(/\s+/).some(token=>{
   const code=token.replace(/^[-+]/,'');
   return code==='BR'||/^(?:MI|PR|BC|DR|BL|SH|TS|FZ)?RA(?:SN|SG|PL|GR|GS|UP)?$/.test(code);
  });
+}
+export function hasFog(report){
+ const weather=String(report?.wxString||report?.rawOb||'').toUpperCase();
+ return weather.split(/\s+/).some(token=>/^(?:MI|PR|BC|VC|FZ)?FG$/.test(token.replace(/^[-+]/,'')));
 }
 export function hasThunderstorm(report){
  const weather=`${report?.wxString||''} ${report?.rawOb||''}`.toUpperCase();
@@ -59,3 +68,22 @@ export function hasThunderstorm(report){
   return code!=='TSNO'&&(code==='TS'||code.startsWith('TS')||code.startsWith('VCTS')||code.startsWith('LTG'));
  });
 }
+export function intersectsBounds(feature,bounds){
+ const points=[];
+ const collect=value=>{if(Array.isArray(value)&&value.length>=2&&Number.isFinite(value[0])&&Number.isFinite(value[1]))points.push(value);else if(Array.isArray(value))value.forEach(collect);};
+ collect(feature?.geometry?.coordinates);
+ if(!points.length)return false;
+ const lons=points.map(p=>p[0]),lats=points.map(p=>p[1]);
+ return Math.max(...lons)>=bounds.west&&Math.min(...lons)<=bounds.east&&Math.max(...lats)>=bounds.south&&Math.min(...lats)<=bounds.north;
+}
+function insideRing(ring,lon,lat){
+ let inside=false;
+ for(let i=0,j=ring.length-1;i<ring.length;j=i++){const [xi,yi]=ring[i],[xj,yj]=ring[j];if((yi>lat)!==(yj>lat)&&lon<(xj-xi)*(lat-yi)/(yj-yi)+xi)inside=!inside;}
+ return inside;
+}
+export function containsPoint(feature,lon,lat){
+ const geometry=feature?.geometry;if(!geometry||!Number.isFinite(lon)||!Number.isFinite(lat))return false;
+ const polygons=geometry.type==='Polygon'?[geometry.coordinates]:geometry.type==='MultiPolygon'?geometry.coordinates:[];
+ return polygons.some(polygon=>polygon.length&&insideRing(polygon[0],lon,lat)&&!polygon.slice(1).some(ring=>insideRing(ring,lon,lat)));
+}
+export function gairmetExpiresAt(validTime){const time=Date.parse(validTime);return Number.isFinite(time)?time+6*60*60*1000:NaN;}

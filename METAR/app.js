@@ -1,26 +1,49 @@
-import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,compactWind,hasRainOrMist,hasThunderstorm} from './weather.mjs?v=20260912-klkrwind1';
+import {CATEGORIES,COLORS,statusOf,observationTime,ceiling,conditions,wind,compactWind,windDisplayLevel,shouldDisplayWind,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,gairmetExpiresAt} from './weather.mjs';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 const defaultPan=[80,30];
-const map=$('map');let stations=[],states=[],airspaces=[],reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],feed=null,loading=false,timer,radarOn=true;
+const map=$('map');let stations=[],states=[],airspaces=[],airmets=[],sigmets=[],reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],feed=null,loading=false,timer,radarOn=true,windOn=true,airmetOn=false,sigmetOn=true,hazardsLoaded=false,hazardsLoading=false;
 const nodes=new Map();
 const radarBounds={west:-86,east:-76,south:31,north:36};
-const serviceBase='https://bell-family-metar.rbell.workers.dev';
-const windBarbStations=new Set(['KLKR','KCLT','KDCM','KEQY','KFDW','KCAE','KCDN','KAGS','KGSP','KATL','KCHS','KMYR','KCRE','KGGE','KSAV','KVDI','KCWV','KMLJ','KMCN','KCHA','KTYS','KAVL','KHKY','KVUJ','KSUT','KILM','KAFP','KSOP']);
 const merc=lat=>Math.log(Math.tan(Math.PI/4+lat*Math.PI/360))*180/Math.PI;
+const unmerc=value=>(Math.atan(Math.exp(value*Math.PI/180))-Math.PI/4)*360/Math.PI;
 // Keep the user-selected regional view stable as airports are added or removed.
 const fixedView={west:-83.36,east:-78.07223,south:32.03,north:35.43179};
 const center=[(fixedView.west+fixedView.east)/2,(merc(fixedView.south)+merc(fixedView.north))/2];
 const extent=[fixedView.east-fixedView.west,merc(fixedView.north)-merc(fixedView.south)];
 function xy(lon,lat){return [(lon-center[0])*baseScale*zoom+width/2+pan[0],(center[1]-merc(lat))*baseScale*zoom+mapCenterY+pan[1]];}
+function visibleBounds(){const west=(0-width/2-pan[0])/(baseScale*zoom)+center[0],east=(width-width/2-pan[0])/(baseScale*zoom)+center[0],north=unmerc(center[1]-(0-mapCenterY-pan[1])/(baseScale*zoom)),south=unmerc(center[1]-(height-mapCenterY-pan[1])/(baseScale*zoom));return {west:Math.min(west,east),east:Math.max(west,east),south:Math.min(south,north),north:Math.max(south,north)};}
 function el(tag,attrs={},parent){const e=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));if(parent)parent.append(e);return e;}
 function textAt(parent,lon,lat,text,cls){const p=xy(lon,lat),t=el('text',{x:p[0],y:p[1],class:cls},parent);t.textContent=text;}
+function geometryPath(geometry){
+ const line=coords=>coords.map((c,i)=>`${i?'L':'M'}${xy(...c).map(n=>n.toFixed(2)).join(',')}`).join('');
+ if(geometry.type==='Polygon')return geometry.coordinates.map(r=>`${line(r)}Z`).join('');
+ if(geometry.type==='MultiPolygon')return geometry.coordinates.map(p=>p.map(r=>`${line(r)}Z`).join('')).join('');
+ if(geometry.type==='LineString')return line(geometry.coordinates);
+ if(geometry.type==='MultiLineString')return geometry.coordinates.map(line).join('');
+ return '';
+}
+function drawHazards(){
+ const layer=$('hazards');layer.replaceChildren();
+ const bounds=visibleBounds(),add=(features,type)=>{for(const f of features){if(!intersectsBounds(f,bounds))continue;const d=geometryPath(f.geometry);if(!d)continue;const p=f.properties||{},hazardClass=String(p.hazard||'hazard').toLowerCase().replace(/[^a-z0-9]+/g,'-'),path=el('path',{d,class:`hazard ${type} hazard-${hazardClass}`,'fill-rule':'evenodd'},layer),title=el('title',{},path);title.textContent=type==='airmet'?`G-AIRMET ${p.product||''} · ${p.hazard||'Hazard'}${p.validTime?` · valid ${new Date(p.validTime).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',timeZone:'UTC',hour12:false})} UTC`:''}${p.dueTo?` · ${p.dueTo}`:''}`:`SIGMET ${p.seriesId||''} · ${p.hazard||'Hazard'}${p.validTimeTo?` · valid to ${new Date(p.validTimeTo).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',timeZone:'UTC',hour12:false})} UTC`:''}`;}}
+ if(airmetOn)add(airmets,'airmet');if(sigmetOn)add(sigmets,'sigmet');
+}
+const hazardNames={'IFR':'IFR','TURB-HI':'High-altitude turbulence','TURB-LO':'Low-altitude turbulence','ICE':'Icing','MT_OBSC':'Mountain obscuration','SFC_WND':'Strong surface wind','FZLVL':'Freezing level','M_FZLVL':'Multiple freezing levels','CONVECTIVE':'Convective thunderstorms','TURB':'Turbulence'};
+function renderKlkrHazards(){
+ const box=$('klkr-hazards'),station=stations.find(s=>s.id==='KLKR'),now=Date.now();box.replaceChildren();if(!station){box.hidden=true;return;}
+ const matching=[];
+ for(const feature of airmets){const expires=gairmetExpiresAt(feature.properties?.validTime);if(expires>now&&containsPoint(feature,station.lon,station.lat))matching.push({type:'AIRMET',kind:'airmet',description:hazardNames[feature.properties?.hazard]||feature.properties?.hazard||'Hazard',expires});}
+ for(const feature of sigmets){const starts=Date.parse(feature.properties?.validTimeFrom),expires=Date.parse(feature.properties?.validTimeTo);if((!Number.isFinite(starts)||starts<=now)&&expires>now&&containsPoint(feature,station.lon,station.lat))matching.push({type:'SIGMET',kind:'sigmet',description:hazardNames[feature.properties?.hazard]||feature.properties?.hazard||'Hazard',expires});}
+ const seen=new Set();for(const item of matching.sort((a,b)=>a.expires-b.expires||a.type.localeCompare(b.type))){const key=`${item.type}|${item.description}|${item.expires}`;if(seen.has(key))continue;seen.add(key);const entry=document.createElement('span');entry.className=`klkr-hazard ${item.kind}`;entry.textContent=`KLKR ${item.type} — ${item.description} — expires ${new Date(item.expires).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',timeZone:'UTC',hour12:false})} UTC`;box.append(entry);}
+ box.hidden=!box.childElementCount;
+}
 function updateWindBarb(report,node){
  if(!node.barb)return;
  const speed=Number(report?.wspd),direction=Number(report?.wdir),gust=Number(report?.wgst),hasGust=Number.isFinite(report?.wgst);
  node.gustLabel.setAttribute('visibility','hidden');
  if(!Number.isFinite(speed)){node.barb.setAttribute('visibility','hidden');node.barbCalm.setAttribute('visibility','hidden');return;}
- const windLevel=hasGust||speed>15?'wind-red':speed>=10?'wind-yellow':'wind-white';
+ const windLevel=windDisplayLevel(report);
  node.barb.setAttribute('class',`wind-barb ${windLevel}`);
+ if(!shouldDisplayWind(report,windOn)){node.barb.setAttribute('visibility','hidden');node.barbCalm.setAttribute('visibility','hidden');return;}
  if(speed<3){node.barb.setAttribute('visibility','hidden');node.barbCalm.setAttribute('visibility','visible');return;}
  node.barbCalm.setAttribute('visibility','hidden');
  if(!Number.isFinite(direction)){node.barb.setAttribute('visibility','hidden');return;}
@@ -48,6 +71,7 @@ function draw(){
  // Draw FAA shelves below labels and weather markers. Extremely light fills
  // preserve the airspace footprint without dimming the map beneath it.
  for(const f of airspaces){const polygons=f.geometry.type==='Polygon'?[f.geometry.coordinates]:f.geometry.coordinates;const d=polygons.map(p=>p.map(r=>r.map((c,i)=>`${i?'L':'M'}${xy(...c).map(n=>n.toFixed(2)).join(',')}`).join('')+'Z').join('')).join('');el('path',{d,class:`airspace class-${f.properties.class.toLowerCase()}`,'fill-rule':'evenodd'},airspaceLayer);}
+ drawHazards();
  const places=$('places');places.replaceChildren();
  textAt(places,-80.9,35.43,'NORTH CAROLINA','region-label');textAt(places,-83.25,33.05,'GEORGIA','region-label');textAt(places,-78.85,32.36,'Atlantic Ocean','ocean-label');
  // Place labels around each station, leaving marker positions geographically exact.
@@ -69,24 +93,26 @@ function draw(){
 function createMarkers(){
  for(const s of stations){const g=el('g',{class:'airport',role:'button',tabindex:'0','data-airport':s.id},$('airports'));
   const weatherHalo=el('circle',{r:21,class:'weather-halo','aria-hidden':'true'},g);
+  const fogHalo=el('circle',{r:25,class:'fog-halo','aria-hidden':'true'},g);
   const lightning=el('path',{d:'M5,-27L-1,-15H5L1,-5L14,-19H8L13,-27Z',class:'lightning','aria-hidden':'true'},g);
-  let barb=null,barbPath=null,barbCalm=null,gustLabel=null;if(windBarbStations.has(s.id)){barb=el('g',{class:'wind-barb','aria-hidden':'true'},g);barbPath=el('path',{},barb);gustLabel=el('text',{class:'gust-label',visibility:'hidden','text-anchor':'middle','aria-hidden':'true'},g);}
+  const barb=el('g',{class:'wind-barb','aria-hidden':'true'},g),barbPath=el('path',{},barb),gustLabel=el('text',{class:'gust-label',visibility:'hidden','text-anchor':'middle','aria-hidden':'true'},g);
   const leader=el('path',{class:'leader'},g);const halo=el('circle',{r:17,class:'halo'},g);const ring=el('circle',{r:12,class:'ring'},g);const dot=el('circle',{r:7,class:'dot'},g);el('circle',{r:15,class:'hit'},g);const label=el('text',{},g);label.textContent=s.id;const ceilingLabel=el('text',{class:'conditions',visibility:'hidden','aria-hidden':'true'},g),visibilityLabel=el('text',{class:'conditions',visibility:'hidden','aria-hidden':'true'},g),windLabel=el('text',{class:'conditions',visibility:'hidden','aria-hidden':'true'},g);
-  if(windBarbStations.has(s.id))barbCalm=el('circle',{r:2,class:'calm-wind','aria-hidden':'true'},g);
-  nodes.set(s.id,{g,halo,ring,dot,label,ceilingLabel,visibilityLabel,windLabel,leader,weatherHalo,lightning,barb,barbPath,barbCalm,gustLabel});g.addEventListener('click',()=>select(s.id));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(s.id);}});
+  const barbCalm=el('circle',{r:2,class:'calm-wind','aria-hidden':'true'},g);
+  nodes.set(s.id,{g,halo,ring,dot,label,ceilingLabel,visibilityLabel,windLabel,leader,weatherHalo,fogHalo,lightning,barb,barbPath,barbCalm,gustLabel});g.addEventListener('click',()=>select(s.id));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(s.id);}});
  }
 }
 function updateMarkers(){
  const counts={VFR:0,MVFR:0,IFR:0,LIFR:0,UNKNOWN:0};
  for(const s of stations){const report=reports.get(s.id),status=statusOf(report),n=nodes.get(s.id);counts[CATEGORIES.includes(status)?status:'UNKNOWN']++;
   const wetWeather=CATEGORIES.includes(status)&&hasRainOrMist(report);n.weatherHalo.classList.toggle('active',wetWeather);
+  const fog=CATEGORIES.includes(status)&&hasFog(report);n.fogHalo.classList.toggle('active',fog);
   const lightning=CATEGORIES.includes(status)&&hasThunderstorm(report);n.lightning.classList.toggle('active',lightning);
   const alwaysConditions=s.id==='KLKR',showConditions=alwaysConditions||['MVFR','IFR','LIFR'].includes(status),conditionData=conditions(report,alwaysConditions);n.ceilingLabel.textContent=conditionData.ceiling;n.ceilingLabel.setAttribute('visibility',showConditions?'visible':'hidden');n.visibilityLabel.textContent=conditionData.visibility;n.visibilityLabel.setAttribute('visibility',showConditions&&conditionData.visibility?'visible':'hidden');
   n.windLabel.textContent=alwaysConditions?compactWind(report):'';n.windLabel.setAttribute('visibility',alwaysConditions?'visible':'hidden');
   n.g.setAttribute('class',`airport ${status==='STALE'?'stale unknown':status==='UNKNOWN'?'unknown':''} ${selected===s.id?'selected':''}`);
   n.dot.setAttribute('fill',COLORS[status]);n.halo.setAttribute('fill',COLORS[status]);
- n.g.setAttribute('aria-label',`${s.id}, ${s.name}, ${status==='UNKNOWN'?'no current data':status==='STALE'?'stale observation':status}${wetWeather?', rain or mist reported':''}${lightning?', thunderstorm or lightning reported':''}. Show weather details.`);
-  if(windBarbStations.has(s.id))updateWindBarb(report,n);
+ n.g.setAttribute('aria-label',`${s.id}, ${s.name}, ${status==='UNKNOWN'?'no current data':status==='STALE'?'stale observation':status}${wetWeather?', rain or mist reported':''}${fog?', fog reported':''}${lightning?', thunderstorm or lightning reported':''}. Show weather details.`);
+  updateWindBarb(report,n);
  }
  Object.entries(counts).forEach(([k,v])=>$(`count-${k}`).textContent=v);
  if(selected)renderDetail();
@@ -106,13 +132,20 @@ function updateClock(){
 function updateRadar(){
  if(!radarOn)return;
  const image=$('radar-image'),bucket=Math.floor(Date.now()/300000);
- image.classList.remove('unavailable');image.setAttribute('href',`${serviceBase}/radar?v=${bucket}`);
+ image.classList.remove('unavailable');image.setAttribute('href',`/api/radar?v=${bucket}`);
 }
+async function loadHazards(force=false,silent=false){
+ if(hazardsLoading||hazardsLoaded&&!force)return;hazardsLoading=true;
+ try{const r=await fetch('/api/hazards',{cache:'no-store',signal:AbortSignal.timeout(23000)}),data=await r.json();if(!r.ok)throw Error('Hazard service unavailable');airmets=data.airmets?.features||[];sigmets=data.sigmets?.features||[];hazardsLoaded=true;$('airmet-toggle').classList.remove('hazard-error');$('sigmet-toggle').classList.remove('hazard-error');renderKlkrHazards();draw();}
+ catch{$('airmet-toggle').classList.add('hazard-error');$('sigmet-toggle').classList.add('hazard-error');if(!silent)notify('AIRMET and SIGMET overlays are temporarily unavailable.',true);}
+ finally{hazardsLoading=false;}
+}
+async function toggleHazard(type){const isAirmet=type==='airmet';if(isAirmet)airmetOn=!airmetOn;else sigmetOn=!sigmetOn;const on=isAirmet?airmetOn:sigmetOn,button=$(isAirmet?'airmet-toggle':'sigmet-toggle');button.classList.toggle('active',on);button.setAttribute('aria-pressed',String(on));if(on)await loadHazards();drawHazards();}
 async function refresh(){
  if(loading)return;loading=true;$('refresh').disabled=true;clearTimeout(timer);
- try{const weatherUrl=new URL(`${serviceBase}/weather`);weatherUrl.searchParams.set('ids',stations.map(s=>s.id).join(','));const r=await fetch(weatherUrl,{cache:'no-store',signal:AbortSignal.timeout(23000)});if(!r.ok)throw Error('Weather connection unavailable');const data=await r.json();if(!Array.isArray(data))throw Error('Unexpected weather response');feed={fetchedAt:new Date().toISOString(),reports:selectLatest(data,stations.map(s=>s.id)),nextCheckAt:new Date(Date.now()+300000).toISOString()};
-  reports=new Map(feed.reports.map(r=>[r.icaoId,r]));draw();
-  notify(!feed.reports.length?'No recent METAR reports returned. Checking again shortly.':'');
+ try{const r=await fetch('/api/weather',{cache:'no-store',signal:AbortSignal.timeout(23000)});const data=await r.json();if(!r.ok&&!data.reports)throw Error('Weather connection unavailable');feed=data;
+  if(data.fetchedAt){reports=new Map(data.reports.map(r=>[r.icaoId,r]));draw();}
+  notify(data.error||(!data.reports.length?'No recent METAR reports returned. Checking again shortly.':''),Boolean(data.error));
   updateMarkers();updateClock();
  }catch{if(feed)feed.error='Connection lost';notify('Weather connection unavailable. Last observations remain visible; retrying shortly.',true);updateClock();}
  finally{loading=false;$('refresh').disabled=false;const next=feed?.nextCheckAt?Date.parse(feed.nextCheckAt)-Date.now():60000;timer=setTimeout(refresh,Math.max(10000,Math.min(300000,next)));}
@@ -120,6 +153,8 @@ async function refresh(){
 function changeZoom(factor){zoom=Math.max(.7,Math.min(5,zoom*factor));draw();}
 $('zoom-in').onclick=()=>changeZoom(1.25);$('zoom-out').onclick=()=>changeZoom(.8);$('reset').onclick=()=>{zoom=1;pan=[...defaultPan];draw();};
 $('radar-toggle').onclick=()=>{radarOn=!radarOn;const button=$('radar-toggle'),image=$('radar-image');button.classList.toggle('active',radarOn);button.setAttribute('aria-pressed',String(radarOn));image.classList.toggle('off',!radarOn);if(radarOn)updateRadar();};
+$('wind-toggle').onclick=()=>{windOn=!windOn;const button=$('wind-toggle');button.classList.toggle('active',windOn);button.setAttribute('aria-pressed',String(windOn));updateMarkers();};
+$('airmet-toggle').onclick=()=>toggleHazard('airmet');$('sigmet-toggle').onclick=()=>toggleHazard('sigmet');
 $('radar-image').addEventListener('load',()=>{$('radar-image').classList.remove('unavailable');$('radar-toggle').classList.remove('radar-error');$('radar-toggle').title='Show or hide NOAA weather radar';});
 $('radar-image').addEventListener('error',()=>{$('radar-image').classList.add('unavailable');$('radar-toggle').classList.add('radar-error');$('radar-toggle').title='Radar is temporarily unavailable';});
 $('close-detail').onclick=()=>{const previous=selected;selected=null;$('detail').hidden=true;updateMarkers();nodes.get(previous)?.g.focus();};
@@ -134,10 +169,12 @@ for(const type of ['pointerup','pointercancel'])map.addEventListener(type,()=>{d
 map.addEventListener('wheel',e=>{e.preventDefault();changeZoom(e.deltaY<0?1.1:1/1.1);},{passive:false});
 new ResizeObserver(()=>{if(stations.length)draw();}).observe(map);
 try{
- const results=await Promise.all(['stations.json','states.json','airspaces.json'].map(async url=>{const r=await fetch(url);if(!r.ok)throw Error('Map asset unavailable');return r.json();}));
+ const results=await Promise.all(['/stations.json','/states.json','/airspaces.json'].map(async url=>{const r=await fetch(url);if(!r.ok)throw Error('Map asset unavailable');return r.json();}));
  stations=results[0].sort((a,b)=>a.priority-b.priority||a.id.localeCompare(b.id));states=results[1].features;airspaces=results[2].features;
  createMarkers();draw();updateMarkers();await refresh();
  updateRadar();
-}catch{notify('Unable to load the map. Check the internet connection, then reload.',true);}
+ loadHazards(false,true);
+}catch{notify('Unable to load the map. Check that the local map server is running, then reload.',true);}
 updateClock();setInterval(()=>{updateMarkers();updateClock();},30000);setInterval(updateRadar,300000);
-document.addEventListener('visibilitychange',()=>{if(!document.hidden){updateMarkers();refresh();updateRadar();}});
+setInterval(()=>loadHazards(true,true),300000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){updateMarkers();refresh();updateRadar();loadHazards(true,true);}});
