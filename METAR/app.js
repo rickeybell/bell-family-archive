@@ -1,4 +1,4 @@
-import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,compactWind,windDisplayLevel,shouldDisplayWind,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,gairmetExpiresAt} from './weather.mjs?v=20260912-legend2';
+import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,compactWind,windDisplayLevel,shouldDisplayWind,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,gairmetExpiresAt} from './weather.mjs?v=20260912-multihazard1';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 const defaultPan=[80,30];
 const map=$('map');let stations=[],states=[],airspaces=[],airmets=[],sigmets=[],reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],feed=null,loading=false,timer,radarOn=true,windOn=true,airmetOn=false,sigmetOn=true,hazardsLoaded=false,hazardsLoading=false;
@@ -25,10 +25,19 @@ function geometryPath(geometry){
 }
 function drawHazards(){
  const layer=$('hazards');layer.replaceChildren();
- const bounds=visibleBounds(),add=(features,type)=>{for(const f of features){if(!intersectsBounds(f,bounds))continue;const d=geometryPath(f.geometry);if(!d)continue;const p=f.properties||{},hazardClass=String(p.hazard||'hazard').toLowerCase().replace(/[^a-z0-9]+/g,'-'),path=el('path',{d,class:`hazard ${type} hazard-${hazardClass}`,'fill-rule':'evenodd'},layer),title=el('title',{},path);title.textContent=type==='airmet'?`G-AIRMET ${p.product||''} · ${p.hazard||'Hazard'}${p.validTime?` · valid ${new Date(p.validTime).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',timeZone:'UTC',hour12:false})} UTC`:''}${p.dueTo?` · ${p.dueTo}`:''}`:`SIGMET ${p.seriesId||''} · ${p.hazard||'Hazard'}${p.validTimeTo?` · valid to ${new Date(p.validTimeTo).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',timeZone:'UTC',hour12:false})} UTC`:''}`;}}
+ const bounds=visibleBounds(),add=(features,type)=>{for(const f of features){if(!intersectsBounds(f,bounds))continue;const d=geometryPath(f.geometry);if(!d)continue;const p=f.properties||{},hazardClass=String(p.hazard||'hazard').toLowerCase().replace(/[^a-z0-9]+/g,'-');el('path',{d,class:`hazard ${type} hazard-${hazardClass}`,'fill-rule':'evenodd'},layer);}}
  if(airmetOn)add(airmets,'airmet');if(sigmetOn)add(sigmets,'sigmet');
 }
 const hazardNames={'IFR':'IFR','TURB-HI':'High-altitude turbulence','TURB-LO':'Low-altitude turbulence','ICE':'Icing','MT_OBSC':'Mountain obscuration','SFC_WND':'Strong surface wind','FZLVL':'Freezing level','M_FZLVL':'Multiple freezing levels','CONVECTIVE':'Convective thunderstorms','TURB':'Turbulence'};
+function hazardItemsAt(lon,lat){
+ const now=Date.now(),items=[],add=(feature,type)=>{if(!containsPoint(feature,lon,lat))return;const p=feature.properties||{},starts=type==='sigmet'?Date.parse(p.validTimeFrom):NaN,expires=type==='airmet'?gairmetExpiresAt(p.validTime):Date.parse(p.validTimeTo);if(Number.isFinite(starts)&&starts>now||Number.isFinite(expires)&&expires<=now)return;items.push({type:type.toUpperCase(),kind:type,id:String(type==='airmet'?(p.product||''):(p.seriesId||'')).trim(),description:hazardNames[p.hazard]||p.hazard||'Hazard',expires});};
+ if(airmetOn)airmets.forEach(feature=>add(feature,'airmet'));if(sigmetOn)sigmets.forEach(feature=>add(feature,'sigmet'));
+ const seen=new Set();return items.filter(item=>{const key=`${item.type}|${item.id}|${item.description}|${item.expires}`;if(seen.has(key))return false;seen.add(key);return true;}).sort((a,b)=>a.type.localeCompare(b.type)||(a.expires||Infinity)-(b.expires||Infinity));
+}
+function updateHazardTooltip(event){
+ const box=$('hazard-tooltip');if(drag||!hazardsLoaded||!airmetOn&&!sigmetOn){box.hidden=true;return;}const rect=map.getBoundingClientRect(),px=(event.clientX-rect.left)*width/rect.width,py=(event.clientY-rect.top)*height/rect.height,lon=(px-width/2-pan[0])/(baseScale*zoom)+center[0],lat=unmerc(center[1]-(py-mapCenterY-pan[1])/(baseScale*zoom)),items=hazardItemsAt(lon,lat);if(!items.length){box.hidden=true;return;}
+ box.replaceChildren();for(const item of items){const row=document.createElement('div');row.className=item.kind;const name=document.createElement('b'),detail=document.createElement('span');name.textContent=`${item.type}${item.id?` ${item.id}`:''} — `;detail.textContent=`${item.description} — ${Number.isFinite(item.expires)?`expires ${new Date(item.expires).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',timeZone:'UTC',hour12:false})} UTC`:'expiration unavailable'}`;row.append(name,detail);box.append(row);}box.hidden=false;const tip=box.getBoundingClientRect(),gap=14;box.style.left=`${Math.max(8,Math.min(innerWidth-tip.width-8,event.clientX+gap))}px`;box.style.top=`${Math.max(8,Math.min(innerHeight-tip.height-8,event.clientY+gap))}px`;
+}
 function renderKlkrHazards(){
  const box=$('klkr-hazards'),station=stations.find(s=>s.id==='KLKR'),now=Date.now();box.replaceChildren();if(!station){box.hidden=true;return;}
  const matching=[];
@@ -166,13 +175,14 @@ document.addEventListener('keydown',e=>{if(e.ctrlKey||e.altKey||e.metaKey)return
 let drag=null;
 map.addEventListener('pointerdown',e=>{if(e.target.closest('.airport'))return;drag={x:e.clientX,y:e.clientY,pan:[...pan]};map.setPointerCapture(e.pointerId);map.classList.add('dragging');});
 map.addEventListener('pointermove',e=>{if(!drag)return;pan=[drag.pan[0]+e.clientX-drag.x,drag.pan[1]+e.clientY-drag.y];draw();});
+map.addEventListener('pointermove',updateHazardTooltip);map.addEventListener('pointerleave',()=>{$('hazard-tooltip').hidden=true;});
 for(const type of ['pointerup','pointercancel'])map.addEventListener(type,()=>{drag=null;map.classList.remove('dragging');});
 map.addEventListener('wheel',e=>{e.preventDefault();changeZoom(e.deltaY<0?1.1:1/1.1);},{passive:false});
 new ResizeObserver(()=>{if(stations.length)draw();}).observe(map);
 try{
  const results=await Promise.all(['stations.json','states.json','airspaces.json'].map(async url=>{const r=await fetch(url);if(!r.ok)throw Error('Map asset unavailable');return r.json();}));
  stations=results[0].sort((a,b)=>a.priority-b.priority||a.id.localeCompare(b.id));states=results[1].features;airspaces=results[2].features;
- createMarkers();draw();updateMarkers();await refresh();
+ createMarkers();draw();updateMarkers();await refresh();select('KLKR');
  updateRadar();
  loadHazards(false,true);
 }catch{notify('Unable to load the map. Check that the local map server is running, then reload.',true);}

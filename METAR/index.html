@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#091720"><meta name="description" content="A full-screen South Carolina airport weather map with live METAR observations."><title>METAR · Bell Family Archive</title><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="style.css?v=20260912-legend2"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#091720"><meta name="description" content="A full-screen South Carolina airport weather map with live METAR observations."><title>METAR · Bell Family Archive</title><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="style.css?v=20260912-multihazard1"></head>
 <body>
 <main id="display">
  <svg id="map" role="group" aria-label="South Carolina airport weather map with NOAA radar, airspace boundaries, and optional aviation hazard overlays. Select an airport for its METAR. Drag to pan; use the zoom buttons to zoom."><g id="geography"></g><image id="radar-image" class="radar-image" preserveAspectRatio="none"></image><g id="airspaces"></g><g id="hazards"></g><g id="places"></g><g id="airports"></g></svg>
@@ -8,6 +8,7 @@
   <button id="zoom-in" aria-label="Zoom in" title="Zoom in (+)">+</button><button id="zoom-out" aria-label="Zoom out" title="Zoom out (−)">−</button><button id="reset" title="Fit South Carolina (Home)">Fit SC</button><button id="radar-toggle" class="active" aria-pressed="true" title="Show or hide NOAA weather radar">Radar</button><button id="wind-toggle" class="active" aria-pressed="true" title="Show or hide normal wind barbs; yellow and red wind alerts always remain visible">Wind</button><button id="airmet-toggle" aria-pressed="false" title="Show or hide current G-AIRMETs">AIRMET</button><button id="sigmet-toggle" class="active" aria-pressed="true" title="Show or hide current SIGMETs">SIGMET</button><button id="fullscreen" title="Full screen (F)">Full screen</button>
  </nav>
  <div id="message" role="status" aria-live="polite">Connecting to airport weather…</div>
+ <div id="hazard-tooltip" class="hazard-tooltip" role="tooltip" hidden></div>
  <aside id="detail" aria-label="Airport weather details" hidden>
   <button id="close-detail" class="close" aria-label="Close airport details">×</button>
   <div class="eyebrow">LATEST OBSERVATION</div><div class="detail-top"><h2 id="airport-id"></h2><span id="category" class="badge"></span></div><p id="airport-name"></p>
@@ -23,5 +24,5 @@
  <div class="credits">Weather: <a href="https://aviationweather.gov/data/api/" target="_blank" rel="noreferrer">NOAA / AWC</a> · Radar: <a href="https://radar.weather.gov/" target="_blank" rel="noreferrer">NOAA / NWS</a> · Airspace: <a href="https://adds-faa.opendata.arcgis.com/datasets/faa::class-airspace/about" target="_blank" rel="noreferrer">FAA</a> · Boundaries: <a href="https://github.com/topojson/us-atlas" target="_blank" rel="noreferrer">US Census / US Atlas</a></div>
  <div class="north" aria-hidden="true"><span>N</span>↑</div>
 </main>
-<script type="module" src="app.js?v=20260912-legend2"></script>
+<script type="module" src="app.js?v=20260912-multihazard1"></script>
 </body></html>
