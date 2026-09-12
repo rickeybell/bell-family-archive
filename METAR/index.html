@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#091720"><meta name="description" content="A full-screen South Carolina airport weather map with live METAR observations."><title>METAR · Bell Family Archive</title><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="style.css"></head>
+<body>
+<main id="display">
+ <svg id="map" role="group" aria-label="South Carolina airport weather map with NOAA radar and Class B, C, and D airspace boundaries. Select an airport for its METAR. Drag to pan; use the zoom buttons to zoom."><g id="geography"></g><image id="radar-image" class="radar-image" preserveAspectRatio="none"></image><g id="airspaces"></g><g id="places"></g><g id="airports"></g></svg>
+ <nav class="tools" aria-label="Display controls">
+  <button id="zoom-in" aria-label="Zoom in" title="Zoom in (+)">+</button><button id="zoom-out" aria-label="Zoom out" title="Zoom out (−)">−</button><button id="reset" title="Fit South Carolina (Home)">Fit SC</button><button id="radar-toggle" class="active" aria-pressed="true" title="Show or hide NOAA weather radar">Radar</button><button id="fullscreen" title="Full screen (F)">Full screen</button>
+ </nav>
+ <div id="message" role="status" aria-live="polite">Connecting to airport weather…</div>
+ <aside id="detail" aria-label="Airport weather details" hidden>
+  <button id="close-detail" class="close" aria-label="Close airport details">×</button>
+  <div class="eyebrow">LATEST OBSERVATION</div><div class="detail-top"><h2 id="airport-id"></h2><span id="category" class="badge"></span></div><p id="airport-name"></p>
+  <p id="observation-age"></p><div id="stale-note" hidden>Older or unverified observation. Current conditions may differ.</div>
+  <dl><div><dt>Wind</dt><dd id="wind"></dd></div><div><dt>Visibility</dt><dd id="visibility"></dd></div><div><dt>Ceiling</dt><dd id="ceiling"></dd></div><div><dt>Temperature</dt><dd id="temperature"></dd></div></dl>
+  <div class="eyebrow raw-label">RAW METAR</div><p id="raw"></p>
+ </aside>
+ <footer>
+  <div class="legend" aria-label="Flight category, precipitation, and wind legend"><span><i class="vfr"></i>VFR <b id="count-VFR">–</b></span><span><i class="mvfr"></i>MVFR <b id="count-MVFR">–</b></span><span><i class="ifr"></i>IFR <b id="count-IFR">–</b></span><span><i class="lifr"></i>LIFR <b id="count-LIFR">–</b></span><span title="No report, unavailable category, or observation over 90 minutes old"><i class="unknown"></i>No current data <b id="count-UNKNOWN">–</b></span><span title="Current METAR reports rain or mist"><i class="precip"></i>Rain / mist</span><span title="Wind reported as calm"><i class="calm-symbol"></i>Calm wind</span></div>
+  <div class="update"><span id="update-text">Waiting for observations</span><button id="refresh" aria-label="Check weather again" title="Check weather again">↻</button><time id="clock"></time></div>
+ </footer>
+ <div class="credits">Weather: <a href="https://aviationweather.gov/data/api/" target="_blank" rel="noreferrer">NOAA / AWC</a> · Radar: <a href="https://radar.weather.gov/" target="_blank" rel="noreferrer">NOAA / NWS</a> · Airspace: <a href="https://adds-faa.opendata.arcgis.com/datasets/faa::class-airspace/about" target="_blank" rel="noreferrer">FAA</a> · Boundaries: <a href="https://github.com/topojson/us-atlas" target="_blank" rel="noreferrer">US Census / US Atlas</a></div>
+ <div class="north" aria-hidden="true"><span>N</span>↑</div>
+</main>
+<script type="module" src="app.js"></script>
+</body></html>
