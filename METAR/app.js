@@ -1,4 +1,4 @@
-import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,hasRainOrMist,hasThunderstorm} from './weather.mjs';
+import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,hasRainOrMist,hasThunderstorm} from './weather.mjs?v=20260912-klkr1';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 const defaultPan=[80,30];
 const map=$('map');let stations=[],states=[],airspaces=[],reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],feed=null,loading=false,timer,radarOn=true;
@@ -56,7 +56,7 @@ function draw(){
  const overlap=(a,b)=>a[0]<b[2]&&a[2]>b[0]&&a[1]<b[3]&&a[3]>b[1];
  for(const s of stations){
  const n=nodes.get(s.id),[x,y]=positions.get(s.id);n.g.setAttribute('transform',`translate(${x},${y})`);
-  let best=null,bestScore=Infinity;const showConditions=['MVFR','IFR','LIFR'].includes(statusOf(reports.get(s.id))),conditionData=conditions(reports.get(s.id)),showVisibility=showConditions&&Boolean(conditionData.visibility),conditionWidth=55;
+  let best=null,bestScore=Infinity;const alwaysConditions=s.id==='KLKR',showConditions=alwaysConditions||['MVFR','IFR','LIFR'].includes(statusOf(reports.get(s.id))),conditionData=conditions(reports.get(s.id),alwaysConditions),showVisibility=showConditions&&Boolean(conditionData.visibility),conditionWidth=alwaysConditions?92:55;
   const choices=[[15,5],[-15-labelWidth,5],[-labelWidth/2,-16],[-labelWidth/2,28],[18,-16],[-18-labelWidth,-16],[18,28],[-18-labelWidth,28],[24,46],[-24-labelWidth,46],[20,-34],[-20-labelWidth,-34]];
   for(const radius of [50,70,90])for(let step=0;step<12;step++){const angle=step*Math.PI/6,dx=Math.cos(angle)*radius,dy=Math.sin(angle)*radius;choices.push([dx-(dx<0?labelWidth:0),dy+5]);}
   for(const [dx,dy] of choices){const left=showConditions&&dx<0?x+dx+labelWidth-conditionWidth-3:x+dx-3,right=showConditions&&dx>=0?x+dx+conditionWidth+3:x+dx+labelWidth+3,b=[left,y+dy-13,right,y+dy+(showConditions?(showVisibility?30:18):4)];let score=boxes.reduce((v,p)=>v+(overlap(b,p)?1000:0),0);for(const [id,p] of positions){if(id!==s.id&&overlap(b,[p[0]-10,p[1]-10,p[0]+10,p[1]+10]))score+=500;}score+=Math.abs(dx)*.1+Math.abs(dy)*.15;if(score<bestScore){bestScore=score;best={dx,dy,b};}}
@@ -81,7 +81,7 @@ function updateMarkers(){
  for(const s of stations){const report=reports.get(s.id),status=statusOf(report),n=nodes.get(s.id);counts[CATEGORIES.includes(status)?status:'UNKNOWN']++;
   const wetWeather=CATEGORIES.includes(status)&&hasRainOrMist(report);n.weatherHalo.classList.toggle('active',wetWeather);
   const lightning=CATEGORIES.includes(status)&&hasThunderstorm(report);n.lightning.classList.toggle('active',lightning);
-  const showConditions=['MVFR','IFR','LIFR'].includes(status),conditionData=conditions(report);n.ceilingLabel.textContent=conditionData.ceiling;n.ceilingLabel.setAttribute('visibility',showConditions?'visible':'hidden');n.visibilityLabel.textContent=conditionData.visibility;n.visibilityLabel.setAttribute('visibility',showConditions&&conditionData.visibility?'visible':'hidden');
+  const alwaysConditions=s.id==='KLKR',showConditions=alwaysConditions||['MVFR','IFR','LIFR'].includes(status),conditionData=conditions(report,alwaysConditions);n.ceilingLabel.textContent=conditionData.ceiling;n.ceilingLabel.setAttribute('visibility',showConditions?'visible':'hidden');n.visibilityLabel.textContent=conditionData.visibility;n.visibilityLabel.setAttribute('visibility',showConditions&&conditionData.visibility?'visible':'hidden');
   n.g.setAttribute('class',`airport ${status==='STALE'?'stale unknown':status==='UNKNOWN'?'unknown':''} ${selected===s.id?'selected':''}`);
   n.dot.setAttribute('fill',COLORS[status]);n.halo.setAttribute('fill',COLORS[status]);
  n.g.setAttribute('aria-label',`${s.id}, ${s.name}, ${status==='UNKNOWN'?'no current data':status==='STALE'?'stale observation':status}${wetWeather?', rain or mist reported':''}${lightning?', thunderstorm or lightning reported':''}. Show weather details.`);

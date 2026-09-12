@@ -25,11 +25,12 @@ export function ceiling(report){
  if(report.clouds.length||['CLR','SKC','CAVOK','FEW','SCT'].includes(report.cover))return 'No ceiling';
  return 'Unavailable';
 }
-export function conditions(report){
+export function conditions(report,showAll=false){
  const layers=Array.isArray(report?.clouds)?report.clouds.filter(c=>['BKN','OVC','VV'].includes(c.cover)&&Number.isFinite(c.base)&&c.base>=0):[];
- const ceilingText=layers.length?String(Math.round(Math.min(...layers.map(c=>c.base)))):Array.isArray(report?.clouds)&&report.clouds.length?'NONE':'—';
+ const ceilingText=layers.length?String(Math.round(Math.min(...layers.map(c=>c.base)))):Array.isArray(report?.clouds)&&report.clouds.length?'NONE':showAll?'Unavailable':'—';
  const rawVisibility=report?.visib,visibility=typeof rawVisibility==='string'&&/^\d+(?:\.\d+)?\+?$/.test(rawVisibility)?Number.parseFloat(rawVisibility):Number(rawVisibility);
- return {ceiling:`C-${ceilingText}`,visibility:rawVisibility!=null&&Number.isFinite(visibility)&&visibility<=9?`V-${visibility.toLocaleString(undefined,{maximumFractionDigits:2})} sm`:''};
+ const visibilityValue=typeof rawVisibility==='string'&&rawVisibility.endsWith('+')?`${visibility.toLocaleString(undefined,{maximumFractionDigits:2})}+`:visibility.toLocaleString(undefined,{maximumFractionDigits:2});
+ return {ceiling:`C-${ceilingText}`,visibility:rawVisibility!=null&&Number.isFinite(visibility)&&(showAll||visibility<=9)?`V-${visibilityValue} sm`:showAll?'V-Unavailable':''};
 }
 export function wind(report){
  if(!report||!Number.isFinite(report.wspd))return 'Unavailable';
