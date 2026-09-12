@@ -1,4 +1,4 @@
-import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,hasRainOrMist} from './weather.mjs';
+import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,hasRainOrMist,hasThunderstorm} from './weather.mjs';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 const defaultPan=[80,30];
 const map=$('map');let stations=[],states=[],airspaces=[],reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],feed=null,loading=false,timer,radarOn=true;
@@ -69,20 +69,22 @@ function draw(){
 function createMarkers(){
  for(const s of stations){const g=el('g',{class:'airport',role:'button',tabindex:'0','data-airport':s.id},$('airports'));
   const weatherHalo=el('circle',{r:21,class:'weather-halo','aria-hidden':'true'},g);
+  const lightning=el('path',{d:'M5,-27L-1,-15H5L1,-5L14,-19H8L13,-27Z',class:'lightning','aria-hidden':'true'},g);
   let barb=null,barbPath=null,barbCalm=null,gustLabel=null;if(windBarbStations.has(s.id)){barb=el('g',{class:'wind-barb','aria-hidden':'true'},g);barbPath=el('path',{},barb);gustLabel=el('text',{class:'gust-label',visibility:'hidden','text-anchor':'middle','aria-hidden':'true'},g);}
   const leader=el('path',{class:'leader'},g);const halo=el('circle',{r:17,class:'halo'},g);const ring=el('circle',{r:12,class:'ring'},g);const dot=el('circle',{r:7,class:'dot'},g);el('circle',{r:15,class:'hit'},g);const label=el('text',{},g);label.textContent=s.id;const ceilingLabel=el('text',{class:'conditions',visibility:'hidden','aria-hidden':'true'},g),visibilityLabel=el('text',{class:'conditions',visibility:'hidden','aria-hidden':'true'},g);
   if(windBarbStations.has(s.id))barbCalm=el('circle',{r:2,class:'calm-wind','aria-hidden':'true'},g);
-  nodes.set(s.id,{g,halo,ring,dot,label,ceilingLabel,visibilityLabel,leader,weatherHalo,barb,barbPath,barbCalm,gustLabel});g.addEventListener('click',()=>select(s.id));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(s.id);}});
+  nodes.set(s.id,{g,halo,ring,dot,label,ceilingLabel,visibilityLabel,leader,weatherHalo,lightning,barb,barbPath,barbCalm,gustLabel});g.addEventListener('click',()=>select(s.id));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(s.id);}});
  }
 }
 function updateMarkers(){
  const counts={VFR:0,MVFR:0,IFR:0,LIFR:0,UNKNOWN:0};
  for(const s of stations){const report=reports.get(s.id),status=statusOf(report),n=nodes.get(s.id);counts[CATEGORIES.includes(status)?status:'UNKNOWN']++;
   const wetWeather=CATEGORIES.includes(status)&&hasRainOrMist(report);n.weatherHalo.classList.toggle('active',wetWeather);
+  const lightning=CATEGORIES.includes(status)&&hasThunderstorm(report);n.lightning.classList.toggle('active',lightning);
   const showConditions=['MVFR','IFR','LIFR'].includes(status),conditionData=conditions(report);n.ceilingLabel.textContent=conditionData.ceiling;n.ceilingLabel.setAttribute('visibility',showConditions?'visible':'hidden');n.visibilityLabel.textContent=conditionData.visibility;n.visibilityLabel.setAttribute('visibility',showConditions&&conditionData.visibility?'visible':'hidden');
   n.g.setAttribute('class',`airport ${status==='STALE'?'stale unknown':status==='UNKNOWN'?'unknown':''} ${selected===s.id?'selected':''}`);
   n.dot.setAttribute('fill',COLORS[status]);n.halo.setAttribute('fill',COLORS[status]);
- n.g.setAttribute('aria-label',`${s.id}, ${s.name}, ${status==='UNKNOWN'?'no current data':status==='STALE'?'stale observation':status}${wetWeather?', rain or mist reported':''}. Show weather details.`);
+ n.g.setAttribute('aria-label',`${s.id}, ${s.name}, ${status==='UNKNOWN'?'no current data':status==='STALE'?'stale observation':status}${wetWeather?', rain or mist reported':''}${lightning?', thunderstorm or lightning reported':''}. Show weather details.`);
   if(windBarbStations.has(s.id))updateWindBarb(report,n);
  }
  Object.entries(counts).forEach(([k,v])=>$(`count-${k}`).textContent=v);

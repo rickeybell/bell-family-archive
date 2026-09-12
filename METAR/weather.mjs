@@ -44,3 +44,10 @@ export function hasRainOrMist(report){
   return code==='BR'||/^(?:MI|PR|BC|DR|BL|SH|TS|FZ)?RA(?:SN|SG|PL|GR|GS|UP)?$/.test(code);
  });
 }
+export function hasThunderstorm(report){
+ const weather=`${report?.wxString||''} ${report?.rawOb||''}`.toUpperCase();
+ return weather.split(/\s+/).some(token=>{
+  const code=token.replace(/^[-+]/,'');
+  return code!=='TSNO'&&(code==='TS'||code.startsWith('TS')||code.startsWith('VCTS')||code.startsWith('LTG'));
+ });
+}
