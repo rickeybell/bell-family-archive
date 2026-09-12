@@ -1,9 +1,10 @@
-import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,compactWind,windDisplayLevel,shouldDisplayWind,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,gairmetExpiresAt} from './weather.mjs?v=20260912-lightning1';
+import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,compactWind,windDisplayLevel,shouldDisplayWind,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,gairmetExpiresAt} from './weather.mjs?v=20260912-terrain1';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 const defaultPan=[80,30];
-const map=$('map');let stations=[],states=[],airspaces=[],airmets=[],sigmets=[],reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],feed=null,loading=false,timer,radarOn=true,lightningOn=false,windOn=true,airmetOn=false,sigmetOn=true,hazardsLoaded=false,hazardsLoading=false;
+const map=$('map');let stations=[],states=[],airspaces=[],airmets=[],sigmets=[],reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],feed=null,loading=false,timer,terrainOn=true,radarOn=true,lightningOn=false,windOn=true,airmetOn=false,sigmetOn=true,hazardsLoaded=false,hazardsLoading=false;
 const nodes=new Map();
 const radarBounds={west:-86,east:-76,south:31,north:36};
+const terrainBounds={west:-91,east:-75,south:24,north:40};
 const serviceBase='https://bell-family-metar.rbell.workers.dev';
 const merc=lat=>Math.log(Math.tan(Math.PI/4+lat*Math.PI/360))*180/Math.PI;
 const unmerc=value=>(Math.atan(Math.exp(value*Math.PI/180))-Math.PI/4)*360/Math.PI;
@@ -73,11 +74,12 @@ function draw(){
  baseScale=Math.max(30,baseScale);
  const radar=$('radar-image'),radarTopLeft=xy(radarBounds.west,radarBounds.north),radarBottomRight=xy(radarBounds.east,radarBounds.south);
  radar.setAttribute('x',radarTopLeft[0]);radar.setAttribute('y',radarTopLeft[1]);radar.setAttribute('width',radarBottomRight[0]-radarTopLeft[0]);radar.setAttribute('height',radarBottomRight[1]-radarTopLeft[1]);
+ const terrain=$('terrain-image'),terrainTopLeft=xy(terrainBounds.west,terrainBounds.north),terrainBottomRight=xy(terrainBounds.east,terrainBounds.south);terrain.setAttribute('x',terrainTopLeft[0]);terrain.setAttribute('y',terrainTopLeft[1]);terrain.setAttribute('width',terrainBottomRight[0]-terrainTopLeft[0]);terrain.setAttribute('height',terrainBottomRight[1]-terrainTopLeft[1]);
  for(const image of document.querySelectorAll('.lightning-density-image')){image.setAttribute('x',radarTopLeft[0]);image.setAttribute('y',radarTopLeft[1]);image.setAttribute('width',radarBottomRight[0]-radarTopLeft[0]);image.setAttribute('height',radarBottomRight[1]-radarTopLeft[1]);}
  const geo=$('geography');geo.replaceChildren();
  for(let lon=-88;lon<=-74;lon++){const a=xy(lon,28),b=xy(lon,39);el('path',{d:`M${a}L${b}`,class:'grid'},geo);}
  for(let lat=29;lat<=38;lat++){const a=xy(-88,lat),b=xy(-74,lat);el('path',{d:`M${a}L${b}`,class:'grid'},geo);}
- for(const f of states){const polygons=f.geometry.type==='Polygon'?[f.geometry.coordinates]:f.geometry.coordinates;const d=polygons.map(p=>p.map(r=>r.map((c,i)=>`${i?'L':'M'}${xy(...c).map(n=>n.toFixed(2)).join(',')}`).join('')+'Z').join('')).join('');el('path',{d,class:`state ${f.id==='45'?'sc':''}`,'fill-rule':'evenodd'},geo);}
+ const landClip=$('land-clip');landClip.replaceChildren();for(const f of states){const polygons=f.geometry.type==='Polygon'?[f.geometry.coordinates]:f.geometry.coordinates;const d=polygons.map(p=>p.map(r=>r.map((c,i)=>`${i?'L':'M'}${xy(...c).map(n=>n.toFixed(2)).join(',')}`).join('')+'Z').join('')).join('');el('path',{d,class:`state ${f.id==='45'?'sc':''}`,'fill-rule':'evenodd'},geo);el('path',{d,'fill-rule':'evenodd'},landClip);}
  const airspaceLayer=$('airspaces');airspaceLayer.replaceChildren();
  // Draw FAA shelves below labels and weather markers. Extremely light fills
  // preserve the airspace footprint without dimming the map beneath it.
@@ -145,6 +147,7 @@ function updateRadar(){
  const image=$('radar-image'),bucket=Math.floor(Date.now()/300000);
  image.classList.remove('unavailable');image.setAttribute('href',`${serviceBase}/radar?v=${bucket}`);
 }
+function updateTerrain(){if(terrainOn)$('terrain-image').setAttribute('href',`${serviceBase}/terrain?v=mercator2`);}
 function updateLightning(){
  if(!lightningOn)return;
  const bucket=Math.floor(Date.now()/300000);for(const image of document.querySelectorAll('.lightning-density-image')){image.classList.remove('unavailable');image.setAttribute('href',`${serviceBase}/lightning?frame=${image.dataset.frame}&v=${bucket}`);}
@@ -167,12 +170,15 @@ async function refresh(){
 }
 function changeZoom(factor){zoom=Math.max(.7,Math.min(5,zoom*factor));draw();}
 $('zoom-in').onclick=()=>changeZoom(1.25);$('zoom-out').onclick=()=>changeZoom(.8);$('reset').onclick=()=>{zoom=1;pan=[...defaultPan];draw();};
+$('terrain-toggle').onclick=()=>{terrainOn=!terrainOn;const button=$('terrain-toggle'),image=$('terrain-image');button.classList.toggle('active',terrainOn);button.setAttribute('aria-pressed',String(terrainOn));image.classList.toggle('off',!terrainOn);if(terrainOn)updateTerrain();};
 $('radar-toggle').onclick=()=>{radarOn=!radarOn;const button=$('radar-toggle'),image=$('radar-image');button.classList.toggle('active',radarOn);button.setAttribute('aria-pressed',String(radarOn));image.classList.toggle('off',!radarOn);if(radarOn)updateRadar();};
 $('lightning-toggle').onclick=()=>{lightningOn=!lightningOn;const button=$('lightning-toggle'),layer=$('lightning-density');button.classList.toggle('active',lightningOn);button.setAttribute('aria-pressed',String(lightningOn));layer.classList.toggle('off',!lightningOn);$('lightning-age-key').hidden=!lightningOn;if(lightningOn)updateLightning();};
 $('wind-toggle').onclick=()=>{windOn=!windOn;const button=$('wind-toggle');button.classList.toggle('active',windOn);button.setAttribute('aria-pressed',String(windOn));updateMarkers();};
 $('airmet-toggle').onclick=()=>toggleHazard('airmet');$('sigmet-toggle').onclick=()=>toggleHazard('sigmet');
 $('radar-image').addEventListener('load',()=>{$('radar-image').classList.remove('unavailable');$('radar-toggle').classList.remove('radar-error');$('radar-toggle').title='Show or hide NOAA weather radar';});
 $('radar-image').addEventListener('error',()=>{$('radar-image').classList.add('unavailable');$('radar-toggle').classList.add('radar-error');$('radar-toggle').title='Radar is temporarily unavailable';});
+$('terrain-image').addEventListener('load',()=>{$('terrain-image').classList.remove('unavailable');$('terrain-toggle').classList.remove('radar-error');$('terrain-toggle').title='Show or hide subtle USGS shaded relief';});
+$('terrain-image').addEventListener('error',()=>{$('terrain-image').classList.add('unavailable');$('terrain-toggle').classList.add('radar-error');$('terrain-toggle').title='Terrain is temporarily unavailable';});
 for(const image of document.querySelectorAll('.lightning-density-image')){image.addEventListener('load',()=>{image.classList.remove('unavailable');$('lightning-toggle').classList.remove('radar-error');$('lightning-toggle').title='Show or hide NOAA lightning strike density from the last hour';});image.addEventListener('error',()=>{image.classList.add('unavailable');$('lightning-toggle').classList.add('radar-error');$('lightning-toggle').title='Lightning data is temporarily unavailable';});}
 $('close-detail').onclick=()=>{const previous=selected;selected=null;$('detail').hidden=true;updateMarkers();nodes.get(previous)?.g.focus();};
 $('refresh').onclick=refresh;
@@ -190,9 +196,10 @@ try{
  const results=await Promise.all(['stations.json','states.json','airspaces.json'].map(async url=>{const r=await fetch(url);if(!r.ok)throw Error('Map asset unavailable');return r.json();}));
  stations=results[0].sort((a,b)=>a.priority-b.priority||a.id.localeCompare(b.id));states=results[1].features;airspaces=results[2].features;
  createMarkers();draw();updateMarkers();await refresh();select('KLKR');
+ updateTerrain();
  updateRadar();
  loadHazards(false,true);
 }catch{notify('Unable to load the map. Check that the local map server is running, then reload.',true);}
 updateClock();setInterval(()=>{updateMarkers();updateClock();},30000);setInterval(updateRadar,300000);setInterval(updateLightning,300000);
 setInterval(()=>loadHazards(true,true),300000);
-document.addEventListener('visibilitychange',()=>{if(!document.hidden){updateMarkers();refresh();updateRadar();updateLightning();loadHazards(true,true);}});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){updateMarkers();refresh();updateTerrain();updateRadar();updateLightning();loadHazards(true,true);}});
