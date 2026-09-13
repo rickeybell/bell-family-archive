@@ -7,7 +7,7 @@ const nodes=new Map();
 const radarBounds={west:-91,east:-75,south:24,north:40};
 const terrainBounds={west:-91,east:-75,south:24,north:40};
 const scFloridaView={west:-83.7,east:-79,south:27.45,north:35.46};
-const scFloridaAirports=new Set(['KSAV','KAYS','KRVJ','KVDI']);
+const scFloridaAirports=new Set(['KSAV','KAYS','KRVJ','KVDI','KSSI','KBQK']);
 const serviceBase='https://bell-family-metar.rbell.workers.dev';
 const merc=lat=>Math.log(Math.tan(Math.PI/4+lat*Math.PI/360))*180/Math.PI;
 const unmerc=value=>(Math.atan(Math.exp(value*Math.PI/180))-Math.PI/4)*360/Math.PI;
@@ -212,7 +212,7 @@ for(const type of ['pointerup','pointercancel'])map.addEventListener(type,()=>{d
 map.addEventListener('wheel',e=>{e.preventDefault();changeZoom(e.deltaY<0?1.1:1/1.1);},{passive:false});
 new ResizeObserver(()=>{if(stations.length){draw();updateMarkers();}}).observe(map);
 async function initialize(){try{
- const results=await Promise.all(['stations.json?v=regional1','states.json?v=regional1','airspaces.json?v=regional1'].map(async url=>{const r=await fetch(url);if(!r.ok)throw Error('Map asset unavailable');return r.json();}));
+ const results=await Promise.all(['stations.json?v=regional1','states.json?v=regional1','airspaces.json?v=restricted1'].map(async url=>{const r=await fetch(url);if(!r.ok)throw Error('Map asset unavailable');return r.json();}));
  stations=results[0].sort((a,b)=>a.priority-b.priority||a.id.localeCompare(b.id));states=results[1].features;airspaces=results[2].features;
  createMarkers();draw();updateMarkers();await refresh();select('KLKR');
  updateTerrain();
