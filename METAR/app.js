@@ -2,7 +2,7 @@ import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditio
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 window.METAR_STARTED=true;
 const defaultPan=[48,30];
-const map=$('map');let stations=[],states=[],airspaces=[],airmets=[],sigmets=[],reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],scFitView=true,feed=null,loading=false,timer,terrainOn=true,radarOn=true,lightningOn=false,windOn=true,airmetOn=false,sigmetOn=true,hazardsLoaded=false,hazardsLoading=false,displayedIds=new Set();
+const map=$('map');let stations=[],states=[],airspaces=[],airmets=[],sigmets=[],reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],scFitView=true,feed=null,loading=false,timer,radarOn=true,lightningOn=false,windOn=true,airmetOn=false,sigmetOn=true,hazardsLoaded=false,hazardsLoading=false,displayedIds=new Set();
 const nodes=new Map();
 const radarBounds={west:-91,east:-75,south:24,north:40};
 const terrainBounds={west:-91,east:-75,south:24,north:40};
@@ -166,7 +166,7 @@ function updateRadar(){
  const image=$('radar-image'),bucket=Math.floor(Date.now()/300000);
  image.classList.remove('unavailable');image.setAttribute('href',`${serviceBase}/radar?v=regional1-${bucket}`);
 }
-function updateTerrain(){if(terrainOn)$('terrain-image').setAttribute('href',`${serviceBase}/terrain?v=mercator2`);}
+function updateTerrain(){$('terrain-image').setAttribute('href',`${serviceBase}/terrain?v=mercator2`);}
 function updateLightning(){
  if(!lightningOn)return;
  const bucket=Math.floor(Date.now()/300000);for(const image of document.querySelectorAll('.lightning-density-image')){image.classList.remove('unavailable');image.setAttribute('href',`${serviceBase}/lightning?frame=${image.dataset.frame}&v=regional1-${bucket}`);}
@@ -190,15 +190,14 @@ async function refresh(){
 function changeZoom(factor){scFitView=false;zoom=Math.max(.16,Math.min(5,zoom*factor));draw();updateMarkers();}
 function fitBounds(bounds){const targetScale=Math.min((width-110)/(bounds.east-bounds.west),(height-165)/(merc(bounds.north)-merc(bounds.south))),midLon=(bounds.west+bounds.east)/2,midY=(merc(bounds.south)+merc(bounds.north))/2;zoom=Math.max(.16,targetScale/baseScale);pan=[-(midLon-center[0])*baseScale*zoom,-(center[1]-midY)*baseScale*zoom];draw();updateMarkers();}
 $('zoom-in').onclick=()=>changeZoom(1.25);$('zoom-out').onclick=()=>changeZoom(.8);$('reset').onclick=()=>{scFitView=true;zoom=1;pan=[...defaultPan];draw();updateMarkers();};$('fit-region').onclick=()=>{scFitView=false;fitBounds(scFloridaView);};
-$('terrain-toggle').onclick=()=>{terrainOn=!terrainOn;const button=$('terrain-toggle'),image=$('terrain-image');button.classList.toggle('active',terrainOn);button.setAttribute('aria-pressed',String(terrainOn));image.classList.toggle('off',!terrainOn);if(terrainOn)updateTerrain();};
 $('radar-toggle').onclick=()=>{radarOn=!radarOn;const button=$('radar-toggle'),image=$('radar-image');button.classList.toggle('active',radarOn);button.setAttribute('aria-pressed',String(radarOn));image.classList.toggle('off',!radarOn);if(radarOn)updateRadar();};
 $('lightning-toggle').onclick=()=>{lightningOn=!lightningOn;const button=$('lightning-toggle'),layer=$('lightning-density');button.classList.toggle('active',lightningOn);button.setAttribute('aria-pressed',String(lightningOn));layer.classList.toggle('off',!lightningOn);$('lightning-age-key').hidden=!lightningOn;if(lightningOn)updateLightning();};
 $('wind-toggle').onclick=()=>{windOn=!windOn;const button=$('wind-toggle');button.classList.toggle('active',windOn);button.setAttribute('aria-pressed',String(windOn));updateMarkers();};
 $('airmet-toggle').onclick=()=>toggleHazard('airmet');$('sigmet-toggle').onclick=()=>toggleHazard('sigmet');
 $('radar-image').addEventListener('load',()=>{$('radar-image').classList.remove('unavailable');$('radar-toggle').classList.remove('radar-error');$('radar-toggle').title='Show or hide NOAA weather radar';});
 $('radar-image').addEventListener('error',()=>{$('radar-image').classList.add('unavailable');$('radar-toggle').classList.add('radar-error');$('radar-toggle').title='Radar is temporarily unavailable';});
-$('terrain-image').addEventListener('load',()=>{$('terrain-image').classList.remove('unavailable');$('terrain-toggle').classList.remove('radar-error');$('terrain-toggle').title='Show or hide subtle USGS shaded relief';});
-$('terrain-image').addEventListener('error',()=>{$('terrain-image').classList.add('unavailable');$('terrain-toggle').classList.add('radar-error');$('terrain-toggle').title='Terrain is temporarily unavailable';});
+$('terrain-image').addEventListener('load',()=>{$('terrain-image').classList.remove('unavailable');});
+$('terrain-image').addEventListener('error',()=>{$('terrain-image').classList.add('unavailable');});
 for(const image of document.querySelectorAll('.lightning-density-image')){image.addEventListener('load',()=>{image.classList.remove('unavailable');$('lightning-toggle').classList.remove('radar-error');$('lightning-toggle').title='Show or hide NOAA lightning strike density from the last hour';});image.addEventListener('error',()=>{image.classList.add('unavailable');$('lightning-toggle').classList.add('radar-error');$('lightning-toggle').title='Lightning data is temporarily unavailable';});}
 $('close-detail').onclick=()=>{const previous=selected;selected=null;$('detail').hidden=true;updateMarkers();nodes.get(previous)?.g.focus();};
 $('refresh').onclick=refresh;
