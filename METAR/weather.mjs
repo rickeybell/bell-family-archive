@@ -98,4 +98,4 @@ export function containsPointOrNearLine(feature,lon,lat,tolerance=0){
  const lines=geometry.type==='LineString'?[geometry.coordinates]:geometry.type==='MultiLineString'?geometry.coordinates:[];
  return lines.some(line=>line.some((point,index)=>index&&segmentDistance([lon,lat],line[index-1],point)<=tolerance));
 }
-export function gairmetExpiresAt(validTime){const time=Date.parse(validTime);return Number.isFinite(time)?time+6*60*60*1000:NaN;}
+export function gairmetExpiresAt(validTime){const time=Date.parse(validTime);return Number.isFinite(time)?time+3*60*60*1000:NaN;}
