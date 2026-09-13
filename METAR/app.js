@@ -2,7 +2,7 @@ import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditio
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 window.METAR_STARTED=true;
 const defaultPan=[80,30];
-const map=$('map');let stations=[],states=[],airspaces=[],airmets=[],sigmets=[],reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],feed=null,loading=false,timer,terrainOn=true,radarOn=true,lightningOn=false,windOn=true,airmetOn=false,sigmetOn=true,hazardsLoaded=false,hazardsLoading=false,displayedIds=new Set();
+const map=$('map');let stations=[],states=[],airspaces=[],airmets=[],sigmets=[],reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],scFitView=true,feed=null,loading=false,timer,terrainOn=true,radarOn=true,lightningOn=false,windOn=true,airmetOn=false,sigmetOn=true,hazardsLoaded=false,hazardsLoading=false,displayedIds=new Set();
 const nodes=new Map();
 const radarBounds={west:-91,east:-75,south:24,north:40};
 const terrainBounds={west:-91,east:-75,south:24,north:40};
@@ -20,6 +20,9 @@ const isControlled=station=>station.airspaceClasses?.some(value=>['B','C','D'].i
 function significantWeather(station){const report=reports.get(station.id),status=statusOf(report),windLevel=windDisplayLevel(report);return ['IFR','LIFR'].includes(status)||hasRainOrMist(report)||hasFog(report)||hasThunderstorm(report)||windLevel==='wind-yellow'||windLevel==='wind-red';}
 function displayStations(){
  const bounds=visibleBounds(90),wide=zoom<.58,candidates=stations.filter(station=>station.lon>=bounds.west&&station.lon<=bounds.east&&station.lat>=bounds.south&&station.lat<=bounds.north&&(!wide||isControlled(station)||significantWeather(station)));
+ // Fit SC recreates the original curated airport view. These stations already
+ // have hand-checked coverage, so keep every one visible in this view.
+ if(scFitView)return candidates.filter(station=>station.base);
  // Weather hazards, the selected airport, and KLKR stay visible. The remaining
  // regularly reporting airports are revealed progressively so regional planning
  // views do not turn into a solid block of identifiers and wind barbs.
@@ -183,9 +186,9 @@ async function refresh(){
  }catch{if(feed)feed.error='Connection lost';notify('Weather connection unavailable. Last observations remain visible; retrying shortly.',true);updateClock();}
  finally{loading=false;$('refresh').disabled=false;const next=feed?.nextCheckAt?Date.parse(feed.nextCheckAt)-Date.now():60000;timer=setTimeout(refresh,Math.max(10000,Math.min(300000,next)));}
 }
-function changeZoom(factor){zoom=Math.max(.16,Math.min(5,zoom*factor));draw();updateMarkers();}
+function changeZoom(factor){scFitView=false;zoom=Math.max(.16,Math.min(5,zoom*factor));draw();updateMarkers();}
 function fitBounds(bounds){const targetScale=Math.min((width-110)/(bounds.east-bounds.west),(height-165)/(merc(bounds.north)-merc(bounds.south))),midLon=(bounds.west+bounds.east)/2,midY=(merc(bounds.south)+merc(bounds.north))/2;zoom=Math.max(.16,targetScale/baseScale);pan=[-(midLon-center[0])*baseScale*zoom,-(center[1]-midY)*baseScale*zoom];draw();updateMarkers();}
-$('zoom-in').onclick=()=>changeZoom(1.25);$('zoom-out').onclick=()=>changeZoom(.8);$('reset').onclick=()=>{zoom=1;pan=[...defaultPan];draw();updateMarkers();};$('fit-region').onclick=()=>fitBounds(regionView);
+$('zoom-in').onclick=()=>changeZoom(1.25);$('zoom-out').onclick=()=>changeZoom(.8);$('reset').onclick=()=>{scFitView=true;zoom=1;pan=[...defaultPan];draw();updateMarkers();};$('fit-region').onclick=()=>{scFitView=false;fitBounds(regionView);};
 $('terrain-toggle').onclick=()=>{terrainOn=!terrainOn;const button=$('terrain-toggle'),image=$('terrain-image');button.classList.toggle('active',terrainOn);button.setAttribute('aria-pressed',String(terrainOn));image.classList.toggle('off',!terrainOn);if(terrainOn)updateTerrain();};
 $('radar-toggle').onclick=()=>{radarOn=!radarOn;const button=$('radar-toggle'),image=$('radar-image');button.classList.toggle('active',radarOn);button.setAttribute('aria-pressed',String(radarOn));image.classList.toggle('off',!radarOn);if(radarOn)updateRadar();};
 $('lightning-toggle').onclick=()=>{lightningOn=!lightningOn;const button=$('lightning-toggle'),layer=$('lightning-density');button.classList.toggle('active',lightningOn);button.setAttribute('aria-pressed',String(lightningOn));layer.classList.toggle('off',!lightningOn);$('lightning-age-key').hidden=!lightningOn;if(lightningOn)updateLightning();};
@@ -202,7 +205,7 @@ async function fullscreen(){try{if(document.fullscreenElement)await document.exi
 $('fullscreen').onclick=fullscreen;document.addEventListener('fullscreenchange',()=>{$('fullscreen').textContent=document.fullscreenElement?'Exit full screen':'Full screen';});
 document.addEventListener('keydown',e=>{if(e.ctrlKey||e.altKey||e.metaKey)return;if(e.key.toLowerCase()==='f')fullscreen();if(e.key==='+'||e.key==='=')changeZoom(1.25);if(e.key==='-')changeZoom(.8);if(e.key==='Home'){e.preventDefault();$('reset').click();}if(e.key==='Escape'&&selected)$('close-detail').click();});
 let drag=null;
-map.addEventListener('pointerdown',e=>{if(e.target.closest('.airport'))return;drag={x:e.clientX,y:e.clientY,pan:[...pan]};map.setPointerCapture(e.pointerId);map.classList.add('dragging');});
+map.addEventListener('pointerdown',e=>{if(e.target.closest('.airport'))return;scFitView=false;drag={x:e.clientX,y:e.clientY,pan:[...pan]};map.setPointerCapture(e.pointerId);map.classList.add('dragging');});
 map.addEventListener('pointermove',e=>{if(!drag)return;pan=[drag.pan[0]+e.clientX-drag.x,drag.pan[1]+e.clientY-drag.y];draw();updateMarkers();});
 map.addEventListener('pointermove',updateHazardTooltip);map.addEventListener('pointerleave',()=>{$('hazard-tooltip').hidden=true;});
 for(const type of ['pointerup','pointercancel'])map.addEventListener(type,()=>{drag=null;map.classList.remove('dragging');});
