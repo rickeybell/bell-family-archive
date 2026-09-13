@@ -6,7 +6,8 @@ const map=$('map');let stations=[],states=[],airspaces=[],airmets=[],sigmets=[],
 const nodes=new Map();
 const radarBounds={west:-91,east:-75,south:24,north:40};
 const terrainBounds={west:-91,east:-75,south:24,north:40};
-const regionView={west:-91,east:-75,south:24,north:40};
+const scFloridaView={west:-83.7,east:-79,south:27.6,north:35.6};
+const scFloridaAirports=new Set(['KSAV','KAYS','KRVJ','KVDI']);
 const serviceBase='https://bell-family-metar.rbell.workers.dev';
 const merc=lat=>Math.log(Math.tan(Math.PI/4+lat*Math.PI/360))*180/Math.PI;
 const unmerc=value=>(Math.atan(Math.exp(value*Math.PI/180))-Math.PI/4)*360/Math.PI;
@@ -19,7 +20,7 @@ function visibleBounds(padding=0){const west=(-padding-width/2-pan[0])/(baseScal
 const isControlled=station=>station.airspaceClasses?.some(value=>['B','C','D'].includes(value));
 function significantWeather(station){const report=reports.get(station.id),status=statusOf(report),windLevel=windDisplayLevel(report);return ['IFR','LIFR'].includes(status)||hasRainOrMist(report)||hasFog(report)||hasThunderstorm(report)||windLevel==='wind-yellow'||windLevel==='wind-red';}
 function displayStations(){
- const bounds=visibleBounds(90),wide=zoom<.58,candidates=stations.filter(station=>station.lon>=bounds.west&&station.lon<=bounds.east&&station.lat>=bounds.south&&station.lat<=bounds.north&&(!wide||isControlled(station)||significantWeather(station)||Number.isFinite(station.fuel100LL)));
+ const bounds=visibleBounds(90),wide=zoom<.58,candidates=stations.filter(station=>station.lon>=bounds.west&&station.lon<=bounds.east&&station.lat>=bounds.south&&station.lat<=bounds.north&&(!wide||isControlled(station)||significantWeather(station)||Number.isFinite(station.fuel100LL)||scFloridaAirports.has(station.id)));
  // Fit SC recreates the original curated airport view. These stations already
  // have hand-checked coverage, so keep every one visible in this view.
  if(scFitView)return candidates.filter(station=>station.base);
@@ -29,7 +30,7 @@ function displayStations(){
  candidates.sort((a,b)=>Number(significantWeather(b))-Number(significantWeather(a))||Number(b.id===selected)-Number(a.id===selected)||Number(b.id==='KLKR')-Number(a.id==='KLKR')||Number(Number.isFinite(b.fuel100LL))-Number(Number.isFinite(a.fuel100LL))||Number(isControlled(b))-Number(isControlled(a))||(a.priority??9)-(b.priority??9)||(b.maxRunway??0)-(a.maxRunway??0)||a.id.localeCompare(b.id));
  if(zoom>=2.5)return candidates;
  const kept=[],points=[],xGap=zoom<.58?74:zoom<1.2?82:62,yGap=zoom<.58?36:zoom<1.2?42:34;
- for(const station of candidates){const point=xy(station.lon,station.lat),mustShow=station.id===selected||station.id==='KLKR'||station.id==='KBQK'&&zoom>=1||Number.isFinite(station.fuel100LL);if(!mustShow&&points.some(other=>Math.abs(point[0]-other[0])<xGap&&Math.abs(point[1]-other[1])<yGap))continue;kept.push(station);points.push(point);}
+ for(const station of candidates){const point=xy(station.lon,station.lat),mustShow=station.id===selected||station.id==='KLKR'||station.id==='KBQK'&&zoom>=1||scFloridaAirports.has(station.id)||Number.isFinite(station.fuel100LL);if(!mustShow&&points.some(other=>Math.abs(point[0]-other[0])<xGap&&Math.abs(point[1]-other[1])<yGap))continue;kept.push(station);points.push(point);}
  return kept;
 }
 function el(tag,attrs={},parent){const e=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));if(parent)parent.append(e);return e;}
@@ -188,7 +189,7 @@ async function refresh(){
 }
 function changeZoom(factor){scFitView=false;zoom=Math.max(.16,Math.min(5,zoom*factor));draw();updateMarkers();}
 function fitBounds(bounds){const targetScale=Math.min((width-110)/(bounds.east-bounds.west),(height-165)/(merc(bounds.north)-merc(bounds.south))),midLon=(bounds.west+bounds.east)/2,midY=(merc(bounds.south)+merc(bounds.north))/2;zoom=Math.max(.16,targetScale/baseScale);pan=[-(midLon-center[0])*baseScale*zoom,-(center[1]-midY)*baseScale*zoom];draw();updateMarkers();}
-$('zoom-in').onclick=()=>changeZoom(1.25);$('zoom-out').onclick=()=>changeZoom(.8);$('reset').onclick=()=>{scFitView=true;zoom=1;pan=[...defaultPan];draw();updateMarkers();};$('fit-region').onclick=()=>{scFitView=false;fitBounds(regionView);};
+$('zoom-in').onclick=()=>changeZoom(1.25);$('zoom-out').onclick=()=>changeZoom(.8);$('reset').onclick=()=>{scFitView=true;zoom=1;pan=[...defaultPan];draw();updateMarkers();};$('fit-region').onclick=()=>{scFitView=false;fitBounds(scFloridaView);};
 $('terrain-toggle').onclick=()=>{terrainOn=!terrainOn;const button=$('terrain-toggle'),image=$('terrain-image');button.classList.toggle('active',terrainOn);button.setAttribute('aria-pressed',String(terrainOn));image.classList.toggle('off',!terrainOn);if(terrainOn)updateTerrain();};
 $('radar-toggle').onclick=()=>{radarOn=!radarOn;const button=$('radar-toggle'),image=$('radar-image');button.classList.toggle('active',radarOn);button.setAttribute('aria-pressed',String(radarOn));image.classList.toggle('off',!radarOn);if(radarOn)updateRadar();};
 $('lightning-toggle').onclick=()=>{lightningOn=!lightningOn;const button=$('lightning-toggle'),layer=$('lightning-density');button.classList.toggle('active',lightningOn);button.setAttribute('aria-pressed',String(lightningOn));layer.classList.toggle('off',!lightningOn);$('lightning-age-key').hidden=!lightningOn;if(lightningOn)updateLightning();};
