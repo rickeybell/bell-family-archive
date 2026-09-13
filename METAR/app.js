@@ -19,17 +19,17 @@ function visibleBounds(padding=0){const west=(-padding-width/2-pan[0])/(baseScal
 const isControlled=station=>station.airspaceClasses?.some(value=>['B','C','D'].includes(value));
 function significantWeather(station){const report=reports.get(station.id),status=statusOf(report),windLevel=windDisplayLevel(report);return ['IFR','LIFR'].includes(status)||hasRainOrMist(report)||hasFog(report)||hasThunderstorm(report)||windLevel==='wind-yellow'||windLevel==='wind-red';}
 function displayStations(){
- const bounds=visibleBounds(90),wide=zoom<.58,candidates=stations.filter(station=>station.lon>=bounds.west&&station.lon<=bounds.east&&station.lat>=bounds.south&&station.lat<=bounds.north&&(!wide||isControlled(station)||significantWeather(station)));
+ const bounds=visibleBounds(90),wide=zoom<.58,candidates=stations.filter(station=>station.lon>=bounds.west&&station.lon<=bounds.east&&station.lat>=bounds.south&&station.lat<=bounds.north&&(!wide||isControlled(station)||significantWeather(station)||Number.isFinite(station.fuel100LL)));
  // Fit SC recreates the original curated airport view. These stations already
  // have hand-checked coverage, so keep every one visible in this view.
  if(scFitView)return candidates.filter(station=>station.base);
  // Weather hazards, the selected airport, and KLKR stay visible. The remaining
  // regularly reporting airports are revealed progressively so regional planning
  // views do not turn into a solid block of identifiers and wind barbs.
- candidates.sort((a,b)=>Number(significantWeather(b))-Number(significantWeather(a))||Number(b.id===selected)-Number(a.id===selected)||Number(b.id==='KLKR')-Number(a.id==='KLKR')||Number(isControlled(b))-Number(isControlled(a))||(a.priority??9)-(b.priority??9)||(b.maxRunway??0)-(a.maxRunway??0)||a.id.localeCompare(b.id));
+ candidates.sort((a,b)=>Number(significantWeather(b))-Number(significantWeather(a))||Number(b.id===selected)-Number(a.id===selected)||Number(b.id==='KLKR')-Number(a.id==='KLKR')||Number(Number.isFinite(b.fuel100LL))-Number(Number.isFinite(a.fuel100LL))||Number(isControlled(b))-Number(isControlled(a))||(a.priority??9)-(b.priority??9)||(b.maxRunway??0)-(a.maxRunway??0)||a.id.localeCompare(b.id));
  if(zoom>=2.5)return candidates;
  const kept=[],points=[],xGap=zoom<.58?74:zoom<1.2?82:62,yGap=zoom<.58?36:zoom<1.2?42:34;
- for(const station of candidates){const point=xy(station.lon,station.lat),mustShow=station.id===selected||station.id==='KLKR';if(!mustShow&&points.some(other=>Math.abs(point[0]-other[0])<xGap&&Math.abs(point[1]-other[1])<yGap))continue;kept.push(station);points.push(point);}
+ for(const station of candidates){const point=xy(station.lon,station.lat),mustShow=station.id===selected||station.id==='KLKR'||Number.isFinite(station.fuel100LL);if(!mustShow&&points.some(other=>Math.abs(point[0]-other[0])<xGap&&Math.abs(point[1]-other[1])<yGap))continue;kept.push(station);points.push(point);}
  return kept;
 }
 function el(tag,attrs={},parent){const e=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));if(parent)parent.append(e);return e;}
@@ -111,38 +111,38 @@ function draw(){
  const overlap=(a,b)=>a[0]<b[2]&&a[2]>b[0]&&a[1]<b[3]&&a[3]>b[1];
  for(const s of shown){
  const n=nodes.get(s.id),[x,y]=positions.get(s.id);n.g.setAttribute('transform',`translate(${x},${y})`);
-  let best=null,bestScore=Infinity;const alwaysConditions=s.id==='KLKR',showConditions=alwaysConditions||['MVFR','IFR','LIFR'].includes(statusOf(reports.get(s.id))),conditionData=conditions(reports.get(s.id),alwaysConditions),showVisibility=showConditions&&Boolean(conditionData.visibility),conditionWidth=alwaysConditions?112:55;
+  let best=null,bestScore=Infinity;const alwaysConditions=s.id==='KLKR',showConditions=alwaysConditions||['MVFR','IFR','LIFR'].includes(statusOf(reports.get(s.id))),conditionData=conditions(reports.get(s.id),alwaysConditions),showVisibility=showConditions&&Boolean(conditionData.visibility),conditionWidth=alwaysConditions?112:55,hasFuel=Number.isFinite(s.fuel100LL),infoWidth=Math.max(labelWidth,showConditions?conditionWidth:0,hasFuel?76:0),fuelOffset=hasFuel?13:0;
   const choices=[[15,5],[-15-labelWidth,5],[-labelWidth/2,-16],[-labelWidth/2,28],[18,-16],[-18-labelWidth,-16],[18,28],[-18-labelWidth,28],[24,46],[-24-labelWidth,46],[20,-34],[-20-labelWidth,-34]];
   for(const radius of [50,70,90])for(let step=0;step<12;step++){const angle=step*Math.PI/6,dx=Math.cos(angle)*radius,dy=Math.sin(angle)*radius;choices.push([dx-(dx<0?labelWidth:0),dy+5]);}
-  for(const [dx,dy] of choices){const left=showConditions&&dx<0?x+dx+labelWidth-conditionWidth-3:x+dx-3,right=showConditions&&dx>=0?x+dx+conditionWidth+3:x+dx+labelWidth+3,b=[left,y+dy-13,right,y+dy+(alwaysConditions?42:showConditions?(showVisibility?30:18):4)];let score=boxes.reduce((v,p)=>v+(overlap(b,p)?1000:0),0);for(const [id,p] of positions){if(id!==s.id&&overlap(b,[p[0]-10,p[1]-10,p[0]+10,p[1]+10]))score+=500;}score+=Math.abs(dx)*.1+Math.abs(dy)*.15;if(score<bestScore){bestScore=score;best={dx,dy,b};}}
+  for(const [dx,dy] of choices){const left=dx<0?x+dx+labelWidth-infoWidth-3:x+dx-3,right=dx>=0?x+dx+infoWidth+3:x+dx+labelWidth+3,b=[left,y+dy-13,right,y+dy+fuelOffset+(alwaysConditions?42:showConditions?(showVisibility?30:18):hasFuel?18:4)];let score=boxes.reduce((v,p)=>v+(overlap(b,p)?1000:0),0);for(const [id,p] of positions){if(id!==s.id&&overlap(b,[p[0]-10,p[1]-10,p[0]+10,p[1]+10]))score+=500;}score+=Math.abs(dx)*.1+Math.abs(dy)*.15;if(score<bestScore){bestScore=score;best={dx,dy,b};}}
   boxes.push(best.b);n.label.setAttribute('x',best.dx);n.label.setAttribute('y',best.dy);
-  for(const line of [n.ceilingLabel,n.visibilityLabel,n.windLabel]){line.setAttribute('x',best.dx<0?best.dx+labelWidth:best.dx);line.setAttribute('text-anchor',best.dx<0?'end':'start');}n.ceilingLabel.setAttribute('y',best.dy+14);n.visibilityLabel.setAttribute('y',best.dy+26);n.windLabel.setAttribute('y',best.dy+38);
+  for(const line of [n.fuelLabel,n.ceilingLabel,n.visibilityLabel,n.windLabel]){line.setAttribute('x',best.dx<0?best.dx+labelWidth:best.dx);line.setAttribute('text-anchor',best.dx<0?'end':'start');}n.fuelLabel.setAttribute('y',best.dy+14);n.ceilingLabel.setAttribute('y',best.dy+14+fuelOffset);n.visibilityLabel.setAttribute('y',best.dy+26+fuelOffset);n.windLabel.setAttribute('y',best.dy+38+fuelOffset);
   const lx=best.dx>0?best.dx-4:best.dx+labelWidth+4,ly=best.dy-5;
   n.leader.setAttribute('d',`M0,0L${lx},${ly}`);n.leader.style.display=Math.hypot(lx,ly)>27?'':'none';
  }
 }
 function createMarkers(){
- for(const s of stations){const g=el('g',{class:'airport',role:'button',tabindex:'0','data-airport':s.id},$('airports'));
+ for(const s of stations){const g=el('g',{class:'airport',role:'button',tabindex:'0','data-airport':s.id},$('airports')),titleNode=el('title',{},g);
   const weatherHalo=el('circle',{r:21,class:'weather-halo','aria-hidden':'true'},g);
   const fogHalo=el('circle',{r:25,class:'fog-halo','aria-hidden':'true'},g);
   const lightning=el('path',{d:'M5,-27L-1,-15H5L1,-5L14,-19H8L13,-27Z',class:'lightning','aria-hidden':'true'},g);
   const barb=el('g',{class:'wind-barb','aria-hidden':'true'},g),barbPath=el('path',{},barb),gustLabel=el('text',{class:'gust-label',visibility:'hidden','text-anchor':'middle','aria-hidden':'true'},g);
   const leader=el('path',{class:'leader'},g);const halo=el('circle',{r:17,class:'halo'},g);const ring=el('circle',{r:12,class:'ring'},g);const dot=el('circle',{r:7,class:'dot'},g);el('circle',{r:15,class:'hit'},g);const label=el('text',{},g);label.textContent=s.id;const ceilingLabel=el('text',{class:'conditions',visibility:'hidden','aria-hidden':'true'},g),visibilityLabel=el('text',{class:'conditions',visibility:'hidden','aria-hidden':'true'},g),windLabel=el('text',{class:'conditions',visibility:'hidden','aria-hidden':'true'},g);
-  const barbCalm=el('circle',{r:2,class:'calm-wind','aria-hidden':'true'},g);
-  nodes.set(s.id,{g,halo,ring,dot,label,ceilingLabel,visibilityLabel,windLabel,leader,weatherHalo,fogHalo,lightning,barb,barbPath,barbCalm,gustLabel});g.addEventListener('click',()=>select(s.id));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(s.id);}});
+  const fuelLabel=el('text',{class:'fuel-price',visibility:'hidden','aria-hidden':'true'},g),barbCalm=el('circle',{r:2,class:'calm-wind','aria-hidden':'true'},g);
+  nodes.set(s.id,{g,titleNode,halo,ring,dot,label,fuelLabel,ceilingLabel,visibilityLabel,windLabel,leader,weatherHalo,fogHalo,lightning,barb,barbPath,barbCalm,gustLabel});g.addEventListener('click',()=>select(s.id));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(s.id);}});
  }
 }
 function updateMarkers(){
  const counts={VFR:0,MVFR:0,IFR:0,LIFR:0,UNKNOWN:0};
- for(const s of stations){const report=reports.get(s.id),status=statusOf(report),n=nodes.get(s.id);if(displayedIds.has(s.id))counts[CATEGORIES.includes(status)?status:'UNKNOWN']++;
+ for(const s of stations){const report=reports.get(s.id),status=statusOf(report),n=nodes.get(s.id),fuelOnly=Boolean(s.fuelOnly);if(displayedIds.has(s.id)&&!fuelOnly)counts[CATEGORIES.includes(status)?status:'UNKNOWN']++;
   const wetWeather=CATEGORIES.includes(status)&&hasRainOrMist(report);n.weatherHalo.classList.toggle('active',wetWeather);
   const fog=CATEGORIES.includes(status)&&hasFog(report);n.fogHalo.classList.toggle('active',fog);
   const lightning=CATEGORIES.includes(status)&&hasThunderstorm(report);n.lightning.classList.toggle('active',lightning);
-  const alwaysConditions=s.id==='KLKR',showConditions=alwaysConditions||['MVFR','IFR','LIFR'].includes(status),conditionData=conditions(report,alwaysConditions);n.ceilingLabel.textContent=conditionData.ceiling;n.ceilingLabel.setAttribute('visibility',showConditions?'visible':'hidden');n.visibilityLabel.textContent=conditionData.visibility;n.visibilityLabel.setAttribute('visibility',showConditions&&conditionData.visibility?'visible':'hidden');
+  const alwaysConditions=s.id==='KLKR',showConditions=alwaysConditions||['MVFR','IFR','LIFR'].includes(status),conditionData=conditions(report,alwaysConditions);n.fuelLabel.textContent=Number.isFinite(s.fuel100LL)?`100LL $${s.fuel100LL.toFixed(2)}`:'';n.fuelLabel.setAttribute('visibility',Number.isFinite(s.fuel100LL)?'visible':'hidden');n.ceilingLabel.textContent=conditionData.ceiling;n.ceilingLabel.setAttribute('visibility',showConditions?'visible':'hidden');n.visibilityLabel.textContent=conditionData.visibility;n.visibilityLabel.setAttribute('visibility',showConditions&&conditionData.visibility?'visible':'hidden');
   n.windLabel.textContent=alwaysConditions?compactWind(report):'';n.windLabel.setAttribute('visibility',alwaysConditions?'visible':'hidden');
-  n.g.setAttribute('class',`airport ${status==='STALE'?'stale unknown':status==='UNKNOWN'?'unknown':''} ${selected===s.id?'selected':''}`);
-  n.dot.setAttribute('fill',COLORS[status]);n.halo.setAttribute('fill',COLORS[status]);
- n.g.setAttribute('aria-label',`${s.id}, ${s.name}, ${status==='UNKNOWN'?'no current data':status==='STALE'?'stale observation':status}${wetWeather?', rain or mist reported':''}${fog?', fog reported':''}${lightning?', thunderstorm or lightning reported':''}. Show weather details.`);
+  n.g.setAttribute('class',`airport ${fuelOnly?'fuel-only':status==='STALE'?'stale unknown':status==='UNKNOWN'?'unknown':''} ${selected===s.id?'selected':''}`);
+  n.dot.setAttribute('fill',fuelOnly?'#f5d47a':COLORS[status]);n.halo.setAttribute('fill',fuelOnly?'#f5d47a':COLORS[status]);
+ const fuelInfo=Number.isFinite(s.fuel100LL)?`, 100LL ${s.fuelService||'service unspecified'} $${s.fuel100LL.toFixed(2)}, reported ${s.fuelPriceReported||'date unavailable'}`:'';n.titleNode.textContent=`${s.id} — ${s.name}${fuelInfo}`;n.g.setAttribute('aria-label',`${s.id}, ${s.name}${fuelInfo}, ${fuelOnly?'fuel-only airport; no METAR reporting':status==='UNKNOWN'?'no current data':status==='STALE'?'stale observation':status}${wetWeather?', rain or mist reported':''}${fog?', fog reported':''}${lightning?', thunderstorm or lightning reported':''}. Show details.`);
   updateWindBarb(report,n);
  }
  Object.entries(counts).forEach(([k,v])=>$(`count-${k}`).textContent=v);
@@ -151,9 +151,9 @@ function updateMarkers(){
 function select(id){selected=id;updateMarkers();$('detail').hidden=false;}
 function renderDetail(){
  const s=stations.find(s=>s.id===selected),r=reports.get(selected),status=statusOf(r),time=observationTime(r);
- $('airport-id').textContent=s.id;$('airport-name').textContent=s.name;$('category').textContent=status==='UNKNOWN'?'NO DATA':status;$('category').style.color=COLORS[status];
- $('observation-age').textContent=Number.isFinite(time)?`Observed ${new Date(time).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',timeZone:'UTC',hour12:false})} UTC · ${Math.max(0,Math.round((Date.now()-time)/60000))} min ago`:'No recent observation received';
- $('stale-note').hidden=status!=='STALE';$('wind').textContent=wind(r);$('visibility').textContent=r?.visib!=null?`${r.visib} SM`:'Unavailable';$('ceiling').textContent=ceiling(r);$('temperature').textContent=Number.isFinite(r?.temp)?`${Math.round(r.temp*9/5+32)}°F / ${r.temp}°C`:'Unavailable';$('raw').textContent=r?.rawOb||'No METAR is available for this airport.';
+ const fuelOnly=Boolean(s.fuelOnly);$('airport-id').textContent=s.id;$('airport-name').textContent=s.name;$('category').textContent=fuelOnly?'NO METAR':status==='UNKNOWN'?'NO DATA':status;$('category').style.color=fuelOnly?'#f5d47a':COLORS[status];
+ $('observation-age').textContent=fuelOnly?'This airport does not publish METAR observations.':Number.isFinite(time)?`Observed ${new Date(time).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',timeZone:'UTC',hour12:false})} UTC · ${Math.max(0,Math.round((Date.now()-time)/60000))} min ago`:'No recent observation received';
+ $('stale-note').hidden=status!=='STALE';$('wind').textContent=wind(r);$('visibility').textContent=r?.visib!=null?`${r.visib} SM`:'Unavailable';$('ceiling').textContent=ceiling(r);$('temperature').textContent=Number.isFinite(r?.temp)?`${Math.round(r.temp*9/5+32)}°F / ${r.temp}°C`:'Unavailable';$('raw').textContent=fuelOnly?`${s.id} does not publish METAR observations.`:r?.rawOb||'No METAR is available for this airport.';
 }
 function notify(message,error=false){$('message').textContent=message;$('message').hidden=!message;$('message').classList.toggle('error',error);}
 function updateClock(){
