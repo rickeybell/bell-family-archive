@@ -1,4 +1,4 @@
-import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,compactWind,windDisplayLevel,shouldDisplayWind,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,gairmetExpiresAt} from './weather.mjs?v=20260912-regional2';
+import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,compactWind,windDisplayLevel,shouldDisplayWind,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,containsPointOrNearLine,gairmetExpiresAt} from './weather.mjs?v=20260913-airmet1';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 window.METAR_STARTED=true;
 const defaultPan=[48,30];
@@ -47,9 +47,9 @@ function drawHazards(){
  const bounds=visibleBounds(),add=(features,type)=>{for(const f of features){if(!intersectsBounds(f,bounds))continue;const d=geometryPath(f.geometry);if(!d)continue;const p=f.properties||{},hazardClass=String(p.hazard||'hazard').toLowerCase().replace(/[^a-z0-9]+/g,'-');el('path',{d,class:`hazard ${type} hazard-${hazardClass}`,'fill-rule':'evenodd'},layer);}}
  if(airmetOn)add(airmets,'airmet');if(sigmetOn)add(sigmets,'sigmet');
 }
-const hazardNames={'IFR':'IFR','TURB-HI':'High-altitude turbulence','TURB-LO':'Low-altitude turbulence','ICE':'Icing','MT_OBSC':'Mountain obscuration','SFC_WND':'Strong surface wind','FZLVL':'Freezing level','M_FZLVL':'Multiple freezing levels','CONVECTIVE':'Convective thunderstorms','TURB':'Turbulence'};
+const hazardNames={'IFR':'IFR','TURB-HI':'High-altitude turbulence','TURB-LO':'Low-altitude turbulence','ICE':'Icing','MT_OBSC':'Mountain obscuration','SFC_WND':'Strong surface wind','FZLVL':'Freezing level','M_FZLVL':'Multiple freezing levels','LLWS':'Low-level wind shear','CONVECTIVE':'Convective thunderstorms','TURB':'Turbulence'};
 function hazardItemsAt(lon,lat){
- const now=Date.now(),items=[],add=(feature,type)=>{if(!containsPoint(feature,lon,lat))return;const p=feature.properties||{},starts=type==='sigmet'?Date.parse(p.validTimeFrom):NaN,expires=type==='airmet'?gairmetExpiresAt(p.validTime):Date.parse(p.validTimeTo);if(Number.isFinite(starts)&&starts>now||Number.isFinite(expires)&&expires<=now)return;items.push({type:type.toUpperCase(),kind:type,id:String(type==='airmet'?(p.product||''):(p.seriesId||'')).trim(),description:hazardNames[p.hazard]||p.hazard||'Hazard',expires});};
+ const now=Date.now(),items=[],lineTolerance=12/(baseScale*zoom),add=(feature,type)=>{if(!containsPointOrNearLine(feature,lon,lat,lineTolerance))return;const p=feature.properties||{},starts=type==='sigmet'?Date.parse(p.validTimeFrom):NaN,expires=type==='airmet'?gairmetExpiresAt(p.validTime):Date.parse(p.validTimeTo);if(Number.isFinite(starts)&&starts>now||Number.isFinite(expires)&&expires<=now)return;items.push({type:type.toUpperCase(),kind:type,id:String(type==='airmet'?(p.product||''):(p.seriesId||'')).trim(),description:hazardNames[p.hazard]||p.hazard||'Hazard',expires});};
  airmets.forEach(feature=>add(feature,'airmet'));sigmets.forEach(feature=>add(feature,'sigmet'));
  const seen=new Set();return items.filter(item=>{const key=`${item.type}|${item.id}|${item.description}|${item.expires}`;if(seen.has(key))return false;seen.add(key);return true;}).sort((a,b)=>a.type.localeCompare(b.type)||(a.expires||Infinity)-(b.expires||Infinity));
 }

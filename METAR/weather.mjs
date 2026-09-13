@@ -86,4 +86,16 @@ export function containsPoint(feature,lon,lat){
  const polygons=geometry.type==='Polygon'?[geometry.coordinates]:geometry.type==='MultiPolygon'?geometry.coordinates:[];
  return polygons.some(polygon=>polygon.length&&insideRing(polygon[0],lon,lat)&&!polygon.slice(1).some(ring=>insideRing(ring,lon,lat)));
 }
+function segmentDistance(point,a,b){
+ const dx=b[0]-a[0],dy=b[1]-a[1],lengthSquared=dx*dx+dy*dy;
+ if(!lengthSquared)return Math.hypot(point[0]-a[0],point[1]-a[1]);
+ const t=Math.max(0,Math.min(1,((point[0]-a[0])*dx+(point[1]-a[1])*dy)/lengthSquared)),x=a[0]+t*dx,y=a[1]+t*dy;
+ return Math.hypot(point[0]-x,point[1]-y);
+}
+export function containsPointOrNearLine(feature,lon,lat,tolerance=0){
+ if(containsPoint(feature,lon,lat))return true;
+ const geometry=feature?.geometry;if(!geometry||!Number.isFinite(lon)||!Number.isFinite(lat)||!(tolerance>0))return false;
+ const lines=geometry.type==='LineString'?[geometry.coordinates]:geometry.type==='MultiLineString'?geometry.coordinates:[];
+ return lines.some(line=>line.some((point,index)=>index&&segmentDistance([lon,lat],line[index-1],point)<=tolerance));
+}
 export function gairmetExpiresAt(validTime){const time=Date.parse(validTime);return Number.isFinite(time)?time+6*60*60*1000:NaN;}
