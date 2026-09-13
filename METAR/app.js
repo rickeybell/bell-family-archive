@@ -1,7 +1,7 @@
 import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,compactWind,windDisplayLevel,shouldDisplayWind,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,gairmetExpiresAt} from './weather.mjs?v=20260912-regional2';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 window.METAR_STARTED=true;
-const defaultPan=[80,30];
+const defaultPan=[48,30];
 const map=$('map');let stations=[],states=[],airspaces=[],airmets=[],sigmets=[],reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],scFitView=true,feed=null,loading=false,timer,terrainOn=true,radarOn=true,lightningOn=false,windOn=true,airmetOn=false,sigmetOn=true,hazardsLoaded=false,hazardsLoading=false,displayedIds=new Set();
 const nodes=new Map();
 const radarBounds={west:-91,east:-75,south:24,north:40};
