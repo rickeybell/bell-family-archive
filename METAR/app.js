@@ -150,7 +150,8 @@ function createMarkers(){
   nodes.set(s.id,{g,titleNode,halo,ring,dot,label,fuelLabel,ceilingLabel,visibilityLabel,windLabel,leader,weatherHalo,fogHalo,lightning,barb,barbPath,barbCalm,gustLabel});g.addEventListener('click',()=>select(s.id));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(s.id);}});
  }
 }
-function fuelLabelClass(station){const baselineId=station.state==='SC'?'KLKR':station.state==='FL'?'KCGC':station.state==='GA'?'KVDI':null,baseline=baselineId&&stations.find(item=>item.id===baselineId)?.fuel100LL;return `fuel-price ${fuelPriceClass(station.fuel100LL,baseline)}`;}
+function distanceMiles(a,b){const radians=Math.PI/180,latDelta=(b.lat-a.lat)*radians,lonDelta=(b.lon-a.lon)*radians,value=Math.sin(latDelta/2)**2+Math.cos(a.lat*radians)*Math.cos(b.lat*radians)*Math.sin(lonDelta/2)**2;return 3958.8*2*Math.asin(Math.sqrt(value));}
+function fuelLabelClass(station){const klkr=stations.find(item=>item.id==='KLKR'),nearKlkr=station.state==='NC'&&klkr&&distanceMiles(station,klkr)<=50,baselineId=station.state==='SC'||nearKlkr?'KLKR':station.state==='FL'?'KCGC':station.state==='GA'?'KVDI':null,baseline=baselineId&&stations.find(item=>item.id===baselineId)?.fuel100LL;return `fuel-price ${fuelPriceClass(station.fuel100LL,baseline)}`;}
 function fuelLabelVisible(station){return fuelPriceVisible(station.fuel100LL,zoom,featuredFuelAirports.has(station.id))&&(station.id!=='KCUB'||zoom>1.75);}
 function updateMarkers(){
  const counts={VFR:0,MVFR:0,IFR:0,LIFR:0,UNKNOWN:0};
