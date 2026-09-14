@@ -2,7 +2,7 @@ import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditio
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 window.METAR_STARTED=true;
 const defaultPan=[48,30];
-const map=$('map');let stations=[],states=[],airspaces=[],airmets=[],sigmets=[],reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],scFitView=true,feed=null,loading=false,timer,radarOn=true,lightningOn=false,windOn=true,airmetOn=false,sigmetOn=true,hazardsLoaded=false,hazardsLoading=false,displayedIds=new Set();
+const map=$('map');let stations=[],states=[],airspaces=[],airmets=[],sigmets=[],tfrs=[],reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],scFitView=true,feed=null,loading=false,timer,radarOn=true,lightningOn=false,windOn=true,airmetOn=false,sigmetOn=true,hazardsLoaded=false,hazardsLoading=false,tfrsLoaded=false,tfrsLoading=false,displayedIds=new Set();
 const nodes=new Map();
 const radarBounds={west:-91,east:-75,south:24,north:40};
 const terrainBounds={west:-91,east:-75,south:24,north:40};
@@ -48,15 +48,22 @@ function drawHazards(){
  const bounds=visibleBounds(),now=Date.now(),add=(features,type)=>{for(const f of features){const p=f.properties||{},starts=Date.parse(type==='airmet'?p.validTime:p.validTimeFrom),expires=type==='airmet'?gairmetExpiresAt(p.validTime):Date.parse(p.validTimeTo);if(Number.isFinite(starts)&&starts>now||Number.isFinite(expires)&&expires<=now||!intersectsBounds(f,bounds))continue;const d=geometryPath(f.geometry);if(!d)continue;const hazardClass=String(p.hazard||'hazard').toLowerCase().replace(/[^a-z0-9]+/g,'-');el('path',{d,class:`hazard ${type} hazard-${hazardClass}`,'fill-rule':'evenodd'},layer);}}
  if(airmetOn)add(airmets,'airmet');if(sigmetOn)add(sigmets,'sigmet');
 }
+function drawTfrs(){
+ const layer=$('tfrs');layer.replaceChildren();const bounds=visibleBounds(),now=Date.now();
+ for(const feature of tfrs){const properties=feature.properties||{},expires=Date.parse(properties.expires);if(Number.isFinite(expires)&&expires<=now||!intersectsBounds(feature,bounds))continue;const d=geometryPath(feature.geometry);if(!d)continue;const starts=Date.parse(properties.effective),upcoming=Number.isFinite(starts)&&starts>now;el('path',{d,class:`tfr${upcoming?' upcoming':''}`,'fill-rule':'evenodd'},layer);}
+}
 const hazardNames={'IFR':'IFR','TURB-HI':'High-altitude turbulence','TURB-LO':'Low-altitude turbulence','ICE':'Icing','MT_OBSC':'Mountain obscuration','SFC_WND':'Strong surface wind','FZLVL':'Freezing level','M_FZLVL':'Multiple freezing levels','LLWS':'Low-level wind shear','CONVECTIVE':'Convective thunderstorms','TURB':'Turbulence'};
 function hazardItemsAt(lon,lat){
  const now=Date.now(),items=[],lineTolerance=12/(baseScale*zoom),add=(feature,type)=>{if(!containsPointOrNearLine(feature,lon,lat,lineTolerance))return;const p=feature.properties||{},starts=Date.parse(type==='airmet'?p.validTime:p.validTimeFrom),expires=type==='airmet'?gairmetExpiresAt(p.validTime):Date.parse(p.validTimeTo);if(Number.isFinite(starts)&&starts>now||Number.isFinite(expires)&&expires<=now)return;items.push({type:type.toUpperCase(),kind:type,id:String(type==='airmet'?(p.product||''):(p.seriesId||'')).trim(),description:hazardNames[p.hazard]||p.hazard||'Hazard',expires});};
  airmets.forEach(feature=>add(feature,'airmet'));sigmets.forEach(feature=>add(feature,'sigmet'));
- const seen=new Set();return items.filter(item=>{const key=`${item.type}|${item.id}|${item.description}|${item.expires}`;if(seen.has(key))return false;seen.add(key);return true;}).sort((a,b)=>a.type.localeCompare(b.type)||(a.expires||Infinity)-(b.expires||Infinity));
+ for(const feature of airspaces){if(feature.properties?.class!=='R'||!containsPointOrNearLine(feature,lon,lat,lineTolerance))continue;const p=feature.properties||{};items.push({type:'RESTRICTED',kind:'restricted',id:p.id||p.name||'',description:'Restricted area',altitudes:[`${p.lower||'Unavailable'} – ${p.upper||'Unavailable'}`],schedule:p.timesOfUse||''});}
+ for(const feature of tfrs){if(!containsPointOrNearLine(feature,lon,lat,lineTolerance))continue;const p=feature.properties||{},starts=Date.parse(p.effective),expires=Date.parse(p.expires);if(Number.isFinite(expires)&&expires<=now)continue;items.push({type:'TFR',kind:'tfr',id:p.notamId||'',description:p.title||p.type||'Temporary flight restriction',subtype:p.type||'',altitudes:Array.isArray(p.altitudes)?p.altitudes:[],starts,expires});}
+ const seen=new Set();return items.filter(item=>{const key=`${item.type}|${item.id}|${item.description}|${item.altitudes?.join('|')||''}|${item.expires}`;if(seen.has(key))return false;seen.add(key);return true;}).sort((a,b)=>a.type.localeCompare(b.type)||(a.expires||Infinity)-(b.expires||Infinity));
 }
+const utc=value=>Number.isFinite(value)?new Date(value).toLocaleString([],{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',timeZone:'UTC',hour12:false})+' UTC':'Unavailable';
 function updateHazardTooltip(event){
- const box=$('hazard-tooltip');if(drag||!hazardsLoaded){box.hidden=true;return;}const airportId=event.target.closest?.('.airport')?.dataset.airport,station=airportId&&stations.find(item=>item.id===airportId),rect=map.getBoundingClientRect(),px=(event.clientX-rect.left)*width/rect.width,py=(event.clientY-rect.top)*height/rect.height,lon=station?.lon??(px-width/2-pan[0])/(baseScale*zoom)+center[0],lat=station?.lat??unmerc(center[1]-(py-mapCenterY-pan[1])/(baseScale*zoom)),items=hazardItemsAt(lon,lat);if(!items.length){box.hidden=true;return;}
- box.replaceChildren();for(const item of items){const row=document.createElement('div');row.className=item.kind;const name=document.createElement('b'),detail=document.createElement('span');name.textContent=`${item.type}${item.id?` ${item.id}`:''} — `;detail.textContent=`${item.description} — ${Number.isFinite(item.expires)?`expires ${new Date(item.expires).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',timeZone:'UTC',hour12:false})} UTC`:'expiration unavailable'}`;row.append(name,detail);box.append(row);}box.hidden=false;const tip=box.getBoundingClientRect(),gap=14;box.style.left=`${Math.max(8,Math.min(innerWidth-tip.width-8,event.clientX+gap))}px`;box.style.top=`${Math.max(8,Math.min(innerHeight-tip.height-8,event.clientY+gap))}px`;
+ const box=$('hazard-tooltip');if(drag){box.hidden=true;return;}const airportId=event.target.closest?.('.airport')?.dataset.airport,station=airportId&&stations.find(item=>item.id===airportId),rect=map.getBoundingClientRect(),px=(event.clientX-rect.left)*width/rect.width,py=(event.clientY-rect.top)*height/rect.height,lon=station?.lon??(px-width/2-pan[0])/(baseScale*zoom)+center[0],lat=station?.lat??unmerc(center[1]-(py-mapCenterY-pan[1])/(baseScale*zoom)),items=hazardItemsAt(lon,lat);if(!items.length){box.hidden=true;return;}
+ box.replaceChildren();for(const item of items){const row=document.createElement('div');row.className=item.kind;const name=document.createElement('b'),detail=document.createElement('span'),lines=[];name.textContent=`${item.type}${item.id?` ${item.id}`:''}`;lines.push(item.description);if(item.subtype&&item.subtype!==item.description)lines.push(item.subtype);if(item.altitudes?.length)lines.push(`Altitude: ${item.altitudes.join('; ')}`);if(item.kind==='tfr'){lines.push(`${Number.isFinite(item.starts)&&item.starts>Date.now()?'Begins':'Effective'} ${utc(item.starts)}`);lines.push(`Expires ${utc(item.expires)}`);}else if(item.schedule)lines.push(`Hours: ${item.schedule}`);else if(['airmet','sigmet'].includes(item.kind))lines.push(Number.isFinite(item.expires)?`Expires ${utc(item.expires)}`:'Expiration unavailable');detail.textContent=lines.join(' · ');row.append(name,document.createTextNode(' — '),detail);box.append(row);}box.hidden=false;const tip=box.getBoundingClientRect(),gap=14;box.style.left=`${Math.max(8,Math.min(innerWidth-tip.width-8,event.clientX+gap))}px`;box.style.top=`${Math.max(8,Math.min(innerHeight-tip.height-8,event.clientY+gap))}px`;
 }
 function renderKlkrHazards(){
  const box=$('klkr-hazards'),station=stations.find(s=>s.id==='KLKR'),now=Date.now();box.replaceChildren();if(!station){box.hidden=true;return;}
@@ -104,7 +111,7 @@ function draw(){
  // Draw FAA shelves below labels and weather markers. Extremely light fills
  // preserve the airspace footprint without dimming the map beneath it.
  for(const f of airspaces){if(!intersectsBounds(f,viewBounds))continue;const polygons=f.geometry.type==='Polygon'?[f.geometry.coordinates]:f.geometry.coordinates;const d=polygons.map(p=>p.map(r=>r.map((c,i)=>`${i?'L':'M'}${xy(...c).map(n=>n.toFixed(2)).join(',')}`).join('')+'Z').join('')).join('');el('path',{d,class:`airspace class-${f.properties.class.toLowerCase()}`,'fill-rule':'evenodd'},airspaceLayer);}
- drawHazards();
+ drawTfrs();drawHazards();
  const places=$('places');places.replaceChildren();
  textAt(places,-80.9,35.43,'NORTH CAROLINA','region-label');textAt(places,-83.25,33.05,'GEORGIA','region-label');textAt(places,-78.85,32.36,'Atlantic Ocean','ocean-label');
  // Place labels around each station, leaving marker positions geographically exact.
@@ -178,6 +185,12 @@ async function loadHazards(force=false,silent=false){
  catch{$('airmet-toggle').classList.add('hazard-error');$('sigmet-toggle').classList.add('hazard-error');if(!silent)notify('AIRMET and SIGMET overlays are temporarily unavailable.',true);}
  finally{hazardsLoading=false;}
 }
+async function loadTfrs(force=false,silent=false){
+ if(tfrsLoading||tfrsLoaded&&!force)return;tfrsLoading=true;
+ try{const r=await fetch(`${serviceBase}/tfrs?v=1`,{cache:'no-store',signal:AbortSignal.timeout(30000)}),data=await r.json();if(!r.ok)throw Error('TFR service unavailable');tfrs=data.features||[];tfrsLoaded=true;draw();}
+ catch{if(!silent)notify('TFR overlays are temporarily unavailable.',true);}
+ finally{tfrsLoading=false;}
+}
 async function toggleHazard(type){const isAirmet=type==='airmet';if(isAirmet)airmetOn=!airmetOn;else sigmetOn=!sigmetOn;const on=isAirmet?airmetOn:sigmetOn,button=$(isAirmet?'airmet-toggle':'sigmet-toggle');button.classList.toggle('active',on);button.setAttribute('aria-pressed',String(on));if(on)await loadHazards();drawHazards();}
 async function refresh(){
  if(loading)return;loading=true;$('refresh').disabled=true;clearTimeout(timer);
@@ -218,9 +231,9 @@ async function initialize(){try{
  createMarkers();draw();updateMarkers();await refresh();select('KLKR');
  updateTerrain();
  updateRadar();
- loadHazards(false,true);
+ loadHazards(false,true);loadTfrs(false,true);
 }catch(error){console.error(error);notify('Unable to load the map. Reload the page to try again.',true);}
 updateClock();setInterval(()=>{updateMarkers();updateClock();},30000);setInterval(updateRadar,300000);setInterval(updateLightning,300000);
-setInterval(()=>loadHazards(true,true),300000);
-document.addEventListener('visibilitychange',()=>{if(!document.hidden){updateMarkers();refresh();updateTerrain();updateRadar();updateLightning();loadHazards(true,true);}});}
+setInterval(()=>loadHazards(true,true),300000);setInterval(()=>loadTfrs(true,true),300000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){updateMarkers();refresh();updateTerrain();updateRadar();updateLightning();loadHazards(true,true);loadTfrs(true,true);}});}
 initialize();
