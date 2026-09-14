@@ -54,3 +54,4 @@ footer{left:0;right:0;bottom:0;flex-direction:row;align-items:center;gap:10px;pa
 @media(min-width:1600px){footer{display:grid;grid-template-columns:auto minmax(0,1fr) auto}.klkr-hazards{position:static;transform:none;justify-self:center;max-width:100%;padding:0 12px}.klkr-hazard{overflow:hidden;text-overflow:ellipsis}}
 
 .legend .airspace-legend{color:#a9bbc5;gap:5px}.legend .airspace-swatch{width:17px;height:0;border-radius:0;background:none}.legend .airspace-swatch.class-b{border-top:2px solid #79baf0}.legend .airspace-swatch.class-c{border-top:2px solid #d8a5e7}.legend .airspace-swatch.class-d{border-top:2px dashed #a5cada}.legend .airspace-swatch.class-trsa{border-top:2px dotted #d6dde1}
+.fuel-detail{grid-column:1/-1}.fuel-detail small{display:block;margin-top:3px;color:#91a9b8;font-size:11px;font-weight:400;text-transform:capitalize}
