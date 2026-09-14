@@ -6,6 +6,10 @@ export function observationTime(report){
  if(typeof report.obsTime==='string'&&/^\d+$/.test(report.obsTime))return Number(report.obsTime)*1000;
  return Date.parse(report.obsTime||report.reportTime);
 }
+export function observationUsable(report,maxAgeMinutes=120,now=Date.now()){
+ const time=observationTime(report);
+ return Number.isFinite(time)&&time<=now+300000&&now-time<=maxAgeMinutes*60000;
+}
 export function selectLatest(reports,ids){
  const allowed=new Set(ids),latest=new Map();
  for(const r of reports){if(!r||!allowed.has(r.icaoId))continue;const prev=latest.get(r.icaoId);if(!prev||(Number.isFinite(observationTime(r))&&(!Number.isFinite(observationTime(prev))||observationTime(r)>observationTime(prev))))latest.set(r.icaoId,r);}
