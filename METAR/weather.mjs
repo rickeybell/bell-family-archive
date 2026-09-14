@@ -50,6 +50,11 @@ export function windDisplayLevel(report){
  return Number.isFinite(report?.wgst)||speed>15?'wind-red':speed>=10?'wind-yellow':'wind-white';
 }
 export function shouldDisplayWind(report,windEnabled=true){const level=windDisplayLevel(report);return Boolean(level)&&(windEnabled||level==='wind-yellow'||level==='wind-red');}
+export function fuelPriceClass(price,baseline){
+ if(!Number.isFinite(price)||!Number.isFinite(baseline))return 'fuel-standard';
+ if(price>baseline)return 'fuel-high';
+ return baseline-price>.25?'fuel-low':'fuel-standard';
+}
 export function hasRainOrMist(report){
  const weather=String(report?.wxString||report?.rawOb||'').toUpperCase();
  return weather.split(/\s+/).some(token=>{

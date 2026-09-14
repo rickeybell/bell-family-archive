@@ -1,4 +1,4 @@
-import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,compactWind,windDisplayLevel,shouldDisplayWind,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,containsPointOrNearLine,gairmetExpiresAt} from './weather.mjs?v=20260914-hazardhit1';
+import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,compactWind,windDisplayLevel,shouldDisplayWind,fuelPriceClass,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,containsPointOrNearLine,gairmetExpiresAt} from './weather.mjs?v=20260914-fuel1';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 window.METAR_STARTED=true;
 const defaultPan=[48,30];
@@ -139,13 +139,14 @@ function createMarkers(){
   nodes.set(s.id,{g,titleNode,halo,ring,dot,label,fuelLabel,ceilingLabel,visibilityLabel,windLabel,leader,weatherHalo,fogHalo,lightning,barb,barbPath,barbCalm,gustLabel});g.addEventListener('click',()=>select(s.id));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(s.id);}});
  }
 }
+function fuelLabelClass(station){const baselineId=station.state==='SC'?'KLKR':station.state==='FL'?'KCGC':null,baseline=baselineId&&stations.find(item=>item.id===baselineId)?.fuel100LL;return `fuel-price ${fuelPriceClass(station.fuel100LL,baseline)}`;}
 function updateMarkers(){
  const counts={VFR:0,MVFR:0,IFR:0,LIFR:0,UNKNOWN:0};
  for(const s of stations){const report=reports.get(s.id),status=statusOf(report),n=nodes.get(s.id),fuelOnly=Boolean(s.fuelOnly);if(displayedIds.has(s.id)&&!fuelOnly)counts[CATEGORIES.includes(status)?status:'UNKNOWN']++;
   const wetWeather=CATEGORIES.includes(status)&&hasRainOrMist(report);n.weatherHalo.classList.toggle('active',wetWeather);
   const fog=CATEGORIES.includes(status)&&hasFog(report);n.fogHalo.classList.toggle('active',fog);
   const lightning=CATEGORIES.includes(status)&&hasThunderstorm(report);n.lightning.classList.toggle('active',lightning);
-  const alwaysConditions=s.id==='KLKR',showConditions=alwaysConditions||['MVFR','IFR','LIFR'].includes(status),conditionData=conditions(report,alwaysConditions);n.fuelLabel.textContent=Number.isFinite(s.fuel100LL)?`100LL $${s.fuel100LL.toFixed(2)}`:'';n.fuelLabel.setAttribute('visibility',Number.isFinite(s.fuel100LL)?'visible':'hidden');n.ceilingLabel.textContent=conditionData.ceiling;n.ceilingLabel.setAttribute('visibility',showConditions?'visible':'hidden');n.visibilityLabel.textContent=conditionData.visibility;n.visibilityLabel.setAttribute('visibility',showConditions&&conditionData.visibility?'visible':'hidden');
+  const alwaysConditions=s.id==='KLKR',showConditions=alwaysConditions||['MVFR','IFR','LIFR'].includes(status),conditionData=conditions(report,alwaysConditions);n.fuelLabel.textContent=Number.isFinite(s.fuel100LL)?`100LL $${s.fuel100LL.toFixed(2)}`:'';n.fuelLabel.setAttribute('class',fuelLabelClass(s));n.fuelLabel.setAttribute('visibility',Number.isFinite(s.fuel100LL)&&zoom>=1?'visible':'hidden');n.ceilingLabel.textContent=conditionData.ceiling;n.ceilingLabel.setAttribute('visibility',showConditions?'visible':'hidden');n.visibilityLabel.textContent=conditionData.visibility;n.visibilityLabel.setAttribute('visibility',showConditions&&conditionData.visibility?'visible':'hidden');
   n.windLabel.textContent=alwaysConditions?compactWind(report):'';n.windLabel.setAttribute('visibility',alwaysConditions?'visible':'hidden');
   n.g.setAttribute('class',`airport ${fuelOnly?'fuel-only':status==='STALE'?'stale unknown':status==='UNKNOWN'?'unknown':''} ${selected===s.id?'selected':''}`);
   n.dot.setAttribute('fill',fuelOnly?'#f5d47a':COLORS[status]);n.halo.setAttribute('fill',fuelOnly?'#f5d47a':COLORS[status]);
