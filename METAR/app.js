@@ -238,7 +238,7 @@ for(const type of ['pointerup','pointercancel'])map.addEventListener(type,()=>{d
 map.addEventListener('wheel',e=>{e.preventDefault();changeZoom(e.deltaY<0?1.1:1/1.1);},{passive:false});
 new ResizeObserver(()=>{if(stations.length){draw();updateMarkers();}}).observe(map);
 async function initialize(){try{
- const results=await Promise.all(['stations.json?v=20260914-kcubfull1','states.json?v=regional1','airspaces.json?v=restricted1'].map(async url=>{const r=await fetch(url);if(!r.ok)throw Error('Map asset unavailable');return r.json();}));
+ const results=await Promise.all(['stations.json?v=20260914-kcubfit1','states.json?v=regional1','airspaces.json?v=restricted1'].map(async url=>{const r=await fetch(url);if(!r.ok)throw Error('Map asset unavailable');return r.json();}));
  stations=results[0].sort((a,b)=>a.priority-b.priority||a.id.localeCompare(b.id));states=results[1].features;airspaces=results[2].features;
  createMarkers();draw();updateMarkers();await refresh();select('KLKR');
  updateTerrain();
