@@ -96,6 +96,8 @@ export function containsPointOrNearLine(feature,lon,lat,tolerance=0){
  if(containsPoint(feature,lon,lat))return true;
  const geometry=feature?.geometry;if(!geometry||!Number.isFinite(lon)||!Number.isFinite(lat)||!(tolerance>0))return false;
  const lines=geometry.type==='LineString'?[geometry.coordinates]:geometry.type==='MultiLineString'?geometry.coordinates:[];
- return lines.some(line=>line.some((point,index)=>index&&segmentDistance([lon,lat],line[index-1],point)<=tolerance));
+ // SVG fills visually close open AIRMET outlines. Treat the same outline as an
+ // area for hover detection so overlapping advisories are all reported.
+ return lines.some(line=>line.length>=3&&insideRing(line,lon,lat)||line.some((point,index)=>index&&segmentDistance([lon,lat],line[index-1],point)<=tolerance));
 }
 export function gairmetExpiresAt(validTime){const time=Date.parse(validTime);return Number.isFinite(time)?time+3*60*60*1000:NaN;}
