@@ -87,6 +87,7 @@ function updateWindBarb(report,node){
 }
 function draw(){
  width=map.clientWidth;height=map.clientHeight;map.setAttribute('viewBox',`0 0 ${width} ${height}`);
+ document.getElementById('zoom-level').textContent=`${Math.round(zoom*100)}%`;
  // Fit SC and its nearby airports while keeping markers clear of the bottom legend.
  mapCenterY=height/2+5;
  baseScale=Math.min((width-110)/extent[0],(height-165)/extent[1]);
