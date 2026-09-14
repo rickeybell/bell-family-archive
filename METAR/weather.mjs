@@ -50,6 +50,14 @@ export function windDisplayLevel(report){
  return Number.isFinite(report?.wgst)||speed>15?'wind-red':speed>=10?'wind-yellow':'wind-white';
 }
 export function shouldDisplayWind(report,windEnabled=true){const level=windDisplayLevel(report);return Boolean(level)&&(windEnabled||level==='wind-yellow'||level==='wind-red');}
+export function interpolateWind(points,lon,lat){
+ if(!Array.isArray(points)||!Number.isFinite(lon)||!Number.isFinite(lat))return null;
+ const nearest=points.filter(point=>Number.isFinite(point?.lon)&&Number.isFinite(point?.lat)&&Number.isFinite(point?.u)&&Number.isFinite(point?.v)).map(point=>({...point,distance:(point.lon-lon)**2+(point.lat-lat)**2})).sort((a,b)=>a.distance-b.distance).slice(0,4);
+ if(!nearest.length)return null;
+ const exact=nearest.find(point=>point.distance<1e-10);if(exact)return {u:exact.u,v:exact.v,speed:Math.hypot(exact.u,exact.v)};
+ let weightSum=0,u=0,v=0;for(const point of nearest){const weight=1/point.distance;weightSum+=weight;u+=point.u*weight;v+=point.v*weight;}
+ u/=weightSum;v/=weightSum;return {u,v,speed:Math.hypot(u,v)};
+}
 export function fuelPriceClass(price,baseline){
  if(!Number.isFinite(price)||!Number.isFinite(baseline))return 'fuel-standard';
  if(price>baseline)return 'fuel-high';
