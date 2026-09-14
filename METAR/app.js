@@ -1,4 +1,4 @@
-import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,compactWind,windDisplayLevel,shouldDisplayWind,fuelPriceClass,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,containsPointOrNearLine,gairmetExpiresAt} from './weather.mjs?v=20260914-fuel1';
+import {CATEGORIES,COLORS,statusOf,observationTime,selectLatest,ceiling,conditions,wind,compactWind,windDisplayLevel,shouldDisplayWind,fuelPriceClass,fuelPriceVisible,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,containsPointOrNearLine,gairmetExpiresAt} from './weather.mjs?v=20260914-fuelzoom';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 window.METAR_STARTED=true;
 const defaultPan=[48,30];
@@ -8,6 +8,7 @@ const radarBounds={west:-91,east:-75,south:24,north:40};
 const terrainBounds={west:-91,east:-75,south:24,north:40};
 const scFloridaView={west:-83.7,east:-79,south:27.45,north:35.46};
 const scFloridaAirports=new Set(['KSAV','KAYS','KRVJ','KVDI','KSSI','KBQK']);
+const featuredFuelAirports=new Set(['KLKR','K35A','KAFP','KCDN','KCGC','KHVS','KINF','KRCZ','KX60','KPYG']);
 const serviceBase='https://bell-family-metar.rbell.workers.dev';
 const merc=lat=>Math.log(Math.tan(Math.PI/4+lat*Math.PI/360))*180/Math.PI;
 const unmerc=value=>(Math.atan(Math.exp(value*Math.PI/180))-Math.PI/4)*360/Math.PI;
@@ -20,14 +21,14 @@ function visibleBounds(padding=0){const west=(-padding-width/2-pan[0])/(baseScal
 const isControlled=station=>station.airspaceClasses?.some(value=>['B','C','D'].includes(value));
 function significantWeather(station){const report=reports.get(station.id),status=statusOf(report),windLevel=windDisplayLevel(report);return ['IFR','LIFR'].includes(status)||hasRainOrMist(report)||hasFog(report)||hasThunderstorm(report)||windLevel==='wind-yellow'||windLevel==='wind-red';}
 function displayStations(){
- const bounds=visibleBounds(90),wide=zoom<.58,candidates=stations.filter(station=>station.lon>=bounds.west&&station.lon<=bounds.east&&station.lat>=bounds.south&&station.lat<=bounds.north&&(!Number.isFinite(station.minZoom)||zoom>=station.minZoom)&&(!wide||isControlled(station)||significantWeather(station)||Number.isFinite(station.fuel100LL)||scFloridaAirports.has(station.id)));
+ const bounds=visibleBounds(90),wide=zoom<.58,candidates=stations.filter(station=>station.lon>=bounds.west&&station.lon<=bounds.east&&station.lat>=bounds.south&&station.lat<=bounds.north&&(!Number.isFinite(station.minZoom)||zoom>=station.minZoom)&&(!wide||isControlled(station)||significantWeather(station)||featuredFuelAirports.has(station.id)||scFloridaAirports.has(station.id)));
  // Weather hazards, the selected airport, KLKR, and the curated SC stations stay visible. The remaining
  // regularly reporting airports are revealed progressively so regional planning
  // views do not turn into a solid block of identifiers and wind barbs.
  candidates.sort((a,b)=>Number(b.base)-Number(a.base)||Number(significantWeather(b))-Number(significantWeather(a))||Number(b.id===selected)-Number(a.id===selected)||Number(b.id==='KLKR')-Number(a.id==='KLKR')||Number(Number.isFinite(b.fuel100LL))-Number(Number.isFinite(a.fuel100LL))||Number(isControlled(b))-Number(isControlled(a))||(a.priority??9)-(b.priority??9)||(b.maxRunway??0)-(a.maxRunway??0)||a.id.localeCompare(b.id));
  if(zoom>=1.75)return candidates;
  const kept=[],points=[],xGap=zoom<.58?74:zoom<1.2?82:62,yGap=zoom<.58?36:zoom<1.2?42:34;
- for(const station of candidates){const point=xy(station.lon,station.lat),mustShow=station.base&&zoom>=.8||station.id===selected||station.id==='KLKR'||station.id==='KBQK'&&zoom>=1||scFloridaAirports.has(station.id)||Number.isFinite(station.fuel100LL);if(!mustShow&&points.some(other=>Math.abs(point[0]-other[0])<xGap&&Math.abs(point[1]-other[1])<yGap))continue;kept.push(station);points.push(point);}
+ for(const station of candidates){const point=xy(station.lon,station.lat),mustShow=station.base&&zoom>=.8||station.id===selected||station.id==='KLKR'||station.id==='KBQK'&&zoom>=1||scFloridaAirports.has(station.id)||featuredFuelAirports.has(station.id);if(!mustShow&&points.some(other=>Math.abs(point[0]-other[0])<xGap&&Math.abs(point[1]-other[1])<yGap))continue;kept.push(station);points.push(point);}
  if(scFitView){let extraIndex=0;return kept.filter(station=>station.base||extraIndex++%2===0);}
  return kept;
 }
@@ -146,7 +147,7 @@ function updateMarkers(){
   const wetWeather=CATEGORIES.includes(status)&&hasRainOrMist(report);n.weatherHalo.classList.toggle('active',wetWeather);
   const fog=CATEGORIES.includes(status)&&hasFog(report);n.fogHalo.classList.toggle('active',fog);
   const lightning=CATEGORIES.includes(status)&&hasThunderstorm(report);n.lightning.classList.toggle('active',lightning);
-  const alwaysConditions=s.id==='KLKR',showConditions=alwaysConditions||['MVFR','IFR','LIFR'].includes(status),conditionData=conditions(report,alwaysConditions);n.fuelLabel.textContent=Number.isFinite(s.fuel100LL)?`100LL $${s.fuel100LL.toFixed(2)}`:'';n.fuelLabel.setAttribute('class',fuelLabelClass(s));n.fuelLabel.setAttribute('visibility',Number.isFinite(s.fuel100LL)&&zoom>=1?'visible':'hidden');n.ceilingLabel.textContent=conditionData.ceiling;n.ceilingLabel.setAttribute('visibility',showConditions?'visible':'hidden');n.visibilityLabel.textContent=conditionData.visibility;n.visibilityLabel.setAttribute('visibility',showConditions&&conditionData.visibility?'visible':'hidden');
+  const alwaysConditions=s.id==='KLKR',showConditions=alwaysConditions||['MVFR','IFR','LIFR'].includes(status),conditionData=conditions(report,alwaysConditions);n.fuelLabel.textContent=Number.isFinite(s.fuel100LL)?`100LL $${s.fuel100LL.toFixed(2)}`:'';n.fuelLabel.setAttribute('class',fuelLabelClass(s));n.fuelLabel.setAttribute('visibility',fuelPriceVisible(s.fuel100LL,zoom,featuredFuelAirports.has(s.id))?'visible':'hidden');n.ceilingLabel.textContent=conditionData.ceiling;n.ceilingLabel.setAttribute('visibility',showConditions?'visible':'hidden');n.visibilityLabel.textContent=conditionData.visibility;n.visibilityLabel.setAttribute('visibility',showConditions&&conditionData.visibility?'visible':'hidden');
   n.windLabel.textContent=alwaysConditions?compactWind(report):'';n.windLabel.setAttribute('visibility',alwaysConditions?'visible':'hidden');
   n.g.setAttribute('class',`airport ${fuelOnly?'fuel-only':status==='STALE'?'stale unknown':status==='UNKNOWN'?'unknown':''} ${selected===s.id?'selected':''}`);
   n.dot.setAttribute('fill',fuelOnly?'#f5d47a':COLORS[status]);n.halo.setAttribute('fill',fuelOnly?'#f5d47a':COLORS[status]);

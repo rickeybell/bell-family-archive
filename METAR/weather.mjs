@@ -55,6 +55,7 @@ export function fuelPriceClass(price,baseline){
  if(price>baseline)return 'fuel-high';
  return baseline-price>.25?'fuel-low':'fuel-standard';
 }
+export function fuelPriceVisible(price,zoom,featured=false){return Number.isFinite(price)&&zoom>=1&&(zoom>=1.75||featured);}
 export function hasRainOrMist(report){
  const weather=String(report?.wxString||report?.rawOb||'').toUpperCase();
  return weather.split(/\s+/).some(token=>{
