@@ -139,7 +139,7 @@ function createMarkers(){
   nodes.set(s.id,{g,titleNode,halo,ring,dot,label,fuelLabel,ceilingLabel,visibilityLabel,windLabel,leader,weatherHalo,fogHalo,lightning,barb,barbPath,barbCalm,gustLabel});g.addEventListener('click',()=>select(s.id));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(s.id);}});
  }
 }
-function fuelLabelClass(station){const baselineId=station.state==='SC'?'KLKR':station.state==='FL'?'KCGC':null,baseline=baselineId&&stations.find(item=>item.id===baselineId)?.fuel100LL;return `fuel-price ${fuelPriceClass(station.fuel100LL,baseline)}`;}
+function fuelLabelClass(station){const baselineId=station.state==='SC'?'KLKR':station.state==='FL'?'KCGC':station.state==='GA'?'KVDI':null,baseline=baselineId&&stations.find(item=>item.id===baselineId)?.fuel100LL;return `fuel-price ${fuelPriceClass(station.fuel100LL,baseline)}`;}
 function updateMarkers(){
  const counts={VFR:0,MVFR:0,IFR:0,LIFR:0,UNKNOWN:0};
  for(const s of stations){const report=reports.get(s.id),status=statusOf(report),n=nodes.get(s.id),fuelOnly=Boolean(s.fuelOnly);if(displayedIds.has(s.id)&&!fuelOnly)counts[CATEGORIES.includes(status)?status:'UNKNOWN']++;
