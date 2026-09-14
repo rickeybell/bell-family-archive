@@ -27,10 +27,10 @@ function displayStations(){
  // Weather hazards, the selected airport, and KLKR stay visible. The remaining
  // regularly reporting airports are revealed progressively so regional planning
  // views do not turn into a solid block of identifiers and wind barbs.
- candidates.sort((a,b)=>Number(significantWeather(b))-Number(significantWeather(a))||Number(b.id===selected)-Number(a.id===selected)||Number(b.id==='KLKR')-Number(a.id==='KLKR')||Number(Number.isFinite(b.fuel100LL))-Number(Number.isFinite(a.fuel100LL))||Number(isControlled(b))-Number(isControlled(a))||(a.priority??9)-(b.priority??9)||(b.maxRunway??0)-(a.maxRunway??0)||a.id.localeCompare(b.id));
+ candidates.sort((a,b)=>Number(b.base)-Number(a.base)||Number(significantWeather(b))-Number(significantWeather(a))||Number(b.id===selected)-Number(a.id===selected)||Number(b.id==='KLKR')-Number(a.id==='KLKR')||Number(Number.isFinite(b.fuel100LL))-Number(Number.isFinite(a.fuel100LL))||Number(isControlled(b))-Number(isControlled(a))||(a.priority??9)-(b.priority??9)||(b.maxRunway??0)-(a.maxRunway??0)||a.id.localeCompare(b.id));
  if(zoom>=2.5)return candidates;
  const kept=[],points=[],xGap=zoom<.58?74:zoom<1.2?82:62,yGap=zoom<.58?36:zoom<1.2?42:34;
- for(const station of candidates){const point=xy(station.lon,station.lat),mustShow=station.id===selected||station.id==='KLKR'||station.id==='KBQK'&&zoom>=1||scFloridaAirports.has(station.id)||Number.isFinite(station.fuel100LL);if(!mustShow&&points.some(other=>Math.abs(point[0]-other[0])<xGap&&Math.abs(point[1]-other[1])<yGap))continue;kept.push(station);points.push(point);}
+ for(const station of candidates){const point=xy(station.lon,station.lat),mustShow=station.base&&zoom>=.8||station.id===selected||station.id==='KLKR'||station.id==='KBQK'&&zoom>=1||scFloridaAirports.has(station.id)||Number.isFinite(station.fuel100LL);if(!mustShow&&points.some(other=>Math.abs(point[0]-other[0])<xGap&&Math.abs(point[1]-other[1])<yGap))continue;kept.push(station);points.push(point);}
  return kept;
 }
 function el(tag,attrs={},parent){const e=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));if(parent)parent.append(e);return e;}
