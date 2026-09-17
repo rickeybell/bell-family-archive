@@ -35,7 +35,7 @@ export function conditions(report,showAll=false,showClear=false){
  const ceilingText=layers.length?String(Math.round(Math.min(...layers.map(c=>c.base)))):noCeiling?(showClear?'Clear':'NONE'):showAll?'Unavailable':'—';
  const rawVisibility=report?.visib,visibility=typeof rawVisibility==='string'&&/^\d+(?:\.\d+)?\+?$/.test(rawVisibility)?Number.parseFloat(rawVisibility):Number(rawVisibility);
  const visibilityValue=typeof rawVisibility==='string'&&rawVisibility.endsWith('+')?`${visibility.toLocaleString(undefined,{maximumFractionDigits:2})}+`:visibility.toLocaleString(undefined,{maximumFractionDigits:2});
- return {ceiling:showClear&&ceilingText==='Clear'?'C - Clear':`C-${ceilingText}`,visibility:rawVisibility!=null&&Number.isFinite(visibility)&&(showAll||visibility<=9)?`V-${visibilityValue} sm`:showAll?'V-Unavailable':''};
+ return {ceiling:showClear&&ceilingText==='Clear'?'C-Clear':`C-${ceilingText}`,visibility:rawVisibility!=null&&Number.isFinite(visibility)&&(showAll||visibility<=9)?`V-${visibilityValue} sm`:showAll?'V-Unavailable':''};
 }
 export function wind(report){
  if(!report||!Number.isFinite(report.wspd))return 'Unavailable';

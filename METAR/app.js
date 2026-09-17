@@ -1,4 +1,4 @@
-import {CATEGORIES,COLORS,statusOf,observationTime,observationUsable,selectLatest,ceiling,conditions,wind,compactWind,windDisplayLevel,shouldDisplayWind,interpolateWind,fuelPriceClass,fuelPriceVisible,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,containsPointOrNearLine,gairmetExpiresAt} from './weather.mjs?v=20260917-klkr-clear1';
+import {CATEGORIES,COLORS,statusOf,observationTime,observationUsable,selectLatest,ceiling,conditions,wind,compactWind,windDisplayLevel,shouldDisplayWind,interpolateWind,fuelPriceClass,fuelPriceVisible,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,containsPointOrNearLine,gairmetExpiresAt} from './weather.mjs?v=20260917-klkr-clear2';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 window.METAR_STARTED=true;
 const defaultPan=[48,30];
