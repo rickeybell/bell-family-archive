@@ -1,6 +1,7 @@
 import {CATEGORIES,COLORS,statusOf,observationTime,observationUsable,selectLatest,ceiling,conditions,conditionMetricClass,wind,compactWind,windDisplayLevel,shouldDisplayWind,interpolateWind,fuelPriceClass,fuelPriceVisible,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,containsPointOrNearLine,gairmetExpiresAt,tfrIsVisible,tfrIsActive,fixedAirportLabelChoice} from './weather.mjs?v=20260920-klkr-label1';
 import {filterFeatureGroups,makeRegionFilter} from './region-filter.mjs?v=20260920-state-filter1';
 import {alwaysVisibleTrafficIdentifiers,trafficHasConstantLabel,trafficPollingNeeded,trafficVisibleAtZoom} from './traffic-display.mjs?v=20260920-listed-label1';
+import {anchoredPan,pinchView} from './map-navigation.mjs?v=20260920-map-gesture1';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 window.METAR_STARTED=true;
 const defaultPan=[48,30];
@@ -270,7 +271,7 @@ async function refresh(){
  }catch{if(feed)feed.error='Connection lost';notify('Weather connection unavailable. Last observations remain visible; retrying shortly.',true);updateClock();}
  finally{loading=false;$('refresh').disabled=false;const next=feed?.nextCheckAt?Date.parse(feed.nextCheckAt)-Date.now():60000;timer=setTimeout(refresh,Math.max(10000,Math.min(300000,next)));}
 }
-function changeZoom(factor){scFitView=false;zoom=Math.max(.16,Math.min(5,zoom*factor));draw();updateMarkers();}
+function changeZoom(factor,anchor=[width/2,height/2]){scFitView=false;const nextZoom=Math.max(.16,Math.min(5,zoom*factor));pan=anchoredPan(pan,zoom,nextZoom,anchor,[width/2,mapCenterY]);zoom=nextZoom;draw();updateMarkers();}
 function fitBounds(bounds,magnification=1){const targetScale=Math.min((width-110)/(bounds.east-bounds.west),(height-165)/(merc(bounds.north)-merc(bounds.south)))*magnification,midLon=(bounds.west+bounds.east)/2,midY=(merc(bounds.south)+merc(bounds.north))/2;zoom=Math.max(.16,targetScale/baseScale);pan=[-(midLon-center[0])*baseScale*zoom,-(center[1]-midY)*baseScale*zoom];draw();updateMarkers();}
 function fitLkr(){const station=stations.find(item=>item.id==='KLKR');if(!station)return;scFitView=false;zoom=3;pan=[width*.4-width/2-(station.lon-center[0])*baseScale*zoom,height*.5-mapCenterY-(center[1]-merc(station.lat))*baseScale*zoom];draw();select('KLKR');}
 function fitCgc(){const station=stations.find(item=>item.id==='KCGC');if(!station)return;scFitView=false;zoom=2;pan=[width*.29-width/2-(station.lon-center[0])*baseScale*zoom,height*.42-mapCenterY-(center[1]-merc(station.lat))*baseScale*zoom];draw();select('KCGC');}
@@ -292,15 +293,18 @@ $('refresh').onclick=refresh;
 async function fullscreen(){try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch{notify('Use F11 in your browser for full screen.');}}
 $('fullscreen').onclick=fullscreen;document.addEventListener('fullscreenchange',()=>{$('fullscreen').textContent=document.fullscreenElement?'Exit full screen':'Full screen';});
 document.addEventListener('keydown',e=>{if(e.ctrlKey||e.altKey||e.metaKey)return;if(e.key.toLowerCase()==='f')fullscreen();if(e.key==='+'||e.key==='=')changeZoom(1.25);if(e.key==='-')changeZoom(.8);if(e.key==='Home'){e.preventDefault();$('reset').click();}if(e.key==='Escape'&&selected)$('close-detail').click();});
-let drag=null;
-map.addEventListener('pointerdown',e=>{if(e.target.closest('.airport'))return;const aircraft=trafficAtEvent(e);if(aircraft){trafficSelected=aircraft.id;positionTrafficTooltip(aircraft,e);drawTraffic();return;}trafficSelected=null;$('traffic-tooltip').hidden=true;scFitView=false;drag={x:e.clientX,y:e.clientY,pan:[...pan]};map.setPointerCapture(e.pointerId);map.classList.add('dragging');});
-map.addEventListener('pointermove',e=>{if(!drag)return;pan=[drag.pan[0]+e.clientX-drag.x,drag.pan[1]+e.clientY-drag.y];draw();updateMarkers();});
+let drag=null,pinch=null;const activePointers=new Map();
+function mapPoint(event){const rect=map.getBoundingClientRect();return [event.clientX-rect.left,event.clientY-rect.top];}
+function startPinch(){const entries=[...activePointers.entries()].slice(0,2);if(entries.length<2)return;pinch={ids:entries.map(entry=>entry[0]),points:entries.map(entry=>entry[1]),zoom,pan:[...pan]};drag=null;scFitView=false;map.classList.add('dragging');}
+map.addEventListener('pointerdown',e=>{const point=mapPoint(e);activePointers.set(e.pointerId,point);try{map.setPointerCapture(e.pointerId);}catch{}if(activePointers.size>=2){startPinch();return;}if(e.target.closest('.airport'))return;const aircraft=trafficAtEvent(e);if(aircraft){trafficSelected=aircraft.id;positionTrafficTooltip(aircraft,e);drawTraffic();return;}trafficSelected=null;$('traffic-tooltip').hidden=true;scFitView=false;drag={pointerId:e.pointerId,x:point[0],y:point[1],pan:[...pan]};map.classList.add('dragging');});
+map.addEventListener('pointermove',e=>{if(activePointers.has(e.pointerId))activePointers.set(e.pointerId,mapPoint(e));if(pinch){const points=pinch.ids.map(id=>activePointers.get(id));if(points.every(Boolean)){if(e.pointerType==='touch')e.preventDefault();const view=pinchView(pinch.pan,pinch.zoom,pinch.points,points,[width/2,mapCenterY]);zoom=view.zoom;pan=view.pan;draw();updateMarkers();}return;}if(!drag||drag.pointerId!==e.pointerId)return;const point=mapPoint(e);pan=[drag.pan[0]+point[0]-drag.x,drag.pan[1]+point[1]-drag.y];draw();updateMarkers();});
 let hazardTooltipEvent=null,hazardTooltipTimer=null,hazardPointerSample=null;
 map.addEventListener('pointermove',event=>{if(!drag){const aircraft=trafficAtEvent(event);if(aircraft){positionTrafficTooltip(aircraft,event);$('hazard-tooltip').hidden=true;}else if(!trafficSelected)$('traffic-tooltip').hidden=true;}const now=event.timeStamp||performance.now(),previous=hazardPointerSample,elapsed=previous?Math.max(1,now-previous.time):Infinity,speed=previous?Math.hypot(event.clientX-previous.x,event.clientY-previous.y)/elapsed:0;hazardPointerSample={x:event.clientX,y:event.clientY,time:now};hazardTooltipEvent=event;if(hazardTooltipTimer){clearTimeout(hazardTooltipTimer);hazardTooltipTimer=null;}if(speed>.25)$('hazard-tooltip').hidden=true;hazardTooltipTimer=setTimeout(()=>{hazardTooltipTimer=null;if(hazardTooltipEvent&&!trafficAtEvent(hazardTooltipEvent))updateHazardTooltip(hazardTooltipEvent);},180);});
 map.addEventListener('pointerleave',()=>{hazardTooltipEvent=null;hazardPointerSample=null;if(hazardTooltipTimer){clearTimeout(hazardTooltipTimer);hazardTooltipTimer=null;}$('hazard-tooltip').hidden=true;if(!trafficSelected)$('traffic-tooltip').hidden=true;});
 document.addEventListener('pointermove',()=>{if(aloftWorker)aloftWorker.postMessage({type:'pointer'});else aloftPointerQuietUntil=performance.now()+150;},{passive:true});
-for(const type of ['pointerup','pointercancel'])map.addEventListener(type,()=>{drag=null;map.classList.remove('dragging');});
-map.addEventListener('wheel',e=>{e.preventDefault();changeZoom(e.deltaY<0?1.1:1/1.1);},{passive:false});
+function endMapPointer(event){activePointers.delete(event.pointerId);if(pinch&&activePointers.size>=2){startPinch();return;}if(pinch&&activePointers.size===1){const [pointerId,point]=activePointers.entries().next().value;pinch=null;drag={pointerId,x:point[0],y:point[1],pan:[...pan]};return;}pinch=null;if(drag?.pointerId===event.pointerId)drag=null;if(!activePointers.size)map.classList.remove('dragging');}
+for(const type of ['pointerup','pointercancel'])map.addEventListener(type,endMapPointer);
+map.addEventListener('wheel',e=>{e.preventDefault();changeZoom(e.deltaY<0?1.1:1/1.1,mapPoint(e));},{passive:false});
 new ResizeObserver(()=>{if(stations.length){draw();updateMarkers();}}).observe(map);
 async function initialize(){try{
  const results=await Promise.all(['stations.json?v=20260920-cgc-fuel1','states.json?v=regional1','airspaces.json?v=restricted1'].map(async url=>{const r=await fetch(url);if(!r.ok)throw Error('Map asset unavailable');return r.json();}));
