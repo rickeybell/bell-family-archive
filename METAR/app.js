@@ -12,7 +12,7 @@ const radarBounds={west:-91,east:-75,south:24,north:40};
 const terrainBounds={west:-91,east:-75,south:24,north:40};
 const scFloridaView={west:-83.7,east:-79,south:27.45,north:35.46};
 const scFloridaAirports=new Set(['KSAV','KAYS','KRVJ','KVDI','KSSI','KBQK']);
-const featuredFuelAirports=new Set(['KLKR','K35A','KAFP','KCDN','KCUB','KCGC','KHVS','KINF','KRCZ','KX60','KPYG','KCDK','X35','KCTY']);
+const featuredFuelAirports=new Set(['KLKR','K35A','KAFP','KCDN','KCUB','KCGC','KHVS','KINF','KRCZ','KX60','KPYG','X35','KCTY']);
 const serviceBase='https://bell-family-metar.rbell.workers.dev';
 const zoomOnlyAirports=new Map([['SC00',1],['T73',1.5],['28A',1.5],['N52',1.5],['SC76',1.5],['07NC',2],['2NC1',2.4],['NC21',2.4],['55SC',2.4],['39SC',2.4],['01SC',2.4]]);
 const catawbaWatereeRivers=new Set(['Catawba River','Wateree River']);
@@ -307,7 +307,7 @@ for(const type of ['pointerup','pointercancel'])map.addEventListener(type,endMap
 map.addEventListener('wheel',e=>{e.preventDefault();changeZoom(e.deltaY<0?1.1:1/1.1,mapPoint(e));},{passive:false});
 new ResizeObserver(()=>{if(stations.length){draw();updateMarkers();}}).observe(map);
 async function initialize(){try{
- const results=await Promise.all(['stations.json?v=20260920-cgc-fuel1','states.json?v=regional1','airspaces.json?v=restricted1'].map(async url=>{const r=await fetch(url);if(!r.ok)throw Error('Map asset unavailable');return r.json();}));
+ const results=await Promise.all(['stations.json?v=20260920-kcdk-no-fuel1','states.json?v=regional1','airspaces.json?v=restricted1'].map(async url=>{const r=await fetch(url);if(!r.ok)throw Error('Map asset unavailable');return r.json();}));
  states=results[1].features;establishedRegion=makeRegionFilter(states);stations=results[0].filter(station=>establishedRegion.containsPoint(station.lon,station.lat)).sort((a,b)=>a.priority-b.priority||a.id.localeCompare(b.id));airspaces=filterFeatureGroups(results[2].features,establishedRegion,feature=>feature.properties?.id);
  createMarkers();draw();updateMarkers();await refresh();select('KLKR');
  updateTerrain();

@@ -11767,7 +11767,6 @@
     "airspaceClasses": [],
     "fuelOnly": true,
     "minZoom": 2,
-    "fuelPriceUnavailable": true,
     "elevationFt": 11
   },
   {
