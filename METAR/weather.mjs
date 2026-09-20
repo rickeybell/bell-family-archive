@@ -142,3 +142,10 @@ export function tfrIsActive(properties,now=Date.now()){
  const starts=Date.parse(properties?.effective),expires=Date.parse(properties?.expires),permanentSecurity=!Number.isFinite(starts)&&!Number.isFinite(expires)&&String(properties?.type||properties?.LEGAL||'').toUpperCase()==='SECURITY';
  return properties?.active===true||permanentSecurity||Number.isFinite(starts)&&starts<=now&&(!Number.isFinite(expires)||expires>now);
 }
+export function fixedAirportLabelChoice(stationId,zoom,labelWidth){
+ if(stationId==='KCGC'&&Math.abs(zoom-2)<.15)return [-labelWidth/2,30];
+ if(stationId==='KLKR'&&zoom>=1.5)return zoom<2.75?[18,-22]:[-38-labelWidth,-22];
+ if(zoom<1.01&&stationId==='KCUB')return [18,-20];
+ if(zoom<1.01&&stationId==='KCAE')return [-15-labelWidth,5];
+ return null;
+}
