@@ -16,6 +16,10 @@ export function trafficVisibleAtZoom(aircraft,zoom,alwaysVisibleIdentifiers){
  return zoom>=1.5;
 }
 
+export function trafficHasConstantLabel(aircraft,alwaysVisibleIdentifiers){
+ return alwaysVisibleIdentifiers.has(normalizeTrafficIdentifier(aircraft?.id));
+}
+
 export function trafficPollingNeeded(zoom,alwaysVisibleIdentifiers){
  return zoom>=1.5||alwaysVisibleIdentifiers.size>0;
 }

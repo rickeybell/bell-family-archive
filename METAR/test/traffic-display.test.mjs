@@ -1,12 +1,17 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {alwaysVisibleTrafficIdentifiers,normalizeTrafficIdentifier,trafficPollingNeeded,trafficVisibleAtZoom} from '../traffic-display.mjs';
+import {alwaysVisibleTrafficIdentifiers,normalizeTrafficIdentifier,trafficHasConstantLabel,trafficPollingNeeded,trafficVisibleAtZoom} from '../traffic-display.mjs';
 
 const listed=new Set(['N123AB']);
 
 test('owner aircraft list is normalized and complete',()=>{
  assert.deepEqual([...alwaysVisibleTrafficIdentifiers],['N2177F','N7929G','N4781L','N32488','N71045','N9452P']);
- for(const id of alwaysVisibleTrafficIdentifiers)assert.equal(trafficVisibleAtZoom({id:id.toLowerCase()},.5,alwaysVisibleTrafficIdentifiers),true);
+ for(const id of alwaysVisibleTrafficIdentifiers){
+  const aircraft={id:id.toLowerCase()};
+  assert.equal(trafficVisibleAtZoom(aircraft,.5,alwaysVisibleTrafficIdentifiers),true);
+  assert.equal(trafficHasConstantLabel(aircraft,alwaysVisibleTrafficIdentifiers),true);
+ }
+ assert.equal(trafficHasConstantLabel({id:'N999ZZ'},alwaysVisibleTrafficIdentifiers),false);
 });
 
 test('ordinary traffic appears only at 150 percent and closer',()=>{

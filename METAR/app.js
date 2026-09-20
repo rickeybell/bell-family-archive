@@ -1,6 +1,6 @@
 import {CATEGORIES,COLORS,statusOf,observationTime,observationUsable,selectLatest,ceiling,conditions,conditionMetricClass,wind,compactWind,windDisplayLevel,shouldDisplayWind,interpolateWind,fuelPriceClass,fuelPriceVisible,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,containsPointOrNearLine,gairmetExpiresAt} from './weather.mjs?v=20260920-pi-portable2';
 import {filterFeatureGroups,makeRegionFilter} from './region-filter.mjs?v=20260920-state-filter1';
-import {alwaysVisibleTrafficIdentifiers,trafficPollingNeeded,trafficVisibleAtZoom} from './traffic-display.mjs?v=20260920-aircraft-list1';
+import {alwaysVisibleTrafficIdentifiers,trafficHasConstantLabel,trafficPollingNeeded,trafficVisibleAtZoom} from './traffic-display.mjs?v=20260920-listed-label1';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 window.METAR_STARTED=true;
 const defaultPan=[48,30];
@@ -40,6 +40,7 @@ function positionTrafficTooltip(aircraft,event){const box=$('traffic-tooltip');i
 function drawTraffic(){
  trafficContext.clearRect(0,0,width,height);trafficScreen=[];if(!trafficOn){$('traffic-tooltip').hidden=true;return;}const aircraftList=visibleTraffic();trafficContext.lineJoin='round';
  for(const aircraft of aircraftList){const [x,y]=xy(aircraft.lon,aircraft.lat),angle=(Number(aircraft.track)||0)*Math.PI/180,selectedAircraft=aircraft.id===trafficSelected;trafficScreen.push({...aircraft,x,y});trafficContext.save();trafficContext.translate(x,y);trafficContext.rotate(angle);trafficContext.beginPath();trafficContext.moveTo(0,-8);trafficContext.lineTo(5,7);trafficContext.lineTo(0,4);trafficContext.lineTo(-5,7);trafficContext.closePath();trafficContext.fillStyle=selectedAircraft?'#fff':'#76d9ff';trafficContext.strokeStyle='#06131b';trafficContext.lineWidth=2;trafficContext.stroke();trafficContext.fill();trafficContext.restore();
+  if(trafficHasConstantLabel(aircraft,alwaysVisibleTrafficIdentifiers)){const label=aircraft.id;trafficContext.font='bold 11px Consolas, monospace';const labelWidth=Math.ceil(trafficContext.measureText(label).width)+10,labelHeight=18;let left=x+11;if(left+labelWidth>width-4)left=x-labelWidth-11;const top=Math.max(4,Math.min(height-labelHeight-4,y-labelHeight/2));trafficContext.fillStyle='#07151fee';trafficContext.strokeStyle=selectedAircraft?'#fff':'#76d9ff';trafficContext.lineWidth=1;trafficContext.fillRect(left,top,labelWidth,labelHeight);trafficContext.strokeRect(left+.5,top+.5,labelWidth-1,labelHeight-1);trafficContext.fillStyle='#e7f8ff';trafficContext.fillText(label,left+5,top+13);}
  }
  const selectedAircraft=trafficScreen.find(aircraft=>aircraft.id===trafficSelected);if(trafficSelected&&!selectedAircraft){trafficSelected=null;$('traffic-tooltip').hidden=true;}else if(selectedAircraft&&!$('traffic-tooltip').hidden)positionTrafficTooltip(selectedAircraft);
 }
