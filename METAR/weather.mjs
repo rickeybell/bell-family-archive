@@ -37,6 +37,20 @@ export function conditions(report,showAll=false,showClear=false){
  const visibilityValue=typeof rawVisibility==='string'&&rawVisibility.endsWith('+')?`${visibility.toLocaleString(undefined,{maximumFractionDigits:2})}+`:visibility.toLocaleString(undefined,{maximumFractionDigits:2});
  return {ceiling:showClear&&ceilingText==='Clear'?'C-Clear':`C-${ceilingText}`,visibility:rawVisibility!=null&&Number.isFinite(visibility)&&(showAll||visibility<=9)?`V-${visibilityValue} sm`:showAll?'V-Unavailable':''};
 }
+export function conditionMetricClass(report,metric){
+ if(metric==='visibility'){
+  const value=Number.parseFloat(report?.visib);
+  if(!Number.isFinite(value))return '';
+  return value<3?'condition-ifr':value>5?'condition-vfr':'';
+ }
+ if(metric==='ceiling'){
+  if(!Array.isArray(report?.clouds))return '';
+  const layers=report.clouds.filter(cloud=>['BKN','OVC','VV'].includes(cloud.cover)&&Number.isFinite(cloud.base)&&cloud.base>=0);
+  if(layers.length){const value=Math.min(...layers.map(cloud=>cloud.base));return value<1000?'condition-ifr':value>3000?'condition-vfr':'';}
+  return report.clouds.length||['CLR','SKC','CAVOK','FEW','SCT'].includes(report.cover)?'condition-vfr':'';
+ }
+ return '';
+}
 export function wind(report){
  if(!report||!Number.isFinite(report.wspd))return 'Unavailable';
  if(report.wspd===0)return 'Calm';
