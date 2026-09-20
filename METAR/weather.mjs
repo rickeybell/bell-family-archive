@@ -134,3 +134,11 @@ export function containsPointOrNearLine(feature,lon,lat,tolerance=0){
  return lines.some(line=>line.length>=3&&insideRing(line,lon,lat)||line.some((point,index)=>index&&segmentDistance([lon,lat],line[index-1],point)<=tolerance));
 }
 export function gairmetExpiresAt(validTime){const time=Date.parse(validTime);return Number.isFinite(time)?time+3*60*60*1000:NaN;}
+export function tfrIsVisible(properties,now=Date.now(),futureWindowMs=24*60*60*1000){
+ const starts=Date.parse(properties?.effective),expires=Date.parse(properties?.expires);
+ return (!Number.isFinite(starts)||starts<=now+futureWindowMs)&&(!Number.isFinite(expires)||expires>now);
+}
+export function tfrIsActive(properties,now=Date.now()){
+ const starts=Date.parse(properties?.effective),expires=Date.parse(properties?.expires),permanentSecurity=!Number.isFinite(starts)&&!Number.isFinite(expires)&&String(properties?.type||properties?.LEGAL||'').toUpperCase()==='SECURITY';
+ return properties?.active===true||permanentSecurity||Number.isFinite(starts)&&starts<=now&&(!Number.isFinite(expires)||expires>now);
+}

@@ -11754,5 +11754,54 @@
         "length": 2580
       }
     ]
+  },
+  {
+    "id": "KCDK",
+    "name": "George T Lewis Arpt",
+    "state": "FL",
+    "lat": 29.1342472,
+    "lon": -83.0505833,
+    "priority": 5,
+    "base": false,
+    "maxRunway": 2302,
+    "airspaceClasses": [],
+    "fuelOnly": true,
+    "minZoom": 2,
+    "fuelPriceUnavailable": true,
+    "elevationFt": 11
+  },
+  {
+    "id": "X35",
+    "name": "Marion County Arpt",
+    "state": "FL",
+    "lat": 29.0617672,
+    "lon": -82.3766194,
+    "priority": 5,
+    "base": false,
+    "maxRunway": 5000,
+    "airspaceClasses": [],
+    "fuelOnly": true,
+    "minZoom": 2,
+    "fuel100LL": 6.4,
+    "fuelService": "self-service",
+    "fuelPriceReported": "2026-09-11",
+    "elevationFt": 65.4
+  },
+  {
+    "id": "KCTY",
+    "name": "Cross City Arpt",
+    "state": "FL",
+    "lat": 29.6355278,
+    "lon": -83.10475,
+    "priority": 5,
+    "base": false,
+    "maxRunway": 5005,
+    "airspaceClasses": [],
+    "fuelOnly": true,
+    "minZoom": 2,
+    "fuel100LL": 5.95,
+    "fuelService": "assisted/self-service",
+    "fuelPriceReported": "2026-09-20",
+    "elevationFt": 42.1
   }
 ]
