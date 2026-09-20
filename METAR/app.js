@@ -1,10 +1,11 @@
 import {CATEGORIES,COLORS,statusOf,observationTime,observationUsable,selectLatest,ceiling,conditions,conditionMetricClass,wind,compactWind,windDisplayLevel,shouldDisplayWind,interpolateWind,fuelPriceClass,fuelPriceVisible,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,containsPointOrNearLine,gairmetExpiresAt} from './weather.mjs?v=20260920-pi-portable2';
+import {filterFeatureGroups,makeRegionFilter} from './region-filter.mjs?v=20260920-state-filter1';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 window.METAR_STARTED=true;
 const defaultPan=[48,30];
 const ALOFT_FRAME_INTERVAL=32,ALOFT_VECTOR_INTERVAL=200;
 const map=$('map');let aloftCanvas=$('winds-aloft-canvas'),aloftContext=null,aloftWorker=null;const trafficCanvas=$('traffic-canvas'),trafficContext=trafficCanvas.getContext('2d',{alpha:true});let stations=[],states=[],airspaces=[],airmets=[],sigmets=[],tfrs=[],waterData={rivers:[],lakes:[]},waterDetailData={rivers:[],lakes:[],overviewRivers:[],overviewLakes:[],t73Rivers:[],t73Lakes:[]},waterLoaded=false,waterLoading=false,waterDetailLoaded=false,waterDetailLoading=false,reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],scFitView=true,feed=null,loading=false,timer,radarOn=true,aloftOn=true,lightningOn=false,windOn=true,trafficOn=false,trafficLoading=false,trafficTimer=null,trafficAircraft=[],trafficScreen=[],trafficSelected=null,trafficFetchedAt=0,airmetOn=false,sigmetOn=true,hazardsLoaded=false,hazardsLoading=false,tfrsLoaded=false,tfrsLoading=false,displayedIds=new Set(),aloftPayload=null,aloftLevel='3000',aloftData=null,aloftLookup=new Map(),aloftLoading=false,aloftParticles=[],aloftAnimation=null,aloftLastFrame=0,aloftPointerQuietUntil=0;
-const nodes=new Map();
+const nodes=new Map();let establishedRegion=null;
 const radarBounds={west:-91,east:-75,south:24,north:40};
 const terrainBounds={west:-91,east:-75,south:24,north:40};
 const scFloridaView={west:-83.7,east:-79,south:27.45,north:35.46};
@@ -238,8 +239,9 @@ function updateRadar(){
  image.classList.remove('unavailable');image.setAttribute('href',`${serviceBase}/radar?v=regional1-${bucket}`);
 }
 function updateTerrain(){$('terrain-image').setAttribute('href',`${serviceBase}/terrain?v=mercator2`);}
-async function loadWater(){if(waterLoading||waterLoaded)return;waterLoading=true;try{const response=await fetch(`${serviceBase}/water?v=vector1`,{signal:AbortSignal.timeout(35000)}),data=await response.json();if(!response.ok)throw Error('Water layer unavailable');waterData={rivers:data.rivers||[],lakes:data.lakes||[]};waterLoaded=true;drawWater();}catch(error){console.error(error);}finally{waterLoading=false;}}
-async function loadWaterDetail(){if(waterDetailLoading||waterDetailLoaded)return;waterDetailLoading=true;try{const response=await fetch(`${serviceBase}/water-detail?v=basin11`,{signal:AbortSignal.timeout(130000)}),data=await response.json();if(!response.ok)throw Error('Detailed water layer unavailable');waterDetailData={rivers:data.rivers||[],lakes:data.lakes||[],overviewRivers:data.overviewRivers||[],overviewLakes:data.overviewLakes||[],t73Rivers:data.t73Rivers||[],t73Lakes:data.t73Lakes||[]};waterDetailLoaded=true;drawWater();}catch(error){console.error(error);}finally{waterDetailLoading=false;}}
+const keepEstablishedFeature=feature=>!establishedRegion||establishedRegion.touches(feature.geometry);
+async function loadWater(){if(waterLoading||waterLoaded)return;waterLoading=true;try{const response=await fetch(`${serviceBase}/water?v=vector1`,{signal:AbortSignal.timeout(35000)}),data=await response.json();if(!response.ok)throw Error('Water layer unavailable');waterData={rivers:(data.rivers||[]).filter(keepEstablishedFeature),lakes:(data.lakes||[]).filter(keepEstablishedFeature)};waterLoaded=true;drawWater();}catch(error){console.error(error);}finally{waterLoading=false;}}
+async function loadWaterDetail(){if(waterDetailLoading||waterDetailLoaded)return;waterDetailLoading=true;try{const response=await fetch(`${serviceBase}/water-detail?v=basin11`,{signal:AbortSignal.timeout(130000)}),data=await response.json();if(!response.ok)throw Error('Detailed water layer unavailable');waterDetailData={rivers:(data.rivers||[]).filter(keepEstablishedFeature),lakes:(data.lakes||[]).filter(keepEstablishedFeature),overviewRivers:(data.overviewRivers||[]).filter(keepEstablishedFeature),overviewLakes:(data.overviewLakes||[]).filter(keepEstablishedFeature),t73Rivers:(data.t73Rivers||[]).filter(keepEstablishedFeature),t73Lakes:(data.t73Lakes||[]).filter(keepEstablishedFeature)};waterDetailLoaded=true;drawWater();}catch(error){console.error(error);}finally{waterDetailLoading=false;}}
 function drawWater(){const layer=$('water');layer.replaceChildren();if(!waterLoaded)return;const bounds=visibleBounds(30),add=(features,cls)=>{const d=features.filter(feature=>intersectsBounds(feature,bounds)).map(feature=>geometryPath(feature.geometry)).filter(Boolean).join('');if(d)el('path',{d,class:cls,'fill-rule':'evenodd'},layer);};add(waterData.lakes,'water-lake');add(waterData.rivers,'water-river');if(!waterDetailLoaded)loadWaterDetail();const basinRivers=zoom<=1?waterDetailData.overviewRivers:waterDetailData.rivers,basinLakes=zoom<=1?waterDetailData.overviewLakes:waterDetailData.lakes,mainLakes=basinLakes.filter(feature=>catawbaWatereeLakes.has(feature.properties?.gnis_name)),mainRivers=basinRivers.filter(feature=>catawbaWatereeRivers.has(feature.properties?.gnis_name));add(mainLakes,'water-lake water-detail-lake');add(mainRivers,'water-river water-detail-river');if(zoom>=1.5){add(waterDetailData.lakes.filter(feature=>!catawbaWatereeLakes.has(feature.properties?.gnis_name)),'water-lake water-detail-lake');add(waterDetailData.rivers.filter(feature=>!catawbaWatereeRivers.has(feature.properties?.gnis_name)),'water-river water-detail-river');}const localRivers=waterDetailData.t73Rivers.filter(feature=>!selectedDetailedRivers.has(feature.properties?.gnis_name)),localLakes=waterDetailData.t73Lakes;if(zoom>=4){add(localLakes,'water-lake water-detail-lake');add(localRivers,'water-river water-detail-river');}else if(zoom>=3){add(localLakes.filter(feature=>feature.properties?.gnis_name==='Lancaster Reservoir'),'water-lake water-detail-lake');add(localRivers.filter(feature=>Number(feature.properties?.streamorde)>=5),'water-river water-detail-river');}}
 function updateLightning(){
  if(!lightningOn)return;
@@ -253,7 +255,7 @@ async function loadHazards(force=false,silent=false){
 }
 async function loadTfrs(force=false,silent=false){
  if(tfrsLoading||tfrsLoaded&&!force)return;tfrsLoading=true;
- try{const r=await fetch(`${serviceBase}/tfrs?v=1`,{cache:'no-store',signal:AbortSignal.timeout(30000)}),data=await r.json();if(!r.ok)throw Error('TFR service unavailable');tfrs=data.features||[];tfrsLoaded=true;draw();}
+ try{const r=await fetch(`${serviceBase}/tfrs?v=1`,{cache:'no-store',signal:AbortSignal.timeout(30000)}),data=await r.json();if(!r.ok)throw Error('TFR service unavailable');tfrs=(data.features||[]).filter(keepEstablishedFeature);tfrsLoaded=true;draw();}
  catch{if(!silent)notify('TFR overlays are temporarily unavailable.',true);}
  finally{tfrsLoading=false;}
 }
@@ -301,7 +303,7 @@ map.addEventListener('wheel',e=>{e.preventDefault();changeZoom(e.deltaY<0?1.1:1/
 new ResizeObserver(()=>{if(stations.length){draw();updateMarkers();}}).observe(map);
 async function initialize(){try{
  const results=await Promise.all(['stations.json?v=20260920-pi-portable2','states.json?v=regional1','airspaces.json?v=restricted1'].map(async url=>{const r=await fetch(url);if(!r.ok)throw Error('Map asset unavailable');return r.json();}));
- stations=results[0].sort((a,b)=>a.priority-b.priority||a.id.localeCompare(b.id));states=results[1].features;airspaces=results[2].features;
+ states=results[1].features;establishedRegion=makeRegionFilter(states);stations=results[0].filter(station=>establishedRegion.containsPoint(station.lon,station.lat)).sort((a,b)=>a.priority-b.priority||a.id.localeCompare(b.id));airspaces=filterFeatureGroups(results[2].features,establishedRegion,feature=>feature.properties?.id);
  createMarkers();draw();updateMarkers();await refresh();select('KLKR');
  updateTerrain();
  loadWater();
