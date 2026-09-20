@@ -1,3 +1,12 @@
+export const alwaysVisibleTrafficIdentifiers=new Set([
+ 'N2177F',
+ 'N7929G',
+ 'N4781L',
+ 'N32488',
+ 'N71045',
+ 'N9452P',
+]);
+
 export function normalizeTrafficIdentifier(value){
  return String(value||'').trim().toUpperCase();
 }

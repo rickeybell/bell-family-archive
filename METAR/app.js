@@ -1,11 +1,9 @@
 import {CATEGORIES,COLORS,statusOf,observationTime,observationUsable,selectLatest,ceiling,conditions,conditionMetricClass,wind,compactWind,windDisplayLevel,shouldDisplayWind,interpolateWind,fuelPriceClass,fuelPriceVisible,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,containsPointOrNearLine,gairmetExpiresAt} from './weather.mjs?v=20260920-pi-portable2';
 import {filterFeatureGroups,makeRegionFilter} from './region-filter.mjs?v=20260920-state-filter1';
-import {trafficPollingNeeded,trafficVisibleAtZoom} from './traffic-display.mjs?v=20260920-zoom-filter1';
+import {alwaysVisibleTrafficIdentifiers,trafficPollingNeeded,trafficVisibleAtZoom} from './traffic-display.mjs?v=20260920-aircraft-list1';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 window.METAR_STARTED=true;
 const defaultPan=[48,30];
-// Add owner-provided aircraft identifiers here when they are available.
-const alwaysVisibleTrafficIdentifiers=new Set([]);
 const ALOFT_FRAME_INTERVAL=32,ALOFT_VECTOR_INTERVAL=200;
 const map=$('map');let aloftCanvas=$('winds-aloft-canvas'),aloftContext=null,aloftWorker=null;const trafficCanvas=$('traffic-canvas'),trafficContext=trafficCanvas.getContext('2d',{alpha:true});let stations=[],states=[],airspaces=[],airmets=[],sigmets=[],tfrs=[],waterData={rivers:[],lakes:[]},waterDetailData={rivers:[],lakes:[],overviewRivers:[],overviewLakes:[],t73Rivers:[],t73Lakes:[]},waterLoaded=false,waterLoading=false,waterDetailLoaded=false,waterDetailLoading=false,reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],scFitView=true,feed=null,loading=false,timer,radarOn=true,aloftOn=true,lightningOn=false,windOn=true,trafficOn=false,trafficLoading=false,trafficTimer=null,trafficAircraft=[],trafficScreen=[],trafficSelected=null,trafficFetchedAt=0,airmetOn=false,sigmetOn=true,hazardsLoaded=false,hazardsLoading=false,tfrsLoaded=false,tfrsLoading=false,displayedIds=new Set(),aloftPayload=null,aloftLevel='3000',aloftData=null,aloftLookup=new Map(),aloftLoading=false,aloftParticles=[],aloftAnimation=null,aloftLastFrame=0,aloftPointerQuietUntil=0;
 const nodes=new Map();let establishedRegion=null;
