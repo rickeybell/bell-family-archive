@@ -1,9 +1,9 @@
-import {CATEGORIES,COLORS,statusOf,observationTime,observationUsable,selectLatest,ceiling,conditions,conditionMetricClass,wind,compactWind,windDisplayLevel,shouldDisplayWind,interpolateWind,fuelPriceClass,fuelPriceVisible,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,containsPointOrNearLine,gairmetExpiresAt} from './weather.mjs?v=20260920-pi-portable1';
+import {CATEGORIES,COLORS,statusOf,observationTime,observationUsable,selectLatest,ceiling,conditions,conditionMetricClass,wind,compactWind,windDisplayLevel,shouldDisplayWind,interpolateWind,fuelPriceClass,fuelPriceVisible,hasRainOrMist,hasFog,hasThunderstorm,intersectsBounds,containsPoint,containsPointOrNearLine,gairmetExpiresAt} from './weather.mjs?v=20260920-pi-portable2';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 window.METAR_STARTED=true;
 const defaultPan=[48,30];
 const ALOFT_FRAME_INTERVAL=32,ALOFT_VECTOR_INTERVAL=200;
-const map=$('map');let aloftCanvas=$('winds-aloft-canvas'),aloftContext=null,aloftWorker=null;let stations=[],states=[],airspaces=[],airmets=[],sigmets=[],tfrs=[],reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],scFitView=true,feed=null,loading=false,timer,radarOn=true,aloftOn=true,lightningOn=false,windOn=true,airmetOn=false,sigmetOn=true,hazardsLoaded=false,hazardsLoading=false,tfrsLoaded=false,tfrsLoading=false,displayedIds=new Set(),aloftPayload=null,aloftLevel='3000',aloftData=null,aloftLookup=new Map(),aloftLoading=false,aloftParticles=[],aloftAnimation=null,aloftLastFrame=0,aloftPointerQuietUntil=0;
+const map=$('map');let aloftCanvas=$('winds-aloft-canvas'),aloftContext=null,aloftWorker=null;let stations=[],states=[],airspaces=[],airmets=[],sigmets=[],tfrs=[],waterData={rivers:[],lakes:[]},waterDetailData={rivers:[],lakes:[],overviewRivers:[],overviewLakes:[],t73Rivers:[],t73Lakes:[]},waterLoaded=false,waterLoading=false,waterDetailLoaded=false,waterDetailLoading=false,reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],scFitView=true,feed=null,loading=false,timer,radarOn=true,aloftOn=true,lightningOn=false,windOn=true,airmetOn=false,sigmetOn=true,hazardsLoaded=false,hazardsLoading=false,tfrsLoaded=false,tfrsLoading=false,displayedIds=new Set(),aloftPayload=null,aloftLevel='3000',aloftData=null,aloftLookup=new Map(),aloftLoading=false,aloftParticles=[],aloftAnimation=null,aloftLastFrame=0,aloftPointerQuietUntil=0;
 const nodes=new Map();
 const radarBounds={west:-91,east:-75,south:24,north:40};
 const terrainBounds={west:-91,east:-75,south:24,north:40};
@@ -12,6 +12,9 @@ const scFloridaAirports=new Set(['KSAV','KAYS','KRVJ','KVDI','KSSI','KBQK']);
 const featuredFuelAirports=new Set(['KLKR','K35A','KAFP','KCDN','KCUB','KCGC','KHVS','KINF','KRCZ','KX60','KPYG']);
 const serviceBase='https://bell-family-metar.rbell.workers.dev';
 const zoomOnlyAirports=new Map([['SC00',1],['T73',1.5],['28A',1.5],['N52',1.5],['SC76',1.5],['07NC',2],['2NC1',2.4],['NC21',2.4],['55SC',2.4],['39SC',2.4],['01SC',2.4]]);
+const catawbaWatereeRivers=new Set(['Catawba River','Wateree River']);
+const selectedDetailedRivers=new Set(['Catawba River','Wateree River','Fishing Creek','Lynches River','Little Lynches River','Rocky Creek','Cedar Creek','Big Wateree Creek']);
+const catawbaWatereeLakes=new Set(['Lake Norman','Mountain Island Lake','Lake Wylie','Lookout Shoals Lake','Lake Hickory','Fishing Creek Lake','Fishing Creek Reservoir','Great Falls Reservoir','Cedar Creek Reservoir','Wateree Lake']);
 const merc=lat=>Math.log(Math.tan(Math.PI/4+lat*Math.PI/360))*180/Math.PI;
 const unmerc=value=>(Math.atan(Math.exp(value*Math.PI/180))-Math.PI/4)*360/Math.PI;
 // Keep the user-selected regional view stable as airports are added or removed.
@@ -23,7 +26,7 @@ function useMainThreadAloft(){
 }
 function initializeAloftRenderer(){
  if(typeof Worker!=='function'||typeof aloftCanvas.transferControlToOffscreen!=='function'){aloftContext=aloftCanvas.getContext('2d',{alpha:true});return;}
- try{aloftWorker=new Worker(new URL('./wind-worker.js?v=20260920-pi-portable1',import.meta.url));aloftWorker.onerror=()=>useMainThreadAloft();const offscreen=aloftCanvas.transferControlToOffscreen();aloftWorker.postMessage({type:'init',canvas:offscreen},[offscreen]);}catch{useMainThreadAloft();}
+ try{aloftWorker=new Worker(new URL('./wind-worker.js?v=20260920-pi-portable2',import.meta.url));aloftWorker.onerror=()=>useMainThreadAloft();const offscreen=aloftCanvas.transferControlToOffscreen();aloftWorker.postMessage({type:'init',canvas:offscreen},[offscreen]);}catch{useMainThreadAloft();}
 }
 function syncAloftWorkerView(){if(aloftWorker&&width&&height)aloftWorker.postMessage({type:'view',view:{width,height,center,baseScale,zoom,pan,mapCenterY}});}
 initializeAloftRenderer();
@@ -133,6 +136,7 @@ function draw(){
  for(let lon=-88;lon<=-74;lon++){const a=xy(lon,28),b=xy(lon,39);el('path',{d:`M${a}L${b}`,class:'grid'},geo);}
  for(let lat=29;lat<=38;lat++){const a=xy(-88,lat),b=xy(-74,lat);el('path',{d:`M${a}L${b}`,class:'grid'},geo);}
  const landClip=$('land-clip');landClip.replaceChildren();for(const f of states){const polygons=f.geometry.type==='Polygon'?[f.geometry.coordinates]:f.geometry.coordinates;const d=polygons.map(p=>p.map(r=>r.map((c,i)=>`${i?'L':'M'}${xy(...c).map(n=>n.toFixed(2)).join(',')}`).join('')+'Z').join('')).join('');el('path',{d,class:`state ${f.id==='45'?'sc':''}`,'fill-rule':'evenodd'},geo);el('path',{d,'fill-rule':'evenodd'},landClip);}
+ drawWater();
  const airspaceLayer=$('airspaces');airspaceLayer.replaceChildren();const viewBounds=visibleBounds(60);
  // Draw FAA shelves below labels and weather markers. Extremely light fills
  // preserve the airspace footprint without dimming the map beneath it.
@@ -216,6 +220,9 @@ function updateRadar(){
  image.classList.remove('unavailable');image.setAttribute('href',`${serviceBase}/radar?v=regional1-${bucket}`);
 }
 function updateTerrain(){$('terrain-image').setAttribute('href',`${serviceBase}/terrain?v=mercator2`);}
+async function loadWater(){if(waterLoading||waterLoaded)return;waterLoading=true;try{const response=await fetch(`${serviceBase}/water?v=vector1`,{signal:AbortSignal.timeout(35000)}),data=await response.json();if(!response.ok)throw Error('Water layer unavailable');waterData={rivers:data.rivers||[],lakes:data.lakes||[]};waterLoaded=true;drawWater();}catch(error){console.error(error);}finally{waterLoading=false;}}
+async function loadWaterDetail(){if(waterDetailLoading||waterDetailLoaded)return;waterDetailLoading=true;try{const response=await fetch(`${serviceBase}/water-detail?v=basin11`,{signal:AbortSignal.timeout(130000)}),data=await response.json();if(!response.ok)throw Error('Detailed water layer unavailable');waterDetailData={rivers:data.rivers||[],lakes:data.lakes||[],overviewRivers:data.overviewRivers||[],overviewLakes:data.overviewLakes||[],t73Rivers:data.t73Rivers||[],t73Lakes:data.t73Lakes||[]};waterDetailLoaded=true;drawWater();}catch(error){console.error(error);}finally{waterDetailLoading=false;}}
+function drawWater(){const layer=$('water');layer.replaceChildren();if(!waterLoaded)return;const bounds=visibleBounds(30),add=(features,cls)=>{const d=features.filter(feature=>intersectsBounds(feature,bounds)).map(feature=>geometryPath(feature.geometry)).filter(Boolean).join('');if(d)el('path',{d,class:cls,'fill-rule':'evenodd'},layer);};add(waterData.lakes,'water-lake');add(waterData.rivers,'water-river');if(!waterDetailLoaded)loadWaterDetail();const basinRivers=zoom<=1?waterDetailData.overviewRivers:waterDetailData.rivers,basinLakes=zoom<=1?waterDetailData.overviewLakes:waterDetailData.lakes,mainLakes=basinLakes.filter(feature=>catawbaWatereeLakes.has(feature.properties?.gnis_name)),mainRivers=basinRivers.filter(feature=>catawbaWatereeRivers.has(feature.properties?.gnis_name));add(mainLakes,'water-lake water-detail-lake');add(mainRivers,'water-river water-detail-river');if(zoom>=1.5){add(waterDetailData.lakes.filter(feature=>!catawbaWatereeLakes.has(feature.properties?.gnis_name)),'water-lake water-detail-lake');add(waterDetailData.rivers.filter(feature=>!catawbaWatereeRivers.has(feature.properties?.gnis_name)),'water-river water-detail-river');}const localRivers=waterDetailData.t73Rivers.filter(feature=>!selectedDetailedRivers.has(feature.properties?.gnis_name)),localLakes=waterDetailData.t73Lakes;if(zoom>=4){add(localLakes,'water-lake water-detail-lake');add(localRivers,'water-river water-detail-river');}else if(zoom>=3){add(localLakes.filter(feature=>feature.properties?.gnis_name==='Lancaster Reservoir'),'water-lake water-detail-lake');add(localRivers.filter(feature=>Number(feature.properties?.streamorde)>=5),'water-river water-detail-river');}}
 function updateLightning(){
  if(!lightningOn)return;
  const bucket=Math.floor(Date.now()/300000);for(const image of document.querySelectorAll('.lightning-density-image')){image.classList.remove('unavailable');image.setAttribute('href',`${serviceBase}/lightning?frame=${image.dataset.frame}&v=regional1-${bucket}`);}
@@ -273,15 +280,16 @@ for(const type of ['pointerup','pointercancel'])map.addEventListener(type,()=>{d
 map.addEventListener('wheel',e=>{e.preventDefault();changeZoom(e.deltaY<0?1.1:1/1.1);},{passive:false});
 new ResizeObserver(()=>{if(stations.length){draw();updateMarkers();}}).observe(map);
 async function initialize(){try{
- const results=await Promise.all(['stations.json?v=20260920-pi-portable1','states.json?v=regional1','airspaces.json?v=restricted1'].map(async url=>{const r=await fetch(url);if(!r.ok)throw Error('Map asset unavailable');return r.json();}));
+ const results=await Promise.all(['stations.json?v=20260920-pi-portable2','states.json?v=regional1','airspaces.json?v=restricted1'].map(async url=>{const r=await fetch(url);if(!r.ok)throw Error('Map asset unavailable');return r.json();}));
  stations=results[0].sort((a,b)=>a.priority-b.priority||a.id.localeCompare(b.id));states=results[1].features;airspaces=results[2].features;
  createMarkers();draw();updateMarkers();await refresh();select('KLKR');
  updateTerrain();
+ loadWater();
  updateRadar();
  loadWindsAloft();
  loadHazards(false,true);loadTfrs(false,true);
 }catch(error){console.error(error);notify('Unable to load the map. Reload the page to try again.',true);}
 updateClock();setInterval(()=>{updateMarkers();updateClock();},30000);setInterval(updateRadar,300000);setInterval(updateLightning,300000);setInterval(()=>loadWindsAloft(true),1800000);
 setInterval(()=>loadHazards(true,true),300000);setInterval(()=>loadTfrs(true,true),300000);
-document.addEventListener('visibilitychange',()=>{if(document.hidden){if(aloftWorker)aloftWorker.postMessage({type:'enabled',enabled:false});else if(aloftAnimation){cancelAnimationFrame(aloftAnimation);aloftAnimation=null;}}else{updateMarkers();refresh();updateTerrain();updateRadar();updateLightning();loadWindsAloft(true);startAloftAnimation();loadHazards(true,true);loadTfrs(true,true);}});}
+document.addEventListener('visibilitychange',()=>{if(document.hidden){if(aloftWorker)aloftWorker.postMessage({type:'enabled',enabled:false});else if(aloftAnimation){cancelAnimationFrame(aloftAnimation);aloftAnimation=null;}}else{updateMarkers();refresh();updateTerrain();loadWater();updateRadar();updateLightning();loadWindsAloft(true);startAloftAnimation();loadHazards(true,true);loadTfrs(true,true);}});}
 initialize();
