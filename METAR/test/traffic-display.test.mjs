@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {alwaysVisibleTrafficIdentifiers,klkrAreaModeEnabled,klkrCircleEnabled,klkrTrafficArea,normalizeTrafficIdentifier,radarCoverageWithinKlkrArea,trafficHasConstantLabel,trafficPollingNeeded,trafficVisibleAtZoom,trafficWithinKlkrArea} from '../traffic-display.mjs';
+import {alwaysVisibleTrafficIdentifiers,klkrAreaModeEnabled,klkrCircleEnabled,klkrTrafficArea,normalizeTrafficIdentifier,radarCoverageWithinKlkrArea,trafficDataFresh,trafficHasConstantLabel,trafficPollingNeeded,trafficVisibleAtZoom,trafficWithinKlkrArea} from '../traffic-display.mjs';
 
 const listed=new Set(['N123AB']);
 
@@ -18,6 +18,7 @@ test('public KLKR traffic stays active while the 50 SM circle uses a 50 percent 
  assert.equal(klkrAreaModeEnabled({trafficOn:true,zoom:1,klkrVisible:true,radarCoverage:.9}),true);
  assert.equal(klkrCircleEnabled({trafficOn:true,zoom:1,klkrVisible:true,radarCoverage:.499}),true);
  assert.equal(klkrCircleEnabled({trafficOn:true,zoom:1,klkrVisible:true,radarCoverage:.5}),false);
+ assert.equal(trafficDataFresh(100000,145000),true);assert.equal(trafficDataFresh(100000,145001),false);
  const bounds={west:klkrTrafficArea.lon-1,east:klkrTrafficArea.lon+1,south:klkrTrafficArea.lat-1,north:klkrTrafficArea.lat+1},pixels=new Uint8ClampedArray(20*20*4);assert.equal(radarCoverageWithinKlkrArea(pixels,20,20,bounds),0);
 });
 
