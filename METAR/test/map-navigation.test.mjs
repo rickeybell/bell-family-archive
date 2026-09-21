@@ -18,3 +18,9 @@ test('public map wheel zoom preserves the cursor anchor',()=>{
 test('public map pinch follows the gesture midpoint while scaling',()=>{
  assert.deepEqual(pinchView([0,0],1,[[200,200],[400,200]],[[170,240],[470,240]],[300,300]),{zoom:1.5,pan:[20,90]});
 });
+
+test('public map clears hover-only tooltips after one idle minute',()=>{
+ const app=readFileSync(new URL('../app.js',import.meta.url),'utf8');
+ assert.match(app,/setTimeout\(hideDormantHover,60000\)/);
+ assert.match(app,/hazard-tooltip'\)\.hidden=true;if\(!trafficSelected\)\$\('traffic-tooltip'\)\.hidden=true/);
+});
