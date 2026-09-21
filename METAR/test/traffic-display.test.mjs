@@ -11,8 +11,9 @@ test('public GA traffic starts enabled and matches its button state',()=>{
  assert.match(html,/id="traffic-toggle" class="active" aria-pressed="true"/);
 });
 
-test('public listed-aircraft labels use a translucent background',()=>{
- assert.match(readFileSync(new URL('../app.js',import.meta.url),'utf8'),/fillStyle='#07151fa6'/);
+test('public listed-aircraft labels have no background fill',()=>{
+ const app=readFileSync(new URL('../app.js',import.meta.url),'utf8');
+ assert.doesNotMatch(app,/#07151fa6/);assert.match(app,/trafficHasConstantLabel[\s\S]*?strokeRect\(left\+\.5,top\+\.5,labelWidth-1,labelHeight-1\)/);
 });
 
 test('public KLKR circle traffic runs 75-149 and KCGC runs 75-250 below 85 percent radar',()=>{
