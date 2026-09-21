@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {alwaysVisibleTrafficIdentifiers,normalizeTrafficIdentifier,trafficHasConstantLabel,trafficPollingNeeded,trafficVisibleAtZoom} from '../traffic-display.mjs';
+import {alwaysVisibleTrafficIdentifiers,klkrAreaModeEnabled,klkrTrafficArea,normalizeTrafficIdentifier,radarCoverageWithinKlkrArea,trafficHasConstantLabel,trafficPollingNeeded,trafficVisibleAtZoom,trafficWithinKlkrArea} from '../traffic-display.mjs';
 
 const listed=new Set(['N123AB']);
 
@@ -9,6 +9,14 @@ test('public GA traffic starts enabled and matches its button state',()=>{
  const app=readFileSync(new URL('../app.js',import.meta.url),'utf8'),html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
  assert.match(app,/windOn=true,trafficOn=true,trafficLoading=false/);
  assert.match(html,/id="traffic-toggle" class="active" aria-pressed="true"/);
+});
+
+test('public KLKR area mode uses a 30 SM boundary and light-radar requirement',()=>{
+ assert.equal(trafficWithinKlkrArea({lat:klkrTrafficArea.lat,lon:klkrTrafficArea.lon+.3}),true);
+ assert.equal(trafficWithinKlkrArea({lat:klkrTrafficArea.lat,lon:klkrTrafficArea.lon+.7}),false);
+ assert.equal(klkrAreaModeEnabled({trafficOn:true,zoom:1,klkrVisible:true,radarCoverage:.199}),true);
+ assert.equal(klkrAreaModeEnabled({trafficOn:true,zoom:1,klkrVisible:true,radarCoverage:.2}),false);
+ const bounds={west:klkrTrafficArea.lon-.6,east:klkrTrafficArea.lon+.6,south:klkrTrafficArea.lat-.6,north:klkrTrafficArea.lat+.6},pixels=new Uint8ClampedArray(20*20*4);assert.equal(radarCoverageWithinKlkrArea(pixels,20,20,bounds),0);
 });
 
 test('owner aircraft list is normalized and complete',()=>{
