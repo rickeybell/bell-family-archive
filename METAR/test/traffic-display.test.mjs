@@ -11,11 +11,12 @@ test('public GA traffic starts enabled and matches its button state',()=>{
  assert.match(html,/id="traffic-toggle" class="active" aria-pressed="true"/);
 });
 
-test('public KLKR and KCGC areas share the 75-149 traffic and 75-250 circle rules',()=>{
- assert.equal(trafficAreas.length,2);assert.equal(klkrTrafficArea.radiusSm,50);assert.equal(kcgcTrafficArea.radiusSm,50);assert.equal(kcgcTrafficArea.labelSide,'west');
+test('public KLKR circle traffic runs 75-149 and KCGC runs 75-250 below 85 percent radar',()=>{
+ assert.equal(trafficAreas.length,2);assert.equal(klkrTrafficArea.radiusSm,50);assert.equal(kcgcTrafficArea.radiusSm,50);assert.equal(klkrTrafficArea.maxRadarCoverage,.85);assert.equal(kcgcTrafficArea.maxRadarCoverage,.85);assert.equal(kcgcTrafficArea.labelSide,'west');
  assert.equal(trafficWithinArea({lat:kcgcTrafficArea.lat,lon:kcgcTrafficArea.lon+.6},kcgcTrafficArea),true);assert.equal(trafficWithinArea({lat:kcgcTrafficArea.lat,lon:kcgcTrafficArea.lon+1},kcgcTrafficArea),false);
- assert.equal(trafficAreaModeEnabled({trafficOn:true,zoom:.75,areaVisible:true}),true);assert.equal(trafficAreaModeEnabled({trafficOn:true,zoom:1.49,areaVisible:true}),true);assert.equal(trafficAreaModeEnabled({trafficOn:true,zoom:1.5,areaVisible:true}),false);
- assert.equal(trafficCircleEnabled({trafficOn:true,zoom:.75,areaVisible:true,radarCoverage:.499}),true);assert.equal(trafficCircleEnabled({trafficOn:true,zoom:2.5,areaVisible:true,radarCoverage:.499}),true);assert.equal(trafficCircleEnabled({trafficOn:true,zoom:2.501,areaVisible:true,radarCoverage:.1}),false);assert.equal(trafficCircleEnabled({trafficOn:true,zoom:1,areaVisible:true,radarCoverage:.5}),false);
+ assert.equal(trafficAreaModeEnabled({trafficOn:true,zoom:.75,areaVisible:true,radarCoverage:.849,...klkrTrafficArea}),true);assert.equal(trafficAreaModeEnabled({trafficOn:true,zoom:1.49,areaVisible:true,radarCoverage:.1,...klkrTrafficArea}),true);assert.equal(trafficAreaModeEnabled({trafficOn:true,zoom:1.5,areaVisible:true,radarCoverage:.1,...klkrTrafficArea}),false);
+ assert.equal(trafficAreaModeEnabled({trafficOn:true,zoom:1.5,areaVisible:true,radarCoverage:.1,...kcgcTrafficArea}),true);assert.equal(trafficAreaModeEnabled({trafficOn:true,zoom:2.5,areaVisible:true,radarCoverage:.1,...kcgcTrafficArea}),true);assert.equal(trafficAreaModeEnabled({trafficOn:true,zoom:2.501,areaVisible:true,radarCoverage:.1,...kcgcTrafficArea}),false);
+ assert.equal(trafficCircleEnabled({trafficOn:true,zoom:1,areaVisible:true,radarCoverage:.849,...klkrTrafficArea}),true);assert.equal(trafficCircleEnabled({trafficOn:true,zoom:1,areaVisible:true,radarCoverage:.85,...klkrTrafficArea}),false);
  assert.equal(trafficDataFresh(100000,145000),true);assert.equal(trafficDataFresh(100000,145001),false);
  assert.equal(trafficButtonDetail(['KCGC']),'KCGC Area <180kts');assert.equal(trafficButtonDetail(['KLKR','KCGC']),'KLKR/KCGC Areas <180kts');assert.equal(trafficButtonDetail([]),'<180kts');
  const bounds={west:kcgcTrafficArea.lon-1,east:kcgcTrafficArea.lon+1,south:kcgcTrafficArea.lat-1,north:kcgcTrafficArea.lat+1},pixels=new Uint8ClampedArray(20*20*4);assert.equal(radarCoverageWithinArea(pixels,20,20,bounds,kcgcTrafficArea),0);
