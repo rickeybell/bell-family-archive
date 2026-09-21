@@ -1,8 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
 import {alwaysVisibleTrafficIdentifiers,normalizeTrafficIdentifier,trafficHasConstantLabel,trafficPollingNeeded,trafficVisibleAtZoom} from '../traffic-display.mjs';
 
 const listed=new Set(['N123AB']);
+
+test('public GA traffic starts enabled and matches its button state',()=>{
+ const app=readFileSync(new URL('../app.js',import.meta.url),'utf8'),html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
+ assert.match(app,/windOn=true,trafficOn=true,trafficLoading=false/);
+ assert.match(html,/id="traffic-toggle" class="active" aria-pressed="true"/);
+});
 
 test('owner aircraft list is normalized and complete',()=>{
  assert.deepEqual([...alwaysVisibleTrafficIdentifiers],['N2177F','N7929G','N4781L','N32488','N71045','N9452P']);
