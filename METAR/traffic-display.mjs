@@ -9,9 +9,18 @@ export const alwaysVisibleTrafficIdentifiers=new Set([
 export const klkrTrafficArea=Object.freeze({lat:34.72659,lon:-80.85316,radiusSm:50,maxRadarCoverage:.85,minZoom:.75,maxZoom:1.5,maxZoomInclusive:false});
 export const kcgcTrafficArea=Object.freeze({id:'KCGC',lat:28.86602,lon:-82.57413,radiusSm:50,maxRadarCoverage:.85,minZoom:.75,maxZoom:2.5,maxZoomInclusive:true,labelSide:'west'});
 export const trafficAreas=Object.freeze([Object.freeze({id:'KLKR',...klkrTrafficArea,labelSide:'east'}),kcgcTrafficArea]);
+export const simulatedTrafficAircraft=Object.freeze([
+ Object.freeze({id:'N32488',lat:33.72087,lon:-80.65973,speed:109,altitude:8500,track:212,age:0,origin:'KSSC',destination:'KOGB',simulated:true}),
+ Object.freeze({id:'N9452P',lat:33.19237,lon:-80.74673,speed:180,altitude:15000,track:162,age:0,origin:'KOGB',destination:'KRBW',simulated:true}),
+]);
 
 export function normalizeTrafficIdentifier(value){
  return String(value||'').trim().toUpperCase();
+}
+
+export function withSimulatedTraffic(aircraft,simulations=simulatedTrafficAircraft){
+ const simulatedIds=new Set(simulations.map(item=>normalizeTrafficIdentifier(item.id)));
+ return [...simulations,...(Array.isArray(aircraft)?aircraft:[]).filter(item=>!simulatedIds.has(normalizeTrafficIdentifier(item?.id)))];
 }
 
 export function trafficVisibleAtZoom(aircraft,zoom,alwaysVisibleIdentifiers){

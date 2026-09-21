@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {alwaysVisibleTrafficIdentifiers,kcgcTrafficArea,klkrTrafficArea,normalizeTrafficIdentifier,radarCoverageWithinArea,trafficAreaModeEnabled,trafficAreas,trafficButtonDetail,trafficCircleEnabled,trafficDataFresh,trafficHasConstantLabel,trafficPollingNeeded,trafficVisibleAtZoom,trafficWithinArea} from '../traffic-display.mjs';
+import {alwaysVisibleTrafficIdentifiers,kcgcTrafficArea,klkrTrafficArea,normalizeTrafficIdentifier,radarCoverageWithinArea,simulatedTrafficAircraft,trafficAreaModeEnabled,trafficAreas,trafficButtonDetail,trafficCircleEnabled,trafficDataFresh,trafficHasConstantLabel,trafficPollingNeeded,trafficVisibleAtZoom,trafficWithinArea,withSimulatedTraffic} from '../traffic-display.mjs';
 
 const listed=new Set(['N123AB']);
 
@@ -30,6 +30,11 @@ test('owner aircraft list is normalized and complete',()=>{
   assert.equal(trafficHasConstantLabel(aircraft,alwaysVisibleTrafficIdentifiers),true);
  }
  assert.equal(trafficHasConstantLabel({id:'N999ZZ'},alwaysVisibleTrafficIdentifiers),false);
+});
+
+test('public map injects the two requested listed-aircraft simulations without duplicates',()=>{
+ assert.deepEqual(simulatedTrafficAircraft.map(({id,speed,altitude,origin,destination})=>({id,speed,altitude,origin,destination})),[{id:'N32488',speed:109,altitude:8500,origin:'KSSC',destination:'KOGB'},{id:'N9452P',speed:180,altitude:15000,origin:'KOGB',destination:'KRBW'}]);
+ assert.equal(withSimulatedTraffic([{id:'N32488'}]).filter(item=>item.id==='N32488').length,1);
 });
 
 test('ordinary traffic appears only at 150 percent and closer',()=>{
