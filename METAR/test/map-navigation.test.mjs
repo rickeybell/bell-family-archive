@@ -24,3 +24,10 @@ test('public map clears hover-only tooltips after one idle minute',()=>{
  assert.match(app,/setTimeout\(hideDormantHover,60000\)/);
  assert.match(app,/hazard-tooltip'\)\.hidden=true;if\(!trafficSelected\)\$\('traffic-tooltip'\)\.hidden=true/);
 });
+
+test('airport pointer presses bypass map pointer capture so clicks reach the marker',()=>{
+ const app=readFileSync(new URL('../app.js',import.meta.url),'utf8');
+ const handler=app.match(/map\.addEventListener\('pointerdown',[^\n]+/)[0];
+ assert.ok(handler.indexOf("e.target.closest('.airport')")<handler.indexOf('activePointers.set'));
+ assert.ok(handler.indexOf("e.target.closest('.airport')")<handler.indexOf('setPointerCapture'));
+});
