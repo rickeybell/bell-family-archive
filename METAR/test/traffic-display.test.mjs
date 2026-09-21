@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {alwaysVisibleTrafficIdentifiers,kcgcTrafficArea,klkrTrafficArea,normalizeTrafficIdentifier,radarCoverageWithinArea,simulatedTrafficAircraft,trafficAreaModeEnabled,trafficAreas,trafficButtonDetail,trafficCircleEnabled,trafficDataFresh,trafficHasConstantLabel,trafficPollingNeeded,trafficVisibleAtZoom,trafficWithinArea,withSimulatedTraffic} from '../traffic-display.mjs';
+import {alwaysVisibleTrafficIdentifiers,helicopterTrafficIdentifiers,kcgcTrafficArea,klkrTrafficArea,normalizeTrafficIdentifier,radarCoverageWithinArea,simulatedTrafficAircraft,trafficAreaModeEnabled,trafficAreas,trafficButtonDetail,trafficCircleEnabled,trafficDataFresh,trafficHasConstantLabel,trafficIconKind,trafficPollingNeeded,trafficVisibleAtZoom,trafficWithinArea,withSimulatedTraffic} from '../traffic-display.mjs';
 
 const listed=new Set(['N123AB']);
 
@@ -14,6 +14,13 @@ test('public GA traffic starts enabled and matches its button state',()=>{
 test('public listed-aircraft labels have no background fill',()=>{
  const app=readFileSync(new URL('../app.js',import.meta.url),'utf8');
  assert.doesNotMatch(app,/#07151fa6/);assert.match(app,/trafficHasConstantLabel[\s\S]*?strokeRect\(left\+\.5,top\+\.5,labelWidth-1,labelHeight-1\)/);
+});
+
+test('public map uses the selected rotor-disc icon for known medical helicopters',()=>{
+ const app=readFileSync(new URL('../app.js',import.meta.url),'utf8');
+ assert.deepEqual([...helicopterTrafficIdentifiers],['N600MT','N506MT']);
+ assert.equal(trafficIconKind({id:'n600mt'}),'helicopter');assert.equal(trafficIconKind({id:'N2177F'}),'airplane');
+ assert.match(app,/kind==='helicopter'[\s\S]*?arc\(0,-1,8,0,Math\.PI\*2\)[\s\S]*?ellipse\(0,-1,3\.8,5\.5/);
 });
 
 test('public KLKR circle traffic runs 75-149 and KCGC runs 75-250 below 85 percent radar',()=>{

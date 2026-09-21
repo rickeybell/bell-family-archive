@@ -6,6 +6,7 @@ export const alwaysVisibleTrafficIdentifiers=new Set([
  'N71045',
  'N9452P',
 ]);
+export const helicopterTrafficIdentifiers=new Set(['N600MT','N506MT']);
 export const klkrTrafficArea=Object.freeze({lat:34.72659,lon:-80.85316,radiusSm:50,maxRadarCoverage:.85,minZoom:.75,maxZoom:1.5,maxZoomInclusive:false});
 export const kcgcTrafficArea=Object.freeze({id:'KCGC',lat:28.86602,lon:-82.57413,radiusSm:50,maxRadarCoverage:.85,minZoom:.75,maxZoom:2.5,maxZoomInclusive:true,labelSide:'west'});
 export const trafficAreas=Object.freeze([Object.freeze({id:'KLKR',...klkrTrafficArea,labelSide:'east'}),kcgcTrafficArea]);
@@ -30,6 +31,12 @@ export function trafficVisibleAtZoom(aircraft,zoom,alwaysVisibleIdentifiers){
 
 export function trafficHasConstantLabel(aircraft,alwaysVisibleIdentifiers){
  return alwaysVisibleIdentifiers.has(normalizeTrafficIdentifier(aircraft?.id));
+}
+
+export function trafficIconKind(aircraft,alwaysVisibleIdentifiers=alwaysVisibleTrafficIdentifiers){
+ const id=normalizeTrafficIdentifier(aircraft?.id);
+ if(helicopterTrafficIdentifiers.has(id))return 'helicopter';
+ return alwaysVisibleIdentifiers.has(id)?'airplane':null;
 }
 
 export function trafficPollingNeeded(zoom,alwaysVisibleIdentifiers){
