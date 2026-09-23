@@ -2,12 +2,14 @@ import {CATEGORIES,COLORS,statusOf,observationTime,observationUsable,selectLates
 import {filterFeatureGroups,makeRegionFilter} from './region-filter.mjs?v=20260920-state-filter1';
 import {alwaysVisibleTrafficIdentifiers,radarCoverageWithinArea,trafficAreas,trafficButtonDetail,trafficCircleEnabled,trafficDataFresh,trafficHasConstantLabel,trafficIconKind,trafficPollingNeeded,trafficVisibleAtZoom,trafficWithinArea} from './traffic-display.mjs?v=20260921-live-traffic-only1';
 import {anchoredPan,pinchView} from './map-navigation.mjs?v=20260920-map-gesture1';
+import {frontNames,frontProximityText} from './front-display.mjs?v=20260923-fronts1';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 window.METAR_STARTED=true;
 const defaultPan=[48,30];
 const ALOFT_FRAME_INTERVAL=32,ALOFT_VECTOR_INTERVAL=200;
 const map=$('map');let aloftCanvas=$('winds-aloft-canvas'),aloftContext=null,aloftWorker=null;const trafficCanvas=$('traffic-canvas'),trafficContext=trafficCanvas.getContext('2d',{alpha:true});let stations=[],states=[],airspaces=[],airmets=[],sigmets=[],tfrs=[],waterData={rivers:[],lakes:[]},waterDetailData={rivers:[],lakes:[],overviewRivers:[],overviewLakes:[],t73Rivers:[],t73Lakes:[]},waterLoaded=false,waterLoading=false,waterDetailLoaded=false,waterDetailLoading=false,reports=new Map(),selected=null,width=0,height=0,baseScale=1,mapCenterY=0,zoom=1,pan=[...defaultPan],scFitView=true,feed=null,loading=false,timer,radarOn=true,aloftOn=true,lightningOn=false,windOn=true,trafficOn=true,trafficLoading=false,trafficTimer=null,trafficAircraft=[],trafficScreen=[],trafficSelected=null,trafficFetchedAt=0,airmetOn=false,sigmetOn=true,hazardsLoaded=false,hazardsLoading=false,tfrsLoaded=false,tfrsLoading=false,displayedIds=new Set(),aloftPayload=null,aloftLevel='3000',aloftData=null,aloftLookup=new Map(),aloftLoading=false,aloftParticles=[],aloftAnimation=null,aloftLastFrame=0,aloftPointerQuietUntil=0,trafficRadarCoverage=new Map(),trafficRadarSource=null;
 const nodes=new Map();let establishedRegion=null;
+let frontsOn=true,frontsData=null,frontsLoading=false;
 const radarBounds={west:-91,east:-75,south:24,north:40};
 const terrainBounds={west:-91,east:-75,south:24,north:40};
 const scFloridaView={west:-83.7,east:-79,south:27.45,north:35.46};
@@ -95,6 +97,10 @@ function geometryPath(geometry){
  if(geometry.type==='MultiLineString')return geometry.coordinates.map(line).join('');
  return '';
 }
+function frontDataCurrent(){const valid=Date.parse(frontsData?.validTime);return Number.isFinite(valid)&&valid<=Date.now()+3600000&&Date.now()-valid<=7*3600000;}
+function updateFrontStatus(){const box=$('front-status'),detail=$('front-detail'),available=frontsOn&&frontDataCurrent();box.hidden=!frontsOn;detail.hidden=true;if(!frontsOn)return;if(!available){box.textContent='WPC fronts unavailable or analysis out of date';return;}const time=new Date(frontsData.validTime).toLocaleString([],{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'UTC'}),near=['KLKR','KCGC'].map(id=>{const station=stations.find(item=>item.id===id);return station&&frontProximityText(station,frontsData.fronts);}).filter(Boolean);box.textContent=`WPC surface analysis ${time} UTC${near.length?` · ${near.join(' · ')}`:' · No analyzed front within 75 SM of KLKR or KCGC'}`;if(selected==='KLKR'||selected==='KCGC'){const station=stations.find(item=>item.id===selected),text=station&&frontProximityText(station,frontsData.fronts);if(text){detail.textContent=`${text} (WPC analysis ${time} UTC; movement and passage not determined)`;detail.hidden=false;}}}
+function drawFronts(){const layer=$('fronts');layer.replaceChildren();updateFrontStatus();if(!frontsOn||!frontDataCurrent())return;const bounds=visibleBounds(40);for(const front of frontsData.fronts){if(!frontNames[front.type]||!front.coordinates?.length)continue;const coordinates=front.coordinates,lons=coordinates.map(point=>point[0]),lats=coordinates.map(point=>point[1]);if(Math.max(...lons)<bounds.west||Math.min(...lons)>bounds.east||Math.max(...lats)<bounds.south||Math.min(...lats)>bounds.north)continue;const d=geometryPath({type:'LineString',coordinates});if(d)el('path',{d,class:`front front-${front.type.toLowerCase()}`,'aria-label':frontNames[front.type]},layer);}}
+async function loadFronts(){if(frontsLoading||!frontsOn||document.hidden)return;frontsLoading=true;try{const response=await fetch(`${serviceBase}/fronts`,{cache:'no-store',signal:AbortSignal.timeout(15000)}),data=await response.json();if(!response.ok||!Array.isArray(data.fronts)||!Number.isFinite(Date.parse(data.validTime)))throw Error('Fronts unavailable');frontsData=data;$('fronts-toggle').classList.remove('fronts-error');}catch{frontsData=null;$('fronts-toggle').classList.add('fronts-error');}finally{frontsLoading=false;drawFronts();}}
 function drawHazards(){
  const layer=$('hazards');layer.replaceChildren();
  const bounds=visibleBounds(),now=Date.now(),add=(features,type)=>{for(const f of features){const p=f.properties||{},starts=Date.parse(type==='airmet'?p.validTime:p.validTimeFrom),expires=type==='airmet'?gairmetExpiresAt(p.validTime):Date.parse(p.validTimeTo);if(Number.isFinite(starts)&&starts>now||Number.isFinite(expires)&&expires<=now||!intersectsBounds(f,bounds))continue;const d=geometryPath(f.geometry);if(!d)continue;const hazardClass=String(p.hazard||'hazard').toLowerCase().replace(/[^a-z0-9]+/g,'-');el('path',{d,class:`hazard ${type} hazard-${hazardClass}`,'fill-rule':'evenodd'},layer);}}
@@ -169,7 +175,7 @@ function draw(){
  // Draw FAA shelves below labels and weather markers. Extremely light fills
  // preserve the airspace footprint without dimming the map beneath it.
  for(const f of airspaces){if(!intersectsBounds(f,viewBounds))continue;const polygons=f.geometry.type==='Polygon'?[f.geometry.coordinates]:f.geometry.coordinates;const d=polygons.map(p=>p.map(r=>r.map((c,i)=>`${i?'L':'M'}${xy(...c).map(n=>n.toFixed(2)).join(',')}`).join('')+'Z').join('')).join('');el('path',{d,class:`airspace class-${f.properties.class.toLowerCase()}`,'fill-rule':'evenodd'},airspaceLayer);}
- drawTfrs();drawHazards();
+ drawFronts();drawTfrs();drawHazards();
  const places=$('places');places.replaceChildren();
  textAt(places,-80.9,35.43,'NORTH CAROLINA','region-label');textAt(places,-83.25,33.05,'GEORGIA','region-label');textAt(places,-78.85,32.36,'Atlantic Ocean','ocean-label');
  // Place labels around each station, leaving marker positions geographically exact.
@@ -229,7 +235,7 @@ function updateMarkers(){
  Object.entries(counts).forEach(([k,v])=>$(`count-${k}`).textContent=v);
  if(selected)renderDetail();
 }
-function select(id){selected=id;updateMarkers();$('detail').hidden=false;}
+function select(id){selected=id;updateMarkers();$('detail').hidden=false;updateFrontStatus();}
 function renderDetail(){
  const s=stations.find(s=>s.id===selected),r=reports.get(selected),usableReport=observationUsable(r)?r:null,status=statusOf(r),time=observationTime(r);
  const fuelOnly=Boolean(s.fuelOnly),noWeather=Boolean(s.noWeather),noMetar=fuelOnly||noWeather;$('airport-id').textContent=s.id;$('airport-name').textContent=s.name;$('category').textContent=noMetar?'NO METAR':status==='UNKNOWN'?'NO DATA':status;$('category').style.color=noMetar?'#a5b1b8':COLORS[status];
@@ -285,6 +291,7 @@ function fitLkr(){const station=stations.find(item=>item.id==='KLKR');if(!statio
 function fitCgc(){const station=stations.find(item=>item.id==='KCGC');if(!station)return;scFitView=false;zoom=2;pan=[width*.29-width/2-(station.lon-center[0])*baseScale*zoom,height*.42-mapCenterY-(center[1]-merc(station.lat))*baseScale*zoom];draw();select('KCGC');}
 $('zoom-in').onclick=()=>changeZoom(1.25);$('zoom-out').onclick=()=>changeZoom(.8);$('reset').onclick=()=>{scFitView=true;zoom=1;pan=[...defaultPan];draw();updateMarkers();};$('fit-region').onclick=()=>{scFitView=false;fitBounds(scFloridaView,1.25);};$('fit-lkr').onclick=fitLkr;$('fit-cgc').onclick=fitCgc;
 $('radar-toggle').onclick=()=>{radarOn=!radarOn;const button=$('radar-toggle'),image=$('radar-image');button.classList.toggle('active',radarOn);button.setAttribute('aria-pressed',String(radarOn));image.classList.toggle('off',!radarOn);if(radarOn)updateRadar();};
+$('fronts-toggle').onclick=()=>{frontsOn=!frontsOn;const button=$('fronts-toggle');button.classList.toggle('active',frontsOn);button.setAttribute('aria-pressed',String(frontsOn));drawFronts();if(frontsOn&&!frontDataCurrent())loadFronts();};
 $('aloft-toggle').onclick=()=>{aloftOn=!aloftOn;const button=$('aloft-toggle');$('aloft-control').classList.toggle('active',aloftOn);button.setAttribute('aria-pressed',String(aloftOn));aloftCanvas.classList.toggle('off',!aloftOn);if(aloftOn){loadWindsAloft();startAloftAnimation();}else if(aloftWorker)aloftWorker.postMessage({type:'enabled',enabled:false});else{aloftContext.clearRect(0,0,width,height);if(aloftAnimation){cancelAnimationFrame(aloftAnimation);aloftAnimation=null;}}};
 $('aloft-level').oninput=event=>{aloftLevel=event.target.value==='1'?'10000':'3000';applyAloftLevel();};
 $('lightning-toggle').onclick=()=>{lightningOn=!lightningOn;const button=$('lightning-toggle'),layer=$('lightning-density');button.classList.toggle('active',lightningOn);button.setAttribute('aria-pressed',String(lightningOn));layer.classList.toggle('off',!lightningOn);$('lightning-age-key').hidden=!lightningOn;if(lightningOn)updateLightning();};
@@ -323,10 +330,11 @@ async function initialize(){try{
  updateTerrain();
  loadWater();
  updateRadar();
+ loadFronts();
  loadWindsAloft();
  loadHazards(false,true);loadTfrs(false,true);
 }catch(error){console.error(error);notify('Unable to load the map. Reload the page to try again.',true);}
-updateClock();setInterval(()=>{updateMarkers();updateClock();},30000);setInterval(updateRadar,300000);setInterval(updateLightning,300000);setInterval(()=>loadWindsAloft(true),1800000);
+updateClock();setInterval(()=>{updateMarkers();updateClock();if(frontsOn&&!frontDataCurrent())drawFronts();},30000);setInterval(updateRadar,300000);setInterval(updateLightning,300000);setInterval(loadFronts,900000);setInterval(()=>loadWindsAloft(true),1800000);
 setInterval(()=>loadHazards(true,true),300000);setInterval(()=>loadTfrs(true,true),300000);
-document.addEventListener('visibilitychange',()=>{if(document.hidden){clearTimeout(trafficTimer);trafficTimer=null;if(aloftWorker)aloftWorker.postMessage({type:'enabled',enabled:false});else if(aloftAnimation){cancelAnimationFrame(aloftAnimation);aloftAnimation=null;}}else{updateMarkers();refresh();updateTerrain();loadWater();updateRadar();updateLightning();loadWindsAloft(true);startAloftAnimation();loadHazards(true,true);loadTfrs(true,true);loadTraffic();}});}
+document.addEventListener('visibilitychange',()=>{if(document.hidden){clearTimeout(trafficTimer);trafficTimer=null;if(aloftWorker)aloftWorker.postMessage({type:'enabled',enabled:false});else if(aloftAnimation){cancelAnimationFrame(aloftAnimation);aloftAnimation=null;}}else{updateMarkers();refresh();updateTerrain();loadWater();updateRadar();updateLightning();loadFronts();loadWindsAloft(true);startAloftAnimation();loadHazards(true,true);loadTfrs(true,true);loadTraffic();}});}
 initialize();
