@@ -1,19 +1,23 @@
 import {decodeFrame} from './radio-protocol.mjs';
 const base='https://metar-airband-cloud.rbell.workers.dev/web', $=id=>document.getElementById(id);
-const dialog=$('web-radio-dialog'),advanced=$('web-radio-advanced'),audio=$('web-radio-audio'),replay=$('web-radio-replay-audio'),launch=$('web-radio'),status=$('web-radio-status'),volume=$('web-radio-volume');
-const names={'122.725':'KLKR CTAF','120.825':'KLKR AWOS'},key='web-metar-airband-mode';
-let mode=localStorage.getItem(key)==='live'?'live':'buffered',wanted=null,generation=0,socket=null,source=null,sourceUrl=null,retry=null,attempt=0,heartbeat=null,lastPong=0,replaying=false,playAllowed=false;
+const dialog=$('web-radio-dialog'),audio=$('web-radio-audio'),replay=$('web-radio-replay-audio'),launch=$('web-radio'),status=$('web-radio-status'),volume=$('web-radio-volume');
+const names={'122.725':'KLKR CTAF','120.825':'KLKR AWOS'},mode='buffered';
+let wanted=null,generation=0,socket=null,source=null,sourceUrl=null,retry=null,attempt=0,heartbeat=null,lastPong=0,replaying=false,playAllowed=false,nativePlayback=false;
 volume.value=localStorage.getItem('web-metar-airband-volume')||'70';
 function volumes(){const value=Number(volume.value)/100;audio.volume=value*(replaying?.25:1);replay.volume=value;}
 volumes();
 function message(text,error=false){status.textContent=text;status.classList.toggle('error',error);launch.classList.toggle('active',Boolean(wanted||replaying));launch.setAttribute('aria-pressed',String(Boolean(wanted||replaying)));$('web-radio-stop').disabled=!wanted&&!replaying;for(const button of dialog.querySelectorAll('[data-frequency]')){button.classList.toggle('active',button.dataset.frequency===wanted);button.setAttribute('aria-pressed',String(button.dataset.frequency===wanted));}}
-function release(){generation++;clearTimeout(retry);retry=null;clearInterval(heartbeat);heartbeat=null;if(socket){socket.onclose=null;socket.close();socket=null;}audio.pause();audio.removeAttribute('src');audio.load();source=null;if(sourceUrl)URL.revokeObjectURL(sourceUrl);sourceUrl=null;}
+function release(){generation++;clearTimeout(retry);retry=null;clearInterval(heartbeat);heartbeat=null;nativePlayback=false;if(socket){socket.onclose=null;socket.close();socket=null;}audio.pause();audio.removeAttribute('src');audio.load();source=null;if(sourceUrl)URL.revokeObjectURL(sourceUrl);sourceUrl=null;}
 function finishReplay(){replaying=false;replay.pause();replay.removeAttribute('src');replay.load();volumes();message(wanted?`${names[wanted]} via Cloud Relay`:'Replay Finished.');}
 function stop(){wanted=null;attempt=0;release();finishReplay();message('Audio Off.');}
 function reconnect(gen){if(gen!==generation||!wanted)return;release();const next=generation,frequency=wanted;const delay=Math.min(30,2**Math.min(attempt++,5));message(`Airport Connection Lost — Retrying In ${delay}s.`,true);retry=setTimeout(()=>{if(next===generation&&wanted===frequency)connect(frequency,true);},delay*1000);}
 function connect(frequency,reconnecting=false){
  if(!names[frequency])return;if(!reconnecting){attempt=0;finishReplay();localStorage.setItem('web-metar-airband-last-frequency',frequency);}release();wanted=frequency;const gen=generation;playAllowed=true;
- if(typeof MediaSource==='undefined'||!MediaSource.isTypeSupported('audio/mpeg')){wanted=null;message('This Browser Does Not Support Radio Playback. Please Use Chrome or Edge.',true);return;}
+ if(typeof MediaSource==='undefined'||!MediaSource.isTypeSupported('audio/mpeg')){
+  if(!audio.canPlayType('audio/mpeg')){wanted=null;message('This Browser Cannot Decode MP3 Audio.',true);return;}
+  nativePlayback=true;audio.src=base+'/stream?key='+encodeURIComponent(frequency+':'+mode);volumes();message(`Connecting To ${names[frequency]} — Cloud Relay…`);
+  audio.play().catch(error=>{if(gen!==generation)return;if(error.name==='NotAllowedError'){message('Click The Selected Frequency To Enable Audio.',true);}else if(error.name!=='AbortError')reconnect(gen);});return;
+ }
  message(`Connecting To ${names[frequency]}…`);volumes();source=new MediaSource();sourceUrl=URL.createObjectURL(source);audio.src=sourceUrl;
  // Start within the user's click to preserve browser autoplay permission.
  audio.play().catch(()=>{if(gen===generation)playAllowed=false;});
@@ -32,8 +36,5 @@ launch.onclick=()=>{dialog.showModal();refresh();if(!wanted){const remembered=lo
 for(const button of dialog.querySelectorAll('[data-frequency]'))button.onclick=()=>connect(button.dataset.frequency);
 $('web-radio-close').onclick=()=>dialog.close();dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close();});
 $('web-radio-stop').onclick=stop;$('web-radio-refresh').onclick=refresh;
-$('web-radio-settings').onclick=()=>{dialog.close();$('web-radio-mode').value=mode;advanced.showModal();};
-$('web-radio-back').onclick=()=>{advanced.close();dialog.showModal();};$('web-radio-advanced-close').onclick=()=>advanced.close();advanced.addEventListener('click',event=>{if(event.target===advanced)advanced.close();});
-$('web-radio-mode').onchange=()=>{mode=$('web-radio-mode').value==='live'?'live':'buffered';localStorage.setItem(key,mode);if(wanted)connect(wanted,true);};
 volume.oninput=()=>{localStorage.setItem('web-metar-airband-volume',volume.value);volumes();};replay.onended=finishReplay;replay.onerror=()=>{finishReplay();message('Replay Unavailable.',true);};
-audio.onplaying=()=>{if(wanted&&playAllowed)message(`${names[wanted]} — Cloud Relay`);};audio.onwaiting=()=>{if(wanted)message(`Waiting For ${names[wanted]} — Cloud Relay`);};window.addEventListener('beforeunload',stop);message('Select a Frequency or CTAF Replay.');
+audio.onplaying=()=>{attempt=0;if(wanted&&playAllowed)message(`${names[wanted]} — Cloud Relay`);};audio.onwaiting=()=>{if(wanted)message(`Waiting For ${names[wanted]} — Cloud Relay`);};audio.onerror=audio.onended=()=>{if(nativePlayback&&wanted&&audio.getAttribute('src'))reconnect(generation);};window.addEventListener('beforeunload',stop);message('Select a Frequency or CTAF Replay.');
