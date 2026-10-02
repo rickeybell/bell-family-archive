@@ -7,7 +7,7 @@ const listed=new Set(['N123AB']);
 
 test('public GA traffic starts enabled and matches its button state',()=>{
  const app=readFileSync(new URL('../app.js',import.meta.url),'utf8'),html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
- assert.match(app,/windOn=true,trafficOn=true,trafficLoading=false/);
+ assert.match(app,/windOn=true,trafficOn=true,trafficAircraft=\[\]/);
  assert.match(html,/id="traffic-toggle" class="active" aria-pressed="true"/);
 });
 
