@@ -4,6 +4,7 @@ import {alwaysVisibleTrafficIdentifiers,radarCoverageWithinArea,trafficAreas,tra
 import {anchoredPan,pinchView} from './map-navigation.mjs?v=20260920-map-gesture1';
 import {frontGlyphs,frontNames,frontProximityText} from './front-display.mjs?v=20260923-front-symbols1';
 import {createTrafficPoller} from './traffic-poller.mjs?v=20261002-view1';
+import {createBrowserTrafficFetch} from './traffic-fetch.mjs?v=20261002-browser1';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 window.METAR_STARTED=true;
 const defaultPan=[48,30];
@@ -58,7 +59,7 @@ function drawTraffic(){
 function trafficAtEvent(event){if(!trafficOn)return null;const rect=map.getBoundingClientRect(),x=(event.clientX-rect.left)*width/rect.width,y=(event.clientY-rect.top)*height/rect.height;let best=null,distance=15;for(const aircraft of trafficScreen){const candidate=Math.hypot(x-aircraft.x,y-aircraft.y);if(candidate<distance){best=aircraft;distance=candidate;}}return best;}
 function trafficQuery(){const areas=activeTrafficAreas();if(areas.length){const boxes=areas.map(area=>{const latRadius=area.radiusSm/69.172,lonRadius=latRadius/Math.cos(area.lat*Math.PI/180);return {south:area.lat-latRadius,north:area.lat+latRadius,west:area.lon-lonRadius,east:area.lon+lonRadius};});return {south:Math.min(...boxes.map(box=>box.south)),north:Math.max(...boxes.map(box=>box.north)),west:Math.min(...boxes.map(box=>box.west)),east:Math.max(...boxes.map(box=>box.east))};}const bounds=visibleBounds(20);return {south:Math.max(-90,bounds.south),north:Math.min(90,bounds.north),west:Math.max(-180,bounds.west),east:Math.min(180,bounds.east)};}
 const trafficPoller=createTrafficPoller({
- async fetchTraffic(query,signal){const url=new URL(`${serviceBase}/traffic`);for(const [name,value] of Object.entries(query))url.searchParams.set(name,value.toFixed(3));const response=await fetch(url,{cache:'no-store',signal}),data=await response.json();if(!response.ok||!Array.isArray(data.aircraft))throw Error(data.error||'Traffic unavailable');return data;},
+ fetchTraffic:createBrowserTrafficFetch({serviceBase}),
  onData(data,fetchedAt){trafficAircraft=data.aircraft;trafficFetchedAt=fetchedAt;$('traffic-toggle').classList.remove('traffic-error');$('traffic-toggle').classList.add('traffic-live');drawTraffic();},
  onReset(){trafficAircraft=[];trafficFetchedAt=0;$('traffic-toggle').classList.remove('traffic-live','traffic-error');drawTraffic();},
  onError(error){if(!trafficAircraft.length||!trafficDataFresh(trafficFetchedAt)){trafficAircraft=[];const button=$('traffic-toggle');button.classList.remove('traffic-live');button.classList.add('traffic-error');drawTraffic();button.title=/429/.test(error.message)?'GA traffic provider is rate-limiting requests; retrying automatically':'GA traffic is temporarily unavailable; retrying automatically';}},
