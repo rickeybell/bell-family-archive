@@ -66,13 +66,16 @@ export function trafficMatchesFilters(aircraft,filters=defaultTrafficFilters,lis
  return typeof aircraft?.speed==='number'&&Number.isFinite(aircraft.speed)&&aircraft.speed>=minimumSpeed&&aircraft.speed<=filters.maxSpeed&&typeof aircraft.altitude==='number'&&Number.isFinite(aircraft.altitude)&&aircraft.altitude>minimumAltitude;
 }
 // Hide only the visual outline; area membership still determines priority.
-export function trafficAreaOutlineVisible(area){return area?.id!=='KLKR';}
+export function trafficAreaOutlineVisible(area){return !['KLKR','KCGC'].includes(area?.id);}
 
 // Filter the viewport before imposing capacity. Preferred aircraft must not be
 // lost to a provider-order cap, or to listed aircraft outside the current view.
 export function selectTrafficForView(aircraft,bounds,{areas=trafficAreas,listedIdentifiers=alwaysVisibleTrafficIdentifiers,limit=75}={}){
  if(!bounds||!['south','north','west','east'].every(key=>Number.isFinite(bounds[key]))||bounds.south>=bounds.north||bounds.west>=bounds.east||!Number.isInteger(limit)||limit<1||limit>100)throw Error('Invalid Traffic Selection');
  const inside=a=>typeof a.lat==='number'&&typeof a.lon==='number'&&Number.isFinite(a.lat)&&Number.isFinite(a.lon)&&a.lon>=bounds.west&&a.lon<=bounds.east&&a.lat>=bounds.south&&a.lat<=bounds.north;
+ // A Florida/Crystal River view must not order its remaining slots relative
+ // to Lancaster. If neither airport is visible, fill from the view center.
+ areas=areas.filter(inside);
  const rank=a=>listedIdentifiers.has(normalizeTrafficIdentifier(a.id))?0:areas.some(area=>trafficWithinArea(a,area))?1:2;
  const center={lat:(bounds.south+bounds.north)/2,lon:(bounds.west+bounds.east)/2},distance=a=>areas.length?Math.min(...areas.map(area=>trafficDistanceSm(a,area))):trafficDistanceSm(a,center);
  return aircraft.filter(inside).sort((a,b)=>rank(a)-rank(b)||(rank(a)===2?distance(a)-distance(b):0)||(Number(a.age)||0)-(Number(b.age)||0)||a.id.localeCompare(b.id)).slice(0,limit);

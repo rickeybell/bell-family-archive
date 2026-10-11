@@ -8,7 +8,7 @@ export function validTrafficTouch(c){
  const shape=(...keys)=>Object.keys(c).every(k=>['action',...keys].includes(k));
  switch(c.action){
   case 'traffic-weather':case 'traffic-rings':return shape('value')&&typeof c.value==='boolean';
-  case 'traffic-view':return shape('value')&&[5,10,20,'return'].includes(c.value);
+  case 'traffic-view':return shape('value')&&[2,5,10,'return'].includes(c.value);
   case 'traffic-source':return shape('key','value')&&sources.includes(c.key)&&typeof c.value==='boolean';
   case 'traffic-color':return shape('key','value')&&sources.includes(c.key)&&typeof c.value==='string'&&/^#[0-9a-f]{6}$/i.test(c.value);
   case 'traffic-refresh':return shape('key','value')&&(c.key==='internet'?integer(c.value,2,15):c.key==='radio'&&integer(c.value,2,5));

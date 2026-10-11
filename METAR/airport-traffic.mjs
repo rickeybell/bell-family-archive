@@ -1,5 +1,5 @@
-// Local PC prototype. Geographic scale is nautical miles ACROSS the viewport,
-// not a radius. Public-domain imagery is historical, never live surveillance.
+// Ring views use statute-mile radii and fit the complete outer ring. Historical
+// saved NM-across views are accepted separately, never reinterpreted as miles.
 import {observationUsable,observationTime,statusOf,wind,COLORS} from './weather.mjs';
 // Match the normal airport's 90-minute stale boundary, without treating a
 // missing numeric value as calm or a missing direction as north.
@@ -8,23 +8,16 @@ export function airportSurfaceWind(report,now=Date.now()){
  return {...report,wdir:report.wdir==='VRB'?'VRB':Number.isFinite(report.wdir)&&report.wdir>=0&&report.wdir<=360?report.wdir:undefined,wgst:Number.isFinite(report.wgst)&&report.wgst>=0?report.wgst:undefined};
 }
 export const KLKR=Object.freeze({lon:-80.85316,lat:34.72659});
-export const AIRPORT_RANGES=Object.freeze([5,10,20]);
-// View sizes are diameters across the viewport; ring labels are true radii.
-// Keep whole-NM labels and at least 72 pixels between adjacent rings.
-export function airportRingRadii(spanNm,width,height){
- if(![spanNm,width,height].every(v=>Number.isFinite(v)&&v>0)||spanNm>20.001||spanNm<4.999)return [];
- const radius=spanNm/2*Math.min(1,height/width)*.9,pixelsPerNm=width/spanNm;
- const step=[1,2,5,10,20].find(n=>n*pixelsPerNm>=72&&radius/n<=3)||20;
- return Array.from({length:Math.min(3,Math.floor(radius/step))},(_,i)=>(i+1)*step);
-}
-export function airportRingPoints(radiusNm,segments=96){
- if(!Number.isFinite(radiusNm)||radiusNm<=0||radiusNm>50||!Number.isInteger(segments)||segments<12||segments>360)throw Error('Invalid Distance Ring');
- const lat=KLKR.lat*Math.PI/180,lon=KLKR.lon*Math.PI/180,d=radiusNm/(6371008.8/1852);
+export const AIRPORT_RANGES=Object.freeze([2,5,10]);
+export function airportRingRadii(rangeMi){return ({2:[1,2],5:[1,2.5,5],10:[2,4,6,8,10]})[rangeMi]??[];}
+export function airportRingPoints(radiusMi,segments=96){
+ if(!Number.isFinite(radiusMi)||radiusMi<=0||radiusMi>50||!Number.isInteger(segments)||segments<12||segments>360)throw Error('Invalid Distance Ring');
+ const lat=KLKR.lat*Math.PI/180,lon=KLKR.lon*Math.PI/180,d=radiusMi*1609.344/6371008.8;
  return Array.from({length:segments+1},(_,i)=>{const bearing=2*Math.PI*i/segments,p=Math.asin(Math.sin(lat)*Math.cos(d)+Math.cos(lat)*Math.sin(d)*Math.cos(bearing));return [(lon+Math.atan2(Math.sin(bearing)*Math.sin(d)*Math.cos(lat),Math.cos(d)-Math.sin(lat)*Math.sin(p)))*180/Math.PI,p*180/Math.PI];});
 }
 export function createAirportRings({document,map,project}){
  const ns='http://www.w3.org/2000/svg',layer=document.createElementNS(ns,'g');layer.id='airport-distance-rings';layer.setAttribute('pointer-events','none');map.append(layer);
- return {render(enabled,span,width,height){layer.replaceChildren();if(!enabled)return;for(const radius of airportRingRadii(span,width,height)){const points=airportRingPoints(radius).map(p=>project(...p)),line=document.createElementNS(ns,'path'),label=document.createElementNS(ns,'text');line.setAttribute('d',points.map((p,i)=>(i?'L':'M')+p.join(',')).join(' ')+' Z');line.setAttribute('fill','none');line.setAttribute('stroke','rgba(232,246,255,.38)');line.setAttribute('stroke-width','1');label.textContent=radius+' NM';label.setAttribute('x',points[24][0]+4);label.setAttribute('y',points[24][1]-4);label.setAttribute('font-size','11');label.setAttribute('fill','#edf7ff');label.setAttribute('stroke','#142330');label.setAttribute('stroke-width','3');label.setAttribute('paint-order','stroke');layer.append(line,label);}}};
+ return {render(enabled,rangeMi){layer.replaceChildren();if(!enabled)return;for(const radius of airportRingRadii(rangeMi)){const points=airportRingPoints(radius).map(p=>project(...p)),line=document.createElementNS(ns,'path'),label=document.createElementNS(ns,'text');line.dataset.radiusMi=String(radius);line.setAttribute('d',points.map((p,i)=>(i?'L':'M')+p.join(',')).join(' ')+' Z');line.setAttribute('fill','none');line.setAttribute('stroke','rgba(232,246,255,.48)');line.setAttribute('stroke-width','1');label.textContent=radius+' mi';label.setAttribute('x',points[24][0]-8);label.setAttribute('y',points[24][1]-6);label.setAttribute('text-anchor','end');label.setAttribute('font-size','12');label.setAttribute('fill','#edf7ff');label.setAttribute('stroke','#142330');label.setAttribute('stroke-width','3');label.setAttribute('paint-order','stroke');layer.append(line,label);}}};
 }
 export function airportWindLabel(report,now=Date.now()){
  const usable=airportSurfaceWind(report,now),time=observationTime(report),validTime=Number.isFinite(time)&&time<=now+300000,seconds=validTime?Math.max(0,Math.floor((now-time)/1000)):null;
@@ -39,6 +32,28 @@ export const IMAGERY_URL='https://basemap.nationalmap.gov/arcgis/rest/services/U
 const radians=Math.PI/180,earthNm=6371008.8/1852;
 export const mercator=lat=>Math.log(Math.tan(Math.PI/4+lat*radians/2))/radians;
 export const inverseMercator=y=>(2*Math.atan(Math.exp(y*radians))-Math.PI/2)/radians;
+// Leave space for the collapsed controls/header and footer. The remaining
+// rectangle follows the actual map width when camera columns are present.
+export function airportRingFrame(width,height){
+ if(![width,height].every(v=>Number.isFinite(v)&&v>0))throw Error('Invalid Airport View');
+ const side=Math.min(40,width*.06),top=Math.min(height*.28,width>1000?216:240),bottom=Math.min(140,height*.25);
+ return {left:side,right:width-side,top,bottom:height-bottom,x:width/2,y:(top+height-bottom)/2};
+}
+export function airportRingZoom(width,height,baseScale,radiusMi){
+ if(!Number.isFinite(baseScale)||baseScale<=0||!Number.isFinite(radiusMi)||radiusMi<2||radiusMi>10)throw Error('Invalid Airport Ring View');
+ const f=airportRingFrame(width,height),d=radiusMi*1609.344/6371008.8,lat=KLKR.lat*radians;
+ const dx=Math.asin(Math.sin(d)/Math.cos(lat))/radians,dy=mercator(KLKR.lat+d/radians)-mercator(KLKR.lat);
+ return Math.min((f.right-f.left)/(2*dx),(f.bottom-f.top)/(2*dy))/baseScale;
+}
+export function airportRingRange(width,height,scale){
+ if(!Number.isFinite(scale)||scale<=0)throw Error('Invalid Airport Ring Scale');
+ let low=2,high=10;for(let i=0;i<32;i++){const mid=(low+high)/2;if(airportRingZoom(width,height,1,mid)>scale)low=mid;else high=mid;}return (low+high)/2;
+}
+export function savedAirportRange(view,width,height,baseScale){
+ if(view.airportTrafficRangeMi!==undefined){if(!Number.isFinite(view.airportTrafficRangeMi)||view.airportTrafficRangeMi<2||view.airportTrafficRangeMi>10)throw Error('Saved Airport Range Is Invalid');return view.airportTrafficRangeMi;}
+ if(view.airportTrafficSpanNm!==undefined){if(!Number.isFinite(view.airportTrafficSpanNm)||view.airportTrafficSpanNm<5||view.airportTrafficSpanNm>20)throw Error('Saved Airport Span Is Invalid');return airportRingRange(width,height,airportZoom(width,baseScale,view.airportTrafficSpanNm)*baseScale);}
+ return null;
+}
 export function longitudeSpan(nm,lat=KLKR.lat){
  if(!Number.isFinite(nm)||nm<=0||nm>100||!Number.isFinite(lat)||Math.abs(lat)>80)throw Error('Invalid Airport Scale');
  return 2*Math.asin(Math.sin(nm/(2*earthNm))/Math.cos(lat*radians))/radians;
