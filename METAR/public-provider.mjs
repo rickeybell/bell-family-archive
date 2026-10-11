@@ -1,5 +1,5 @@
 import {selectLatest} from './weather.mjs';
-import {parseTrafficPayload} from './traffic.mjs';
+
 import {radioFrequency,replayId,replayClips} from './radio-contract.mjs';
 
 // These are the existing public services, not configurable terminal peers.
@@ -8,7 +8,14 @@ export const PUBLIC_RADIO_BASE='https://metar-airband-cloud.rbell.workers.dev/we
 const logicalOrigin='https://metar.invalid';
 const readRoutes=new Set(['fronts','water','water-detail','hazards','tfrs','winds-aloft']);
 const imageRoutes=new Set(['radar','terrain','lightning']);
-const listedIds=new Set();
+
+const publicHex=value=>typeof value==='string'&&/^~?[a-f0-9]{6}$/i.test(value)?value.toUpperCase():null;
+function publicIdentity(row){
+ row=row&&typeof row==='object'?row:{};
+ const clean=value=>{const text=typeof value==='string'?value.trim().toUpperCase().replace(/^REG:\s*/,''):'';return /^[A-Z0-9-]{2,12}$/.test(text)?text:'';};
+ const flight=clean(row.flight),registration=clean(row.r||row.registration)||(typeof row.flight==='string'&&/^REG:/i.test(row.flight.trim())?flight:'');
+ return {hex:publicHex(row.hex),r:registration,flight};
+}
 const reply=(body,status=200,head=false)=>new Response(head?null:JSON.stringify(body),{status,headers:{'Content-Type':'application/json','Cache-Control':'no-store'}});
 const invalid=()=>Object.assign(Error('Invalid Public Request'),{status:400});
 function logicalUrl(value){
@@ -60,7 +67,7 @@ function trafficPoint(bounds){const south=Math.floor(bounds.south*10)/10,north=M
 
 export function createPublicMapProvider({fetchImpl=globalThis.fetch,getStations=()=>[],now=Date.now,wait=waitForSlot,relayFactory=createPublicTrafficClient}={}){
  if(typeof fetchImpl!=='function'||typeof getStations!=='function'||typeof now!=='function'||typeof wait!=='function')throw Error('Public Provider Dependencies Are Required');
- let nextStart=0,cooldown=0,gate=Promise.resolve(),internetCache=null,internetPending=null,update=()=>{};const relay=relayFactory({now,onUpdate:()=>update()});
+ let nextStart=0,cooldown=0,gate=Promise.resolve(),internetCache=null,internetPending=null,update=()=>{};const identities=new Map(),relay=relayFactory({now,onUpdate:()=>update()});
  const request=(url,signal,method='GET')=>fetchImpl(url,{method,signal,cache:'no-store',credentials:'omit',redirect:'error',referrerPolicy:'no-referrer'});
  async function json(url,signal,limit=2097152){return JSON.parse(await readText(await request(url,signal),limit,signal));}
  async function weather(signal){
@@ -77,9 +84,18 @@ export function createPublicMapProvider({fetchImpl=globalThis.fetch,getStations=
   const {bounds,sources,filters,refreshSeconds}=query;let data=null;
   if(sources.internet){const key=JSON.stringify(bounds);if(internetCache?.key===key&&now()-internetCache.at<refreshSeconds*1000)data=internetCache.data;
    else {if(!internetPending)internetPending=traffic(bounds,signal).then(value=>{internetCache={key,at:now(),data:value};return value;}).finally(()=>internetPending=null);try{data=await internetPending;}catch{signal.throwIfAborted();}}}
-  const internetRaw=data?{ac:data.aircraft.map(a=>({hex:a.hex,r:a.id,lat:a.lat,lon:a.lon,seen_pos:a.age,gs:a.speed,alt_baro:a.altitude,track:a.track,category:a.category,t:a.type,owner:a.owner,origin:a.origin,destination:a.destination}))}:null;
+  const internetRaw=data?{ac:data.ac??data.aircraft.map(a=>({...publicIdentity({...a,r:a.registration||a.r||(!publicHex(a.id)?a.id:'')}),lat:a.lat,lon:a.lon,seen_pos:a.age,gs:a.speed,alt_baro:a.altitude,track:a.track,category:a.category,t:a.type,owner:a.owner,origin:a.origin,destination:a.destination}))}:null;
+  // Registration metadata only: bounded session memory, never positions or a
+  // persistent flight recording. Source-off discards Internet enrichment.
+  if(!sources.internet)identities.clear();
+  for(const [hex,value]of identities)if(now()-value.at>3600000)identities.delete(hex);
+  for(const row of internetRaw?.ac??[]){const identity=publicIdentity(row);if(!identity.hex||!identity.r&&!identity.flight)continue;const old=identities.get(identity.hex);identities.delete(identity.hex);identities.set(identity.hex,{r:identity.r||old?.r||'',flight:identity.flight||old?.flight||'',at:Date.parse(data.fetchedAt)});}
+  while(identities.size>1000)identities.delete(identities.keys().next().value);
   const result=fuseAdsbTraffic({internetRaw,internetAt:data?Date.parse(data.fetchedAt):null,snapshots:relay.snapshot(),now:now(),listedIdentifiers:new Set(),bounds,filters,sources});
-  if(!result)throw Error('Public Traffic Unavailable');return result;
+  if(!result)throw Error('Public Traffic Unavailable');
+  // Stable address is the website's marker/selection/trail key. A separate
+  // display label may improve when a registration arrives, without a new track.
+  return {...result,aircraft:result.aircraft.map(a=>{const hex=publicHex(a.hex);if(!hex)return a;const identity=identities.get(hex),fallback=publicIdentity({flight:a.id}).flight;return {...a,id:hex,displayId:identity?.r||(fallback!==hex?fallback:'')||identity?.flight||hex};})};
  }
  async function traffic(bounds,signal){
   try{
@@ -90,14 +106,14 @@ export function createPublicMapProvider({fetchImpl=globalThis.fetch,getStations=
    if(response.status===429){const value=response.headers.get('retry-after'),seconds=Number(value),date=Date.parse(value);cooldown=now()+Math.min(300000,Math.max(30000,Number.isFinite(seconds)&&seconds>0?seconds*1000:Number.isFinite(date)?date-now():30000));}
    const text=await readText(response,2097152,primarySignal),start=text.indexOf('{');if(start<0)throw Error('Invalid Traffic Proxy');const raw=JSON.parse(text.slice(start)),stamp=Number(raw.now)>1e12?Number(raw.now):Number(raw.now)*1000;
    if(!Array.isArray(raw.ac)||raw.ac.length>10000||!Number.isFinite(stamp)||now()-stamp>45000||stamp-now()>30000)throw Error('Stale or Invalid Traffic Proxy');
-   return {...parseTrafficPayload(raw,new Date(stamp).toISOString(),listedIds),source:'adsb.fi via browser proxy'};
+   return {fetchedAt:new Date(stamp).toISOString(),ac:raw.ac.filter(row=>row&&typeof row==='object').map(row=>({...row,...publicIdentity(row)})),source:'adsb.fi via browser proxy'};
   }catch(error){signal.throwIfAborted();}
   const fallback=new URL('/traffic',PUBLIC_DATA_ORIGIN);for(const [key,value] of Object.entries(bounds))fallback.searchParams.set(key,value.toFixed(3));
   const data=await json(fallback.href,signal,4194304),stamp=Date.parse(data?.fetchedAt);
   if(!Array.isArray(data?.aircraft)||data.aircraft.length>10000||!Number.isFinite(stamp)||now()-stamp>45000||stamp-now()>30000)throw Error('Stale or Invalid Public Traffic');return data;
  }
  return Object.freeze({
-  syncTraffic:value=>relay.sync(value),onTrafficUpdate:fn=>{update=fn;},dispose:()=>relay.dispose(),
+  syncTraffic:value=>relay.sync(value),onTrafficUpdate:fn=>{update=fn;},dispose:()=>{identities.clear();relay.dispose();},
   resourceURL(value){return route(value).url;},
   async fetch(value,options={}){
    if(typeof value!=='string')return reply({error:'Invalid Public Request'},400);
