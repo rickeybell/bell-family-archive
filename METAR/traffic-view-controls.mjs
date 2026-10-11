@@ -1,0 +1,14 @@
+// Visitor/display-local controls only; no administration or aircraft-list writes.
+export function installTrafficViewControls({document,parent,read,source,color,refresh,filter}){
+ const root=document.createElement('section');root.className='traffic-view-settings';root.innerHTML='<h3>Traffic settings</h3>';parent.append(root);
+ const fields=[];
+ for(const [key,title]of [['internet','Internet'],['local-1090','LKR Radio 1090'],['local-978','LKR Radio 978']]){
+  const row=document.createElement('div'),toggle=document.createElement('button'),picker=document.createElement('input');toggle.type='button';toggle.textContent=title;toggle.dataset.source=key;toggle.onclick=()=>{source(key,!read().sources[key]);render();};picker.type='color';picker.setAttribute('aria-label',title+' color');picker.onchange=()=>color(key,picker.value);row.append(toggle,picker);root.append(row);fields.push({kind:'source',key,toggle,picker});
+ }
+ for(const [key,title,min,max,step]of [['internet','Internet refresh',2,15,1],['radio','Radio refresh',2,5,1],['maxSpeed','Maximum speed',125,500,1],['maxAltitude','Maximum altitude',10000,50000,1000]]){
+  const label=document.createElement('label'),input=document.createElement('input'),output=document.createElement('output');label.append(document.createTextNode(title+' '),output,input);input.type='range';Object.assign(input,{min,max,step});input.setAttribute('aria-label',title);input.oninput=()=>output.textContent=input.value+(key.endsWith('Speed')?' kt':key.endsWith('Altitude')?' ft':' sec');input.onchange=()=>{if(['internet','radio'].includes(key))refresh(input.value,key);else filter(key,input.value);render();};root.append(label);fields.push({kind:'range',key,input,output});
+ }
+ const note=document.createElement('p');note.textContent='Choices affect only this display. Filters still apply. Reported altitude is not height above ground.';root.append(note);
+ function render(){const state=read();for(const f of fields){if(f.kind==='source'){f.toggle.setAttribute('aria-pressed',String(state.sources[f.key]));if(document.activeElement!==f.picker)f.picker.value=state.colors[f.key];}else{const value=['internet','radio'].includes(f.key)?state[f.key+'Seconds']:state.filters[f.key];if(document.activeElement!==f.input)f.input.value=String(value);f.output.textContent=Number(value).toLocaleString()+(f.key==='maxSpeed'?' kt':f.key==='maxAltitude'?' ft':' sec');}}}
+ render();return {render};
+}

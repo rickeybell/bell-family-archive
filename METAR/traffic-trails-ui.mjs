@@ -1,0 +1,25 @@
+import {TRAIL_MINUTES,trailPreferences,trailColor,assignTrailColors} from './traffic-trails.mjs';
+export function createTrailUi({document,parent,storage,onChange}){
+ const key='metar-airport-trails-v1';let prefs;try{prefs=trailPreferences(JSON.parse(storage.getItem(key)||'{}'));}catch{prefs=trailPreferences();}
+ const node=(tag,text,at=parent)=>{const n=document.createElement(tag);if(text)n.textContent=text;at.append(n);return n;},root=node('div');root.id='airport-trail-controls';root.className='trail-controls';node('strong','Flight paths',root);
+ const select=(id,title,choices)=>{const label=node('div',title+' ',root),s=node('div','',label);s.id=id;s.className='traffic-choice-buttons';s.setAttribute('role','group');s.setAttribute('aria-label',title);let selected='';Object.defineProperty(s,'value',{get:()=>selected,set:v=>{selected=String(v);for(const b of s.children)b.setAttribute('aria-pressed',String(b.dataset.value===selected));}});for(const [value,text]of choices){const b=node('button',text,s);b.type='button';b.dataset.value=String(value);b.onclick=()=>{s.value=String(value);s.onchange?.();};}return s;};
+ const mode=select('trail-mode','Show',[['all','All trails'],['selected','Selected aircraft'],['off','Off']]),duration=select('trail-minutes','History',TRAIL_MINUTES.map(n=>[n,`${n} minutes`]));mode.value=prefs.mode;duration.value=String(prefs.minutes);
+ const note=node('div','Solid: reported positions · dotted: reception gap, path unknown. Faded paths may belong to aircraft no longer received.',root);note.className='trail-note';
+ const listLabel=node('label','Aircraft ',root),list=node('select','',listLabel);list.id='trail-aircraft';list.setAttribute('aria-label','Aircraft trail settings');const individual=node('div','',root);individual.id='trail-individual';
+ const clear=node('button','Clear history',root);clear.type='button';clear.id='trail-clear';clear.onclick=()=>onChange({clear:true});
+ function persist(){try{storage.setItem(key,JSON.stringify(prefs));}catch{}}
+ function save(){prefs=trailPreferences(prefs);persist();onChange({preferences:true});}
+ function aircraftColor(id){return prefs.aircraft[id]?.color||prefs.automaticColors[id]||trailColor(id);}
+ mode.onchange=()=>{prefs.mode=mode.value;save();};duration.onchange=()=>{prefs.minutes=Number(duration.value);save();};
+ function aircraftControls(at,id){at.replaceChildren();at.dataset.trailId=id;if(!id)return;const p=prefs.aircraft[id]||{},label=node('label','',at),check=node('input','',label);check.type='checkbox';check.checked=!p.hidden;check.setAttribute('aria-label','Show trail for '+id);label.append(document.createTextNode(' Show trail'));
+  const colorLabel=node('label',' Color ',at),color=node('input','',colorLabel);color.type='color';color.value=aircraftColor(id);color.setAttribute('aria-label','Trail color for '+id);
+  const automatic=node('button','Automatic color',at);automatic.type='button';automatic.dataset.trailAutomatic='';automatic.disabled=!p.color;automatic.onclick=()=>{const {color,...rest}=prefs.aircraft[id]||{};prefs.aircraft[id]=rest;save();};
+  check.onchange=()=>{prefs.aircraft[id]={...prefs.aircraft[id],hidden:!check.checked};save();};color.onchange=()=>{prefs.aircraft[id]={...prefs.aircraft[id],color:color.value};save();};
+ }
+ list.onchange=()=>{aircraftControls(individual,list.value);onChange({focus:list.value});};let signature='';
+ return {preferences:()=>prefs,color:aircraftColor,controls:aircraftControls,set(key,value){if(!(key==='mode'&&['all','selected','off'].includes(value)||key==='minutes'&&TRAIL_MINUTES.includes(value)))throw Error('Invalid Flight Path Setting');const next=trailPreferences({...prefs,[key]:value});storage.setItem('metar-airport-trails-v1',JSON.stringify(next));prefs=next;mode.value=prefs.mode;duration.value=String(prefs.minutes);onChange({preferences:true});},render(trails,now=Date.now()){
+  const assigned=assignTrailColors(trails.map(t=>t.id),prefs.automaticColors,prefs.aircraft);if(JSON.stringify(assigned)!==JSON.stringify(prefs.automaticColors)){prefs.automaticColors=assigned;persist();}
+  for(const at of document.querySelectorAll('[data-trail-id]')){const p=prefs.aircraft[at.dataset.trailId]||{},check=at.querySelector('input[type=checkbox]'),color=at.querySelector('input[type=color]'),automatic=at.querySelector('[data-trail-automatic]');if(check)check.checked=!p.hidden;if(color&&document.activeElement!==color)color.value=aircraftColor(at.dataset.trailId);if(automatic)automatic.disabled=!p.color;}
+  const sig=trails.map(t=>t.id+':'+(now-t.lastSeen>30000)).sort().join('|');if(sig===signature)return;signature=sig;const selected=list.value;list.replaceChildren();const first=node('option','Choose aircraft',list);first.value='';for(const t of [...trails].sort((a,b)=>a.id.localeCompare(b.id))){const o=node('option',t.id+(now-t.lastSeen>30000?' · last seen':' · live'),list);o.value=t.id;}list.value=[...list.options].some(o=>o.value===selected)?selected:'';aircraftControls(individual,list.value);
+ }};
+}

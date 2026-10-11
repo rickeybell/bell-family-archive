@@ -29,13 +29,12 @@ export function ceiling(report){
  if(report.clouds.length||['CLR','SKC','CAVOK','FEW','SCT'].includes(report.cover))return 'No ceiling';
  return 'Unavailable';
 }
-export function conditions(report,showAll=false,showClear=false){
+export function conditions(report,showAll=false){
  const layers=Array.isArray(report?.clouds)?report.clouds.filter(c=>['BKN','OVC','VV'].includes(c.cover)&&Number.isFinite(c.base)&&c.base>=0):[];
- const noCeiling=Array.isArray(report?.clouds)&&report.clouds.length&&!layers.length||['CLR','SKC','CAVOK','FEW','SCT'].includes(report?.cover)||/(?:^|\s)(?:CLR|SKC|CAVOK)(?:\s|$)/.test(String(report?.rawOb||''));
- const ceilingText=layers.length?String(Math.round(Math.min(...layers.map(c=>c.base)))):noCeiling?(showClear?'Clear':'NONE'):showAll?'Unavailable':'—';
+ const ceilingText=layers.length?String(Math.round(Math.min(...layers.map(c=>c.base)))):Array.isArray(report?.clouds)&&report.clouds.length?'NONE':showAll?'Unavailable':'—';
  const rawVisibility=report?.visib,visibility=typeof rawVisibility==='string'&&/^\d+(?:\.\d+)?\+?$/.test(rawVisibility)?Number.parseFloat(rawVisibility):Number(rawVisibility);
  const visibilityValue=typeof rawVisibility==='string'&&rawVisibility.endsWith('+')?`${visibility.toLocaleString(undefined,{maximumFractionDigits:2})}+`:visibility.toLocaleString(undefined,{maximumFractionDigits:2});
- return {ceiling:showClear&&ceilingText==='Clear'?'C-Clear':`C-${ceilingText}`,visibility:rawVisibility!=null&&Number.isFinite(visibility)&&(showAll||visibility<=9)?`V-${visibilityValue} sm`:showAll?'V-Unavailable':''};
+ return {ceiling:`C-${ceilingText}`,visibility:rawVisibility!=null&&Number.isFinite(visibility)&&(showAll||visibility<=9)?`V-${visibilityValue} sm`:showAll?'V-Unavailable':''};
 }
 export function conditionMetricClass(report,metric){
  if(metric==='visibility'){
@@ -148,4 +147,20 @@ export function fixedAirportLabelChoice(stationId,zoom,labelWidth){
  if(zoom<1.01&&stationId==='KCUB')return [18,-20];
  if(zoom<1.01&&stationId==='KCAE')return [-15-labelWidth,5];
  return null;
+}
+function tfrUtc(value){
+ if(!/^\d{10}$/.test(value||''))return null;
+ const year=2000+Number(value.slice(0,2)),month=Number(value.slice(2,4))-1,day=Number(value.slice(4,6)),hour=Number(value.slice(6,8)),minute=Number(value.slice(8,10)),time=Date.UTC(year,month,day,hour,minute);
+ return Number.isFinite(time)?new Date(time).toISOString():null;
+}
+function tfrAltitude(value){
+ const clean=String(value||'').trim().toUpperCase();if(clean==='SFC')return 'SFC';
+ const match=clean.match(/^(\d{1,5})FT(?:\s+(AGL|MSL))?$/);if(!match)return clean;
+ return `${Number(match[1]).toLocaleString('en-US')} ft${match[2]?` ${match[2]}`:''}`;
+}
+export function parseTfrNotam(text){
+ const source=String(text||''),altitudes=[],seen=new Set();
+ for(const match of source.matchAll(/\b(SFC|\d{1,5}FT(?:\s+(?:AGL|MSL))?)\s*-\s*(SFC|\d{1,5}FT(?:\s+(?:AGL|MSL))?)/gi)){const value=`${tfrAltitude(match[1])} – ${tfrAltitude(match[2])}`;if(!seen.has(value)){seen.add(value);altitudes.push(value);}}
+ const effective=source.match(/\bEFFECTIVE\s+(\d{10})\s+UTC\b/i),expires=source.match(/\bUNTIL\s+(\d{10})\s+UTC\b/i);
+ return {altitudes,effective:tfrUtc(effective?.[1]),expires:tfrUtc(expires?.[1])};
 }

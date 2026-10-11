@@ -1,0 +1,18 @@
+import {getRoleProfile} from './roles.mjs';
+import {windRenderProfile} from './wind-profile.mjs';
+import {validCommand} from './touch-protocol.mjs';
+import {validTrafficTouch} from './traffic-touch.mjs';
+const navigation=new Set(['fit','observation','zoom','pan','drag','layer']);
+function inRange(value,range){return typeof value==='number'&&Number.isFinite(value)&&value>=range.min&&value<=range.max&&Math.abs((value-range.min)/range.step-Math.round((value-range.min)/range.step))<1e-8;}
+export function validMapControl(command,role){
+ const profile=getRoleProfile(role),winds=windRenderProfile(role);
+ if(!command||typeof command!=='object')return false;
+ if(typeof command.action==='string'&&command.action.startsWith('traffic-'))return ['pc','unity','airport'].includes(profile.id)&&validTrafficTouch(command);
+ if(navigation.has(command.action))return validCommand(command);
+ if(command.action==='winds')return ['off','3k','10k',...(profile.winds.selection==='multiple'?['both']:[])].includes(command.value);
+ if(command.action!=='wind-setting')return false;
+ if(command.key==='quantity'||profile.winds.selection==='multiple'&&['quantity3k','quantity10k'].includes(command.key))return inRange(command.value,profile.winds.quantity);
+ if(command.key==='fps')return inRange(command.value,profile.winds.fps);
+ if(command.key==='offshoreMiles')return winds.offshoreMask&&inRange(command.value,{min:0,max:100,step:5});
+ return ['color3k','color10k'].includes(command.key)&&typeof command.value==='string'&&/^#[0-9a-f]{6}$/i.test(command.value);
+}

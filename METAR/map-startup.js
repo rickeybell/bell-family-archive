@@ -1,0 +1,1 @@
+setTimeout(()=>{if(!window.METAR_STARTED){const message=document.getElementById('message');if(message){message.textContent='The Map Could Not Start. Update Chromium, Then Reload This Page.';message.className='error';}}},8000);
