@@ -9,7 +9,7 @@ export function airportSurfaceWind(report,now=Date.now()){
 }
 export const KLKR=Object.freeze({lon:-80.85316,lat:34.72659});
 export const AIRPORT_RANGES=Object.freeze([2,5,10]);
-export function airportRingRadii(rangeMi){return ({2:[1,2],5:[1,2.5,5],10:[2,4,6,8,10]})[rangeMi]??[];}
+export function airportRingRadii(rangeMi){return ({2:[1,2],5:[1,2.5,5],10:[2,6,10]})[rangeMi]??[];}
 export function airportRingPoints(radiusMi,segments=96){
  if(!Number.isFinite(radiusMi)||radiusMi<=0||radiusMi>50||!Number.isInteger(segments)||segments<12||segments>360)throw Error('Invalid Distance Ring');
  const lat=KLKR.lat*Math.PI/180,lon=KLKR.lon*Math.PI/180,d=radiusMi*1609.344/6371008.8;

@@ -1,6 +1,8 @@
 import {defaultTrafficFilters,validateTrafficFilters,validateListedTrafficEntries} from './traffic.mjs';
 const sources=['internet','local-1090','local-978'];
 const integer=(n,min,max)=>Number.isInteger(n)&&n>=min&&n<=max;
+// Traffic viewing stays unlocked; persistent source/filter/name settings do not.
+export function trafficSettingsCommand(c){return ['traffic-source','traffic-color','traffic-refresh','traffic-filter','traffic-minimums','traffic-named'].includes(c?.action)&&validTrafficTouch(c);}
 // A deliberately small command vocabulary: never a settings path, script,
 // arbitrary storage key or arbitrary DOM operation supplied by a controller.
 export function validTrafficTouch(c){
