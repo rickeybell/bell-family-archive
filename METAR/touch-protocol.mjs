@@ -23,6 +23,9 @@ export function validCommand(c){
   case 'replay':return Number.isInteger(c.value)&&c.value>=0&&c.value<6;
   case 'media':return ['slideshow','slideshow2','slideshow3','atlanta','columbia'].includes(c.key)&&typeof c.value==='boolean';
   case 'media-expand':return ['slideshow','slideshow2','slideshow3'].includes(c.value);
+  case 'media-step':return [1,2,3].includes(c.set)&&[-1,1].includes(c.value);
+  case 'media-pause':return [1,2,3].includes(c.set)&&typeof c.value==='boolean';
+  case 'media-name':return [1,2,3].includes(c.set)&&typeof c.value==='string'&&c.value.trim().length>0&&c.value.length<=40&&!/[\x00-\x1f\x7f]/.test(c.value);
   case 'media-width':return Number.isInteger(c.value)&&c.value>=20&&c.value<=60;
   case 'media-seconds':return [10,15,30,60,120].includes(c.value);
   case 'map-only':case 'dim-enabled':case 'observation':return typeof c.value==='boolean';

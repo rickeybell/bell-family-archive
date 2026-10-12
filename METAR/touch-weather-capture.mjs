@@ -1,0 +1,38 @@
+// Sample the TV's rendered layers, not a second weather-data consumer. Image
+// decodes reuse the exact TV resource URL/cache; no timer or provider API here.
+// Only a small PNG leaves this module. Never send SVG markup or resource URLs.
+export function createTouchWeatherCapture({document,window}){
+ const cache=new Map();let closed=false;
+ const canvas=document.createElement('canvas'),ctx=canvas.getContext('2d');
+ function style(node){let opacity=1;for(let n=node;n&&n!==document;n=n.parentElement){const s=window.getComputedStyle(n);if(s.display==='none'||s.visibility==='hidden')return null;opacity*=Number(s.opacity);if(!opacity)return null;}return {css:window.getComputedStyle(node),opacity};}
+ function image(node,used){
+  const href=node.getAttribute('href');let url;try{url=new URL(href,window.location.href);}catch{return null;}
+  if(url.origin!==window.location.origin||!['/api/radar','/api/lightning'].includes(url.pathname)||url.href.length>512)return null;
+  used.add(url.href);let entry=cache.get(url.href);
+  if(!entry){const img=new window.Image();entry={img,ready:false};cache.set(url.href,entry);img.onload=()=>{if(!closed)entry.ready=true;};img.onerror=()=>{entry.failed=true;};img.src=url.href;}
+  return entry.ready?entry.img:null;
+ }
+ return {
+  capture({viewport,map,windsCanvas}){
+   if(closed||!ctx||!Array.isArray(viewport)||viewport.length!==4||!viewport.every(Number.isFinite)||viewport[2]<=0||viewport[3]<=0)return null;
+   const [x,y,w,h]=viewport,scale=Math.min(1,768/w,480/h);canvas.width=Math.max(1,Math.round(w*scale));canvas.height=Math.max(1,Math.round(h*scale));ctx.setTransform(scale,0,0,scale,-x*scale,-y*scale);
+   const used=new Set();let missing=0,drawn=0,windFrame=false;
+   // Layer order matches the TV: imagery, wind frame, boundaries/fronts/hazards.
+   for(const n of map.querySelectorAll('#radar-image,.lightning-density-image')){const s=style(n);if(!s)continue;const img=image(n,used);if(!img){missing++;continue;}ctx.globalAlpha=s.opacity;ctx.globalCompositeOperation=s.css.mixBlendMode==='screen'?'screen':'source-over';ctx.drawImage(img,...['x','y','width','height'].map(k=>Number(n.getAttribute(k))));drawn++;}
+   if(windsCanvas&&style(windsCanvas)){try{ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';ctx.drawImage(windsCanvas,0,0,map.clientWidth,map.clientHeight);windFrame=true;drawn++;}catch{missing++;}}
+   for(const n of map.querySelectorAll('#fronts path,#hazards path,#tfrs path,#airspaces path')){
+    const s=style(n),d=n.getAttribute('d');if(!s||!d)continue;
+    try{ctx.save();const m=n.getCTM();if(m)ctx.transform(m.a,m.b,m.c,m.d,m.e,m.f);ctx.globalAlpha=s.opacity;ctx.globalCompositeOperation='source-over';const p=new window.Path2D(d),c=s.css;
+     if(c.fill!=='none'){ctx.fillStyle=c.fill;ctx.globalAlpha=s.opacity*Number(c.fillOpacity);ctx.fill(p,n.getAttribute('fill-rule')==='evenodd'?'evenodd':'nonzero');}
+     if(c.stroke!=='none'){ctx.strokeStyle=c.stroke;ctx.globalAlpha=s.opacity*Number(c.strokeOpacity);ctx.lineWidth=parseFloat(c.strokeWidth)||1;ctx.lineCap=c.strokeLinecap;ctx.lineJoin=c.strokeLinejoin;const dash=c.strokeDasharray==='none'?[]:c.strokeDasharray.split(/[ ,]+/).map(Number);if(dash.every(Number.isFinite))ctx.setLineDash(dash);ctx.stroke(p);}ctx.restore();drawn++;
+    }catch{ctx.restore();missing++;}
+   }
+   for(const [key,e]of cache)if(!used.has(key)){e.img.onload=e.img.onerror=null;e.img.src='';cache.delete(key);}
+   if(!drawn)return {image:null,missing,windFrame:false,reduced:false};
+   // PNG keeps transparency/source colors. Bound encoding work to four sizes;
+   // withhold if still too large rather than silently blowing the touch channel.
+   try{let data=canvas.toDataURL('image/png'),reduced=false;for(const factor of [.75,.5,.33]){if(data.length<=12000)break;const small=document.createElement('canvas');small.width=Math.max(1,Math.round(canvas.width*factor));small.height=Math.max(1,Math.round(canvas.height*factor));small.getContext('2d').drawImage(canvas,0,0,small.width,small.height);data=small.toDataURL('image/png');reduced=true;}return {image:data.length<=12000?data:null,missing:missing+(data.length>12000?1:0),windFrame,reduced};}catch{return {image:null,missing:missing+1,windFrame:false,reduced:false};}
+  },
+  close(){closed=true;for(const e of cache.values()){e.img.onload=e.img.onerror=null;e.img.src='';}cache.clear();canvas.width=canvas.height=1;}
+ };
+}

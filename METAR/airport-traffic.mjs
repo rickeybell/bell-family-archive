@@ -9,6 +9,13 @@ export function airportSurfaceWind(report,now=Date.now()){
 }
 export const KLKR=Object.freeze({lon:-80.85316,lat:34.72659});
 export const AIRPORT_RANGES=Object.freeze([2,5,10]);
+// Temporary close-up ceilings; never write these over normal map preferences.
+export function airportTrafficFilters(saved,rangeMi){
+ const [maxSpeed,maxAltitude]=({2:[160,4000],5:[200,10000],10:[250,20000]})[rangeMi]||[];
+ if(!maxSpeed)throw Error('Invalid Airport Traffic Range');
+ return {...saved,maxSpeed,maxAltitude,mountainMinSpeed:Math.min(saved.mountainMinSpeed,maxSpeed),nonMountainMinSpeed:Math.min(saved.nonMountainMinSpeed,maxSpeed),mountainMinAltitude:Math.min(saved.mountainMinAltitude,maxAltitude-1),nonMountainMinAltitude:Math.min(saved.nonMountainMinAltitude,maxAltitude-1)};
+}
+export function airportRingLabelPosition(point,radius,rangeMi){const outside=rangeMi===10&&radius===2;return {x:point[0]+(outside?8:-8),y:point[1]-6,anchor:outside?'start':'end'};}
 export function airportRingRadii(rangeMi){return ({2:[1,2],5:[1,2.5,5],10:[2,6,10]})[rangeMi]??[];}
 export function airportRingPoints(radiusMi,segments=96){
  if(!Number.isFinite(radiusMi)||radiusMi<=0||radiusMi>50||!Number.isInteger(segments)||segments<12||segments>360)throw Error('Invalid Distance Ring');
@@ -17,7 +24,7 @@ export function airportRingPoints(radiusMi,segments=96){
 }
 export function createAirportRings({document,map,project}){
  const ns='http://www.w3.org/2000/svg',layer=document.createElementNS(ns,'g');layer.id='airport-distance-rings';layer.setAttribute('pointer-events','none');map.append(layer);
- return {render(enabled,rangeMi){layer.replaceChildren();if(!enabled)return;for(const radius of airportRingRadii(rangeMi)){const points=airportRingPoints(radius).map(p=>project(...p)),line=document.createElementNS(ns,'path'),label=document.createElementNS(ns,'text');line.dataset.radiusMi=String(radius);line.setAttribute('d',points.map((p,i)=>(i?'L':'M')+p.join(',')).join(' ')+' Z');line.setAttribute('fill','none');line.setAttribute('stroke','rgba(232,246,255,.48)');line.setAttribute('stroke-width','1');label.textContent=radius+' mi';label.setAttribute('x',points[24][0]-8);label.setAttribute('y',points[24][1]-6);label.setAttribute('text-anchor','end');label.setAttribute('font-size','12');label.setAttribute('fill','#edf7ff');label.setAttribute('stroke','#142330');label.setAttribute('stroke-width','3');label.setAttribute('paint-order','stroke');layer.append(line,label);}}};
+ return {render(enabled,rangeMi){layer.replaceChildren();if(!enabled)return;for(const radius of airportRingRadii(rangeMi)){const points=airportRingPoints(radius).map(p=>project(...p)),line=document.createElementNS(ns,'path'),label=document.createElementNS(ns,'text');line.dataset.radiusMi=String(radius);line.setAttribute('d',points.map((p,i)=>(i?'L':'M')+p.join(',')).join(' ')+' Z');line.setAttribute('fill','none');line.setAttribute('stroke','rgba(232,246,255,.48)');line.setAttribute('stroke-width','1');label.textContent=radius+' mi';const placement=airportRingLabelPosition(points[24],radius,rangeMi);label.setAttribute('x',placement.x);label.setAttribute('y',placement.y);label.setAttribute('text-anchor',placement.anchor);label.setAttribute('font-size','12');label.setAttribute('fill','#edf7ff');label.setAttribute('stroke','#142330');label.setAttribute('stroke-width','3');label.setAttribute('paint-order','stroke');layer.append(line,label);}}};
 }
 export function airportWindLabel(report,now=Date.now()){
  const usable=airportSurfaceWind(report,now),time=observationTime(report),validTime=Number.isFinite(time)&&time<=now+300000,seconds=validTime?Math.max(0,Math.floor((now-time)/1000)):null;
@@ -27,7 +34,7 @@ export function airportWindLabel(report,now=Date.now()){
 // Visual annotation aligned with the historical aerial runway, not surveyed
 // runway geometry. Use one ground anchor at every range: a screen-space minimum
 // would move the annotation away from the grass/tree line when zooming out.
-export function airportRunwayLabel(project){const a=project(KLKR.lon,KLKR.lat),p=project(-80.8505,34.7218);return {x:p[0]-a[0],y:p[1]-a[1],angle:-31};}
+export function airportRunwayLabel(project,rangeMi){const a=project(KLKR.lon,KLKR.lat),p=project(-80.8505,34.7218);return {x:p[0]-a[0],y:p[1]-a[1]+(rangeMi===10?16:0),angle:-31};}
 export const IMAGERY_URL='https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile';
 const radians=Math.PI/180,earthNm=6371008.8/1852;
 export const mercator=lat=>Math.log(Math.tan(Math.PI/4+lat*radians/2))/radians;
@@ -89,9 +96,9 @@ export function createAirportImagery({document,map,project,onStatus}){
  const snapshot=()=>({active,tiles:images.size,loaded:[...images.values()].filter(v=>v.status==='loaded').length,failed:[...images.values()].filter(v=>v.status==='failed').length});
  const status=()=>onStatus(snapshot());
  function remove(key,value){clearTimeout(value.timer);value.node.removeAttribute('href');value.node.remove();images.delete(key);}
- return {snapshot,windNode,updateWeather(report,now=Date.now()){const category=statusOf(report,now),color=COLORS[category]||COLORS.UNKNOWN;label.setAttribute('fill',color);label.setAttribute('data-category',category);dot.setAttribute('fill',color);airportWindLabel(report,now).forEach((text,index)=>{if(labelLines[index+1].textContent!==text)labelLines[index+1].textContent=text;});},render(enabled,bounds,scale){active=enabled;layer.style.display=enabled?'':'none';marker.style.display=enabled?'':'none';if(!enabled){for(const [key,v]of images)remove(key,v);status();return;}
+ return {snapshot,windNode,updateWeather(report,now=Date.now()){const category=statusOf(report,now),color=COLORS[category]||COLORS.UNKNOWN;label.setAttribute('fill',color);label.setAttribute('data-category',category);dot.setAttribute('fill',color);airportWindLabel(report,now).forEach((text,index)=>{if(labelLines[index+1].textContent!==text)labelLines[index+1].textContent=text;});},render(enabled,bounds,scale,rangeMi){active=enabled;layer.style.display=enabled?'':'none';marker.style.display=enabled?'':'none';if(!enabled){for(const [key,v]of images)remove(key,v);status();return;}
   const airport=project(KLKR.lon,KLKR.lat);marker.setAttribute('transform',`translate(${airport[0]},${airport[1]})`);
-  const annotation=airportRunwayLabel(project);label.setAttribute('transform',`translate(${annotation.x},${annotation.y}) rotate(${annotation.angle})`);
+  const annotation=airportRunwayLabel(project,rangeMi);label.setAttribute('transform',`translate(${annotation.x},${annotation.y}) rotate(${annotation.angle})`);
   const tiles=imageryTiles(bounds,scale),keys=new Set(tiles.map(t=>t.key));for(const [key,v]of images)if(!keys.has(key))remove(key,v);
   for(const t of tiles){let v=images.get(t.key);if(!v){const node=document.createElementNS(ns,'image');node.setAttribute('preserveAspectRatio','none');v={node,status:'loading',timer:null};images.set(t.key,v);const finish=state=>{if(images.get(t.key)!==v||v.status!=='loading')return;clearTimeout(v.timer);v.status=state;status();};node.addEventListener('load',()=>finish('loaded'),{once:true});node.addEventListener('error',()=>finish('failed'),{once:true});v.timer=setTimeout(()=>finish('failed'),15000);layer.append(node);node.setAttribute('href',t.url);}
    const a=project(t.west,t.north),b=project(t.east,t.south);for(const [name,value]of Object.entries({x:a[0],y:a[1],width:b[0]-a[0]+.2,height:b[1]-a[1]+.2}))v.node.setAttribute(name,value);

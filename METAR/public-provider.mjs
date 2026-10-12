@@ -89,13 +89,13 @@ export function createPublicMapProvider({fetchImpl=globalThis.fetch,getStations=
   // persistent flight recording. Source-off discards Internet enrichment.
   if(!sources.internet)identities.clear();
   for(const [hex,value]of identities)if(now()-value.at>3600000)identities.delete(hex);
-  for(const row of internetRaw?.ac??[]){const identity=publicIdentity(row);if(!identity.hex||!identity.r&&!identity.flight)continue;const old=identities.get(identity.hex);identities.delete(identity.hex);identities.set(identity.hex,{r:identity.r||old?.r||'',flight:identity.flight||old?.flight||'',at:Date.parse(data.fetchedAt)});}
+  for(const row of internetRaw?.ac??[]){const identity=publicIdentity(row);if(!identity.hex||!identity.r&&!identity.flight)continue;const old=identities.get(identity.hex);identities.delete(identity.hex);identities.set(identity.hex,{r:identity.r||old?.r||'',flight:identity.flight||old?.flight||'',type:typeof row.t==='string'?row.t.trim().slice(0,64):old?.type||'',owner:typeof (row.ownOp||row.owner)==='string'?(row.ownOp||row.owner).trim().slice(0,64):old?.owner||'',at:Date.parse(data.fetchedAt)});}
   while(identities.size>1000)identities.delete(identities.keys().next().value);
   const result=fuseAdsbTraffic({internetRaw,internetAt:data?Date.parse(data.fetchedAt):null,snapshots:relay.snapshot(),now:now(),listedIdentifiers:new Set(),bounds,filters,sources});
   if(!result)throw Error('Public Traffic Unavailable');
   // Stable address is the website's marker/selection/trail key. A separate
   // display label may improve when a registration arrives, without a new track.
-  return {...result,aircraft:result.aircraft.map(a=>{const hex=publicHex(a.hex);if(!hex)return a;const identity=identities.get(hex),fallback=publicIdentity({flight:a.id}).flight;return {...a,id:hex,displayId:identity?.r||(fallback!==hex?fallback:'')||identity?.flight||hex};})};
+  return {...result,aircraft:result.aircraft.map(a=>{const hex=publicHex(a.hex);if(!hex)return a;const identity=identities.get(hex),fallback=publicIdentity({flight:a.id}).flight;return {...a,...(!a.type&&identity?.type?{type:identity.type}:{}),...(!a.owner&&identity?.owner?{owner:identity.owner}:{}),id:hex,displayId:identity?.r||(fallback!==hex?fallback:'')||identity?.flight||hex};})};
  }
  async function traffic(bounds,signal){
   try{
