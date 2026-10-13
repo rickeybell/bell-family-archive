@@ -9,7 +9,8 @@ export function validTrafficTouch(c){
  if(!c||typeof c!=='object'||Array.isArray(c))return false;
  const shape=(...keys)=>Object.keys(c).every(k=>['action',...keys].includes(k));
  switch(c.action){
-  case 'traffic-lcars':case 'traffic-weather':case 'traffic-rings':return shape('value')&&typeof c.value==='boolean';
+  case 'traffic-display':case 'traffic-trails-clear':return shape();
+  case 'traffic-autoselect':case 'traffic-lcars':case 'traffic-weather':case 'traffic-rings':return shape('value')&&typeof c.value==='boolean';
   case 'traffic-select':return shape('value')&&(c.value===null||typeof c.value==='string'&&c.value.length>0&&c.value.length<=64&&!/[\x00-\x1f]/.test(c.value));
   case 'traffic-view':return shape('value')&&[2,5,10,'return'].includes(c.value);
   case 'traffic-source':return shape('key','value')&&sources.includes(c.key)&&typeof c.value==='boolean';

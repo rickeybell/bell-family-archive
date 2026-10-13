@@ -93,5 +93,5 @@ export function createFlightTrails(){
  }}; 
 }
 export function trailSegments(trail,{now=Date.now(),minutes=30,selected=false,dim=false}={}){
- const segments=[];for(let i=1;i<trail.points.length;i++){const a=trail.points[i-1],b=trail.points[i];if(b.link==='break')continue;const age=Math.max(0,now-b.time)/(minutes*60000),alpha=Math.max(.16,.8-age*.6)*(dim?.3:1);segments.push({a,b,dotted:b.link==='dotted',alpha:selected?Math.max(.55,alpha):alpha,gapSeconds:Math.round(b.gapMs/1000)});}return segments;
+ const segments=[];for(let i=1;i<trail.points.length;i++){const a=trail.points[i-1],b=trail.points[i];if(b.link==='break')continue;const age=Math.max(0,now-b.time)/(minutes*60000),alpha=Math.max(.50,.95-age*.35)*(dim?.75:1);segments.push({a,b,dotted:b.link==='dotted',alpha:selected?Math.max(.85,alpha):alpha,gapSeconds:Math.round(b.gapMs/1000)});}return segments;
 }

@@ -16,7 +16,7 @@ export function airportTrafficFilters(saved,rangeMi){
  return {...saved,maxSpeed,maxAltitude,mountainMinSpeed:Math.min(saved.mountainMinSpeed,maxSpeed),nonMountainMinSpeed:Math.min(saved.nonMountainMinSpeed,maxSpeed),mountainMinAltitude:Math.min(saved.mountainMinAltitude,maxAltitude-1),nonMountainMinAltitude:Math.min(saved.nonMountainMinAltitude,maxAltitude-1)};
 }
 export function airportRingLabelPosition(point,radius,rangeMi){const outside=rangeMi===10&&radius===2;return {x:point[0]+(outside?8:-8),y:point[1]-6,anchor:outside?'start':'end'};}
-export function airportRingRadii(rangeMi){return ({2:[1,2],5:[1,2.5,5],10:[2,6,10]})[rangeMi]??[];}
+export function airportRingRadii(rangeMi){return ({2:[1,2,3,4,5,10,15,20],5:[1,2.5,5,7.5,10,15,20],10:[2,6,10,15,20,25]})[rangeMi]??[];}
 export function airportRingPoints(radiusMi,segments=96){
  if(!Number.isFinite(radiusMi)||radiusMi<=0||radiusMi>50||!Number.isInteger(segments)||segments<12||segments>360)throw Error('Invalid Distance Ring');
  const lat=KLKR.lat*Math.PI/180,lon=KLKR.lon*Math.PI/180,d=radiusMi*1609.344/6371008.8;

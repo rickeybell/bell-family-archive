@@ -35,7 +35,7 @@ export function localAdsbSnapshot({band,raw},now=Date.now()){
 // may enrich a single unambiguous matching registration, never conflicting hex.
 // Freshest position wins. Local data wins ties; older metadata can enrich
 // identity only, never overwrite altitude/speed/position from the winning row.
-export function fuseAdsbTraffic({internetRaw=null,internetAt=null,listedAircraft=[],listedAt=null,snapshots=[],now=Date.now(),listedIdentifiers=new Set(),bounds,filters={},sources={}}={}){
+export function fuseAdsbTraffic({metadataCache=null,internetRaw=null,internetAt=null,listedAircraft=[],listedAt=null,snapshots=[],now=Date.now(),listedIdentifiers=new Set(),bounds,filters={},sources={}}={}){
  if(!Number.isFinite(now)||!bounds)throw Error('Invalid ADS-B Fusion Context');
  sources=validateTrafficSources(sources);
  if(!sources.internet){internetRaw=null;internetAt=null;listedAircraft=[];listedAt=null;}
@@ -45,6 +45,7 @@ export function fuseAdsbTraffic({internetRaw=null,internetAt=null,listedAircraft
  if(publicLive)candidates.push(...rows(internetRaw?.ac,internetAt,now,'internet'));
  if(Number.isFinite(listedAt)&&now-listedAt>=0&&now-listedAt<=45000)candidates.push(...rows(listedAircraft.map(a=>({hex:a.hex,r:a.id,lat:a.lat,lon:a.lon,seen_pos:a.age,gs:a.speed,alt_baro:a.altitude,track:a.track,category:a.category,t:a.type,owner:a.owner,origin:a.origin,destination:a.destination})),listedAt,now,'internet-listed'));
  for(const snapshot of local)candidates.push(...snapshot.aircraft);
+ if(metadataCache)metadataCache.enrich(candidates,sources,now);
  const groups=new Map();
  for(const row of candidates){const key=row.hex?'hex:'+row.hex:'reg:'+(row.r||row.flight);if(!groups.has(key))groups.set(key,[]);groups.get(key).push(row);}
  for(const [key,group] of [...groups]){if(!key.startsWith('reg:'))continue;const registration=group[0].r;if(!registration)continue;
@@ -67,4 +68,33 @@ export function fuseAdsbTraffic({internetRaw=null,internetAt=null,listedAircraft
  const anyLive=publicLive||local.some(s=>s.state==='live')||Number.isFinite(listedAt)&&now-listedAt>=0&&now-listedAt<=45000;
  if(!anyLive&&Object.values(sources).some(Boolean))return null;
  return {fetchedAt:new Date(now).toISOString(),aircraft:selectTrafficForView(aircraft,bounds,{listedIdentifiers,limit:100}).map(({_key,...row})=>row),sources:statuses,warnings};
+}
+
+// Identity only: no stored coordinates, age, callsign or motion data. Entries
+// cannot resurrect a stale contact and disabled sources cannot enrich identity.
+export function createAircraftMetadataCache({ttlMs=21600000,limit=2048}={}){
+ const records=new Map();
+ const sourceKey=s=>s==='internet-listed'?'internet':s;
+ return {enrich(rows,sources,now){
+  for(const [key,item]of records)if(now-item.at>ttlMs||now<item.at)records.delete(key);
+  for(const row of rows){
+   if(!/^[0-9A-F]{6}$/.test(row.hex||''))continue;
+   const key=row.hex,source=sourceKey(row.source);if(!sources[source])continue;
+   let item=records.get(key);
+   if(item&&row.r&&item.registration&&row.r!==item.registration){records.delete(key);item=null;}
+   if(!item){item={at:now,registration:row.r||'',sources:{}};records.set(key,item);}
+   if(row.r)item.registration=row.r;
+   const values=item.sources[source]||(item.sources[source]={});
+   for(const field of ['r','t','owner'])if(row[field]){values[field]={value:row[field],at:now};item.at=now;}
+   records.delete(key);records.set(key,item);
+  }
+  while(records.size>limit)records.delete(records.keys().next().value);
+  for(const row of rows){
+   const item=records.get(row.hex);if(!item)continue;
+   for(const field of ['r','t','owner'])if(!row[field]){
+    const choices=Object.entries(item.sources).filter(([s])=>sources[s]).map(([,v])=>v[field]).filter(v=>v&&now-v.at>=0&&now-v.at<=ttlMs).sort((a,b)=>b.at-a.at);
+    if(choices[0])row[field]=choices[0].value;
+   }
+  }
+ },get size(){return records.size;}};
 }
