@@ -67,7 +67,7 @@ function trafficPoint(bounds){const south=Math.floor(bounds.south*10)/10,north=M
 
 export function createPublicMapProvider({fetchImpl=globalThis.fetch,getStations=()=>[],now=Date.now,wait=waitForSlot,relayFactory=createPublicTrafficClient}={}){
  if(typeof fetchImpl!=='function'||typeof getStations!=='function'||typeof now!=='function'||typeof wait!=='function')throw Error('Public Provider Dependencies Are Required');
- let nextStart=0,cooldown=0,gate=Promise.resolve(),internetCache=null,internetPending=null,update=()=>{};const identities=new Map(),relay=relayFactory({now,onUpdate:()=>update()});
+ let nextStart=0,cooldown=0,gate=Promise.resolve(),internetCache=null,internetPending=null,update=()=>{};const faa=createPublicFaaLookup({fetchImpl,now,origin:PUBLIC_DATA_ORIGIN});const identities=new Map(),relay=relayFactory({now,onUpdate:()=>update()});
  const request=(url,signal,method='GET')=>fetchImpl(url,{method,signal,cache:'no-store',credentials:'omit',redirect:'error',referrerPolicy:'no-referrer'});
  async function json(url,signal,limit=2097152){return JSON.parse(await readText(await request(url,signal),limit,signal));}
  async function weather(signal){
@@ -95,7 +95,7 @@ export function createPublicMapProvider({fetchImpl=globalThis.fetch,getStations=
   if(!result)throw Error('Public Traffic Unavailable');
   // Stable address is the website's marker/selection/trail key. A separate
   // display label may improve when a registration arrives, without a new track.
-  return {...result,aircraft:result.aircraft.map(a=>{const hex=publicHex(a.hex);if(!hex)return a;const identity=identities.get(hex),fallback=publicIdentity({flight:a.id}).flight;return {...a,...(!a.type&&identity?.type?{type:identity.type}:{}),...(!a.owner&&identity?.owner?{owner:identity.owner}:{}),id:hex,displayId:identity?.r||(fallback!==hex?fallback:'')||identity?.flight||hex};})};
+  return faa.enrich({...result,aircraft:result.aircraft.map(a=>{const hex=publicHex(a.hex);if(!hex)return a;const identity=identities.get(hex),fallback=publicIdentity({flight:a.id}).flight;return {...a,...(!a.type&&identity?.type?{type:identity.type}:{}),...(!a.owner&&identity?.owner?{owner:identity.owner}:{}),id:hex,displayId:identity?.r||(fallback!==hex?fallback:'')||identity?.flight||hex};})});
  }
  async function traffic(bounds,signal){
   try{
@@ -113,7 +113,7 @@ export function createPublicMapProvider({fetchImpl=globalThis.fetch,getStations=
   if(!Array.isArray(data?.aircraft)||data.aircraft.length>10000||!Number.isFinite(stamp)||now()-stamp>45000||stamp-now()>30000)throw Error('Stale or Invalid Public Traffic');return data;
  }
  return Object.freeze({
-  syncTraffic:value=>relay.sync(value),onTrafficUpdate:fn=>{update=fn;},dispose:()=>{identities.clear();relay.dispose();},
+  syncTraffic:value=>relay.sync(value),onTrafficUpdate:fn=>{update=fn;},dispose:()=>{identities.clear();faa.dispose();relay.dispose();},
   resourceURL(value){return route(value).url;},
   async fetch(value,options={}){
    if(typeof value!=='string')return reply({error:'Invalid Public Request'},400);
@@ -145,3 +145,4 @@ export function createPublicMapProvider({fetchImpl=globalThis.fetch,getStations=
 import {createPublicTrafficClient} from './public-traffic-client.mjs';
 import {fuseAdsbTraffic} from './local-adsb-traffic.mjs';
 import {validateTrafficFilters,defaultTrafficFilters} from './traffic.mjs';
+import {createPublicFaaLookup} from './faa-identity.mjs';
