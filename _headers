@@ -1,0 +1,4 @@
+/METAR/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://bell-family-metar.rbell.workers.dev https://basemap.nationalmap.gov; media-src 'self' blob: https://metar-airband-cloud.rbell.workers.dev; connect-src 'self' https://bell-family-metar.rbell.workers.dev https://metar-airband-cloud.rbell.workers.dev https://r.jina.ai wss://bell-family-metar.rbell.workers.dev; worker-src 'self' blob:; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; frame-ancestors 'self'
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer

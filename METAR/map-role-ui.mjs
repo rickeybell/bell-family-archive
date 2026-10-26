@@ -8,7 +8,7 @@ export function configureMapRoleUi({document,deviceConfig,windProfile,onWinds,on
  $('winds-offshore').closest('label').hidden=!windProfile.offshoreMask;
  for(const id of ['airport-status','unity-status','brightness-status'])$(id).hidden=deviceConfig.id!=='pc';
  $('save-traffic-list').textContent=deviceConfig.id==='unity'?'Save on Unity':'Save';
- $('adsb-refresh-help').textContent='Saved on this display. Internet and enabled radio bands refresh independently; disabled sources do not supply aircraft. Faster updates use more network data. Radio is limited to 2–5 seconds to preserve snapshot freshness. Known-aircraft Internet lookups remain every 30 seconds while Internet traffic is requested.';
+ $('adsb-refresh-help').textContent='Saved on this display. Internet and enabled radio bands refresh independently; disabled sources do not supply aircraft. Radio display refresh is 2–20 seconds; the live relay keeps fast sampling so each refresh uses the newest valid snapshot. Radio stays solid through 1.5 times the selected refresh, then dashed until 3 times refresh, capped at 30 seconds total position age. Known-aircraft Internet lookups remain every 30 seconds while Internet traffic is requested.';
  if(deviceConfig.id==='website')$('adsb-radio-refresh-seconds').disabled=true;
  const home=document.createElement('section');home.id='display-settings-home';home.hidden=true;
  home.innerHTML='<div class="editor-actions"><button id="configure-winds-button" type="button">Configure Winds Aloft</button><button id="configure-adsb-button" type="button">Configure ADSB</button></div><p>Shared Preview. Media, Main Display Settings, and Production Service Integration Are Still Pending.</p>';
